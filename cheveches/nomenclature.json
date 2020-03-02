@@ -1,0 +1,11 @@
+{
+  "nomenclatures": [
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "CHE_PT_E",
+      "mnemonique": "Pt_cheveches",
+      "label_default": "Point d'écoute cheveches",
+      "definition_default": "Point d'écoute cheveches"
+    }
+  ]
+}
