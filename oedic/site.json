@@ -1,0 +1,31 @@
+{
+  "geometry_type": "Polygon",
+  "media_types": ["pdf"],
+  "display_properties": [
+    "base_site_name",
+    "base_site_code",
+    "id_inventor",
+    "first_use_date",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "base_site_code",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "OEDIC"
+      },
+      "hidden": true
+    }
+  }
+}
+  
