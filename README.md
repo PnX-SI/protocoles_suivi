@@ -1,7 +1,7 @@
-# protocoles_suivi
+# Définition de protocoles de suivi PnC
 Protocoles pour le module de suivi générique de géonature : https://github.com/PnX-SI/gn_module_monitoring
 
-Ce dépot correspond à des protocoles propres au Parc national des Cévennes
+Ce dépot correspond à des protocoles utilisés au Parc national des Cévennes
 
 ## Installation d'un protocole
 Récupérer une archive du dépot
