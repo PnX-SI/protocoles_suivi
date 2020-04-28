@@ -1,6 +1,5 @@
 {
   "geometry_type": "Polygon",
-  "media_types": ["pdf"],
   "display_properties": [
     "base_site_name",
     "base_site_code",

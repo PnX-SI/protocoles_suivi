@@ -16,9 +16,20 @@
     "time_observation",
     "id_nomenclature_statut_obs"
   ],
+  "keep": [
+    "num_passage",
+    "visit_date_min",
+    "id_nomenclature_meteo",
+    "id_nomenclature_vent",
+    "observers",
+    "comment"
+
+  ],
   "specific" : {
     "id_base_site": {
-      "attribut_label": "Site"
+      "type_widget": "site",
+      "required": true,
+      "attribut_label": "Choix du site"
     },
     "num_passage": {
       "type_widget": "number",
