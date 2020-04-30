@@ -23,9 +23,8 @@
     "id_nomenclature_vent",
     "observers",
     "comment"
-
   ],
-  "specific" : {
+  "specific": {
     "id_base_site": {
       "type_widget": "site",
       "required": true,
@@ -51,6 +50,16 @@
       "type_util": "nomenclature",
       "required": true
     },
+    "visit_date_min": {
+      "attribut_label": "Date"
+    },
+    "cd_nom": {
+      "type_widget": "text",
+      "attribut_label": "cd nom",
+      "type_util": "taxonomy",
+      "value": 3511,
+      "hidden": true
+    },
     "id_nomenclature_statut_obs": {
       "type_widget": "nomenclature",
       "attribut_label": "Observation",
@@ -61,16 +70,6 @@
     "time_observation": {
       "attribut_label": "Heure",
       "type_widget": "time"
-    },
-    "visit_date_min": {
-      "attribut_label": "Date"
-    },
-    "cd_nom": {
-      "type_widget": "text",
-      "attribut_label": "cd nom",
-      "type_util": "taxonomy",
-      "value": 3511,
-      "hidden": true
     }
   }
 }
