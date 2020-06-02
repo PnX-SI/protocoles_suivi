@@ -37,7 +37,7 @@ CREATE VIEW gn_monitoring.vs_cheveches AS
 SELECT
 		v.uuid_base_visit AS unique_id_sinp, 
 		v.uuid_base_site AS unique_id_sinp_grp,
-		-- idsource ??
+		-- idsource OBLIGATOIRE POUR QUE LA données remonte dans la synthese
 		v.id_base_visit AS entity_source_pk_value,
 		v.id_dataset,
 		v.id_nomenclature_geo_object_nature,
