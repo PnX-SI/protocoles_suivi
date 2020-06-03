@@ -1,4 +1,26 @@
+-- #############################
+-- Insertion de la source
+--- permet d'importer les données dans la synthèse
+--	 et de les lier au module de saisie
+-- #############################
+INSERT INTO gn_synthese.t_sources(
+    name_source, 
+    desc_source, 
+    entity_source_pk_field, 
+    url_source
+)
+VALUES (
+    'MONITORING_CHEVECHES',
+    'Données issues du protocole de suivis mâle chanteur de la chouette chevêche',
+    'gn_monitoring.vs_cheveches.entity_source_pk_value',
+    '#/monitoring/object/cheveches/visit'
+);
 
+-- #############################
+-- 	Création d'une vue de base 
+--			pouvant être utilisé dans d'autres modules
+-- 	TODO la déplacer dans le dépot du module monitoring
+-- #############################
 DROP VIEW gn_monitoring.vs_visits CASCADE;
 CREATE VIEW gn_monitoring.vs_visits AS
 SELECT 
@@ -23,7 +45,9 @@ SELECT
 	FROM gn_monitoring.t_base_visits v
 	JOIN gn_monitoring.t_base_sites s ON v.id_base_site = s.id_base_site
 	 JOIN LATERAL (
-		SELECT array_agg(r.id_role) AS ids_observers, STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') AS observers 
+		SELECT 
+			array_agg(r.id_role) AS ids_observers, 
+			STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') AS observers 
 		FROM gn_monitoring.cor_visit_observer cvo
 		JOIN utilisateurs.t_roles r
 		ON r.id_role = cvo.id_role  
@@ -32,12 +56,23 @@ SELECT
 ;
 
 
+-- #############################
+-- 	Création d'une vue 
+--		permettant la remonté des données 
+--		chevêches dans la synthèse
+-- #############################
 DROP VIEW IF EXISTS gn_monitoring.vs_cheveches;
 CREATE VIEW gn_monitoring.vs_cheveches AS
+WITH source AS (
+	SELECT id_source 
+	FROM gn_synthese.t_sources
+	WHERE name_source = 'MONITORING_CHEVECHES'
+	LIMIT 1
+)
 SELECT
 		v.uuid_base_visit AS unique_id_sinp, 
 		v.uuid_base_site AS unique_id_sinp_grp,
-		-- idsource OBLIGATOIRE POUR QUE LA données remonte dans la synthese
+		(SELECT id_source FROM source) as id_source,
 		v.id_base_visit AS entity_source_pk_value,
 		v.id_dataset,
 		v.id_nomenclature_geo_object_nature,
