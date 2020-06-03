@@ -44,7 +44,7 @@ SELECT
 	v.id_digitiser 
 	FROM gn_monitoring.t_base_visits v
 	JOIN gn_monitoring.t_base_sites s ON v.id_base_site = s.id_base_site
-	 JOIN LATERAL (
+	LEFT JOIN LATERAL (
 		SELECT 
 			array_agg(r.id_role) AS ids_observers, 
 			STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') AS observers 
