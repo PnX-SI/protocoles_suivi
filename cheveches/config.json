@@ -6,6 +6,9 @@
       }
     }
   },
+  "synthese": {
+    "object": "visit"
+  },
   "data": {
     "nomenclature": ["TYPE_SITE", "STATUT_OBS"],
     "taxonomy": {
