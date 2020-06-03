@@ -1,3 +1,6 @@
+-- #########################
+--- OBSOLETE 
+-- A SUPPRIMER
 
 
 CREATE OR REPLACE FUNCTION procedure_cheveches_synthese() RETURNS TRIGGER AS $trigger_cheveches_synthese$
