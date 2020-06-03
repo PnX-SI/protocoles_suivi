@@ -1,5 +1,5 @@
 
-DROP VIEW gn_monitoring.vs_visits CASCADE;
+DROP VIEW IF EXISTS gn_monitoring.vs_visits CASCADE;
 CREATE VIEW gn_monitoring.vs_visits AS
 SELECT 
 	v.id_module,
@@ -17,13 +17,14 @@ SELECT
 	s.geom AS the_geom_4326,
 	ST_CENTROID(s.geom) AS the_geom_point, 
 	s.geom_local as geom_local,
-	o.observers,
-	o.ids_observers,
+	o.ids_observers,    
+	o.observers,    
 	v.id_digitiser 
 	FROM gn_monitoring.t_base_visits v
 	JOIN gn_monitoring.t_base_sites s ON v.id_base_site = s.id_base_site
-	 JOIN LATERAL (
-		SELECT array_agg(r.id_role) AS ids_observers, STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') AS observers 
+	LEFT JOIN LATERAL (
+		SELECT array_agg(r.id_role) AS ids_observers,
+        STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') AS observers 
 		FROM gn_monitoring.cor_visit_observer cvo
 		JOIN utilisateurs.t_roles r
 		ON r.id_role = cvo.id_role  
@@ -55,10 +56,12 @@ SELECT
  		ref_nomenclatures.get_id_nomenclature('IND', 'OBJ_DENBR') AS id_nomenclature_obj_count,
  		ref_nomenclatures.get_id_nomenclature('TYP_DENBR', 'Es') AS id_nomenclature_type_count,
  		-- id_nomenclature_sensitivity
- 		CASE 
-			WHEN n.cd_nomenclature = 'Pr' THEN ref_nomenclatures.get_id_nomenclature('STATUT_OBS', 'Pr')
-			ELSE  ref_nomenclatures.get_id_nomenclature('STATUT_OBS', 'No')  
-		END AS id_nomenclature_observation_status, 
+ 		
+         --CASE 
+		--	WHEN n.cd_nomenclature = 'Pr' THEN ref_nomenclatures.get_id_nomenclature('STATUT_OBS', 'Pr')
+		--	ELSE  ref_nomenclatures.get_id_nomenclature('STATUT_OBS', 'No')  
+		--END AS id_nomenclature_observation_status, 
+        (vc.data->>'id_nomenclature_statut_obs')::int AS id_nomenclature_observation_status,
 		-- id_nomenclature_blurring
 		ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE', 'Te') AS id_nomenclature_source_status,
 		ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO', '1') AS id_nomenclature_info_geo_type,
