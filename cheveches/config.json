@@ -6,7 +6,6 @@
       }
     }
   },
-  "synthese": true,
   "data": {
     "nomenclature": ["TYPE_SITE", "STATUT_OBS"],
     "taxonomy": {

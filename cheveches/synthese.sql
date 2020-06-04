@@ -2,19 +2,20 @@
 -- Insertion de la source
 --- permet d'importer les données dans la synthèse
 --	 et de les lier au module de saisie
+-- EDIT normalement fait à la création du sous module
 -- #############################
-INSERT INTO gn_synthese.t_sources(
-    name_source, 
-    desc_source, 
-    entity_source_pk_field, 
-    url_source
-)
-VALUES (
-    'MONITORING_CHEVECHES',
-    'Données issues du protocole de suivis mâle chanteur de la chouette chevêche',
-    'gn_monitoring.vs_cheveches.entity_source_pk_value',
-    '#/monitoring/object/cheveches/visit'
-);
+-- INSERT INTO gn_synthese.t_sources(
+--     name_source, 
+--     desc_source, 
+--     entity_source_pk_field, 
+--     url_source
+-- )
+-- VALUES (
+--     'MONITORING_CHEVECHES',
+--     'Données issues du protocole de suivis mâle chanteur de la chouette chevêche',
+--     'gn_monitoring.vs_cheveches.entity_source_pk_value',
+--     '#/monitoring/object/cheveches/visit'
+-- );
 
 
 -- #############################
