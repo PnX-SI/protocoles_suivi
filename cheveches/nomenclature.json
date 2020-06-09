@@ -1,14 +1,4 @@
 {
-  "types": [ {
-      "mnemonique": "OED_METEO_VENT",
-      "label_default": "Description vent meteo",
-      "definition_default": "Description vent meteo"
-    }, {
-      "mnemonique": "OED_METEO_CIEL",
-      "label_default": "Description de ciel méteo",
-      "definition_default": "Description de ciel méteo"
-    }
-  ],
   "nomenclatures": [
     {
       "type":"TYPE_SITE",
