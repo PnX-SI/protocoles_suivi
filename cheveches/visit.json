@@ -37,16 +37,15 @@
       "max": 2
     },
     "id_nomenclature_meteo": {
-      "type_widget": "nomenclature",
+      "type_widget": "select",
       "attribut_label": "Méteo",
-      "code_nomenclature_type": "CHE_METEO",
-      "type_util": "nomenclature",
+      "values": ["Indéterminé", "Nuageux", "Moyennement nuageux", "Clair"],
       "required": true
     },
     "id_nomenclature_vent": {
-      "type_widget": "nomenclature",
+      "type_widget": "select",
       "attribut_label": "Vent",
-      "code_nomenclature_type": "CHE_VENT",
+      "values": ["Indéterminé", "Fort", "Modéré", "Faible", "Nul"],
       "type_util": "nomenclature",
       "required": true
     },
