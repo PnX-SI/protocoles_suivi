@@ -30,10 +30,9 @@
       "required": true
     },
     "id_nomenclature_meteo_ciel": {
-      "type_widget": "nomenclature",
+      "type_widget": "select",
       "attribut_label": "Meteo : Ciel",
       "values": ["Indéterminé", "Nuageux", "Moyennement nuageux", "Clair"],
-      "type_util": "nomenclature",
       "required": true
     },
     "time_start": {

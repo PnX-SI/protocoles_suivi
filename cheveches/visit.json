@@ -38,15 +38,14 @@
     },
     "id_nomenclature_meteo": {
       "type_widget": "select",
-      "attribut_label": "Méteo",
+      "attribut_label": "Meteo : Ciel",
       "values": ["Indéterminé", "Nuageux", "Moyennement nuageux", "Clair"],
       "required": true
     },
     "id_nomenclature_vent": {
       "type_widget": "select",
-      "attribut_label": "Vent",
+      "attribut_label": "Meteo : Vent",
       "values": ["Indéterminé", "Fort", "Modéré", "Faible", "Nul"],
-      "type_util": "nomenclature",
       "required": true
     },
     "visit_date_min": {
