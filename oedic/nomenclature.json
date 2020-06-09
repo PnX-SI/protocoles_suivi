@@ -15,10 +15,10 @@
       "definition_default": "Circuit oedicnème"
     }, {
       "type":"OED_NAT_OBS",
-      "cd_nomenclature": "IND",
-      "mnemonique": "Indéterminé",
-      "label_default": "Indéterminé",
-      "definition_default": ""
+      "cd_nomenclature": "21",
+      "mnemonique": "Inconnu",
+      "label_default": "Inconnu",
+      "definition_default": "Inconnu : La méthode n'est pas mentionnée dans les documents de l'observateur (bibliographie par exemple)."
     },{
       "type":"OED_NAT_OBS",
       "cd_nomenclature": "25",
