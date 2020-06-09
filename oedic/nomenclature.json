@@ -21,16 +21,16 @@
       "definition_default": ""
     },{
       "type":"OED_NAT_OBS",
-      "cd_nomenclature": "AUDVIS",
-      "mnemonique": "Visuel et auditif",
-      "label_default": "Visuel et auditif",
-      "definition_default": ""
+      "cd_nomenclature": "25",
+      "mnemonique": "Vu et entendu",
+      "label_default": "Vu et entendu",
+      "definition_default": "Vu et entendu : l'occurrence a à la fois été vue et entendue."
     },{
       "type":"OED_NAT_OBS",
-      "cd_nomenclature": "VIS",
-      "mnemonique": "Visuel",
-      "label_default": "Visuel",
-      "definition_default": ""
+      "cd_nomenclature": "0",
+      "mnemonique": "Vu",
+      "label_default": "Vu",
+      "definition_default": "Observation directe d'un individu vivant."
     }
   ]
 }
