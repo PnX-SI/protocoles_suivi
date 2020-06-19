@@ -1,0 +1,33 @@
+{
+  "display_properties": [
+    "cd_nom",
+    "nb_0_5",
+    "nb_5_10",
+    "nb_sup_100m",
+    "comments"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèce",
+      "type_util": "taxonomy",
+      "required": true,
+      "idComponent": "100"
+    },
+    "nb_0_5": {
+      "type_widget": "number",
+      "attribut_label": "Effectif 0'-5'"
+    },
+    "nb_5_10": {
+      "type_widget": "number",
+      "attribut_label": "Effectif 5'-10'"
+    },
+    "nb_sup_100m": {
+      "type_widget": "number",
+      "attribut_label": "Effectif au delà de 100m"
+    },
+    "comments": {
+      "attribute_label": "Commentaire"
+    }
+  }
+}
