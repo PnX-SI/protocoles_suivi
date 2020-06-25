@@ -7,7 +7,6 @@
     }
   },
   "data": {
-    "nomenclature": ["TYPE_SITE", "STATUT_OBS"],
     "taxonomy": {
       "id_list": "__ID_COMPONENT_TAXONOMY",
       "cd_noms": [3511]
