@@ -1,0 +1,64 @@
+{
+  "display_properties": [
+    "visit_date_min",
+    "observers",
+    "beginner",
+    "time_start",
+    "cloud_percentage",
+    "rain",
+    "wind",
+    "visibility",
+    "snow_removal"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "beginner",
+    "snow_removal"
+  ],
+  "specific": {
+    "beginner": {
+      "type_widget": "radio",
+      "attribut_label": "Observateur débutant",
+      "values": ["Oui", "Non"]
+    },
+    "time_start": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début"
+    },
+    "cloud_percentage": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Couverture nuageuse",
+      "values": ["0-33%", "33-66%", "66-100%"]
+    },
+    "rain": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Pluie",
+      "values": ["Absente", "Intermittente", "Continue"]
+    },
+    "wind": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Vent",
+      "values": ["Absent", "Faible", "Moyen à fort"]
+    },
+    "visibility": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Visibilité",
+      "values": ["Bonne", "Modérée", "Faible"]
+    },
+    "snow_removal": {
+      "type_widget": "number",
+      "required": true,
+      "attribut_label": "Denneigement (en %)",
+      "min": 0,
+      "max": 100
+    },
+    "comments": {
+      "hidden": true
+    }
+  }
+}

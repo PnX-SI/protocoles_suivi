@@ -2,15 +2,14 @@
   "tree": {
     "module": {
       "site": {
-        "visit": null
+        "visit": {
+          "observation": null
+        }
       }
     }
   },
   "data": {
-    "taxonomy": {
-      "id_list": "__ID_COMPONENT_TAXONOMY",
-      "cd_noms": [3511]
-    },
+    "nomenclature": ["JDD_DATA_TYPE"],
     "user": ["__CODE_LIST_INVENTOR", "__CODE_LIST_OBSERVER"]
   }
 }

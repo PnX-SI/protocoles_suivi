@@ -24,17 +24,15 @@
       "attribut_label": "Nombre d'individus (maxi.)"
     },
     "id_nomenclature_meteo_vent": {
-      "type_widget": "nomenclature",
+      "type_widget": "select",
       "attribut_label": "Meteo : Vent",
-      "code_nomenclature_type": "OED_METEO_VENT",
-      "type_util": "nomenclature",
+      "values": ["Indéterminé", "Fort", "Modéré", "Faible", "Nul"],
       "required": true
     },
     "id_nomenclature_meteo_ciel": {
-      "type_widget": "nomenclature",
+      "type_widget": "select",
       "attribut_label": "Meteo : Ciel",
-      "code_nomenclature_type": "OED_METEO_CIEL",
-      "type_util": "nomenclature",
+      "values": ["Indéterminé", "Nuageux", "Moyennement nuageux", "Clair"],
       "required": true
     },
     "time_start": {

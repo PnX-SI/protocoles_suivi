@@ -2,9 +2,7 @@
   "data": {
     "nomenclature": [
       "TYPE_SITE",
-      "OED_NAT_OBS",
-      "OED_METEO_VENT",
-      "OED_METEO_CIEL"
+      "OED_NAT_OBS"
     ],
     "taxonomy": {
       "id_list": "__ID_COMPONENT_TAXONOMY",

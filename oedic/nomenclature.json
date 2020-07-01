@@ -4,14 +4,6 @@
       "mnemonique": "OED_NAT_OBS",
       "label_default": "Nature de l'observation",
       "definition_default": "Nature de l'observation"
-    }, {
-      "mnemonique": "OED_METEO_VENT",
-      "label_default": "Description vent meteo",
-      "definition_default": "Description vent meteo"
-    }, {
-      "mnemonique": "OED_METEO_CIEL",
-      "label_default": "Description de ciel méteo",
-      "definition_default": "Description de ciel méteo"
     }
   ],
   "nomenclatures": [
@@ -23,76 +15,22 @@
       "definition_default": "Circuit oedicnème"
     }, {
       "type":"OED_NAT_OBS",
-      "cd_nomenclature": "IND",
-      "mnemonique": "Indéterminé",
-      "label_default": "Indéterminé",
-      "definition_default": ""
+      "cd_nomenclature": "21",
+      "mnemonique": "Inconnu",
+      "label_default": "Inconnu",
+      "definition_default": "Inconnu : La méthode n'est pas mentionnée dans les documents de l'observateur (bibliographie par exemple)."
     },{
       "type":"OED_NAT_OBS",
-      "cd_nomenclature": "AUDVIS",
-      "mnemonique": "Visuel et auditif",
-      "label_default": "Visuel et auditif",
-      "definition_default": ""
+      "cd_nomenclature": "25",
+      "mnemonique": "Vu et entendu",
+      "label_default": "Vu et entendu",
+      "definition_default": "Vu et entendu : l'occurrence a à la fois été vue et entendue."
     },{
       "type":"OED_NAT_OBS",
-      "cd_nomenclature": "VIS",
-      "mnemonique": "Visuel",
-      "label_default": "Visuel",
-      "definition_default": ""
-    },{
-      "type":"OED_METEO_VENT",
-      "cd_nomenclature": "IND",
-      "mnemonique": "Indéterminé",
-      "label_default": "Indéterminé",
-      "definition_default": ""
-    }, {
-      "type":"OED_METEO_VENT",
-      "cd_nomenclature": "OEDIC",
-      "mnemonique": "FOR",
-      "label_default": "Fort",
-      "definition_default": "Fort"
-    }, {
-      "type":"OED_METEO_VENT",
-      "cd_nomenclature": "MOD",
-      "mnemonique": "",
-      "label_default": "Modéré",
-      "definition_default": "Modéré"
-    }, {
-      "type":"OED_METEO_VENT",
-      "cd_nomenclature": "FAI",
-      "mnemonique": "",
-      "label_default": "Faible",
-      "definition_default": "Faible"
-    }, {
-      "type":"OED_METEO_VENT",
-      "cd_nomenclature": "NUL",
-      "mnemonique": "",
-      "label_default": "Nul",
-      "definition_default": "Nul"
-    }, {
-      "type":"OED_METEO_CIEL",
-      "cd_nomenclature": "IND",
-      "mnemonique": "Indéterminé",
-      "label_default": "Indéterminé",
-      "definition_default": ""
-    }, {
-      "type":"OED_METEO_CIEL",
-      "cd_nomenclature": "NUA",
-      "mnemonique": "",
-      "label_default": "nuag.",
-      "definition_default": "Nuageux"
-    }, {
-      "type":"OED_METEO_CIEL",
-      "cd_nomenclature": "MON",
-      "mnemonique": "",
-      "label_default": "Moy. nuag.",
-      "definition_default": "Moyennement nuageux"
-    }, {
-      "type":"OED_METEO_CIEL",
-      "cd_nomenclature": "CLA",
-      "mnemonique": "",
-      "label_default": "Clair",
-      "definition_default": "Clair"
+      "cd_nomenclature": "0",
+      "mnemonique": "Vu",
+      "label_default": "Vu",
+      "definition_default": "Observation directe d'un individu vivant."
     }
   ]
 }

@@ -13,7 +13,8 @@
     },
     "nb_oiseaux": {
       "type_widget": "text",
-      "attribut_label": "Nb. oiseaux"
+      "attribut_label": "Nb. oiseaux",
+      "value": 1
     },
     "id_nomenclature_nature_observation": {
       "type_widget": "nomenclature",
