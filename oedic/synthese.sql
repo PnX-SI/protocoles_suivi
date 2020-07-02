@@ -62,8 +62,8 @@ SELECT
 		--meta_update_date,
 		--last_action
 		v.id_module,
-		--comment_context
-		v.comment_description,
+		v.comment_context,
+		o.comments as comment_description,
 		ids_observers,
 
 		-- ## Colonnes complémentaires pouvant être utile
