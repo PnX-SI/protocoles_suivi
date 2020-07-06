@@ -3,14 +3,19 @@
   "display_properties": [
     "base_site_name",
     "base_site_code",
-    "id_inventor",
+    "id_nomenclature_essence",
+    "id_nomenclature_synthese",
+    "proprietaire",
+    "secteur",
+    "source",
     "first_use_date",
     "last_visit",
     "nb_visits"
   ],
   "display_list": [
     "base_site_name",
-    "base_site_code",
+    "id_nomenclature_essence",
+    "id_nomenclature_synthese",
     "last_visit",
     "nb_visits"
   ],
@@ -58,6 +63,6 @@
     "source": {
       "type_widget": "text",
       "attribut_label": "Source"
-    },
+    }
   }
 }
