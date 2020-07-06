@@ -1,0 +1,76 @@
+{
+  "display_properties": [
+    "visit_date_min",
+    "id_nomenclature_visit_evol",
+    "id_nomenclature_indices",
+    "id_nomenclature_cavite",
+    "circ",
+    "diam",
+    "id_nomenclature_vital",
+    "id_nomenclature_cavite",
+    "id_nomenclature_indices",
+    "id_nomenclature_prospection",
+    "id_nomenclature_suite",
+    "id_nomenclature_photo_orientation",
+    "nb_observations"
+  ],
+  "specific" :{
+    "id_base_site": {
+      "type_widget": "site",
+      "required": true,
+      "attribut_label": "Choix du site"
+    },
+    "id_nomenclature_visit_evol": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Evolution",
+      "code_nomenclature_type": "OSMO_EVOL",
+      "type_util": "nomenclature"
+    },
+    "circ": {
+      "type_widget": "text",
+      "attribut_label": "Circonférence",
+      "value": 1
+    },
+    "diam": {
+      "type_widget": "text",
+      "attribut_label": "Diamètre",
+      "value": 1
+    },
+    "id_nomenclature_vital": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Vitalité",
+      "code_nomenclature_type": "OSMO_VITAL",
+      "type_util": "nomenclature"
+    },
+    "id_nomenclature_cavite": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Cavité",
+      "code_nomenclature_type": "OSMO_CAVITE",
+      "type_util": "nomenclature"
+    },
+    "id_nomenclature_indices": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Indices",
+      "code_nomenclature_type": "OSMO_INDICES",
+      "type_util": "nomenclature"
+    },
+    "id_nomenclature_prospection": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Prospection",
+      "code_nomenclature_type": "OSMO_PROPECTION",
+      "type_util": "nomenclature"
+    },
+    "id_nomenclature_suite": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Suite",
+      "code_nomenclature_type": "OSMO_EXPLORATION",
+      "type_util": "nomenclature"
+    },
+    "id_nomenclature_photo_orientation": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Orientation photos",
+      "code_nomenclature_type": "OSMO_ORIENTATION_PHOTO",
+      "type_util": "nomenclature"
+    }
+  }
+}

@@ -1,0 +1,756 @@
+{
+  "types": [
+    {
+      "mnemonique": "OSMO_ESSENCES",
+      "label_default": "Essence d'abres",
+      "definition_default": "Essence d'abres"
+    },
+    {
+      "mnemonique": "OSMO_EVOL",
+      "label_default": "Evolution de l'abre",
+      "definition_default": "Evolution de l'abre"
+    },
+    {
+      "mnemonique": "OSMO_INDICES",
+      "label_default": "Indices",
+      "definition_default": "Indices"
+    },
+    {
+      "mnemonique": "OSMO_VITAL",
+      "label_default": "Vitalité de l'arbre",
+      "definition_default": "Vitalité de l'arbre"
+    },
+    {
+      "mnemonique": "OSMO_CAVITE",
+      "label_default": "Type de cavité",
+      "definition_default": "Type de cavité"
+    },
+    {
+      "mnemonique": "OSMO_PRESENCE",
+      "label_default": "Présence ou non de l'osmodèrme",
+      "definition_default": "Présence ou non de l'osmodèrme"
+    },
+    {
+      "mnemonique": "OSMO_PROPECTION",
+      "label_default": "Type de prospection",
+      "definition_default": "Type de prospection"
+    },
+    {
+      "mnemonique": "OSMO_EXPLORATION",
+      "label_default": "Type de d'exploration suite à la 1ère visite",
+      "definition_default": "Type de d'exploration suite à la 1ère visite"
+    },
+    {
+      "mnemonique": "OSMO_ORIENTATION_PHOTO",
+      "label_default": "Orientation de la prise de vue",
+      "definition_default": "Orientation de la prise de vue"
+    }
+  ],
+  "nomenclatures": [  {
+    "cd_nomenclature": "1",
+    "type": "OSMO_ORIENTATION_PHOTO",
+    "definition_default": "Nord/Sud",
+    "label_default": "Nord/Sud",
+    "mnemonique": "Nord/Sud"
+},
+{
+    "cd_nomenclature": "2",
+    "type": "OSMO_ORIENTATION_PHOTO",
+    "definition_default": "Est/Ouest",
+    "label_default": "Est/Ouest",
+    "mnemonique": "Est/Ouest"
+},
+{
+    "cd_nomenclature": "3",
+    "type": "OSMO_ORIENTATION_PHOTO",
+    "definition_default": "Nord-Est/Sud-Ouest",
+    "label_default": "Nord-Est/Sud-Ouest",
+    "mnemonique": "Nord-Est/Sud-Ouest"
+},
+{
+    "cd_nomenclature": "4",
+    "type": "OSMO_ORIENTATION_PHOTO",
+    "definition_default": "Nord-Ouest/Sud-Est",
+    "label_default": "Nord-Ouest/Sud-Est",
+    "mnemonique": "Nord-Ouest/Sud-Est"
+},
+{
+    "cd_nomenclature": "5",
+    "type": "OSMO_ORIENTATION_PHOTO",
+    "definition_default": "Nord/Est",
+    "label_default": "Nord/Est",
+    "mnemonique": "Nord/Est"
+},
+{
+    "cd_nomenclature": "6",
+    "type": "OSMO_ORIENTATION_PHOTO",
+    "definition_default": "Nord/Ouest",
+    "label_default": "Nord/Ouest",
+    "mnemonique": "Nord/Ouest"
+},
+{
+    "cd_nomenclature": "7",
+    "type": "OSMO_ORIENTATION_PHOTO",
+    "definition_default": "Sud/Ouest",
+    "label_default": "Sud/Ouest",
+    "mnemonique": "Sud/Ouest"
+},
+{
+    "cd_nomenclature": "8",
+    "type": "OSMO_ORIENTATION_PHOTO",
+    "definition_default": "Sud/Est",
+    "label_default": "Sud/Est",
+    "mnemonique": "Sud/Est"
+},   {
+    "definition_default": "oui expert",
+    "label_default": "oui expert",
+    "type": "OSMO_EXPLORATION",
+    "cd_nomenclature": "1",
+    "mnemonique": "oui expert"
+},
+{
+    "definition_default": "oui echelle",
+    "label_default": "oui echelle",
+    "type": "OSMO_EXPLORATION",
+    "cd_nomenclature": "2",
+    "mnemonique": "oui echelle"
+},
+{
+    "definition_default": "oui corde",
+    "label_default": "oui corde",
+    "type": "OSMO_EXPLORATION",
+    "cd_nomenclature": "3",
+    "mnemonique": "oui corde"
+},
+{
+    "definition_default": "non",
+    "label_default": "non",
+    "type": "OSMO_EXPLORATION",
+    "cd_nomenclature": "4",
+    "mnemonique": "non"
+}, {
+    "cd_nomenclature": "1",
+    "definition_default": "Externe",
+    "mnemonique": "Externe",
+    "label_default": "Externe",
+    "type": "OSMO_PROPECTION"
+},
+{
+    "cd_nomenclature": "2",
+    "definition_default": "Partielle",
+    "mnemonique": "Partielle",
+    "label_default": "Partielle",
+    "type": "OSMO_PROPECTION"
+},
+{
+    "cd_nomenclature": "3",
+    "definition_default": "Complete",
+    "mnemonique": "Complete",
+    "label_default": "Complete",
+    "type": "OSMO_PROPECTION"
+}, {
+    "label_default": "Present",
+    "mnemonique": "Present",
+    "type": "OSMO_PRESENCE",
+    "definition_default": "Present",
+    "cd_nomenclature": "1"
+},
+{
+    "label_default": "Probable",
+    "mnemonique": "Probable",
+    "type": "OSMO_PRESENCE",
+    "definition_default": "Probable",
+    "cd_nomenclature": "2"
+},
+{
+    "label_default": "Ancien",
+    "mnemonique": "Ancien",
+    "type": "OSMO_PRESENCE",
+    "definition_default": "Ancien",
+    "cd_nomenclature": "3"
+},
+{
+    "label_default": "Potentiel",
+    "mnemonique": "Potentiel",
+    "type": "OSMO_PRESENCE",
+    "definition_default": "Potentiel",
+    "cd_nomenclature": "4"
+},
+{
+    "label_default": "Non potentiel",
+    "mnemonique": "Non potentiel",
+    "type": "OSMO_PRESENCE",
+    "definition_default": "Non potentiel",
+    "cd_nomenclature": "6"
+},
+{
+    "label_default": "Ind\u00e9termin\u00e9",
+    "mnemonique": "Ind\u00e9termin\u00e9",
+    "type": "OSMO_PRESENCE",
+    "definition_default": "Ind\u00e9termin\u00e9",
+    "cd_nomenclature": "7"
+},
+{
+    "label_default": "recrue",
+    "mnemonique": "recrue",
+    "type": "OSMO_PRESENCE",
+    "definition_default": "recrue",
+    "cd_nomenclature": "8"
+}, {
+    "mnemonique": "Non",
+    "definition_default": "Non",
+    "label_default": "Non",
+    "type": "OSMO_CAVITE",
+    "cd_nomenclature": "1"
+},
+{
+    "mnemonique": "En formation",
+    "definition_default": "En formation",
+    "label_default": "En formation",
+    "type": "OSMO_CAVITE",
+    "cd_nomenclature": "2"
+},
+{
+    "mnemonique": "Oui",
+    "definition_default": "Oui",
+    "label_default": "Oui",
+    "type": "OSMO_CAVITE",
+    "cd_nomenclature": "3"
+},        {
+    "cd_nomenclature": "1",
+    "definition_default": "Vivant",
+    "label_default": "Vivant",
+    "mnemonique": "Vivant",
+    "type": "OSMO_VITAL"
+},
+{
+    "cd_nomenclature": "2",
+    "definition_default": "Moribond",
+    "label_default": "Moribond",
+    "mnemonique": "Moribond",
+    "type": "OSMO_VITAL"
+},
+{
+    "cd_nomenclature": "3",
+    "definition_default": "Mort debout",
+    "label_default": "Mort debout",
+    "mnemonique": "Mort debout",
+    "type": "OSMO_VITAL"
+},
+{
+    "cd_nomenclature": "4",
+    "definition_default": "Mort effondr\u00e9",
+    "label_default": "Mort effondr\u00e9",
+    "mnemonique": "Mort effondr\u00e9",
+    "type": "OSMO_VITAL"
+}, {
+    "type": "OSMO_ESSENCES",
+    "label_default": "Chene pubescent",
+    "definition_default": "Chene pubescent",
+    "mnemonique": "Chene pubescent",
+    "cd_nomenclature": "1"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Chene p\u00e9doncul\u00e9",
+    "definition_default": "Chene p\u00e9doncul\u00e9",
+    "mnemonique": "Chene p\u00e9doncul\u00e9",
+    "cd_nomenclature": "2"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Chene sessile",
+    "definition_default": "Chene sessile",
+    "mnemonique": "Chene sessile",
+    "cd_nomenclature": "3"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Hetre",
+    "definition_default": "Hetre",
+    "mnemonique": "Hetre",
+    "cd_nomenclature": "4"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Chataigner",
+    "definition_default": "Chataigner",
+    "mnemonique": "Chataigner",
+    "cd_nomenclature": "5"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Tilleul",
+    "definition_default": "Tilleul",
+    "mnemonique": "Tilleul",
+    "cd_nomenclature": "6"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Peuplier",
+    "definition_default": "Peuplier",
+    "mnemonique": "Peuplier",
+    "cd_nomenclature": "7"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Bouleau",
+    "definition_default": "Bouleau",
+    "mnemonique": "Bouleau",
+    "cd_nomenclature": "8"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Saule",
+    "definition_default": "Saule",
+    "mnemonique": "Saule",
+    "cd_nomenclature": "9"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Pommier",
+    "definition_default": "Pommier",
+    "mnemonique": "Pommier",
+    "cd_nomenclature": "10"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Frene",
+    "definition_default": "Frene",
+    "mnemonique": "Frene",
+    "cd_nomenclature": "11"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Platane",
+    "definition_default": "Platane",
+    "mnemonique": "Platane",
+    "cd_nomenclature": "12"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "If",
+    "definition_default": "If",
+    "mnemonique": "If",
+    "cd_nomenclature": "13"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Aulne",
+    "definition_default": "Aulne",
+    "mnemonique": "Aulne",
+    "cd_nomenclature": "14"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Chene hybride",
+    "definition_default": "Chene hybride",
+    "mnemonique": "Chene hybride",
+    "cd_nomenclature": "15"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Alisier blanc",
+    "definition_default": "Alisier blanc",
+    "mnemonique": "Alisier blanc",
+    "cd_nomenclature": "16"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Erable sycomore",
+    "definition_default": "Erable sycomore",
+    "mnemonique": "Erable sycomore",
+    "cd_nomenclature": "17"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Noyer",
+    "definition_default": "Noyer",
+    "mnemonique": "Noyer",
+    "cd_nomenclature": "18"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Chene",
+    "definition_default": "Chene",
+    "mnemonique": "Chene",
+    "cd_nomenclature": "19"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Chene vert",
+    "definition_default": "Chene vert",
+    "mnemonique": "Chene vert",
+    "cd_nomenclature": "20"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Tremble",
+    "definition_default": "Tremble",
+    "mnemonique": "Tremble",
+    "cd_nomenclature": "21"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Peuplier grisard",
+    "definition_default": "Peuplier grisard",
+    "mnemonique": "Peuplier grisard",
+    "cd_nomenclature": "22"
+},
+{
+    "type": "OSMO_ESSENCES",
+    "label_default": "Cerisier",
+    "definition_default": "Cerisier",
+    "mnemonique": "Cerisier",
+    "cd_nomenclature": "23"
+},{
+  "definition_default": "Branche cassee",
+  "mnemonique": "Branche cassee",
+  "label_default": "Branche cassee",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "1"
+},
+{
+  "definition_default": "Effondre",
+  "mnemonique": "Effondre",
+  "label_default": "Effondre",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "3"
+},
+{
+  "definition_default": "Eventre",
+  "mnemonique": "Eventre",
+  "label_default": "Eventre",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "4"
+},
+{
+  "definition_default": "Foudroye",
+  "mnemonique": "Foudroye",
+  "label_default": "Foudroye",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "5"
+},
+{
+  "definition_default": "Coupe",
+  "mnemonique": "Coupe",
+  "label_default": "Coupe",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "6"
+},
+{
+  "definition_default": "Taille",
+  "mnemonique": "Taille",
+  "label_default": "Taille",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "7"
+},
+{
+  "definition_default": "Brule",
+  "mnemonique": "Brule",
+  "label_default": "Brule",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "8"
+},
+{
+  "definition_default": "Martele",
+  "mnemonique": "Martele",
+  "label_default": "Martele",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "9"
+},
+{
+  "definition_default": "Cavite obstruee",
+  "mnemonique": "Cavite obstruee",
+  "label_default": "Cavite obstruee",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "10"
+},
+{
+  "definition_default": "Cavite evidee",
+  "mnemonique": "Cavite evidee",
+  "label_default": "Cavite evidee",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "11"
+},
+{
+  "definition_default": "Formation de cavite",
+  "mnemonique": "Formation de cavite",
+  "label_default": "Formation de cavite",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "12"
+},
+{
+  "definition_default": "Deracine",
+  "mnemonique": "Deracine",
+  "label_default": "Deracine",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "2"
+},
+{
+  "definition_default": "Mort debout",
+  "mnemonique": "Mort debout",
+  "label_default": "Mort debout",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "13"
+},
+{
+  "definition_default": "Non",
+  "mnemonique": "Non",
+  "label_default": "Non",
+  "type": "OSMO_EVOL",
+  "cd_nomenclature": "14"
+},    {
+  "cd_nomenclature": "1",
+  "label_default": "CR",
+  "definition_default": "CR",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR"
+},
+{
+  "cd_nomenclature": "2",
+  "label_default": "CR-MR",
+  "definition_default": "CR-MR",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR"
+},
+{
+  "cd_nomenclature": "3",
+  "label_default": "CR-MR-LV",
+  "definition_default": "CR-MR-LV",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-LV"
+},
+{
+  "cd_nomenclature": "4",
+  "label_default": "CR-MR-LV-AD",
+  "definition_default": "CR-MR-LV-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-LV-AD"
+},
+{
+  "cd_nomenclature": "5",
+  "label_default": "CR-MR-LV-AD-OD",
+  "definition_default": "CR-MR-LV-AD-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-LV-AD-OD"
+},
+{
+  "cd_nomenclature": "6",
+  "label_default": "CR-MR-AD",
+  "definition_default": "CR-MR-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-AD"
+},
+{
+  "cd_nomenclature": "7",
+  "label_default": "CR-MR-AD-OD",
+  "definition_default": "CR-MR-AD-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-AD-OD"
+},
+{
+  "cd_nomenclature": "8",
+  "label_default": "CR-MR-OD",
+  "definition_default": "CR-MR-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-OD"
+},
+{
+  "cd_nomenclature": "9",
+  "label_default": "AD",
+  "definition_default": "AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "AD"
+},
+{
+  "cd_nomenclature": "10",
+  "label_default": "AD-OD",
+  "definition_default": "AD-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "AD-OD"
+},
+{
+  "cd_nomenclature": "11",
+  "label_default": "CR-MR-CQ",
+  "definition_default": "CR-MR-CQ",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-CQ"
+},
+{
+  "cd_nomenclature": "12",
+  "label_default": "CR-MR-CQ-LV",
+  "definition_default": "CR-MR-CQ-LV",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-CQ-LV"
+},
+{
+  "cd_nomenclature": "13",
+  "label_default": "CR-MR-CQ-AD",
+  "definition_default": "CR-MR-CQ-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-CQ-AD"
+},
+{
+  "cd_nomenclature": "14",
+  "label_default": "CR-MR-CQ-OD",
+  "definition_default": "CR-MR-CQ-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-CQ-OD"
+},
+{
+  "cd_nomenclature": "15",
+  "label_default": "CR-MR-CQ-LV-AD",
+  "definition_default": "CR-MR-CQ-LV-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-CQ-LV-AD"
+},
+{
+  "cd_nomenclature": "16",
+  "label_default": "CR-MR-CQ-LV-OD",
+  "definition_default": "CR-MR-CQ-LV-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-CQ-LV-OD"
+},
+{
+  "cd_nomenclature": "17",
+  "label_default": "CR-MR-CQ-LV-AD-OD",
+  "definition_default": "CR-MR-CQ-LV-AD-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-MR-CQ-LV-AD-OD"
+},
+{
+  "cd_nomenclature": "18",
+  "label_default": "CR-CQ",
+  "definition_default": "CR-CQ",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-CQ"
+},
+{
+  "cd_nomenclature": "19",
+  "label_default": "CR-CQ-LV",
+  "definition_default": "CR-CQ-LV",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-CQ-LV"
+},
+{
+  "cd_nomenclature": "20",
+  "label_default": "CR-CQ-AD",
+  "definition_default": "CR-CQ-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-CQ-AD"
+},
+{
+  "cd_nomenclature": "21",
+  "label_default": "CR-CQ-OD",
+  "definition_default": "CR-CQ-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-CQ-OD"
+},
+{
+  "cd_nomenclature": "22",
+  "label_default": "CR-CQ-LV-AD",
+  "definition_default": "CR-CQ-LV-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-CQ-LV-AD"
+},
+{
+  "cd_nomenclature": "23",
+  "label_default": "CR-CQ-LV-OD",
+  "definition_default": "CR-CQ-LV-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-CQ-LV-OD"
+},
+{
+  "cd_nomenclature": "24",
+  "label_default": "CR-CQ-LV-AD-OD",
+  "definition_default": "CR-CQ-LV-AD-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-CQ-LV-AD-OD"
+},
+{
+  "cd_nomenclature": "25",
+  "label_default": "CR-CQ-AD-OD",
+  "definition_default": "CR-CQ-AD-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-CQ-AD-OD"
+},
+{
+  "cd_nomenclature": "26",
+  "label_default": "OD",
+  "definition_default": "OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "OD"
+},
+{
+  "cd_nomenclature": "27",
+  "label_default": "CR-AD",
+  "definition_default": "CR-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-AD"
+},
+{
+  "cd_nomenclature": "28",
+  "label_default": "CR-OD",
+  "definition_default": "CR-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-OD"
+},
+{
+  "cd_nomenclature": "29",
+  "label_default": "CR-AD-OD",
+  "definition_default": "CR-AD-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-AD-OD"
+},
+{
+  "cd_nomenclature": "30",
+  "label_default": "MR",
+  "definition_default": "MR",
+  "type": "OSMO_INDICES",
+  "mnemonique": "MR"
+},
+{
+  "cd_nomenclature": "31",
+  "label_default": "MR-OD",
+  "definition_default": "MR-OD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "MR-OD"
+},
+{
+  "cd_nomenclature": "32",
+  "label_default": "MR-AD",
+  "definition_default": "MR-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "MR-AD"
+},
+{
+  "cd_nomenclature": "33",
+  "label_default": "MR-OD-AD",
+  "definition_default": "MR-OD-AD",
+  "type": "OSMO_INDICES",
+  "mnemonique": "MR-OD-AD"
+},
+{
+  "cd_nomenclature": "34",
+  "label_default": "Aucun",
+  "definition_default": "Aucun",
+  "type": "OSMO_INDICES",
+  "mnemonique": "Aucun"
+},
+{
+  "cd_nomenclature": "35",
+  "label_default": "Ind",
+  "definition_default": "Ind",
+  "type": "OSMO_INDICES",
+  "mnemonique": "Ind"
+},
+{
+  "cd_nomenclature": "36",
+  "label_default": "CR-LV",
+  "definition_default": "CR-LV",
+  "type": "OSMO_INDICES",
+  "mnemonique": "CR-LV"
+}
+  ]
+}

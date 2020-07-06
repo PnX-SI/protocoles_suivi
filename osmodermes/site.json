@@ -1,0 +1,59 @@
+{
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "base_site_code",
+    "id_inventor",
+    "first_use_date",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "base_site_code",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "4"
+      },
+      "hidden": true
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code arbre"
+    },
+    "code_arbre_pnc": {
+      "type_widget": "text",
+      "attribut_label": "Code arbre pnc"
+    },
+    "id_nomenclature_essence": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Essence",
+      "code_nomenclature_type": "OSMO_ESSENCES",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "id_nomenclature_synthese": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Synthese osmoderme",
+      "code_nomenclature_type": "OSMO_PRESENCE",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "proprietaire": {
+      "type_widget": "text",
+      "attribut_label": "Proprietaire"
+    },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "Commentaires"
+    }
+  }
+}

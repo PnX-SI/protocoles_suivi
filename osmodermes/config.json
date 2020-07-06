@@ -1,0 +1,12 @@
+{
+  "tree": {
+    "module": {
+      "site": {
+        "visit": null
+      }
+    }
+  },
+  "data": {
+    "user": ["__CODE_LIST_INVENTOR", "__CODE_LIST_OBSERVER"]
+  }
+}

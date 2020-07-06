@@ -1,0 +1,19 @@
+{
+  "nomenclature": [
+      "TYPE_SITE",
+      "OSMO_ESSENCES",
+      "OSMO_EVOL",
+      "OSMO_INDICES",
+      "OSMO_VITAL",
+      "OSMO_CAVITE",
+      "OSMO_PRESENCE",
+      "OSMO_PROPECTION",
+      "OSMO_EXPLORATION",
+      "OSMO_ORIENTATION_PHOTO"
+
+  ],
+  "user": [
+    "__CODE_LIST_INVENTOR",
+    "__CODE_LIST_OBSERVER"
+  ]
+}
