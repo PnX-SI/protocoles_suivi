@@ -13,6 +13,12 @@
     "id_nomenclature_suite",
     "id_nomenclature_photo_orientation",
     "nb_observations"
+  ],"display_list": [
+    "visit_date_min",
+    "id_nomenclature_visit_evol",
+    "id_nomenclature_indices",
+    "id_nomenclature_cavite",
+    "nb_observations"
   ],
   "specific" :{
     "id_base_site": {

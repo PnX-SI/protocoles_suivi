@@ -51,9 +51,13 @@
       "type_widget": "text",
       "attribut_label": "Proprietaire"
     },
-    "comments": {
+    "secteur": {
       "type_widget": "text",
-      "attribut_label": "Commentaires"
-    }
+      "attribut_label": "Secteur"
+    },
+    "source": {
+      "type_widget": "text",
+      "attribut_label": "Source"
+    },
   }
 }
