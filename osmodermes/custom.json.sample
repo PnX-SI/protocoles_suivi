@@ -1,3 +1,5 @@
 {
-  "__SYNTHESE": true
+  "__SYNTHESE": false,
+  "__CODE_LIST_INVENTOR": "OBS_OSMO",
+  "__CODE_LIST_OBSERVER": "OBS_OSMO"
 }
