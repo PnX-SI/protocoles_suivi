@@ -1,0 +1,68 @@
+{
+  "display_properties": [
+    "visit_date_min",
+    "observers",
+    "time_start",
+    "start_temperature",
+    "cloudiness",
+    "wind",
+    "pasture_status",
+    "floral_availability",
+    "end_temperature",
+    "time_end",
+    "duration"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "floral_availability"
+  ],
+  "specific": {
+    "time_start": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début du relevé"
+    },
+    "start_temperature": {
+      "type_widget": "number",
+      "attribut_label": "Température au début du relevé",
+      "required": true
+    },
+    "cloudiness": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Couverture nuageuse",
+      "values": ["0 à 25%", "25 à 50%", "Plus de 50%"]
+    },
+    "wind": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Vent",
+      "values": ["Nul à faible", "Moyen", "Soutenu", "Rafales"]
+    },
+    "pasture_status": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Etat du pâturage",
+      "values": ["Non pâturé", "Pâturage en cours", "Pâturage terminé"]
+    },
+    "floral_availability": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Disponibilité florale",
+      "values": ["FLEUR_1", "FLEUR_2", "FLEUR_3", "FLEUR_4"]
+    },
+    "end_temperature": {
+      "type_widget": "number",
+      "attribut_label": "Température à la fin du relevé",
+      "required": true
+    },
+    "time_end": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin du relevé"
+    },
+    "duration": {
+      "type_widget": "time",
+      "attribut_label": "Durée de la détermination"
+    }
+  }
+}
