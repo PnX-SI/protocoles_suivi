@@ -22,7 +22,7 @@ SELECT
 		v.id_nomenclature_geo_object_nature,
 		v.id_nomenclature_grp_typ,
 		ref_nomenclatures.get_id_nomenclature('METH_OBS', n.cd_nomenclature) as id_nomenclature_obs_meth,
-		v.id_nomenclature_obs_technique,
+		--v.id_nomenclature_obs_technique,
 		--id_nomenclature_bio_status,
 		--id_nomenclature_bio_condition,
 		--id_nomenclature_naturalness,
