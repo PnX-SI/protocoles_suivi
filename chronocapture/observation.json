@@ -6,19 +6,12 @@
     "nb_count",
     "comments"
   ],
-"display_properties": [
+  "display_list": [
     "round",
     "cd_nom",
     "nb_count"
   ],
   "specific": {
-    "cd_nom": {
-      "type_widget": "taxonomy",
-      "attribut_label": "Espèce",
-      "type_util": "taxonomy",
-      "required": true,
-      "idComponent": "102"
-    },
     "round": {
       "type_widget": "select",
       "attribut_label": "Round",
@@ -26,12 +19,18 @@
       "values": ["Round 1 : 0-5mn", "Round 2 : 5-10mn", "Round 3 : 10-15mn", "Round 4 : 15-20mn", "Round 5 : 20-25", "Round 6 : 25-30mn", "Round 7 : 30-35mn", "Round 8 : 35-40mn", "Round 9 : 40-45mn", "Round 10 : 45-50mn", "Round 11 : 50-55mn", "Round 12 : 55-60mn"]
     },
     "id_nomenclature_determination_method": {
-      "type_widget": "nomenclature",
+      "type_widget": "datalist",
       "attribut_label": "Méthode de détermination",
-      "code_nomenclature_type": "METH_DETERMIN",
+      "api": "nomenclatures/nomenclature/METH_DETERMIN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
       "required": true,
-      "value": 1000067,
-      "type_util": "nomenclature"
+      "default": {
+        "cd_nomenclature": "1"
+      }
     },
     "nb_count": {
       "type_widget": "number",

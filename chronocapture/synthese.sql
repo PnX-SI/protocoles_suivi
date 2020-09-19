@@ -62,7 +62,7 @@ SELECT
 		--meta_update_date,
 		--last_action
 		v.id_module,
-		v.comment_description AS comment_context,
+		v.comment_context AS comment_context,
 		o.comments AS comment_description,
 		ids_observers,
 		-- ## Colonnes complémentaires pouvant être utile
@@ -74,4 +74,4 @@ SELECT
 	JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation=o.id_observation
 	JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
  	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(v.geom_local) alt (altitude_min, altitude_max) ON true
-	WHERE m.module_path = 'chronocapture';
+	WHERE m.module_code = 'chronocapture';

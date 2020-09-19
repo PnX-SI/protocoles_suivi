@@ -28,7 +28,7 @@
       "attribut_label": "cd nom",
       "type_util": "taxonomy",
       "value": 3120,
-      "hidden": true
+      "hidden": false
     }
   }
 }

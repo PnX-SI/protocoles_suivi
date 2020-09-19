@@ -16,14 +16,9 @@
   ],
   "specific": {
     "id_nomenclature_type_site": {
-      "type_widget": "text",
-      "attribut_label": "Type site",
-      "type_util": "nomenclature",
-      "value": {
-        "code_nomenclature_type": "TYPE_SITE",
-        "cd_nomenclature": "OEDIC"
-      },
-      "hidden": true
+      "filters": {
+        "cd_nomenclature": ["OEDIC"]
+      }
     }
   }
 }

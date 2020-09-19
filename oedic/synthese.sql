@@ -7,10 +7,11 @@
 -- #############################
 DROP VIEW IF EXISTS gn_monitoring.vs_oedic;
 CREATE VIEW gn_monitoring.vs_oedic AS
+
 WITH source AS (
 	SELECT id_source
 	FROM gn_synthese.t_sources
-	WHERE name_source = 'MONITORING_OEDIC'
+	WHERE name_source = 'MONITORING_OEDIC' -- presuppose que module_code = oedic
 	LIMIT 1
 )
 SELECT
@@ -79,4 +80,4 @@ JOIN ref_nomenclatures.t_nomenclatures   n
 ON n.id_nomenclature = (oc.data->>'id_nomenclature_nature_observation')::int
 JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
 LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(v.geom_local) alt (altitude_min, altitude_max) ON true
-WHERE m.module_path = 'oedic';
+WHERE m.module_code = 'oedic';

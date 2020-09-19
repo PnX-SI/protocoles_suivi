@@ -7,13 +7,6 @@
     "comments"
   ],
   "specific": {
-    "cd_nom": {
-      "type_widget": "taxonomy",
-      "attribut_label": "Espèce",
-      "type_util": "taxonomy",
-      "required": true,
-      "idComponent": "100"
-    },
     "nb_0_5": {
       "type_widget": "number",
       "attribut_label": "Effectif 0'-5'"
