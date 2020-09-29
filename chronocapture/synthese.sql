@@ -8,7 +8,7 @@ CREATE VIEW gn_monitoring.vs_chronocapture AS
 WITH source AS (
 	SELECT id_source 
 	FROM gn_synthese.t_sources
-	WHERE name_source = 'MONITORING_CHRONOCAPTURE' -- ici 'MONITORING_<module_path>.upper()'
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code')) -- ici 'MONITORING_<module_code>.upper()'
 	LIMIT 1
 )
 SELECT
@@ -74,4 +74,4 @@ SELECT
 	JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation=o.id_observation
 	JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
  	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(v.geom_local) alt (altitude_min, altitude_max) ON true
-	WHERE m.module_code = 'chronocapture';
+    WHERE m.module_code = :'module_code';
