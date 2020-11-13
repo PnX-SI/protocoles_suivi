@@ -1,0 +1,18 @@
+{
+  "types": [
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "SPIP",
+      "mnemonique": "Site_piegeage_interception_passif",
+      "label_default": "Site de piégeage par méthode d'interception passive",
+      "definition_default": "Site de piégeage par méthode d'interception passive : tente Malaise, piège Barber, piège vitre Polytrap etc"
+    }
+  ]
+}

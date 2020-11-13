@@ -1,0 +1,91 @@
+{
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "base_site_code",
+    "id_inventor",
+    "id_trap_type",
+    "first_use_date",
+    "desc_habitat",
+    "comment_site",
+    "inactif", 
+    "medias",
+    "last_visit",
+    "nb_visits"
+ ],
+  "display_list": [
+    "base_site_name",
+    "base_site_code",
+    "first_use_date",
+    "desc_habitat",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "base_site_name": {
+      "type_widget": "text",
+      "attribut_label": "Nom du site de piégeage*",
+      "required": true,
+      "definition": "Nom du site."
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code du piège*",
+      "required": true
+    },
+    "id_inventor": {
+      "type_widget": "datalist",
+      "attribut_label": "Installateur du piège",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "required": true
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "SPIP"
+      },
+      "hidden": true
+    },
+    "id_trap_type": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de piège",
+      "api": "nomenclatures/nomenclature/METH_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "1"
+        }, 
+      "filter" : {
+        "cd_nomenclature":["52","53","73"]
+        }
+    },
+    "first_use_date": {
+      "type_widget": "date",
+      "attribut_label": "Date de première installation du piège",
+      "required": true
+    },
+    "desc_habitat": {
+      "type_widget": "select", 
+      "required": true,
+      "attribut_label": "Habitat dominant", 
+      "values": ["Zone humide - Tourbière", "Pelouse sèche", "Prairie - pelouse alpine", "Lisières - Clairières", "Autre"]
+    },
+    "comment_site": {
+      "type_widget": "text",
+      "attribut_label": "Détail sur le site de piégeage"
+    }
+  }
+}
