@@ -14,7 +14,7 @@ seule action de l'observateur est d'assurer un relevé périodique des individus
 
 Dans ce sous-module, un piège constitue un "site" de piégeage.
 
-.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/pp_accueil.png
+.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/img/accueil.png
 
 
 Détail des formulaires
@@ -34,7 +34,7 @@ Les sites de ce sous-module constituent les pièges exploités. Ces sites de pi�
 - ``Détail sur le site de piégeage`` : commentaire
 
 
-.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/pp_sites.png
+.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/img/sites.png
 
 Visites
 -------
@@ -47,7 +47,7 @@ Les visites correspondent aux relevés des pièges. Elles sont caractérisées p
 - ``Commentaire``
 - ``Jeu de données``
 
-.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/pp_visites.png
+.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/img/visites.png
 
 Observations
 ------------
@@ -64,7 +64,7 @@ Les observations de ce sous-modules sont décrites par les informations suivante
 
 Par défaut dans la vue synthèse (synthese.sql), les dénombrements indiqués sont des "individus" "comptés". Les individus sont indiqués "trouvé mort".
 
-.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/pp_observations.png
+.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/img/observations.png
 
 
 Utilisation des médias
