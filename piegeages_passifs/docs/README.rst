@@ -82,11 +82,11 @@ des médias de différentes natures :
 Spécificités à gérer
 ====================
 
-Dans le cas de Flavia APE, qui a généré ce sous-module, il a été souhaité que les types de pièges soient disponibles dans tous les modules, y compris occtax. Nous avons donc fait le choix de générer des nomenclatures "personnalisées" dans le type "METH_OBS", correspondant à nos différentes méthodes de captures, y compris les différents pièges à interceptions. Ces nomenclatures "personnalisées" sont des nomenclatures "filles" de la nomenclature standard "VU" (``ref_geo.t_nomenclatures``).
+Dans le cas de Flavia APE, qui a généré ce sous-module, il a été souhaité que les types de pièges soient disponibles dans tous les modules, y compris occtax. Nous avons donc fait le choix de générer des nomenclatures "personnalisées" dans le type "METH_OBS", correspondant à nos différentes méthodes de captures, y compris les différents pièges à interceptions. Ces nomenclatures "personnalisées" sont des nomenclatures "filles" de la nomenclature standard "VU" (``ref_nomenclatures.t_nomenclatures``).
 
 Deux solutions sont alors possibles pour déployer le module sur d'autres instances :
 
-- Créer des nomenclatures personnalisées dans ``ref_geo.t_nomenclatures`` pour le type "METH_OBS" puis ajuster le widget ``id_trap_type`` et la vue ``synthese.sql`` avec vos ``cd_nomenclatures``
+- Créer des nomenclatures personnalisées dans ``ref_nomenclatures.t_nomenclatures`` pour le type "METH_OBS" puis ajuster le widget ``id_trap_type`` et la vue ``synthese.sql`` avec vos ``cd_nomenclatures``
 - Modifier la configuration du sous-module (``site.json``) et la vue ``synthese.sql`` pour créer une liste déroulante simple ou une nouvelle nomenclature dédiée
 
 
