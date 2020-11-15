@@ -1,0 +1,4 @@
+nom_binomial;nom_valide;cd_ref;comment_context;code_site;longitude_m;latitude_m;jd;md;ad;date_debut;jf;mf;af;date_fin;nb_indetermine;nb_male;nb_femelle;stade;type_piege;observateur;determinateur;meth_deter;nature_donnee
+Erynnis tages;Erynnis tages (Linnaeus, 1758);53307;;TM013;949677,96;6635000,05;25;4;2012;25/4/2012;23;5;2012;23/5/2012;6;;;Imago;Piège Malaise/Tente Malaise;;Toto;Examen Macroscopique;Observation laboratoire
+Spialia sertorius;Spialia sertorius (Hoffmannsegg, 1804);53269;;TM012;948677,96;6634000,05;25;4;2012;25/4/2012;23;5;2012;23/5/2012;;1;;Imago;Piège Malaise/Tente Malaise;;Toto;Genitalia;Observation laboratoire
+Colostygia pectinataria;Colostygia pectinataria (Knoch, 1781);248547;;TM014;947677,96;6634500,05;23;5;2012;23/5/2012;3;7;2012;3/7/2012;1;;;Imago;Piège Malaise/Tente Malaise;;Toto;Examen Macroscopique;Observation laboratoire
