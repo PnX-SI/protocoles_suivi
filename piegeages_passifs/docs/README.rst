@@ -14,7 +14,7 @@ seule action de l'observateur est d'assurer un relevé périodique des individus
 
 Dans ce sous-module, un piège constitue un "site" de piégeage.
 
-.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/img/accueil.png
+.. image:: img/accueil.png
 
 
 Détail des formulaires
@@ -34,7 +34,7 @@ Les sites de ce sous-module constituent les pièges exploités. Ces sites de pi�
 - ``Détail sur le site de piégeage`` : commentaire
 
 
-.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/img/sites.png
+.. image:: img/sites.png
 
 Visites
 -------
@@ -47,7 +47,7 @@ Les visites correspondent aux relevés des pièges. Elles sont caractérisées p
 - ``Commentaire``
 - ``Jeu de données``
 
-.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/img/visites.png
+.. image:: img/visites.png
 
 Observations
 ------------
@@ -64,7 +64,7 @@ Les observations de ce sous-modules sont décrites par les informations suivante
 
 Par défaut dans la vue synthèse (synthese.sql), les dénombrements indiqués sont des "individus" "comptés". Les individus sont indiqués "trouvé mort".
 
-.. image:: https://raw.githubusercontent.com/DonovanMaillard/protocoles_suivi/DonovanMaillard-passives-traps/piegeages_passifs/docs/img/observations.png
+.. image:: img/observations.png
 
 
 Utilisation des médias
@@ -91,7 +91,7 @@ Deux solutions sont alors possibles pour déployer le module sur d'autres instan
 
 
 Import de données dans le sous-module
--------------------------------------
+=====================================
 
 Des données provenant de fichiers excel ont été importées dans ce module. 
 Un script d'import (script_import_exemple.sql) est partagé dans le répertoire docs du sous-module pour partager la méthode utilisée. 
