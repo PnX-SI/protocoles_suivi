@@ -68,7 +68,7 @@
       "default": {
         "cd_nomenclature": "1"
         }, 
-      "filter" : {
+      "filters" : {
         "cd_nomenclature":["52","53","73"]
         }
     },
