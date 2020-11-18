@@ -1,0 +1,78 @@
+{
+  "display_properties": [
+    "cd_nom",
+    "determiner",
+    "id_nomenclature_determination_method",
+    "id_nomenclature_life_stage",
+    "id_nomenclature_sex",
+    "nb_count",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "id_nomenclature_life_stage",
+    "id_nomenclature_sex",
+    "nb_count"
+  ],
+  "specific": {
+    "determiner": {
+      "type_widget": "datalist",
+      "attribut_label": "Déterminateur",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": false,
+      "required": true
+    },
+  "id_nomenclature_determination_method": {
+      "type_widget": "datalist",
+      "attribut_label": "Méthode de détermination",
+      "api": "nomenclatures/nomenclature/METH_DETERMIN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "67"
+      }
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "15"
+      }
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "6"
+      }
+    },
+    "nb_count": {
+      "type_widget": "number",
+      "attribut_label": "Effectif dénombré",
+      "required": true,
+      "min": 1
+    }    
+  }
+}
