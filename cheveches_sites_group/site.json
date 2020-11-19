@@ -21,6 +21,10 @@
     "last_visit",
     "nb_visits"
   ],
+  "display_form": [
+    "id_2014",
+    "code_2014"
+  ],
   "specific": {
     "id_sites_group": {
       "required": false,
@@ -53,7 +57,7 @@
       "hidden": true
     },
     "inactif": {
-      "type_widget": "text",
+      "type_widget": "bool_switch",
       "attribut_label": "Inactif"
     }
   }
