@@ -2,6 +2,7 @@
   "display_properties": [
     "visit_date_min",
     "num_passage",
+    "id_base_site",
     "observers",
     "id_nomenclature_vent",
     "id_nomenclature_meteo",
@@ -12,6 +13,7 @@
   "display_list": [
     "visit_date_min",
     "num_passage",
+    "id_base_site",
     "observers",
     "time_observation",
     "id_nomenclature_statut_obs"
@@ -33,7 +35,7 @@
   "specific": {
     "id_base_site": {
       "type_widget": "datalist",
-      "attribut_label": "Sites",
+      "attribut_label": "Site",
       "type_util": "site",
       "keyValue": "id_base_site",
       "keyLabel": "base_site_name",
