@@ -1,0 +1,55 @@
+{
+  "display_properties": [ 
+    "id_dataset", 
+    "visit_date_min",
+    "visit_date_max",
+    "observers",
+    "comments",
+    "medias",
+    "nb_observations"
+  ],
+  "display_list": [
+    "id_dataset",
+    "visit_date_max",
+    "observers",
+    "nb_observations"
+  ],
+  "specific": {
+    "id_dataset": {
+      "type_widget": "datalist",
+      "attribut_label": "Jeu de données",
+      "type_util": "dataset",
+      "api": "meta/datasets",
+      "application": "GeoNature",
+      "keyValue": "id_dataset",
+      "keyLabel": "dataset_name",
+      "params": {
+        "orderby": "dataset_name",
+        "module_code": "__MODULE.MODULE_CODE"
+      },
+      "data_path": "data",
+      "required": true
+    },
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date de début du piégeage*",
+      "required": true
+    },
+    "visit_date_max": {
+      "type_widget": "date",
+      "attribut_label": "Date de relevé du piège*",
+      "required": true
+    },
+    "observers": {
+      "type_widget": "datalist",
+      "attribut_label": "Opérateur(s) du relevé (= observateur.s)",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": true,
+      "required": true
+    }
+  }
+}
