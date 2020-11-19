@@ -1,0 +1,20 @@
+{
+  "tree": {
+    "module": {
+      "sites_group": {
+        "site": {
+          "visit": null
+        }
+      },
+      "site": {}
+    }
+  },
+  "synthese_object": "visit",
+  "data": {
+    "taxonomy": {
+      "id_list": "__ID_COMPONENT_TAXONOMY",
+      "cd_noms": [3511]
+    },
+    "user": ["__CODE_LIST_INVENTOR", "__CODE_LIST_OBSERVER"]
+  }
+}
