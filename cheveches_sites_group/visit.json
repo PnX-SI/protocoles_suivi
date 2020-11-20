@@ -1,33 +1,27 @@
 {
   "display_properties": [
-    "visit_date_min",
-    "num_passage",
     "id_base_site",
+    "visit_date_min",
+    "time_observation",
+    "id_nomenclature_statut_obs",
+    "num_passage",
     "observers",
     "id_nomenclature_vent",
     "id_nomenclature_meteo",
-    "time_observation",
-    "id_nomenclature_statut_obs",
     "comments"
   ],
   "display_list": [
+    "id_base_site",
     "visit_date_min",
-    "num_passage",
-    "id_base_site",
-    "observers",
-    "time_observation",
-    "id_nomenclature_statut_obs"
-  ],
-  "display_form": [
     "id_nomenclature_statut_obs",
-    "id_base_site",
-    "time_observation"
+    "num_passage",
+    "observers"
   ],
   "keep": [
     "num_passage",
     "visit_date_min",
-    "id_nomenclature_meteo",
     "id_nomenclature_vent",
+    "id_nomenclature_meteo",
     "observers",
     "id_dataset",
     "comment"
@@ -43,7 +37,8 @@
       "params": [
         "({meta}) => ({",
           "id_module: __MODULE.ID_MODULE,",
-          "id_sites_group: meta.parents.site && meta.parents.site.properties.id_sites_group",
+          "id_sites_group: meta.parents.site && meta.parents.site.properties.id_sites_group,",
+          "order_by: 'base_site_name*'",
       "})"
       ],
       "application": "GeoNature",
@@ -51,11 +46,10 @@
       "hidden": "({meta, value}) => !meta.bChainInput && value.id_base_site"
     },
     "num_passage": {
-      "type_widget": "number",
+      "type_widget": "select",
       "attribut_label": "N° de passage",
       "description": "Préciser si c'est le premièr (1) ou deuxième passage (2)",
-      "min": 1,
-      "max": 2
+      "values": [1, 2]
     },
     "id_nomenclature_meteo": {
       "type_widget": "select",
@@ -79,7 +73,7 @@
     },
     "id_nomenclature_statut_obs": {
       "type_widget": "nomenclature",
-      "attribut_label": "Observation",
+      "attribut_label": "Contact",
       "code_nomenclature_type": "STATUT_OBS",
       "type_util": "nomenclature",
       "required": true
@@ -87,6 +81,9 @@
     "time_observation": {
       "attribut_label": "Heure",
       "type_widget": "time"
+    },
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
     }
   }
 }

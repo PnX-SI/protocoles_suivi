@@ -1,29 +1,24 @@
 {
+  "cruved": {"C": 3, "U": 3, "D": 3},
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "label": "Station",
+  "label_list": "Stations",
   "geometry_type": "Point",
   "display_properties": [
     "base_site_name",
-    "base_site_code",
-    "id_nomenclature_type_site",
-    "inactif",
-    "id_2014",
-    "code_2014",
+    "base_site_description",
     "id_inventor",
-    "id_2010",
-    "code_2010",
     "last_visit",
-    "nb_visits"
+    "nb_visits",
+    "inactif"
   ],
   "display_list": [
     "base_site_name",
-    "base_site_code",
-    "inactif",
-    "id_inventor",
     "last_visit",
-    "nb_visits"
-  ],
-  "display_form": [
-    "id_2014",
-    "code_2014"
+    "nb_visits",
+    "inactif"
   ],
   "specific": {
     "id_sites_group": {
@@ -32,19 +27,23 @@
     },
     "id_2014": {
       "type_widget": "text",
-      "attribut_label": "Id 2014"
+      "attribut_label": "Id 2014",
+      "hidden": true
     },
     "code_2014": {
       "type_widget": "text",
-      "attribut_label": "Code 2014"
+      "attribut_label": "Code 2014",
+      "hidden": true
     },
     "id_2010": {
       "type_widget": "text",
-      "attribut_label": "Id 2010"
+      "attribut_label": "Id 2010",
+      "hidden": true
     },
     "code_2010": {
       "type_widget": "text",
-      "attribut_label": "Code 2010"
+      "attribut_label": "Code 2010",
+      "hidden": true
     },
     "id_nomenclature_type_site": {
       "type_widget": "text",
@@ -58,7 +57,8 @@
     },
     "inactif": {
       "type_widget": "bool_checkbox",
-      "attribut_label": "Inactif"
+      "attribut_label": "Inactif",
+      "hidden": true
     }
   }
 }

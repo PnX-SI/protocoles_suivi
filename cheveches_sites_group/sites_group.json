@@ -1,0 +1,21 @@
+{
+  "cruved": {"C": 3, "U": 3, "D": 3},
+  "label": "Circuit",
+  "label_list": "Circuits",
+  "sorts": [
+    {"prop": "sites_group_name"}
+  ],
+  "display_properties": [
+    "sites_group_name",
+    "sites_group_description",
+    "nb_sites",
+    "nb_visits",
+    "comments"
+  ],
+  "display_list": [
+    "sites_group_name",
+    "nb_sites",
+    "nb_visits"
+  ]
+
+}
