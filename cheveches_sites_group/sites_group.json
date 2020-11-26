@@ -16,6 +16,6 @@
     "sites_group_name",
     "nb_sites",
     "nb_visits"
-  ]
-
+  ],
+  "map_label_field_name": "base_site_code"
 }

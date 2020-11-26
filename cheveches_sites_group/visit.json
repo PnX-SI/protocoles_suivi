@@ -17,6 +17,10 @@
     "num_passage",
     "observers"
   ],
+  "map_label_field_name": "base_site_code",
+  "chain_show": [
+    "visit_date_min", "id_base_site", "num_passage"
+  ],
   "keep": [
     "num_passage",
     "visit_date_min",

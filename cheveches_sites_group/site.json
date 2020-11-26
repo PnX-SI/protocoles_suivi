@@ -3,6 +3,10 @@
   "sorts": [
     {"prop": "base_site_name", "dir": "asc"}
   ],
+  "filters": {
+    "inactif": false
+  },
+  "map_label_field_name": "base_site_code",
   "label": "Station",
   "label_list": "Stations",
   "geometry_type": "Point",
