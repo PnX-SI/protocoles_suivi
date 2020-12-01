@@ -26,9 +26,12 @@
 
 # A faire
 
+* saisie non geométrique : ne pas afficher les outils de selection 
+* site actif par défaut
 * saisie enchainée voir les saisies
+* demi carte ?? 
+* bug chained met tout dans un site (bon apres ctrl enter )
 * grp site - visite 
   * parentsPath contient id site#1 (pour le lien visite groupe de sites)
   * créer visite à partir de groupe de site (+ problématique lien visite - circuit)
-* bug chained met tout dans un site (bon apres ctrl enter )
 

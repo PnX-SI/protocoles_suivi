@@ -62,7 +62,7 @@
     "inactif": {
       "type_widget": "bool_checkbox",
       "attribut_label": "Inactif",
-      "hidden": true
+      "default": false
     }
   }
 }
