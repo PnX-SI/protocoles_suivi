@@ -23,10 +23,11 @@
 * breadcrumb se relance BUG!!!! (snapshot)
 * afficher les codes sur la carte
   * effacer les codes 
+* saisie non geométrique : ne pas afficher les outils de selection 
 
 # A faire
 
-* saisie non geométrique : ne pas afficher les outils de selection 
+* simplifier tableaux de datatable et list faire un seul ?
 * site actif par défaut
 * saisie enchainée voir les saisies
 * demi carte ?? 

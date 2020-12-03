@@ -9,6 +9,7 @@
   "map_label_field_name": "base_site_code",
   "label": "Station",
   "label_list": "Stations",
+  "genre": "F",
   "geometry_type": "Point",
   "display_properties": [
     "base_site_name",
@@ -27,7 +28,8 @@
   "specific": {
     "id_sites_group": {
       "required": false,
-      "hidden": false
+      "hidden": false,
+      "disabled": "(value) => value.id_base_site"
     },
     "id_2014": {
       "type_widget": "text",
