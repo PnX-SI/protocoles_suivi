@@ -1,0 +1,36 @@
+{
+  "display_properties": [
+    "visit_date_min",
+    "observers",
+    "comments",
+    "dataset",
+    "nb_observations"
+  ],
+  "specific": {
+    "nom_secteur": {
+      "type_widget": "text",
+      "required": true,
+      "attribut_label": "Choix du Secteur"
+    },
+    "id_nomenclature_meteo_vent": {
+      "type_widget": "select",
+      "attribut_label": "Meteo : Vent",
+      "values": ["Indéterminé", "Fort", "Modéré", "Faible", "Nul"],
+      "required": true
+    },
+    "id_nomenclature_meteo_ciel": {
+      "type_widget": "select",
+      "attribut_label": "Meteo : Ciel",
+      "values": ["Indéterminé", "Nuageux", "Moyennement nuageux", "Clair"],
+      "required": true
+    },
+    "time_start": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début"
+    },
+    "time_end": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin"
+    }
+  }
+}

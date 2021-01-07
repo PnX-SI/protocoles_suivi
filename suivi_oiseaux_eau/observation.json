@@ -1,0 +1,37 @@
+{
+  "geometry_type": "Point",
+  "display_properties": [
+    "cd_nom",
+    "determiner",
+    "nb_count",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "nb_count",
+    "comments"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "datalist",
+      "attribut_label": "Taxon",
+      "keyValue": "cd_nom",
+      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
+      "multiple": false,
+      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    },
+    "nb_count": {
+      "type_widget": "number",
+      "attribut_label": "Effectif dénombré",
+      "required": true,
+      "min": 1
+    },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "Détail sur l'observation'"
+    }
+  }
+}
