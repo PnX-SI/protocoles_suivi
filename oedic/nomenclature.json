@@ -31,6 +31,12 @@
       "mnemonique": "Vu",
       "label_default": "Vu",
       "definition_default": "Observation directe d'un individu vivant."
+    },{
+      "type":"OED_NAT_OBS",
+      "cd_nomenclature": "1",
+      "mnemonique": "Entendu",
+      "label_default": "Entendu",
+      "definition_default": "Observation acoustique d'un individu vivant."
     }
   ]
 }
