@@ -23,13 +23,13 @@
       "type_widget": "text",
       "attribut_label": "Nombre d'individus (maxi.)"
     },
-    "id_nomenclature_meteo_vent": {
+    "meteo_vent": {
       "type_widget": "select",
       "attribut_label": "Meteo : Vent",
       "values": ["Indéterminé", "Fort", "Modéré", "Faible", "Nul"],
       "required": true
     },
-    "id_nomenclature_meteo_ciel": {
+    "meteo_ciel": {
       "type_widget": "select",
       "attribut_label": "Meteo : Ciel",
       "values": ["Indéterminé", "Nuageux", "Moyennement nuageux", "Clair"],
