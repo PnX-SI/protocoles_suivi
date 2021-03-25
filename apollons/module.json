@@ -1,0 +1,9 @@
+{
+    "module_label":"Apollons",
+    "module_desc":"Module pour le protocole suivis des dalles à orpins",
+    "permission_objects" : [
+        "GNM_GRP_SITES",
+        "GNM_SITES",
+        "GNM_VISITES"
+    ]
+}

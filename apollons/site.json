@@ -1,0 +1,42 @@
+{
+  "cruved": {"C": 3, "U": 3, "D": 3},
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "filters": {},
+  "map_label_field_name": "base_site_code",
+  "label": "Dalle",
+  "label_list": "Dalles",
+  "genre": "F",
+  "geometry_type": "Point",
+  "display_properties": [
+    "id_inventor",
+    "base_site_code",
+    "base_site_name",
+    "base_site_description",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "APO_DALLES"
+      },
+      "hidden": true
+    },
+    "id_sites_group": {
+      "attribut_label": "Secteur",
+      "required": false,
+      "hidden": false
+    }
+  }
+}

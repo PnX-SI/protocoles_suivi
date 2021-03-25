@@ -1,0 +1,9 @@
+{
+  "chained": false,
+  "cruved": {"C": 3, "U": 3, "D": 3},
+  "label": "Secteurs",
+  "label_list": "Secteurs",
+  "sorts": [
+    {"prop": "sites_group_name"}
+  ]
+}

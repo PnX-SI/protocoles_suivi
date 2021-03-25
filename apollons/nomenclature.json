@@ -1,0 +1,47 @@
+{"types": [
+    {
+      "mnemonique": "APO_STADE_LARVAIRE",
+      "label_default": "Stade larvaire des chenilles",
+      "definition_default": "Stade larvaire des chenilles de Parnassius apollo"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "APO_DALLES",
+      "mnemonique": "Dalles à orpins",
+      "label_default": "Dalles à orpins",
+      "definition_default": "Dalles à orpins"
+    },{
+      "type":"APO_STADE_LARVAIRE",
+      "cd_nomenclature": "L1",
+      "mnemonique": "Stade1",
+      "label_default": "L1 : Chenille noire, moins de 1,5 mm",
+      "definition_default": "Chenille entièrement noire et de très petite taille (moins de 1,5 mm)"
+    },{
+      "type":"APO_STADE_LARVAIRE",
+      "cd_nomenclature": "L2",
+      "mnemonique": "Stade2",
+      "label_default": "L2 : Chenille deux rangées de tâches jaunes, plus de 1,5 mm",
+      "definition_default": "Apparition des deux rangées de tâches jaunes, chenille de plus grande taille que le stade 1 (plus de 1,5 mm)"
+    },{
+      "type":"APO_STADE_LARVAIRE",
+      "cd_nomenclature": "L3",
+      "mnemonique": "Stade3",
+      "label_default": "L3 : Tâches jaunes affirmées, 1,5 mm à 30 mm",
+      "definition_default": "Affirmation des tâches jaunes et du caractère pubescent (1,5 mm à 30 mm)"
+    },{
+      "type":"APO_STADE_LARVAIRE",
+      "cd_nomenclature": "L4",
+      "mnemonique": "Stade4",
+      "label_default": "L4 : Chenille de 30 mm à plus",
+      "definition_default": "Croissance de la taille et du poids de la chenille environ 30 mm à plus"
+    },{
+      "type":"APO_STADE_LARVAIRE",
+      "cd_nomenclature": "L5",
+      "mnemonique": "Stade5",
+      "label_default": "L5 : Chenille de 50 mm",
+      "definition_default": "Chenille de taille d’environ 50 mm"
+    }
+  ]
+}
