@@ -1,7 +1,14 @@
 {
-  "cruved": {"C": 3, "U": 3, "D": 3},
+  "cruved": {
+    "C": 3,
+    "U": 3,
+    "D": 3
+  },
   "sorts": [
-    {"prop": "base_site_name", "dir": "asc"}
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
   ],
   "filters": {},
   "map_label_field_name": "base_site_code",
@@ -10,7 +17,8 @@
   "genre": "F",
   "geometry_type": "Point",
   "display_properties": [
-    "id_inventor",
+    "id_sites_group",
+    "base_site_code",
     "base_site_code",
     "base_site_name",
     "base_site_description",
