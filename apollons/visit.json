@@ -7,6 +7,7 @@
     "id_nomenclature_statut_obs",
     "id_nomenclature_vent",
     "id_nomenclature_meteo",
+    "time_start",
     "time_first_detection",
     "stade_first_detection",
     "comments"
@@ -68,6 +69,10 @@
     },
     "visit_date_min": {
       "attribut_label": "Date"
+    },
+    "time_start": {
+      "attribut_label": "Heure de début",
+      "type_widget": "time"
     },
     "id_nomenclature_statut_obs": {
       "type_widget": "nomenclature",
