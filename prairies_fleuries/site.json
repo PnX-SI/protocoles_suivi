@@ -1,0 +1,61 @@
+{
+  "cruved": {
+    "C": 3,
+    "U": 3,
+    "D": 3
+  },
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "map_label_field_name": "base_site_code",
+  "label": "Prairie",
+  "label_list": "Prairies",
+  "genre": "F",
+  "geometry_type": "Polygon",
+  "display_properties": [
+    "id_sites_group",
+    "base_site_code",
+    "base_site_code",
+    "base_site_name",
+    "base_site_description",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "PRAIFLEU_SOURCE"
+      },
+      "hidden": true
+    },
+    "id_nomenclature_exposition": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Exposition",
+      "code_nomenclature_type": "EXPOSITION",
+      "required": true,
+      "type_util": "nomenclature"
+    },
+    "pente": {
+      "type_widget": "number",
+      "attribut_label": "Pente", 
+      "required": true
+    },
+    "pratiques": {
+      "type_widget": "text",
+      "attribut_label": "Pratiques"
+    }
+  }
+}

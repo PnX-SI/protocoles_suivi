@@ -1,0 +1,25 @@
+{
+  "display_properties": [
+    "id_base_site",
+    "observers",
+    "visit_date_min",
+    "comments"
+  ],
+  "display_list": [
+    "id_base_site",
+    "visit_date_min",
+    "observers"
+  ],
+  "map_label_field_name": "base_site_code",
+  "chain_show": [
+    "visit_date_min", "id_base_site"
+  ],
+  "keep": [
+    "visit_date_min",
+    "observers",
+    "id_dataset",
+    "comment"
+  ],
+  "specific": {
+  }
+}

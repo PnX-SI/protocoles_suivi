@@ -1,0 +1,31 @@
+{
+  "display_properties": [
+    "cd_nom", 
+    "id_nomenclature_abondance_braunblanquet",
+    "id_nomenclature_life_stage",
+    "comments"
+  ],
+  "specific": {
+    "id_nomenclature_abondance_braunblanquet": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Abondance",
+      "code_nomenclature_type": "BRAUNBLANQABDOM",
+      "required": true,
+      "type_util": "nomenclature"
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "15"
+      }
+    }
+  }
+}
