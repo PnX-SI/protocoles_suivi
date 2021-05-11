@@ -17,6 +17,9 @@
       "type_widget": "datalist",
       "attribut_label": "Stade de vie",
       "api": "nomenclatures/nomenclature/STADE_VIE",
+      "params" : {
+        "regne": "Plantae"
+      },
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
