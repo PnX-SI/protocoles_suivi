@@ -3,6 +3,14 @@
     "id_base_site",
     "observers",
     "visit_date_min",
+    "utilisation_type_n_1",
+    "utilisation_periode_n_1",
+    "pature_type_animaux_n_1",
+    "pature_chargement_n_1",
+    "pature_fertilisation_type_n_1",
+    "pature_fertilisation_qte_n_1",
+    "mecanisation_parcelle_n_1",
+    "rendement_parcelle_n_1",
     "comments"
   ],
   "display_list": [
@@ -21,5 +29,46 @@
     "comment"
   ],
   "specific": {
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
+    },
+    "utilisation_type_n_1": {
+      "type_widget": "select",
+      "attribut_label": "Utilisation (n-1)",
+      "values": ["fauche", "pâture", "fauche+pâture", "culture", "aucune", "inconnue"],
+      "required": true
+    },
+    "utilisation_periode_n_1": {
+      "type_widget": "text",
+      "attribut_label": "Utilisation période (n-1)"
+    },
+    "pature_type_animaux_n_1": {
+      "type_widget": "select",
+      "attribut_label": "Type animaux si pâture (n-1)",
+      "values": ["bovins viande", "bovins lait", "ovins", "équins", "caprins viande", "caprins lait"]
+    },
+    "pature_chargement_n_1": {
+      "type_widget": "number",
+      "attribut_label": "Densité de chargement si pâture (n-1)", 
+      "description": "Si pâture, densité de chargement en n-1 : nombres d’animaux total sur la prairie"
+    },
+    "pature_fertilisation_type_n_1": {
+      "type_widget": "select",
+      "attribut_label": "Fertilisation si pâture (n-1)", 
+      "values": ["fertilisation organique", "fertilisation minérale", "aucune"]
+    },
+    "pature_fertilisation_qte_n_1": {
+      "type_widget": "number",
+      "attribut_label": "Fertilisation quantité (T/ha) si pâture (n-1)" 
+    },
+    "mecanisation_parcelle_n_1": {
+      "type_widget": "text",
+      "attribut_label": "Mécanisation de la parcelle (n-1)", 
+      "description": "Mécanisation de la parcelle en n-1 : rentrer le nom de ou des outils ou aucun"
+    },
+    "rendement_parcelle_n_1": {
+      "type_widget": "text",
+      "attribut_label": "Rendement (T MS/ha) (n-1)"
+    }
   }
 }

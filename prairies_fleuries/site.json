@@ -22,6 +22,10 @@
     "base_site_code",
     "base_site_name",
     "base_site_description",
+    "pente",
+    "id_nomenclature_exposition",
+    "surface",
+    "altitude_moyenne",
     "last_visit",
     "nb_visits"
   ],
@@ -53,9 +57,13 @@
       "attribut_label": "Pente", 
       "required": true
     },
-    "pratiques": {
-      "type_widget": "text",
-      "attribut_label": "Pratiques"
+    "surface": {
+      "type_widget": "number",
+      "attribut_label": "Surface (ha)"
+    },
+    "altitude_moyenne": {
+      "type_widget": "number",
+      "attribut_label": "Altitude moyenne (m)"
     }
   }
 }
