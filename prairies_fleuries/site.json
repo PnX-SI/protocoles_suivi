@@ -49,13 +49,11 @@
       "type_widget": "nomenclature",
       "attribut_label": "Exposition",
       "code_nomenclature_type": "EXPOSITION",
-      "required": true,
       "type_util": "nomenclature"
     },
     "pente": {
       "type_widget": "number",
-      "attribut_label": "Pente", 
-      "required": true
+      "attribut_label": "Pente"
     },
     "surface": {
       "type_widget": "number",
