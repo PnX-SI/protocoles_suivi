@@ -1,8 +1,7 @@
 DROP VIEW IF EXISTS gn_monitoring.v_synthese_prairies_fleuries;
 CREATE VIEW gn_monitoring.v_synthese_prairies_fleuries AS
- 
 WITH source AS (
-	SELECT id_source 
+	SELECT id_source
     FROM gn_synthese.t_sources
 	WHERE name_source = CONCAT('MONITORING_', UPPER('prairies_fleuries'))
 	LIMIT 1
@@ -16,10 +15,10 @@ WITH source AS (
     ON r.id_role = cvo.id_role
     GROUP BY id_base_visit
 )
- SELECT v.uuid_base_visit AS unique_id_sinp,
+ SELECT o.uuid_observation AS unique_id_sinp,
     s.uuid_base_site AS unique_id_sinp_grp,
     source.id_source,
-    v.id_base_visit AS entity_source_pk_value,
+    o.id_observation AS entity_source_pk_value,
     v.id_dataset,
     ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO'::character varying, 'St'::character varying) AS id_nomenclature_geo_object_nature,
     v.id_nomenclature_grp_typ,
@@ -48,7 +47,9 @@ WITH source AS (
     o.comments AS comment_description,
     obs.ids_observers,
     v.id_base_site,
-    v.id_base_visit
+    v.id_base_visit,
+    o.id_observation,
+    jsonb_build_object('abondance_braunblanquet', tbb.cd_nomenclature )  AS additional_data
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_monitoring.t_observations o ON v.id_base_visit = o.id_base_visit
@@ -57,6 +58,7 @@ WITH source AS (
      JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation = o.id_observation
      JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
+     LEFT JOIN ref_nomenclatures.t_nomenclatures tbb ON tbb.id_nomenclature = (oc.data ->> 'id_nomenclature_abondance_braunblanquet')::int
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
   WHERE m.module_code::text = 'prairies_fleuries'::text;
