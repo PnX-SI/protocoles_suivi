@@ -37,7 +37,7 @@
       "type_util": "site",
       "keyValue": "id_base_site",
       "keyLabel": "base_site_name",
-      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/site",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/site?fields=id_base_site&fields=base_site_name",
       "params": [
         "({meta}) => ({",
           "id_module: __MODULE.ID_MODULE,",
