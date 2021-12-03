@@ -556,8 +556,7 @@
         "mnemonique": "Chevronné",
         "label_default": "Chevronné",
         "definition_default": "Chevronné"
-      },
-        
+      },        
       {
         "type":"STADE_VIE_REPTILE",
         "cd_nomenclature": "STADE_1",
