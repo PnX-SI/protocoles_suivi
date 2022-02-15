@@ -1,4 +1,6 @@
 {
+  "label": "Point d'écoute",
+  "label_list": "Points d'écoute",
   "geometry_type": "Point",
   "display_properties": ["base_site_name"],
   "specific": {
