@@ -60,7 +60,11 @@
     "paturage": {
       "type_widget": "select",
       "attribut_label": "Indice de paturage",
-      "values": ["TODO"]
+      "values": [
+        "1 = Aucune trace de paturage dans le milieu",
+        "2 = Toutes les situations intermédiaires",
+        "3 = Plus de 95% des plantes herbacées sont pâturées et rases (<10 cm)"
+      ]
     },
     "medias": {
       "hidden": true
@@ -116,7 +120,7 @@
     "other": {
       "type_widget": "text",
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "??"
+      "attribut_label": "PAY1??"
     }
   }
 }

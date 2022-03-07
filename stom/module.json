@@ -1,4 +1,12 @@
 {
     "module_label":"STOM",
-    "module_desc":"Suivi temporel des oiseaux de montagne"
+    "module_desc":"Suivi temporel des oiseaux de montagne",
+    "specific": {
+        "b_draw_sites_group": {
+            "type_widget": "bool_checkbox",
+            "attribut_label": "Dessiner les groupes de sites",
+            "definition": "Affichage des groupes de site en dessinant l'enveloppe des sites du groupe et en affichant l'aire du groupe de sites",
+            "hidden": false
+          }
+    }
 }
