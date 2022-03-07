@@ -1,14 +1,15 @@
 {
+  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "visit_date_min",
     "observers",
     "beginner",
-    "time_start",
-    "cloud_percentage",
-    "rain",
-    "wind",
-    "visibility",
-    "snow_removal"
+    "heure",
+    "nuages",
+    "pluie",
+    "vent",
+    "visi",
+    "deneigement"
   ],
   "display_list": [
     "visit_date_min",
@@ -22,7 +23,7 @@
       "attribut_label": "Observateur débutant",
       "values": ["Oui", "Non"]
     },
-    "time_start": {
+    "heure": {
       "type_widget": "time",
       "attribut_label": "Heure de début"
     },

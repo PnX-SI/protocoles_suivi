@@ -1,6 +1,6 @@
 {
     "chained": false,
-    "cruved": {"C": 1, "U": 1, "D": 1},
+    "cruved": {"C": 3, "U": 3, "D": 3},
     "label": "Site",
     "label_list": "Sites",
     "sorts": [

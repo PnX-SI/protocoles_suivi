@@ -1,10 +1,12 @@
 {
+  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "cd_nom",
     "nb_0_5",
     "nb_5_10",
     "nb_10_15",
-    "nb_sup_100m",
+    "nb_hors_proto",
+    "presence_juvenile",
     "comments"
   ],
   "specific": {
