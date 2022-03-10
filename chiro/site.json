@@ -16,11 +16,16 @@
   "genre": "M",
   "geometry_type": "Point",
   "display_properties": [
+    "base_site_name",
     "roost_type",
     "nb_visits",
     "threat",
     "recommandation",
-    "owner_name"
+    "opening",
+    "owner_name",
+    "owner_adress",
+    "owner_tel",
+    "owner_mail"
   ],
   "display_list": [
     "base_site_name",
