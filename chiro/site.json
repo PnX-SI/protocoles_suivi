@@ -19,8 +19,9 @@
   "display_properties": [
     "roost_type",
     "nb_visits",
-    "owner_name",
-    "threat"
+    "threat",
+    "recommandation",
+    "owner_name"
   ],
   "display_list": [
     "base_site_name",
