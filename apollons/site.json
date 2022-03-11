@@ -19,7 +19,6 @@
   "display_properties": [
     "id_sites_group",
     "base_site_code",
-    "base_site_code",
     "base_site_name",
     "base_site_description",
     "last_visit",
@@ -27,6 +26,7 @@
   ],
   "display_list": [
     "base_site_name",
+    "base_site_code",
     "last_visit",
     "nb_visits"
   ],
