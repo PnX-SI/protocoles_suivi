@@ -22,6 +22,10 @@
 
   ],
   "specific": {
+    "observers_txt": {
+      "type_widget": "text",
+      "attribut_label": "Observateur (hors PNE)"
+    },
     "id_dataset": {
       "hidden": true,
       "value": 2138
@@ -43,6 +47,7 @@
       "hidden": "({value}) => !value.guano_presency"
     },
     "comments": {
+      "type_widget": "textarea",
       "attribut_label":"Commentaire (autres indices, présence d'autres espèces, etc..)"
     }
   }

@@ -8,6 +8,9 @@
     "display_properties": [
         "module_label",
         "module_desc"
-      ]
+      ],
+    "export_csv": [
+    { "label": "Format standard CSV", "type":"csv" , "method": "standard" },
+]
     
 }

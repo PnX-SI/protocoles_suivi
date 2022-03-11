@@ -4,6 +4,7 @@
     "cd_nom",
     "specie_status"
   ],
+  "redirect_to_parent": true,
   "specific": {
       "id_nomenclature_behaviour": {
         "type_widget": "nomenclature",

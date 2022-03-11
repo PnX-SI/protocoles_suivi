@@ -91,16 +91,18 @@
       "attribut_label": "Email propriétaire"
     },
     "opening": {
-      "type_widget": "text",
+      "type_widget": "textarea",
       "attribut_label": "Ouverture"
     },
     "threat": {
       "type_widget": "textarea",
-      "attribut_label": "Menace(s)"
+      "attribut_label": "Menace(s)",
+      "rows": 3
     },
     "recommandation": {
       "type_widget": "textarea",
-      "attribut_label": "Mesure(s) préconisé(s)"
+      "attribut_label": "Mesure(s) préconisé(s)",
+      "rows": 3
     }
   }
 }
