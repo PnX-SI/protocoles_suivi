@@ -1,11 +1,4 @@
 {
-    "module_label": "Chevêches",
-    "module_desc": "Module pour le protocole chevêches mâles chanteurs",
-    "export_csv": [
-        {
-            "label": "Bilans CSV",
-            "type": "csv",
-            "method": "bilans"
-        }
-    ]
+    "module_label":"Chevêches",
+    "module_desc":"Module pour le protocole chevêches mâles chanteurs"
 }
