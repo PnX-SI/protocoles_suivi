@@ -1,25 +1,27 @@
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_apollons;
-CREATE VIEW gn_monitoring.v_synthese_apollons AS
-
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_chiro;
+CREATE VIEW gn_monitoring.v_synthese_chiro AS
 WITH source AS (
-
 	SELECT
-
         id_source
-
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER('apollons'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER('CHIRO'))
 	LIMIT 1
-
 ), observers AS (
     SELECT
-        array_agg(r.id_role) AS ids_observers,
-        STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') AS observers,
-        id_base_visit
-    FROM gn_monitoring.cor_visit_observer cvo
-    JOIN utilisateurs.t_roles r
+        CASE 
+            WHEN cvo.id_role IS NULL THEN v."data"->>'observers_txt'
+            ELSE STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') 
+        END as observers,
+        CASE 
+            WHEN cvo.id_role then array_agg(r.id_role) 
+            ELSE NULL
+        END AS ids_observers,
+        v.id_base_visit
+    FROM gn_monitoring.t_visit_complements v
+    LEFT JOIN gn_monitoring.cor_visit_observer cvo ON cvo.id_base_visit  = v.id_base_visit
+    LEFT JOIN utilisateurs.t_roles r
     ON r.id_role = cvo.id_role
-    GROUP BY id_base_visit
+    GROUP BY v.id_base_visit, cvo.id_role
 )
  SELECT v.uuid_base_visit AS unique_id_sinp,
     s.uuid_base_site AS unique_id_sinp_grp,
@@ -31,10 +33,9 @@ WITH source AS (
     v.id_nomenclature_tech_collect_campanule,
     ref_nomenclatures.get_id_nomenclature('OBJ_DENBR'::character varying, 'IND'::character varying) AS id_nomenclature_obj_count,
     ref_nomenclatures.get_id_nomenclature('TYP_DENBR'::character varying, 'Es'::character varying) AS id_nomenclature_type_count,
-    ref_nomenclatures.get_id_nomenclature('STATUT_OBS'::character varying, 'Pr'::character varying) AS id_nomenclature_observation_status,
     ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE'::character varying, 'Te'::character varying) AS id_nomenclature_source_status,
     ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO'::character varying, '1'::character varying) AS id_nomenclature_info_geo_type,
-    ref_nomenclatures.get_id_nomenclature('STADE_VIE'::character varying, '7'::character varying) AS id_nomenclature_life_stage,
+    ref_nomenclatures.get_id_nomenclature('STADE_VIE'::character varying, '1'::character varying) AS id_nomenclature_life_stage,
     1 AS count_min,
     1 AS count_max,
     t.cd_nom,
@@ -52,14 +53,18 @@ WITH source AS (
     v.comments AS comment_description,
     obs.ids_observers,
     v.id_base_site,
-    v.id_base_visit
+    v.id_base_visit,
+    (toc."data"->>'id_nomenclature_behaviour')::integer as id_nomenclature_behaviour,
+    (toc."data"->>'id_nomenclature_bio_condition')::integer AS id_nomenclature_bio_condition,
+    (toc."data"->>'id_nomenclature_meth_obs')::integer AS id_nomenclature_meth_obs 
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_commons.t_modules m ON m.id_module = v.id_module
      JOIN gn_monitoring.t_visit_complements vc ON vc.id_base_visit = v.id_base_visit
-     JOIN ref_nomenclatures.t_nomenclatures n ON n.id_nomenclature = ((vc.data ->> 'id_nomenclature_statut_obs'::text)::integer) AND n.cd_nomenclature::text = 'Pr'::text
-     JOIN taxonomie.taxref t ON t.cd_nom = ((vc.data ->> 'cd_nom'::text)::integer)
+     JOIN gn_monitoring.t_observations to2 ON to2.id_base_visit = vc.id_base_visit
+     JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
+     JOIN taxonomie.taxref t ON t.cd_nom = to2.cd_nom
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'apollons'::text;
+  WHERE m.module_code::text = 'chiro'::text;

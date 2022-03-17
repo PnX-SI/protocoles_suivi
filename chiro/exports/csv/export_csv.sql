@@ -1,6 +1,6 @@
+
 CREATE OR REPLACE VIEW gn_monitoring.v_export_chiro_standard
- AS
-select 
+ AS SELECT 
 s.id_base_site AS code_gite,
 s.base_site_name AS nom_gite,
 st_x(s.geom) AS X,
@@ -29,7 +29,8 @@ t.nom_vern as tax_nom_vern,
 t.cd_nom AS tax_cd_nom,
 tn.label_fr AS comportement,
 tn1.label_fr AS etat_biologique,
-tn1.label_fr AS method_obs
+tn1.label_fr AS method_obs,
+tbv.id_dataset
 from gn_monitoring.t_base_sites s
 LEFT JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site 
 LEFT JOIN gn_monitoring.cor_site_area air ON air.id_base_site = s.id_base_site 
@@ -73,5 +74,6 @@ t.nom_vern,
 t.cd_nom,
 tn.label_fr,
 tn1.label_fr,
-tn1.label_fr
+tn1.label_fr,
+tbv.id_dataset
 ;
