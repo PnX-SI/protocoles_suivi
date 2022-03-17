@@ -1,7 +1,14 @@
 {
-  "cruved": {"C": 3, "U": 3, "D": 3},
+  "cruved": {
+    "C": 3,
+    "U": 3,
+    "D": 3
+  },
   "sorts": [
-    {"prop": "base_site_name", "dir": "asc"}
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
   ],
   "filters": {
     "inactif": false
@@ -28,8 +35,7 @@
   "specific": {
     "id_sites_group": {
       "required": false,
-      "hidden": false,
-      "disabled": "(value) => value.id_base_site"
+      "hidden": false
     },
     "id_2014": {
       "type_widget": "text",
@@ -64,7 +70,7 @@
     "inactif": {
       "type_widget": "bool_checkbox",
       "attribut_label": "Inactif",
-      "default": false
+      "value": false
     }
   }
 }
