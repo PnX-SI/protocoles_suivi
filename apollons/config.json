@@ -1,10 +1,12 @@
 {
   "tree": {
     "module": {
-      "site": {
-        "visit": null
-      },
-      "sites_group":null
+      "site": null,
+      "sites_group": {
+        "site": {
+          "visit": null
+        }
+      }
     }
   },
   "synthese_object": "visit"
