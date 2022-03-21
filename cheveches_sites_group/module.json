@@ -8,9 +8,19 @@
     ],
     "export_csv": [
         {
-            "label": "Bilans CSV",
+            "label": "Liste des Sites",
             "type": "csv",
-            "method": "bilans"
+            "method": "bilans_sites"
+        },
+        {
+            "label": "Bilans Visites année en cours",
+            "type": "csv",
+            "method": "bilans_visites_annee_en_cours"
+        },
+        {
+            "label": "Bilans Visites année précédente",
+            "type": "csv",
+            "method": "bilans_visites_annee_nmoins1"
         }
     ]
 }
