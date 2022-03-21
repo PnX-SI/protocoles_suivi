@@ -10,6 +10,14 @@ OR REPLACE VIEW gn_monitoring.v_export_cheveches_bilans_sites AS WITH module AS 
         gn_commons.t_modules tm
     WHERE
         module_code = 'cheveches'
+),
+default_dt AS (
+    SELECT
+        id_dataset
+    FROM
+        gn_meta.t_datasets td
+    WHERE
+        td.unique_dataset_id = '24cdcb63-e9d2-4345-affa-92ab7ac9375a' --cheveches
 )
 SELECT
     tsg.sites_group_name,
@@ -24,7 +32,15 @@ SELECT
     last_visit.visit_min,
     last_visit.nb_visit,
     observers,
-    id_dataset
+    COALESCE(
+        id_dataset,
+        (
+            SELECT
+                id_dataset
+            FROM
+                default_dt
+        )
+    ) AS id_dataset -- patch pour exporter les sites sans visites
 FROM
     gn_monitoring.t_base_sites tbs
     JOIN gn_monitoring.t_site_complements tsc ON tbs.id_base_site = tsc.id_base_site
@@ -53,7 +69,9 @@ FROM
             id_dataset
     ) last_visit ON TRUE;
 
----------------------------------------------------------------------
+--------------------------------------------------
+-- Bilan des visites de l'année précédante
+--------------------------------------------------
 DROP VIEW IF EXISTS gn_monitoring.v_export_cheveches_bilans_visites_annee_nmoins1;
 
 CREATE
@@ -64,6 +82,14 @@ OR REPLACE VIEW gn_monitoring.v_export_cheveches_bilans_visites_annee_nmoins1 AS
         gn_commons.t_modules tm
     WHERE
         module_code = 'cheveches'
+),
+default_dt AS (
+    SELECT
+        id_dataset
+    FROM
+        gn_meta.t_datasets td
+    WHERE
+        td.unique_dataset_id = '24cdcb63-e9d2-4345-affa-92ab7ac9375a' --cheveches
 ),
 visites AS (
     SELECT
@@ -110,7 +136,15 @@ SELECT
     passage_2.contact AS passage_2_contact,
     passage_2.observers AS passage_2_observers,
     passage_autre.*,
-    passage_1.id_dataset
+    COALESCE(
+        passage_1.id_dataset,
+        (
+            SELECT
+                id_dataset
+            FROM
+                default_dt
+        )
+    ) AS id_dataset -- patch pour exporter les sites sans visites
 FROM
     gn_monitoring.t_base_sites tbs
     JOIN gn_monitoring.t_site_complements tsc ON tbs.id_base_site = tsc.id_base_site
@@ -152,6 +186,9 @@ ORDER BY
     sites_group_name,
     base_site_name;
 
+--------------------------------------------------
+-- Bilan des visites de l'année en cours
+--------------------------------------------------
 DROP VIEW IF EXISTS gn_monitoring.v_export_cheveches_bilans_visites_annee_en_cours;
 
 CREATE
@@ -162,6 +199,14 @@ OR REPLACE VIEW gn_monitoring.v_export_cheveches_bilans_visites_annee_en_cours A
         gn_commons.t_modules tm
     WHERE
         module_code = 'cheveches'
+),
+default_dt AS (
+    SELECT
+        id_dataset
+    FROM
+        gn_meta.t_datasets td
+    WHERE
+        td.unique_dataset_id = '24cdcb63-e9d2-4345-affa-92ab7ac9375a' --cheveches
 ),
 visites AS (
     SELECT
@@ -208,7 +253,15 @@ SELECT
     passage_2.contact AS passage_2_contact,
     passage_2.observers AS passage_2_observers,
     passage_autre.*,
-    passage_1.id_dataset
+    COALESCE(
+        passage_1.id_dataset,
+        (
+            SELECT
+                id_dataset
+            FROM
+                default_dt
+        )
+    ) AS id_dataset -- patch pour exporter les sites sans visites
 FROM
     gn_monitoring.t_base_sites tbs
     JOIN gn_monitoring.t_site_complements tsc ON tbs.id_base_site = tsc.id_base_site
