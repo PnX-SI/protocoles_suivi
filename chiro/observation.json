@@ -13,7 +13,8 @@
         "type_util": "nomenclature",
         "required": true,
         "value": 545,
-        "excluded_cd_nomenclature": ["2","5", "6", "20", "21", "22", "23"]
+       "cd_nomenclatures": ["1","10", "7"]
+
     },
     "id_nomenclature_bio_condition": {
       "type_widget": "nomenclature",
@@ -23,14 +24,24 @@
       "required": true,
       "value": 154
     },
-    "id_nomenclature_meth_obs": {
+    "id_nomenclature_bio_status": {
       "type_widget": "nomenclature",
-      "attribut_label": "Méthode d'observation",
+      "attribut_label": "Statut biologique",
+      "code_nomenclature_type": "STATUT_BIO",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": 29,
+      "cd_nomenclatures": ["3", "4", "9", "0" ]
+
+    },
+    "id_nomenclature_obs_technique": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Technique d'observation",
       "code_nomenclature_type": "METH_OBS",
       "type_util": "nomenclature",
       "required": true,
       "value": 37,
-      "excluded_cd_nomenclature": ["10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "2", "22", "23", "24", "26", "27", "4", "7", "9"]
+      "cd_nomenclatures": ["0", "3", "6"]
     }
   }
 }
