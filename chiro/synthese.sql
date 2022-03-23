@@ -31,10 +31,11 @@ WITH source AS (
     v.id_nomenclature_grp_typ,
     v.id_nomenclature_tech_collect_campanule,
     ref_nomenclatures.get_id_nomenclature('OBJ_DENBR'::character varying, 'IND'::character varying) AS id_nomenclature_obj_count,
-    ref_nomenclatures.get_id_nomenclature('TYP_DENBR'::character varying, 'Es'::character varying) AS id_nomenclature_type_count,
+    ref_nomenclatures.get_id_nomenclature('TYP_DENBR'::character varying, 'Co'::character varying) AS id_nomenclature_type_count,
     ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE'::character varying, 'Te'::character varying) AS id_nomenclature_source_status,
     ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO'::character varying, '1'::character varying) AS id_nomenclature_info_geo_type,
-    ref_nomenclatures.get_id_nomenclature('NIV_PRECIS', '4') as id_nomenclature_diffusion_level, -- pas de diffusion des gite pour l'instant (attente des règle de sensibilité regionale)
+    ref_nomenclatures.get_id_nomenclature('NIV_PRECIS', '4') as id_nomenclature_diffusion_level, -- pas de diffusion des gite pour l'instant (attente des règle de sensibilité regionale),
+    ref_nomenclatures.get_id_nomenclature('NATURALITE', '1') as id_nomenclature_naturalness, -- pas de diffusion des gite pour l'instant (attente des règle de sensibilité regionale),
     t.cd_nom,
     t.nom_complet AS nom_cite,
     alt.altitude_min,
