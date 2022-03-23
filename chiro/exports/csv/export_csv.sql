@@ -1,5 +1,5 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_export_chiro_standard
- AS SELECT 
+CREATE OR REPLACE VIEW gn_monitoring.v_export_chiro_observations
+ as SELECT 
 s.id_base_site AS code_gite,
 s.base_site_name AS nom_gite,
 st_x(s.geom) AS X,
@@ -46,18 +46,18 @@ JOIN LATERAL ( SELECT d_1.id_base_site ,
               WHERE sa.id_base_site  = s.id_base_site
               GROUP BY sa.id_base_site , ta.type_code) d_1
       GROUP BY d_1.id_base_site) a ON true
-LEFT JOIN gn_monitoring.t_base_visits tbv ON tbv.id_base_site = s.id_base_site 
+JOIN gn_monitoring.t_base_visits tbv ON tbv.id_base_site = s.id_base_site 
 LEFT JOIN gn_monitoring.t_visit_complements tvc ON tvc.id_base_visit = tbv.id_base_visit
 JOIN gn_commons.t_modules m ON m.id_module = tbv.id_module
 LEFT JOIN gn_monitoring.cor_visit_observer cvo ON cvo.id_base_visit = tbv.id_base_visit 
 LEFT JOIN utilisateurs.t_roles tr ON tr.id_role = cvo.id_role 
-LEFT JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit 
+JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit 
 LEFT JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = obs.id_observation 
 LEFT JOIN taxonomie.taxref t ON t.cd_nom = obs.cd_nom 
 LEFT JOIN ref_nomenclatures.t_nomenclatures tn on (toc."data"->>'id_nomenclature_behaviour')::integer = tn.id_nomenclature 
 LEFT JOIN ref_nomenclatures.t_nomenclatures tn1 on (toc."data"->>'id_nomenclature_bio_condition')::integer = tn1.id_nomenclature 
 LEFT JOIN ref_nomenclatures.t_nomenclatures tn2 on (toc."data"->>'id_nomenclature_meth_obs')::integer = tn2.id_nomenclature
-WHERE m.module_code::text = 'chiro';
+WHERE m.module_code::text = 'chiro'
 GROUP BY s.id_base_site,
 s.base_site_name,
 st_x(s.geom),
@@ -87,9 +87,7 @@ tn1.label_fr,
 tn1.label_fr,
 tbv.id_dataset,
 a.jname->>'COM',
-a.jname->>'SEC'
-;
-
+a.jname->>'SEC';
 
 CREATE OR REPLACE VIEW gn_monitoring.v_export_chiro_sites
  AS SELECT 
@@ -107,12 +105,13 @@ tsc."data"->>'roost_type' AS type_gite,
 tsc."data"->>'opening' AS ouverture,
 s.base_site_description AS description_gite,
 tsc."data"->>'threat' AS menaces,
-tsc."data"->>'recommandation' AS preconisations
+tsc."data"->>'recommandation' AS preconisations,
+16 as id_dataset-- id_dataset obligatoire.. todo enlever ça / corrigé sur la branche develop
 from gn_monitoring.t_base_sites s
-LEFT JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site 
+JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site 
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
 JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module
-JOIN LATERAL ( SELECT d_1.id_base_site ,
+LEFT JOIN LATERAL ( SELECT d_1.id_base_site ,
         json_object_agg(d_1.type_code, d_1.o_name) AS jname,
         json_object_agg(d_1.type_code, d_1.o_code) AS jcode
        FROM ( SELECT sa.id_base_site ,

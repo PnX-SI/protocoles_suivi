@@ -1,4 +1,5 @@
 {
+  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "id_base_site",
     "visit_date_min",
