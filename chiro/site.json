@@ -17,6 +17,7 @@
   "geometry_type": "Point",
   "display_properties": [
     "base_site_name",
+    "base_site_code",
     "roost_type",
     "nb_visits",
     "threat",
@@ -25,7 +26,8 @@
     "owner_name",
     "owner_adress",
     "owner_tel",
-    "owner_mail"
+    "owner_mail",
+    "medias"
   ],
   "display_list": [
     "base_site_name",

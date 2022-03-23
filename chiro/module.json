@@ -10,7 +10,8 @@
         "module_desc"
       ],
     "export_csv": [
-    { "label": "Format standard CSV", "type":"csv" , "method": "standard" }
-]
+        { "label": "Observations", "type":"csv" , "method": "observations" },
+        { "label": "Sites", "type":"csv" , "method": "sites" }
+    ]
     
 }

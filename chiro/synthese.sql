@@ -1,5 +1,4 @@
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_chiro;
-CREATE VIEW gn_monitoring.v_synthese_chiro AS
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_chiro AS
 WITH source AS (
 	SELECT
         id_source
@@ -13,7 +12,7 @@ WITH source AS (
             ELSE STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') 
         END as observers,
         CASE 
-            WHEN cvo.id_role then array_agg(r.id_role) 
+            WHEN cvo.id_role IS NOT null then array_agg(r.id_role) 
             ELSE NULL
         END AS ids_observers,
         v.id_base_visit
@@ -23,8 +22,8 @@ WITH source AS (
     ON r.id_role = cvo.id_role
     GROUP BY v.id_base_visit, cvo.id_role
 )
- SELECT v.uuid_base_visit AS unique_id_sinp,
-    s.uuid_base_site AS unique_id_sinp_grp,
+ SELECT to2.uuid_observation AS unique_id_sinp,
+    v.uuid_base_visit AS unique_id_sinp_grp,
     source.id_source,
     v.id_base_visit AS entity_source_pk_value,
     v.id_dataset,
@@ -35,7 +34,7 @@ WITH source AS (
     ref_nomenclatures.get_id_nomenclature('TYP_DENBR'::character varying, 'Es'::character varying) AS id_nomenclature_type_count,
     ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE'::character varying, 'Te'::character varying) AS id_nomenclature_source_status,
     ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO'::character varying, '1'::character varying) AS id_nomenclature_info_geo_type,
-    ref_nomenclatures.get_id_nomenclature('STADE_VIE'::character varying, '1'::character varying) AS id_nomenclature_life_stage,
+    ref_nomenclatures.get_id_nomenclature('NIV_PRECIS', '4') as id_nomenclature_diffusion_level -- pas de diffusion des gite pour l'instant (attente des règle de sensibilité regionale)
     1 AS count_min,
     1 AS count_max,
     t.cd_nom,
@@ -56,7 +55,12 @@ WITH source AS (
     v.id_base_visit,
     (toc."data"->>'id_nomenclature_behaviour')::integer as id_nomenclature_behaviour,
     (toc."data"->>'id_nomenclature_bio_condition')::integer AS id_nomenclature_bio_condition,
-    (toc."data"->>'id_nomenclature_meth_obs')::integer AS id_nomenclature_meth_obs 
+    (toc."data"->>'id_nomenclature_meth_obs')::integer AS id_nomenclature_meth_obs,
+    (toc."data"->>'id_nomenclature_bio_status')::integer AS id_nomenclature_bio_status,
+    (toc."data"->>'id_nomenclature_life_stage')::integer AS id_nomenclature_life_stage,
+    (toc."data"->>'id_nomenclature_life_sex')::integer AS id_nomenclature_sex,  	
+    (toc."data"->>'count_indiv')::integer AS count_min,  	
+    (toc."data"->>'count_indiv')::integer AS count_max
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_commons.t_modules m ON m.id_module = v.id_module
@@ -67,4 +71,4 @@ WITH source AS (
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'chiro'::text;
+  WHERE m.module_code::text = 'chiro'::TEXT;
