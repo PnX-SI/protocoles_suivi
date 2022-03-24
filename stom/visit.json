@@ -118,10 +118,20 @@
       "hidden": "({value}) => !value.habitat_input",
       "attribut_label": "Ligneux > 4m (%)"
     },
-    "other": {
-      "type_widget": "text",
+    "elem_paysager": {
+      "type_widget": "multiselect",
+      "values": [
+        {"value": "Câblage", "key": "Câblage"},
+        {"value": "Point d'eau", "key": "Point d'eau"},
+        {"value": "Clôture", "key": "Clôture"},
+        {"value": "Groupe isolé d'arbres", "key": "Groupe isolé d'arbres"},
+        {"value": "Ecobuage", "key": "Ecobuage"},
+        {"value": "Bâti", "key": "Bâti"},
+        {"value": "Falaise", "key": "Falaise"},
+        {"value": "Autres", "key": "Autres"}
+      ],
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "PAY1??"
+      "attribut_label": "Elément paysager"
     }
   }
 }
