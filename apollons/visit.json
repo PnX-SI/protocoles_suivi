@@ -4,24 +4,35 @@
     "observers",
     "visit_date_min",
     "num_passage",
-    "id_nomenclature_statut_obs",
     "id_nomenclature_vent",
     "id_nomenclature_meteo",
     "time_start",
+    "time_end",
     "time_first_detection",
-    "stade_first_detection",
+    "count_stade_l1",
+    "count_stade_l2",
+    "count_stade_l3",
+    "count_stade_l4",
+    "count_stade_l5",
     "comments"
   ],
   "display_list": [
     "id_base_site",
     "visit_date_min",
-    "id_nomenclature_statut_obs",
     "num_passage",
+    "time_start",
+    "count_stade_l1",
+    "count_stade_l2",
+    "count_stade_l3",
+    "count_stade_l4",
+    "count_stade_l5",
     "observers"
   ],
   "map_label_field_name": "base_site_code",
   "chain_show": [
-    "visit_date_min", "id_base_site", "num_passage"
+    "visit_date_min",
+    "id_base_site",
+    "num_passage"
   ],
   "keep": [
     "num_passage",
@@ -42,10 +53,10 @@
       "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/site",
       "params": [
         "({meta}) => ({",
-          "id_module: __MODULE.ID_MODULE,",
-          "id_sites_group: meta.parents.site && meta.parents.site.properties.id_sites_group,",
-          "order_by: 'base_site_name*'",
-      "})"
+        "id_module: __MODULE.ID_MODULE,",
+        "id_sites_group: meta.parents.site && meta.parents.site.properties.id_sites_group,",
+        "order_by: 'base_site_name*'",
+        "})"
       ],
       "application": "GeoNature",
       "required": true,
@@ -54,18 +65,32 @@
     "num_passage": {
       "type_widget": "select",
       "attribut_label": "N° de passage",
-      "description": "Préciser si c'est le premièr (1) ou deuxième passage (2)",
-      "values": [1, 2, 3]
+      "description": "Préciser si c'est le premier (1) ou deuxième passage (2)",
+      "values": [
+        "1",
+        "2"
+      ]
     },
     "id_nomenclature_meteo": {
       "type_widget": "select",
       "attribut_label": "Meteo : Ciel",
-      "values": ["Indéterminé", "Nuageux", "Moyennement nuageux", "Clair"]
+      "values": [
+        "Indéterminé",
+        "Nuageux",
+        "Moyennement nuageux",
+        "Clair"
+      ]
     },
     "id_nomenclature_vent": {
       "type_widget": "select",
       "attribut_label": "Meteo : Vent",
-      "values": ["Indéterminé", "Fort", "Modéré", "Faible", "Nul"]
+      "values": [
+        "Indéterminé",
+        "Fort",
+        "Modéré",
+        "Faible",
+        "Nul"
+      ]
     },
     "visit_date_min": {
       "attribut_label": "Date"
@@ -74,23 +99,13 @@
       "attribut_label": "Heure de début",
       "type_widget": "time"
     },
-    "id_nomenclature_statut_obs": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Contact",
-      "code_nomenclature_type": "STATUT_OBS",
-      "type_util": "nomenclature",
-      "required": true
+    "time_end": {
+      "attribut_label": "Heure de fin",
+      "type_widget": "time"
     },
     "time_first_detection": {
       "attribut_label": "Heure (première détection)",
       "type_widget": "time"
-    },
-    "stade_first_detection": {
-      "attribut_label": "Stade (première détection)",
-      "type_widget": "nomenclature",
-      "code_nomenclature_type": "APO_STADE_LARVAIRE",
-      "type_util": "nomenclature",
-      "required": false
     },
     "id_dataset": {
       "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
@@ -101,6 +116,46 @@
       "type_util": "taxonomy",
       "value": 54496,
       "hidden": true
+    },
+    "count_stade_l1": {
+      "attribut_label": "Nb L1",
+      "description": "Chenille entièrement noire et de très petite taille (moins de 1,5 mm)",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "count_stade_l2": {
+      "attribut_label": "Nb L2",
+      "description": "Chenille entièrement noire et de très petite taille (moins de 1,5 mm)",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "count_stade_l3": {
+      "attribut_label": "Nb L3",
+      "description": "Chenille entièrement noire et de très petite taille (moins de 1,5 mm)",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "count_stade_l4": {
+      "attribut_label": "Nb L4",
+      "description": "Chenille entièrement noire et de très petite taille (moins de 1,5 mm)",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "count_stade_l5": {
+      "attribut_label": "Nb L5",
+      "description": "Chenille entièrement noire et de très petite taille (moins de 1,5 mm)",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
     }
   }
 }
