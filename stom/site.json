@@ -2,6 +2,7 @@
   "cruved": {"C": 3, "U": 3, "D": 3},
   "label": "Point d'écoute",
   "label_list": "Points d'écoute",
+  "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
   "display_properties": ["base_site_name", "bae_site_description"],
   "specific": {

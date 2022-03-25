@@ -35,6 +35,12 @@
     },
     "comments": {
       "attribute_label": "Commentaire"
+    },
+    "medias": {
+      "hidden": true,
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_observations"
     }
   }
 }

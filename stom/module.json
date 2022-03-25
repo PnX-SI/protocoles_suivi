@@ -1,6 +1,10 @@
 {
     "module_label":"STOM",
     "module_desc":"Suivi temporel des oiseaux de montagne",
+    "export_csv": [
+        { "label": "Observations", "type":"csv" , "method": "observations" }
+    ],
+  "map_label_field_name": "sites_group_name",
     "specific": {
         "b_draw_sites_group": {
             "type_widget": "bool_checkbox",

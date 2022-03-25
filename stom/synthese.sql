@@ -1,9 +1,9 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_chiro AS
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_stom AS
 WITH source AS (
 	SELECT
         id_source
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER('CHIRO'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER('STOM'))
 	LIMIT 1
 ), observers AS (
     SELECT
@@ -33,8 +33,8 @@ WITH source AS (
     ref_nomenclatures.get_id_nomenclature('TYP_DENBR'::character varying, 'Co'::character varying) AS id_nomenclature_type_count,
     ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE'::character varying, 'Te'::character varying) AS id_nomenclature_source_status,
     ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO'::character varying, '1'::character varying) AS id_nomenclature_info_geo_type,
-    ref_nomenclatures.get_id_nomenclature('NIV_PRECIS', '4') as id_nomenclature_diffusion_level, -- pas de diffusion des gite pour l'instant (attente des règle de sensibilité regionale),
-    ref_nomenclatures.get_id_nomenclature('NATURALITE', '1') as id_nomenclature_naturalness, -- pas de diffusion des gite pour l'instant (attente des règle de sensibilité regionale),
+    ref_nomenclatures.get_id_nomenclature('NATURALITE', '1') as id_nomenclature_naturalness, 
+    ref_nomenclatures.get_id_nomenclature('STADE_VIE', '2') as id_nomenclature_life_stage, -- on ne compte que des adultes sur le stom 
     ref_nomenclatures.get_id_nomenclature('TYP_GRP', 'REL') as id_nomenclature_grp_typ, 
     t.cd_nom,
     t.nom_complet AS nom_cite,
@@ -51,15 +51,9 @@ WITH source AS (
     v.comments AS comment_description,
     obs.ids_observers,
     v.id_base_site,
-    v.id_base_visit,
-    (toc."data"->>'id_nomenclature_behaviour')::integer as id_nomenclature_behaviour,
-    (toc."data"->>'id_nomenclature_bio_condition')::integer AS id_nomenclature_bio_condition,
-    (toc."data"->>'id_nomenclature_meth_obs')::integer AS id_nomenclature_meth_obs,
-    (toc."data"->>'id_nomenclature_bio_status')::integer AS id_nomenclature_bio_status,
-    (toc."data"->>'id_nomenclature_life_stage')::integer AS id_nomenclature_life_stage,
-    (toc."data"->>'id_nomenclature_life_sex')::integer AS id_nomenclature_sex,  	
-    (toc."data"->>'count_indiv')::integer AS count_min,  	
-    (toc."data"->>'count_indiv')::integer AS count_max
+    v.id_base_visit,	
+    (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_hors_proto')::integer AS count_min,
+    (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_hors_proto')::integer AS count_max
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_commons.t_modules m ON m.id_module = v.id_module
@@ -70,4 +64,4 @@ WITH source AS (
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'chiro'::TEXT;
+  WHERE m.module_code::text = 'stom'::TEXT;
