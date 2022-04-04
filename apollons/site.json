@@ -20,13 +20,15 @@
     "id_sites_group",
     "base_site_code",
     "base_site_name",
+    "initial_code",
+    "id_inventor",
     "base_site_description",
     "last_visit",
     "nb_visits"
   ],
   "display_list": [
     "base_site_name",
-    "base_site_code",
+    "id_inventor",
     "last_visit",
     "nb_visits"
   ],
@@ -43,6 +45,11 @@
     },
     "id_sites_group": {
       "attribut_label": "Secteur",
+      "required": false,
+      "hidden": false
+    },
+    "initial_code": {
+      "attribut_label": "Code inital (1er fiche)",
       "required": false,
       "hidden": false
     }
