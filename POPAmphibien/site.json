@@ -3,7 +3,6 @@
   "geometry_type": "Point",
   "map_label_field_name": "base_site_name",
   "display_properties": [
-
     "id_inventor",
     "first_use_date",
     "base_site_name",
@@ -27,13 +26,10 @@
     "nb_visits"
   ],
   "specific": {
-
     "base_site_description": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire"
-
     },
-
     "milieu_aquatique": {
       "type_widget": "nomenclature",
       "attribut_label": "Description du milieu aquatique",
@@ -49,7 +45,6 @@
 	    "required": false,
       "type_util": "nomenclature"
     },
-
     "variation_eau": {
       "type_widget": "nomenclature",
       "attribut_label": "Variation du niveau d’eau",
@@ -106,42 +101,41 @@
 	    "required": false,
       "type_util": "nomenclature",
       "hidden": "({value}) => value.site_protege != 'Oui'"
-            },
-      "site_protege_autre": {
-        "type_widget": "text",
-        "attribut_label": "Autre (precisez)",
-        "hidden": "({value}) => value.site_protege != 'Oui'"
-      },
-      "id_sites_group": {
-        "type_widget": "datalist",
-        "attribut_label": "Aire",
-        "type_util": "sites_group",
-        "keyValue": "id_sites_group",
-        "keyLabel": "sites_group_name",
-        "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
-        "application": "GeoNature",
-        "required": false,
-        "hidden": false
-      },
-      "nb_visits": {
-        "attribut_label": "Nb. de passages"
-      },
-      "base_site_name": {
-        "type_widget": "text",
-        "attribut_label": "Nom de site",
-        "required": true
-      },
-      "last_visit": {
-        "attribut_label": "Dernier passage",
-        "type_util": "date"
-      },
-      "base_site_code": {
-        "type_widget": "text",
-        "attribut_label": "Numéro du transect",
-        "required": false,
-        "hidden": true
-      },
-
+    },
+    "site_protege_autre": {
+      "type_widget": "text",
+      "attribut_label": "Autre (precisez)",
+      "hidden": "({value}) => value.site_protege != 'Oui'"
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Aire",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false
+    },
+    "nb_visits": {
+      "attribut_label": "Nb. de passages"
+    },
+    "base_site_name": {
+      "type_widget": "text",
+      "attribut_label": "Nom de site",
+      "required": true
+    },
+    "last_visit": {
+      "attribut_label": "Dernier passage",
+      "type_util": "date"
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Numéro du transect",
+      "required": false,
+      "hidden": true
+    },
     "id_nomenclature_type_site": {
       "type_widget": "text",
       "attribut_label": "Type site",
@@ -152,8 +146,5 @@
       },
       "hidden": true
     }
-
-
-
   }
 }
