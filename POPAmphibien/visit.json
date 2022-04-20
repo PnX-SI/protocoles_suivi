@@ -74,9 +74,7 @@
       "code_nomenclature_type": "ENSOLEILLEMENT",
 	    "required": false,
       "type_util": "nomenclature"
-
     },
-
     "vent": {
       "type_widget": "nomenclature",
       "attribut_label": "Vent",
@@ -90,7 +88,7 @@
       "code_nomenclature_type": "METHODE_PROSPECTION",
 	    "required": false,
       "type_util": "nomenclature"
-        },
+    },
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire"
@@ -105,22 +103,6 @@
       "attribut_label": "Présence de poissons",
       "values": ["Oui", "Non"]
     },
-    "id_dataset": {
-     
-      "type_widget": "datalist",
-      "attribut_label": "Jeu de données",
-      "type_util": "dataset",
-      "api": "meta/datasets",
-      "application": "GeoNature",
-      "keyValue": "id_dataset",
-      "keyLabel": "dataset_shortname",
-      "params": {
-        "orderby": "dataset_name",
-        "module_code": "__MODULE.MODULE_CODE"
-      },
-      "data_path": "data",
-      "required": true
-    },  
      "visit_date_min": {
       "type_widget": "date",
       "attribut_label": "Date du passage",
