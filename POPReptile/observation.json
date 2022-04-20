@@ -33,11 +33,20 @@
       "type_util": "taxonomy"
     } ,
     "id_nomenclature_stade": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Stade",
-      "code_nomenclature_type": "STADE_VIE_REPTILE",
-	    "required": true,
-      "type_util": "nomenclature"
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie : stade de développement du sujet",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "params": {
+        "orderby": "label_fr",
+        "regne": "Animalia",
+        "group2_inpn": "Reptiles"
+      },
+      "type_util": "nomenclature",
+      "required": true
       
     },
     "sexe": {
