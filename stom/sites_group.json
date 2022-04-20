@@ -1,0 +1,25 @@
+{
+    "chained": false,
+    "cruved": {"C": 3, "U": 3, "D": 3},
+    "label": "Site",
+    "label_list": "Sites",
+    "sorts": [
+      {"prop": "sites_group_name"}
+    ],
+    "display_properties": [
+      "sites_group_name",
+      "sites_group_description",
+      "nb_sites",
+      "nb_visits",
+      "comments",
+      "geom_geojson"
+    ],
+    "display_list": [
+      "sites_group_name",
+      "nb_sites",
+      "nb_visits",
+      "geom_geojson"
+    ],
+    "map_label_field_name": "base_site_code"
+  }
+  

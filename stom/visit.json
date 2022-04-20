@@ -1,14 +1,15 @@
 {
+  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "visit_date_min",
     "observers",
     "beginner",
-    "time_start",
-    "cloud_percentage",
-    "rain",
-    "wind",
-    "visibility",
-    "snow_removal"
+    "heure",
+    "nuages",
+    "pluie",
+    "vent",
+    "visi",
+    "deneigement"
   ],
   "display_list": [
     "visit_date_min",
@@ -22,43 +23,115 @@
       "attribut_label": "Observateur débutant",
       "values": ["Oui", "Non"]
     },
-    "time_start": {
+    "heure": {
       "type_widget": "time",
       "attribut_label": "Heure de début"
     },
-    "cloud_percentage": {
+    "nuages": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Couverture nuageuse",
       "values": ["0-33%", "33-66%", "66-100%"]
     },
-    "rain": {
+    "pluie": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Pluie",
       "values": ["Absente", "Intermittente", "Continue"]
     },
-    "wind": {
+    "vent": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Vent",
       "values": ["Absent", "Faible", "Moyen à fort"]
     },
-    "visibility": {
+    "visi": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Visibilité",
       "values": ["Bonne", "Modérée", "Faible"]
     },
-    "snow_removal": {
+    "deneigement": {
       "type_widget": "number",
       "required": true,
       "attribut_label": "Denneigement (en %)",
       "min": 0,
       "max": 100
     },
-    "comments": {
+    "paturage": {
+      "type_widget": "select",
+      "attribut_label": "Indice de paturage",
+      "values": [
+        "1 = Aucune trace de paturage dans le milieu",
+        "2 = Toutes les situations intermédiaires",
+        "3 = Plus de 95% des plantes herbacées sont pâturées et rases (<10 cm)"
+      ]
+    },
+    "medias": {
       "hidden": true
+    },
+    "id_dataset": {
+      "hidden": true,
+      "value": 2138
+    },
+    "comments": {
+      "hidden": false,
+      "attribut_label": "Commentaire sur les conditions d'écoute"
+    },
+    "habitat_input": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Saisie habitat",
+      "value": false
+    },
+    "roche": {
+      "type_widget": "number",
+      "hidden": "({value}) => !value.habitat_input",
+      "attribut_label": "Rochers (%)"
+    },
+    "sol_nu": {
+      "type_widget": "number",
+      "hidden": "({value}) => !value.habitat_input",
+      "attribut_label": "Sol nu (%)"
+    },
+    "herb": {
+      "type_widget": "number",
+      "hidden": "({value}) => !value.habitat_input",
+      "attribut_label": "Herbacées (%)"
+    },
+    "arb_inf_30cm": {
+      "type_widget": "number",
+      "hidden": "({value}) => !value.habitat_input",
+      "attribut_label": "Ligneux inf 30cm (%)"
+    },
+    "arb_inf_1m": {
+      "type_widget": "number",
+      "hidden": "({value}) => !value.habitat_input",
+      "attribut_label": "Ligneux 30cm - 1m (%)"
+    },
+    "arb_1_4m": {
+      "type_widget": "number",
+      "hidden": "({value}) => !value.habitat_input",
+      "attribut_label": "Ligneux 1m - 4m (%)"
+    },
+    "arb_sup_4m": {
+      "type_widget": "number",
+      "hidden": "({value}) => !value.habitat_input",
+      "attribut_label": "Ligneux > 4m (%)"
+    },
+    "elem_paysager": {
+      "type_widget": "multiselect",
+      "values": [
+        {"value": "Câblage", "key": "Câblage"},
+        {"value": "Point d'eau", "key": "Point d'eau"},
+        {"value": "Clôture", "key": "Clôture"},
+        {"value": "Groupe isolé d'arbres", "key": "Groupe isolé d'arbres"},
+        {"value": "Ecobuage", "key": "Ecobuage"},
+        {"value": "Bâti", "key": "Bâti"},
+        {"value": "Falaise", "key": "Falaise"},
+        {"value": "Autres", "key": "Autres"}
+      ],
+      "hidden": "({value}) => !value.habitat_input",
+      "attribut_label": "Elément paysager"
     }
   }
 }

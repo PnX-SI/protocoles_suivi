@@ -1,26 +1,46 @@
 {
+  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "cd_nom",
     "nb_0_5",
     "nb_5_10",
-    "nb_sup_100m",
+    "nb_10_15",
+    "nb_hors_proto",
+    "presence_juvenile",
     "comments"
   ],
   "specific": {
     "nb_0_5": {
       "type_widget": "number",
-      "attribut_label": "Effectif 0'-5'"
+      "attribut_label": "Effectif 0'-5'",
+      "required": true
     },
     "nb_5_10": {
       "type_widget": "number",
-      "attribut_label": "Effectif 5'-10'"
+      "attribut_label": "Effectif 5'-10'",
+      "required": true
     },
-    "nb_sup_100m": {
+    "nb_10_15": {
+      "type_widget": "number",
+      "attribut_label": "Effectif 10'-15'"
+    },
+    "nb_hors_proto": {
       "type_widget": "number",
       "attribut_label": "Effectif au delà de 100m"
     },
+    "presence_juvenile": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Présence de juvéniles ? (si oui ne pas les compter)",
+      "default": false
+    },
     "comments": {
       "attribute_label": "Commentaire"
+    },
+    "medias": {
+      "hidden": true,
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_observations"
     }
   }
 }
