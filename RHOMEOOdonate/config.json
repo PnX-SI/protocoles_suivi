@@ -1,0 +1,16 @@
+{
+  "tree": {
+    "module": {
+      "site": {
+        "visit": {
+          "observation": null
+        }
+      }
+    }
+  },
+  "data": {
+    "taxonomy": {
+      "id_list": "__ID_COMPONENT_TAXONOMY"
+    }
+  }
+}

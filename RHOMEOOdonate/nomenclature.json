@@ -1,0 +1,51 @@
+{
+  "types": [
+    {
+      "mnemonique": "HABITAT_ODO",
+      "label_default": "Habitat odonatologique",
+      "definition_default": "Habitat odonatologique (protocole de suivi RHOMEO Odonates)"
+    },
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "HABITAT_ODO_1",
+      "mnemonique": "Bois",
+      "label_default": "Bois",
+      "definition_default": "Bois"
+    },
+    {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "HABITAT_ODO_2",
+      "mnemonique": "Prairie_mésophile",
+      "label_default": "Prairie mésophile",
+      "definition_default": "Prairie mésophile"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "HABITAT_ODO_3",
+      "mnemonique": "Prairie_humide",
+      "label_default": "Prairie humide",
+      "definition_default": "Prairie humide"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "HABITAT_ODO_4",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "RHOMEO_ODO",
+      "mnemonique": "Site_RHOMEO_odonates",
+      "label_default": "Site RHOMEO odonates",
+      "definition_default": "Site de relevé du protocole RHOMEO odonates"
+    }
+  ]
+}

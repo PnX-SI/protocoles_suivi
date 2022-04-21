@@ -1,0 +1,71 @@
+{
+  "genre":"M",
+  "geometry_type": "Point",
+  "map_label_field_name": "base_site_name",
+  "export_pdf": [
+      { "template": "fiche_aire.html", "label": "Export PDF" }
+  ],
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "display_properties": [
+    "base_site_name",
+    "id_inventor",
+    "first_use_date",
+    "typ_geom",
+    "id_nomenclature_hab_odo",
+    "detail_hab_odo",
+    "surf_obs",
+    "area_name"
+ ],
+  "display_list": [
+    "base_site_name",
+    "id_sites_group",
+    "id_inventor",
+    "first_use_date",
+    "nb_visits",
+    "id_nomenclature_hab_odo"
+  ],
+  "specific": {
+    "typ_geom": {
+      "type_widget": "radio",
+      "attribut_label": "Type d'observation",
+      "multiple": true,
+      "values": ["Transect", "Point"],
+      "required": true
+    },
+    "surf_obs": {
+      "type_widget": "text",
+      "attribut_label": "Surface d'observation",
+      "hidden": true
+    },
+    "id_nomenclature_hab_odo": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Habitat odonatologique",
+      "code_nomenclature_type": "HABITAT_ODO",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "detail_hab_odo": {
+      "type_widget": "radio",
+      "attribut_label": "Type de pente",
+      "values": ["Douce", "Abrupte", "Douce et abrupte"],
+      "required": false,
+      "hidden": true
+    },
+    "area_name": {
+      "type_widget": "text",
+      "attribut_label": "Nom de l'ensemble fonctionnel",
+      "definition": "Nom courant de la zone prospectée (l'étang, la mare, le ruisseau, ...)"
+    },
+    "id_nomenclature_type_site": {
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "RHOMEO_ODO"
+      },
+      "hidden": true
+    }
+  }
+}

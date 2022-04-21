@@ -1,0 +1,65 @@
+{
+  "genre":"M",
+  "label": "Groupe de sites",
+  "label_list": "Groupes de sites",
+  "map_label_field_name": "base_site_name",
+  "sorts": [
+    {"prop": "sites_group_name"}
+  ],
+  "export_pdf": [
+    {
+      "template": "fiche_aire.html",
+      "label": "Export PDF"
+    }
+  ],
+  "display_properties": [
+    "sites_group_name",
+    "sites_group_description",
+    "id_site",
+    "nb_sites",
+    "nb_visits",
+    "comments",
+    "inactif"
+  ],
+  "display_list": [
+    "sites_group_name",
+    "nb_sites",
+    "nb_visits",
+    "inactif"
+  ],
+  "specific": {
+    "b_draw_sites_group": {
+      "hidden": false
+    },
+    "sites_group_code": {
+      "required": false,
+      "hidden": true
+    },
+    "sites_group_name": {
+      "type_widget": "datalist",
+      "attribut_label": "Groupe de sites",
+      "keyValue": "area_name",
+      "keyLabel": "area_name",
+      "api": "geo/areas?type_code=SCEN",
+      "application": "GeoNature",
+      "multiple": false,
+      "required": true,
+      "hidden": false,
+      "definition": "Liste des sites Conservatoire défini dans la table l_areas.\nSi le group_site souhaité ne s'y trouve pas, transmetter le nom, le type de site et le zonage à l'administrateur de la plateforme."
+    },
+    "inactif": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Inactif",
+      "default": false
+    }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+        "const sites_group_code = '' + (objForm.value.sites_group_name || '');",
+        "if (!objForm.controls.sites_group_code.dirty) {",
+            "objForm.patchValue({sites_group_code})",
+        "}",
+    "}",
+    ""
+  ]
+}
