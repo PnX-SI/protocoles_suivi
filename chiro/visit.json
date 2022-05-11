@@ -1,0 +1,61 @@
+{
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "display_properties": [
+    "id_base_site",
+    "visit_date_min",
+    "nb_observations",
+    "observers",
+    "sheet_id",
+    "guano_presency",
+    "guano_comment",
+    "other_comments"
+  ],
+  "display_list": [
+    "id_base_site",
+    "visit_date_min",
+    "nb_observations",
+    "observers"
+  ],
+  "map_label_field_name": "base_site_code",
+  "chain_show": [
+  ],
+  "keep": [
+
+  ],
+  "specific": {
+    "observers_txt": {
+      "type_widget": "text",
+      "attribut_label": "Observateur (hors PNE)"
+    },
+    "id_dataset": {
+      "hidden": true,
+      "value": 2138
+    },
+    "sheet_id": {
+      "type_widget": "number",
+      "hidden": true,
+      "attribut_label": "Ancien code fiche",
+      "value": null
+    },
+    "guano_presency": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Présence de guano",
+      "value": false
+    },
+    "guano_comment": {
+      "type_widget": "textarea",
+      "attribut_label": "Renseignement sur les guanos présents (taille, fraicheur, quantité)",
+      "hidden": "({value}) => !value.guano_presency"
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label":"Commentaire (autres indices, présence d'autres espèces, etc..)"
+    },
+    "medias": {
+      "hidden": true,
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_base_visits"
+    }
+  }
+}
