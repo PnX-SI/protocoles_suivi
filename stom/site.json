@@ -4,11 +4,23 @@
   "label_list": "Points d'écoute",
   "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
-  "display_properties": ["base_site_name", "bae_site_description"],
-  "specific": {
+  "display_properties": ["id_sites_group","base_site_name", "base_site_description"],
+  "display_list": [
+    "base_site_name",
+    "nb_visits",
+    "last_visit",
+    "id_sites_group"
+  ],
+    "specific": {
     "id_sites_group": {
-      "required": false,
-      "hidden": false
+      "required": true,
+      "hidden": false,
+      "attribute_label": "Site"
+    },
+    "base_site_name": {
+      "required": true,
+      "hidden": false,
+      "attribut_label": "Identifiant du point d'écoute"
     },
     "id_nomenclature_type_site": {
       "type_widget": "nomenclature",
