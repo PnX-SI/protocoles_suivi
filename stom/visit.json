@@ -9,7 +9,9 @@
     "pluie",
     "vent",
     "visi",
-    "deneigement"
+    "deneigement",
+    "paturage",
+    "comments"
   ],
   "display_list": [
     "visit_date_min",
@@ -64,7 +66,8 @@
       "values": [
         "1 = Aucune trace de paturage dans le milieu",
         "2 = Toutes les situations intermédiaires",
-        "3 = Plus de 95% des plantes herbacées sont pâturées et rases (<10 cm)"
+        "3 = Plus de 95% des plantes herbacées sont pâturées et rases (<10 cm)",
+        "4 = Prairie de fauche"
       ]
     },
     "medias": {
@@ -132,6 +135,11 @@
       ],
       "hidden": "({value}) => !value.habitat_input",
       "attribut_label": "Elément paysager"
+    },
+    "comment_paysage": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire sur les élements paysagers (si 'Autres')",
+      "hidden": "({value}) => !value.habitat_input"
     }
   }
 }

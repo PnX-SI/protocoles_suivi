@@ -20,6 +20,11 @@
       "nb_visits",
       "geom_geojson"
     ],
-    "map_label_field_name": "base_site_code"
+    "map_label_field_name": "base_site_code",
+    "specific": {
+      "nb_sites": {
+        "attribut_label": "Nb. point écoute"
+      }
+    }
   }
   
