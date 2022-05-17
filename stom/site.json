@@ -5,10 +5,17 @@
   "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
   "display_properties": ["id_sites_group","base_site_name", "base_site_description"],
-  "specific": {
+  "display_list": [
+    "base_site_name",
+    "nb_visits",
+    "last_visit",
+    "id_sites_group"
+  ],
+    "specific": {
     "id_sites_group": {
       "required": true,
-      "hidden": false
+      "hidden": false,
+      "attribute_label": "Site"
     },
     "base_site_name": {
       "required": true,
