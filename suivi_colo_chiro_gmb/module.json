@@ -1,0 +1,8 @@
+{
+    "module_label":"Suivi Chiroptères au gîte",
+    "module_desc":"Suivi des colonies de chauves-souris",
+    "export_csv": [
+      { "label": "Télécharger le CSV", "type":"csv" , "method": "telecharger_csv" }
+      ]
+}
+
