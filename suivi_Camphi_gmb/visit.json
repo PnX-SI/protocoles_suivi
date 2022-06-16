@@ -1,0 +1,168 @@
+{
+  "display_properties": [
+    "uuid_base_visit",
+    "id_dataset",
+    "visit_date_min",
+    "observers",
+    "cadre_prosp",
+    "cadre_precis",
+    "hab_arsa",
+    "ty_habarsa",
+    "hab_arsa_vg_dom",
+    "hab_arsa_vg_fav",
+    "megaph",
+    "gestion",
+    "acces_riv",
+    "comments"
+  ],
+
+  "display_list": [
+    "uuid_observation",
+    "num_prosp",
+    "id_dataset",
+    "visit_date_min",
+    "observers",
+    "nb_observations"
+  ],
+
+  "keep": [
+    "id_nomenclature_tech_collect_campanule",
+    "id_dataset",
+    "observers"
+  ],
+
+
+  "specific" :{
+
+    "id_nomenclature_tech_collect_campanule": {
+      "type_widget": "datalist",
+      "attribut_label": "Technique de collecte (Campanule)",
+      "api": "nomenclatures/nomenclature/TECHNIQUE_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "default": {
+        "cd_nomenclature": "57"
+      },
+      "hidden": true
+    },
+
+    "cadre_prosp": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Cadre dans lequel la prospection est menée",
+      "values": ["Suivi/Inventaire Régional","Inventaire local","Suivi local","Suivi Site"],
+      "value": "Suivi Régional"
+    },
+
+    "cadre_precis": {
+      "type_widget": "text",
+      "attribut_label": "Précisions sur le cadre: nom de l'étude, du wepta, etc."
+    },
+
+    
+    "hab_arsa": {
+      "type_widget": "radio",
+      "attribut_label": "Présence d'habitat favorable au Campagnol amphibie",
+      "values": ["Oui", "Non"],
+      "value": "Non"
+    },
+
+    "ty_habarsa": {
+      "type_widget": "datalist",
+      "attribut_label": "Type d'habitat favorable au Campagnol amphibie ?",
+      "api": "nomenclatures/nomenclature/TYPE_HAB_ARSA",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "default": {
+        "cd_nomenclature": "NR"
+      },
+      "multiple": true,
+      "hidden": "({value}) => value.hab_arsa != 'Oui'"
+    },
+
+    "hab_arsa_vg_dom": {
+      "type_widget": "datalist",
+      "attribut_label": "Végétation dominante de l'habitat favorable au Campagnol amphibie",
+      "api": "nomenclatures/nomenclature/HAB_ARSA_VG_DOM",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": "({value}) => value.hab_arsa != 'Oui'"
+
+    },
+    
+    "hab_arsa_vg_fav": {     
+      "type_widget": "datalist",
+      "attribut_label": "Formation végétale favorable au Campagnol amphibie suffisamment présente pour constituer un habitat",
+      "api": "nomenclatures/nomenclature/HAB_ARSA_VG_FAV",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": true,
+      "hidden": "({value}) => value.hab_arsa != 'Oui'"
+    },
+    
+    "megaph": {
+      "type_widget": "text",
+      "attribut_label": "Si 'Autre mégaphorbiaie' : préciser le type de Mégaphorbiaie",
+      "hidden": "({value}) => value.hab_arsa != 'Oui'"
+    },   
+    
+   
+    "gestion": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de Gestion",
+      "api": "nomenclatures/nomenclature/GESTION",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": "({value}) => value.hab_arsa != 'Oui'",
+      "default": {
+        "cd_nomenclature": "NR"
+      }
+    },
+
+
+    "acces_riv": {
+      "type_widget": "datalist",
+      "attribut_label": "Accès du bétail aux berges",
+      "api": "nomenclatures/nomenclature/ACCES_RIV",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.gestion] || {}).cd_nomenclature != 'PATUR' || value.saisie_details_arsa =='Non'",
+      "default": {
+        "cd_nomenclature": "NR"
+      }
+    },
+
+
+    "comments":{
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    }
+
+  }
+}
+
+

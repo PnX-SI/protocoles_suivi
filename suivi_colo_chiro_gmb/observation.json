@@ -1,0 +1,196 @@
+{
+  "display_properties": [
+    "uuid_observation",
+    "cd_nom", 
+    "methode_observation",
+    "etat_biologique",
+    "methode_determination",
+    "statut_biologique",
+    "statut_observation",
+    "statut_source",
+    "nombre_individus",
+    "stade_de_vie",
+    "sexe",
+    "comments"
+  ],
+
+
+  "display_list": [
+    "cd_nom",
+    "nombre_individus",
+    "stade_de_vie",
+    "sexe",
+    "statut_observation"
+  ],
+
+  "keep": [
+    "methode_observation",
+    "etat_biologique",
+    "methode_determination",
+    "statut_observation",
+    "statut_source",
+    "sexe"
+  ],
+
+  "specific": {
+    
+    "cd_nom": {
+        "type_widget": "taxonomy",
+        "attribut_label": "Taxon observé",
+        "type_util": "taxonomy",
+        "required": true,
+        "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+
+    "methode_observation": {
+      "type_widget": "datalist",
+      "attribut_label": "Méthode d'observation",
+      "api": "nomenclatures/nomenclature/METH_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["20","6","3","0","25"]
+      },
+      "default": {
+        "cd_nomenclature": "0"
+      }
+    },
+
+
+
+    "etat_biologique": {
+      "type_widget": "datalist",
+      "attribut_label": "Etat biologique de l'observation",
+      "api": "nomenclatures/nomenclature/ETA_BIO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["2","3"]
+      },
+      "default": {
+        "cd_nomenclature": "2"
+      }
+    },
+
+
+    "methode_determination": {
+      "type_widget": "datalist",
+      "attribut_label": "Méthode de détermination",
+      "api": "nomenclatures/nomenclature/METH_DETERMIN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+       "filters": {
+        "cd_nomenclature": ["9","10","14","15","17","18","22"]
+      },
+      "default": {
+        "cd_nomenclature": "18"
+      }    
+    },
+
+
+    "statut_biologique": {
+      "type_widget": "select",
+      "attribut_label": "Statut biologique de l'espèce saisie",
+      "values": ["Estivation","Hibernation","Reproduction (mise-bas et l'élevage des jeunes)","Swarming (accouplements)","Inconnu ou Incertain"],
+      "required": true
+    },
+
+
+    "statut_observation": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut d'observation",
+      "api": "nomenclatures/nomenclature/STATUT_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["No","Pr"]
+      },
+      "default": {
+        "cd_nomenclature": "Pr"
+      }
+    },
+
+    "statut_source": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut de la source",
+      "api": "nomenclatures/nomenclature/STATUT_SOURCE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "Te"
+      }
+    },
+
+
+    "stade_de_vie": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie des individus dénombrés",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["2","1","3"]
+      }
+    },
+
+
+    "sexe": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe des individus dénombrés",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "filters": {
+        "cd_nomenclature": ["2","3","0"]
+      },
+      "default": {
+        "cd_nomenclature": "0"
+      }
+    },
+
+
+    "nombre_individus": {
+        "type_widget": "number",
+        "attribut_label": "Effectif",
+        "required": true
+    },
+
+
+    "comments":{
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    }
+
+
+  }
+
+}
+    

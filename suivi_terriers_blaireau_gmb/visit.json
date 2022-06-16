@@ -1,0 +1,118 @@
+{
+  "display_properties": [
+    "uuid_base_visit",
+    "id_dataset",
+    "id_nomenclature_tech_collect_campanule",
+    "visit_date_min",
+    "observers",
+    "indices_blai",
+    "nb_gueule_tot",
+    "nb_gueule_act",
+    "perturb",
+    "depredation",
+    "comments"
+  ],
+
+  "display_list": [
+    "uuid_observation",
+    "visit_date_min",
+    "observers",
+    "indices_blai",
+    "nb_gueule_tot",
+    "nb_gueule_act",
+    "nb_observations"
+  ],
+
+
+  "keep": [
+    "id_dataset",
+    "observers"
+  ],
+
+
+  "specific" :{
+
+    "id_nomenclature_tech_collect_campanule": {
+      "type_widget": "datalist",
+      "attribut_label": "Technique de collecte (Campanule)",
+      "api": "nomenclatures/nomenclature/TECHNIQUE_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "filters": {
+        "cd_nomenclature": ["57","67","125","133"]
+      },
+      "default": {
+        "cd_nomenclature": "57"
+      }
+    },
+
+
+    "indices_blai": {     
+      "type_widget": "datalist",
+      "attribut_label": "Indices de présence de Blaireau observés à proximité du terrier",
+      "api": "nomenclatures/nomenclature/INDICES_BLAIREAU",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "multiple": true,
+      "default": {
+        "cd_nomenclature": "DEB_FRAIS"
+      }
+    },
+
+    "nb_gueule_tot": {
+        "type_widget": "number",
+        "attribut_label": "Nombre total de gueules sur la blaireautière",
+        "required": false
+    },
+
+
+    "nb_gueule_act": {
+        "type_widget": "number",
+        "attribut_label": "Nombre de gueules actives sur la blaireautière",
+        "required": true
+    },
+
+
+    "perturb": {     
+      "type_widget": "datalist",
+      "attribut_label": "Perturbations ou destructions sur les blaireaux ou la blaireautière",
+      "api": "nomenclatures/nomenclature/PERTURB_BLAIREAU",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": true
+    },
+
+    "depredation": {     
+      "type_widget": "datalist",
+      "attribut_label": "Déprédations engendrées par la présence de Blaireaux",
+      "api": "nomenclatures/nomenclature/DEPRED_BLAIREAU",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": true
+    },
+
+    "comments":{
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    }
+
+  }
+}
+
+

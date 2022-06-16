@@ -1,0 +1,42 @@
+{
+  "chained": false,
+  "cruved": {"C": 3, "U": 3, "D": 3},
+  "label": "Secteur",
+  "label_list": "Secteurs",
+  "sorts": [
+    {"prop": "sites_group_name"}
+  ],
+  "display_properties": [
+    "sites_group_name",
+    "sites_group_code",
+    "sites_group_description",
+    "nb_sites",
+    "nb_visits"
+  ],
+  "display_list": [
+    "sites_group_name",
+    "sites_group_code",
+    "nb_sites",
+    "nb_visits"
+  ],
+
+  "map_label_field_name": "base_site_code",
+
+    "specific": {
+
+    "sites_group_description": {
+      "attribut_label": "Commentaires",
+      "type_widget": "textarea",
+      "required": false,
+      "hidden": false
+    },
+    "comments": {
+      "attribut_label": "Remarques",
+      "type_widget": "textarea",
+      "hidden": true
+    }
+
+
+  }
+
+}

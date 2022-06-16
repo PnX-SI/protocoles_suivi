@@ -1,0 +1,89 @@
+{
+  "types": [
+    {
+      "mnemonique": "INDICES_ARSA",
+      "label_default": "Indices observés du Campagnol amphibie",
+      "definition_default": "Indices observés du Campagnol amphibie"
+    },
+    {
+      "mnemonique": "DENSITE_FS",
+      "label_default": "Densité d'indices observés du Campagnol amphibie",
+      "definition_default": "Densité d'indices observés du Campagnol amphibie"
+    }
+    
+    
+  ],
+  "nomenclatures": [
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "CAMP_AMPH",
+      "mnemonique": "Campagnol amphibie régional",
+      "label_default": "Suivi Campagnol amphibie régional",
+      "definition_default": "Suivi Campagnol amphibie régional"
+    },
+    {
+      "type":"INDICES_ARSA",
+      "cd_nomenclature": "CROTTIERS",
+      "mnemonique": "Crottiers",
+      "label_default": "Crottiers",
+      "definition_default": "Crottiers"
+    },
+    {
+      "type":"INDICES_ARSA",
+      "cd_nomenclature": "COULEES",
+      "mnemonique": "Coulées",
+      "label_default": "Coulées",
+      "definition_default": "Coulées"
+    },
+    {
+      "type":"INDICES_ARSA",
+      "cd_nomenclature": "REFECTOIRES",
+      "mnemonique": "Réfectoires",
+      "label_default": "Réfectoires",
+      "definition_default": "Réfectoires"
+    },
+    {
+      "type":"INDICES_ARSA",
+      "cd_nomenclature": "EMPREINTES",
+      "mnemonique": "Empreintes",
+      "label_default": "Empreintes",
+      "definition_default": "Empreintes"
+    },
+    {
+      "type":"DENSITE_FS",
+      "cd_nomenclature": "RARES",
+      "mnemonique": "Rares",
+      "label_default": "Rares",
+      "definition_default": "Rares"
+    },
+    {
+      "type":"DENSITE_FS",
+      "cd_nomenclature": "CLAIR",
+      "mnemonique": "Clairsemés",
+      "label_default": "Clairsemés",
+      "definition_default": "Clairsemés"
+    },
+    {
+      "type":"DENSITE_FS",
+      "cd_nomenclature": "FREQ",
+      "mnemonique": "Fréquents",
+      "label_default": "Fréquents",
+      "definition_default": "Fréquents"
+    },
+    {
+      "type":"DENSITE_FS",
+      "cd_nomenclature": "ABOND",
+      "mnemonique": "Abondants",
+      "label_default": "Abondants",
+      "definition_default": "Abondants"
+    },
+    {
+      "type":"DENSITE_FS",
+      "cd_nomenclature": "NR",
+      "mnemonique": "Non renseigné",
+      "label_default": "Non renseigné",
+      "definition_default": "Non renseigné"
+    }
+        
+  ]
+}

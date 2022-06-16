@@ -1,0 +1,169 @@
+{
+  "display_properties": [
+    "uuid_observation",
+    "cd_nom", 
+    "nombre_individus",
+    "technique_observation",
+    "etat_biologique",
+    "statut_observation",
+    "statut_source",
+    "comments",
+    "indices",
+    "densit_fs",
+    "nb_fs"
+
+  ],
+
+
+  "display_list": [
+    "uuid_observation",
+    "cd_nom",
+    "nombre_individus",
+    "etat_biologique",
+    "statut_observation"
+  ],
+
+  "keep": [
+    "statut_source",
+    "technique_observation"
+  ],
+
+
+  "specific": {
+
+    
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+
+    "nombre_individus": {
+        "type_widget": "number",
+        "attribut_label": "Nombre d'individus",
+        "required": false
+    },
+
+    "technique_observation": {
+      "type_widget": "datalist",
+      "attribut_label": "Méthode d'observation",
+      "api": "nomenclatures/nomenclature/METH_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["23", "6", "4", "27", "12", "23", "9008", "8", "9010", "0", "1", "26", "9009", "9011"]
+      },
+      "default": {
+        "cd_nomenclature": "6"
+      }
+    },
+
+
+    "etat_biologique": {
+      "type_widget": "datalist",
+      "attribut_label": "Etat biologique de l'observation",
+      "api": "nomenclatures/nomenclature/ETA_BIO",
+      "group2inpn":"Mammmifères",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "2"
+      }
+    },
+
+
+    "statut_observation": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut d'observation",
+      "api": "nomenclatures/nomenclature/STATUT_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "Pr"
+      }
+    },
+
+
+
+    "statut_source": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut de la source",
+      "api": "nomenclatures/nomenclature/STATUT_SOURCE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": true,
+      "default": {
+        "cd_nomenclature": "Te"
+      }
+    },
+
+
+    "comments" : {
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    },
+
+    "indices": {
+      "type_widget": "datalist",
+      "attribut_label": "Indices observés",
+      "api": "nomenclatures/nomenclature/INDICES_ARSA",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": true,
+      "default": {
+        "cd_nomenclature": "CROTTIERS"
+      },
+      "hidden": "({value}) => !(value.cd_nom && value.cd_nom.cd_nom == 61258)"
+    },
+
+    "densit_fs": {
+      "type_widget": "datalist",
+      "attribut_label": "Densité d'indices observés",
+      "api": "nomenclatures/nomenclature/DENSITE_FS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": false,
+      "default": {
+        "cd_nomenclature": "NR"
+      },
+      "hidden": "({value}) => !(value.cd_nom && value.cd_nom.cd_nom == 61258)"
+    },
+    
+    "nb_fs": {
+        "type_widget": "number",
+        "attribut_label": "Nombre de crottiers",
+        "required": false,
+        "hidden": "({value}) => !(value.cd_nom && value.cd_nom.cd_nom == 61258)"
+    }
+    
+
+  }
+
+}
+    

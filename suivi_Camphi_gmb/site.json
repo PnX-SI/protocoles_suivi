@@ -1,0 +1,72 @@
+{
+  "display_properties": [
+    "secteur",
+    "base_site_name",
+    "base_site_description",
+    "site_prot_nat",
+    "code_prot_nat",
+    "last_visit",
+    "nb_visits"
+  ],
+
+  "display_list": [
+    "base_site_name",
+    "site_prot_nat",
+    "code_prot_nat",
+     "nb_visits"
+  ],
+
+  "keep": [
+    "id_nomenclature_type_site"
+  ],
+
+
+  "geometry_type": "Point",
+
+
+  "specific": {
+
+    "secteur": {
+        "type_widget": "text",
+        "attribut_label": "Secteur (Numéro de carré (L51), Nom du secteur ou site d'inventaire ou de suivi)",
+        "required": false
+    },
+
+    "base_site_name": {
+      "attribut_label": "Nom du site basé sur le lieu-dit et pouvant comprendre le nom de cours d'eau",
+      "required": true
+    },
+
+    "base_site_description":{
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    },
+
+    "site_prot_nat": {
+      "type_widget": "radio",
+      "attribut_label": "Site Enquête Nationale ?",
+      "values": ["Oui", "Non"],
+      "value": "Non",
+      "required": true
+    },
+
+    "code_prot_nat":{
+      "attribut_label": "Numéro de site Enquête Nationale (Coordonnées du carré 10x10 - numéro d'identification à deux chiffres (ex: 215x2365-12))",
+      "type_widget": "text",
+      "hidden": "({value}) => value.site_prot_nat =='Non'",
+      "required": "({value}) => value.site_prot_nat =='Oui'"
+    },
+
+    "id_nomenclature_type_site": {
+      "default": {"cd_nomenclature": "CAMP_AMPH"},
+      "hidden": true
+    }
+  ,
+
+    "base_site_code": {
+      "hidden": true,
+      "required": false
+    }
+  
+  }
+}

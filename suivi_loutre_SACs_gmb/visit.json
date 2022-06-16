@@ -1,0 +1,65 @@
+{
+  "display_properties": [
+    "uuid_base_visit",
+    "id_dataset",
+    "visit_date_min",
+    "observers",
+    "id_nomenclature_tech_collect_campanule",
+    "condition_prospection",
+    "comments"
+  ],
+
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "nb_observations"
+  ],
+  
+  "keep": [
+      "id_nomenclature_tech_collect_campanule",
+      "condition_prospection"
+  ],
+
+  "specific" :{
+
+    "id_nomenclature_tech_collect_campanule": {
+      "type_widget": "datalist",
+      "attribut_label": "Technique de collecte (Campanule)",
+      "api": "nomenclatures/nomenclature/TECHNIQUE_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden":true,
+      "default": {
+        "cd_nomenclature": "57"
+      }
+    },
+
+    "condition_prospection": {
+      "type_widget": "datalist",
+      "attribut_label": "Conditions de la prospection (vis-à-vis des conditions météorologiques et hydrologiques)",
+      "api": "nomenclatures/nomenclature/CONDITION_PROSPECTION",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "default": {
+        "cd_nomenclature": "METEO_NR"
+      }
+    },
+    
+    "comments":{
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    }
+
+
+  }
+}
+
+
