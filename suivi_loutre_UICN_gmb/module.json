@@ -1,8 +1,0 @@
-{
-    "module_label":"Suivi Loutre régional. M/N – Bassin de la Loire",
-    "module_desc":"Suivi de la présence de la Loutre d'Europe selon le protocole UICN adapté",
-    "export_csv": [
-      { "label": "Télécharger le CSV", "type":"csv" , "method": "telecharger_csv" }
-      ]
-}
-
