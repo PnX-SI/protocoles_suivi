@@ -4,12 +4,13 @@
   "label_list": "Points d'écoute",
   "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
-  "display_properties": ["id_sites_group","base_site_name", "base_site_description"],
+  "display_properties": ["id_sites_group","base_site_name", "base_site_description", "altitude_min"],
   "display_list": [
     "base_site_name",
     "nb_visits",
     "last_visit",
-    "id_sites_group"
+    "id_sites_group",
+    "altitude_min"
   ],
     "specific": {
     "id_sites_group": {
