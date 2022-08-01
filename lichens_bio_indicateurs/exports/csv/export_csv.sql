@@ -1,6 +1,15 @@
 
 CREATE OR REPLACE VIEW gn_monitoring.v_export_lichens_bio_indicateurs_sites
  AS
+ WITH
+default_dt AS (
+    SELECT
+        id_dataset
+    FROM
+        gn_meta.t_datasets td
+    WHERE
+        td.dataset_name  = 'Lichens bio indicateurs' --cheveches
+)
  SELECT
 s.id_base_site AS code_gite,
 s.base_site_name AS nom_gite,
@@ -25,11 +34,12 @@ tsc."data"->>'surface_terriere_sup_17_5_inf_27_5' AS surface_terriere_sup_17_5_i
 tsc."data"->>'surface_terriere_sup_27_5_inf_47_5' AS surface_terriere_sup_27_5_inf_47_5,
 tsc."data"->>'surface_terriere_sup_47_5_inf_67_5' AS surface_terriere_sup_47_5_inf_67_5,
 tsc."data"->>'surface_terriere_sup_67_5_inf_87_5' AS surface_terriere_sup_67_5_inf_87_5,
-tsc."data"->>'surface_terriere_sup_87_5' AS surface_terriere_sup_87_5
+tsc."data"->>'surface_terriere_sup_87_5' AS surface_terriere_sup_87_5,
+(SELECT id_dataset FROM defaut_dt LIMIT 1) AS id_dataset
 from gn_monitoring.t_base_sites s
 JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
-JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND  mod.module_code = 'lichens_bio_indicateurs'
+JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND mod.module_code = 'lichens_bio_indicateurs'
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS tn ON tn.id_nomenclature = (tsc."data"->>'id_nomenclature_exposition')::int
 LEFT JOIN LATERAL ( SELECT d_1.id_base_site ,
         json_object_agg(d_1.type_code, d_1.o_name) AS jname,
@@ -44,6 +54,7 @@ LEFT JOIN LATERAL ( SELECT d_1.id_base_site ,
               WHERE sa.id_base_site  = s.id_base_site
               GROUP BY sa.id_base_site , ta.type_code) d_1
 GROUP BY d_1.id_base_site)
+LEFT JOIN LATERAL (SELECT * FROM gn_monitoring.t_base_visits AS tbv )
 a ON TRUE
 ;
 
@@ -67,7 +78,8 @@ toc."data"->>'nombre_individus_arbre_5' AS nombre_individus_arbre_5,
 toc."data"->>'nombre_individus_arbre_6' AS nombre_individus_arbre_6,
 toc."data"->>'nombre_individus_arbre_7' AS nombre_individus_arbre_7,
 toc."data"->>'nombre_individus_arbre_8' AS nombre_individus_arbre_8,
-toc."data"->>'nombre_individus_arbre_9' AS nombre_individus_arbre_9
+toc."data"->>'nombre_individus_arbre_9' AS nombre_individus_arbre_9,
+tbv.id_dataset,
 from gn_monitoring.t_base_sites s
 JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
