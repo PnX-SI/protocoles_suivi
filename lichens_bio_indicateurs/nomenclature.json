@@ -1,0 +1,12 @@
+{
+  "types": [],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "LICHEN_PLACETTES",
+      "mnemonique": "Placette à lichens",
+      "label_default": "Placette lichens bioindicateur",
+      "definition_default": "Placette lichens bioindicateur"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "module_label": "Etudes sur les lichens bio indicateurs",
+  "module_desc": "Suivi des lichens bio indicateurs sur des peuplements matures",
+  "export_csv": [
+    {
+      "label": "Télécharger le CSV",
+      "type": "csv",
+      "method": "telecharger_csv"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "display_properties": [
+    "visit_date_min",
+    "observers",
+    "time_start",
+    "time_end",
+    "contrainte_stationelle_forte",
+    "frein_exploitation",
+    "hauteur_dominante",
+    "indices_usages_passe_ou_actuel",
+    "nb_abres_dmh_cavite_evolutive_a_terreau_pied",
+    "nb_abres_dmh_cavite_evolutive_a_terreau_tronc",
+    "nb_abres_dmh_champignon_polypore",
+    "nb_abres_dmh_charpentière_ou_cime_recemment_brisee",
+    "nb_abres_dmh_dendrotelme",
+    "nb_abres_dmh_ecorce_decollee_formant_un_abri",
+    "nb_abres_dmh_fente_profonde",
+    "nb_abres_dmh_loge_pics",
+    "nb_abres_dmh_plage_bois_sans_ecorce",
+    "surface_terriere_morts_debout_sup_17_5_inf_27_5",
+    "surface_terriere_morts_debout_sup_27_5_inf_47_5",
+    "surface_terriere_morts_debout_sup_47_5_inf_67_5",
+    "surface_terriere_morts_debout_sup_67_5_inf_87_5",
+    "surface_terriere_morts_debout_sup_87_5",
+    "surface_terriere_morts_sol_sup_17_5_inf_27_5",
+    "surface_terriere_morts_sol_sup_27_5_inf_47_5",
+    "surface_terriere_morts_sol_sup_47_5_inf_67_5",
+    "surface_terriere_morts_sol_sup_67_5_inf_87_5",
+    "surface_terriere_morts_sol_sup_87_5",
+    "comments",
+    "nb_observations"
+  ],
+  "specific": {
+    "time_start": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début"
+    },
+    "time_end": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin"
+    },
+    "hauteur_dominante": {
+      "attribut_label": "H dominante sur placette",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "contrainte_stationelle_forte": {
+      "attribut_label": "Contrainte stationnelle forte",
+      "description": "",
+      "type_widget": "bool_checkbox"
+    },
+    "surface_terriere_morts_debout_sup_17_5_inf_27_5": {
+      "attribut_label": "Surface terrière morts debout > 17,5 et < 27,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_debout_sup_27_5_inf_47_5": {
+      "attribut_label": "Surface terrière morts debout  > 27,5 et < 47,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_debout_sup_47_5_inf_67_5": {
+      "attribut_label": "Surface terrière morts debout > 47,5 et < 67,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_debout_sup_67_5_inf_87_5": {
+      "attribut_label": "Surface terrière morts debout > 67,5 et < 87,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_debout_sup_87_5": {
+      "attribut_label": "Surface terrière morts debout > 87,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_sol_sup_17_5_inf_27_5": {
+      "attribut_label": "Surface terrière morts au sol > 17,5 et < 27,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_sol_sup_27_5_inf_47_5": {
+      "attribut_label": "Surface terrière morts au sol  > 27,5 et < 47,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_sol_sup_47_5_inf_67_5": {
+      "attribut_label": "Surface terrière morts au sol > 47,5 et < 67,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_sol_sup_67_5_inf_87_5": {
+      "attribut_label": "Surface terrière morts au sol > 67,5 et < 87,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_morts_sol_sup_87_5": {
+      "attribut_label": "Surface terrière morts au sol > 87,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "frein_exploitation": {
+      "type_widget": "textarea",
+      "attribut_label": "Freins actuels d’exploitation peuplement",
+      "description": "Caractéristiques notamment topographiques pouvant être à l’origine de difficultés actuelles ou passées pour exploiter la parcelle. Texte libre."
+    },
+    "indices_usages_passe_ou_actuel": {
+      "type_widget": "textarea",
+      "attribut_label": "Indices d’usages passés ou actuels du peuplement pour qualifier une forêt ancienne"
+    },
+    "nb_abres_dmh_cavite_evolutive_a_terreau_tronc": {
+      "attribut_label": "Cavité évolutive à terreau, de tronc",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "nb_abres_dmh_cavite_evolutive_a_terreau_pied": {
+      "attribut_label": "Cavité évolutive à terreau, de pied",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "nb_abres_dmh_champignon_polypore": {
+      "attribut_label": "Champignon polypore",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "nb_abres_dmh_charpentière_ou_cime_recemment_brisee": {
+      "attribut_label": "Charpentière ou cime récemment brisée",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "nb_abres_dmh_dendrotelme": {
+      "attribut_label": "Dendrotelme",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "nb_abres_dmh_ecorce_decollee_formant_un_abri": {
+      "attribut_label": "Ecorce décollée formant un abri",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "nb_abres_dmh_fente_profonde": {
+      "attribut_label": "Fente profonde",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "nb_abres_dmh_loge_pics": {
+      "attribut_label": "Loge de pics",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "nb_abres_dmh_plage_bois_sans_ecorce": {
+      "attribut_label": "Plage de bois sans écorce",
+      "description": " ",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    }
+  }
+}

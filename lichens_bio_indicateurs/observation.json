@@ -1,0 +1,129 @@
+{
+  "display_properties": [
+    "uuid_observation",
+    "cd_nom",
+    "nombre_individus_arbre_1",
+    "nombre_individus_arbre_10",
+    "nombre_individus_arbre_2",
+    "nombre_individus_arbre_3",
+    "nombre_individus_arbre_4",
+    "nombre_individus_arbre_5",
+    "nombre_individus_arbre_6",
+    "nombre_individus_arbre_7",
+    "nombre_individus_arbre_8",
+    "nombre_individus_arbre_9",
+    "statut_observation",
+    "statut_source",
+    "comments"
+  ],
+  "display_list": [
+    "uuid_observation",
+    "cd_nom",
+    "nombre_individus_arbre_1",
+    "nombre_individus_arbre_10",
+    "nombre_individus_arbre_2",
+    "nombre_individus_arbre_3",
+    "nombre_individus_arbre_4",
+    "nombre_individus_arbre_5",
+    "nombre_individus_arbre_6",
+    "nombre_individus_arbre_7",
+    "nombre_individus_arbre_8",
+    "nombre_individus_arbre_9"
+  ],
+  "keep": [
+    "statut_source",
+    "technique_observation"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+    "nombre_individus_arbre_1": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 1",
+      "required": false
+    },
+    "nombre_individus_arbre_2": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 2",
+      "required": false
+    },
+    "nombre_individus_arbre_3": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 3",
+      "required": false
+    },
+    "nombre_individus_arbre_4": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 4",
+      "required": false
+    },
+    "nombre_individus_arbre_5": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 5",
+      "required": false
+    },
+    "nombre_individus_arbre_6": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 6",
+      "required": false
+    },
+    "nombre_individus_arbre_7": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 7",
+      "required": false
+    },
+    "nombre_individus_arbre_8": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 8",
+      "required": false
+    },
+    "nombre_individus_arbre_9": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 9",
+      "required": false
+    },
+    "nombre_individus_arbre_10": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus arbre 10",
+      "required": false
+    },
+    "statut_observation": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut d'observation",
+      "api": "nomenclatures/nomenclature/STATUT_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "Pr"
+      }
+    },
+    "statut_source": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut de la source",
+      "api": "nomenclatures/nomenclature/STATUT_SOURCE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": true,
+      "default": {
+        "cd_nomenclature": "Te"
+      }
+    },
+    "comments": {
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    }
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "cruved": {
+    "C": 1,
+    "U": 1,
+    "D": 3
+  },
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "label": "Placette",
+  "label_list": "Placettes",
+  "genre": "F",
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "base_site_code",
+    "confinement",
+    "densite_couvert_e",
+    "densite_couvert_n",
+    "densite_couvert_o",
+    "densite_couvert_s",
+    "essence_preponderante",
+    "essence_principale",
+    "habitat_associe",
+    "habitat_principal",
+    "id_nomenclature_exposition",
+    "id_nomenclature_type_site",
+    "pente",
+    "peuplement_type",
+    "peuplement_type_accompagnement",
+    "surface_terriere_sup_17_5_inf_27_5",
+    "surface_terriere_sup_27_5_inf_47_5",
+    "surface_terriere_sup_47_5_inf_67_5",
+    "surface_terriere_sup_67_5_inf_87_5",
+    "surface_terriere_sup_87_5",
+    "medias",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "LICHEN_PLACETTES"
+      },
+      "hidden": true
+    },
+    "essence_principale": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Essence principale visée sur placette",
+      "description": "Hêtre (HET), Sapin pectiné (S.P), Pin sylvestre (P.S) D’après plan d’échantillonnage.",
+      "values": [
+        "Hêtre",
+        "Sapin pectiné",
+        "Pin sylvestre"
+      ]
+    },
+    "essence_preponderante": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Essence prépondérante réelle sur placette",
+      "description": "Ligneux constituant l’étage dominant (> 20m à terme), éventuellement co-prépondérantes.",
+      "values": [
+        "Hêtre",
+        "Sapin pectiné",
+        "Pin sylvestre"
+      ]
+    },
+    "id_nomenclature_exposition": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Exposition",
+      "code_nomenclature_type": "EXPOSITION",
+      "type_util": "nomenclature"
+    },
+    "pente": {
+      "attribut_label": "Pente",
+      "description": "Prise sur place à la boussole",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "habitat_principal": {
+      "type_widget": "datalist",
+      "attribut_label": "Habitat naturel principal",
+      "description": "Confirmation sur place, avec aide SIG et clé de détermination (© C. Gaubertville)",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+        "cd_typo": 7,
+        "search_name": ""
+      }
+    },
+    "habitat_associe": {
+      "type_widget": "datalist",
+      "attribut_label": "Habitat naturel associé",
+      "description": "Confirmation sur place, avec aide SIG et clé de détermination (© C. Gaubertville)",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+        "cd_typo": 7,
+        "search_name": ""
+      }
+    },
+    "peuplement_type": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Type de peuplement - Essences objectifs associées",
+      "description": "Type de peuplement forestier (visible autour depuis le centre) - Structure (TAIL, TSF, FREG, FIRR)",
+      "values": [
+        "TAIL",
+        "TSF",
+        "FREG",
+        "FIRR"
+      ]
+    },
+    "peuplement_type_accompagnement": {
+      "attribut_label": "Type de peuplement - Essences d’accompagnement",
+      "description": "Type de peuplement forestier (visible autour depuis le centre) - Structure (TAIL, TSF, FREG, FIRR)",
+      "type_widget": "select",
+      "required": true,
+      "values": [
+        "TAIL",
+        "TSF",
+        "FREG",
+        "FIRR"
+      ]
+    },
+    "densite_couvert_n": {
+      "attribut_label": "Densité du couvert - N",
+      "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "densite_couvert_s": {
+      "attribut_label": "Densité du couvert - S",
+      "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "densite_couvert_e": {
+      "attribut_label": "Densité du couvert - E",
+      "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "densite_couvert_o": {
+      "attribut_label": "Densité du couvert - O",
+      "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "confinement": {
+      "attribut_label": "Confinement",
+      "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_sup_17_5_inf_27_5": {
+      "attribut_label": "Surface terrière > 17,5 et < 27,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_sup_27_5_inf_47_5": {
+      "attribut_label": "Surface terrière  > 27,5 et < 47,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_sup_47_5_inf_67_5": {
+      "attribut_label": "Surface terrière > 47,5 et < 67,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_sup_67_5_inf_87_5": {
+      "attribut_label": "Surface terrière > 67,5 et < 87,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_sup_87_5": {
+      "attribut_label": "Surface terrière > 87,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    }
+  }
+}
