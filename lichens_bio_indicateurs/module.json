@@ -3,9 +3,14 @@
   "module_desc": "Suivi des lichens bio indicateurs sur des peuplements matures",
   "export_csv": [
     {
-      "label": "Télécharger le CSV",
+      "label": "Liste des sites",
       "type": "csv",
-      "method": "telecharger_csv"
+      "method": "sites"
+    },
+    {
+      "label": "Liste des taxons",
+      "type": "csv",
+      "method": "taxons"
     }
   ]
 }
