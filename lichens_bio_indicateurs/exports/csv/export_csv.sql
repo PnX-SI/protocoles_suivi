@@ -1,7 +1,4 @@
-
-CREATE OR REPLACE VIEW gn_monitoring.v_export_lichens_bio_indicateurs_sites
- AS
- WITH
+WITH
 default_dt AS (
     SELECT
         id_dataset
@@ -35,7 +32,7 @@ tsc."data"->>'surface_terriere_sup_27_5_inf_47_5' AS surface_terriere_sup_27_5_i
 tsc."data"->>'surface_terriere_sup_47_5_inf_67_5' AS surface_terriere_sup_47_5_inf_67_5,
 tsc."data"->>'surface_terriere_sup_67_5_inf_87_5' AS surface_terriere_sup_67_5_inf_87_5,
 tsc."data"->>'surface_terriere_sup_87_5' AS surface_terriere_sup_87_5,
-(SELECT id_dataset FROM defaut_dt LIMIT 1) AS id_dataset
+(SELECT id_dataset FROM default_dt LIMIT 1) AS id_dataset
 from gn_monitoring.t_base_sites s
 JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
@@ -54,10 +51,8 @@ LEFT JOIN LATERAL ( SELECT d_1.id_base_site ,
               WHERE sa.id_base_site  = s.id_base_site
               GROUP BY sa.id_base_site , ta.type_code) d_1
 GROUP BY d_1.id_base_site)
-LEFT JOIN LATERAL (SELECT * FROM gn_monitoring.t_base_visits AS tbv )
 a ON TRUE
 ;
-
 
 CREATE OR REPLACE VIEW gn_monitoring.v_export_lichens_bio_indicateurs_taxons
  AS
