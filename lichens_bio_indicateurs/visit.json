@@ -208,103 +208,91 @@
       "attribut_label": "Surface terrière > 17,5 et < 27,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 17.5,
-      "max": 27.4
+      "min": 0
     },
     "surface_terriere_sup_27_5_inf_47_5": {
       "attribut_label": "Surface terrière  > 27,5 et < 47,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 27.5,
-      "max": 47.4
+      "min": 0
     },
     "surface_terriere_sup_47_5_inf_67_5": {
       "attribut_label": "Surface terrière > 47,5 et < 67,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 47.5,
-      "max": 67.4
+      "min": 0
     },
     "surface_terriere_sup_67_5_inf_87_5": {
       "attribut_label": "Surface terrière > 67,5 et < 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 67.5,
-      "max": 87.4
+      "min": 0
     },
     "surface_terriere_sup_87_5": {
       "attribut_label": "Surface terrière > 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 87.5
+      "min": 0
     },
     "surface_terriere_morts_debout_sup_17_5_inf_27_5": {
       "attribut_label": "Surface terrière morts debout > 17,5 et < 27,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 17.5,
-      "max": 27.4
+      "min": 0
     },
     "surface_terriere_morts_debout_sup_27_5_inf_47_5": {
       "attribut_label": "Surface terrière morts debout  > 27,5 et < 47,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 27.5,
-      "max": 47.4
+      "min": 0
     },
     "surface_terriere_morts_debout_sup_47_5_inf_67_5": {
       "attribut_label": "Surface terrière morts debout > 47,5 et < 67,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 47.5,
-      "max": 67.4
+      "min": 0
     },
     "surface_terriere_morts_debout_sup_67_5_inf_87_5": {
       "attribut_label": "Surface terrière morts debout > 67,5 et < 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 67.5,
-      "max": 87.4
+      "min": 0
     },
     "surface_terriere_morts_debout_sup_87_5": {
       "attribut_label": "Surface terrière morts debout > 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 87.5
+      "min": 05
     },
     "surface_terriere_morts_sol_sup_17_5_inf_27_5": {
       "attribut_label": "Surface terrière morts au sol > 17,5 et < 27,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 17.5,
-      "max": 27.4
+      "min": 0
     },
     "surface_terriere_morts_sol_sup_27_5_inf_47_5": {
       "attribut_label": "Surface terrière morts au sol  > 27,5 et < 47,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 27.5,
-      "max": 47.4
+      "min": 0
     },
     "surface_terriere_morts_sol_sup_47_5_inf_67_5": {
       "attribut_label": "Surface terrière morts au sol > 47,5 et < 67,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 47.5,
-      "max": 67.4
+      "min": 0
     },
     "surface_terriere_morts_sol_sup_67_5_inf_87_5": {
       "attribut_label": "Surface terrière morts au sol > 67,5 et < 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 67.5,
-      "max": 87.4
+      "min": 0
     },
     "surface_terriere_morts_sol_sup_87_5": {
       "attribut_label": "Surface terrière morts au sol > 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 87.5
+      "min": 0
     },
     "hauteur_dominante_essence_1": {
       "attribut_label": "H dominante sur placette - Essence - Arbre 1",

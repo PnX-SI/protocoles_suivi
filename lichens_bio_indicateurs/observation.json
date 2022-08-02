@@ -13,8 +13,6 @@
     "presence_arbre_8",
     "presence_arbre_9",
     "presence_arbre_10",
-    "statut_observation",
-    "statut_source",
     "comments"
   ],
   "display_list": [
@@ -32,8 +30,7 @@
     "presence_arbre_10"
   ],
   "keep": [
-    "statut_source",
-    "technique_observation"
+    "id_nomenclature_observation_status"
   ],
   "specific": {
     "cd_nom": {
@@ -108,7 +105,7 @@
       "type_widget": "bool_checkbox",
       "default": false
     },
-    "statut_observation": {
+    "id_nomenclature_observation_status": {
       "type_widget": "datalist",
       "attribut_label": "Statut d'observation",
       "api": "nomenclatures/nomenclature/STATUT_OBS",
@@ -117,24 +114,9 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": true,
-      "default": {
-        "cd_nomenclature": "Pr"
-      }
-    },
-    "statut_source": {
-      "type_widget": "datalist",
-      "attribut_label": "Statut de la source",
-      "api": "nomenclatures/nomenclature/STATUT_SOURCE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
-      "required": false,
       "hidden": true,
       "default": {
-        "cd_nomenclature": "Te"
+        "cd_nomenclature": "Pr"
       }
     },
     "comments": {
