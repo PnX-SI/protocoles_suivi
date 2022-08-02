@@ -61,6 +61,36 @@
     "nb_arbres_dmh_loge_pics",
     "nb_arbres_dmh_plage_bois_sans_ecorce",
     "num_echantillon",
+    "description_arbre_1_essence",
+    "description_arbre_1_diametre_1",
+    "description_arbre_1_diametre_2",
+    "description_arbre_2_essence",
+    "description_arbre_2_diametre_1",
+    "description_arbre_2_diametre_2",
+    "description_arbre_3_essence",
+    "description_arbre_3_diametre_1",
+    "description_arbre_3_diametre_2",
+    "description_arbre_4_essence",
+    "description_arbre_4_diametre_1",
+    "description_arbre_4_diametre_2",
+    "description_arbre_5_essence",
+    "description_arbre_5_diametre_1",
+    "description_arbre_5_diametre_2",
+    "description_arbre_6_essence",
+    "description_arbre_6_diametre_1",
+    "description_arbre_6_diametre_2",
+    "description_arbre_7_essence",
+    "description_arbre_7_diametre_1",
+    "description_arbre_7_diametre_2",
+    "description_arbre_8_essence",
+    "description_arbre_8_diametre_1",
+    "description_arbre_8_diametre_2",
+    "description_arbre_9_essence",
+    "description_arbre_9_diametre_1",
+    "description_arbre_9_diametre_2",
+    "description_arbre_10_essence",
+    "description_arbre_10_diametre_1",
+    "description_arbre_10_diametre_2",
     "comments",
     "nb_observations"
   ],
@@ -482,6 +512,186 @@
     "num_echantillon": {
       "attribut_label": "Numéro d'échantillon (num_placette_aammjj)",
       "type_widget": "text"
+    },
+    "description_arbre_1_essence": {
+      "attribut_label": "Description Arbre 1 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_1_diametre_1": {
+      "attribut_label": "Description Arbre 1 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_1_diametre_2": {
+      "attribut_label": "Description Arbre 1 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_2_essence": {
+      "attribut_label": "Description Arbre 2 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_2_diametre_1": {
+      "attribut_label": "Description Arbre 2 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_2_diametre_2": {
+      "attribut_label": "Description Arbre 2 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_3_essence": {
+      "attribut_label": "Description Arbre 3 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_3_diametre_1": {
+      "attribut_label": "Description Arbre 3 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_3_diametre_2": {
+      "attribut_label": "Description Arbre 3 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_4_essence": {
+      "attribut_label": "Description Arbre 4 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_4_diametre_1": {
+      "attribut_label": "Description Arbre 4 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_4_diametre_2": {
+      "attribut_label": "Description Arbre 4 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_5_essence": {
+      "attribut_label": "Description Arbre 5 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_5_diametre_1": {
+      "attribut_label": "Description Arbre 5 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_5_diametre_2": {
+      "attribut_label": "Description Arbre 5 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_6_essence": {
+      "attribut_label": "Description Arbre 6 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_6_diametre_1": {
+      "attribut_label": "Description Arbre 6 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_6_diametre_2": {
+      "attribut_label": "Description Arbre 6 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_7_essence": {
+      "attribut_label": "Description Arbre 7 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_7_diametre_1": {
+      "attribut_label": "Description Arbre 7 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_7_diametre_2": {
+      "attribut_label": "Description Arbre 7 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_8_essence": {
+      "attribut_label": "Description Arbre 8 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_8_diametre_1": {
+      "attribut_label": "Description Arbre 8 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_8_diametre_2": {
+      "attribut_label": "Description Arbre 8 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_9_essence": {
+      "attribut_label": "Description Arbre 9 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_9_diametre_1": {
+      "attribut_label": "Description Arbre 9 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_9_diametre_2": {
+      "attribut_label": "Description Arbre 9 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_10_essence": {
+      "attribut_label": "Description Arbre 10 - Essence",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "description_arbre_10_diametre_1": {
+      "attribut_label": "Description Arbre 10 - Diamètre 1",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "description_arbre_10_diametre_2": {
+      "attribut_label": "Description Arbre 10 - Diamètre 2",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
     }
   }
 }

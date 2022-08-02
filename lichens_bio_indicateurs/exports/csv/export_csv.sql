@@ -70,7 +70,37 @@ SELECT
     hdehp3.mnemonique AS hauteur_dominante_essence_tgb_hors_placette_3,
     tvc.data->>'hauteur_dominante_diametre_tgb_hors_placette_3' as hauteur_dominante_diametre_tgb_hors_placette_3,
     tvc.data->>'hauteur_dominante_distance_tgb_hors_placette_3' as hauteur_dominante_distance_tgb_hors_placette_3,
-    tvc.data->>'num_echantillon' as num_echantillon
+    tvc.data->>'num_echantillon' as num_echantillon,
+    dae1.mnemonique AS description_arbre_1_essence,
+    tvc.data->>'description_arbre_1_diametre_1' as description_arbre_1_diametre_1,
+    tvc.data->>'description_arbre_1_diametre_2' as description_arbre_1_diametre_2,
+    dae2.mnemonique AS description_arbre_2_essence,
+    tvc.data->>'description_arbre_2_diametre_1' as description_arbre_2_diametre_1,
+    tvc.data->>'description_arbre_2_diametre_2' as description_arbre_2_diametre_2,
+    dae3.mnemonique AS description_arbre_3_essence,
+    tvc.data->>'description_arbre_3_diametre_1' as description_arbre_3_diametre_1,
+    tvc.data->>'description_arbre_3_diametre_2' as description_arbre_3_diametre_2,
+    dae4.mnemonique AS description_arbre_4_essence,
+    tvc.data->>'description_arbre_4_diametre_1' as description_arbre_4_diametre_1,
+    tvc.data->>'description_arbre_4_diametre_2' as description_arbre_4_diametre_2,
+    dae5.mnemonique AS description_arbre_5_essence,
+    tvc.data->>'description_arbre_5_diametre_1' as description_arbre_5_diametre_1,
+    tvc.data->>'description_arbre_5_diametre_2' as description_arbre_5_diametre_2,
+    dae6.mnemonique AS description_arbre_6_essence,
+    tvc.data->>'description_arbre_6_diametre_1' as description_arbre_6_diametre_1,
+    tvc.data->>'description_arbre_6_diametre_2' as description_arbre_6_diametre_2,
+    dae7.mnemonique AS description_arbre_7_essence,
+    tvc.data->>'description_arbre_7_diametre_1' as description_arbre_7_diametre_1,
+    tvc.data->>'description_arbre_7_diametre_2' as description_arbre_7_diametre_2,
+    dae8.mnemonique AS description_arbre_8_essence,
+    tvc.data->>'description_arbre_8_diametre_1' as description_arbre_8_diametre_1,
+    tvc.data->>'description_arbre_8_diametre_2' as description_arbre_8_diametre_2,
+    dae9.mnemonique AS description_arbre_9_essence,
+    tvc.data->>'description_arbre_9_diametre_1' as description_arbre_9_diametre_1,
+    tvc.data->>'description_arbre_9_diametre_2' as description_arbre_9_diametre_2,
+    dae10.mnemonique AS description_arbre_10_essence,
+    tvc.data->>'description_arbre_10_diametre_1' as description_arbre_10_diametre_1,
+    tvc.data->>'description_arbre_10_diametre_2' as description_arbre_10_diametre_2
 from gn_monitoring.t_base_sites s
 JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
@@ -83,6 +113,16 @@ LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hde2 ON hde2.id_nomenclatur
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hdehp1 ON hdehp1.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_tgb_hors_placette_1', '-1'))::int
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hdehp2 ON hdehp2.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_tgb_hors_placette_2', '-1'))::int
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hdehp3 ON hdehp3.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_tgb_hors_placette_3', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae1 ON dae1.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_1_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae2 ON dae2.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_2_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae3 ON dae3.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_3_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae4 ON dae4.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_4_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae5 ON dae5.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_5_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae6 ON dae6.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_6_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae7 ON dae7.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_7_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae8 ON dae8.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_8_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae9 ON dae9.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_9_essence', '-1'))::int
+LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS dae10 ON dae10.id_nomenclature = (COALESCE(tvc."data"->>'description_arbre_10_essence', '-1'))::int
 LEFT JOIN LATERAL ( SELECT d_1.id_base_site ,
         json_object_agg(d_1.type_code, d_1.o_name) AS jname,
         json_object_agg(d_1.type_code, d_1.o_code) AS jcode
