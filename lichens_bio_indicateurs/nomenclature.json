@@ -1,12 +1,368 @@
 {
-  "types": [],
+  "types": [
+    {
+      "mnemonique": "ONF_ESSENCES",
+      "label_default": "Essence d'abres (ONF)",
+      "definition_default": "Essence d'abres des peuplements forestiers définies par l'ONF"
+    }
+  ],
   "nomenclatures": [
     {
       "type": "TYPE_SITE",
-      "cd_nomenclature": "LICHEN_PLACETTES",
+      "cd_nomenclature": "LICHENS_PLACETTE",
       "mnemonique": "Placette à lichens",
       "label_default": "Placette lichens bioindicateur",
       "definition_default": "Placette lichens bioindicateur"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "A.F",
+      "definition_default": "Autres Feuillus",
+      "label_default": "Autres Feuillus",
+      "mnemonique": "Autres Feuillus"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "A.R",
+      "definition_default": "Autres Résineux",
+      "label_default": "Autres Résineux",
+      "mnemonique": "Autres Résineux"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ALB",
+      "definition_default": "Alisier blanc",
+      "label_default": "Alisier blanc",
+      "mnemonique": "Alisier blanc"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ALT",
+      "definition_default": "Alisier torminal",
+      "label_default": "Alisier torminal",
+      "mnemonique": "Alisier torminal"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "AUC",
+      "definition_default": "Aulne de Corse (Aulne cordiforme)",
+      "label_default": "Aulne de Corse (Aulne cordiforme)",
+      "mnemonique": "Aulne de Corse (Aulne cordiforme)"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "AUG",
+      "definition_default": "Aulne glutineux",
+      "label_default": "Aulne glutineux",
+      "mnemonique": "Aulne glutineux"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "BOP",
+      "definition_default": "Bouleau pubescent",
+      "label_default": "Bouleau pubescent",
+      "mnemonique": "Bouleau pubescent"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "BOV",
+      "definition_default": "Bouleau verruqueux",
+      "label_default": "Bouleau verruqueux",
+      "mnemonique": "Bouleau verruqueux"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "CEA",
+      "definition_default": "Cèdre de l'Atlas",
+      "label_default": "Cèdre de l'Atlas",
+      "mnemonique": "Cèdre de l'Atlas"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "CEG",
+      "definition_default": "Cerisier à grappes",
+      "label_default": "Cerisier à grappes",
+      "mnemonique": "Cerisier à grappes"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "CHA",
+      "definition_default": "Charme",
+      "label_default": "Charme",
+      "mnemonique": "Charme"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "CHS",
+      "definition_default": "Chêne sessile",
+      "label_default": "Chêne sessile",
+      "mnemonique": "Chêne sessile"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "CHT",
+      "definition_default": "Chataîgnier",
+      "label_default": "Chataîgnier",
+      "mnemonique": "Chataîgnier"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "CHV",
+      "definition_default": "Chêne vert",
+      "label_default": "Chêne vert",
+      "mnemonique": "Chêne vert"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "CHY",
+      "definition_default": "Chêne pubescent",
+      "label_default": "Chêne pubescent",
+      "mnemonique": "Chêne pubescent"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "COR",
+      "definition_default": "Cormier (sorbier domestique)",
+      "label_default": "Cormier (sorbier domestique)",
+      "mnemonique": "Cormier (sorbier domestique)"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "DOU",
+      "definition_default": "Douglas",
+      "label_default": "Douglas",
+      "mnemonique": "Douglas"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "EPC",
+      "definition_default": "Epicéa commun",
+      "label_default": "Epicéa commun",
+      "mnemonique": "Epicéa commun"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "EPS",
+      "definition_default": "Epicéa de Sitka",
+      "label_default": "Epicéa de Sitka",
+      "mnemonique": "Epicéa de Sitka"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ERC",
+      "definition_default": "Erable champêtre",
+      "label_default": "Erable champêtre",
+      "mnemonique": "Erable champêtre"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ERM",
+      "definition_default": "Erable de Montpellier",
+      "label_default": "Erable de Montpellier",
+      "mnemonique": "Erable de Montpellier"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ERO",
+      "definition_default": "Erable à feuilles d'obier",
+      "label_default": "Erable à feuilles d'obier",
+      "mnemonique": "Erable à feuilles d'obier"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ERP",
+      "definition_default": "Erable plane",
+      "label_default": "Erable plane",
+      "mnemonique": "Erable plane"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ERS",
+      "definition_default": "Erable sycomore",
+      "label_default": "Erable sycomore",
+      "mnemonique": "Erable sycomore"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "FRC",
+      "definition_default": "Frêne commun",
+      "label_default": "Frêne commun",
+      "mnemonique": "Frêne commun"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "HET",
+      "definition_default": "Hêtre",
+      "label_default": "Hêtre",
+      "mnemonique": "Hêtre"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "IFS",
+      "definition_default": "If commun",
+      "label_default": "If commun",
+      "mnemonique": "If commun"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "MEE",
+      "definition_default": "Mélèze d'Europe",
+      "label_default": "Mélèze d'Europe",
+      "mnemonique": "Mélèze d'Europe"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "MER",
+      "definition_default": "Merisier",
+      "label_default": "Merisier",
+      "mnemonique": "Merisier"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "NOI",
+      "definition_default": "Noisetier",
+      "label_default": "Noisetier",
+      "mnemonique": "Noisetier"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "NOY",
+      "definition_default": "Noyers",
+      "label_default": "Noyers",
+      "mnemonique": "Noyers"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ORD",
+      "definition_default": "Orme lisse (Orme diffus)",
+      "label_default": "Orme lisse (Orme diffus)",
+      "mnemonique": "Orme lisse (Orme diffus)"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ORT",
+      "definition_default": "Orme de montagne",
+      "label_default": "Orme de montagne",
+      "mnemonique": "Orme de montagne"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "P.O",
+      "definition_default": "Pin noir d'Autriche",
+      "label_default": "Pin noir d'Autriche",
+      "mnemonique": "Pin noir d'Autriche"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "P.S",
+      "definition_default": "Pin sylvestre",
+      "label_default": "Pin sylvestre",
+      "mnemonique": "Pin sylvestre"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "P.X",
+      "definition_default": "Pin à crochets",
+      "label_default": "Pin à crochets",
+      "mnemonique": "Pin à crochets"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "PCO",
+      "definition_default": "Pin laricio de Corse",
+      "label_default": "Pin laricio de Corse",
+      "mnemonique": "Pin laricio de Corse"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "PEN",
+      "definition_default": "Peuplier noir",
+      "label_default": "Peuplier noir",
+      "mnemonique": "Peuplier noir"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "PMU",
+      "definition_default": "Pin mugo",
+      "label_default": "Pin mugo",
+      "mnemonique": "Pin mugo"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "PPP",
+      "definition_default": "Poirier/Prunier/Pommier",
+      "label_default": "Poirier/Prunier/Pommier",
+      "mnemonique": "Poirier/Prunier/Pommier"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "ROB",
+      "definition_default": "Robinier",
+      "label_default": "Robinier",
+      "mnemonique": "Robinier"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "S.N",
+      "definition_default": "Sapin de Nordmann",
+      "label_default": "Sapin de Nordmann",
+      "mnemonique": "Sapin de Nordmann"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "S.P",
+      "definition_default": "Sapin pectiné",
+      "label_default": "Sapin pectiné",
+      "mnemonique": "Sapin pectiné"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "S.V",
+      "definition_default": "Sapin de Vancouver (grandis)",
+      "label_default": "Sapin de Vancouver (grandis)",
+      "mnemonique": "Sapin de Vancouver (grandis)"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "SAM",
+      "definition_default": "Saule marsault",
+      "label_default": "Saule marsault",
+      "mnemonique": "Saule marsault"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "SAU",
+      "definition_default": "Saules",
+      "label_default": "Saules",
+      "mnemonique": "Saules"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "SOR",
+      "definition_default": "Sorbier des oiseleurs",
+      "label_default": "Sorbier des oiseleurs",
+      "mnemonique": "Sorbier des oiseleurs"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "TIG",
+      "definition_default": "Tilleul à grandes feuilles",
+      "label_default": "Tilleul à grandes feuilles",
+      "mnemonique": "Tilleul à grandes feuilles"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "TIP",
+      "definition_default": "Tilleul à petites feuilles",
+      "label_default": "Tilleul à petites feuilles",
+      "mnemonique": "Tilleul à petites feuilles"
+    },
+    {
+      "type": "ONF_ESSENCES",
+      "cd_nomenclature": "TRE",
+      "definition_default": "Tremble",
+      "label_default": "Tremble",
+      "mnemonique": "Tremble"
     }
   ]
 }

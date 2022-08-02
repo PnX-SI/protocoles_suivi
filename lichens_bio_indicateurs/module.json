@@ -3,9 +3,9 @@
   "module_desc": "Suivi des lichens bio indicateurs sur des peuplements matures",
   "export_csv": [
     {
-      "label": "Liste des sites",
+      "label": "Description des placettes",
       "type": "csv",
-      "method": "sites"
+      "method": "placettes"
     },
     {
       "label": "Liste des taxons",

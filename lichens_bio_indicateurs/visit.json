@@ -1,22 +1,27 @@
 {
   "display_properties": [
+    "id_nomenclature_type_site",
     "visit_date_min",
     "observers",
     "time_start",
     "time_end",
-    "contrainte_stationelle_forte",
-    "frein_exploitation",
-    "hauteur_dominante",
-    "indices_usages_passe_ou_actuel",
-    "nb_abres_dmh_cavite_evolutive_a_terreau_pied",
-    "nb_abres_dmh_cavite_evolutive_a_terreau_tronc",
-    "nb_abres_dmh_champignon_polypore",
-    "nb_abres_dmh_charpentière_ou_cime_recemment_brisee",
-    "nb_abres_dmh_dendrotelme",
-    "nb_abres_dmh_ecorce_decollee_formant_un_abri",
-    "nb_abres_dmh_fente_profonde",
-    "nb_abres_dmh_loge_pics",
-    "nb_abres_dmh_plage_bois_sans_ecorce",
+    "essence_preponderante",
+    "essence_principale",
+    "habitat_associe",
+    "habitat_principal",
+    "peuplement_type_essences_objectifs",
+    "peuplement_type_structure",
+    "peuplement_type",
+    "peuplement_type_accompagnement",
+    "densite_couvert_e",
+    "densite_couvert_n",
+    "densite_couvert_o",
+    "densite_couvert_s",
+    "surface_terriere_sup_17_5_inf_27_5",
+    "surface_terriere_sup_27_5_inf_47_5",
+    "surface_terriere_sup_47_5_inf_67_5",
+    "surface_terriere_sup_67_5_inf_87_5",
+    "surface_terriere_sup_87_5",
     "surface_terriere_morts_debout_sup_17_5_inf_27_5",
     "surface_terriere_morts_debout_sup_27_5_inf_47_5",
     "surface_terriere_morts_debout_sup_47_5_inf_67_5",
@@ -27,6 +32,35 @@
     "surface_terriere_morts_sol_sup_47_5_inf_67_5",
     "surface_terriere_morts_sol_sup_67_5_inf_87_5",
     "surface_terriere_morts_sol_sup_87_5",
+    "hauteur_dominante_essence_1",
+    "hauteur_dominante_distance_1",
+    "hauteur_dominante_diametre_1",
+    "hauteur_dominante_essence_2",
+    "hauteur_dominante_distance_2",
+    "hauteur_dominante_diametre_2",
+    "contrainte_stationelle_forte",
+    "presence_tgb_hors_placette",
+    "hauteur_dominante_essence_tgb_hors_placette_1",
+    "hauteur_dominante_distance_tgb_hors_placette_1",
+    "hauteur_dominante_diametre_tgb_hors_placette_1",
+    "hauteur_dominante_essence_tgb_hors_placette_2",
+    "hauteur_dominante_distance_tgb_hors_placette_2",
+    "hauteur_dominante_diametre_tgb_hors_placette_2",
+    "hauteur_dominante_essence_tgb_hors_placette_3",
+    "hauteur_dominante_distance_tgb_hors_placette_3",
+    "hauteur_dominante_diametre_tgb_hors_placette_3",
+    "frein_exploitation",
+    "indices_usages_passe_ou_actuel",
+    "nb_arbres_dmh_cavite_evolutive_a_terreau_pied",
+    "nb_arbres_dmh_cavite_evolutive_a_terreau_tronc",
+    "nb_arbres_dmh_champignon_polypore",
+    "nb_arbres_dmh_charpentière_ou_cime_recemment_brisee",
+    "nb_arbres_dmh_dendrotelme",
+    "nb_arbres_dmh_ecorce_decollee_formant_un_abri",
+    "nb_arbres_dmh_fente_profonde",
+    "nb_arbres_dmh_loge_pics",
+    "nb_arbres_dmh_plage_bois_sans_ecorce",
+    "num_echantillon",
     "comments",
     "nb_observations"
   ],
@@ -39,98 +73,339 @@
       "type_widget": "time",
       "attribut_label": "Heure de fin"
     },
-    "hauteur_dominante": {
-      "attribut_label": "H dominante sur placette",
-      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+    "essence_principale": {
+      "type_widget": "select",
+      "attribut_label": "Essence principale visée sur placette",
+      "description": "Hêtre (HET), Sapin pectiné (S.P), Pin sylvestre (P.S) D’après plan d’échantillonnage.",
+      "values": [
+        "Hêtre",
+        "Sapin pectiné",
+        "Pin sylvestre"
+      ]
+    },
+    "essence_preponderante": {
+      "type_widget": "select",
+      "attribut_label": "Essence prépondérante réelle sur placette",
+      "description": "Ligneux constituant l’étage dominant (> 20m à terme), éventuellement co-prépondérantes.",
+      "values": [
+        "Hêtre",
+        "Sapin pectiné",
+        "Pin sylvestre"
+      ]
+    },
+    "habitat_principal": {
+      "type_widget": "datalist",
+      "attribut_label": "Habitat naturel principal",
+      "description": "Confirmation sur place, avec aide SIG et clé de détermination (© C. Gaubertville)",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+        "cd_typo": 7,
+        "search_name": ""
+      }
+    },
+    "habitat_associe": {
+      "type_widget": "datalist",
+      "attribut_label": "Habitat naturel associé",
+      "description": "Confirmation sur place, avec aide SIG et clé de détermination (© C. Gaubertville)",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+        "cd_typo": 7,
+        "search_name": ""
+      }
+    },
+    "peuplement_type_essences_objectifs": {
+      "attribut_label": "Type de peuplement - Essences objectifs associées",
+      "description": "Type de peuplement forestier (visible autour depuis le centre) - Structure (TAIL, TSF, FREG, FIRR)",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "peuplement_type_accompagnement": {
+      "attribut_label": "Type de peuplement - Essences d’accompagnement",
+      "description": "Type de peuplement forestier (visible autour depuis le centre) - Structure (TAIL, TSF, FREG, FIRR)",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "peuplement_type_structure": {
+      "attribut_label": "Type de peuplement - Structure",
+      "description": "Structure du peuplement",
+      "type_widget": "select",
+      "values": [
+        "TAIL",
+        "TSF",
+        "FREG",
+        "FIRR"
+      ]
+    },
+    "densite_couvert_n": {
+      "attribut_label": "Densité du couvert - N",
+      "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
       "type_widget": "number",
-      "required": true,
       "min": 0,
       "default": 0
     },
-    "contrainte_stationelle_forte": {
-      "attribut_label": "Contrainte stationnelle forte",
-      "description": "",
-      "type_widget": "bool_checkbox"
+    "densite_couvert_s": {
+      "attribut_label": "Densité du couvert - S",
+      "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "densite_couvert_e": {
+      "attribut_label": "Densité du couvert - E",
+      "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "densite_couvert_o": {
+      "attribut_label": "Densité du couvert - O",
+      "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "surface_terriere_sup_17_5_inf_27_5": {
+      "attribut_label": "Surface terrière > 17,5 et < 27,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "min": 17.5,
+      "max": 27.4
+    },
+    "surface_terriere_sup_27_5_inf_47_5": {
+      "attribut_label": "Surface terrière  > 27,5 et < 47,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "min": 27.5,
+      "max": 47.4
+    },
+    "surface_terriere_sup_47_5_inf_67_5": {
+      "attribut_label": "Surface terrière > 47,5 et < 67,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "min": 47.5,
+      "max": 67.4
+    },
+    "surface_terriere_sup_67_5_inf_87_5": {
+      "attribut_label": "Surface terrière > 67,5 et < 87,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "min": 67.5,
+      "max": 87.4
+    },
+    "surface_terriere_sup_87_5": {
+      "attribut_label": "Surface terrière > 87,5 (m²/ha)",
+      "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
+      "type_widget": "number",
+      "min": 87.5
     },
     "surface_terriere_morts_debout_sup_17_5_inf_27_5": {
       "attribut_label": "Surface terrière morts debout > 17,5 et < 27,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 17.5,
+      "max": 27.4
     },
     "surface_terriere_morts_debout_sup_27_5_inf_47_5": {
       "attribut_label": "Surface terrière morts debout  > 27,5 et < 47,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 27.5,
+      "max": 47.4
     },
     "surface_terriere_morts_debout_sup_47_5_inf_67_5": {
       "attribut_label": "Surface terrière morts debout > 47,5 et < 67,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 47.5,
+      "max": 67.4
     },
     "surface_terriere_morts_debout_sup_67_5_inf_87_5": {
       "attribut_label": "Surface terrière morts debout > 67,5 et < 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 67.5,
+      "max": 87.4
     },
     "surface_terriere_morts_debout_sup_87_5": {
       "attribut_label": "Surface terrière morts debout > 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 87.5
     },
     "surface_terriere_morts_sol_sup_17_5_inf_27_5": {
       "attribut_label": "Surface terrière morts au sol > 17,5 et < 27,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 17.5,
+      "max": 27.4
     },
     "surface_terriere_morts_sol_sup_27_5_inf_47_5": {
       "attribut_label": "Surface terrière morts au sol  > 27,5 et < 47,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 27.5,
+      "max": 47.4
     },
     "surface_terriere_morts_sol_sup_47_5_inf_67_5": {
       "attribut_label": "Surface terrière morts au sol > 47,5 et < 67,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 47.5,
+      "max": 67.4
     },
     "surface_terriere_morts_sol_sup_67_5_inf_87_5": {
       "attribut_label": "Surface terrière morts au sol > 67,5 et < 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
-      "min": 0,
-      "default": 0
+      "min": 67.5,
+      "max": 87.4
     },
     "surface_terriere_morts_sol_sup_87_5": {
       "attribut_label": "Surface terrière morts au sol > 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "required": true,
+      "min": 87.5
+    },
+    "hauteur_dominante_essence_1": {
+      "attribut_label": "H dominante sur placette - Essence - Arbre 1",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "hauteur_dominante_distance_1": {
+      "attribut_label": "H dominante sur placette - Distance - Arbre 1",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
       "min": 0,
       "default": 0
+    },
+    "hauteur_dominante_diametre_1": {
+      "attribut_label": "H dominante sur placette - Diamètre - Arbre 1",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "hauteur_dominante_essence_2": {
+      "attribut_label": "H dominante sur placette - Essence - Arbre 2",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature"
+    },
+    "hauteur_dominante_distance_2": {
+      "attribut_label": "H dominante sur placette - Distance - Arbre 2",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "hauteur_dominante_diametre_2": {
+      "attribut_label": "H dominante sur placette - Diamètre - Arbre 2",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0
+    },
+    "contrainte_stationelle_forte": {
+      "attribut_label": "Contrainte stationnelle forte",
+      "type_widget": "select",
+      "values": [
+        "Engorgé",
+        "Tourbe",
+        "Eboulis",
+        "Blocs/Dalle",
+        "Termo/Xerophyte",
+        "Aucune"
+      ]
+    },
+    "presence_tgb_hors_placette": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Abscence de TGB sur la placette et presence de TGB hors placette",
+      "default": false
+    },
+    "hauteur_dominante_essence_tgb_hors_placette_1": {
+      "attribut_label": "H dominante hors placette - Essence - Arbre 1",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature",
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
+    },
+    "hauteur_dominante_distance_tgb_hors_placette_1": {
+      "attribut_label": "H dominante hors placette - Distance - Arbre 1",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0,
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
+    },
+    "hauteur_dominante_diametre_tgb_hors_placette_1": {
+      "attribut_label": "H dominante hors placette - Diamètre - Arbre 1",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0,
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
+    },
+    "hauteur_dominante_essence_tgb_hors_placette_2": {
+      "attribut_label": "H dominante hors placette - Essence - Arbre 2",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature",
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
+    },
+    "hauteur_dominante_distance_tgb_hors_placette_2": {
+      "attribut_label": "H dominante hors placette - Distance - Arbre 2",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0,
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
+    },
+    "hauteur_dominante_diametre_tgb_hors_placette_2": {
+      "attribut_label": "H dominante hors placette - Diamètre - Arbre 2",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0,
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
+    },
+    "hauteur_dominante_essence_tgb_hors_placette_3": {
+      "attribut_label": "H dominante hors placette - Essence - Arbre 3",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature",
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
+    },
+    "hauteur_dominante_distance_tgb_hors_placette_3": {
+      "attribut_label": "H dominante hors placette - Distance - Arbre 3",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0,
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
+    },
+    "hauteur_dominante_diametre_tgb_hors_placette_3": {
+      "attribut_label": "H dominante hors placette - Diamètre - Arbre 3",
+      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
+      "type_widget": "number",
+      "min": 0,
+      "default": 0,
+      "hidden": "({value}) => !value.presence_tgb_hors_placette"
     },
     "frein_exploitation": {
       "type_widget": "textarea",
@@ -141,68 +416,72 @@
       "type_widget": "textarea",
       "attribut_label": "Indices d’usages passés ou actuels du peuplement pour qualifier une forêt ancienne"
     },
-    "nb_abres_dmh_cavite_evolutive_a_terreau_tronc": {
-      "attribut_label": "Cavité évolutive à terreau, de tronc",
+    "nb_arbres_dmh_cavite_evolutive_a_terreau_tronc": {
+      "attribut_label": "Nb DMH - Cavité évolutive à terreau, de tronc",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
     },
-    "nb_abres_dmh_cavite_evolutive_a_terreau_pied": {
-      "attribut_label": "Cavité évolutive à terreau, de pied",
+    "nb_arbres_dmh_cavite_evolutive_a_terreau_pied": {
+      "attribut_label": "Nb DMH - Cavité évolutive à terreau, de pied",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
     },
-    "nb_abres_dmh_champignon_polypore": {
-      "attribut_label": "Champignon polypore",
+    "nb_arbres_dmh_champignon_polypore": {
+      "attribut_label": "Nb DMH - Champignon polypore",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
     },
-    "nb_abres_dmh_charpentière_ou_cime_recemment_brisee": {
-      "attribut_label": "Charpentière ou cime récemment brisée",
+    "nb_arbres_dmh_charpentière_ou_cime_recemment_brisee": {
+      "attribut_label": "Nb DMH - Charpentière ou cime récemment brisée",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
     },
-    "nb_abres_dmh_dendrotelme": {
-      "attribut_label": "Dendrotelme",
+    "nb_arbres_dmh_dendrotelme": {
+      "attribut_label": "Nb DMH - Dendrotelme",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
     },
-    "nb_abres_dmh_ecorce_decollee_formant_un_abri": {
-      "attribut_label": "Ecorce décollée formant un abri",
+    "nb_arbres_dmh_ecorce_decollee_formant_un_abri": {
+      "attribut_label": "Nb DMH - Ecorce décollée formant un abri",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
     },
-    "nb_abres_dmh_fente_profonde": {
-      "attribut_label": "Fente profonde",
+    "nb_arbres_dmh_fente_profonde": {
+      "attribut_label": "Nb DMH - Fente profonde",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
     },
-    "nb_abres_dmh_loge_pics": {
-      "attribut_label": "Loge de pics",
+    "nb_arbres_dmh_loge_pics": {
+      "attribut_label": "Nb DMH - Loge de pics",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
     },
-    "nb_abres_dmh_plage_bois_sans_ecorce": {
-      "attribut_label": "Plage de bois sans écorce",
+    "nb_arbres_dmh_plage_bois_sans_ecorce": {
+      "attribut_label": "Nb DMH - Plage de bois sans écorce",
       "description": " ",
       "type_widget": "number",
       "min": 0,
       "default": 0
+    },
+    "num_echantillon": {
+      "attribut_label": "Numéro d'échantillon (num_placette_aammjj)",
+      "type_widget": "text"
     }
   }
 }

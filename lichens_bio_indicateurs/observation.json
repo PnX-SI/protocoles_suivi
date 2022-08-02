@@ -2,16 +2,17 @@
   "display_properties": [
     "uuid_observation",
     "cd_nom",
-    "nombre_individus_arbre_1",
-    "nombre_individus_arbre_10",
-    "nombre_individus_arbre_2",
-    "nombre_individus_arbre_3",
-    "nombre_individus_arbre_4",
-    "nombre_individus_arbre_5",
-    "nombre_individus_arbre_6",
-    "nombre_individus_arbre_7",
-    "nombre_individus_arbre_8",
-    "nombre_individus_arbre_9",
+    "para_taxon",
+    "presence_arbre_1",
+    "presence_arbre_2",
+    "presence_arbre_3",
+    "presence_arbre_4",
+    "presence_arbre_5",
+    "presence_arbre_6",
+    "presence_arbre_7",
+    "presence_arbre_8",
+    "presence_arbre_9",
+    "presence_arbre_10",
     "statut_observation",
     "statut_source",
     "comments"
@@ -19,16 +20,16 @@
   "display_list": [
     "uuid_observation",
     "cd_nom",
-    "nombre_individus_arbre_1",
-    "nombre_individus_arbre_10",
-    "nombre_individus_arbre_2",
-    "nombre_individus_arbre_3",
-    "nombre_individus_arbre_4",
-    "nombre_individus_arbre_5",
-    "nombre_individus_arbre_6",
-    "nombre_individus_arbre_7",
-    "nombre_individus_arbre_8",
-    "nombre_individus_arbre_9"
+    "presence_arbre_1",
+    "presence_arbre_2",
+    "presence_arbre_3",
+    "presence_arbre_4",
+    "presence_arbre_5",
+    "presence_arbre_6",
+    "presence_arbre_7",
+    "presence_arbre_8",
+    "presence_arbre_9",
+    "presence_arbre_10"
   ],
   "keep": [
     "statut_source",
@@ -42,55 +43,70 @@
       "required": true,
       "id_list": "__MODULE.ID_LIST_TAXONOMY"
     },
-    "nombre_individus_arbre_1": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 1",
+    "para_taxon": {
+      "type_widget": "select",
+      "attribut_label": "Para taxon",
+      "description": "A remplir si groupe de taxon",
+      "values": [
+        "Parmelia sulcata / saxatilis / submontana",
+        "Lepra amara / albescens",
+        "Peltigera / Nephroma",
+        "Apothecies noires NI",
+        "thalle jaunatre",
+        "granuleux vert",
+        "poudre verte"
+      ],
       "required": false
     },
-    "nombre_individus_arbre_2": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 2",
-      "required": false
+    "presence_arbre_1": {
+      "attribut_label": "Présent arbre 1",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
-    "nombre_individus_arbre_3": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 3",
-      "required": false
+    "presence_arbre_2": {
+      "attribut_label": "Présent arbre 2",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
-    "nombre_individus_arbre_4": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 4",
-      "required": false
+    "presence_arbre_3": {
+      "attribut_label": "Présent arbre 3",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
-    "nombre_individus_arbre_5": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 5",
-      "required": false
+    "presence_arbre_4": {
+      "attribut_label": "Présent arbre 4",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
-    "nombre_individus_arbre_6": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 6",
-      "required": false
+    "presence_arbre_5": {
+      "attribut_label": "Présent arbre 5",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
-    "nombre_individus_arbre_7": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 7",
-      "required": false
+    "presence_arbre_6": {
+      "attribut_label": "Présent arbre 6",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
-    "nombre_individus_arbre_8": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 8",
-      "required": false
+    "presence_arbre_7": {
+      "attribut_label": "Présent arbre 7",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
-    "nombre_individus_arbre_9": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 9",
-      "required": false
+    "presence_arbre_8": {
+      "attribut_label": "Présent arbre 8",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
-    "nombre_individus_arbre_10": {
-      "type_widget": "number",
-      "attribut_label": "Nombre d'individus arbre 10",
-      "required": false
+    "presence_arbre_9": {
+      "attribut_label": "Présent arbre 9",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_10": {
+      "attribut_label": "Présent arbre 10",
+      "type_widget": "bool_checkbox",
+      "default": false
     },
     "statut_observation": {
       "type_widget": "datalist",
