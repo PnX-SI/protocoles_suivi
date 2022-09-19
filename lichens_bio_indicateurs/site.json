@@ -58,7 +58,7 @@
       "type_util": "nomenclature",
       "value": {
         "code_nomenclature_type": "TYPE_SITE",
-        "cd_nomenclature": "LICHEN_PLACETTES"
+        "cd_nomenclature": "LICHENS_PLACETTE"
       },
       "hidden": true
     }
