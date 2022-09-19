@@ -10,9 +10,8 @@
     "habitat_associe",
     "habitat_principal",
     "peuplement_type_essences_objectifs",
-    "peuplement_type_structure",
-    "peuplement_type",
     "peuplement_type_accompagnement",
+    "peuplement_type_structure",
     "densite_couvert_e",
     "densite_couvert_n",
     "densite_couvert_o",
@@ -262,7 +261,7 @@
       "attribut_label": "Surface terrière morts debout > 87,5 (m²/ha)",
       "description": "Prise au relascope avec correction de pente intégrée et coeff K / à partir",
       "type_widget": "number",
-      "min": 05
+      "min": 5
     },
     "surface_terriere_morts_sol_sup_17_5_inf_27_5": {
       "attribut_label": "Surface terrière morts au sol > 17,5 et < 27,5 (m²/ha)",

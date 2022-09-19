@@ -45,13 +45,19 @@
       "attribut_label": "Para taxon",
       "description": "A remplir si groupe de taxon",
       "values": [
-        "Parmelia sulcata / saxatilis / submontana",
+        "Fruticuleux",
+        "Granuleux vert",
         "Lepra amara / albescens",
-        "Peltigera / Nephroma",
-        "Apothecies noires NI",
-        "thalle jaunatre",
-        "granuleux vert",
-        "poudre verte"
+        "Lirelle",
+        "Parmelia brun",
+        "Parmelia sulcata / saxatilis / submontana",
+        "Périthèces",
+        "Poudre verte",
+        "Poudre verte apothécies noires",
+        "Poudre jaune",
+        "Poudre jaune hypothalle noir",
+        "Squamules vertes",
+        "Thalle vert"
       ],
       "required": false
     },
