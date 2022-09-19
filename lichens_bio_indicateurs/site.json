@@ -1,0 +1,66 @@
+{
+  "cruved": {
+    "C": 1,
+    "U": 1,
+    "D": 3
+  },
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "label": "Placette",
+  "label_list": "Placettes",
+  "genre": "F",
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "base_site_code",
+    "confinement",
+    "id_nomenclature_exposition",
+    "pente",
+    "medias",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_exposition": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Exposition",
+      "code_nomenclature_type": "EXPOSITION",
+      "type_util": "nomenclature"
+    },
+    "pente": {
+      "attribut_label": "Pente",
+      "description": "Prise sur place à la boussole",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "max": 100,
+      "default": 0
+    },
+    "confinement": {
+      "attribut_label": "Confinement",
+      "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "LICHEN_PLACETTES"
+      },
+      "hidden": true
+    }
+  }
+}
