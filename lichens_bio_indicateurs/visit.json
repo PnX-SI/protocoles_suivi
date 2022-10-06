@@ -34,9 +34,6 @@
     "hauteur_dominante_essence_1",
     "hauteur_dominante_hauteur_1",
     "hauteur_dominante_diametre_1",
-    "hauteur_dominante_essence_2",
-    "hauteur_dominante_hauteur_2",
-    "hauteur_dominante_diametre_2",
     "contrainte_stationelle_forte",
     "presence_tgb_hors_placette",
     "absence_tgb_hors_placette",
@@ -311,27 +308,6 @@
     },
     "hauteur_dominante_diametre_1": {
       "attribut_label": "H dominante sur placette - Diamètre - Arbre 1",
-      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
-      "type_widget": "number",
-      "min": 0,
-      "default": 0
-    },
-    "hauteur_dominante_essence_2": {
-      "attribut_label": "H dominante sur placette - Essence - Arbre 2",
-      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
-      "type_widget": "nomenclature",
-      "code_nomenclature_type": "ONF_ESSENCES",
-      "type_util": "nomenclature"
-    },
-    "hauteur_dominante_hauteur_2": {
-      "attribut_label": "H dominante sur placette - Hauteur - Arbre 2",
-      "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
-      "type_widget": "number",
-      "min": 0,
-      "default": 0
-    },
-    "hauteur_dominante_diametre_2": {
-      "attribut_label": "H dominante sur placette - Diamètre - Arbre 2",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "number",
       "min": 0,
