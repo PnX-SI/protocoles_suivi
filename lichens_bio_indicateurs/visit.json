@@ -13,10 +13,10 @@
     "peuplement_type_essences_objectifs",
     "peuplement_type_accompagnement",
     "peuplement_type_structure",
-    "densite_couvert_e",
     "densite_couvert_n",
-    "densite_couvert_o",
+    "densite_couvert_e",
     "densite_couvert_s",
+    "densite_couvert_o",
     "surface_terriere_sup_17_5_inf_27_5",
     "surface_terriere_sup_27_5_inf_47_5",
     "surface_terriere_sup_47_5_inf_67_5",
@@ -197,16 +197,16 @@
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
-    "densite_couvert_s": {
-      "attribut_label": "Densité du couvert - S",
+    "densite_couvert_e": {
+      "attribut_label": "Densité du couvert - E",
       "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
       "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
-    "densite_couvert_e": {
-      "attribut_label": "Densité du couvert - E",
+    "densite_couvert_s": {
+      "attribut_label": "Densité du couvert - S",
       "description": "Nombre de points de projection de canopée - Mesure au densiomètre",
       "type_widget": "number",
       "min": 0,
