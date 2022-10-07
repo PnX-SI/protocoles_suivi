@@ -23,6 +23,7 @@
     "confinement_sud",
     "confinement_ouest",
     "id_nomenclature_exposition",
+    "exposition_grade",
     "pente",
     "medias",
     "nb_visits"
@@ -37,6 +38,14 @@
       "attribut_label": "Exposition",
       "code_nomenclature_type": "EXPOSITION",
       "type_util": "nomenclature"
+    },
+    "exposition_grade": {
+      "attribut_label": "Exposition en grade",
+      "description": "Exposition en grade",
+      "type_widget": "number",
+      "min": 0,
+      "max": 400,
+      "default": 0
     },
     "pente": {
       "attribut_label": "Pente",
