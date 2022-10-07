@@ -1,11 +1,12 @@
 {
   "display_properties": [
     "id_nomenclature_type_site",
-    "visit_date_min",
+    "descripteur",
     "observers",
-    "test_detectabilite",
+    "visit_date_min",
     "time_start",
     "time_end",
+    "test_detectabilite",
     "essence_preponderante",
     "essence_principale",
     "habitat_associe",
@@ -96,6 +97,17 @@
     "nb_observations"
   ],
   "specific": {
+    "descripteur": {
+      "type_widget": "datalist",
+      "attribut_label": "Descripteur",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": false,
+      "required": true
+    },
     "test_detectabilite": {
       "type_widget": "bool_checkbox",
       "attribut_label": "Visite sans description de placette, uniquement pour tester la detectabilité des espèces",
