@@ -10,6 +10,11 @@ SELECT
     s.base_site_description AS description,
     tsc."data"->>'pente' AS pente,
     tn.label_default AS exposition,
+    tsc."data"->>'exposition_grade' AS exposition_grade,
+    tsc."data"->>'confinement_nord' AS confinement_nord,
+    tsc."data"->>'confinement_est' AS confinement_est,
+    tsc."data"->>'confinement_sud' AS confinement_sud,
+    tsc."data"->>'confinement_ouest' AS confinement_ouest,
     tbv.visit_date_min ,
     obs.observateurs,
     tbv."comments" ,
@@ -17,10 +22,10 @@ SELECT
     tvc.data->>'time_end' as time_end,
     tvc.data->>'time_start' as time_start,
     tvc.data->>'habitat_associe' as habitat_associe,
-    tvc.data->>'densite_couvert_e' as densite_couvert_e,
     tvc.data->>'densite_couvert_n' as densite_couvert_n,
-    tvc.data->>'densite_couvert_o' as densite_couvert_o,
+    tvc.data->>'densite_couvert_e' as densite_couvert_e,
     tvc.data->>'densite_couvert_s' as densite_couvert_s,
+    tvc.data->>'densite_couvert_o' as densite_couvert_o,
     tvc.data->>'habitat_principal' as habitat_principal,
     tvc.data->>'essence_principale' as essence_principale,
     tvc.data->>'frein_exploitation' as frein_exploitation,
@@ -30,15 +35,14 @@ SELECT
     tvc.data->>'peuplement_type_structure' as peuplement_type_structure,
     tvc.data->>'presence_tgb_hors_placette' as presence_tgb_hors_placette,
     hde1.mnemonique AS hauteur_dominante_essence_1,
-    hde2.mnemonique AS hauteur_dominante_essence_2,
     tvc.data->>'contrainte_stationelle_forte' as contrainte_stationelle_forte,
     tvc.data->>'hauteur_dominante_diametre_1' as hauteur_dominante_diametre_1,
-    tvc.data->>'hauteur_dominante_diametre_2' as hauteur_dominante_diametre_2,
     tvc.data->>'hauteur_dominante_distance_1' as hauteur_dominante_distance_1,
-    tvc.data->>'hauteur_dominante_distance_2' as hauteur_dominante_distance_2,
     tvc.data->>'indices_usages_passe_ou_actuel' as indices_usages_passe_ou_actuel,
-    tvc.data->>'peuplement_type_accompagnement' as peuplement_type_accompagnement,
-    tvc.data->>'peuplement_type_essences_objectifs' as peuplement_type_essences_objectifs,
+    tvc.data->>'peuplement_type_accompagnement_1' as peuplement_type_accompagnement_1,
+    tvc.data->>'peuplement_type_accompagnement_2' as peuplement_type_accompagnement_2,
+    tvc.data->>'peuplement_type_essences_objectifs_1' as peuplement_type_essences_objectifs_1,
+    tvc.data->>'peuplement_type_essences_objectifs_2' as peuplement_type_essences_objectifs_2,
     tvc.data->>'surface_terriere_sup_17_5_inf_27_5' as surface_terriere_sup_17_5_inf_27_5,
     tvc.data->>'surface_terriere_sup_27_5_inf_47_5' as surface_terriere_sup_27_5_inf_47_5,
     tvc.data->>'surface_terriere_sup_47_5_inf_67_5' as surface_terriere_sup_47_5_inf_67_5,
@@ -105,11 +109,10 @@ from gn_monitoring.t_base_sites s
 JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
 JOIN gn_monitoring.t_base_visits AS tbv ON tbv.id_base_site = tsc.id_base_site
-JOIN gn_monitoring.t_visit_complements AS tvc ON tbv.id_base_visit  = tvc.id_base_visit
-JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND mod.module_code = 'lichens_bio_indicateurs'
+JOIN gn_monitoring.t_visit_complements AS tvc ON tbv.id_base_visit  = tvc.id_base_visit AND NOT COALESCE((tvc.DATA->>'test_detectabilite')::boolean, FALSE) IS TRUE
+JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND mod.module_code = :module_code
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS tn ON tn.id_nomenclature = (tsc."data"->>'id_nomenclature_exposition')::int
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hde1 ON hde1.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_1', '-1'))::int
-LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hde2 ON hde2.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_2', '-1'))::int
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hdehp1 ON hdehp1.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_tgb_hors_placette_1', '-1'))::int
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hdehp2 ON hdehp2.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_tgb_hors_placette_2', '-1'))::int
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hdehp3 ON hdehp3.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_tgb_hors_placette_3', '-1'))::int
