@@ -10,8 +10,10 @@
     "essence_principale",
     "habitat_associe",
     "habitat_principal",
-    "peuplement_type_essences_objectifs",
-    "peuplement_type_accompagnement",
+    "peuplement_type_essences_objectifs_1",
+    "peuplement_type_essences_objectifs_2",
+    "peuplement_type_accompagnement_1",
+    "peuplement_type_accompagnement_2",
     "peuplement_type_structure",
     "densite_couvert_n",
     "densite_couvert_e",
@@ -161,16 +163,32 @@
       },
       "hidden": "({value}) => value.test_detectabilite"
     },
-    "peuplement_type_essences_objectifs": {
-      "attribut_label": "Type de peuplement - Essences objectifs associées",
+    "peuplement_type_essences_objectifs_1": {
+      "attribut_label": "Type de peuplement - Essences objectifs associées - 1",
       "description": "Type de peuplement forestier (visible autour depuis le centre) - Structure (TAIL, TSF, FREG, FIRR)",
       "type_widget": "nomenclature",
       "code_nomenclature_type": "ONF_ESSENCES",
       "type_util": "nomenclature",
       "hidden": "({value}) => value.test_detectabilite"
     },
-    "peuplement_type_accompagnement": {
-      "attribut_label": "Type de peuplement - Essences d’accompagnement",
+    "peuplement_type_essences_objectifs_2": {
+      "attribut_label": "Type de peuplement - Essences objectifs associées - 2",
+      "description": "Type de peuplement forestier (visible autour depuis le centre) - Structure (TAIL, TSF, FREG, FIRR)",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature",
+      "hidden": "({value}) => value.test_detectabilite"
+    },
+    "peuplement_type_accompagnement_1": {
+      "attribut_label": "Type de peuplement - Essences d’accompagnement - 1 ",
+      "description": "Type de peuplement forestier (visible autour depuis le centre) - Structure (TAIL, TSF, FREG, FIRR)",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "ONF_ESSENCES",
+      "type_util": "nomenclature",
+      "hidden": "({value}) => value.test_detectabilite"
+    },
+    "peuplement_type_accompagnement_2": {
+      "attribut_label": "Type de peuplement - Essences d’accompagnement - 2",
       "description": "Type de peuplement forestier (visible autour depuis le centre) - Structure (TAIL, TSF, FREG, FIRR)",
       "type_widget": "nomenclature",
       "code_nomenclature_type": "ONF_ESSENCES",
