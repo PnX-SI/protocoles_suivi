@@ -16,7 +16,6 @@
     "comments"
   ],
   "display_list": [
-    "uuid_observation",
     "cd_nom",
     "presence_arbre_1",
     "presence_arbre_2",
@@ -45,6 +44,9 @@
       "attribut_label": "Para taxon",
       "description": "A remplir si groupe de taxon",
       "values": [
+        "Crustacé verdatre",
+        "Crustacé aérolé",
+        "Crustacé gris/bleu",
         "Fruticuleux",
         "Granuleux vert",
         "Lepra amara / albescens",
@@ -52,12 +54,16 @@
         "Parmelia brun",
         "Parmelia sulcata / saxatilis / submontana",
         "Périthèces",
+        "Périthèces noir",
+        "Pertusaria noir",
         "Poudre verte",
         "Poudre verte apothécies noires",
         "Poudre jaune",
         "Poudre jaune hypothalle noir",
         "Squamules vertes",
-        "Thalle vert"
+        "Thalle vert",
+        "Thalle apothécies rougeatre",
+        "Thalle sorédié vert/jaune"
       ],
       "required": false
     },

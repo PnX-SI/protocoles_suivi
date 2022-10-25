@@ -18,8 +18,12 @@
   "display_properties": [
     "base_site_name",
     "base_site_code",
-    "confinement",
+    "confinement_nord",
+    "confinement_est",
+    "confinement_sud",
+    "confinement_ouest",
     "id_nomenclature_exposition",
+    "exposition_grade",
     "pente",
     "medias",
     "nb_visits"
@@ -35,6 +39,14 @@
       "code_nomenclature_type": "EXPOSITION",
       "type_util": "nomenclature"
     },
+    "exposition_grade": {
+      "attribut_label": "Exposition en grade",
+      "description": "Exposition en grade",
+      "type_widget": "number",
+      "min": 0,
+      "max": 400,
+      "default": 0
+    },
     "pente": {
       "attribut_label": "Pente",
       "description": "Prise sur place à la boussole",
@@ -44,12 +56,40 @@
       "max": 100,
       "default": 0
     },
-    "confinement": {
-      "attribut_label": "Confinement",
+    "confinement_nord": {
+      "attribut_label": "Confinement Nord",
       "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
       "type_widget": "number",
       "required": true,
-      "min": 0,
+      "min": -90,
+      "max": 90,
+      "default": 0
+    },
+    "confinement_est": {
+      "attribut_label": "Confinement Est",
+      "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
+      "type_widget": "number",
+      "required": true,
+      "min": -90,
+      "max": 90,
+      "default": 0
+    },
+    "confinement_sud": {
+      "attribut_label": "Confinement Sud",
+      "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
+      "type_widget": "number",
+      "required": true,
+      "min": -90,
+      "max": 90,
+      "default": 0
+    },
+    "confinement_ouest": {
+      "attribut_label": "Confinement Ouest",
+      "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
+      "type_widget": "number",
+      "required": true,
+      "min": -90,
+      "max": 90,
       "default": 0
     },
     "id_nomenclature_type_site": {
