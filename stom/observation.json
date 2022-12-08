@@ -9,6 +9,7 @@
     "presence_juvenile",
     "comments"
   ],
+  "redirect_to_parent": true,
   "specific": {
     "nb_0_5": {
       "type_widget": "number",
