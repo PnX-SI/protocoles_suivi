@@ -1,0 +1,136 @@
+{
+  "genre":"M",
+  "label": "quadrat",
+  "label_list": "Quadrats",
+  "geometry_type": "Point",
+  "map_label_field_name": "base_site_name",
+  "export_pdf": [
+      { "template": "fiche_aire.html", "label": "Export PDF" }
+  ],
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "display_properties": [
+    "base_site_name",
+    "id_sites_group",
+    "num_transect",
+    "num_placette",
+    "id_inventor",
+    "first_use_date",
+    "desc_pente",
+    "expo"
+ ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "first_use_date",
+    "nb_visits",
+    "id_nomenclature_hab_odo"
+  ],
+  "specific": {
+    "base_site_name": {
+      "hidden": true,
+      "required": false
+    },
+    "base_site_code": {
+      "hidden": true,
+      "required": false
+    },
+    "num_placette": {
+      "type_widget": "number",
+      "attribut_label": "N° de la placette",
+      "required": true,
+      "definition": "Position de la placette sur le transect.\nNoté '1' lorsque la placette est située à l'origine du transect."
+    },
+    "num_transect": {
+      "type_widget": "number",
+      "attribut_label": "N° du transect",
+      "required": true,
+      "definition": "0 pour un placement en dehors d'un transect"
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Groupe de site",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false,
+      "definition": "Liste des zones de prospections définies pour le protocole."
+    },
+    "desc_pente": {
+      "type_widget": "datalist",
+      "attribut_label": "Profil du terrain",
+      "values": [
+        {
+          "label":"terrain plat",
+          "value": "plat"
+        }, {
+          "label":"terrain en pente faible",
+          "value": "faible"
+        }, {
+          "label":"terrain en pente moyenne",
+          "value": "moyenne"
+        }, {
+          "label":"terrain en pente forte",
+          "value": "forte"
+        }
+      ],
+      "required": true,
+      "definition": "Element descriptif de la typologie globale du terrain"
+    },
+    "expo": {
+      "type_widget": "datalist",
+      "attribut_label": "Exposition du terrain",
+      "values": [
+        {
+          "label":"Nord",
+          "value": "N"
+        }, {
+          "label":"Nord-ouest",
+          "value": "NW"
+        }, {
+          "label":"Ouest",
+          "value": "W"
+        }, {
+          "label":"Sud-ouest",
+          "value": "SW"
+        }, {
+          "label":"Sud",
+          "value": "S"
+        }, {
+          "label":"Sud-est",
+          "value": "SE"
+        }, {
+          "label":"Est",
+          "value": "E"
+        }, {
+          "label":"Nord-est",
+          "value": "NE"
+        }
+      ],
+      "required": true,
+      "definition": "Orientation cardinale du terrain"
+    },
+    "id_nomenclature_type_site": {
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "RHOMEO_FLO"
+      },
+      "hidden": true
+    }
+  },
+  "change": [
+      "({objForm, meta}) => {",
+          "const base_site_name = 'T' + (objForm.value.num_transect) + 'Q' + (objForm.value.num_placette);",
+          "if (!objForm.controls.base_site_name.dirty) {",
+              "objForm.patchValue({base_site_name})",
+          "}",
+      "}",
+      ""
+  ]
+}
