@@ -58,7 +58,7 @@ WITH source AS (
 SELECT
 		
 		v.uuid_base_visit AS unique_id_sinp, 
-		s.uuid_base_site AS unique_id_sinp_grp,
+		v.uuid_base_visit AS unique_id_sinp_grp,
 		source.id_source,
 		v.id_base_visit AS entity_source_pk_value,
 		v.id_dataset,
@@ -111,7 +111,7 @@ SELECT
 		v.id_module,
 		v.comments AS comment_description,
 		obs.ids_observers,
-		
+    s.base_site_name AS place_name,
 		-- ## Colonnes complémentaires qui ont leur utilité dans la fonction synthese.import_row_from_table
 		v.id_base_site,
 		v.id_base_visit

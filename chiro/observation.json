@@ -1,0 +1,84 @@
+{
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "display_properties": [
+    "cd_nom",
+    "id_nomenclature_behaviour",
+    "id_nomenclature_bio_condition",
+    "id_nomenclature_bio_status",
+    "id_nomenclature_obs_technique",
+    "id_nomenclature_life_stage",
+    "id_nomenclature_sex",
+    "count_indiv",
+    "comments"
+  ],
+  "redirect_to_parent": true,
+  "specific": {
+      "id_nomenclature_behaviour": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Comportement",
+        "code_nomenclature_type": "OCC_COMPORTEMENT",
+        "type_util": "nomenclature",
+        "required": true,
+        "value": 545,
+       "cd_nomenclatures": ["1","10", "7"]
+
+    },
+    "id_nomenclature_bio_condition": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Etat biologique",
+      "code_nomenclature_type": "ETA_BIO",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": 154
+    },
+    "id_nomenclature_bio_status": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Statut biologique",
+      "code_nomenclature_type": "STATUT_BIO",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": 29,
+      "cd_nomenclatures": ["3", "4", "9", "0" ]
+
+    },
+    "id_nomenclature_obs_technique": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Technique d'observation",
+      "code_nomenclature_type": "METH_OBS",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": 37,
+      "cd_nomenclatures": ["0", "3", "6"]
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Stade de vie",
+      "code_nomenclature_type": "STADE_VIE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": 37,
+      "cd_nomenclatures": ["0", "2", "3"]
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Sexe",
+      "code_nomenclature_type": "SEXE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": 37,
+      "cd_nomenclatures": ["0", "2", "3"]
+    },
+    "count_indiv": {
+      "type_widget": "number",
+      "attribut_label": "Dénombrement",
+      "min": 1
+    },
+    "medias": {
+      "hidden": true,
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_observations"
+    }
+
+  }
+}

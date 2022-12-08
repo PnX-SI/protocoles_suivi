@@ -1,0 +1,182 @@
+{
+  "display_properties": [
+    "uuid_observation",
+    "cd_nom", 
+    "technique_observation",
+    "etat_biologique",
+    "statut_observation",
+    "methode_deter",
+    "nombre_individus",
+    "stade_de_vie",
+    "sexe",
+    "comments"
+  ],
+
+
+  "display_list": [
+    "uuid_observation",
+    "cd_nom",
+    "etat_biologique",
+    "statut_observation"
+  ],
+
+  "keep": [
+    "statut_source"
+  ],
+
+
+  "specific": {
+    
+    "cd_nom": {
+        "type_widget": "taxonomy",
+        "attribut_label": "Taxon",
+        "type_util": "taxonomy",
+        "required": true,
+        "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+
+
+    "technique_observation": {
+      "type_widget": "datalist",
+      "attribut_label": "Méthode d'observation",
+      "api": "nomenclatures/nomenclature/METH_OBS",
+      "group2inpn":"Mammifères",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["9008","20","4","27","1","6","21","9008","12","23","3","0"]
+      },
+      "default": {
+        "cd_nomenclature": "23"
+      }
+    },
+
+
+    "etat_biologique": {
+      "type_widget": "datalist",
+      "attribut_label": "Etat biologique de l'observation",
+      "api": "nomenclatures/nomenclature/ETA_BIO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "filters": {
+        "cd_nomenclature": ["0","2","3","9001"]
+      },
+      "default": {
+        "cd_nomenclature": "2"
+      }
+    },
+
+
+    "statut_observation": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut d'observation",
+      "api": "nomenclatures/nomenclature/STATUT_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "Pr"
+      }
+    },
+
+
+
+    "statut_source": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut de la source",
+      "api": "nomenclatures/nomenclature/STATUT_SOURCE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "hidden": true,
+      "default": {
+        "cd_nomenclature": "Te"
+      }
+    },
+
+
+    "methode_deter": {
+      "type_widget": "datalist",
+      "attribut_label": "Méthode de détermination",
+      "api": "nomenclatures/nomenclature/METH_DETERMIN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["9","16","17","18","22"]
+      }
+    },
+
+
+
+
+    "stade_de_vie": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["2","1","3","5"]
+      },
+      "default": {
+        "cd_nomenclature": "1"
+      }
+    },
+    
+    "nombre_individus": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.technique_observation] || {}).cd_nomenclature !== '0'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.technique_observation] || {}).cd_nomenclature === '0'"
+    },
+
+    "sexe": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "filters": {
+        "cd_nomenclature": ["2","0","3"]
+      },
+      "default": {
+        "cd_nomenclature": "0"
+      },
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.technique_observation] || {}).cd_nomenclature !== '0'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.technique_observation] || {}).cd_nomenclature === '0'"
+    },
+
+    "comments" : {
+      "type_widget": "textarea",
+      "required": false
+    }
+
+  }
+
+}
+    

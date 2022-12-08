@@ -1,0 +1,206 @@
+{
+  "types": [
+    {
+      "mnemonique": "TYPE_PERTURB_GITE_CHIROS",
+      "label_default": "Nature de la perturbation constatée au gîte",
+      "definition_default": "Nature de la perturbation constatée au gîte"
+    },
+    {
+      "mnemonique": "TYPE_SOUS_SITE",
+      "label_default": "Type de sous-site (gîte)",
+      "definition_default": "Type de sous-site (gîte)"
+    },
+    {
+      "mnemonique": "CAT_SOUS_SITE",
+      "label_default": "Catégorie du sous-site (gîte)",
+      "definition_default": "Catégorie du sous-site (gîte)"
+    }
+
+  ],
+  "nomenclatures": [
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "GITECHIROS",
+      "mnemonique": "chiropteres gite",
+      "label_default": "Site Chiroptères au gîte",
+      "definition_default": "Site Chiroptères au gîte"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "CANDAMNE",
+      "mnemonique": "Condamné",
+      "label_default": "Condamné",
+      "definition_default": "Condamné"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "DERANGEMENT",
+      "mnemonique": "Dérangement",
+      "label_default": "Dérangement",
+      "definition_default": "Dérangement"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "DESTRUCTION",
+      "mnemonique": "Destruction",
+      "label_default": "Destruction",
+      "definition_default": "Destruction"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "ECLAIRAGE",
+      "mnemonique": "Eclairage",
+      "label_default": "Eclairage",
+      "definition_default": "Eclairage"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "GRILLE",
+      "mnemonique": "Grille",
+      "label_default": "Grille",
+      "definition_default": "Grille"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "PIGEON",
+      "mnemonique": "Pigeon",
+      "label_default": "Pigeon",
+      "definition_default": "Pigeon"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "PREDATEUR",
+      "mnemonique": "Prédateur",
+      "label_default": "Prédateur",
+      "definition_default": "Prédateur"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "RADIOACTIF",
+      "mnemonique": "Radioactif",
+      "label_default": "Radioactif",
+      "definition_default": "Radioactif"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "RIEN",
+      "mnemonique": "Rien",
+      "label_default": "Rien",
+      "definition_default": "Rien"
+    },
+    {
+      "type":"TYPE_PERTURB_GITE_CHIROS",
+      "cd_nomenclature": "TRAVAUX",
+      "mnemonique": "Travaux",
+      "label_default": "Travaux",
+      "definition_default": "Travaux"
+    },
+
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "ARBREG",
+      "mnemonique": "Arbre gîte",
+      "label_default": "Arbre gîte",
+      "definition_default": "Arbre gîte"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "MINE",
+      "mnemonique": "Mine, ardoisière, carrière",
+      "label_default": "Mine, ardoisière, carrière",
+      "definition_default": "Mine, ardoisière, carrière"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "BAT_NON_RESI",
+      "mnemonique": "Bâtiment non résidentiel épigé (eglise, chapelle, four à pain)",
+      "label_default": "Bâtiment non résidentiel épigé (eglise, chapelle, four à pain)",
+      "definition_default": "Bâtiment non résidentiel épigé (eglise, chapelle, four à pain)"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "BAT_RESI",
+      "mnemonique": "Bâtiment résidentiel épigé (maison, château, manoir)",
+      "label_default": "Bâtiment résidentiel épigé (maison, château, manoir)",
+      "definition_default": "Bâtiment résidentiel épigé (maison, château, manoir)"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "CAVE",
+      "mnemonique": "Cave, tunnel, soubassement, drains, four à chaux",
+      "label_default": "Cave, tunnel, soubassement, drains, four à chaux",
+      "definition_default": "Cave, tunnel, soubassement, drains, four à chaux"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "FORTI",
+      "mnemonique": "Fortification militaire et blockhaus",
+      "label_default": "Fortification militaire et blockhaus",
+      "definition_default": "Fortification militaire et blockhaus"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "GROTTE",
+      "mnemonique": "Grotte naturelle",
+      "label_default": "Grotte naturelle",
+      "definition_default": "Grotte naturelle"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "NICHOIR",
+      "mnemonique": "Nichoir et volet de maison",
+      "label_default": "Nichoir et volet de maison",
+      "definition_default": "Nichoir et volet de maison"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "PONT_S_REMB",
+      "mnemonique": "Pont sous remblais",
+      "label_default": "Pont sous remblais",
+      "definition_default": "Pont sous remblais"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "PONT_SUP",
+      "mnemonique": "Pont supérieur",
+      "label_default": "Pont supérieur",
+      "definition_default": "Pont supérieur"
+    },
+    {
+      "type":"TYPE_SOUS_SITE",
+      "cd_nomenclature": "INDETER",
+      "mnemonique": "Indéterminé",
+      "label_default": "Indéterminé",
+      "definition_default": "Indéterminé"
+    },
+
+    {
+      "type":"CAT_SOUS_SITE",
+      "cd_nomenclature": "E",
+      "mnemonique": "Epigé",
+      "label_default": "Epigé",
+      "definition_default": "Epigé"
+    },
+    {
+      "type":"CAT_SOUS_SITE",
+      "cd_nomenclature": "H",
+      "mnemonique": "Hypogé",
+      "label_default": "Hypogé",
+      "definition_default": "Hypogé"
+    }, 
+    {
+      "type":"CAT_SOUS_SITE",
+      "cd_nomenclature": "M",
+      "mnemonique": "Mixte",
+      "label_default": "Mixte",
+      "definition_default": "Mixte"
+    }, 
+    {
+      "type":"CAT_SOUS_SITE",
+      "cd_nomenclature": "I",
+      "mnemonique": "Inconnu",
+      "label_default": "Inconnu",
+      "definition_default": "Inconnu"
+    }
+  ]
+}

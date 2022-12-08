@@ -1,9 +1,21 @@
 {
-    "module_label":"Apollons",
-    "module_desc":"Module pour le protocole de suivi des dalles à orpins",
-    "permission_objects" : [
+    "module_label": "Apollons",
+    "module_desc": "Module pour le protocole de suivi des dalles à orpins",
+    "permission_objects": [
         "GNM_GRP_SITES",
         "GNM_SITES",
         "GNM_VISITES"
+    ],
+    "b_draw_sites_group": {
+        "type_widget": "bool_checkbox",
+        "attribut_label": "Dessiner les groupes de sites",
+        "hidden": false
+    },
+    "export_csv": [
+        {
+            "label": "Résultats par dalles",
+            "type": "csv",
+            "method": "results_per_dalle"
+        }
     ]
 }

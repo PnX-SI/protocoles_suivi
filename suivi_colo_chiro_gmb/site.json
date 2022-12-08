@@ -1,0 +1,96 @@
+{
+  "label": "Sous-site",
+  "label_list": "Sous-sites",
+
+
+  "display_properties": [
+    "id_sites_group",
+    "base_site_code",
+    "base_site_name",
+    "base_site_description",
+    "id_nomenclature_type_site",
+    "commune_sous_site",
+    "XL_93_sous_site",
+    "YL_93_sous_site",
+    "type_sous_site",
+    "cat_sous_site",
+    "nb_visits"
+  ],
+
+  "display_list": [
+    "base_site_code",
+    "base_site_name",
+    "commune_sous_site",
+    "nb_visits"
+  ],
+
+  "geometry_type": "Point",
+
+
+  "specific": {
+
+    "id_sites_group": {
+      "attribut_label": "nom du site",
+      "required": true,
+      "hidden": false
+    },
+
+    "base_site_code": {
+      "attribut_label": "CODE_SOUS_SITE (égal au CODE_SITE + “-A”,”-B”... suivant le nombre de sous-sites",
+      "required": true
+    },
+
+    "base_site_name": {
+      "attribut_label": "Nom du sous site (=gîte) en majuscule sans accent et sans espace (remplacé par des tirets du bas '_')",
+      "required": true
+    },
+
+    "commune_sous_site": {
+        "type_widget": "text",
+        "attribut_label": "Renseigner les communes du sous-site (gîte)",
+        "required": true
+    },
+
+    "XL_93_sous_site":{
+        "type_widget": "number",
+        "attribut_label": "Latitude du centroïde du sous-site (gîte) en coordonnées lambert 93",
+        "required": true
+    },
+
+    "YL_93_sous_site":{
+        "type_widget": "number",
+        "attribut_label": "Longitude du centroïde du sous-site (gîte) en coordonnées lambert 93",
+        "required": true
+    },
+
+    "type_sous_site": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de sous-site (gîte)",
+      "api": "nomenclatures/nomenclature/TYPE_SOUS_SITE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true
+    },
+
+    "cat_sous_site": {
+      "type_widget": "datalist",
+      "attribut_label": "Catégorie du sous-site (gîte)",
+      "api": "nomenclatures/nomenclature/CAT_SOUS_SITE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true
+    },
+
+    "id_nomenclature_type_site": {
+      "default": {"cd_nomenclature": "GITECHIROS"},
+      "hidden": true
+    }
+  
+  }
+}

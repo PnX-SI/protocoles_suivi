@@ -1,0 +1,99 @@
+{
+  "chained": false,
+  "cruved": {"C": 3, "U": 3, "D": 3},
+  "label": "Site",
+  "label_list": "Sites",
+  "sorts": [
+    {"prop": "sites_group_name"}
+  ],
+
+  "display_properties": [
+    "sites_group_name",
+    "sites_group_code",
+    "sites_group_description",
+    "commune_site",
+    "regroup_site",
+    "resp_site",
+    "saisie_coord",
+    "XL93_site",
+    "YL93_site",
+    "nb_sites",
+    "nb_visits"
+  ],
+  "display_list": [
+    "sites_group_name",
+    "sites_group_code",
+    "commune_site",
+    "nb_sites" 
+  ],
+  "map_label_field_name": "base_site_code",
+  
+
+
+  "keep": [
+    "saisie_coord"
+  ],
+
+  "specific": {
+
+    "nb_sites": {
+        "attribut_label": "Sous-sites"
+      },
+
+    "sites_group_name":{
+        "attribut_label": "Nom du site (égal au Nom du lieu-dit en majuscule, sans accent et sans espace (remplacé par les tirets du bas '_')",
+        "required": true
+      },
+    "sites_group_code":{
+      "attribut_label": "CODE_SITE (Lettre de l’opérateur (G : GMB, B : BV, A : Autre) - code département - numéro à la suite du dernier site saisi (ex : G44-0001)"
+    },
+
+    "commune_site": {
+      "type_widget": "text",
+      "attribut_label": "Renseigner les communes du site",
+      "required": true
+    },
+
+    "regroup_site": {
+      "type_widget": "radio",
+      "attribut_label": "Regroupement en un ou plusieurs SOUS_SITES ?",
+      "values": ["Site unique","Site multiple"],
+      "required": true
+    },
+
+    "resp_site": {
+      "type_widget": "select",
+      "attribut_label": "Organisme en charge du site (suivi, protection...)",
+      "values": ["GMB","BV","Autre"],
+      "required": true
+    },
+
+    "saisie_coord": {
+      "type_widget": "radio",
+      "attribut_label": "Je veux renseigner des coordonnées",
+      "values": ["Oui", "Non"],
+      "value": "Non"
+    },
+
+    "XL93_site":{
+        "type_widget": "number",
+        "attribut_label": "Latitude du centroïde du site en coordonnées lambert 93",
+        "required": false,
+        "hidden": "({value}) => value.saisie_coord != 'Oui'"
+    },
+
+    "YL93_site":{
+        "type_widget": "number",
+        "attribut_label": "Longitude du centroïde du site en coordonnées lambert 93",
+        "required": false,
+        "hidden": "({value}) => value.saisie_coord != 'Oui'"
+    },
+
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire",
+      "hidden": true
+   }
+
+  }
+}
