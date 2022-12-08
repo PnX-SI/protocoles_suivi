@@ -1,5 +1,7 @@
 {
   "genre":"M",
+  "label": "site",
+  "label_list": "Sites",
   "geometry_type": "Point",
   "map_label_field_name": "base_site_name",
   "export_pdf": [
@@ -10,6 +12,7 @@
   ],
   "display_properties": [
     "base_site_name",
+    "id_sites_group",
     "id_inventor",
     "first_use_date",
     "context_pays",
@@ -111,13 +114,13 @@
     "esp_poisson": {
       "type_widget": "datalist",
       "attribut_label": "Poisson",
-      "values": ["Absence certaine", "Absence probable", "Présence"],
+      "values": ["Absence certaine", "Absence probable", "Présence","Indéterminé"],
       "required": true
     },
     "esp_ecrevisse": {
       "type_widget": "datalist",
       "attribut_label": "Ecrevisse",
-      "values": ["Absence certaine", "Absence probable", "Présence"],
+      "values": ["Absence certaine", "Absence probable", "Présence","Indéterminé"],
       "required": true
     },
     "base_site_description": {
@@ -147,7 +150,7 @@
       "application": "GeoNature",
       "required": false,
       "hidden": false,
-      "definition": "Liste des groupes de sites défini pour le protocole."
+      "definition": "Liste des zones de prospections définies pour le protocole."
     }
   }
 }

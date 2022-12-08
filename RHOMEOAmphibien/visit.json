@@ -3,6 +3,7 @@
   "label": "Passage",
   "label_list": "Passages",
   "display_properties": [
+    "id_dataset",
     "observers",
     "num_passage",
     "visit_date_min",
@@ -13,6 +14,7 @@
     "comments"
   ],
   "display_list": [
+    "id_dataset",
     "num_passage",
     "visit_date_min",
     "observers",
@@ -40,7 +42,7 @@
     },
     "surf_eau": {
       "type_widget": "number",
-      "attribut_label": "Surface en eau",
+      "attribut_label": "Surface en eau (m2)",
       "required": false,
       "min": 0
     },
@@ -58,7 +60,7 @@
     },
     "comments": {
       "type_widget": "textarea",
-      "attribut_label": "Remarques météorologique"
+      "attribut_label": "Remarques météorologiques"
     },
     "visit_date_min": {
       "type_widget": "date",
