@@ -1,4 +1,5 @@
 {
+  "cruved": {"C":1, "U":1, "D": 1},
   "description_field_name":"cd_nom",
   "genre":"F",
   "display_properties": [
@@ -27,18 +28,17 @@
       "id_list": "__MODULE.ID_LIST_TAXONOMY",
       "application": "TaxHub",
       "required": true,
-      "type_util": "taxonomy",
-      "value" : "65131"
+      "type_util": "taxonomy"
     },
     "num_tranche": {
       "type_widget": "number",
       "attribut_label": "Numéro de tranche",
-      "definition": "Numéro de la tranche du protocole.\n0 : 6 premères minutes.\nn : n^{ème} tranche de 2 minutes."
+      "definition": "Numéro de la tranche du protocole.\n0 : 6 premères minutes.\nn : nième tranche de 2 minutes."
     },
     "nombre": {
       "type_widget": "radio",
       "attribut_label": "Effectifs",
-      "values": ["< 11", "11 à 50", "51 à 500", "> 500"],
+      "values": ["< 11", "11 à 30", "31 à 50", "> 50"],
       "required": true,
       "definition": "Estimation"
     },
@@ -72,7 +72,7 @@
           "group2_inpn": "Insectes"
       },
       "filters": {
-        "label_fr": ["Tandem", "Territorial", "Pond"]
+        "label_fr": ["Non renseigné","Tandem", "Territorial", "Pond", "Accouplement"]
       },
       "default": null,
       "multiple": true,
@@ -94,6 +94,7 @@
       "filters": {
         "label_fr": ["Emergent", "Immature"]
       },
+      "default": null,
       "multiple": true,
       "required": "({value}) => !value.id_nomenclature_behaviour"
     },

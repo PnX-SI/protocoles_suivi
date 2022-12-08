@@ -1,12 +1,14 @@
 {
+  "cruved": {"C":1, "U":1, "D": 1},
   "genre":"M",
   "label": "Passage",
   "label_list": "Passages",
   "display_properties": [
+    "id_dataset",
     "observers",
     "num_passage",
     "visit_date_min",
-    "Heure_debut",
+    "heure_debut",
     "visit_time",
     "exuvie_exist",
     "temperature",
@@ -15,6 +17,7 @@
     "comments"
   ],
   "display_list": [
+    "id_dataset",
     "num_passage",
     "visit_date_min",
     "observers",
@@ -35,7 +38,7 @@
       "values": [1, 2, 3],
       "required": true
     },
-    "Heure_debut": {
+    "heure_debut": {
       "type_widget": "time",
       "attribut_label": "Heure de début",
       "required": true
@@ -45,7 +48,8 @@
       "attribut_label": "Durée de la visite (min)",
       "required": true,
       "min": 0,
-      "max": 60
+      "max": 60,
+      "value": 6
     },
     "exuvie_exist": {
       "type_widget": "radio",
@@ -55,8 +59,8 @@
     },
     "temperature": {
       "type_widget": "number",
-      "attribut_label": "Temperature (°C)",
-      "required": false,
+      "attribut_label": "Temperature de l'air (°C)",
+      "required": true,
       "min": 0,
       "max": 60
     },

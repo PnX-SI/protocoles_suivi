@@ -1,5 +1,8 @@
 {
+  "cruved": {"C":1, "U":1, "D": 1},
   "genre":"M",
+  "label": "site",
+  "label_list": "Sites",
   "geometry_type": "Point",
   "map_label_field_name": "base_site_name",
   "export_pdf": [
@@ -10,6 +13,7 @@
   ],
   "display_properties": [
     "base_site_name",
+    "id_sites_group",
     "id_inventor",
     "first_use_date",
     "typ_geom",
@@ -20,13 +24,28 @@
  ],
   "display_list": [
     "base_site_name",
-    "id_sites_group",
     "id_inventor",
     "first_use_date",
     "nb_visits",
     "id_nomenclature_hab_odo"
   ],
   "specific": {
+    "base_site_code": {
+      "hidden": true,
+      "required": false
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Groupe de site",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false,
+      "definition": "Liste des zones de prospections définies pour le protocole."
+    },
     "typ_geom": {
       "type_widget": "radio",
       "attribut_label": "Type d'observation",
@@ -40,18 +59,19 @@
       "hidden": true
     },
     "id_nomenclature_hab_odo": {
-      "type_widget": "nomenclature",
+      "type_widget": "datalist",
       "attribut_label": "Habitat odonatologique",
-      "code_nomenclature_type": "HABITAT_ODO",
+      "api": "nomenclatures/nomenclature/HABITAT_ODO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_default",
+      "data_path": "values",
       "type_util": "nomenclature",
+      "params": {
+          "orderby": "cd_nomenclature"
+      },
+      "default": null,
       "required": true
-    },
-    "detail_hab_odo": {
-      "type_widget": "radio",
-      "attribut_label": "Type de pente",
-      "values": ["Douce", "Abrupte", "Douce et abrupte"],
-      "required": false,
-      "hidden": true
     },
     "area_name": {
       "type_widget": "text",
