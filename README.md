@@ -1,8 +1,8 @@
 # Définition de protocoles de suivi
 
-Exemples de configuration de protocoles pour le module de suivi générique de GeoNature : https://github.com/PnX-SI/gn_module_monitoring
+Exemples de configuration de protocoles (sous-moduls) pour le module de suivi générique de GeoNature : https://github.com/PnX-SI/gn_module_monitoring
 
-## Installation d'un protocole
+## Installation d'un protocole (sous-module)
 
 Récupérer une archive du dépot
 
@@ -13,7 +13,7 @@ Récupérer une archive du dépot
     flask monitorings install <mon_chemin_absolu_vers_l_archive>/oedic oedic
 ``` 
 
-### Protocoles :
+### Protocoles partagés :
 
 * Oedicnèmes
 * Points d'écoute cheveche
