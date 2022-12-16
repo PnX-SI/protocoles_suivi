@@ -105,6 +105,12 @@
       "type_widget": "textarea",
       "attribut_label": "Mesure(s) préconisé(s)",
       "rows": 3
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "required": false,
+      "hidden": true
     }
+
   }
 }
