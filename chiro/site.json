@@ -24,14 +24,17 @@
     "nb_visits",
     "threat",
     "recommandation",
+    "adjustments_type",
+    "adjustments_date",
     "opening",
+    "id_nomenclature_attendance",
     "owner_name",
     "owner_adress",
     "owner_tel",
     "owner_mail",
+    "owner_comments",
     "base_site_description",
-    "place_name",
-    "medias"
+    "place_name"
   ],
   "display_list": [
     "base_site_name",
@@ -112,6 +115,31 @@
       "type_widget": "textarea",
       "attribut_label": "Mesure(s) préconisé(s)",
       "rows": 3
+    },
+    "adjustments_type": {
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Aménagement",
+      "values": [
+        "Pont restauré en intégrant les chiroptères"
+      ]
+    },
+    "adjustments_date": {
+      "type_widget": "text",
+      "required": false,
+      "attribut_label": "Date de l'aménagement"
+    },
+    "owner_comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Propriétaire informations complémentaires",
+      "rows": 3
+    },
+    "id_nomenclature_attendance": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Fréquentation",
+      "code_nomenclature_type": "CHI_FREQUENTATION",
+      "type_util": "nomenclature",
+      "required": false
     }
   }
 }
