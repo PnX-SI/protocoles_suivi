@@ -421,7 +421,7 @@
       "hidden": "({value}) => value.test_detectabilite"
     },
     "tgb_hors_placette_essence_1": {
-      "attribut_label": "H dominante hors placette - Essence - Arbre 1",
+      "attribut_label": "TGB hors placette - Essence - Arbre 1",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "nomenclature",
       "code_nomenclature_type": "ONF_ESSENCES",
@@ -429,7 +429,7 @@
       "hidden": "({value}) => !value.presence_tgb_hors_placette && value.test_detectabilite"
     },
     "tgb_hors_placette_distance_1": {
-      "attribut_label": "H dominante hors placette - Distance - Arbre 1",
+      "attribut_label": "TGB hors placette - Distance - Arbre 1",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "number",
       "min": 0,
@@ -437,7 +437,7 @@
       "hidden": "({value}) => !value.presence_tgb_hors_placette  && value.test_detectabilite"
     },
     "tgb_hors_placette_diametre_1": {
-      "attribut_label": "H dominante hors placette - Diamètre - Arbre 1",
+      "attribut_label": "TGB hors placette - Diamètre - Arbre 1",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "number",
       "min": 0,
@@ -445,7 +445,7 @@
       "hidden": "({value}) => !value.presence_tgb_hors_placette && value.test_detectabilite"
     },
     "tgb_hors_placette_essence_2": {
-      "attribut_label": "H dominante hors placette - Essence - Arbre 2",
+      "attribut_label": "TGB hors placette - Essence - Arbre 2",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "nomenclature",
       "code_nomenclature_type": "ONF_ESSENCES",
@@ -453,7 +453,7 @@
       "hidden": "({value}) => !value.presence_tgb_hors_placette && value.test_detectabilite"
     },
     "tgb_hors_placette_distance_2": {
-      "attribut_label": "H dominante hors placette - Distance - Arbre 2",
+      "attribut_label": "TGB hors placette - Distance - Arbre 2",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "number",
       "min": 0,
@@ -461,7 +461,7 @@
       "hidden": "({value}) => !value.presence_tgb_hors_placette && value.test_detectabilite"
     },
     "tgb_hors_placette_diametre_2": {
-      "attribut_label": "H dominante hors placette - Diamètre - Arbre 2",
+      "attribut_label": "TGB hors placette - Diamètre - Arbre 2",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "number",
       "min": 0,
@@ -469,7 +469,7 @@
       "hidden": "({value}) => !value.presence_tgb_hors_placette && value.test_detectabilite"
     },
     "tgb_hors_placette_essence_3": {
-      "attribut_label": "H dominante hors placette - Essence - Arbre 3",
+      "attribut_label": "TGB hors placette - Essence - Arbre 3",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "nomenclature",
       "code_nomenclature_type": "ONF_ESSENCES",
@@ -477,7 +477,7 @@
       "hidden": "({value}) => !value.presence_tgb_hors_placette && value.test_detectabilite"
     },
     "tgb_hors_placette_distance_3": {
-      "attribut_label": "H dominante hors placette - Distance - Arbre 3",
+      "attribut_label": "TGB hors placette - Distance - Arbre 3",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "number",
       "min": 0,
@@ -485,7 +485,7 @@
       "hidden": "({value}) => !value.presence_tgb_hors_placette && value.test_detectabilite"
     },
     "tgb_hors_placette_diametre_3": {
-      "attribut_label": "H dominante hors placette - Diamètre - Arbre 3",
+      "attribut_label": "TGB hors placette - Diamètre - Arbre 3",
       "description": "Mesure réalisée avec un dendromètre le plus précisément possible (mise à distance et angle !!), sur au moins 2 arbres différents (noter la hauteur, l’essence et le diamètre). Prendre la hauteur max (pas la moyenne).",
       "type_widget": "number",
       "min": 0,
