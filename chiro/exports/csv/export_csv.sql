@@ -1,5 +1,5 @@
--- gn_monitoring.v_export_chiro_observations source
 
+-- Export des observations
 CREATE OR REPLACE VIEW gn_monitoring.v_export_chiro_observations
 AS SELECT s.id_base_site AS code_gite,
     s.base_site_name AS nom_gite,
@@ -58,28 +58,29 @@ AS SELECT s.id_base_site AS code_gite,
   WHERE m.module_code::text = 'chiro'::text
   GROUP BY s.id_base_site, s.base_site_name, (st_x(s.geom)), (st_y(s.geom)), (tsc.data ->> 'threat'::text), (tvc.data ->> 'sheet_id'::text), tbv.id_base_visit, tbv.visit_date_min, (tvc.data ->> 'observers_txt'::text), tbv.comments, (tvc.data ->> 'guano_presency'::text), (tvc.data ->> 'guano_comment'::text), obs.id_observation, t.lb_nom, t.nom_vern, t.cd_nom, tn.label_fr, tn1.label_fr, tn2.label_fr, tbv.id_dataset, (a.jname ->> 'COM'::text), (a.jname ->> 'SEC'::text), (toc.data ->> 'count_indiv'::text), tn3.label_fr, tn4.label_fr, obs.comments;
 
-CREATE OR REPLACE VIEW gn_monitoring.v_export_chiro_sites
- AS SELECT 
-s.id_base_site AS code_gite,
-s.base_site_name AS nom_gite,
-st_x(s.geom) AS X,
-st_y(s.geom) AS Y,
-a.jname->>'COM' AS commune,
-a.jname->>'SEC' AS secteur,
-tsc."data"->>'owner_name' AS nom_proprio,
-tsc."data"->>'owner_adress' AS adresse_proprio,
-tsc."data"->>'owner_tel' AS tel_proprio,
-tsc."data"->>'owner_mail' AS email_proprio,
-tsc."data"->>'roost_type' AS type_gite,
-tsc."data"->>'opening' AS ouverture,
-s.base_site_description AS description_gite,
-tsc."data"->>'threat' AS menaces,
-tsc."data"->>'recommandation' AS preconisations,
-16 as id_dataset-- id_dataset obligatoire.. todo enlever ça / corrigé sur la branche develop
-from gn_monitoring.t_base_sites s
-JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site 
+
+-- Export des sites
+CREATE OR REPLACE VIEW gn_monitoring.v_export_chiro_sites AS
+SELECT
+  s.id_base_site AS code_gite,
+  s.base_site_name AS nom_gite,
+  st_x(s.geom) AS X,
+  st_y(s.geom) AS Y,
+  a.jname->>'COM' AS commune,
+  a.jname->>'SEC' AS secteur,
+  tsc."data"->>'owner_name' AS nom_proprio,
+  tsc."data"->>'owner_adress' AS adresse_proprio,
+  tsc."data"->>'owner_tel' AS tel_proprio,
+  tsc."data"->>'owner_mail' AS email_proprio,
+  tsc."data"->>'roost_type' AS type_gite,
+  tsc."data"->>'opening' AS ouverture,
+  s.base_site_description AS description_gite,
+  tsc."data"->>'threat' AS menaces,
+  tsc."data"->>'recommandation' AS preconisations
+FROM gn_monitoring.t_base_sites s
+JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
-JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module
+JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module  AND mod.module_code = 'chiro'
 LEFT JOIN LATERAL ( SELECT d_1.id_base_site ,
         json_object_agg(d_1.type_code, d_1.o_name) AS jname,
         json_object_agg(d_1.type_code, d_1.o_code) AS jcode
@@ -92,6 +93,5 @@ LEFT JOIN LATERAL ( SELECT d_1.id_base_site ,
                  JOIN ref_geo.bib_areas_types ta ON ta.id_type = a_1.id_type
               WHERE sa.id_base_site  = s.id_base_site
               GROUP BY sa.id_base_site , ta.type_code) d_1
-WHERE mod.module_code = 'chiro'
 GROUP BY d_1.id_base_site) a ON TRUE
 ;
