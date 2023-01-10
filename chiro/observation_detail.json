@@ -1,0 +1,80 @@
+{
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "label": "Biométrie",
+  "display_properties": [
+    "ab",
+    "poids",
+    "d3mf1",
+    "d3f2f3",
+    "d3total",
+    "d5",
+    "cm3sup",
+    "cm3inf",
+    "cb",
+    "lm",
+    "oreille",
+    "commentaire"
+  ],
+  "redirect_to_parent": true,
+  "specific": {
+    "ab": {
+      "type_widget": "number",
+      "attribut_label": "AB (mm)",
+      "min": 0
+    },
+    "poids": {
+      "type_widget": "number",
+      "attribut_label": "Poids (g)",
+      "min": 0
+    },
+    "d3mf1": {
+      "type_widget": "number",
+      "attribut_label": "D3MF1 (mm) - Mesure du 3ème doigt, métacarpe + 1ère phalange",
+      "min": 0
+    },
+    "d3f2f3": {
+      "type_widget": "number",
+      "attribut_label": "D3F2F3 (mm) - Mesure du 3ème doigt, 2ème et 3ème phalanges",
+      "min": 0
+    },
+    "d3total": {
+      "type_widget": "number",
+      "attribut_label": "D3 total (mm) - Longueur totale du 3ème doigt",
+      "min": 0
+    },
+    "d5": {
+      "type_widget": "number",
+      "attribut_label": "D5 (mm) - Mesure du 5ème doigt",
+      "min": 0
+    },
+    "cm3sup": {
+      "type_widget": "number",
+      "attribut_label": "CM3SUP (mm) - Mesure canine - 3ème molaire (mandibule supérieure)",
+      "min": 0
+    },
+    "cm3inf": {
+      "type_widget": "number",
+      "attribut_label": "CM3INF (mm) - Mesure canine - 3ème molaire (mandibule inférieure)",
+      "min": 0
+    },
+    "cb": {
+      "type_widget": "number",
+      "attribut_label": "CB (mm) - Mesure condylobasale",
+      "min": 0
+    },
+    "lm": {
+      "type_widget": "number",
+      "attribut_label": "LM (mm) - Mesure mandibule inférieure",
+      "min": 0
+    },
+    "oreille": {
+      "type_widget": "number",
+      "attribut_label": "Oreille (mm) - Mesure de l'oreille",
+      "min": 0
+    },
+    "commentaire": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+  }
+}
