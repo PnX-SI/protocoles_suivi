@@ -19,7 +19,8 @@
         "code_nomenclature_type": "OCC_COMPORTEMENT",
         "type_util": "nomenclature",
         "required": true,
-       "cd_nomenclatures": ["1","10", "7", "9", "15", "13"]
+        "value": 545,
+       "cd_nomenclatures": ["1","10", "7"]
 
     },
     "id_nomenclature_bio_condition": {
@@ -27,7 +28,8 @@
       "attribut_label": "Etat biologique",
       "code_nomenclature_type": "ETA_BIO",
       "type_util": "nomenclature",
-      "required": true
+      "required": true,
+      "value": 154
     },
     "id_nomenclature_bio_status": {
       "type_widget": "nomenclature",
@@ -35,7 +37,8 @@
       "code_nomenclature_type": "STATUT_BIO",
       "type_util": "nomenclature",
       "required": true,
-      "cd_nomenclatures": ["3", "4", "9", "0", "1" ]
+      "value": 29,
+      "cd_nomenclatures": ["3", "4", "9", "0" ]
 
     },
     "id_nomenclature_obs_technique": {
@@ -44,6 +47,7 @@
       "code_nomenclature_type": "METH_OBS",
       "type_util": "nomenclature",
       "required": true,
+      "value": 37,
       "cd_nomenclatures": ["0", "3", "6"]
     },
     "id_nomenclature_life_stage": {
@@ -52,6 +56,7 @@
       "code_nomenclature_type": "STADE_VIE",
       "type_util": "nomenclature",
       "required": true,
+      "value": 37,
       "cd_nomenclatures": ["0", "2", "3"]
     },
     "id_nomenclature_sex": {
@@ -60,6 +65,7 @@
       "code_nomenclature_type": "SEXE",
       "type_util": "nomenclature",
       "required": true,
+      "value": 37,
       "cd_nomenclatures": ["0", "2", "3"]
     },
     "count_indiv": {
