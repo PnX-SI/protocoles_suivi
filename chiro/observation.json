@@ -20,7 +20,7 @@
         "type_util": "nomenclature",
         "required": true,
         "value": 545,
-       "cd_nomenclatures": ["1","10", "7", "9", "15", "13"]
+       "cd_nomenclatures": ["1","10", "7"]
 
     },
     "id_nomenclature_bio_condition": {
