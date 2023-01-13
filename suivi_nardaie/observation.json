@@ -1,0 +1,20 @@
+{
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "display_properties": [
+    "cd_nom",
+    "pourcentage_recouvrement"
+  ],
+  "redirect_to_parent": true,
+  "specific": {
+    "pourcentage_recouvrement": {
+      "type_widget": "number",
+      "attribut_label": "Pourcentage recouvrement",
+      "required": true,
+      "min": 0,
+      "max": 100
+    }
+  },
+  "medias": {
+    "hidden": true
+  }
+}
