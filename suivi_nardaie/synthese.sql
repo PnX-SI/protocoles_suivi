@@ -1,9 +1,9 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_stom AS
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_nardaie AS
 WITH source AS (
 	SELECT
         id_source
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER('STOM'))
+	WHERE name_source = 'MONITORING_NARDAIE'
 	LIMIT 1
 ), observers AS (
     SELECT
@@ -27,14 +27,16 @@ WITH source AS (
     source.id_source,
     v.id_base_visit AS entity_source_pk_value,
     v.id_dataset,
-    ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO'::character varying, 'St'::character varying) AS id_nomenclature_geo_object_nature,
+    ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO'::character varying, 'In'::character varying) AS id_nomenclature_geo_object_nature,
     v.id_nomenclature_tech_collect_campanule,
-    ref_nomenclatures.get_id_nomenclature('OBJ_DENBR'::character varying, 'IND'::character varying) AS id_nomenclature_obj_count,
-    ref_nomenclatures.get_id_nomenclature('TYP_DENBR'::character varying, 'Co'::character varying) AS id_nomenclature_type_count,
+    ref_nomenclatures.get_id_nomenclature('ETA_BIO'::character varying, '2'::character varying) AS id_nomenclature_bio_condition,
+    ref_nomenclatures.get_id_nomenclature('STAT_BIOGEO'::character varying, '1'::character varying) AS id_nomenclature_biogeo_status,
+    ref_nomenclatures.get_id_nomenclature('OBJ_DENBR'::character varying, 'NSP'::character varying) AS id_nomenclature_obj_count,
+    ref_nomenclatures.get_id_nomenclature('TYP_DENBR'::character varying, 'NSP'::character varying) AS id_nomenclature_type_count,
     ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE'::character varying, 'Te'::character varying) AS id_nomenclature_source_status,
     ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO'::character varying, '1'::character varying) AS id_nomenclature_info_geo_type,
     ref_nomenclatures.get_id_nomenclature('NATURALITE', '1') as id_nomenclature_naturalness, 
-    ref_nomenclatures.get_id_nomenclature('STADE_VIE', '2') as id_nomenclature_life_stage, -- on ne compte que des adultes sur le stom 
+    ref_nomenclatures.get_id_nomenclature('STADE_VIE', '0') as id_nomenclature_life_stage, -- on ne compte que des adultes sur le stom 
     ref_nomenclatures.get_id_nomenclature('TYP_GRP', 'REL') as id_nomenclature_grp_typ, 
     t.cd_nom,
     t.nom_complet AS nom_cite,
@@ -51,9 +53,7 @@ WITH source AS (
     v.comments AS comment_description,
     obs.ids_observers,
     v.id_base_site,
-    v.id_base_visit,	
-    (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_hors_proto')::integer AS count_min,
-    (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_hors_proto')::integer AS count_max
+    v.id_base_visit	
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_commons.t_modules m ON m.id_module = v.id_module
@@ -64,4 +64,4 @@ WITH source AS (
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'stom'::TEXT;
+  WHERE m.module_code::text = 'NARDAIE'::TEXT;

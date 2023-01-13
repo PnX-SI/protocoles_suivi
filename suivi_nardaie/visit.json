@@ -31,6 +31,16 @@
     },
     "medias": {
       "hidden": true
+    },
+    "id_nomenclature_tech_collect_campanule": {
+      "type_widget": "text",
+      "attribut_label": "Technique de collecte (Campanule)",
+      "type_util": "nomenclature",
+      "value": {
+          "code_nomenclature_type": "TECHNIQUE_OBS",
+          "cd_nomenclature": "133"
+      },
+      "hidden": true
     }
   }
 }

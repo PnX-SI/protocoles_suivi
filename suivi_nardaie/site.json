@@ -31,7 +31,7 @@
       "required": true,
       "value": {
         "code_nomenclature_type": "TYPE_SITE",
-        "cd_nomenclature": "STOM"
+        "cd_nomenclature": "SUIVI_NARDAIE"
       },
       "hidden": true
     },
