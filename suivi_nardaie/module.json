@@ -2,6 +2,6 @@
     "module_label":"NARDAIE",
     "module_desc":"Suivi des pelouses à nard",
     "export_csv": [
-        { "label": "Placettes et relevés", "type":"csv" , "method": "v_export_nardaie" }
+        { "label": "Placettes et relevés", "type":"csv" , "method": "all" }
     ]
 }
