@@ -1,0 +1,167 @@
+{
+  "types": [
+    {
+      "mnemonique": "INDICES_BLAIREAU",
+      "label_default": "Indices de présence de Blaireau",
+      "definition_default": "Indices de présence de Blaireau"
+    },
+    {
+      "mnemonique": "PERTURB_BLAIREAU",
+      "label_default": "Perturbations ou destructions de Blaireau",
+      "definition_default": "Perturbations ou destructions de Blaireau"
+    },
+    {
+      "mnemonique": "DEPRED_BLAIREAU",
+      "label_default": "Déprédations dûes aux blaireaux",
+      "definition_default": "Déprédations dûes aux blaireaux"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type":"INDICES_BLAIREAU",
+      "cd_nomenclature": "DEB_FRAIS",
+      "mnemonique": "frais",
+      "label_default": "Déblais frais",
+      "definition_default": "Déblais frais"
+    }, 
+    {
+      "type":"INDICES_BLAIREAU",
+      "cd_nomenclature": "EMPR",
+      "mnemonique": "Empreintes",
+      "label_default": "Empreintes",
+      "definition_default": "Empreintes"
+    },
+    {
+      "type":"INDICES_BLAIREAU",
+      "cd_nomenclature": "LI_DEVANT_G",
+      "mnemonique": "Litière devant",
+      "label_default": "Litière devant les gueules",
+      "definition_default": "Litière devant les gueules"
+    },
+    {
+      "type":"INDICES_BLAIREAU",
+      "cd_nomenclature": "COULEES",
+      "mnemonique": "Coulées",
+      "label_default": "Coulées/Orifices des gueules bien lisses",
+      "definition_default": "Coulées/Orifices des gueules bien lisses"
+    },
+    {
+      "type":"INDICES_BLAIREAU",
+      "cd_nomenclature": "LATRINES",
+      "mnemonique": "Latrines actives",
+      "label_default": "Latrines actives",
+      "definition_default": "Latrines actives"
+    },
+    {
+      "type":"INDICES_BLAIREAU",
+      "cd_nomenclature": "OBS_DIR",
+      "mnemonique": "Observations directes",
+      "label_default": "Observations directes",
+      "definition_default": "Observations directes"
+    },
+    {
+      "type":"INDICES_BLAIREAU",
+      "cd_nomenclature": "NON_PRECISE",
+      "mnemonique": "non précisés",
+      "label_default": "Indices non précisés",
+      "definition_default": "Indices non précisés"
+    },
+    {
+      "type":"INDICES_BLAIREAU",
+      "cd_nomenclature": "AUCUN",
+      "mnemonique": "Aucun",
+      "label_default": "Aucun indice",
+      "definition_default": "Aucun indice"
+    },
+
+
+    {
+      "type":"PERTURB_BLAIREAU",
+      "cd_nomenclature": "DETERRAGE",
+      "mnemonique": "Déterrage",
+      "label_default": "Déterrage",
+      "definition_default": "Déterrage"
+    },
+    {
+      "type":"PERTURB_BLAIREAU",
+      "cd_nomenclature": "GAZ",
+      "mnemonique": "Gazage",
+      "label_default": "Gazage",
+      "definition_default": "Gazage"
+    },
+    {
+      "type":"PERTURB_BLAIREAU",
+      "cd_nomenclature": "POISON",
+      "mnemonique": "Empoisonnement",
+      "label_default": "Empoisonnement",
+      "definition_default": "Empoisonnement"
+    },
+    {
+      "type":"PERTURB_BLAIREAU",
+      "cd_nomenclature": "DEBOIS",
+      "mnemonique": "Déboisement",
+      "label_default": "Déboisement",
+      "definition_default": "Déboisement"
+    },
+    {
+      "type":"PERTURB_BLAIREAU",
+      "cd_nomenclature": "AUTRE",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type":"PERTURB_BLAIREAU",
+      "cd_nomenclature": "AUCUNE",
+      "mnemonique": "Aucune",
+      "label_default": "Aucune",
+      "definition_default": "Aucune"
+    },   
+
+
+
+    {
+      "type":"DEPRED_BLAIREAU",
+      "cd_nomenclature": "DEG_CULTURES",
+      "mnemonique": "cultures",
+      "label_default": "Dégâts aux cultures",
+      "definition_default": "Dégâts aux cultures"
+    },
+    {
+      "type":"DEPRED_BLAIREAU",
+      "cd_nomenclature": "DEG_PRAIRIES",
+      "mnemonique": "prairies",
+      "label_default": "Dégâts aux prairies",
+      "definition_default": "Dégâts aux prairies"
+    },
+    {
+      "type":"DEPRED_BLAIREAU",
+      "cd_nomenclature": "DEG_PARC_JARDINS",
+      "mnemonique": "Parcs et jardins",
+      "label_default": "Dégâts aux parcs et jardins",
+      "definition_default": "Dégâts aux parcs et jardins"
+    },
+    {
+      "type":"DEPRED_BLAIREAU",
+      "cd_nomenclature": "AUTRE",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type":"DEPRED_BLAIREAU",
+      "cd_nomenclature": "AUCUNE",
+      "mnemonique": "Aucune",
+      "label_default": "Aucune",
+      "definition_default": "Aucune"
+    },
+
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "BLAIREAUTIERE",
+      "mnemonique": "loutre local",
+      "label_default": "Site suivi blaireautière",
+      "definition_default": "Site suivi blaireautière"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+﻿mnemonique;id_nomenclature;cd_nomenclature;label_default
+TYPE_SITE;450;3;Bâti
+TYPE_SITE;451;4;Arbre
+TYPE_SITE;447;CHI;Site chiroptère
+TYPE_SITE;452;5;Rocher
+TYPE_SITE;453;6;Hors gîte
+TYPE_SITE;448;1;Grotte
+TYPE_SITE;449;2;Mine
+TYPE_SITE;454;7;Indéterminé
+TYPE_SITE;680;OEDIC;Circuit oedicnème
+TYPE_SITE;685;CHE_PT_E;Point d'écoute cheveches
+TYPE_SITE;686;APO_DALLES;Dalles à orpins
+TYPE_SITE;692;PRAIFLEU_SOURCE;Pairies sources
+TYPE_SITE;693;PRAIFLEU_DEST;Pairies receveuse
+TYPE_SITE;700;PONT;Pont
+TYPE_SITE;702;LICHENS_PLACETTE;Placette lichens bioindicateur
+OCC_COMPORTEMENT;599;1;Non renseigné
+OCC_COMPORTEMENT;608;10;Passage en vol
+OCC_COMPORTEMENT;605;7;Swarming
+ETA_BIO;156;0;NSP
+ETA_BIO;157;1;Non renseigné
+ETA_BIO;158;2;Observé vivant
+ETA_BIO;159;3;Trouvé mort
+STATUT_BIO;28;0;Inconnu
+STATUT_BIO;31;3;Reproduction
+STATUT_BIO;32;4;Hibernation
+STATUT_BIO;37;9;Pas de reproduction
+METH_OBS;41;0;Vu
+METH_OBS;44;3;Ultrasons
+METH_OBS;47;6;Fèces/Guano/Epreintes
+STADE_VIE;1;0;Inconnu
+STADE_VIE;3;2;Adulte
+STADE_VIE;4;3;Juvénile
+SEXE;166;0;Inconnu
+SEXE;168;2;Femelle
+SEXE;169;3;Mâle

@@ -1,0 +1,8 @@
+{
+    "module_label":"Blaireautières",
+    "module_desc":"Description et suivi des terriers de Blaireau européen",
+    "export_csv": [
+      { "label": "Télécharger le CSV", "type":"csv" , "method": "telecharger_csv" }
+     ]
+}
+

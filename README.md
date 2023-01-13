@@ -1,11 +1,10 @@
-# Définition de protocoles de suivi PnC
-Protocoles pour le module de suivi générique de géonature : https://github.com/PnX-SI/gn_module_monitoring
+# Définition de protocoles de suivi
 
-Ce dépot correspond à des protocoles utilisés au Parc national des Cévennes
+Exemples de configuration de protocoles (sous-moduls) pour le module de suivi générique de GeoNature : https://github.com/PnX-SI/gn_module_monitoring
 
-## Installation d'un protocole
+## Installation d'un protocole (sous-module)
+
 Récupérer une archive du dépot
-
 
 * S'assurer d'être dans le ``virtualenv`` et à la racine de l'application ``GeoNature``
 * Exécuter la commande :
@@ -14,7 +13,25 @@ Récupérer une archive du dépot
     flask monitorings install <mon_chemin_absolu_vers_l_archive>/oedic oedic
 ``` 
 
-### Protocoles définis dans le dépot :
+### Protocoles partagés :
 
-* Oedicnème
-* Point d'écoute cheveche
+* Oedicnèmes
+* Points d'écoute cheveche
+* POPAmphibien
+* POPReptile
+* Apollons
+* Chevêches
+* Cheveches (avec groupes de sites
+* Chiroptères
+* Chronocapture
+* Lichens (bio-indicateurs)
+* Osmodermes
+* Piégeages passifs
+* Prairies fleuries
+* STOM
+* GMB - Micromammifères (analyse des pelotes de rejection)
+* GMB - Campagnols amphibies
+* GMB - Colonies de chiroptères
+* GMB - Loutres d'Europe (SACs)
+* GMB - Loutres d'Europe (UICN)
+* GMB - Terriers de blaireau

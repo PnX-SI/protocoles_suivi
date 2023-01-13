@@ -1,0 +1,84 @@
+{
+
+  "label": "Site blaireautière",
+  "label_list": "Sites blaireautières",
+
+
+  "display_properties": [
+    "id_sites_group",
+    "base_site_name",
+    "base_site_description",
+    "id_nomenclature_type_site",
+    "env_site",
+    "comments",    
+    "nb_visits"
+  ],
+
+  "display_list": [
+    "id_sites_group",
+    "base_site_name",
+    "env_site",
+    "nb_visits"
+   ], 
+
+  "keep": [
+    "id_nomenclature_type_site"
+  ],
+
+  "geometry_type": "Point",
+
+
+  "specific": {
+
+       
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Secteur",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false
+    },
+
+    "base_site_code": {
+      "attribut_label": "N° de la Blaireautière",
+      "required": false,
+      "title":"Le numéro doit contenir le n° de département",
+      "hidden": true
+    },
+
+    "base_site_name": {
+      "attribut_label": "Nom de la blaireautière (Doit commencer par le nom du groupe... suivi d'une indication géographique)",
+      "required": true,
+      "value": "Blaireautière de ",
+      "title":"Nom unique associé à chaque blaireautière. Doit commencer par 'Blaireautière de... suivie du nom de lieu-dit'. Si plusieurs blaireautières sont sur un même lieu-dit, détailler en rajoutant nord, sud, est ou ouest, ou autre." 
+    },
+
+    "env_site": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Milieu de la blaireautière",
+      "values": ["Bois de feuillus","Bois de résineux","Bois mixte","Bocage","Littoral","Cultures intensives","Lande","Friche","Jardin et parc périurbain","Zone urbaine","Rivière","Autre"]
+    },
+
+    "base_site_description": {
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    },
+
+    "comments": {
+      "attribut_label": "Remarques",
+      "type_widget": "textarea",
+      "hidden": true
+    },
+
+    "id_nomenclature_type_site": {
+      "default": {"cd_nomenclature": "BLAIREAUTIERE"},
+      "hidden": true
+    }
+  
+  }
+}

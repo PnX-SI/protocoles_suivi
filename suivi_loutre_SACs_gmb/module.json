@@ -1,0 +1,8 @@
+{
+    "module_label":"Suivi Loutre local",
+    "module_desc":"Suivi de la présence de la Loutre d'Europe selon le protocole SACs",
+    "export_csv": [
+      { "label": "Télécharger le CSV", "type":"csv" , "method": "telecharger_csv" }
+      ]
+}
+

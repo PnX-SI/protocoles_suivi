@@ -1,0 +1,76 @@
+{
+  "types": [
+    {
+      "mnemonique": "PRED_PELOTES",
+      "label_default": "Prédateurs pelotes",
+      "definition_default": "Prédateurs pelotes"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "PELOTES",
+      "mnemonique": "Pelotes de réjection",
+      "label_default": "Pelotes de réjection",
+      "definition_default": "Pelotes de réjection"
+    },
+
+    {
+      "type":"PRED_PELOTES",
+      "cd_nomenclature": "CHOUETTE_HULOTTE",
+      "mnemonique": "Chouette hulotte",
+      "label_default": "Chouette hulotte",
+      "definition_default": "Chouette hulotte"
+    },
+    {
+      "type":"PRED_PELOTES",
+      "cd_nomenclature": "EFFRAIE",
+      "mnemonique": "Effraie des clochers",
+      "label_default": "Effraie des clochers",
+      "definition_default": "Effraie des clochers"
+    },
+    {
+      "type":"PRED_PELOTES",
+      "cd_nomenclature": "HIBOU_MARAIS",
+      "mnemonique": "Hibou des marais",
+      "label_default": "Hibou des marais",
+      "definition_default": "Hibou des marais"
+    },
+    {
+      "type":"PRED_PELOTES",
+      "cd_nomenclature": "HIBOU_MOYENDUC",
+      "mnemonique": "Hibou moyen-duc",
+      "label_default": "Hibou moyen-duc",
+      "definition_default": "Hibou moyen-duc"
+    },
+    {
+      "type":"PRED_PELOTES",
+      "cd_nomenclature": "FAUCON_CRECERELLE",
+      "mnemonique": "Faucon crécerelle",
+      "label_default": "Faucon crécerelle",
+      "definition_default": "Faucon crécerelle"
+    },
+    {
+      "type":"PRED_PELOTES",
+      "cd_nomenclature": "CHOUETTE_CHEVECHE",
+      "mnemonique": "Chouette chevêche",
+      "label_default": "Chouette chevêche",
+      "definition_default": "Chouette chevêche"
+    },
+    {
+      "type":"PRED_PELOTES",
+      "cd_nomenclature": "INCONNU",
+      "mnemonique": "Inconnu",
+      "label_default": "Inconnu",
+      "definition_default": "Inconnu"
+    },
+    {
+      "type":"PRED_PELOTES",
+      "cd_nomenclature": "NR",
+      "mnemonique": "Non renseigné",
+      "label_default": "Non renseigné",
+      "definition_default": "Non renseigné"
+    }
+
+  ]
+}

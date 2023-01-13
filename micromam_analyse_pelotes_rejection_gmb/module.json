@@ -1,0 +1,7 @@
+{
+    "module_label":"Pelotes de réjection",
+    "module_desc":"Suivi des populations de micromammifères par analyse de pelotes de réjection",
+    "export_csv": [
+      { "label": "Télécharger le CSV", "type":"csv" , "method": "telecharger_csv" }
+      ]
+

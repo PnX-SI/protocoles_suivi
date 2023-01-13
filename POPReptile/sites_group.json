@@ -50,14 +50,11 @@
       "application": "GeoNature",
       "keyValue": "id_dataset",
       "keyLabel": "dataset_shortname",
-      "data_path": "data",
       "required": true,
-
       "params": {
         "orderby": "dataset_name",
         "module_code": "__MODULE.MODULE_CODE"
       }
-
     },
 
     "commune": {

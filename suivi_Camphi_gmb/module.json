@@ -1,0 +1,8 @@
+{
+    "module_label":"Suivi Campagnol amphibie régional",
+    "module_desc":"Suivi de l'évolution des populations et des habitats de Campagnol amphibie",
+    "export_csv": [
+      { "label": "Télécharger le CSV", "type":"csv" , "method": "telecharger_csv" }
+     ]
+}
+

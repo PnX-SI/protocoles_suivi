@@ -1,0 +1,46 @@
+{
+  "types": [
+    {
+      "mnemonique": "CONDITION_PROSPECTION",
+      "label_default": "Conditions de prospection",
+      "definition_default": "Conditions de la prospection (vis-à-vis des conditions météorologiques et hydrologiques)"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "LOUTRELOCAL",
+      "mnemonique": "loutre local",
+      "label_default": "Site Loutre local",
+      "definition_default": "Site Loutre local"
+    }, 
+    {
+      "type":"CONDITION_PROSPECTION",
+      "cd_nomenclature": "METEO_B",
+      "mnemonique": "Bonnes",
+      "label_default": "Bonnes",
+      "definition_default": "Bonnes"
+    },
+    {
+      "type":"CONDITION_PROSPECTION",
+      "cd_nomenclature": "METEO_MOY",
+      "mnemonique": "Moyennes",
+      "label_default": "Moyennes",
+      "definition_default": "Moyennes"
+    },
+    {
+      "type":"CONDITION_PROSPECTION",
+      "cd_nomenclature": "METEO_MAUV",
+      "mnemonique": "Mauvaises",
+      "label_default": "Mauvaises",
+      "definition_default": "Mauvaises"
+    },
+    {
+      "type":"CONDITION_PROSPECTION",
+      "cd_nomenclature": "METEO_NR",
+      "mnemonique": "Non renseigné",
+      "label_default": "Non renseigné",
+      "definition_default": "Non renseigné"
+    }
+  ]
+}
