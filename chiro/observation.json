@@ -39,7 +39,7 @@
           "code_nomenclature_type": "OCC_COMPORTEMENT",
           "cd_nomenclature": "1"
         },
-       "cd_nomenclatures": ["1","10", "7"]
+       "cd_nomenclatures": ["1","10", "7", "9", "13", "15" ]
 
     },
     "id_nomenclature_bio_condition": {
@@ -63,7 +63,7 @@
         "code_nomenclature_type": "STATUT_BIO",
         "cd_nomenclature": "0"
       },
-      "cd_nomenclatures": ["3", "4", "9", "0" ]
+      "cd_nomenclatures": ["3", "4", "9", "0", "1" ]
 
     },
     "id_nomenclature_obs_technique": {
@@ -76,7 +76,7 @@
         "code_nomenclature_type": "METH_OBS",
         "cd_nomenclature": "0"
       },
-      "cd_nomenclatures": ["0", "3", "6"]
+      "cd_nomenclatures": ["0", "3", "6", "133"]
     },
     "id_nomenclature_life_stage": {
       "type_widget": "nomenclature",
@@ -98,9 +98,9 @@
       "required": true,
       "value": {
         "code_nomenclature_type": "SEXE",
-        "cd_nomenclature": "1"
+        "cd_nomenclature": "6"
       },
-      "cd_nomenclatures": ["0","1", "2", "3"]
+      "cd_nomenclatures": ["0", "2", "3", "6"]
     },
     "count_min": {
       "type_widget": "number",
