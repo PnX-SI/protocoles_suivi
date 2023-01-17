@@ -1,0 +1,46 @@
+{
+  "chained": false,
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "display_properties": [
+    "visit_date_min",
+    "observers",
+    "hauteur_nard",
+    "hauteur_moy_vegetation"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "nb_observations",
+    "pourcentage_recouvrement"
+  ],
+  "specific": {
+    "id_dataset": {
+      "hidden": true
+    },
+    "hauteur_nard": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur du nard",
+      "min": 0,
+      "required": true
+    },
+    "hauteur_moy_vegetation": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur moyenne de la végétation",
+      "min": 0,
+      "required": true
+    },
+    "medias": {
+      "hidden": true
+    },
+    "id_nomenclature_tech_collect_campanule": {
+      "type_widget": "text",
+      "attribut_label": "Technique de collecte (Campanule)",
+      "type_util": "nomenclature",
+      "value": {
+          "code_nomenclature_type": "TECHNIQUE_OBS",
+          "cd_nomenclature": "133"
+      },
+      "hidden": true
+    }
+  }
+}

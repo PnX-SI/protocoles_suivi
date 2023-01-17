@@ -5,7 +5,8 @@
     {
       "label": "Description des placettes",
       "type": "csv",
-      "method": "placettes"
+      "method": "placettes",
+      "filter_dataset": false
     },
     {
       "label": "Liste des taxons",
