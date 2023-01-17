@@ -49,6 +49,7 @@
       "hidden": false
     },
     "initial_code": {
+      "type_widget": "text",
       "attribut_label": "Code inital (1er fiche)",
       "required": false,
       "hidden": false
