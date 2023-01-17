@@ -1,24 +1,24 @@
 CREATE OR REPLACE VIEW gn_monitoring.v_synthese_chiro AS
 WITH source AS (
-	SELECT
-        id_source
+    SELECT id_source
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER('CHIRO'))
-	LIMIT 1
+    WHERE name_source = 'MONITORING_CHIRO'
+    LIMIT 1
 ), observers AS (
-            SELECT
-                CASE
-                    WHEN array_agg(r.id_role) IS NULL THEN v_1.data ->> 'observers_txt'::text
-                    ELSE string_agg(concat(r.nom_role, ' ', r.prenom_role), ' ; '::text)
-                END AS observers,
-                COALESCE(array_agg(r.id_role), NULL::integer[]) AS ids_observers,
-            v_1.id_base_visit
-           FROM gn_monitoring.t_visit_complements v_1
-             LEFT JOIN gn_monitoring.cor_visit_observer cvo ON cvo.id_base_visit = v_1.id_base_visit
-             LEFT JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
-          GROUP BY v_1.id_base_visit
+    SELECT
+        CASE
+            WHEN array_agg(r.id_role) IS NULL THEN v_1.data ->> 'observers_txt'::text
+            ELSE string_agg(concat(r.nom_role, ' ', r.prenom_role), ' ; '::text)
+        END AS observers,
+        array_remove(array_agg(r.id_role), NULL)  AS ids_observers,
+        v_1.id_base_visit
+    FROM gn_monitoring.t_visit_complements v_1
+    LEFT JOIN gn_monitoring.cor_visit_observer cvo ON cvo.id_base_visit = v_1.id_base_visit
+    LEFT JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
+    GROUP BY v_1.id_base_visit
 )
-SELECT to2.uuid_observation AS unique_id_sinp,
+SELECT
+    to2.uuid_observation AS unique_id_sinp,
     v.uuid_base_visit AS unique_id_sinp_grp,
     source.id_source,
     v.id_base_visit AS entity_source_pk_value,
@@ -56,14 +56,15 @@ SELECT to2.uuid_observation AS unique_id_sinp,
     (toc."data"->>'id_nomenclature_life_sex')::integer AS id_nomenclature_sex,
     (toc."data"->>'count_indiv')::integer AS count_min,
     (toc."data"->>'count_indiv')::integer AS count_max
-   FROM gn_monitoring.t_base_visits v
-     JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
-     JOIN gn_commons.t_modules m ON m.id_module = v.id_module
-     JOIN gn_monitoring.t_visit_complements vc ON vc.id_base_visit = v.id_base_visit
-     JOIN gn_monitoring.t_observations to2 ON to2.id_base_visit = vc.id_base_visit
-     JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
-     JOIN taxonomie.taxref t ON t.cd_nom = to2.cd_nom
-     JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-     JOIN source ON true
-     LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'chiro'::TEXT;
+FROM gn_monitoring.t_base_visits v
+JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
+JOIN gn_commons.t_modules m ON m.id_module = v.id_module
+JOIN gn_monitoring.t_visit_complements vc ON vc.id_base_visit = v.id_base_visit
+JOIN gn_monitoring.t_observations to2 ON to2.id_base_visit = vc.id_base_visit
+JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
+JOIN taxonomie.taxref t ON t.cd_nom = to2.cd_nom
+JOIN observers obs ON obs.id_base_visit = v.id_base_visit
+JOIN source ON true
+LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+WHERE m.module_code = 'chiro'
+ORDER BY to2.uuid_observation;
