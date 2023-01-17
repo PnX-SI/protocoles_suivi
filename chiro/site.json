@@ -98,7 +98,7 @@
       "type_util": "nomenclature"
     },
     "adjustments_date": {
-      "type_widget": "text",
+      "type_widget": "date",
       "required": false,
       "attribut_label": "Date de l'aménagement"
     },
