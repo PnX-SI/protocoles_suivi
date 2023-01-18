@@ -44,7 +44,8 @@ SELECT
     obs.observers,
     v.id_digitiser,
     v.id_module,
-    v.comments AS comment_description,
+    v.comments AS comment_context,
+    to2.comments AS comment_description,
     obs.ids_observers,
     v.id_base_site,
     v.id_base_visit,
@@ -53,9 +54,10 @@ SELECT
     (toc."data"->>'id_nomenclature_meth_obs')::integer AS id_nomenclature_meth_obs,
     (toc."data"->>'id_nomenclature_bio_status')::integer AS id_nomenclature_bio_status,
     (toc."data"->>'id_nomenclature_life_stage')::integer AS id_nomenclature_life_stage,
-    (toc."data"->>'id_nomenclature_life_sex')::integer AS id_nomenclature_sex,
-    (toc."data"->>'count_indiv')::integer AS count_min,
-    (toc."data"->>'count_indiv')::integer AS count_max
+    (toc."data"->>'id_nomenclature_sex')::integer AS id_nomenclature_sex,
+    (toc."data"->>'id_nomenclature_obs_technique')::integer AS id_nomenclature_obs_technique,
+    (toc."data"->>'count_min')::integer AS count_min,
+    (toc."data"->>'count_max')::integer AS count_max
 FROM gn_monitoring.t_base_visits v
 JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
 JOIN gn_commons.t_modules m ON m.id_module = v.id_module
