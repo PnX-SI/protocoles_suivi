@@ -113,6 +113,11 @@
       "code_nomenclature_type": "CHI_FREQUENTATION",
       "type_util": "nomenclature",
       "required": false
+    },
+    "site_code_national": {
+      "type_widget": "text",
+      "attribut_label": "Code du site au niveau des autres reseaux",
+      "hidden": true
     }
   }
 }
