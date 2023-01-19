@@ -5,6 +5,7 @@
     "visit_date_min",
     "nb_observations",
     "observers",
+    "observers_txt",
     "sheet_id",
     "guano_presency",
     "guano_comment",
@@ -25,7 +26,7 @@
   "specific": {
     "observers_txt": {
       "type_widget": "text",
-      "attribut_label": "Observateur (hors PNE)"
+      "attribut_label": "Observateur (extérieur)"
     },
     "id_dataset": {
       "hidden": true,

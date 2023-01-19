@@ -1,5 +1,13 @@
 {
   "types": [
   ],
-  "nomenclatures": []
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "CHI",
+      "mnemonique": "Site chiroptère",
+      "label_default": "Site chiroptère",
+      "definition_default": "Site pour le suivi des chiroptères"
+    }
+  ]
 }

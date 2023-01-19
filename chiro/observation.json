@@ -19,7 +19,10 @@
         "code_nomenclature_type": "OCC_COMPORTEMENT",
         "type_util": "nomenclature",
         "required": true,
-        "value": 545,
+        "value": {
+          "code_nomenclature_type": "OCC_COMPORTEMENT",
+          "cd_nomenclature": "1"
+        },
        "cd_nomenclatures": ["1","10", "7"]
 
     },
@@ -29,7 +32,10 @@
       "code_nomenclature_type": "ETA_BIO",
       "type_util": "nomenclature",
       "required": true,
-      "value": 154
+      "value": {
+        "code_nomenclature_type": "ETA_BIO",
+        "cd_nomenclature": "2"
+      }
     },
     "id_nomenclature_bio_status": {
       "type_widget": "nomenclature",
@@ -37,7 +43,10 @@
       "code_nomenclature_type": "STATUT_BIO",
       "type_util": "nomenclature",
       "required": true,
-      "value": 29,
+      "value": {
+        "code_nomenclature_type": "STATUT_BIO",
+        "cd_nomenclature": "0"
+      },
       "cd_nomenclatures": ["3", "4", "9", "0" ]
 
     },
@@ -47,7 +56,10 @@
       "code_nomenclature_type": "METH_OBS",
       "type_util": "nomenclature",
       "required": true,
-      "value": 37,
+      "value": {
+        "code_nomenclature_type": "METH_OBS",
+        "cd_nomenclature": "0"
+      },
       "cd_nomenclatures": ["0", "3", "6"]
     },
     "id_nomenclature_life_stage": {
@@ -56,8 +68,11 @@
       "code_nomenclature_type": "STADE_VIE",
       "type_util": "nomenclature",
       "required": true,
-      "value": 37,
-      "cd_nomenclatures": ["0", "2", "3"]
+      "value": {
+        "code_nomenclature_type": "STADE_VIE",
+        "cd_nomenclature": "1"
+      },
+      "cd_nomenclatures": ["0", "1", "2", "3"]
     },
     "id_nomenclature_sex": {
       "type_widget": "nomenclature",
@@ -65,8 +80,11 @@
       "code_nomenclature_type": "SEXE",
       "type_util": "nomenclature",
       "required": true,
-      "value": 37,
-      "cd_nomenclatures": ["0", "2", "3"]
+      "value": {
+        "code_nomenclature_type": "SEXE",
+        "cd_nomenclature": "1"
+      },
+      "cd_nomenclatures": ["0","1", "2", "3"]
     },
     "count_indiv": {
       "type_widget": "number",

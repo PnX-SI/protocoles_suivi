@@ -18,6 +18,8 @@
   "display_properties": [
     "base_site_name",
     "base_site_code",
+    "first_use_date",
+    "id_inventor",
     "roost_type",
     "nb_visits",
     "threat",
@@ -27,6 +29,8 @@
     "owner_adress",
     "owner_tel",
     "owner_mail",
+    "base_site_description",
+    "place_name",
     "medias"
   ],
   "display_list": [
@@ -38,36 +42,39 @@
   "specific": {
     "id_nomenclature_type_site": {
       "hidden": true,
-      "value": 439
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "CHI"
+      }
     },
     "roost_type": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Type de gite",
       "values": [
-        "barrage", 
-        "bâtiment", 
-        "cave", 
-        "Ebouli", 
-        "église", 
-        "façade", 
-        "four", 
-        "garage", 
-        "Gîte artificiel", 
-        "grange", 
-        "grenier", 
-        "grotte", 
-        "maison", 
-        "mine", 
-        "mur", 
-        "panneau", 
-        "plancher", 
-        "pont", 
-        "ruine", 
-        "toit", 
-        "toit et volet", 
-        "transformateur", 
-        "tunnel", 
+        "barrage",
+        "bâtiment",
+        "cave",
+        "Ebouli",
+        "église",
+        "façade",
+        "four",
+        "garage",
+        "Gîte artificiel",
+        "grange",
+        "grenier",
+        "grotte",
+        "maison",
+        "mine",
+        "mur",
+        "panneau",
+        "plancher",
+        "pont",
+        "ruine",
+        "toit",
+        "toit et volet",
+        "transformateur",
+        "tunnel",
         "volet",
         "Autre"
         ]
