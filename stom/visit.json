@@ -63,6 +63,7 @@
     "paturage": {
       "type_widget": "select",
       "attribut_label": "Indice de paturage",
+      "required": true,
       "values": [
         "1 = Aucune trace de paturage dans le milieu",
         "2 = Toutes les situations intermédiaires",

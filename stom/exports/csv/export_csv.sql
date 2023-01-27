@@ -1,5 +1,5 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_export_stom_observations_and_habitat
- as with observers as (
+CREATE OR REPLACE VIEW gn_monitoring.v_export_stom_observations_and_habitat as
+with observers as (
      SELECT 
      cvo2.id_base_visit,
      string_agg(concat(tr2.prenom_role, ' ', tr2.nom_role), ',') AS observateurs
@@ -9,7 +9,7 @@ CREATE OR REPLACE VIEW gn_monitoring.v_export_stom_observations_and_habitat
  )
  SELECT 
 tsg.sites_group_name AS nom_site,
-s.id_base_site AS id_point_ecoute,
+s.base_site_code AS id_point_ecoute,
 s.base_site_name AS nom_point_ecoute,
 st_x(s.geom) AS X,
 st_y(s.geom) AS Y,
@@ -33,6 +33,7 @@ tvc."data"->>'sol_nu' AS sol_nu,
 tvc."data"->>'herb' AS herbace,
 tvc."data"->>'arb_inf_30cm' AS arb_inf_30cm,
 tvc."data"->>'arb_inf_1m' AS arb_inf_1m,
+tvc."data"->>'arb_1_4m' AS arb_1_4m ,
 tvc."data"->>'arb_sup_4m' AS arb_sup_4m ,
 tvc."data"->>'elem_paysager' AS elem_paysager,
 obs.id_observation AS id_observation,
@@ -69,7 +70,9 @@ LEFT JOIN gn_commons.t_modules m ON m.id_module = tbv.id_module
 JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit 
 JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = obs.id_observation 
 JOIN taxonomie.taxref t ON t.cd_nom = obs.cd_nom
-WHERE m.module_code::text = 'stom';
+WHERE m.module_code::text = 'stom'
+ORDER BY tsg.id_sites_group, tbv.visit_date_min, s.base_site_name
+;
 
 CREATE OR REPLACE VIEW gn_monitoring.v_export_stom_only_observations
  as with observers as (
