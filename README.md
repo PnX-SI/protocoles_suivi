@@ -1,6 +1,6 @@
 # Définition de protocoles de suivi
 
-Exemples de configuration de protocoles (sous-moduls) pour le module de suivi générique de GeoNature : https://github.com/PnX-SI/gn_module_monitoring
+Exemples de configuration de protocoles (sous-modules) pour le module de suivi générique de GeoNature : https://github.com/PnX-SI/gn_module_monitoring
 
 ## Installation d'un protocole (sous-module)
 
@@ -10,13 +10,14 @@ Récupérer une archive du dépot
 * Exécuter la commande :
 
 ```
-    flask monitorings install <mon_chemin_absolu_vers_l_archive>/oedic oedic
+    geonature monitorings install <chemin_absolu_vers_le_sous_module>
 ``` 
 
 ### Protocoles partagés :
 
 * Oedicnèmes
 * Points d'écoute cheveche
+* RHOMEO
 * POPAmphibien
 * POPReptile
 * Apollons
