@@ -1,0 +1,189 @@
+{
+  "genre":"M",
+  "label": "Passage",
+  "label_list": "Passages",
+  "display_properties": [
+    "id_dataset",
+    "observers",
+    "num_passage",
+    "visit_date_min",
+    "visit_time",
+    "surf_releve",
+    "id_nomenclature_physio_veg",
+    "heigth_arbore",
+    "rcvmt_arbore",
+    "heigth_arbust",
+    "rcvmt_arbust",
+    "heigth_ssarbust",
+    "rcvmt_ssarbust",
+    "heigth_herbace",
+    "rcvmt_herbace",
+    "heigth_musci",
+    "rcvmt_musci",
+    "meteo_comment",
+    "milieu_comment"
+  ],
+  "display_list": [
+    "id_dataset",
+    "num_passage",
+    "visit_date_min",
+    "observers",
+    "nb_observations"
+  ],
+  "keep": [
+    "visit_date_min",
+    "visit_time",
+    "heigth_arbore",
+    "rcvmt_arbore",
+    "heigth_arbust",
+    "rcvmt_arbust",
+    "heigth_ssarbust",
+    "rcvmt_ssarbust",
+    "heigth_herbace",
+    "rcvmt_herbace",
+    "heigth_musci",
+    "rcvmt_musci"
+  ],
+  "specific": {
+    "num_passage": {
+      "type_widget": "radio",
+      "attribut_label": "Numéro de passage",
+      "values": [1, 2, 3],
+      "required": true
+    },
+    "visit_time": {
+      "type_widget": "number",
+      "attribut_label": "Durée de la visite (min)",
+      "required": true,
+      "min": 0,
+      "max": 60,
+      "value": 6
+    },
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du passage",
+      "required": true
+    },
+    "surf_releve": {
+      "type_widget": "datalist",
+      "attribut_label": "Surface du relevé (m²)",
+      "values": [
+        {
+          "label":"4 (2 x 2)",
+          "value": 4
+        }, {
+          "label":"16 (4 x 4)",
+          "value": 16
+        }, {
+          "label":"49 (7 x 7)",
+          "value": 49
+        }, {
+          "label":"225 (15 x 15)",
+          "value": 225
+        }
+      ],
+      "required": true
+    },
+    "id_nomenclature_physio_veg": {
+      "type_widget": "datalist",
+      "attribut_label": "Physionomie",
+      "api": "nomenclatures/nomenclature/PHYSIO_VEGETALE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_default",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters" : {
+        "cd_nomenclature": [
+          "AL","AQ","EC","EX","FO","RB","BM","HM","GH",
+          "MC","PH","MG","CN","LA","FU","BFH","BCH"
+        ]
+      }
+    },
+    "heigth_arbore": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur de la strate arborée",
+      "required": true,
+      "min": -1,
+      "max": 100,
+      "value": 0
+    },
+    "rcvmt_arbore": {
+      "type_widget": "number",
+      "attribut_label": "Recouvrement de la strate arborée (%)",
+      "required": true,
+      "min": 0,
+      "max": 100,
+      "value": 0
+    },
+    "heigth_arbust": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur de la strate arbustive",
+      "required": true,
+      "min": 0,
+      "value": 0
+    },
+    "rcvmt_arbust": {
+      "type_widget": "number",
+      "attribut_label": "Recouvrement de la strate arbustive (%)",
+      "required": true,
+      "min": 0,
+      "max": 100,
+      "value": 0
+    },
+    "heigth_ssarbust": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur de la strate sous arbustive",
+      "required": true,
+      "min": 0,
+      "value": 0
+    },
+    "rcvmt_ssarbust": {
+      "type_widget": "number",
+      "attribut_label": "Recouvrement de la strate sous arbustive (%)",
+      "required": true,
+      "min": 0,
+      "max": 100,
+      "value": 0
+    },
+    "heigth_herbace": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur de la strate herbacée",
+      "required": true,
+      "min": 0,
+      "value": 0
+    },
+    "rcvmt_herbace": {
+      "type_widget": "number",
+      "attribut_label": "Recouvrement de la strate herbacée (%)",
+      "required": true,
+      "min": 0,
+      "max": 100,
+      "value": 0
+    },
+    "heigth_musci": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur de la strate muscinale",
+      "required": true,
+      "min": 0,
+      "value": 0
+    },
+    "rcvmt_musci": {
+      "type_widget": "number",
+      "attribut_label": "Recouvrement de la strate muscinale (%)",
+      "required": true,
+      "min": 0,
+      "max": 100,
+      "value": 0
+    },
+    "meteo_comment": {
+      "type_widget": "textarea",
+      "attribut_label": "Description des conditions météos"
+    },
+    "milieu_comment": {
+      "type_widget": "textarea",
+      "attribut_label": "Description du milieux"
+    }
+  }
+}

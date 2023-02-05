@@ -1,0 +1,44 @@
+{
+  "description_field_name":"cd_nom",
+  "genre":"F",
+  "display_properties": [
+    "cd_nom",
+    "id_nomenclature_strate_flore",
+    "id_nomenclature_braunblanq_abdom",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "id_nomenclature_strate_flore",
+    "id_nomenclature_braunblanq_abdom"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèce observée",
+      "multiple": false,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    },
+    "id_nomenclature_strate_flore": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Strate de végétation concernée",
+      "code_nomenclature_type": "STRATE_FLORE",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "id_nomenclature_braunblanq_abdom": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Abondance (coefficient de Braun-Blanquet)",
+      "code_nomenclature_type": "BRAUNBLANQABDOM",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+  }
+}

@@ -1,0 +1,348 @@
+{
+  "types": [
+    {
+      "mnemonique": "CONTEXT_PAYSAGE",
+      "label_default": "Contexte paysager",
+      "definition_default": "Contexte paysager (protocôle de suivi RHOMEOAmphibien)"
+    },
+    {
+      "mnemonique": "TYPO_POINT_EAU",
+      "label_default": "Typologie du point d'eau",
+      "definition_default": "Typologie du point d'eau (protocôle de suivi RHOMEOAmphibien)"
+    },
+    {
+      "mnemonique": "FORM_POINT_EAU",
+      "label_default": "Forme du point d'eau",
+      "definition_default": "Forme du point d'eau (protocôle de suivi RHOMEOAmphibien)"
+    },
+    {
+      "mnemonique": "TYP_SUBSTRAT",
+      "label_default": "Substrat du sol",
+      "definition_default": "Substrat du sol (protocôle de suivi RHOMEOAmphibien)"
+    },
+    {
+      "mnemonique": "ORIGINE_EAU",
+      "label_default": "Origine de l'eau",
+      "definition_default": "Origine de l'eau (protocôle de suivi RHOMEOAmphibien)"
+    },
+    {
+      "mnemonique": "FUITE_EAU",
+      "label_default": "Fuite de l'eau",
+      "definition_default": "Fuite de l'eau (protocôle de suivi RHOMEOAmphibien)"
+    },
+    {
+      "mnemonique": "TRANSP_EAU",
+      "label_default": "Transparence de l'eau",
+      "definition_default": "Transparence de l'eau (protocôle de suivi RHOMEOAmphibien)"
+    },
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    }
+    
+
+
+    
+  ],
+  "nomenclatures": [
+   
+    {
+      "type":"CONTEXT_PAYSAGE",
+      "cd_nomenclature": "CONTEXT_PAYSAGE_1",
+      "mnemonique": "Bois",
+      "label_default": "Bois",
+      "definition_default": "Bois"
+    },
+    {
+      "type":"CONTEXT_PAYSAGE",
+      "cd_nomenclature": "CONTEXT_PAYSAGE_2",
+      "mnemonique": "Prairie_mésophile",
+      "label_default": "Prairie mésophile",
+      "definition_default": "Prairie mésophile"
+    },
+	  {
+      "type":"CONTEXT_PAYSAGE",
+      "cd_nomenclature": "CONTEXT_PAYSAGE_3",
+      "mnemonique": "Prairie_humide",
+      "label_default": "Prairie humide",
+      "definition_default": "Prairie humide"
+    },
+	  {
+      "type":"CONTEXT_PAYSAGE",
+      "cd_nomenclature": "CONTEXT_PAYSAGE_4",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_1",
+      "mnemonique": "Mare",
+      "label_default": "Mare",
+      "definition_default": "Mare"
+    },
+    {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_2",
+      "mnemonique": "Etang",
+      "label_default": "Etang",
+      "definition_default": "Etang"
+    },
+	  {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_3",
+      "mnemonique": "Lac",
+      "label_default": "Lac",
+      "definition_default": "Lac"
+    },
+	  {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_4",
+      "mnemonique": "Fossé",
+      "label_default": "Fossé",
+      "definition_default": "Fossé"
+    },
+	  {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_5",
+      "mnemonique": "Ruisseau",
+      "label_default": "Ruisseau",
+      "definition_default": "Ruisseau"
+    },
+	  {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_6",
+      "mnemonique": "Court_d_eau",
+      "label_default": "Court d'eau",
+      "definition_default": "Court d'eau"
+    },
+	  {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_7",
+      "mnemonique": "Prairie_inondée",
+      "label_default": "Prairie inondée",
+      "definition_default": "Prairie inondée"
+    },
+	  {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_8",
+      "mnemonique": "Ornière",
+      "label_default": "Ornière",
+      "definition_default": "Ornière"
+    },
+	  {
+      "type":"TYPO_POINT_EAU",
+      "cd_nomenclature": "TPE_9",
+      "mnemonique": "Flaque",
+      "label_default": "Flaque",
+      "definition_default": "Flaque"
+    },
+    {
+      "type":"FORM_POINT_EAU",
+      "cd_nomenclature": "FPE_1",
+      "mnemonique": "Circulaire",
+      "label_default": "Circulaire",
+      "definition_default": "Circulaire"
+    },
+    {
+      "type":"FORM_POINT_EAU",
+      "cd_nomenclature": "FPE_2",
+      "mnemonique": "Ovoïde",
+      "label_default": "Ovoïde",
+      "definition_default": "Ovoïde"
+    },
+	{
+      "type":"FORM_POINT_EAU",
+      "cd_nomenclature": "FPE_3",
+      "mnemonique": "Rectangulaire",
+      "label_default": "Rectangulaire",
+      "definition_default": "Rectangulaire"
+    },
+	{
+      "type":"FORM_POINT_EAU",
+      "cd_nomenclature": "FPE_4",
+      "mnemonique": "Triangulaire",
+      "label_default": "Triangulaire",
+      "definition_default": "Triangulaire"
+    },
+	{
+      "type":"FORM_POINT_EAU",
+      "cd_nomenclature": "FPE_5",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type":"TYP_SUBSTRAT",
+      "cd_nomenclature": "TYP_SUB_1",
+      "mnemonique": "Artificiel",
+      "label_default": "Artificiel (pavé/bétonné/baché)",
+      "definition_default": "Artificiel (pavé/bétonné/baché)"
+    },
+    {
+      "type":"TYP_SUBSTRAT",
+      "cd_nomenclature": "TYP_SUB_2",
+      "mnemonique": "Argileux",
+      "label_default": "Naturel argileux",
+      "definition_default": "Naturel argileux"
+    },
+  	{
+      "type":"TYP_SUBSTRAT",
+      "cd_nomenclature": "TYP_SUB_3",
+      "mnemonique": "Sableux",
+      "label_default": "Naturel sableux",
+      "definition_default": "Naturel sableux"
+    },
+  	{
+      "type":"TYP_SUBSTRAT",
+      "cd_nomenclature": "TYP_SUB_4",
+      "mnemonique": "Rocheux",
+      "label_default": "Naturel rocheux",
+      "definition_default": "Naturel rocheux"
+    },
+  	{
+      "type":"TYP_SUBSTRAT",
+      "cd_nomenclature": "TYP_SUB_5",
+      "mnemonique": "Organique",
+      "label_default": "Naturel organique (vase, autres)",
+      "definition_default": "Naturel organique (vase, autres)"
+    },
+  	{
+      "type":"TYP_SUBSTRAT",
+      "cd_nomenclature": "TYP_SUB_6",
+      "mnemonique": "Limoneux",
+      "label_default": "Naturel limoneux",
+      "definition_default": "Naturel limoneux"
+    },
+	  {
+      "type":"TYP_SUBSTRAT",
+      "cd_nomenclature": "TYP_SUB_7",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type":"ORIGINE_EAU",
+      "cd_nomenclature": "ORI_EAU_1",
+      "mnemonique": "ruisselement",
+      "label_default": "Ruisselement",
+      "definition_default": "Ruisselement"
+    },
+    {
+      "type":"ORIGINE_EAU",
+      "cd_nomenclature": "ORI_EAU_2",
+      "mnemonique": "eau_drainage",
+      "label_default": "Eau de drainage",
+      "definition_default": "Eau de drainage"
+    },
+	  {
+      "type":"ORIGINE_EAU",
+      "cd_nomenclature": "ORI_EAU_3",
+      "mnemonique": "source",
+      "label_default": "Source",
+      "definition_default": "Source"
+    },
+	  {
+      "type":"ORIGINE_EAU",
+      "cd_nomenclature": "ORI_EAU_4",
+      "mnemonique": "apport_nappe",
+      "label_default": "Apport de nappe",
+      "definition_default": "Apport de nappe"
+    },
+	  {
+      "type":"ORIGINE_EAU",
+      "cd_nomenclature": "ORI_EAU_5",
+      "mnemonique": "debordement",
+      "label_default": "Débordement d'une rivière",
+      "definition_default": "Débordement d'une rivière"
+    },
+	  {
+      "type":"ORIGINE_EAU",
+      "cd_nomenclature": "ORI_EAU_6",
+      "mnemonique": "indetermine",
+      "label_default": "Indéterminé",
+      "definition_default": "Indéterminé"
+    },
+	  {
+      "type":"ORIGINE_EAU",
+      "cd_nomenclature": "ORI_EAU_7",
+      "mnemonique": "autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type":"FUITE_EAU",
+      "cd_nomenclature": "FUITE_EAU_1",
+      "mnemonique": "evaporation",
+      "label_default": "Evaporation",
+      "definition_default": "Evaporation"
+    },
+    {
+      "type":"FUITE_EAU",
+      "cd_nomenclature": "FUITE_EAU_2",
+      "mnemonique": "souterraine",
+      "label_default": "Fuite souterraine vers la nappe",
+      "definition_default": "Fuite souterraine vers la nappe"
+    },
+	{
+      "type":"FUITE_EAU",
+      "cd_nomenclature": "FUITE_EAU_3",
+      "mnemonique": "fossé",
+      "label_default": "Fuite vers un fossé",
+      "definition_default": "Fuite vers un fossé"
+    },
+	{
+      "type":"FUITE_EAU",
+      "cd_nomenclature": "FUITE_EAU_4",
+      "mnemonique": "ruisselement",
+      "label_default": "Evacuation par ruisselement",
+      "definition_default": "Evacuation par ruisselement"
+    },
+	{
+      "type":"FUITE_EAU",
+      "cd_nomenclature": "FUITE_EAU_5",
+      "mnemonique": "surface",
+      "label_default": "Evacuation de surface",
+      "definition_default": "Evacuation de surface"
+    },
+    {
+      "type":"TRANSP_EAU",
+      "cd_nomenclature": "TRANSP_EAU_1",
+      "mnemonique": "Transparente",
+      "label_default": "Transparente",
+      "definition_default": "Transparente"
+    },
+    {
+      "type":"TRANSP_EAU",
+      "cd_nomenclature": "TRANSP_EAU_2",
+      "mnemonique": "Claire",
+      "label_default": "Claire",
+      "definition_default": "Claire"
+    },
+	{
+      "type":"TRANSP_EAU",
+      "cd_nomenclature": "TRANSP_EAU_3",
+      "mnemonique": "Trouble",
+      "label_default": "Trouble",
+      "definition_default": "Trouble"
+    },
+	{
+      "type":"TRANSP_EAU",
+      "cd_nomenclature": "TRANSP_EAU_4",
+      "mnemonique": "Opaque",
+      "label_default": "Opaque",
+      "definition_default": "Opaque"
+    },
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "RHOMEO_AMPHI",
+      "mnemonique": "Site_RHOMEO_amphibien",
+      "label_default": "Site RHOMEO amphibien",
+      "definition_default": "Site de relevé du protocole RHOMEO amphibien"
+    }
+
+
+    
+  ]
+}

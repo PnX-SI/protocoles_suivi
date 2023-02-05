@@ -1,0 +1,407 @@
+{
+  "types": [
+    {
+      "mnemonique": "HABITAT_ODO",
+      "label_default": "Habitat odonatologique",
+      "definition_default": "Habitat odonatologique (protocole de suivi RHOMEO Odonates)"
+    },
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "01",
+      "mnemonique": "zone_source",
+      "label_default": "01 : Zones des sources",
+      "label_fr": "Zones des sources",
+      "definition_default": "Petits bassins et écoulements (permanents) des sources ; parfois présence de shaignes ; souvent ombragés."
+    },
+    {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "01a",
+      "mnemonique": "source_plaine",
+      "label_default": "01a : Sources de plaine",
+      "label_fr": "Sources de plaine",
+      "definition_default": "Sources de plaine"
+    },
+    {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "01b",
+      "mnemonique": "source_altitude",
+      "label_default": "01b : Sources d'altitude",
+      "label_fr": "Sources d'altitude",
+      "definition_default": "Etages montagnards et subalpins"
+    },
+    {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "02",
+      "mnemonique": "ruisseau_ferme",
+      "label_default": "02 : Ruisselets/ruisseaux fermés",
+      "label_fr": "Ruisselets/ruisseaux fermés",
+      "definition_default": "Eaux vives et fraiches de 0,5m à 4m ou 5 m de large situées en milieux fermés (sous-bois, forêts, taillis, etc.). Parfois coulant sur des pentes abruptes. Assèchement estival possible (mais présence de vasques, flaques et micro-mares)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "03",
+      "mnemonique": "eau_vive",
+      "label_default": "03 : Rivières à eaux vives",
+      "label_fr": "Rivières à eaux vives",
+      "definition_default": "Milieux de 5m à 25m de large. Secteurs à courant vif (rapides). Bien ensoleillées avec les rives plus ou moins ombragées."
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "04",
+      "mnemonique": "grand_eau_vif",
+      "label_default": "04 : Grands cours d’eau vifs",
+      "label_fr": "Grands cours d’eau vifs",
+      "definition_default": "Grands cours d’eau vifs"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "04a",
+      "mnemonique": "a_grand_eau_vif",
+      "label_default": "04a : Cours principal des grands cours d’eau vifs",
+      "label_fr": "Cours principal des grands cours d’eau vifs",
+      "definition_default": "Parties vives des fleuves et des grandes rivières, de plus de 25m de large. (Radier - vitesse d'écoulement > 0,5 m/s)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "04b",
+      "mnemonique": "b_grand_eau_vif",
+      "label_default": "04b : Annexes fluviales vives perturbées avec flux entrant par l’amont",
+      "label_fr": "Annexes fluviales vives perturbées avec flux entrant par l’amont",
+      "definition_default": "Parties vives des annexes hydrauliques courantes connectées de manière temporaire au chenal par l’amont (entre le module et la crue annuelle d’où un régime de perturbation important) et de manière permanente par l’aval"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "04c",
+      "mnemonique": "c_grand_eau_vif",
+      "label_default": "04c : Annexes fluviales vives perturbées avec flux rétrograde par l’aval",
+      "label_fr": "Annexes fluviales vives perturbées avec flux rétrograde par l’aval",
+      "definition_default": "Parties vives des annexes hydrauliques avec alimentation par la nappe phréatique, en conséquence courantes, connectées de manière permanente au chenal uniquement part l’aval avec un régime de perturbation moyen lié aux crues de fréquence annuelle"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "04d",
+      "mnemonique": "d_grand_eau_vif",
+      "label_default": "04d : Annexes fluviales vives peu perturbées avec flux rétrograde par l’aval",
+      "label_fr": "Annexes fluviales vives peu perturbées avec flux rétrograde par l’aval",
+      "definition_default": "Parties vives des annexes hydrauliques courantes connectées de manière permanente au chenal uniquement part l’aval avec un régime de perturbation faible lié au crues élevées (> crue annuelle), avec alimentation par la nappe phréatique. Situation généralement liée à des aménagements"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "05",
+      "mnemonique": "cours_eau_calme",
+      "label_default": "05 : Grands cours d’eau calmes",
+      "label_fr": "Grands cours d’eau calmes",
+      "definition_default": ""
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "05a",
+      "mnemonique": "a_cours_eau_calme",
+      "label_default": "05a : Cours principal des grands cours d’eau calmes",
+      "label_fr": "Cours principal des grands cours d’eau calmes",
+      "definition_default": "Parties calmes des fleuves et des grandes rivières (de plus de 25m de large). Les bras morts, lônes ou boires (en communication périodique avec le cours d’eau) sont précisées ci-dessous (05b-05c)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "05b",
+      "mnemonique": "b_cours_eau_calme",
+      "label_default": "05b : Annexes lentes ou stagnantes, connectées, fortement perturbées",
+      "label_fr": "Annexes lentes ou stagnantes, connectées, fortement perturbées",
+      "definition_default": "Parties calmes des annexes hydrauliques courantes avec alimentation par la nappe phréatique, connectées de manière permanente au chenal par l’aval avec un régime de perturbation fort dès les crues annuelles par entrée amont"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "05c",
+      "mnemonique": "c_cours_eau_calme",
+      "label_default": "05c : Annexes lentes ou stagnantess, connectées, moyennement perturbées",
+      "label_fr": "Annexes lentes ou stagnantess, connectées, moyennement perturbées",
+      "definition_default": "Parties calmes des annexes hydrauliques courantes avec alimentation par la nappe phréatique, connectées de manière permanente au chenal par l’aval avec un régime de perturbation moyen dès les crues annuelles par reflux aval"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "05d",
+      "mnemonique": "d_cours_eau_calme",
+      "label_default": "05d : Annexes stagnantes non connectées fortement perturbées",
+      "label_fr": "Annexes stagnantes non connectées fortement perturbées",
+      "definition_default": "Annexes hydrauliques stagnantes connectées de manière temporaire au chenal avec un régime de perturbation fort par des rues annuelles par entrée amont"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "05e",
+      "mnemonique": "e_cours_eau_calme",
+      "label_default": "05e : Annexes stagnantes non connectées moyennement perturbées",
+      "label_fr": "Annexes stagnantes non connectées moyennement perturbées",
+      "definition_default": "Annexes hydrauliques stagnantes connectées de manière temporaire au chenal avec un régime de perturbation moyen par les crues annuelles par reflux aval"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "05f",
+      "mnemonique": "f_cours_eau_calme",
+      "label_default": "05f : Annexes stagnantes non connectées peu perturbées",
+      "label_fr": "Annexes stagnantes non connectées peu perturbées",
+      "definition_default": "Annexes hydrauliques stagnantes connectées de manière temporaire au chenal avec un régime de perturbation faible par les crues fortes (> quinquennales)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "06",
+      "mnemonique": "canaux_navigables",
+      "label_default": "06 : Canaux navigables",
+      "label_fr": "Canaux navigables",
+      "definition_default": "Milieux artificiels entretenus pour la navigation fluviale"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "07",
+      "mnemonique": "Fosse_alimente",
+      "label_default": "07 : fossés alimentés",
+      "label_fr": "fossés alimentés",
+      "definition_default": "Canaux d’irrigation (débit moyen), puits artésiens, etc."
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "08",
+      "mnemonique": "suintement",
+      "label_default": "08 : Suintements",
+      "label_fr": "Suintements",
+      "definition_default": "Résurgences de débit insignifiant mais permanent ; Suintements de digues, d’étangs, etc. Généralement bien ensoleillés"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "09",
+      "mnemonique": "petite_eau_stagne",
+      "label_default": "09 : Petits étangs, mares, fossés,  annexes hydrauliques stagnantes",
+      "label_fr": "Petits étangs, mares, fossés,  annexes hydrauliques stagnantes",
+      "definition_default": "Stagnant en général, assèchement estival : petits étangs, mares, fossés, annexes hydrauliques stagnantes ; connectés de manière exceptionnelle au chenal avec un régime de perturbation faible, etc"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "09a",
+      "mnemonique": "a_petite_eau_stagne",
+      "label_default": "09a : Milieux temporaires de plaine",
+      "label_fr": "Milieux temporaires de plaine",
+      "definition_default": "Ces habitats peuvent être de dimension assez importante dans quelques cas"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "09b",
+      "mnemonique": "b_petite_eau_stagne",
+      "label_default": "09b : Milieux temporaires d'altitude",
+      "label_fr": "Milieux temporaires d'altitude",
+      "definition_default": "Etages montagnards et subalpins. En général de faible dimension (mares)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "10",
+      "mnemonique": "marre_ancienne",
+      "label_default": "10 : Mares, abreuvoirs, lavoirs, lavognes anciennes",
+      "label_fr": "Mares, abreuvoirs, lavoirs, lavognes anciennes",
+      "definition_default": "Bien ensoleillées et permanentes : mares, abreuvoirs, lavoirs, lavognes anciennes (non entretenues), etc."
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "10a",
+      "mnemonique": "a_marre_ancienne",
+      "label_default": "10a : Mares pauvres en végétation aquatique",
+      "label_fr": "Mares pauvres en végétation aquatique",
+      "definition_default": "On y trouve les lavognes entretenues"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "10b",
+      "mnemonique": "b_marre_ancienne",
+      "label_default": "10b : Mares avec présence de végétation aquatique",
+      "label_fr": "Mares avec présence de végétation aquatique",
+      "definition_default": ""
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "11",
+      "mnemonique": "mare_ferme",
+      "label_default": "11 : Mares fermées",
+      "label_fr": "Mares fermées",
+      "definition_default": "Milieux forestiers très ombragés (et généralement permanents)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "12",
+      "mnemonique": "milieu_saumatre",
+      "label_default": "12 : Milieux saumâtres",
+      "label_fr": "Milieux saumâtres",
+      "definition_default": "Marais littoraux et continentaux saumâtres de plus de 0,5 mg/l de NaCl, bien ensoleillés, eaux permanentes ou assèchement estival : lagunes, marais salants, prés salés, bassins piscicoles, marais à salicornes, pannes dunaires, etc."
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "13",
+      "mnemonique": "milieu_artificiel",
+      "label_default": "13 : Milieux artificiels",
+      "label_fr": "Milieux artificiels",
+      "definition_default": "Récents en général et peu colonisés par la végétation aquatique : gravières, sablières, ballastières, étangs collinaires, etc."
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "14",
+      "mnemonique": "etang_ouvert",
+      "label_default": "14 : Etangs «naturels» ouverts (annexes comprises)",
+      "label_fr": "Etangs «naturels» ouverts (annexes comprises)",
+      "definition_default": "Milieux bien ensoleillés (peu de végétation arbustive littorale). Végétation aquatique et subaquatique typique . Situés à l’étage collinéen et parfois plus haut dans le sud. Secteurs d’alimentation, d’évacuation et annexes (mares et fossés) compris si nécessaire, mais à distinguer comme habitats particuliers quand il sont nombreux et significatifs"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "15",
+      "mnemonique": "milieu_ferme",
+      "label_default": "15 : Etangs «naturels» fermés (annexes comprises)",
+      "label_fr": "Etangs «naturels» fermés (annexes comprises)",
+      "definition_default": ""
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "15a",
+      "mnemonique": "a_milieu_ferme",
+      "label_default": "15a : Absence de queues tourbeuses et ceinture d’hélophyte haute",
+      "label_fr": "Absence de queues tourbeuses et ceinture d’hélophyte haute",
+      "definition_default": "Milieux fortement boisées (forestiers), rives ombragées. Situés à l’étage collinéen et parfois plus haut dans le sud. Secteurs d’alimentation, d’évacuation et annexes (mares et fossés) compris si nécessaire, mais à distinguer comme habitats particuliers quand ils sont nombreux et significatifs"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "15b",
+      "mnemonique": "b_milieu_ferme",
+      "label_default": "15b : Absence de queues tourbeuses et ceinture d’hélophyte basse",
+      "label_fr": "Absence de queues tourbeuses et ceinture d’hélophyte basse",
+      "definition_default": "La ceinture d’hélophyte est inférieure généralement à la magnocariçaie : Carex, Juncus, voire gazons des rives temporairement inondées"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "15c",
+      "mnemonique": "c_milieu_ferme",
+      "label_default": "15c : Présence de queues tourbeuses",
+      "label_fr": "Présence de queues tourbeuses",
+      "definition_default": "La ceinture d’hélophyte est généralement basse, les eaux acides permettent le développement de queues ou anses tourbeuses à sphaignes"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "16",
+      "mnemonique": "marais_plaine",
+      "label_default": "16 : Marais de plaine",
+      "label_fr": "Marais de plaine",
+      "definition_default": "Etangs marécageux (- de 50 % d’eau libre), marais (biotopes diversifiés), canaux stagnant, effluents, fossés, tourbières plates alcalines de l’étage collinéen, étendues importantes de roselières ou de Carex"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "17",
+      "mnemonique": "tourbe_acide_plaine",
+      "label_default": "17 : Tourbières acides de plaine",
+      "label_fr": "Tourbières acides de plaine",
+      "definition_default": "Tourbières à sphaignes (bombées) avec gouilles, fosses d’exploitation, effluents, fossés, etc. de l’étage collinéen, exceptionnellement en dessous"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "18",
+      "mnemonique": "tourbe_acide_alti",
+      "label_default": "18 : Tourbières acides d'altitude",
+      "label_fr": "Tourbières acides d'altitude",
+      "definition_default": "Tourbières à sphaignes (bombées) avec gouilles, fosses d’exploitation, effluents, fossés, etc. des étages montagnard et subalpin"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "18a",
+      "mnemonique": "a_tourbe_acide_alti",
+      "label_default": "18a : Tourbières acides avec présence de surfaces significatives d’eau libre",
+      "label_fr": "Tourbières acides avec présence de surfaces significatives d’eau libre",
+      "definition_default": "Ces surfaces peuvent être localisées par rapport à l’ensemble, mais sont propices à modifier la liste des espèces présentent"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "18b",
+      "mnemonique": "b_tourbe_acide_alti",
+      "label_default": "18b : Tourbières acides avec gouilles seulement",
+      "label_fr": "Tourbières acides avec gouilles seulement",
+      "definition_default": "Dans quelques cas les gouilles peuvent être temporaires et suffire au développement des Odonates"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "19",
+      "mnemonique": "stagnant_alti",
+      "label_default": "19 : Milieux stagnants d’altitude",
+      "label_fr": "Milieux stagnants d’altitude",
+      "definition_default": "Etangs, marais, petits lacs situés des étages montagnard et subalpin. Parfois avec des secteurs (queues) présentant des formations particulières (radeaux tourbeux, …)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "20",
+      "mnemonique": "lac",
+      "label_default": "20 : Lacs et grands réservoirs",
+      "label_fr": "Lacs et grands réservoirs",
+      "definition_default": "Grande surface d’eau libre de basse ou moyenne altitude (jusqu’à 1000m en générale)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "21",
+      "mnemonique": "riviere_altitude",
+      "label_default": "21 : Rivières d’altitude",
+      "label_fr": "Rivières d’altitude",
+      "definition_default": "Eaux courantes vives en général, des étages montagnard et subalpin"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "22",
+      "mnemonique": "riviere_mediterrane",
+      "label_default": "22 : Rivières méditerranéennes",
+      "label_fr": "Rivières méditerranéennes",
+      "definition_default": "Eaux courantes à débit intermittent en période estivale (vasques, mares)"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "23",
+      "mnemonique": "ruisseau_ouvert",
+      "label_default": "23 : Ruisselets / ruisseaux ouverts",
+      "label_fr": "Ruisselets / ruisseaux ouverts",
+      "definition_default": "Eaux vives et fraîches de 0,5m à 4m à 5m de large situées en milieux ouverts (champs, prairies, etc.). Présence d’Hélophytes et parfois d’Hydrophytes"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "24",
+      "mnemonique": "eau_calme",
+      "label_default": "24 : Rivières à eaux calmes",
+      "label_fr": "Rivières à eaux calmes",
+      "definition_default": "Milieux de 5m à 25m de large. Secteurs calmes du cours d’eau (moulins, barrages naturels, etc.). Bien ensoleillés avec les rives plus ou moins ombragées"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "25",
+      "mnemonique": "milieu_cultive",
+      "label_default": "25 : Milieux aquatiques cultivés",
+      "label_fr": "Milieux aquatiques cultivés",
+      "definition_default": "Rizières, cressonnières en exploitation, etc."
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "27",
+      "mnemonique": "Bassin_lagunaire",
+      "label_default": "27 : Bassins lagunaires",
+      "label_fr": "Bassins lagunaires",
+      "definition_default": "Bassins d’effluents routiers, de décantation (stations d’épuration, etc), souvent riches en métaux ou autres polluants"
+    },
+	  {
+      "type":"HABITAT_ODO",
+      "cd_nomenclature": "29",
+      "mnemonique": "prairie_humide",
+      "label_default": "29 : Prairies humides",
+      "label_fr": "Prairies humides",
+      "definition_default": "Milieux humides, mouillères, etc. (à proximité ou non de milieux aquatiques). Absence d’odonates reproducteurs dans cet habitat. Si présence de mares temporaires ou permanentes, fossés, suintement, … \nVoir habitats 8, 9 , 10"
+    },
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "RHOMEO_ODO",
+      "mnemonique": "Site_RHOMEO_odonates",
+      "label_default": "Site RHOMEO odonates",
+      "definition_default": "Site de relevé du protocole RHOMEO odonates"
+    }
+  ]
+}

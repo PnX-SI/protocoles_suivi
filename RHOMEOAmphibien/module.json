@@ -1,0 +1,14 @@
+{
+  "module_label":"RHOMEOAmphibien",
+  "module_desc":"Module pour le protocole de suivi RhoMeO des amphibiens",
+  "color":"#e5fffe",
+  "export_csv": [
+    { "label": "Format standard CSV", "type":"csv" , "method": "standard" },
+    { "label": "RHOMEO calculette CSV", "type":"csv" , "method": "calculette" }
+  ],
+  "specific": {
+    "b_draw_sites_group": {
+      "hidden": false
+    }
+  }
+}

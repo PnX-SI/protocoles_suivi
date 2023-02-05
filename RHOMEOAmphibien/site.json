@@ -1,0 +1,156 @@
+{
+  "genre":"M",
+  "label": "site",
+  "label_list": "Sites",
+  "geometry_type": "Point",
+  "map_label_field_name": "base_site_name",
+  "export_pdf": [
+      { "template": "fiche_aire.html", "label": "Export PDF" }
+  ],
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "display_properties": [
+    "base_site_name",
+    "id_sites_group",
+    "id_inventor",
+    "first_use_date",
+    "context_pays",
+    "prospect_typo",
+    "prospect_form",
+    "profondeur_maxi",
+    "ombrage",
+    "type_pente",
+    "substrat",
+    "origine_eau",
+    "fuite_eau",
+    "esp_veget",
+    "esp_poisson",
+    "esp_ecrevisse",
+    "base_site_description"
+ ],
+  "display_list": [
+    "base_site_name",
+    "id_sites_group",
+    "id_inventor",
+    "first_use_date",
+    "nb_visits",
+    "nb_observations"
+  ],
+  "specific": {
+    "context_pays": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Contexte paysager",
+      "code_nomenclature_type": "CONTEXT_PAYSAGE",
+      "type_util": "nomenclature",
+      "required": false
+    },
+    "prospect_typo": {
+      "type_widget": "nomenclature", 
+      "attribut_label": "Typologie du point d'eau",
+      "code_nomenclature_type": "TYPO_POINT_EAU",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "prospect_form": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Forme du point d'eau",
+      "code_nomenclature_type": "FORM_POINT_EAU",
+      "type_util": "nomenclature",
+      "required": false
+    },
+    "profondeur_maxi": {
+      "type_widget": "radio",
+      "attribut_label": "Profondeur maximale",
+      "multiple": true,
+      "values": ["< 0.5 m", "0.5 à 1 m", "1 à 1.5 m", "> 1.5 m"],
+      "required": true
+    },
+    "ombrage": {
+      "type_widget": "number",
+      "attribut_label": "Ombrage (%)",
+      "required": false,
+      "min": 0,
+      "max": 100
+    },
+    "type_pente": {
+      "type_widget": "radio",
+      "attribut_label": "Type de pente",
+      "values": ["Douce", "Abrupte", "Douce et abrupte"],
+      "required": true
+    },
+    "substrat": {
+      "type_widget": "datalist",
+      "attribut_label": "Substrat du sol",
+      "api": "nomenclatures/nomenclature/TYP_SUBSTRAT",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "multiple": true,
+      "required": true
+    },
+    "origine_eau": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Origine de l'eau",
+      "code_nomenclature_type": "ORIGINE_EAU",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "fuite_eau": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Fuite de l'eau",
+      "code_nomenclature_type": "FUITE_EAU",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "esp_veget": {
+      "type_widget": "datalist",
+      "attribut_label": "Végétation aquatique",
+      "values": ["Absence", "Abondance faible", "Abondance moyenne", "Abondante"],
+      "required": true
+    },
+    "esp_poisson": {
+      "type_widget": "datalist",
+      "attribut_label": "Poisson",
+      "values": ["Absence certaine", "Absence probable", "Présence","Indéterminé"],
+      "required": true
+    },
+    "esp_ecrevisse": {
+      "type_widget": "datalist",
+      "attribut_label": "Ecrevisse",
+      "values": ["Absence certaine", "Absence probable", "Présence","Indéterminé"],
+      "required": true
+    },
+    "base_site_description": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    },
+    "id_nomenclature_type_site": {
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "RHOMEO_AMPHI"
+      },
+      "hidden": true
+    },
+    "base_site_code": {
+      "required": false,
+      "hidden": true
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Groupe de site",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false,
+      "definition": "Liste des zones de prospections définies pour le protocole."
+    }
+  }
+}

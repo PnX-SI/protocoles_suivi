@@ -1,0 +1,126 @@
+{
+  "cruved": {"C":1, "U":1, "D": 1},
+  "description_field_name":"cd_nom",
+  "genre":"F",
+  "display_properties": [
+    "cd_nom",
+    "num_tranche",
+    "nombre",
+    "nombre_compte",
+    "nb_adulte",
+    "id_nomenclature_behaviour",
+    "id_nomenclature_life_stage",
+    "id_nomenclature_sex",
+    "nb_exuvie",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "num_tranche",
+    "nombre",
+    "nombre_compte"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèce observée",
+      "multiple": false,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    },
+    "num_tranche": {
+      "type_widget": "number",
+      "attribut_label": "Numéro de tranche",
+      "definition": "Numéro de la tranche du protocole.\n0 : 6 premères minutes.\nn : nième tranche de 2 minutes."
+    },
+    "nombre": {
+      "type_widget": "radio",
+      "attribut_label": "Effectifs",
+      "values": ["< 11", "11 à 30", "31 à 50", "> 50"],
+      "required": true,
+      "definition": "Estimation"
+    },
+    "nombre_compte": {
+      "type_widget": "number",
+      "attribut_label": "Effectifs (compté)",
+      "min": 0,
+      "max": 10,
+      "hidden": "({value}) => value.nombre != '< 11'",
+      "required": "({value}) => value.nombre == '< 11'",
+      "definition": "Valeur précisez si la colonne Nombre < 11"
+    },
+    "nb_adulte": {
+      "type_widget": "radio",
+      "attribut_label": "Nombre d'adultes",
+      "values": ["1", "x"],
+      "required": true,
+      "definition": "1 : individu isolé\nx : individus multiples"
+    },
+    "id_nomenclature_behaviour": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de comportement reproducteur",
+      "api": "nomenclatures/nomenclature/OCC_COMPORTEMENT",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "params": {
+          "regne": "Animalia",
+          "group2_inpn": "Insectes"
+      },
+      "filters": {
+        "label_fr": ["Non renseigné","Tandem", "Territorial", "Pond", "Accouplement"]
+      },
+      "default": null,
+      "multiple": true,
+      "required": "({value}) => !value.id_nomenclature_life_stage"
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "keyTitle": "definition_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "params": {
+          "regne": "Animalia"
+      },
+      "filters": {
+        "label_fr": ["Emergent", "Immature"]
+      },
+      "default": null,
+      "multiple": true,
+      "required": "({value}) => !value.id_nomenclature_behaviour"
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "params": {
+          "regne": "Animalia",
+          "group2_inpn": "Insectes"
+      },
+      "required": true
+    },
+    "nb_exuvie": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'exuvie",
+      "definition": "Numéro de la tranche du protocole.\n0 : 6 premères minutes.\nn : nième tranche de 2 minutes."
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+  }
+}
