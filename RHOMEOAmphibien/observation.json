@@ -1,0 +1,80 @@
+{
+  "description_field_name":"cd_nom",
+  "genre":"F",
+  "display_properties": [
+    "cd_nom",
+    "id_nomenclature_life_stage",
+    "nombre",
+    "nombre_compte",
+    "typ_detection",
+    "duree_peche",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "nombre",
+    "nombre_compte"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèce observée",
+      "multiple": false,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie : stade de développement du sujet",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "params": {
+        "orderby": "label_fr",
+        "regne": "Animalia",
+        "group2_inpn": "Amphibiens"
+      },
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "nombre": {
+      "type_widget": "radio",
+      "attribut_label": "Effectifs",
+      "values": ["< 11", "11 à 50", "51 à 500", "> 500"],
+      "required": true,
+      "definition": "Estimation"
+    },
+    "nombre_compte": {
+      "type_widget": "number",
+      "attribut_label": "Effectifs (compté)",
+      "min": 0,
+      "max": 10,
+      "hidden": "({value}) => value.nombre != '< 11'",
+      "required": "({value}) => value.nombre == '< 11'",
+      "definition": "Valeur précisez si la colonne Nombre < 11"
+    },
+    "typ_detection": {
+      "type_widget": "radio",
+      "attribut_label": "Détection",
+      "values": ["Visuel", "Auditif", "Pêche au troubleau"],
+      "required": true,
+      "definition": "Type de détection de l'espèce. Une précision de durée est demandée en cas de détection auditive ou par pêche."
+    },
+    "duree_peche": {
+      "type_widget": "number",
+      "attribut_label": "Durée (min)",
+      "min": 0,
+      "max": 60,
+      "hidden": "({value}) => ['Visuel',null].includes(value.typ_detection)",
+      "required": "({value}) => ['Pêche au troubleau','Auditif'].includes(value.typ_detection)"
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "genre":"F",
+  "cruved": {"C": 3, "U": 3, "D": 3},
+  "label": "Placette maître",
+  "label_list": "Placette maître",
+  "map_label_field_name": "base_site_name",
+  "geometry_type": "Polygon",
+  "display_properties": ["base_site_name", "commune", "base_site_description", "modalite_paturage", "position_nardaie"],
+  "display_list": [
+    "base_site_name",
+    "nb_visits",
+    "last_visit"
+  ],
+    "specific": {
+    "base_site_code": {
+      "hidden": true,
+	    "required": false
+    },
+    "first_use_date": {
+      "hidden": true,
+	  "required": false
+    },
+    "id_inventor": {
+      "hidden": true
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "SUIVI_NARDAIE"
+      },
+      "hidden": true
+    },
+    "commune": {
+      "required": true,
+      "hidden": false,
+      "attribut_label": "Commune",
+      "type_widget": "select",
+      "values" : [
+        "Orcières",
+        "Vallouise",
+        "Champoléon"
+      ]
+    },
+    "modalite_paturage": {
+      "required": true,
+      "hidden": false,
+      "attribut_label": "Modalité de paturâge",
+      "type_widget": "select",
+      "values" : [
+        "Témoin",
+        "Exclos permanent",
+        "Exclos temporaire saisonnier",
+        "Exclos temporaire une année sur deux"
+      ]
+    },
+    "position_nardaie": {
+      "required": true,
+      "hidden": false,
+      "attribut_label": "Position nardaie",
+      "type_widget": "select",
+      "values" : [
+        "bas",
+        "moyen",
+        "haut"
+      ]
+    }
+  }
+}

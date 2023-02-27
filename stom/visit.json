@@ -1,9 +1,10 @@
 {
+  "chained": false,
   "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "visit_date_min",
     "observers",
-    "beginner",
+    "debutant",
     "heure",
     "nuages",
     "pluie",
@@ -16,11 +17,10 @@
   "display_list": [
     "visit_date_min",
     "observers",
-    "beginner",
-    "snow_removal"
+    "nb_observations"
   ],
   "specific": {
-    "beginner": {
+    "debutant": {
       "type_widget": "radio",
       "attribut_label": "Observateur débutant",
       "values": ["Oui", "Non"]
@@ -39,19 +39,19 @@
       "type_widget": "select",
       "required": true,
       "attribut_label": "Pluie",
-      "values": ["Absente", "Intermittente", "Continue"]
+      "values": ["1-Absente", "2-Intermittente", "3-Continue"]
     },
     "vent": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Vent",
-      "values": ["Absent", "Faible", "Moyen à fort"]
+      "values": ["1-Absent", "2-Faible", "3-Moyen à fort"]
     },
     "visi": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Visibilité",
-      "values": ["Bonne", "Modérée", "Faible"]
+      "values": ["1-Bonne", "2-Modérée", "3-Faible"]
     },
     "deneigement": {
       "type_widget": "number",
@@ -63,6 +63,7 @@
     "paturage": {
       "type_widget": "select",
       "attribut_label": "Indice de paturage",
+      "required": true,
       "values": [
         "1 = Aucune trace de paturage dans le milieu",
         "2 = Toutes les situations intermédiaires",
@@ -75,7 +76,7 @@
     },
     "id_dataset": {
       "hidden": true,
-      "value": 2138
+      "value": 5212
     },
     "comments": {
       "hidden": false,

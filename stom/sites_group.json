@@ -4,7 +4,7 @@
     "label": "Site",
     "label_list": "Sites",
     "sorts": [
-      {"prop": "sites_group_name"}
+      {"prop": "secteur"}
     ],
     "display_properties": [
       "sites_group_name",
@@ -12,17 +12,21 @@
       "nb_sites",
       "nb_visits",
       "comments",
-      "geom_geojson"
+      "secteur"
     ],
     "display_list": [
       "sites_group_name",
       "nb_sites",
-      "nb_visits"
+      "nb_visits",
+      "secteur"
     ],
     "map_label_field_name": "base_site_code",
     "specific": {
-      "nb_sites": {
-        "attribut_label": "Nb. point écoute"
+      "secteur": {
+        "required": false,
+        "hidden": false,
+        "attribut_label": "Secteur",
+        "type_widget": "text"
       }
     }
   }

@@ -1,0 +1,59 @@
+{
+  "display_properties": [
+    "base_site_name",
+    "base_site_description",
+    "commune_site",
+    "last_visit",
+    "nb_visits"
+  ],
+
+  "display_list": [
+    "base_site_name",
+    "commune_site",
+    "nb_visits"
+  ],
+
+  "geometry_type": "Point",
+
+
+  "specific": {
+
+    "base_site_code": {
+      "attribut_label": "Code du site",
+      "required": false,
+      "hidden": true
+    },
+
+    "base_site_name": {
+      "attribut_label": "Nom de site explicite comportant la Commune et/ou le Lieu-dit et/ou le Type-de-bâtiment",
+      "required": true
+    },
+
+     "commune_site": {
+        "type_widget": "text",
+        "attribut_label": "Renseigner la commune du site",
+        "required": true
+    },
+
+
+    "comments":{
+      "attribut_label": "Remarques",
+      "type_widget": "textarea",
+      "hidden": false
+
+    },
+
+    "base_site_description":{
+      "attribut_label": "Description",
+      "type_widget": "textarea",
+      "hidden": true
+
+    },
+
+    "id_nomenclature_type_site": {
+      "default": {"cd_nomenclature": "PELOTES"},
+      "hidden": true
+    }
+  
+  }
+}

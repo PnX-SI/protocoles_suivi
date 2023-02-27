@@ -1,0 +1,102 @@
+{
+  "display_properties": [
+    "uuid_base_visit",
+    "id_dataset",
+    "visit_date_min",
+    "id_nomenclature_tech_collect_campanule",
+    "temp",
+    "hygro",
+    "observers",
+    "perturbation",
+    "type_perturbation",
+    "presence_jeunes_juste_ne",
+    "comments",
+    "nb_observations"
+  ],  
+
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "nb_observations"
+  ],
+
+  "keep": [
+    "id_nomenclature_tech_collect_campanule",
+    "perturbation"
+  ],
+
+  "specific" :{
+
+    "id_nomenclature_tech_collect_campanule": {
+      "type_widget": "datalist",
+      "attribut_label": "Technique de collecte (Campanule)",
+      "api": "nomenclatures/nomenclature/TECHNIQUE_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "filters": {
+        "cd_nomenclature": ["59"]
+      },
+      "default": {
+        "cd_nomenclature": "59"
+      },
+      "hidden": true
+    },
+
+
+    "temp":{
+        "type_widget": "number",
+        "attribut_label": "Température relevée lors de la visite",
+        "required": false
+    },
+
+    "hygro":{
+        "type_widget": "number",
+        "attribut_label": "Hygrométrie relevée lors de la visite",
+        "required": false
+    },
+
+
+    "perturbation": {
+      "type_widget": "radio",
+      "attribut_label": "Existence d'une perturbation du gîte ?",
+      "values": ["Oui","Non"],
+      "value": "Non",
+      "required": true
+    },
+
+
+    "type_perturbation": {
+      "type_widget": "datalist",
+      "attribut_label": "Nature de la perturbation constatée",
+      "api": "nomenclatures/nomenclature/TYPE_PERTURB_GITE_CHIROS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": true,
+      "hidden": "({value}) => value.perturbation =='Non'"
+    },
+
+
+  "presence_jeunes_juste_ne": {
+      "type_widget": "select",
+      "attribut_label": "Y a t'il dans la colonie de très jeunes individus juste nés ?",
+      "values": ["Présence","Absence"],
+      "required": false
+    },
+    
+    "comments":{
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    }
+
+  }
+}
+
+

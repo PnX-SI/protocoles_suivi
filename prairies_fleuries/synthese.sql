@@ -16,7 +16,7 @@ WITH source AS (
     GROUP BY id_base_visit
 )
  SELECT o.uuid_observation AS unique_id_sinp,
-    s.uuid_base_site AS unique_id_sinp_grp,
+    v.uuid_base_visit AS unique_id_sinp_grp,
     source.id_source,
     o.id_observation AS entity_source_pk_value,
     v.id_dataset,
@@ -45,6 +45,7 @@ WITH source AS (
     v.id_module,
     v.comments AS comment_context,
     o.comments AS comment_description,
+    s.base_site_name AS place_name,
     obs.ids_observers,
     v.id_base_site,
     v.id_base_visit,

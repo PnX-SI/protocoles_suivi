@@ -2,7 +2,9 @@
     "module_label":"STOM",
     "module_desc":"Suivi temporel des oiseaux de montagne",
     "export_csv": [
-        { "label": "Observations", "type":"csv" , "method": "observations" }
+        { "label": "Observations, visites et habitats (tous les champs)", "type":"csv" , "method": "observations_and_habitat" },
+        { "label": "Observations uniquement", "type":"csv" , "method": "only_observations" },
+        { "label": "Sites", "type":"csv" , "method": "sites" }
     ],
   "map_label_field_name": "sites_group_name",
     "specific": {
