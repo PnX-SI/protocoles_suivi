@@ -1,0 +1,46 @@
+{
+  "chained": false,
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "label": "Passage",
+  "display_properties": [
+    "date",
+    "observers",
+    "occupation",
+    "etat_nichoir",
+    "comments"
+  ],
+  "specific":{
+    "date": {
+      "type_widget": "date",
+      "attribut_label": "Date du passage",
+      "required": true
+      },
+     "observers": {
+      "type_widget": "datalist",
+      "attribut_label": "Observateurs",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": true,
+      "required": true
+      },
+      "occupation":{
+      "type_widget": "radio",
+      "attribut_label": "Occupation",
+      "values": ["Oui", "Non"]
+      },
+      "etat_nichoir":{
+      "type_widget": "nomenclature",
+      "attribut_label": "Etat du nichoir",
+      "code_nomenclature_type": "NICHOIR_ETAT",
+      "required": true,
+      "type_util": "nomenclature"
+      },
+      "comments":{
+       "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+      }
+     }
+}

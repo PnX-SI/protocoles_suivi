@@ -1,0 +1,72 @@
+{
+  "id_field_name": "id_observation",
+  "description_field_name": "id_observation",
+  "chained": true,
+  "label": "Observation",
+  "genre": "F",
+  "display_properties": [
+  	"cd_nom",
+  	"nidification",
+  	"oeuf",
+  	"jeune_vivant",
+  	"jeune_mort",
+  	"comments"],
+  "uuid_field_name": "uuid_observation",
+  "specific": {
+    "id_observation": {
+      "type_widget": "text",
+      "attribut_label": "Id observation",
+      "hidden": true
+    },
+    "id_base_visit": {
+      "type_widget": "text",
+      "attribut_label": "Id visite",
+      "hidden": true
+    },
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèce",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+   "nidification": {
+      "type_widget": "radio",
+      "attribut_label": "Occupation",
+      "values": ["Oui", "Non"]
+    },
+    "oeuf": {
+    "type_widget": "number",
+    "attribut_label": "Nombre oeufs",
+    "required": true,
+    "min": 0,
+    "max": 20
+    },  
+    "jeune_vivant": {
+    "type_widget": "number",
+    "attribut_label": "Nombre jeunes vivants",
+    "required": true,
+    "min": 0,
+    "max": 20
+    }, 
+    "jeune_mort": {
+    "type_widget": "number",
+    "attribut_label": "Nombre jeunes morts",
+    "required": true,
+    "min": 0,
+    "max": 20
+    },     
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "Commentaires"
+    },
+    "uuid_observation": {
+      "attribut_label": "uuid"
+    },
+    "medias": {
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_observations"
+    }
+  }
+}
