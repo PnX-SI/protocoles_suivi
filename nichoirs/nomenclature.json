@@ -1,111 +1,18 @@
 {
   "types": [
     {
-      "mnemonique": "NICHOIR_LIEU",
-      "label_default": "Emplacement de pose de nichoirs",
-      "definition_default": "Lieux nichoirs (protocôle de suivi nichoirs)"
-    },
-    {
-      "mnemonique": "NICHOIR_ETAT",
-      "label_default": "Etat du nichoir",
-      "definition_default": "Etat des nichoirs (protocôle de suivi nichoirs)"
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
     }
-    
   ],
   "nomenclatures": [
     {
-      "type":"NICHOIR_LIEU",
-      "cd_nomenclature": "NICHOIR_LIEU_1",
-      "mnemonique": "Eglise",
-      "label_default": "Eglise",
-      "definition_default": "Eglise"
-    },
-    {
-      "type":"NICHOIR_LIEU",
-      "cd_nomenclature": "NICHOIR_LIEU_2",
-      "mnemonique": "grange_hangar",
-      "label_default": "Grange / hangar",
-      "definition_default": "Grange / hangar"
-    },
-	{
-      "type":"NICHOIR_LIEU",
-      "cd_nomenclature": "NICHOIR_LIEU_3",
-      "mnemonique": "garage",
-      "label_default": "Garage",
-      "definition_default": "Garage"
-    },
-	{
-      "type":"NICHOIR_LIEU",
-      "cd_nomenclature": "NICHOIR_LIEU_4",
-      "mnemonique": "bergerie",
-      "label_default": "Bergerie",
-      "definition_default": "Bergerie"
-    },
-	{
-      "type":"NICHOIR_LIEU",
-      "cd_nomenclature": "NICHOIR_LIEU_5",
-      "mnemonique": "arbre",
-      "label_default": "Arbre",
-      "definition_default": "Arbre"
-    },
-	{
-      "type":"NICHOIR_LIEU",
-      "cd_nomenclature": "NICHOIR_LIEU_6",
-      "mnemonique": "poteau",
-      "label_default": "Poteau",
-      "definition_default": "Poteau"
-    },
-	
-	{
-      "type":"NICHOIR_LIEU",
-      "cd_nomenclature": "NICHOIR_LIEU_7",
-      "mnemonique": "pigeonnier_tour",
-      "label_default": "Pigeonnier / tour",
-      "definition_default": "Pigeonnier / tour"
-    },
-	{
-      "type":"NICHOIR_LIEU",
-      "cd_nomenclature": "NICHOIR_LIEU_8",
-      "mnemonique": "autre",
-      "label_default": "Autre",
-      "definition_default": "Autre "
-    },
-	
-	{
-      "type":"NICHOIR_ETAT",
-      "cd_nomenclature": "NICHOIR_ETAT_1",
-      "mnemonique": "bon",
-      "label_default": "Bon état",
-      "definition_default": "Bon état"
-    },	
-	{
-      "type":"NICHOIR_ETAT",
-      "cd_nomenclature": "NICHOIR_ETAT_2",
-      "mnemonique": "a_reparer",
-      "label_default": "A réparer",
-      "definition_default": "A réparer"
-    },	
-	
-	{
-      "type":"NICHOIR_ETAT",
-      "cd_nomenclature": "NICHOIR_ETAT_3",
-      "mnemonique": "a_remplacer",
-      "label_default": "A remplacer",
-      "definition_default": "A remplacer"
-    },
-	{
-      "type":"NICHOIR_ETAT",
-      "cd_nomenclature": "NICHOIR_ETAT_4",
-      "mnemonique": "non_trouve",
-      "label_default": "Non trouvé",
-      "definition_default": "Non trouvé"
-    },
-    {
-      "type":"NICHOIR_ETAT",
-      "cd_nomenclature": "NICHOIR_ETAT_5",
-      "mnemonique": "autre",
-      "label_default":  "Autre",
-      "definition_default": "Autre"
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "NICHOIR",
+      "mnemonique": "nichoir",
+      "label_default": "Nichoir",
+      "definition_default": "Nichoir"
     }
   ]
 }

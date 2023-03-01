@@ -11,16 +11,28 @@
     "base_site_code",
     "pose_date",
     "pose_localisation",
+    "localite_precision",
     "nichoir_type",
     "adresse",
     "proprietaire_nom",
     "proprietaire_mail",
-    "proprietaire_telephone",
-    "localite_precision",
+    "proprietaire_tel",
     "nichoir_referent",
-    "comment"
+    "base_site_description"
   ],
   "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "NICHOIR"
+      },
+      "hidden": true
+    },
     "base_site_code": {
       "attribut_label": "Code du site",
       "required": false,
@@ -78,11 +90,13 @@
     },
     "adresse": {
       "type_widget": "text",
-      "attribut_label": "Adresse"
+      "attribut_label": "Adresse",
+      "required": true
     },
     "proprietaire_nom": {
       "type_widget": "text",
-      "attribut_label": "Nom du propriétaire"
+      "attribut_label": "Nom du propriétaire",
+      "required": true
     },
     "proprietaire_mail": {
       "type_widget": "text",
@@ -90,7 +104,8 @@
     },
     "proprietaire_tel": {
       "type_widget": "text",
-      "attribut_label": "Numéro de tel (propriétaire)"
+      "attribut_label": "Numéro de tel (propriétaire)",
+      "required": true
     },
     "localite_precision": {
       "type_widget": "text",
@@ -98,10 +113,11 @@
     },
     "nichoir_referent": {
       "type_widget": "text",
-      "attribut_label": "Référent du nichoir"
+      "attribut_label": "Référent du nichoir",
+      "required": true
     },
-    "comment": {
-      "type_widget": "text",
+    "base_site_description": {
+      "type_widget": "textarea",
       "attribut_label": "Remarque"
     },
     "medias": {
