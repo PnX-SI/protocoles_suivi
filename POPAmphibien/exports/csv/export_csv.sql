@@ -1,362 +1,190 @@
- alter table gn_monitoring.t_base_sites alter column id_nomenclature_type_site drop not null;
-
--------------------------------------------------final --POPAmphibien standard------------------------------------------
+---------------------------------------------------POPAmphibien standard------------------------------------------
 -- View: gn_monitoring.v_export_popamphibien_standard
+-- Export avec une entrée observations, permettant de récupérer les occurrences d'observations avec l'ensemble
+-- des attributs spécifiques du protocole. Ne renvoie pas les visites sans observations.
+-- Version du 18 avril 2022
 
-DROP VIEW  IF EXISTS  gn_monitoring.v_export_popamphibien_standard;
+DROP VIEW IF EXISTS gn_monitoring.v_export_popamphibien_standard;
 
-CREATE OR REPLACE VIEW gn_monitoring.v_export_popamphibien_standard
- AS
-
+CREATE OR REPLACE VIEW gn_monitoring.v_export_popamphibien_standard AS
 SELECT
-		aire.id_dataset::text,
-		aire.id_sites_group as id_aire,
-		aire.nom_aire,
-		aire.commune,
-		aire.categories_paysageres,
-		ovs.id as id_site,
-		ovs.base_site_code AS numero_site,
-		ovs.coordonnee_x as coordonnee_x_lamb93,
-		ovs.coordonnee_y as coordonnee_y_lamb93,
-		ovs.milieu_aquatique,
-		ovs.turbidite,
-		ovs.variation_eau,
-		ovs.courant,
-		ovs.vegetation_aquatique_principale,
-		ovs.rives,
-		ovs.habitat_terrestre_environnant,
-		ovs.activite_humaine,
-		ovs.site_protege,
-		ovs.id_base_visit AS numero_passage,
-		ovs.visit_date_min as date_passage,
-		ovs.temperature_air,
-		ovs.temperature_eau,
-		ovs.ensoleillement,
-		ovs.vent,
-		ovs.pluviosite,
-		ovs.methode_de_prospection,
-		ovs.espece,
-		ovs.stade,
-		ovs.nombre_compte,
-		ovs.nombre_estime
-	   FROM ( SELECT s.id_sites_group,
-				s.id_base_site as id,
-				s.base_site_code,
-				s.coordonnee_x,
-				s.coordonnee_y,
-				s.milieu_aquatique,
-				s.turbidite,
-				s.variation_eau,
-				s.courant,
-				s.vegetation_aquatique_principale,
-				s.rives,
-				s.habitat_terrestre_environnant,
-				s.activite_humaine,
-				s.site_protege,
-				ov.id_base_site,
-				ov.id_base_visit,
-				ov.visit_date_min,
-				ov.temperature_air,
-				ov.temperature_eau,
-				ov.ensoleillement,
-				ov.vent,
-				ov.pluviosite,
-				ov.methode_de_prospection,
-				ov.id_observation,
-				ov.id_base_visit_o,
-				ov.stade,
-				ov.nombre_compte,
-				ov.nombre_estime,
-				ov.espece
-			   FROM ( SELECT v.id_base_site,
-						v.id_base_visit,
-						v.visit_date_min,
-						v.temperature_air,
-						v.temperature_eau,
-						v.ensoleillement,
-						v.vent,
-						v.pluviosite,
-						v.methode_de_prospection,
-						o.id_observation,
-						o.id_base_visit_o,
-						o.stade,
-						o.nombre_compte,
-						o.nombre_estime,
-						o.espece
-					   FROM ( SELECT obs.id_observation,
-								obs.id_base_visit AS id_base_visit_o,
-								n.label_fr AS stade,
-								obs.nombre_compte,
-								n1.label_fr as nombre_estime,
-								taxon.lb_nom AS espece
-							   FROM ( SELECT ob.id_observation,
-										ob.id_base_visit,
-										ob.cd_nom,
-										ob.comments,
-										ob.uuid_observation,
-										oc.data -> 'nombre_compte'::text AS nombre_compte,
-										oc.data -> 'nombre_estime'::text AS ne,
-										oc.data -> 'id_nomenclature_stade'::text AS st
-									   FROM gn_monitoring.t_observations ob
-										 LEFT JOIN gn_monitoring.t_observation_complements oc ON ob.id_observation = oc.id_observation) obs
-								 LEFT JOIN taxonomie.taxref taxon ON obs.cd_nom = taxon.cd_nom
-								 LEFT JOIN ref_nomenclatures.t_nomenclatures n ON obs.st::character varying::text = n.id_nomenclature::character varying::text
-								 LEFT JOIN ref_nomenclatures.t_nomenclatures n1 ON obs.ne::character varying::text = n1.id_nomenclature::character varying::text) o
-						 LEFT JOIN ( SELECT
-								visit.id_base_site,
-								visit.id_base_visit,
-								visit.visit_date_min,
-								visit.ta AS temperature_air,
-								visit.te AS temperature_eau,
-								n3.label_fr AS ensoleillement,
-								n4.label_fr AS vent,
-								n5.label_fr AS pluviosite,
-								n6.label_fr AS methode_de_prospection
-							   FROM ( SELECT vb.id_base_site,
-										vb.id_base_visit,
-										vb.visit_date_min,
-										vc.data -> 'temperature_air'::text AS ta,
-										vc.data -> 'temperature_eau'::text AS te,
-										vc.data -> 'ensoleillement'::text AS en,
-										vc.data -> 'vent'::text AS vent,
-										vc.data -> 'pluviosite'::text AS pl,
-										vc.data -> 'methode_de_prospection'::text AS mp
-									   FROM gn_monitoring.t_base_visits vb
-										 LEFT JOIN gn_monitoring.t_visit_complements vc ON vb.id_base_visit = vc.id_base_visit) visit
-								 LEFT JOIN ref_nomenclatures.t_nomenclatures n3 ON visit.en::character varying::text = n3.id_nomenclature::character varying::text
-								 LEFT JOIN ref_nomenclatures.t_nomenclatures n4 ON visit.vent::character varying::text = n4.id_nomenclature::character varying::text
-								 LEFT JOIN ref_nomenclatures.t_nomenclatures n5 ON visit.pl::character varying::text = n5.id_nomenclature::character varying::text
-								 LEFT JOIN ref_nomenclatures.t_nomenclatures n6 ON visit.mp::character varying::text = n6.id_nomenclature::character varying::text) v ON o.id_base_visit_o = v.id_base_visit) ov
-				 INNER JOIN ( SELECT
-						site.id_sites_group,
-						site.id_base_site,
-						site.base_site_code,
-						st_x(ST_Centroid(site.geom)) AS coordonnee_x,
-						st_y(ST_Centroid(site.geom))AS coordonnee_y,
-						n1.label_fr AS milieu_aquatique,
-						n2.label_fr AS turbidite,
-						n3.label_fr AS variation_eau,
-						n4.label_fr AS courant,
-						n5.label_fr AS vegetation_aquatique_principale,
-						n6.label_fr AS rives,
-						n7.label_fr AS habitat_terrestre_environnant,
-						n8.label_fr AS activite_humaine,
-						n9.label_fr AS site_protege
-					   FROM ( SELECT sc.data -> 'milieu_aquatique'::text AS ma,
-								sc.data -> 'turbidite'::text AS turb,
-								sc.data -> 'variation_eau'::text AS ve,
-								sc.data -> 'courant'::text AS courant,
-								sc.data -> 'vegetation_aquatique_principale'::text AS vap,
-								sc.data -> 'rives'::text AS riv,
-								sc.data -> 'habitat_terrestre_environnant'::text AS hab_ter,
-								sc.data -> 'activite_humaine'::text AS actv,
-								sc.data -> 'site_protege_oui'::text AS sp,
-								sc.id_module,
-								sb.id_base_site,
-								sb.id_inventor,
-								sb.id_digitiser,
-								sb.id_nomenclature_type_site,
-								sb.base_site_name,
-								sb.base_site_description,
-								sb.base_site_code,
-								sb.first_use_date,
-								sb.geom,
-								sb.geom_local,
-								sb.altitude_min,
-								sb.altitude_max,
-								sb.uuid_base_site,
-								sb.meta_create_date,
-								sb.meta_update_date,
-								sc.id_sites_group
-							   FROM gn_monitoring.t_base_sites sb
-							   LEFT JOIN gn_monitoring.t_site_complements sc ON sb.id_base_site = sc.id_base_site) site
-						 INNER JOIN (select id_module, module_code from  gn_commons.t_modules WHERE lower(module_code)='popamphibien') m ON site.id_module::character varying::text = m.id_module::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n1 ON site.ma::character varying::text = n1.id_nomenclature::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n2 ON site.turb::character varying::text = n2.id_nomenclature::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n3 ON site.ve::character varying::text = n3.id_nomenclature::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n4 ON site.courant::character varying::text = n4.id_nomenclature::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n5 ON site.vap::character varying::text = n5.id_nomenclature::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n6 ON site.riv::character varying::text = n6.id_nomenclature::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n7 ON site.hab_ter::character varying::text = n7.id_nomenclature::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n8 ON site.actv::character varying::text = n8.id_nomenclature::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n9 ON site.sp::character varying::text = n9.id_nomenclature::character varying::text) s ON s.id_base_site = ov.id_base_site) ovs
-
-		 LEFT JOIN ( SELECT
-				a.id_dataset,
-				a.id_sites_group,
-				a.sites_group_name AS nom_aire,
-				c.nom_com AS commune,
-				n.label_fr AS categories_paysageres
-			   FROM ( SELECT t_sites_groups.id_sites_group,
-						t_sites_groups.sites_group_name,
-						(t_sites_groups.data -> 'commune'::text) ->> 0 AS commune,
-						t_sites_groups.data -> 'categories_paysageres'::text AS cp,
-						t_sites_groups.data -> 'id_dataset'::text AS id_dataset
-					   FROM gn_monitoring.t_sites_groups ) a
-				 LEFT JOIN ref_nomenclatures.t_nomenclatures n ON a.cp::text = n.id_nomenclature::text
-				 LEFT JOIN ref_geo.li_municipalities c ON a.commune::character varying::text = c.insee_com::text) aire ON aire.id_sites_group = ovs.id_sites_group;
+    -- identifiant unique
+    o.uuid_observation AS uuid_observation,
+    -- Site et variables associées
+    tsg.sites_group_name AS aire_etude,
+    s.base_site_name AS nom_site,
+    st_x(s.geom_local) AS x_lambert93,
+    st_y(s.geom_local) AS y_lambert93,
+    alt.altitude_min AS altitude_min,
+    alt.altitude_max AS altitude_max,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'milieu_aquatique')::text,'null')::integer, 'fr') AS milieu_aquatique,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'variation_eau')::text,'null')::integer, 'fr') AS variation_eau,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'courant')::text,'null')::integer, 'fr') AS courant,
+    dep.area_name AS departement,
+    dep.area_code AS code_dep,
+    com.area_name AS commune,
+    string_agg(distinct(sp.area_name)||'('||sp.type_code||')', ', ') AS site_protege,
+    -- Informations sur la visite
+    v.id_dataset, 
+    d.dataset_name AS jeu_de_donnees,
+    v.uuid_base_visit AS uuid_visite,
+    v.visit_date_min AS date_visite,
+    json_extract_path(vc.data::json,'num_passage')::text AS visite,
+    obs.observers,
+    obs.organismes_rattaches,
+    string_agg(distinct meth.methodes,' ; ') AS methodes_prospection,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'pluviosite')::text,'null')::integer, 'fr') AS pluviosite,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'couverture_nuageuse')::text,'null')::integer, 'fr') AS couverture_nuageuse,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'vent')::text,'null')::integer, 'fr') AS vent,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'turbidite')::text,'null')::integer, 'fr') AS turbidite,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'vegetation_aquatique_principale')::text,'null')::integer, 'fr') AS vegetation_aquatique_principale,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'rives')::text,'null')::integer, 'fr') AS rives,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'habitat_terrestre_environnant')::text,'null')::integer, 'fr') AS habitat_terrestre_environnant,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'activite_humaine')::text,'null')::integer, 'fr') AS activite_humaine,
+    v.comments AS commentaire_visite,
+    -- Informations sur l'observation
+    o.cd_nom AS cd_nom,
+    t.lb_nom AS nom_latin,
+    t.nom_vern AS nom_francais,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(oc.data::json,'id_nomenclature_typ_denbr')::text, 'null')::integer, 'fr') AS type_denombrement,
+    nullif(((oc.data::json #> '{count_min}'::text[])::text),'null')::integer AS count_min,
+    nullif(((oc.data::json #> '{count_max}'::text[])::text),'null')::integer AS count_max,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(oc.data::json,'id_nomenclature_stade')::text,'null')::integer, 'fr') AS stade_vie,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(oc.data::json,'id_nomenclature_sex')::text,'null')::integer, 'fr') AS sexe,
+    o.comments AS commentaire_obs
+FROM gn_monitoring.t_observations o
+JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation = o.id_observation
+JOIN gn_monitoring.t_base_visits v ON o.id_base_visit = v.id_base_visit
+JOIN gn_monitoring.t_visit_complements vc ON v.id_base_visit = vc.id_base_visit
+JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
+JOIN gn_monitoring.t_site_complements sc ON sc.id_base_site = s.id_base_site
+join gn_monitoring.t_sites_groups tsg ON sc.id_sites_group = tsg.id_sites_group
+JOIN gn_commons.t_modules m ON m.id_module = v.id_module
+JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
+LEFT JOIN gn_monitoring.cor_site_area csa ON csa.id_base_site = s.id_base_site
+LEFT JOIN gn_meta.t_datasets d ON d.id_dataset=v.id_dataset
+LEFT JOIN (select la.area_name, csa.id_base_site
+	FROM ref_geo.l_areas la
+	JOIN ref_geo.bib_areas_types bat ON la.id_type = bat.id_type
+	JOIN gn_monitoring.cor_site_area csa ON csa.id_area = la.id_area
+	WHERE bat.type_code='COM') com ON s.id_base_site = com.id_base_site
+LEFT JOIN (select la.area_name, la.area_code, csa.id_base_site
+	FROM ref_geo.l_areas la
+	JOIN ref_geo.bib_areas_types bat ON la.id_type = bat.id_type
+	JOIN gn_monitoring.cor_site_area csa ON csa.id_area = la.id_area
+	WHERE bat.type_code='DEP') dep ON s.id_base_site = dep.id_base_site
+LEFT JOIN (select la.area_name, csa.id_base_site, bat.type_code
+	FROM ref_geo.l_areas la
+	JOIN ref_geo.bib_areas_types bat ON la.id_type = bat.id_type
+	JOIN gn_monitoring.cor_site_area csa ON csa.id_area = la.id_area
+	WHERE bat.type_code IN ('ZNIEFF1','ZNIEFF2','ZPS','ZCS','SIC','RNCFS','RNR','RNN','ZC')) sp ON s.id_base_site = sp.id_base_site
+LEFT JOIN LATERAL ( SELECT array_agg(r.id_role) AS ids_observers,
+    string_agg(concat(r.nom_role, ' ', r.prenom_role), ' ; '::text) AS observers,
+    string_agg(distinct org.nom_organisme, ', ')::text AS organismes_rattaches
+    FROM gn_monitoring.cor_visit_observer cvo
+    JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
+    LEFT JOIN utilisateurs.bib_organismes org ON org.id_organisme =r.id_organisme
+    WHERE cvo.id_base_visit = v.id_base_visit) obs ON true
+LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+LEFT JOIN LATERAL (SELECT ref_nomenclatures.get_nomenclature_label(json_array_elements(vc.data::json #> '{methode_de_prospection}')::text::integer,'fr') AS methodes ) meth ON TRUE
+WHERE m.module_code = 'popamphibien'
+GROUP BY o.uuid_observation, obs.organismes_rattaches, dep.area_name, dep.area_code, tsg.sites_group_name, o.cd_nom, t.lb_nom, t.nom_vern, o.comments, oc.data, v.visit_date_min, v.id_dataset, d.dataset_name, v.comments, v.uuid_base_visit,
+s.base_site_name, sc.data, vc.data, alt.altitude_min, alt.altitude_max, obs.observers, com.area_name, s.geom_local;
 
 
-
-
-
-
-
-
-------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
---					VERSION					17/02/2021
-------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------POPAmphibien analyses------------------------------------------
+-- View: gn_monitoring.v_export_popamphibien_analyses
+-- Export avec une entrée visites, permettant d'analyser les données de protocole en listant les visites et les 
+-- observations associées, y compris visite sans occurrences.
+-- Version du 18 avril 2022
 
 -- View: gn_monitoring.v_export_popamphibien_analyses
 
 DROP VIEW IF EXISTS gn_monitoring.v_export_popamphibien_analyses;
 
-CREATE OR REPLACE VIEW gn_monitoring.v_export_popamphibien_analyses
- AS
-
+CREATE OR REPLACE VIEW gn_monitoring.v_export_popamphibien_analyses AS
+WITH observations AS (
+    SELECT o.id_base_visit, COUNT(DISTINCT t.cd_ref) AS diversite, string_agg(DISTINCT t.lb_nom, ' ; ') AS taxons_latin, string_agg(DISTINCT t.nom_vern, ' ; ') AS taxons_fr, sum(nullif(json_extract_path(toc.data::json,'count_min')::text,'null')::integer) AS count_min, sum(nullif(json_extract_path(toc.data::json,'count_max')::text,'null')::integer) AS count_max 
+    FROM gn_monitoring.t_observations o
+    LEFT JOIN taxonomie.taxref t ON o.cd_nom=t.cd_nom
+    LEFT JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation=o.id_observation
+    GROUP BY id_base_visit
+    )
 SELECT
-		aire.id_dataset::text,
-		aire.id_sites_group as id_aire,
-		aire.nom_aire,
-		aire.commune,
-		aire.categories_paysageres,
-		ovs.id as id_site,
-		ovs.base_site_name AS nom_site,
-		ovs.coordonnee_x as coordonnee_x_lamb93,
-		ovs.coordonnee_y as coordonnee_y_lamb93,
-		ovs.milieu_aquatique,
-		ovs.num_passage AS numero_passage,
-		ovs.visit_date_min as date_passage,
-		ovs.presence_poisson::text,
-		ovs.espece ,
-		--case when ovs.observe is not null then ovs.observe else 0 end as observe,
-		ovs.stade,
-		ovs.comments as remarques
-
-
-	   FROM ( SELECT
-				s.id_sites_group,
-				s.id_base_site as id,
-				s.base_site_name,
-				s.coordonnee_x,
-				s.coordonnee_y,
-				s.milieu_aquatique,
-				ov.id_base_site,
-				ov.id_base_visit,
-				ov.visit_date_min,
-				ov.presence_poisson,
-				ov.id_observation,
-				ov.id_base_visit_o,
-				ov.stade,
-				ov.espece  ,
-				--ov.observe,
-				ov.comments,
-				ov.num_passage
-			    --ov.espece_p
-
-			   FROM ( SELECT
-
-						v.id_base_site,
-						v.id_base_visit,
-						v.visit_date_min,
-						v.presence_poisson,
-						o.id_observation,
-						o.id_base_visit_o,
-						o.espece,
-						--o.observe,
-						o.stade,
-						o.comments,
-						v.num_passage
-					    --v.espece_p
-
-
-					   FROM (
-							SELECT obs.id_observation,
-								obs.id_base_visit AS id_base_visit_o,
-								n.label_fr AS stade,
-								replace(obs.sexe::text,'"','') as sexe,
-								taxon.lb_nom AS espece,
-								obs.comments
-							   FROM (
-									SELECT ob.id_observation,
-										ob.id_base_visit,
-										ob.cd_nom,
-										ob.comments,
-										ob.uuid_observation,
-										oc.data -> 'id_nomenclature_stade'::text AS st,
-										oc.data -> 'sexe'::text AS sexe
-									   FROM gn_monitoring.t_observations ob
-										 LEFT JOIN gn_monitoring.t_observation_complements oc ON ob.id_observation = oc.id_observation) obs
-								 LEFT JOIN taxonomie.taxref taxon ON obs.cd_nom = taxon.cd_nom
-								 LEFT JOIN ref_nomenclatures.t_nomenclatures n ON obs.st::character varying::text = n.id_nomenclature::character varying::text
-								 ) o
-						 LEFT JOIN (
-								   SELECT
-									visit.id_base_site,
-									visit.id_base_visit,
-									visit.visit_date_min,
-									visit.presence_poisson,
-									visit.num_passage
-									   FROM (  SELECT vb.id_base_site,
-													vb.id_base_visit,
-													vb.visit_date_min,
-													vc.data -> 'presence_poisson'::text AS presence_poisson,
-													vc.data -> 'num_passage'::text AS num_passage
-											   FROM gn_monitoring.t_base_visits vb
-											   LEFT JOIN gn_monitoring.t_visit_complements vc ON vb.id_base_visit = vc.id_base_visit) visit
-
-								 ) v ON o.id_base_visit_o = v.id_base_visit) ov
-				 INNER JOIN ( SELECT
-						site.id_sites_group,
-						site.id_base_site,
-						site.base_site_name,
-						st_x(ST_Centroid(site.geom)) AS coordonnee_x,
-						st_y(ST_Centroid(site.geom))AS coordonnee_y,
-						n1.label_fr AS milieu_aquatique
-
-					   FROM ( SELECT
-								sc.data -> 'milieu_aquatique'::text AS ma,
-
-								sc.id_module,
-								sb.id_base_site,
-								sb.id_inventor,
-								sb.id_digitiser,
-								sb.id_nomenclature_type_site,
-								sb.base_site_name,
-								sb.base_site_description,
-								sb.base_site_code,
-								sb.first_use_date,
-								sb.geom,
-								sb.geom_local,
-								sb.altitude_min,
-								sb.altitude_max,
-								sb.uuid_base_site,
-								sb.meta_create_date,
-								sb.meta_update_date,
-								sc.id_sites_group
-							   FROM gn_monitoring.t_base_sites sb
-							   LEFT JOIN gn_monitoring.t_site_complements sc ON sb.id_base_site = sc.id_base_site) site
-						 INNER JOIN (select id_module, module_code from  gn_commons.t_modules WHERE lower(module_code)='popamphibien') m ON site.id_module::character varying::text = m.id_module::character varying::text
-						 LEFT JOIN ref_nomenclatures.t_nomenclatures n1 ON site.ma::character varying::text = n1.id_nomenclature::character varying::text
-						 ) s ON s.id_base_site = ov.id_base_site) ovs
-
-		 LEFT JOIN ( SELECT
-				a.id_dataset,
-				a.id_sites_group,
-				a.sites_group_name AS nom_aire,
-				c.nom_com AS commune,
-				n.label_fr AS categories_paysageres
-			   FROM ( SELECT t_sites_groups.id_sites_group,
-						t_sites_groups.sites_group_name,
-						(t_sites_groups.data -> 'commune'::text) ->> 0 AS commune,
-						t_sites_groups.data -> 'categories_paysageres'::text AS cp,
-						t_sites_groups.data -> 'id_dataset'::text AS id_dataset
-					   FROM gn_monitoring.t_sites_groups) a
-				 LEFT JOIN ref_nomenclatures.t_nomenclatures n ON a.cp::text = n.id_nomenclature::text
-				 LEFT JOIN ref_geo.li_municipalities c ON a.commune::character varying::text = c.insee_com::text) aire ON aire.id_sites_group = ovs.id_sites_group
-order by (aire.id_sites_group,ovs.id, ovs.id_base_visit);
-
+    -- Aire et site
+    tsg.sites_group_name AS aire_etude,
+    s.base_site_name AS nom_site,
+    st_x(s.geom_local) AS x_lambert93,
+    st_y(s.geom_local) AS y_lambert93,
+    alt.altitude_min AS altitude_min,
+    alt.altitude_max AS altitude_max,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'milieu_aquatique')::text,'null')::integer, 'fr') AS milieu_aquatique,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'variation_eau')::text,'null')::integer, 'fr') AS variation_eau,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'courant')::text,'null')::integer, 'fr') AS courant,
+    dep.area_name AS departement,
+    dep.area_code AS code_dep,
+    com.area_name AS commune,
+    string_agg(distinct(sp.area_name)||'('||sp.type_code||')', ', ') AS site_protege,
+    -- VISITE
+    v.uuid_base_visit AS uuid_visite,
+    v.visit_date_min AS date_visite,
+    v.id_dataset,
+    d.dataset_name AS jeu_de_donnees,
+    extract( year FROM v.visit_date_min) AS annee,
+    json_extract_path(vc.data::json,'num_passage')::text AS visite,
+    obs.observers,
+    obs.organismes_rattaches,
+    replace(json_extract_path(vc.data::json,'accessibility')::text, '"','') as accessibilite,
+    string_agg(distinct meth.methodes,' ; ') AS methodes_prospection,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'pluviosite')::text,'null')::integer, 'fr') AS pluviosite,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'couverture_nuageuse')::text,'null')::integer, 'fr') AS couverture_nuageuse,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'vent')::text,'null')::integer, 'fr') AS vent,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'turbidite')::text,'null')::integer, 'fr') AS turbidite,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'vegetation_aquatique_principale')::text,'null')::integer, 'fr') AS vegetation_aquatique_principale,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'rives')::text,'null')::integer, 'fr') AS rives,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'habitat_terrestre_environnant')::text,'null')::integer, 'fr') AS habitat_terrestre_environnant,
+    ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'activite_humaine')::text,'null')::integer, 'fr') AS activite_humaine,
+    replace(json_extract_path(vc.data::json,'presence_amphibien')::text, '"','') as presence_amphibien,
+    v.comments AS commentaire_visite,
+    -- SYNTHESE OBSERVATIONS
+    observations.diversite::integer as diversite,
+    observations.taxons_latin as taxons_latin,
+    observations.taxons_fr as taxons_fr,
+    observations.count_min as abondance_total_min,
+    observations.count_max as abondance_total_max
+FROM gn_monitoring.t_base_visits v
+JOIN gn_monitoring.t_visit_complements vc ON v.id_base_visit = vc.id_base_visit
+JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
+JOIN gn_monitoring.t_site_complements sc ON sc.id_base_site = s.id_base_site
+JOIN gn_monitoring.t_sites_groups tsg ON sc.id_sites_group = tsg.id_sites_group
+JOIN gn_commons.t_modules m ON m.id_module = v.id_module
+LEFT JOIN gn_monitoring.cor_site_area csa ON csa.id_base_site = s.id_base_site
+LEFT JOIN observations ON observations.id_base_visit=v.id_base_visit 
+LEFT JOIN gn_meta.t_datasets d ON d.id_dataset=v.id_dataset
+LEFT JOIN (SELECT la.area_name, csa.id_base_site
+	FROM ref_geo.l_areas la
+	JOIN ref_geo.bib_areas_types bat ON la.id_type = bat.id_type
+	JOIN gn_monitoring.cor_site_area csa ON csa.id_area = la.id_area
+	WHERE bat.type_code='COM') com ON s.id_base_site = com.id_base_site
+LEFT JOIN (SELECT la.area_name, la.area_code, csa.id_base_site
+	FROM ref_geo.l_areas la
+	JOIN ref_geo.bib_areas_types bat ON la.id_type = bat.id_type
+	JOIN gn_monitoring.cor_site_area csa ON csa.id_area = la.id_area
+	WHERE bat.type_code='DEP') dep ON s.id_base_site = dep.id_base_site
+LEFT JOIN (SELECT la.area_name, csa.id_base_site, bat.type_code
+	FROM ref_geo.l_areas la
+	JOIN ref_geo.bib_areas_types bat ON la.id_type = bat.id_type
+	JOIN gn_monitoring.cor_site_area csa ON csa.id_area = la.id_area
+	WHERE bat.type_code IN ('ZNIEFF1','ZNIEFF2','ZPS','ZCS','SIC','RNCFS','RNR','RNN','ZC')) sp ON s.id_base_site = sp.id_base_site
+LEFT JOIN LATERAL ( SELECT array_agg(r.id_role) AS ids_observers,
+    string_agg(concat(r.nom_role, ' ', r.prenom_role), ' ; '::text) AS observers,
+    string_agg(distinct org.nom_organisme, ', ')::text AS organismes_rattaches
+    FROM gn_monitoring.cor_visit_observer cvo
+    JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
+    LEFT JOIN utilisateurs.bib_organismes org ON org.id_organisme =r.id_organisme
+    WHERE cvo.id_base_visit = v.id_base_visit) obs ON true
+LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+LEFT JOIN lateral (SELECT ref_nomenclatures.get_nomenclature_label(json_array_elements(vc.data::json #> '{methode_de_prospection}')::text::integer,'fr') as methodes ) meth on true
+WHERE m.module_code = 'popamphibien'
+GROUP BY v.id_base_visit, v.id_dataset, d.dataset_name, tsg.sites_group_name, s.base_site_name, s.geom_local, alt.altitude_min, alt.altitude_max, sc.data, dep.area_name, dep.area_code, com.area_name, sp.area_name, 
+vc.data, obs.observers, obs.organismes_rattaches, observations.diversite, observations.taxons_latin, observations.taxons_fr, observations.count_min, observations.count_max ;
