@@ -1,0 +1,86 @@
+{
+  "display_properties": [
+    "cd_nom",
+    "id_nomenclature_obj_count",
+    "id_nomenclature_life_stage",
+    "recouvrement",
+    "id_nomenclature_abondance_braunblanquet",
+    "id_nomenclature_type_count",
+    "count_min",
+    "num_herbier",
+    "comments"
+  ],
+  "specific": {
+    "id_nomenclature_type_count": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type dénombrement",
+      "code_nomenclature_type": "TYP_DENBR",
+      "required": true,
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYP_DENBR",
+        "cd_nomenclature": "Es"
+      },
+      "cd_nomenclatures": [
+        "Es",
+        "Co"
+      ]
+    },
+    "id_nomenclature_obj_count": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Objet du dénombrement",
+      "code_nomenclature_type": "OBJ_DENBR",
+      "required": true,
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "OBJ_DENBR",
+        "cd_nomenclature": "TOUF"
+      },
+      "cd_nomenclatures": [
+        "IND",
+        "HAM",
+        "TIGE",
+        "TOUF",
+        "SURF"
+      ]
+    },
+    "count_min": {
+      "type_widget": "number",
+      "attribut_label": "Nombre",
+      "min": 0
+    },
+    "recouvrement": {
+      "type_widget": "number",
+      "attribut_label": "Recouvrement (%)",
+      "min": 0,
+      "max": 100
+    },
+    "id_nomenclature_abondance_braunblanquet": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Abondance",
+      "code_nomenclature_type": "BRAUNBLANQABDOM",
+      "type_util": "nomenclature"
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "datalist",
+      "attribut_label": "Phénologie",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "params": {
+        "regne": "Plantae"
+      },
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "0"
+      }
+    },
+    "num_herbier": {
+      "type_widget": "text",
+      "attribut_label": "Numéro échantillon herbier"
+    }
+  }
+}
