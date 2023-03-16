@@ -1,0 +1,15 @@
+{
+  "chained": false,
+  "cruved": {
+    "C": 3,
+    "U": 3,
+    "D": 3
+  },
+  "label": "Site Bota",
+  "label_list": "Site Bota",
+  "sorts": [
+    {
+      "prop": "sites_group_name"
+    }
+  ]
+}
