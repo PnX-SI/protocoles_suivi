@@ -1,0 +1,50 @@
+{
+  "display_properties": [
+    "id_base_site",
+    "observers",
+    "visit_date_min",
+    "gestion_courante",
+    "historique_gestion",
+    "comments"
+  ],
+  "display_list": [
+    "id_base_site",
+    "visit_date_min",
+    "observers"
+  ],
+  "map_label_field_name": "base_site_code",
+  "chain_show": [
+    "visit_date_min",
+    "id_base_site"
+  ],
+  "keep": [
+    "visit_date_min",
+    "observers",
+    "id_dataset",
+    "comment"
+  ],
+  "specific": {
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
+    },
+    "gestion_courante": {
+      "type_widget": "select",
+      "attribut_label": "Gestion en cours",
+      "values": [
+        "fourrage",
+        "fauche",
+        "pâture",
+        "fauche+pâture",
+        "culture",
+        "plantation",
+        "aucune",
+        "inconnue"
+      ],
+      "required": true
+    },
+    "historique_gestion": {
+      "type_widget": "text",
+      "attribut_label": "Historique de gestion"
+    }
+  }
+}
