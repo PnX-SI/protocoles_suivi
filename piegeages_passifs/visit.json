@@ -1,6 +1,6 @@
 {
-  "display_properties": [ 
-    "id_dataset", 
+  "display_properties": [
+    "id_dataset",
     "visit_date_min",
     "visit_date_max",
     "observers",
@@ -15,21 +15,6 @@
     "nb_observations"
   ],
   "specific": {
-    "id_dataset": {
-      "type_widget": "datalist",
-      "attribut_label": "Jeu de données",
-      "type_util": "dataset",
-      "api": "meta/datasets",
-      "application": "GeoNature",
-      "keyValue": "id_dataset",
-      "keyLabel": "dataset_name",
-      "params": {
-        "orderby": "dataset_name",
-        "module_code": "__MODULE.MODULE_CODE"
-      },
-      "data_path": "data",
-      "required": true
-    },
     "visit_date_min": {
       "type_widget": "date",
       "attribut_label": "Date de début du piégeage*",
