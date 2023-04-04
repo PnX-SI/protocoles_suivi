@@ -38,12 +38,6 @@
       "type_widget": "text",
       "attribut_label": "Précision sur l'espèce"
     },
-    "nidification": {
-      "type_widget": "radio",
-      "attribut_label": "Occupation",
-      "values": ["Oui", "Non"],
-      "required": true
-    },
     "oeuf": {
       "type_widget": "number",
       "attribut_label": "Nombre oeufs",
