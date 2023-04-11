@@ -1,0 +1,48 @@
+{
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "id_inventor",
+    "first_use_date",
+    "last_visit",
+    "nb_visits",
+    "desc_habitat",
+    "prospect_surf",
+    "comment_site"
+ ],
+  "display_list": [
+    "base_site_name",
+    "first_use_date",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "CHROCAPT"
+      },
+      "hidden": true
+    },
+    "desc_habitat": {
+      "type_widget": "select", 
+      "required": true,
+      "attribut_label": "Habitat dominant", 
+      "values": ["Zone humide - Tourbière", "Pelouse sèche", "Prairie - pelouse alpine", "Lisières - Clairières", "Autre"]
+    },
+    "prospect_surf": {
+      "type_widget": "number",
+      "attribut_label": "Surface de prospection en m2",
+      "value": 500
+    },
+    "comment_site": {
+      "type_widget": "text",
+      "attribut_label": "Détail sur la placette"
+    }
+  }
+}
