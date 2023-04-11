@@ -1,8 +1,15 @@
-{
+{   "keep": [
+  "round",
+  "heure"
+  ],
+  "chained": true,
   "display_properties": [
     "round",
+    "heure",
     "cd_nom",
     "id_nomenclature_determination_method",
+    "id_sexe",
+    "id_nomenclature_stade",
     "nb_count",
     "comments"
   ],
@@ -18,10 +25,15 @@
       "required": true,
       "values": ["Round 1 : 0-5mn", "Round 2 : 5-10mn", "Round 3 : 10-15mn", "Round 4 : 15-20mn", "Round 5 : 20-25", "Round 6 : 25-30mn", "Round 7 : 30-35mn", "Round 8 : 35-40mn", "Round 9 : 40-45mn", "Round 10 : 45-50mn", "Round 11 : 50-55mn", "Round 12 : 55-60mn"]
     },
-    "id_nomenclature_determination_method": {
-      "type_widget": "datalist",
-      "attribut_label": "Méthode de détermination",
-      "api": "nomenclatures/nomenclature/METH_DETERMIN",
+    "heure": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début",
+      "required": true
+    },
+    "id_sexe": {
+      "type_widget": "radio",
+      "attribut_label": "Sexe",
+      "api": "nomenclatures/nomenclature/SEXE",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
@@ -30,6 +42,34 @@
       "required": true,
       "default": {
         "cd_nomenclature": "1"
+      }
+    },
+    "id_nomenclature_stade": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade Biologique",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "1"
+      }
+    },
+    "id_nomenclature_determination_method": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie : stade de développement du sujet",
+      "api": "nomenclatures/nomenclature/METH_DETERMIN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "2"
       }
     },
     "nb_count": {

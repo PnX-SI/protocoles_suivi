@@ -2,7 +2,7 @@
   "geometry_type": "Point",
   "display_properties": [
     "base_site_name",
-    "id_inventor",
+    "id_dataset",
     "first_use_date",
     "last_visit",
     "nb_visits",

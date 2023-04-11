@@ -1,15 +1,15 @@
 {
   "display_properties": [
-    "visit_date_min",
     "observers",
+    "id_dataset",
+    "visit_date_min",
     "time_start",
     "start_temperature",
     "cloudiness",
     "wind",
     "pasture_status",
     "floral_availability",
-    "end_temperature",
-    "time_end",
+    "group_chronoventaire",
     "duration"
   ],
   "display_list": [
@@ -21,6 +21,25 @@
     "time_start": {
       "type_widget": "time",
       "attribut_label": "Heure de début du relevé"
+    },
+    "id_dataset": {
+      "type_widget": "datalist",
+      "attribut_label": "Jeu de données",
+      "type_util": "dataset",
+      "api": "meta/datasets",
+      "application": "GeoNature",
+      "keyValue": "id_dataset",
+      "keyLabel": "dataset_shortname",
+      "required": true,
+      "params": {
+        "orderby": "dataset_name",
+        "module_code": "__MODULE.MODULE_CODE"
+      }
+    },
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du relevé",
+      "required": true
     },
     "start_temperature": {
       "type_widget": "number",
@@ -48,6 +67,12 @@
     "floral_availability": {
       "type_widget": "select",
       "required": true,
+      "attribut_label": "Groupe Chronovbentaire",
+      "values": ["RHOP1", "RHOP2", "RHOPZYG1", "RHOPZYG2"]
+    },
+    "group_chronoventaire": {
+      "type_widget": "select",
+      "required": true,
       "attribut_label": "Disponibilité florale",
       "values": ["FLEUR_1", "FLEUR_2", "FLEUR_3", "FLEUR_4"]
     },
@@ -55,10 +80,6 @@
       "type_widget": "number",
       "attribut_label": "Température à la fin du relevé",
       "required": true
-    },
-    "time_end": {
-      "type_widget": "time",
-      "attribut_label": "Heure de fin du relevé"
     },
     "duration": {
       "type_widget": "time",
