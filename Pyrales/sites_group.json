@@ -1,91 +1,109 @@
 {
   "genre":"F",
-  "label": "Aire",
-  "label_list": "Aires",
+  "label": "Placette",
+  "label_list": "Placette",
   "map_label_field_name": "base_site_name",
   "b_draw_sites_group": true,
-  "export_pdf": [
-    {
-      "template": "fiche_aire.html",
-      "label": "Export PDF"
-    }
-  ],
+  "geometry_type": "Line",
   "display_properties": [
-    "id_dataset",
-    "id_inventor",
-    "commune",
-    "sites_group_name",
-    "categories_paysageres",
-    "comments"
+     "code_co",             
+     "code_placette",        
+     "date_obs",
+     "type_obs",        
+     "type_foret",         
+     "habitat",    
+     "type_peuplement",         
+     "essence_dom",         
+     "couv_forest",         
+     "buis_pres",         
+     "recouv_buis",         
+     "annee_defolia"        
   ],
   "display_list": [
     "sites_group_name",
     "nb_sites"
   ],
   "specific": {
-    "id_inventor": {
-      "type_widget": "datalist",
-      "attribut_label": "Observateur principal",
-      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
-      "application": "GeoNature",
-      "keyValue": "id_role",
-      "keyLabel": "nom_complet",
-      "type_util": "user",
-      "required": true
-    },
-    "id_dataset": {
-      "type_widget": "datalist",
-      "attribut_label": "Jeu de données",
-      "type_util": "dataset",
-      "api": "meta/datasets",
-      "application": "GeoNature",
-      "keyValue": "id_dataset",
-      "keyLabel": "dataset_shortname",
-      "params": {
-        "orderby": "dataset_name",
-        "module_code": "__MODULE.MODULE_CODE"
-      },
-      "required": true
-    },
-    "commune": {
-      "type_widget": "municipalities",
-      "attribut_label": "Commune",
-      "value_field_name": "area_code",
-      "type_util": "area",
-      "required": true,
-      "title":"Veuillez saisir les principales communes concernées par l'aire"
-    },
-    "categories_paysageres": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Catégories paysagères",
-      "code_nomenclature_type": "CATEGORIE_PAYSAGERE",
-      "required": false,
-      "type_util": "nomenclature",
-      "title":"Indiquer la catégorie majoritaire"
-    },
-    "comments": {
-        "type_widget": "textarea",
-        "attribut_label": "Commentaire"
-    },
-    "sites_group_name": {
-      "type_widget": "text",
-      "attribut_label": "Nom de l'aire",
-      "required": true,
-      "definition": "Nom du groupe site."
-    },
-    "sites_group_code": {
-      "type_widget": "text",
-      "attribut_label": "Code",
-      "required": false,
-      "hidden": true
-    },
-    "sites_group_description": {
+    "code_co": {
       "type_widget": "textarea",
-      "attribut_label": "Description",
-      "hidden":true
+      "attribut_label": "Code CO"
+  },
+    "code_placette": {
+      "type_widget": "textarea",
+      "attribut_label": "Code Placette (Dept + numéro d'ordre + R si recepage)"
+  },
+    "date_obs": {
+      "type_widget": "date",
+      "attribut_label": "Date Observation",
+      "required": true
     },
-    "nb_visits": {
-      "attribut_label": "Nombre de passages"
+    "type_obs": {
+      "type_widget": "select",
+      "attribut_label": "Type d'observation",
+      "required": true,
+      "values": ["Installation", "Suivi évolution"]
+    },
+  "dddddddd": {
+    "type_widget": "radio",
+    "attribut_label": "Occupation",
+    "values": ["Oui", "Non"]
+  },
+  "type_foret": {
+    "type_widget": "select",
+    "attribut_label": "Type de fôret",
+    "required": true,
+    "values": ["FD", "AFP", "FP"]
+  },
+  "type_peuplement": {
+    "type_widget": "select",
+    "attribut_label": "Type de peuplement",
+    "required": true,
+    "values": ["A définir", "A définir", "A définir"]
+  },
+  "essence_dom": {
+    "type_widget": "select",
+    "attribut_label": "Essence dominante",
+    "required": true,
+    "values": ["A définir", "A définir", "A définir"]
+  },
+  "buis_pres": {
+    "type_widget": "select",
+    "attribut_label": "Buis présent ",
+    "required": true,
+    "values": ["sous étages (SE)", "seul (AL)", "mélange avec autre essences (ME)"]
+  },
+  "recouv_buis": {
+    "type_widget": "number",
+    "attribut_label": "Couvert Forestier libre (%)",
+    "required": false,
+    "min": 0,
+    "max": 100
+  },
+  "couv_forest": {
+    "type_widget": "number",
+    "attribut_label": "Recouvrement du sous étage de buis (%)",
+    "required": false,
+    "min": 0,
+    "max": 100
+  },
+  "annee_defolia": {
+    "type_widget": "date",
+    "attribut_label": "Année de défoliation totale ",
+    "values": "12/04/2023",
+    "required": true
+  },
+  "habitat":{
+    "type_widget": "datalist",
+    "attribut_label": "Type d’habitat",
+    "api": "habref/habitats/autocomplete",
+    "application": "GeoNature",
+    "keyValue": "cd_hab",
+    "keyLabel": "search_name",
+    "type_util": "habitat",
+    "params": {
+        "cd_typo": 5,
+        "search_name": ""
     }
+  }
   }
 }

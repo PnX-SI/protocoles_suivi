@@ -1,13 +1,9 @@
 {
-    "module_label":"POPAmphibien",
-    "module_desc":"Module de suivi du Protocole POPAmphibien",
+    "module_label":"Pyrales du Buis",
+    "module_desc":"Protocoles de suivi du Buis",
     "b_draw_sites_group": true,
     "genre":"M",
-    "color":"#e1fffe",
-    "export_csv": [
-      { "label": "Format standard CSV", "type":"csv" , "method": "standard" },
-      { "label": "Format analyses CSV", "type":"csv" , "method": "analyses" }
-    ],
+    "color":"#ed2bd5",
     "specific": {
       "b_draw_sites_group": {
         "hidden": false

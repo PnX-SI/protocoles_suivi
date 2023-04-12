@@ -1,115 +1,115 @@
 {
   "genre":"M",
-  "label": "Passage",
-  "label_list": "Passages",
+  "label": "Relevé",
+  "label_list": "Relevé",
   "display_properties": [
-
     "observers",
-    "num_passage",
-    "visit_date_min",
-    "temperature_air",
-    "temperature_eau",
-    "pluviosite",
-    "ensoleillement",
-    "vent",
-    "methode_de_prospection",
-    "presence_amphibien",
-    "presence_poisson",
+    "releve_date_min",
+    "mort_branch",
+    "def_foliaire",
+    "conso_ramifi_fine",
+    "conso_branch_petit",
+    "conso_branch_moy",
+    "rejets",
+    "rejet_long",
+    "gourmand",
+    "haut_gourmand",
+    "conso_feuillage",
+    "incision_collet",
+    "pres_pyrale",
     "comments"
   ],
   "display_list": [
     "num_passage",
-    "visit_date_min",
+    "releve_date_min",
     "observers",
     "nb_observations"
   ],
-  "keep": [
-    "observers",
-    "visit_date_min",
-    "temperature_air",
-    "temperature_eau",
-    "pluviosite",
-    "ensoleillement",
-    "vent",
-    "methode_de_prospection",
-    "presence_amphibien",
-    "presence_poisson",
-    "comments"
-  ],
   "specific": {
-    "num_passage": {
-      "type_widget": "text",
-      "required": true,
-      "attribut_label": "Numéro de passage"
+    "releve_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du relevé",
+      "required": true
     },
-    "id_base_site": {
-      "type_widget": "site",
-      "required": true,
-      "attribut_label": "Site"
-    },
-    "temperature_air": {
+    "mort_branch": {
       "type_widget": "number",
-      "attribut_label": "Température de l’air (en °C)",
+      "attribut_label": "Mortalité  de branches",
       "required": false,
-      "min": -25,
-      "max": 60
+      "min": 1,
+      "max": 100
     },
-    "temperature_eau": {
+    "def_foliaire": {
       "type_widget": "number",
-      "attribut_label": "Température de l’eau (en °C)",
+      "attribut_label": "déficit foliaire",
       "required": false,
-      "min": -25,
-      "max": 60
+      "min": 1,
+      "max": 100
     },
-    "pluviosite": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Pluviosité",
-      "code_nomenclature_type": "PLUVIOSITE",
-	    "required": false,
-      "type_util": "nomenclature"
+    "conso_ramifi_fine": {
+      "type_widget": "number",
+      "attribut_label": "Consommation d'écorce ramification fine",
+      "required": false,
+      "min": 1,
+      "max": 100
     },
-    "ensoleillement": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Ensoleillement (% de recouvrement nuageux)",
-      "code_nomenclature_type": "ENSOLEILLEMENT",
-	    "required": false,
-      "type_util": "nomenclature"
+    "conso_branch_petit": {
+      "type_widget": "number",
+      "attribut_label": "Consommation d'écorce branches petites",
+      "required": false,
+      "min": 1,
+      "max": 100
     },
-    "vent": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Vent",
-      "code_nomenclature_type": "VENT",
-	    "required": false,
-      "type_util": "nomenclature"    
+    "conso_branch_moy": {
+      "type_widget": "number",
+      "attribut_label": "Consommation d'écorce branches moyenne et tige",
+      "required": false,
+      "min": 1,
+      "max": 100
     },
-    "methode_de_prospection": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Méthode de prospection",
-      "code_nomenclature_type": "METHODE_PROSPECTION",
-	    "required": false,
-      "type_util": "nomenclature"
+    "rejets": {
+      "type_widget": "radio",
+      "attribut_label": "Rejets (inf 20 cm) en classes",
+      "values": ["Oui", "Non"],
+      "required": true
+    },
+    "rejet_long": {
+      "type_widget": "number",
+      "attribut_label": "Rejets (longueur maxi)",
+      "required": false
+    },
+    "gourmand": {
+      "type_widget": "number",
+      "attribut_label": "Gourmands sur tige et BM (sup à 2cm) en classes",
+      "required": false,
+      "min": 0,
+      "max": 4
+    },
+    "haut_gourmand": {
+      "type_widget": "number",
+      "attribut_label": "Rejets (longueur maxi)",
+      "required": false
+    },
+    "conso_feuillage": {
+      "type_widget": "radio",
+      "attribut_label": "Consommation du feuillage sur les rejets et gourmands",
+      "values": ["Oui", "Non"],
+      "required": true
+    },
+    "incision_collet": {
+      "type_widget": "radio",
+      "attribut_label": "Faire une incision au collet si nécessaire",
+      "values": ["Oui", "Non"],
+      "required": true
+    },
+    "pres_pyrale": {
+      "type_widget": "radio",
+      "attribut_label": "Présence Pyrales",
+      "values": ["Oui", "Non"],
+      "required": true
     },
     "comments": {
       "type_widget": "textarea",
-      "attribut_label": "Commentaire"
-    },
-    "presence_amphibien": {
-      "type_widget": "radio",
-      "attribut_label": "Présence d’amphibiens",
-      "values": ["Oui", "Non"]
-    },
-    "presence_poisson": {
-      "type_widget": "radio",
-      "attribut_label": "Présence de poissons",
-      "values": ["Oui", "Non"]
-    },
-     "visit_date_min": {
-      "type_widget": "date",
-      "attribut_label": "Date du passage",
-      "required": true
-    },
-    "nb_observations": {
-      "attribut_label": "Nb. d'observations"
+      "attribut_label": "Remarques libres"
     }
   }
 }
