@@ -1,10 +1,14 @@
-{
+{ "label": "Stations d'inventaire",
+  "label_list": "Stations d'inventaire",
+  "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
   "display_properties": [
-    "base_site_name",
-    "id_dataset",
+    "id_inventor",
     "first_use_date",
+    "base_site_name",
     "last_visit",
+    "CodeHabitatStation",
+    "CodeHabitatAdjacent",
     "nb_visits",
     "desc_habitat",
     "prospect_surf",
@@ -29,11 +33,31 @@
       },
       "hidden": true
     },
-    "desc_habitat": {
-      "type_widget": "select", 
-      "required": true,
-      "attribut_label": "Habitat dominant", 
-      "values": ["Zone humide - Tourbière", "Pelouse sèche", "Prairie - pelouse alpine", "Lisières - Clairières", "Autre"]
+    "CodeHabitatStation":{
+      "type_widget": "datalist",
+      "attribut_label": "Type d’habitat autour de la station (30 mètres)",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+          "cd_typo": 7,
+          "search_name": ""
+      }
+    },
+    "CodeHabitatAdjacent":{
+      "type_widget": "datalist",
+      "attribut_label": "Type d’habitat adjacent à la station (au delà des 30 mètres)",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+          "cd_typo": 7,
+          "search_name": ""
+      }
     },
     "prospect_surf": {
       "type_widget": "number",
@@ -43,6 +67,18 @@
     "comment_site": {
       "type_widget": "text",
       "attribut_label": "Détail sur la placette"
+    },
+    "base_site_name": {
+      "type_widget": "text",
+      "attribut_label": "Nom du la station.",
+      "required": true
+    },
+    "nb_visits": {
+      "attribut_label": "Nb. de passages"
+    },
+    "last_visit": {
+      "attribut_label": "Dernier passage",
+      "type_util": "date"
     }
   }
 }

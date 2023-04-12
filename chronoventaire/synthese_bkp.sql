@@ -3,7 +3,7 @@
 --		permettant la remonté des données 
 --		test dans la synthèse
 -- #############################
-DROP VIEW IF EXISTS gn_monitoring.vs_chronocapture;
+/*DROP VIEW IF EXISTS gn_monitoring.vs_chronocapture;
 CREATE VIEW gn_monitoring.vs_chronocapture AS
 WITH source AS (
 	SELECT id_source 
@@ -122,3 +122,4 @@ SELECT
 	JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
  	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max) ON true
     WHERE m.module_code = 'chronocapture';
+*/

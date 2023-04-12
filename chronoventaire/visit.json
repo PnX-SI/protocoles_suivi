@@ -22,20 +22,6 @@
       "type_widget": "time",
       "attribut_label": "Heure de début du relevé"
     },
-    "id_dataset": {
-      "type_widget": "datalist",
-      "attribut_label": "Jeu de données",
-      "type_util": "dataset",
-      "api": "meta/datasets",
-      "application": "GeoNature",
-      "keyValue": "id_dataset",
-      "keyLabel": "dataset_shortname",
-      "required": true,
-      "params": {
-        "orderby": "dataset_name",
-        "module_code": "__MODULE.MODULE_CODE"
-      }
-    },
     "visit_date_min": {
       "type_widget": "date",
       "attribut_label": "Date du relevé",
