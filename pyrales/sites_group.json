@@ -1,12 +1,12 @@
 {
-  "genre":"F",
+  "genre":"M",
   "label": "Placette",
   "label_list": "Placette",
-  "map_label_field_name": "group_site_name",
+  "map_label_field_name": "sites_group_name",
   "geometry_type": "LineString",
   "display_properties": [
-     "code_co",             
-     "group_site_name",        
+     "sites_group_code",             
+     "sites_group_name",        
      "date_obs",
      "type_obs",        
      "type_foret",         
@@ -16,25 +16,38 @@
      "couv_forest",         
      "buis_pres",         
      "recouv_buis",         
-     "annee_defolia"        
+     "annee_defolia" 
   ],
   "display_list": [
-    "group_site_name",
+    "sites_group_name",
     "nb_sites"
   ],
   "specific": {
-    "code_co": {
-      "type_widget": "textarea",
+    "sites_group_code": {
+      "type_widget": "text",
       "attribut_label": "Code CO"
   },
-    "group_site_name": {
+    "sites_group_name": {
       "type_widget": "textarea",
       "attribut_label": "Code Placette (Dept + numéro d'ordre + R si recepage)"
+  },
+  "sites_group_description": {
+    "type_widget": "textarea",
+    "attribut_label": "Commentaire",
+    "hidden":true
+  },
+  "comments": {
+    "type_widget": "textarea",
+    "attribut_label": "Commentaire",
+    "hidden":true
   },
     "date_obs": {
       "type_widget": "date",
       "attribut_label": "Date Observation",
       "required": true
+    },
+    "medias": {
+      "hidden": true
     },
     "type_obs": {
       "type_widget": "select",
@@ -42,11 +55,6 @@
       "required": true,
       "values": ["Installation", "Suivi évolution"]
     },
-  "dddddddd": {
-    "type_widget": "radio",
-    "attribut_label": "Occupation",
-    "values": ["Oui", "Non"]
-  },
   "type_foret": {
     "type_widget": "select",
     "attribut_label": "Type de fôret",
@@ -88,8 +96,7 @@
   "annee_defolia": {
     "type_widget": "date",
     "attribut_label": "Année de défoliation totale ",
-    "values": "12/04/2023",
-    "required": true
+    "values": "12/04/2023"
   },
   "habitat":{
     "type_widget": "datalist",
@@ -100,7 +107,7 @@
     "keyLabel": "search_name",
     "type_util": "habitat",
     "params": {
-        "cd_typo": 5,
+        "cd_typo": 8,
         "search_name": ""
     }
   }

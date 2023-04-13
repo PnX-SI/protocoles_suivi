@@ -4,7 +4,7 @@
   "label_list": "Relevé",
   "display_properties": [
     "observers",
-    "releve_date_min",
+    "visit_date_min",
     "mort_branch",
     "def_foliaire",
     "conso_ramifi_fine",
@@ -26,7 +26,7 @@
     "nb_observations"
   ],
   "specific": {
-    "releve_date_min": {
+    "visit_date_min": {
       "type_widget": "date",
       "attribut_label": "Date du relevé",
       "required": true
@@ -110,6 +110,14 @@
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Remarques libres"
+    },
+    "id_dataset": {
+      "type_widget": "textarea",
+      "attribut_label": "JDD",
+      "hidden" : true
+    },
+    "medias": {
+      "hidden": true
     }
   }
 }

@@ -3,26 +3,24 @@
   "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
   "display_properties": [
-    "num_cepee",
-    "name_cepee",
-    "base_site_name",
+    "base_site_code",
     "circonf",
     "nb_brin",
     "h_max",
-    "comment_site"
+    "base_site_description"
  ],
   "display_list": [
-    "name_cepee",
+    "base_site_name",
     "last_visit",
     "nb_visits"
   ],
   "specific": {
-    "num_cepee": {
+    "base_site_code": {
       "type_widget": "text",
       "attribut_label": "N° de la cépée",
       "required": true
     },
-    "name_cepee": {
+    "base_site_name": {
       "type_widget": "text",
       "attribut_label": "Nom de cépée",
       "required": true
@@ -42,9 +40,25 @@
       "attribut_label": "Hauteur maximale (précision 0,5m)",
       "required": true
     },
-    "comment_site": {
+    "base_site_description": {
       "type_widget": "text",
       "attribut_label": "Remarques libres"
+    },
+    "first_use_date": {
+      "type_widget": "date",
+      "hidden" : true 
+    },
+    "id_nomenclature_type_site": {
+      "hidden" : true 
+    },
+    "id_digitiser": {
+      "hidden" : true 
+    },
+    "id_inventor": {
+      "hidden" : true 
+    },
+    "medias": {
+      "hidden": true
     },
     "nb_visits": {
       "attribut_label": "Nb. de relevé"
