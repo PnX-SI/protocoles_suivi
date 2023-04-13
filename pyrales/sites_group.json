@@ -2,12 +2,11 @@
   "genre":"F",
   "label": "Placette",
   "label_list": "Placette",
-  "map_label_field_name": "base_site_name",
-  "b_draw_sites_group": true,
-  "geometry_type": "Line",
+  "map_label_field_name": "group_site_name",
+  "geometry_type": "LineString",
   "display_properties": [
      "code_co",             
-     "code_placette",        
+     "group_site_name",        
      "date_obs",
      "type_obs",        
      "type_foret",         
@@ -20,7 +19,7 @@
      "annee_defolia"        
   ],
   "display_list": [
-    "sites_group_name",
+    "group_site_name",
     "nb_sites"
   ],
   "specific": {
@@ -28,7 +27,7 @@
       "type_widget": "textarea",
       "attribut_label": "Code CO"
   },
-    "code_placette": {
+    "group_site_name": {
       "type_widget": "textarea",
       "attribut_label": "Code Placette (Dept + numéro d'ordre + R si recepage)"
   },

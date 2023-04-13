@@ -1,10 +1,11 @@
 { "label": "Cépée",
   "label_list": "Cépée",
-  "map_label_field_name": "name_cepee",
+  "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
   "display_properties": [
     "num_cepee",
     "name_cepee",
+    "base_site_name",
     "circonf",
     "nb_brin",
     "h_max",
@@ -12,7 +13,6 @@
  ],
   "display_list": [
     "name_cepee",
-    "first_visit",
     "last_visit",
     "nb_visits"
   ],
@@ -48,10 +48,6 @@
     },
     "nb_visits": {
       "attribut_label": "Nb. de relevé"
-    },
-    "first_visit": {
-      "attribut_label": "Premier relevé",
-      "type_util": "date"
     },
     "last_visit": {
       "attribut_label": "Dernier relevé",
