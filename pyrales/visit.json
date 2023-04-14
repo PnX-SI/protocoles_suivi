@@ -20,10 +20,8 @@
     "comments"
   ],
   "display_list": [
-    "num_passage",
-    "releve_date_min",
-    "observers",
-    "nb_observations"
+    "visit_date_min",
+    "observers"
   ],
   "specific": {
     "visit_date_min": {
@@ -112,9 +110,8 @@
       "attribut_label": "Remarques libres"
     },
     "id_dataset": {
-      "type_widget": "textarea",
-      "attribut_label": "JDD",
-      "hidden" : true
+      "attribut_label": "JDD associé",
+      "hidden" : false
     },
     "medias": {
       "hidden": true

@@ -4,6 +4,7 @@
   "geometry_type": "Point",
   "display_properties": [
     "base_site_code",
+    "base_site_name",
     "circonf",
     "nb_brin",
     "h_max",
@@ -46,18 +47,23 @@
     },
     "first_use_date": {
       "type_widget": "date",
+      "required": false,
       "hidden" : true 
     },
     "id_nomenclature_type_site": {
-      "hidden" : true 
+      "required": true,
+      "hidden" : false 
     },
     "id_digitiser": {
+      "required": false,
       "hidden" : true 
     },
     "id_inventor": {
+      "required": false,
       "hidden" : true 
     },
     "medias": {
+      "required": false,
       "hidden": true
     },
     "nb_visits": {
