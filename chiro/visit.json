@@ -3,6 +3,7 @@
   "display_properties": [
     "id_base_site",
     "visit_date_min",
+    "no_data",
     "nb_observations",
     "observers",
     "observers_txt",
@@ -12,7 +13,6 @@
     "other_comments"
   ],
   "display_list": [
-    "id_base_site",
     "visit_date_min",
     "nb_observations",
     "observers"
@@ -24,19 +24,23 @@
 
   ],
   "specific": {
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
+    },
     "observers_txt": {
       "type_widget": "text",
       "attribut_label": "Observateur (extérieur)"
-    },
-    "id_dataset": {
-      "hidden": true,
-      "value": 2138
     },
     "sheet_id": {
       "type_widget": "number",
       "hidden": true,
       "attribut_label": "Ancien code fiche",
       "value": null
+    },
+    "no_data": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Aucun chiroptère observé",
+      "value": false
     },
     "guano_presency": {
       "type_widget": "bool_checkbox",
