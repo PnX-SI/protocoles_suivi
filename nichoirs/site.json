@@ -1,15 +1,16 @@
 {
   "genre": "M",
-  "cruved": { "C": 3, "U": 3, "D": 3 },
   "label": "nichoir",
   "label_list": "nichoirs",
   "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
   "display_properties": [
-    "id_digitiser",
+    "id_inventor",
+    "referent_mail",
+    "referent_tel",
     "base_site_name",
     "base_site_code",
-    "pose_date",
+    "first_use_date",
     "pose_localisation",
     "localite_precision",
     "nichoir_type",
@@ -43,14 +44,7 @@
       "required": true,
       "hidden": false
     },
-    "id_digitiser": {
-      "type_widget": "text",
-      "attribut_label": "Numérisateur",
-      "required": true,
-      "hidden": true,
-      "type_util": "user"
-    },
-    "pose_date": {
+    "first_use_date": {
       "type_widget": "date",
       "attribut_label": "Date de pose",
       "required": true
@@ -107,14 +101,24 @@
       "attribut_label": "Numéro de tel (propriétaire)",
       "required": true
     },
+    "id_inventor": {
+      "attribut_label": "Référent du nichoir"
+    },
+    "referent_mail": {
+      "type_widget": "text",
+      "attribut_label": "E-mail (référent)"
+    },
+    "referent_tel": {
+      "type_widget": "text",
+      "attribut_label": "Numéro de tel (référent)"
+    },
     "localite_precision": {
       "type_widget": "text",
       "attribut_label": "Précision sur la localisation"
     },
-    "nichoir_referent": {
-      "type_widget": "text",
-      "attribut_label": "Référent du nichoir",
-      "required": true
+    "predateur": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "indices de présence de prédateur"
     },
     "base_site_description": {
       "type_widget": "textarea",
