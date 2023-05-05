@@ -1,0 +1,12 @@
+{
+  "types": [],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "PT_ECREVISSES",
+      "mnemonique": "Site ecrevisses",
+      "label_default": "Site ecrevisses",
+      "definition_default": "Site ecrevisses"
+    }
+  ]
+}
