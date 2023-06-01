@@ -39,6 +39,9 @@
       "required": true,
       "default": {
         "label_default": "Indéterminé"
+      "required": true,
+      "default": {
+        "cd_nomenclature": "1"
       }
     },
     "id_nomenclature_stade": {
@@ -55,7 +58,7 @@
     },
     "id_nomenclature_determination_method": {
       "type_widget": "datalist",
-      "attribut_label": "Méthode de détermination",
+      "attribut_label": "Stade de vie : stade de développement du sujet",
       "api": "nomenclatures/nomenclature/METH_DETERMIN",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",

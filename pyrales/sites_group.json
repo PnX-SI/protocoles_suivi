@@ -1,0 +1,119 @@
+{
+  "genre":"F",
+  "label": "Placette",
+  "label_list": "Placette",
+  "map_label_field_name": "sites_group_name", 
+  "display_properties": [
+     "sites_group_code",             
+     "sites_group_name",        
+     "date_obs",
+     "type_obs",        
+     "type_foret",         
+     "habitat",    
+     "type_peuplement",         
+     "essence_dom",         
+     "couv_forest",         
+     "buis_pres",         
+     "recouv_buis",         
+     "annee_defolia" 
+  ],
+  "display_list": [
+    "sites_group_name",
+    "nb_sites"
+  ],
+  "specific": {
+    "sites_group_code": {
+      "type_widget": "text",
+      "attribut_label": "Code CO"
+  },
+    "sites_group_name": {
+      "type_widget": "textarea",
+      "attribut_label": "Code Placette (Dept + numéro d'ordre + R si recepage)"
+  },
+  "sites_group_description": {
+    "type_widget": "textarea",
+    "attribut_label": "Commentaire",
+    "hidden":true
+  },
+  "comments": {
+    "type_widget": "textarea",
+    "attribut_label": "Commentaire",
+    "hidden":true
+  },
+    "date_obs": {
+      "type_widget": "date",
+      "attribut_label": "Date Observation",
+      "required": true
+    },
+    "medias": {
+      "hidden": true
+    },
+    "type_obs": {
+      "type_widget": "select",
+      "attribut_label": "Type d'observation",
+      "required": true,
+      "values": ["Installation", "Suivi évolution"]
+    },
+  "type_foret": {
+    "type_widget": "select",
+    "attribut_label": "Type de fôret",
+    "required": true,
+    "values": ["Forêt domaniale", "Forêt Communale","Association de Forestiers Privés", "Forêt privée"]
+  },
+  "type_peuplement": {
+    "type_widget": "select",
+    "attribut_label": "Type de peuplement",
+    "required": true,
+    "values": ["A définir", "A définir", "A définir"]
+  },
+  "essence_dom": {
+    "type_widget": "select",
+    "attribut_label": "Essence dominante",
+    "required": true,
+    "values": ["Hêtre ", "Chêne sessile", "Chêne pédonculé","Chêne cf. pubescent","Erable à feuille d'obier","Erable sycomore","Tilleul","Pin noir","Pin sylvestre","Charme","Sapin pectiné","Epicéa","Frêne","Robinier faux-acacia","Autre(s)…"]
+  },
+  "buis_pres": {
+    "type_widget": "select",
+    "attribut_label": "Buis présent ",
+    "required": true,
+    "values": ["sous étages (SE)", "seul (AL)", "mélange avec autre essences (ME)"]
+  },
+  "recouv_buis": {
+    "type_widget": "number",
+    "attribut_label": "Couvert Forestier libre (%)",
+    "required": false,
+    "min": 0,
+    "max": 100
+  },
+  "couv_forest": {
+    "type_widget": "number",
+    "attribut_label": "Recouvrement du sous étage de buis (%)",
+    "required": false,
+    "min": 0,
+    "max": 100
+  },
+  "annee_defolia": {
+    "type_widget": "number",
+    "attribut_label": "Couvert Forestier libre (%)",
+    "required": false,
+    "values": 2023,
+    "min": 2000,
+    "max": 2200
+  },
+  "habitat":{
+    "type_widget": "datalist",
+    "attribut_label": "Type d’habitat",
+    "api": "habref/habitats/autocomplete",
+    "application": "GeoNature",
+    "keyValue": "cd_hab",
+    "keyLabel": "search_name",
+    "type_util": "habitat",
+    "filters": {"lb_code": ["F3.12","G","G1","G1.1","G1.11","G1.12","G1.13","G1.2","G1.21","G1.22","G1.3","G1.31","G1.32","G1.33","G1.34","G1.35","G1.36","G1.37","G1.38","G1.39","G1.4","G1.41","G1.42","G1.43","G1.44","G1.5","G1.51","G1.52","G1.6","G1.61","G1.62","G1.63","G1.64","G1.65","G1.66","G1.67","G1.68","G1.69","G1.6A","G1.6B","G1.6C","G1.6D","G1.6E","G1.6F","G1.6G","G1.6H","G1.6I","G1.6J","G1.7","G1.71","G1.72","G1.73","G1.74","G1.75","G1.76","G1.77","G1.78","G1.79","G1.7A","G1.7B","G1.7C","G1.7D","G1.8","G1.81","G1.82","G1.83","G1.84","G1.85","G1.86","G1.87","G1.88","G1.89","G1.8A","G1.9","G1.91","G1.92","G1.93","G1.94","G1.95","G1.A","G1.A1","G1.A2","G1.A3","G1.A4","G1.A5","G1.A6","G1.A7","G1.A8","G1.B","G1.B1","G1.B2","G1.B3","G1.C","G1.C1","G1.C2","G1.C3","G1.C4","G1.D","G1.D1","G1.D2","G1.D3","G1.D4","G1.D5","G2","G2.1","G2.11","G2.12","G2.13","G2.2","G2.21","G2.22","G2.3","G2.31","G2.32","G2.33","G2.4","G2.41","G2.42","G2.43","G2.5","G2.51","G2.52","G2.53","G2.6","G2.7","G2.71","G2.72","G2.73","G2.8","G2.81","G2.82","G2.83","G2.9","G2.91","G2.92","G2.93","G2.94","G3","G3.1","G3.11","G3.12","G3.13","G3.14","G3.15","G3.16","G3.17","G3.18","G3.19","G3.1A","G3.1B","G3.1C","G3.1D","G3.1E","G3.1F","G3.1G","G3.1H","G3.1I","G3.1J","G3.1K","G3.2","G3.21","G3.22","G3.23","G3.24","G3.25","G3.26","G3.3","G3.31","G3.32","G3.33","G3.4","G3.41","G3.42","G3.43","G3.44","G3.45","G3.46","G3.47","G3.48","G3.49","G3.4A","G3.4B","G3.4C","G3.4D","G3.4E","G3.4F","G3.5","G3.51","G3.52","G3.53","G3.54","G3.55","G3.56","G3.57","G3.6","G3.61","G3.62","G3.7","G3.71","G3.72","G3.73","G3.74","G3.75","G3.8","G3.81","G3.82","G3.83","G3.84","G3.85","G3.9","G3.91","G3.92","G3.93","G3.94","G3.95","G3.96","G3.97","G3.98","G3.99","G3.9A","G3.9B","G3.9C","G3.A","G3.A1","G3.A2","G3.A3","G3.A4","G3.A5","G3.B","G3.B1","G3.B2","G3.B3","G3.B4","G3.C","G3.C1","G3.D","G3.D1","G3.D2","G3.D3","G3.D4","G3.D5","G3.E","G3.E1","G3.E2","G3.E3","G3.E4","G3.E5","G3.E6","G3.F","G3.F1","G3.F2","G4","G4.1","G4.2","G4.3","G4.31","G4.32","G4.33","G4.4","G4.5","G4.6","G4.7","G4.71","G4.72","G4.8","G4.9","G4.A","G4.B","G4.C","G4.D","G4.E","G4.F","G5","G5.1","G5.2","G5.3","G5.4","G5.5","G5.6","G5.61","G5.62","G5.63","G5.64","G5.7","G5.71","G5.72","G5.73","G5.74","G5.75","G5.76","G5.8","G5.81","G5.82","G5.83","G5.84","G5.85"]},
+    "params": {
+        "cd_typo": 7,
+        "search_name": "",
+        "limit": "999999"
+    }
+  }
+  }
+}

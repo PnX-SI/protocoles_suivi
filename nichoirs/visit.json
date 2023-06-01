@@ -1,14 +1,17 @@
 {
   "chained": false,
-  "cruved": { "C": 1, "U": 1, "D": 3 },
   "genre": "M",
   "label": "Passage",
   "display_properties": [
     "visit_date_min",
     "observers",
-    "occupation",
     "etat_nichoir",
     "comments"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "nb_observations"
   ],
   "specific": {
     "visit_date_min": {
@@ -27,11 +30,6 @@
       "multiple": true,
       "required": true
     },
-    "occupation": {
-      "type_widget": "radio",
-      "attribut_label": "Occupation",
-      "values": ["Oui", "Non"]
-    },
     "etat_nichoir": {
       "type_widget": "select",
       "attribut_label": "Etat du nichoir",
@@ -41,6 +39,9 @@
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire"
+    },
+    "medias": {
+      "hidden": true
     }
   }
 }
