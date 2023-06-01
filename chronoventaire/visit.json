@@ -53,7 +53,7 @@
     "floral_availability": {
       "type_widget": "select",
       "required": true,
-      "attribut_label": "Groupe Chronovbentaire",
+      "attribut_label": "Groupes Chronoventaire",
       "values": ["RHOP1", "RHOP2", "RHOPZYG1", "RHOPZYG2"]
     },
     "group_chronoventaire": {
