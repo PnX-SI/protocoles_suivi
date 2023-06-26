@@ -178,7 +178,7 @@ SELECT
 from gn_monitoring.t_base_sites s
 JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
-JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND  mod.module_code = 'lichens_bio_indicateurs'
+JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND  mod.module_code = :module_code
 JOIN gn_monitoring.t_base_visits AS tbv ON tbv.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.t_observations AS to2 ON to2.id_base_visit = tbv.id_base_visit
 JOIN gn_monitoring.t_observation_complements AS toc ON toc.id_observation = to2.id_observation
