@@ -2,17 +2,33 @@
   "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "cd_nom",
+    "parataxon",
+    "count_min",
+    "count_max",
+    "id_nomenclature_sex",
+    "id_nomenclature_life_stage",
     "id_nomenclature_behaviour",
     "id_nomenclature_bio_condition",
     "id_nomenclature_bio_status",
     "id_nomenclature_obs_technique",
-    "id_nomenclature_life_stage",
-    "id_nomenclature_sex",
-    "count_indiv",
     "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "count_min",
+    "count_max",
+    "id_nomenclature_behaviour",
+    "id_nomenclature_bio_status"
   ],
   "redirect_to_parent": true,
   "specific": {
+    "parataxon": {
+      "type_widget": "select",
+      "attribut_label": "Parataxon",
+      "values": [
+        "Myotis de grandes tailles"
+      ]
+    },
       "id_nomenclature_behaviour": {
         "type_widget": "nomenclature",
         "attribut_label": "Comportement",
@@ -23,7 +39,7 @@
           "code_nomenclature_type": "OCC_COMPORTEMENT",
           "cd_nomenclature": "1"
         },
-       "cd_nomenclatures": ["1","10", "7"]
+       "cd_nomenclatures": ["1","10", "7", "9", "13", "15" ]
 
     },
     "id_nomenclature_bio_condition": {
@@ -47,7 +63,7 @@
         "code_nomenclature_type": "STATUT_BIO",
         "cd_nomenclature": "0"
       },
-      "cd_nomenclatures": ["3", "4", "9", "0" ]
+      "cd_nomenclatures": ["3", "4", "9", "0", "1" ]
 
     },
     "id_nomenclature_obs_technique": {
@@ -60,7 +76,7 @@
         "code_nomenclature_type": "METH_OBS",
         "cd_nomenclature": "0"
       },
-      "cd_nomenclatures": ["0", "3", "6"]
+      "cd_nomenclatures": ["0", "3", "6", "133"]
     },
     "id_nomenclature_life_stage": {
       "type_widget": "nomenclature",
@@ -82,14 +98,23 @@
       "required": true,
       "value": {
         "code_nomenclature_type": "SEXE",
-        "cd_nomenclature": "1"
+        "cd_nomenclature": "6"
       },
-      "cd_nomenclatures": ["0","1", "2", "3"]
+      "cd_nomenclatures": ["0", "2", "3", "6"]
     },
-    "count_indiv": {
+    "count_min": {
       "type_widget": "number",
-      "attribut_label": "Dénombrement",
-      "min": 1
+      "attribut_label": "Dénombrement (minimum)",
+      "min": 1,
+      "value": 1,
+      "required": true
+    },
+    "count_max": {
+      "type_widget": "number",
+      "attribut_label": "Dénombrement (maximum)",
+      "min": 1,
+      "value": 1,
+      "required": true
     },
     "medias": {
       "hidden": true,
