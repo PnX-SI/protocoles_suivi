@@ -106,6 +106,12 @@
       "attribut_label": "Nom de la station",
       "required": true
     },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code de la station",
+      "required": false,
+      "hidden": true
+    },
     "nb_visits": {
       "attribut_label": "Nb. de passages"
     },
