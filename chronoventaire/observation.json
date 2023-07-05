@@ -39,9 +39,6 @@
       "required": true,
       "default": {
         "label_default": "Indéterminé"
-      "required": true,
-      "default": {
-        "cd_nomenclature": "1"
       }
     },
     "id_nomenclature_stade": {
@@ -54,11 +51,14 @@
       "data_path": "values",
       "type_util": "nomenclature",
       "filters": {"label_default": ["Inconnu","Chrysalide","Imago","Chenille","Œuf"]},
-      "required": true
+      "required": true,
+      "default": {
+        "label_default": "Imago"
+      }
     },
     "id_nomenclature_determination_method": {
       "type_widget": "datalist",
-      "attribut_label": "Stade de vie : stade de développement du sujet",
+      "attribut_label": "Méthode de détermination",
       "api": "nomenclatures/nomenclature/METH_DETERMIN",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
