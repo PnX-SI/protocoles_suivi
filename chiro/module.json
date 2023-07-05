@@ -1,6 +1,6 @@
 {
     "module_label":"Chiroptères",
-    "module_desc":"Module pour le suivi des gîtes de chiroptères",
+    "module_desc":"Suivi des gîtes de chiroptères",
     "permission_objects" : [
         "GNM_SITES",
         "GNM_VISITES"
@@ -13,5 +13,5 @@
         { "label": "Observations", "type":"csv" , "method": "observations" },
         { "label": "Sites", "type":"csv" , "method": "sites" }
     ]
-    
+
 }

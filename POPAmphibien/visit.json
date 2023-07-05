@@ -3,18 +3,21 @@
   "label": "Passage",
   "label_list": "Passages",
   "display_properties": [
-
+    "id_dataset",
     "observers",
     "num_passage",
     "visit_date_min",
-    "temperature_air",
-    "temperature_eau",
+    "accessibility",
     "pluviosite",
-    "ensoleillement",
+    "couverture_nuageuse",
     "vent",
+    "turbidite",
+    "vegetation_aquatique_principale", 
+    "rives",
+    "habitat_terrestre_environnant", 
+    "activite_humaine",
     "methode_de_prospection",
     "presence_amphibien",
-    "presence_poisson",
     "comments"
   ],
   "display_list": [
@@ -26,68 +29,124 @@
   "keep": [
     "observers",
     "visit_date_min",
-    "temperature_air",
-    "temperature_eau",
+    "accessibility",
     "pluviosite",
-    "ensoleillement",
+    "couverture_nuageuse",
     "vent",
+    "turbidite",
+    "vegetation_aquatique_principale", 
+    "rives",
+    "habitat_terrestre_environnant", 
+    "activite_humaine",
     "methode_de_prospection",
     "presence_amphibien",
-    "presence_poisson",
     "comments"
   ],
   "specific": {
-    "num_passage": {
-      "type_widget": "text",
-      "required": true,
-      "attribut_label": "Numéro de passage"
-    },
     "id_base_site": {
       "type_widget": "site",
       "required": true,
       "attribut_label": "Site"
     },
-    "temperature_air": {
-      "type_widget": "number",
-      "attribut_label": "Température de l’air (en °C)",
-      "required": false,
-      "min": -25,
-      "max": 60
+    "num_passage": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Numéro de passage",
+      "values": ["1er passage", "2eme passage", "3eme passage"]
     },
-    "temperature_eau": {
-      "type_widget": "number",
-      "attribut_label": "Température de l’eau (en °C)",
-      "required": false,
-      "min": -25,
-      "max": 60
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du passage",
+      "required": true
+    },
+    "accessibility": {
+       "type_widget": "radio",
+       "required": true,
+       "attribut_label": "Le site est accessible",
+       "values": ["Oui", "Non"],
+       "value": "Oui"
     },
     "pluviosite": {
       "type_widget": "nomenclature",
       "attribut_label": "Pluviosité",
       "code_nomenclature_type": "PLUVIOSITE",
 	    "required": false,
-      "type_util": "nomenclature"
+      "type_util": "nomenclature", 
+      "hidden":"({value}) => value.accessibility === 'Non'"
     },
-    "ensoleillement": {
+    "couverture_nuageuse": {
       "type_widget": "nomenclature",
-      "attribut_label": "Ensoleillement (% de recouvrement nuageux)",
-      "code_nomenclature_type": "ENSOLEILLEMENT",
+      "attribut_label": "Couverture nuageuse",
+      "code_nomenclature_type": "COUVERTURE_NUAGEUSE",
 	    "required": false,
-      "type_util": "nomenclature"
+      "type_util": "nomenclature",
+      "hidden":"({value}) => value.accessibility === 'Non'"
     },
     "vent": {
       "type_widget": "nomenclature",
       "attribut_label": "Vent",
       "code_nomenclature_type": "VENT",
-	    "required": false,
-      "type_util": "nomenclature"    
+      "required": false,
+      "type_util": "nomenclature" ,
+      "hidden":"({value}) => value.accessibility === 'Non'"   
+    },
+    "turbidite": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Turbidité",
+      "code_nomenclature_type": "TURBIDITE",
+      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
+      "type_util": "nomenclature",
+      "hidden":"({value}) => value.accessibility === 'Non'"
+    },
+    "vegetation_aquatique_principale": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Végétation aquatique principale",
+      "code_nomenclature_type": "VEGETATION_AQUATIQUE",
+      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
+      "type_util": "nomenclature",
+      "hidden":"({value}) => value.accessibility === 'Non'"
+    },
+    "rives": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Rives",
+      "code_nomenclature_type": "RIVES",
+      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
+      "type_util": "nomenclature",
+      "title":"Indiquer la catégorie majoritaire",
+      "hidden":"({value}) => value.accessibility === 'Non'"
+    },
+    "habitat_terrestre_environnant": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Habitat terrestre environnant",
+      "code_nomenclature_type": "HABITAT_TERRESTRE_MAJORITAIRE",
+      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
+      "type_util": "nomenclature",
+      "title":"Indiquer la catégorie majoritaire",
+      "hidden":"({value}) => value.accessibility === 'Non'"
+    },
+    "activite_humaine": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Activité humaine",
+      "code_nomenclature_type": "ACTIVITE_HUMAINE",
+      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
+      "type_util": "nomenclature",
+      "hidden":"({value}) => value.accessibility === 'Non'"
     },
     "methode_de_prospection": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Méthode de prospection",
-      "code_nomenclature_type": "METHODE_PROSPECTION",
-	    "required": false,
-      "type_util": "nomenclature"
+      "type_widget": "datalist",
+      "attribut_label": "Méthode(s) de prospection",
+      "api": "nomenclatures/nomenclature/METHODE_PROSPECTION",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "multiple": true,
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": "({value}) => value.accessibility === 'Oui'",
+      "default": {
+        "cd_nomenclature": "1"
+      },
+      "hidden":"({value}) => value.accessibility === 'Non'"
     },
     "comments": {
       "type_widget": "textarea",
@@ -96,18 +155,10 @@
     "presence_amphibien": {
       "type_widget": "radio",
       "attribut_label": "Présence d’amphibiens",
-      "values": ["Oui", "Non"]
-    },
-    "presence_poisson": {
-      "type_widget": "radio",
-      "attribut_label": "Présence de poissons",
-      "values": ["Oui", "Non"]
-    },
-     "visit_date_min": {
-      "type_widget": "date",
-      "attribut_label": "Date du passage",
-      "required": true
-    },
+      "values": ["Oui", "Non"],
+      "required": "({value}) => value.accessibility === 'Oui'",
+      "hidden":"({value}) => value.accessibility === 'Non'"
+    }, 
     "nb_observations": {
       "attribut_label": "Nb. d'observations"
     }

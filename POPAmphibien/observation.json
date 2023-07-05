@@ -2,68 +2,92 @@
   "description_field_name":"cd_nom",
   "genre":"F",
   "display_properties": [
-    "cd_nom",
-    "id_nomenclature_stade",
-    "sexe",
-    "nombre",
-    "nombre_compte",
-    "nombre_estime",
-    "comments"
-  ],
-  "display_list": [
-    "cd_nom",
-    "nombre_compte",
-    "nombre_estime"
-  ],
+  "cd_nom",
+  "id_nomenclature_stade",
+  "id_nomenclature_sex",
+  "id_nomenclature_typ_denbr",
+  "count_min",
+  "count_max",
+  "comments"
+],
+"display_list": [
+  "cd_nom",
+  "id_nomenclature_typ_denbr",
+  "count_min",
+  "count_max"
+],
   "specific": {
     "cd_nom": {
       "type_widget": "taxonomy",
-      "attribut_label": "Taxon",
-      "type_util": "taxonomy",
-      "required": true,
-      "id_list": "__MODULE.ID_LIST_TAXONOMY"
-    },
+      "attribut_label": "Espèces observées",
+      "keyValue": "cd_nom",
+      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
+      "multiple": false,
+      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": false,
+      "type_util": "taxonomy"
+    } ,
     "id_nomenclature_stade": {
       "type_widget": "datalist",
-      "attribut_label": "Stade de vie : stade de développement du sujet",
+      "attribut_label": "Stade de vie",
       "api": "nomenclatures/nomenclature/STADE_VIE",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
       "data_path": "values",
-      "params": {
-        "orderby": "label_fr",
-        "regne": "Animalia",
-        "group2_inpn": "Amphibiens"
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+          "cd_nomenclature": ["1", "2", "3", "8", "9"]
       },
-      "type_util": "nomenclature",
-      "required": true
+      "default": {
+        "cd_nomenclature": "1"
+      }
     },
-    "sexe": {
-      "type_widget": "radio",
+    "id_nomenclature_sex": {
+      "type_widget": "datalist",
       "attribut_label": "Sexe",
-      "values": ["Mâle", "Femelle", "Indéterminé"]
-    },
-    "nombre": {
-      "type_widget": "radio",
-      "attribut_label": "Nombre",
-      "values": ["Compté", "Estimé"]
-    },
-    "nombre_compte": {
-      "type_widget": "number",
-      "attribut_label": "Nombre (compté)",
-      "required": false,
-      "min": -25,
-      "max": 60,
-      "hidden": "({value}) => value.nombre != 'Compté'"
-    },
-    "nombre_estime": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Nombre (estimé)",
-      "code_nomenclature_type": "NOMBRE_ESTIME",
-	    "required": false,
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
       "type_util": "nomenclature",
-      "hidden": "({value}) => value.nombre != 'Estimé'"
+      "required": true,
+      "filters": {
+          "cd_nomenclature": ["1", "2", "3"]
+      },
+      "default": {
+        "cd_nomenclature": "1"
+      }
+    },
+    "id_nomenclature_typ_denbr": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de dénombrement",
+      "api": "nomenclatures/nomenclature/TYP_DENBR",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "filters": {
+          "cd_nomenclature": ["Co", "Es"]
+      }
+    },
+    "count_min": {
+      "type_widget": "number",
+      "attribut_label": "Nombre minimum",
+      "required": false,
+      "min": 1,
+      "value": 1
+    },
+    "count_max": {
+      "type_widget": "number",
+      "attribut_label": "Nombre maximum",
+      "required": "({value}) => value.count_min !=1",
+      "min": "({value}) => value.count_min"
     },
     "comments": {
       "type_widget": "textarea",
