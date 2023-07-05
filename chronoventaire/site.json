@@ -38,7 +38,7 @@
     },
     "CodeHabitatStation1":{
       "type_widget": "datalist",
-      "attribut_label": "Type d’habitat principale autour de la station (30 mètres)",
+      "attribut_label": "Type d’habitat principale autour de la station",
       "api": "habref/habitats/autocomplete",
       "application": "GeoNature",
       "keyValue": "cd_hab",
@@ -52,7 +52,7 @@
     },
     "CodeHabitatStation2":{
       "type_widget": "datalist",
-      "attribut_label": "Type d’habitat secondaire autour de la station (30 mètres)",
+      "attribut_label": "Type d’habitat secondaire autour de la station",
       "api": "habref/habitats/autocomplete",
       "application": "GeoNature",
       "keyValue": "cd_hab",
@@ -66,7 +66,7 @@
     },
     "CodeHabitatAdjacent1":{
       "type_widget": "datalist",
-      "attribut_label": "Type d’habitat principale adjacent à la station (au delà des 30 mètres)",
+      "attribut_label": "Type d’habitat principale adjacent à la station",
       "api": "habref/habitats/autocomplete",
       "application": "GeoNature",
       "keyValue": "cd_hab",
@@ -80,7 +80,7 @@
     },
     "CodeHabitatAdjacent2":{
       "type_widget": "datalist",
-      "attribut_label": "Type d’habitat secondaire adjacent à la station (au delà des 30 mètres)",
+      "attribut_label": "Type d’habitat secondaire adjacent à la station",
       "api": "habref/habitats/autocomplete",
       "application": "GeoNature",
       "keyValue": "cd_hab",

@@ -36,7 +36,7 @@
       "type_widget": "select",
       "required": true,
       "attribut_label": "Couverture nuageuse",
-      "values": ["0 à 25%", "25 à 50%", "Plus de 50%"]
+      "values": ["0 à 10%","10 à 25%", "25 à 50%", "Plus de 50%"]
     },
     "wind": {
       "type_widget": "select",
@@ -53,19 +53,19 @@
     "floral_availability": {
       "type_widget": "select",
       "required": true,
-      "attribut_label": "Groupes Chronoventaire",
-      "values": ["RHOP1", "RHOP2", "RHOPZYG1", "RHOPZYG2"]
+      "attribut_label": "Disponibilité florale",
+      "values": ["FLEUR_1", "FLEUR_2", "FLEUR_3", "FLEUR_4"]
     },
     "group_chronoventaire": {
       "type_widget": "select",
       "required": true,
-      "attribut_label": "Disponibilité florale",
-      "values": ["FLEUR_1", "FLEUR_2", "FLEUR_3", "FLEUR_4"]
+      "attribut_label": "Groupes Chronoventaire",
+      "values": ["RHOP1", "RHOP2", "RHOPZYG1", "RHOPZYG2"]
     },
     "end_temperature": {
       "type_widget": "number",
       "attribut_label": "Température à la fin du relevé",
-      "required": true
+      "required": false
     },
     "duration": {
       "type_widget": "time",
