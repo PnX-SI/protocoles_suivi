@@ -121,7 +121,7 @@
     },
     "id_dataset": {
       "attribut_label": "JDD associé",
-      "hidden" : false
+      "hidden" : true
     },
     "medias": {
       "hidden": true
