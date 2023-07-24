@@ -75,8 +75,7 @@
       "hidden": true
     },
     "id_dataset": {
-      "hidden": true,
-      "value": 5212
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
     },
     "comments": {
       "hidden": false,
