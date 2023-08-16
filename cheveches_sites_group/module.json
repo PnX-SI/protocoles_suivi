@@ -1,11 +1,6 @@
 {
     "module_label": "Chevêches (groupe de sites)",
     "module_desc": "Module pour le protocole chevêches mâles chanteurs",
-    "permission_objects": [
-        "GNM_GRP_SITES",
-        "GNM_SITES",
-        "GNM_VISITES"
-    ],
     "export_csv": [
         {
             "label": "Liste des Sites",
