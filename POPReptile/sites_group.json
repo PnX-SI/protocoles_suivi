@@ -42,21 +42,6 @@
       "hidden": false,
       "type_util": "nomenclature"
     },
-    "id_dataset": {
-      "type_widget": "datalist",
-      "attribut_label": "Jeu de données",
-      "type_util": "dataset",
-      "api": "meta/datasets",
-      "application": "GeoNature",
-      "keyValue": "id_dataset",
-      "keyLabel": "dataset_shortname",
-      "required": true,
-      "params": {
-        "orderby": "dataset_name",
-        "module_code": "__MODULE.MODULE_CODE"
-      }
-    },
-
     "commune": {
       "type_widget": "municipalities",
       "attribut_label": "Commune",

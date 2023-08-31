@@ -4,6 +4,7 @@ CREATE OR REPLACE VIEW gn_monitoring.v_export_lichens_bio_indicateurs_placettes
 SELECT
     s.id_base_site AS code_placette,
     s.base_site_name AS nom_placette,
+    concat_ws(' ', tr.nom_role, tr.prenom_role) AS descripteur,
     st_astext(s.geom) AS geom,
     a.jname->>'COM' AS commune,
     a.jname->>'MASSIF' AS massif,
@@ -111,6 +112,7 @@ JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
 JOIN gn_monitoring.t_base_visits AS tbv ON tbv.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.t_visit_complements AS tvc ON tbv.id_base_visit  = tvc.id_base_visit AND NOT COALESCE((tvc.DATA->>'test_detectabilite')::boolean, FALSE) IS TRUE
 JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND mod.module_code = :module_code
+LEFT OUTER JOIN utilisateurs.t_roles AS tr on tr.id_role = s.id_inventor
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS tn ON tn.id_nomenclature = (tsc."data"->>'id_nomenclature_exposition')::int
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hde1 ON hde1.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_1', '-1'))::int
 LEFT OUTER JOIN ref_nomenclatures.t_nomenclatures AS hdehp1 ON hdehp1.id_nomenclature = (COALESCE(tvc."data"->>'hauteur_dominante_essence_tgb_hors_placette_1', '-1'))::int
@@ -153,10 +155,11 @@ DROP VIEW IF EXISTS gn_monitoring.v_export_lichens_bio_indicateurs_taxons;
 CREATE OR REPLACE VIEW gn_monitoring.v_export_lichens_bio_indicateurs_taxons
  AS
 SELECT
-    s.id_base_site AS code_gite,
-    s.base_site_name AS nom_gite,
+    s.id_base_site AS code_placette,
+    s.base_site_name AS nom_placette,
     st_astext(s.geom) AS geom,
     s.base_site_description AS description,
+    obs.observateurs,
     tbv.visit_date_min ,
     to2.cd_nom,
     t.nom_complet,
@@ -175,9 +178,16 @@ SELECT
 from gn_monitoring.t_base_sites s
 JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
-JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND  mod.module_code = 'lichens_bio_indicateurs'
+JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module AND  mod.module_code = :module_code
 JOIN gn_monitoring.t_base_visits AS tbv ON tbv.id_base_site = tsc.id_base_site
 JOIN gn_monitoring.t_observations AS to2 ON to2.id_base_visit = tbv.id_base_visit
 JOIN gn_monitoring.t_observation_complements AS toc ON toc.id_observation = to2.id_observation
 JOIN taxonomie.taxref AS t ON t.cd_nom = to2.cd_nom
+LEFT JOIN LATERAL ( SELECT string_agg(concat(UPPER(tr.nom_role), ' ', tr.prenom_role), ', ') AS observateurs
+       FROM  gn_monitoring.cor_visit_observer AS cvo
+       JOIN utilisateurs.t_roles AS tr
+       ON tr.id_role = cvo.id_role
+       WHERE cvo.id_base_visit = tbv.id_base_visit
+    GROUP BY cvo.id_base_visit)
+obs ON TRUE
 ;
