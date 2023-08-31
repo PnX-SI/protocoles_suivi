@@ -1,8 +1,8 @@
 {
   "chained": false,
   "display_properties": [
+    "observers",
     "id_dataset",
-    "observeurs",
     "visit_date_min",
     "tech_gestion",
     "comments",
@@ -14,7 +14,7 @@
   "display_list": [
     "visit_date_min",
     "tech_gestion",
-    "observeurs",
+    "observers",
     "haut_max"
   ],
   "specific": {
@@ -23,12 +23,6 @@
       "required": true,
       "attribut_label": "Technique de gestion",
       "values": ["Aucune gestion","Arrachage","Fauche","Cerclage","Paturage","Bachage", "Autre technique de lutte à préciser"]
-    },
-    "observeurs": {
-      "type_widget": "select",
-      "required": true,
-      "attribut_label": "Observateur",
-      "values": ["Anthony Voute","Grégory Hebrard","Juliette Rabdeau"]
     },
     "surface": {
       "type_widget": "number",
@@ -44,7 +38,7 @@
     "nb_plan": {
       "type_widget": "number",
       "required": false,
-      "attribut_label": "Nombre de plan"
+      "attribut_label": "Nombre de plan(s)"
     },
     "haut_max": {
       "type_widget": "number",
@@ -59,7 +53,7 @@
       "required": false
     },
     "id_dataset": {
-      "attribut_label": "JDD",
+      "attribut_label": "Jeu de données",
       "hidden": false
     },
     "comments": {
