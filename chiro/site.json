@@ -24,14 +24,17 @@
     "nb_visits",
     "threat",
     "recommandation",
+    "adjustments_type",
+    "adjustments_date",
     "opening",
+    "id_nomenclature_attendance",
     "owner_name",
     "owner_adress",
     "owner_tel",
     "owner_mail",
+    "owner_comments",
     "base_site_description",
-    "place_name",
-    "medias"
+    "place_name"
   ],
   "display_list": [
     "base_site_name",
@@ -48,36 +51,11 @@
       }
     },
     "roost_type": {
-      "type_widget": "select",
-      "required": true,
+      "type_widget": "nomenclature",
       "attribut_label": "Type de gite",
-      "values": [
-        "barrage",
-        "bâtiment",
-        "cave",
-        "Ebouli",
-        "église",
-        "façade",
-        "four",
-        "garage",
-        "Gîte artificiel",
-        "grange",
-        "grenier",
-        "grotte",
-        "maison",
-        "mine",
-        "mur",
-        "panneau",
-        "plancher",
-        "pont",
-        "ruine",
-        "toit",
-        "toit et volet",
-        "transformateur",
-        "tunnel",
-        "volet",
-        "Autre"
-        ]
+      "code_nomenclature_type": "CHIRO_ROOST_TYPE",
+      "type_util": "nomenclature",
+      "required": true
     },
     "place_name": {
       "type_widget": "text",
@@ -112,6 +90,34 @@
       "type_widget": "textarea",
       "attribut_label": "Mesure(s) préconisé(s)",
       "rows": 3
+    },
+    "adjustments_type": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Aménagement",
+      "code_nomenclature_type": "CHIRO_ADJUSTMENTS",
+      "type_util": "nomenclature"
+    },
+    "adjustments_date": {
+      "type_widget": "date",
+      "required": false,
+      "attribut_label": "Date de l'aménagement"
+    },
+    "owner_comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Propriétaire informations complémentaires",
+      "rows": 3
+    },
+    "id_nomenclature_attendance": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Fréquentation",
+      "code_nomenclature_type": "CHI_FREQUENTATION",
+      "type_util": "nomenclature",
+      "required": false
+    },
+    "site_code_national": {
+      "type_widget": "text",
+      "attribut_label": "Code du site au niveau des autres reseaux",
+      "hidden": true
     }
   }
 }

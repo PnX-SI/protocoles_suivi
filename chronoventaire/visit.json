@@ -1,0 +1,75 @@
+{
+  "display_properties": [
+    "observers",
+    "id_dataset",
+    "visit_date_min",
+    "time_start",
+    "start_temperature",
+    "cloudiness",
+    "wind",
+    "pasture_status",
+    "floral_availability",
+    "group_chronoventaire",
+    "duration"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "floral_availability"
+  ],
+  "specific": {
+    "time_start": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début du relevé"
+    },
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du relevé",
+      "required": true
+    },
+    "start_temperature": {
+      "type_widget": "number",
+      "attribut_label": "Température au début du relevé",
+      "required": true
+    },
+    "cloudiness": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Couverture nuageuse",
+      "values": ["0 à 10%","10 à 25%", "25 à 50%", "Plus de 50%"]
+    },
+    "wind": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Vent",
+      "values": ["Nul à faible", "Moyen", "Soutenu", "Rafales"]
+    },
+    "pasture_status": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Etat du pâturage",
+      "values": ["Non pâturé", "Pâturage en cours", "Pâturage terminé"]
+    },
+    "floral_availability": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Disponibilité florale",
+      "values": ["FLEUR_1", "FLEUR_2", "FLEUR_3", "FLEUR_4"]
+    },
+    "group_chronoventaire": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Groupes Chronoventaire",
+      "values": ["RHOP1", "RHOP2", "RHOPZYG1", "RHOPZYG2"]
+    },
+    "end_temperature": {
+      "type_widget": "number",
+      "attribut_label": "Température à la fin du relevé",
+      "required": false
+    },
+    "duration": {
+      "type_widget": "time",
+      "attribut_label": "Durée de la détermination"
+    }
+  }
+}
