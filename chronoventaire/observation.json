@@ -24,7 +24,7 @@
       "type_widget": "select",
       "attribut_label": "Round",
       "required": true,
-      "values": ["Round 1 : 0-5mn", "Round 2 : 5-10mn", "Round 3 : 10-15mn", "Round 4 : 15-20mn", "Round 5 : 20-25", "Round 6 : 25-30mn", "Round 7 : 30-35mn", "Round 8 : 35-40mn", "Round 9 : 40-45mn", "Round 10 : 45-50mn", "Round 11 : 50-55mn", "Round 12 : 55-60mn"]
+      "values": ["Round 1 : 0-5mn", "Round 2 : 5-10mn", "Round 3 : 10-15mn", "Round 4 : 15-20mn", "Round 5 : 20-25mn", "Round 6 : 25-30mn", "Round 7 : 30-35mn", "Round 8 : 35-40mn", "Round 9 : 40-45mn", "Round 10 : 45-50mn", "Round 11 : 50-55mn", "Round 12 : 55-60mn"]
     },
     "id_sexe": {
       "type_widget": "datalist",
