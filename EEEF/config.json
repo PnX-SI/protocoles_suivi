@@ -3,10 +3,11 @@
     "module": {
       "sites_group": {
         "site": {
-          "visit": {
-            "observation": null
-          }
+          "visit": null
         }
+      },
+      "site": {
+        "visit": null
       }
     }
   }

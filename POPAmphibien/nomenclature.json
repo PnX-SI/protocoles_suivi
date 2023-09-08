@@ -36,9 +36,9 @@
       "definition_default": "Rives (protocôle de suivi POPAmphibien)"
     },
     {
-      "mnemonique": "HABITAT_TERRESTRE",
-      "label_default": "Habitat terrestre environnant",
-      "definition_default": "Habitat terrestre environnant(protocôle de suivi POPAmphibien)"
+      "mnemonique": "HABITAT_TERRESTRE_MAJORITAIRE",
+      "label_default": "Habitat terrestre environnant majoritaire",
+      "definition_default": "Habitat terrestre environnant majoritaire(protocôle de suivi POPAmphibien)"
     },
     {
       "mnemonique": "ACTIVITE_HUMAINE",
@@ -46,19 +46,14 @@
       "definition_default": "Activité humaine(protocôle de suivi POPAmphibien)"
     },
     {
-      "mnemonique": "SITE_PROTEGE",
-      "label_default": "Site protégé",
-      "definition_default": "Site protégé(protocôle de suivi POPAmphibien)"
-    },
-    {
       "mnemonique": "PLUVIOSITE",
       "label_default": "Pluviosité",
       "definition_default": "Pluviosité (protocôle de suivi POPAmphibien)"
     },
     {
-      "mnemonique": "ENSOLEILLEMENT",
-      "label_default": "ensoleillement",
-      "definition_default": "ensoleillement (protocôle de suivi POPAmphibien)"
+      "mnemonique": "COUVERTURE_NUAGEUSE",
+      "label_default": "Couverture nuageuse",
+      "definition_default": "couverture nuageuse (protocôle de suivi POPAmphibien)"
     },
     {
       "mnemonique": "METHODE_PROSPECTION",
@@ -69,13 +64,7 @@
       "mnemonique": "VENT",
       "label_default": "Vent",
       "definition_default": "vent (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "NOMBRE_ESTIME",
-      "label_default": "Nombre (estimé)",
-      "definition_default": "Nombre (estimé) (protocôle de suivi POPAmphibien)"
-    } 
-    
+    }
   ],
   "nomenclatures": [
     {
@@ -120,7 +109,6 @@
       "label_default": "Grand cours d’eau (> 10 m de large)",
       "definition_default": "Grand cours d’eau (> 10 m de large)"
     },
-	
 	{
       "type":"MILIEU_AQUATIQUE",
       "cd_nomenclature": "MILIEU_AQUATIQUE_7",
@@ -133,9 +121,8 @@
       "cd_nomenclature": "MILIEU_AQUATIQUE_8",
       "mnemonique": "Fossé",
       "label_default": "Fossé",
-      "definition_default": "Fossé "
+      "definition_default": "Fossé"
     },
-	
 	{
       "type":"MILIEU_AQUATIQUE",
       "cd_nomenclature": "MILIEU_AQUATIQUE_9",
@@ -150,7 +137,6 @@
       "label_default": "Marais / Tourbière",
       "definition_default": "Marais / Tourbière"
     },	
-	
 	{
       "type":"MILIEU_AQUATIQUE",
       "cd_nomenclature": "MILIEU_AQUATIQUE_11",
@@ -242,7 +228,6 @@
       "label_default": "Terres arables",
       "definition_default": "Terres arables"
     },
-	
 	{
       "type":"CATEGORIE_PAYSAGERE",
       "cd_nomenclature": "CATEGORIE_PAYSAGERE_7",
@@ -257,7 +242,6 @@
       "label_default": "Cultures permanentes",
       "definition_default": "Cultures permanentes "
     },
-	
 	{
       "type":"CATEGORIE_PAYSAGERE",
       "cd_nomenclature": "CATEGORIE_PAYSAGERE_9",
@@ -272,7 +256,6 @@
       "label_default": "Milieux à végétation arbustive et/ou herbacée",
       "definition_default": "Milieux à végétation arbustive et/ou herbacée"
     },	
-	
 	{
       "type":"CATEGORIE_PAYSAGERE",
       "cd_nomenclature": "CATEGORIE_PAYSAGERE_11",
@@ -389,116 +372,78 @@
       "type":"RIVES",
       "cd_nomenclature": "RIVES_1",
       "mnemonique": "Rives_nues",
-      "label_default": "Rives nues",
-      "definition_default": "Rives nues"
+      "label_default": "Rives majoritairement nues",
+      "definition_default": "Rives majoritairement nues"
     },
     {
       "type":"RIVES",
       "cd_nomenclature": "RIVES_2",
       "mnemonique": "végétation_herbacée",
-      "label_default": "Rives avec végétation herbacée",
-      "definition_default": "Rives avec végétation herbacée"
+      "label_default": "Rives avec une majorité de végétation herbacée",
+      "definition_default": "Rives avec une majorité de végétation herbacée"
     },
     {
       "type":"RIVES",
       "cd_nomenclature": "RIVES_3",
       "mnemonique": "végétation_ligneuse",
-      "label_default": "Rives avec végétation ligneuse",
-      "definition_default": "Rives avec végétation ligneuse"
+      "label_default": "Rives avec une majorité de végétation ligneuse",
+      "definition_default": "Rives avec une majorité de végétation ligneuse"
     },
     {
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_1",
-      "mnemonique": "Forêt_feuillus",
-      "label_default": "Forêt de feuillus",
-      "definition_default": "Forêt de feuillus"
+      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
+      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_1",
+      "mnemonique": "Forêt",
+      "label_default": "Forêt",
+      "definition_default": "Forêt"
     },
     {
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_2",
-      "mnemonique": "Forêt_conifères",
-      "label_default": "Forêt de conifères",
-      "definition_default": "Forêt de conifères"
+      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
+      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_2",
+      "mnemonique": "Buisson_haie",
+      "label_default": "Buisson / haie (< 5 m de hauteur)",
+      "definition_default": "Buisson / haie (< 5 m de hauteur)"
     },
 	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_3",
-      "mnemonique": "Forêt_mixte",
-      "label_default": "Forêt mixte",
-      "definition_default": "Forêt mixte"
+      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
+      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_3",
+      "mnemonique": "Milieu_agricole_1",
+      "label_default": "Milieu agricole (prairie, élevage)",
+      "definition_default": "Milieu agricole (prairie, élevage)"
     },
 	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_4",
-      "mnemonique": "Buissons",
-      "label_default": "Buissons / haies (< 5m de hauteur)",
-      "definition_default": "Buissons / haies (< 5m de hauteur)"
+      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
+      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_4",
+      "mnemonique": "Milieu_agricole_2",
+      "label_default": "Milieu agricole (culture, autre)",
+      "definition_default": "Milieu agricole (culture, autre)"
     },
 	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_5",
+      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
+      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_5",
       "mnemonique": "Milieu_ouvert",
-      "label_default": "Milieu ouvert non agricole (landes, steppes)",
-      "definition_default": "Milieu ouvert non agricole (landes, steppes)"
+      "label_default": "Milieu ouvert non agricole (lande, steppe)",
+      "definition_default": "Milieu ouvert non agricole (lande, steppe)"
     },
 	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_6",
+      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
+      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_6",
       "mnemonique": "Sol_sans_végétation",
       "label_default": "Sol sans végétation (dune, sol rocheux)",
       "definition_default": "Sol sans végétation (dune, sol rocheux)"
     },
-	
 	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_7",
-      "mnemonique": "Urbains",
-      "label_default": "Urbains, espaces verts",
-      "definition_default": "Urbains, espaces verts"
-    },
-	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_8",
-      "mnemonique": "Milieu_agricole",
-      "label_default": "Milieu agricole - prairie",
-      "definition_default": "Milieu agricole - prairie "
-    },
-	
-	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_9",
-      "mnemonique": "grande_culture",
-      "label_default": "Milieu agricole – grande culture",
-      "definition_default": "Milieu agricole – grande culture"
-    },	
-	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_10",
-      "mnemonique": "vergers",
-      "label_default": "Milieu agricole – vergers, vignes, maraichers",
-      "definition_default": "Milieu agricole – vergers, vignes, maraichers"
-    },	
-	
-	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_11",
-      "mnemonique": "élevage",
-      "label_default": "Milieu agricole – élevage",
-      "definition_default": "Milieu agricole – élevage"
-    },
-	{
-      "type":"HABITAT_TERRESTRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_12",
-      "mnemonique": "autre",
-      "label_default": "Milieu agricole – autre",
-      "definition_default": "Milieu agricole – autre"
+      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
+      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_7",
+      "mnemonique": "Zone_urbaine",
+      "label_default": "Zone urbaine, espace vert",
+      "definition_default": "Zone urbaine, espace vert"
     },
     {
       "type":"ACTIVITE_HUMAINE",
       "cd_nomenclature": "ACTIVITE_HUMAINE_1",
-      "mnemonique": "Sports_nautiques",
-      "label_default": "Sports nautiques / base de loisirs",
-      "definition_default": "Sports nautiques / base de loisirs"
+      "mnemonique": "Abreuvement",
+      "label_default": "Abreuvement",
+      "definition_default": "Abreuvement"
     },
     {
       "type":"ACTIVITE_HUMAINE",
@@ -507,13 +452,12 @@
       "label_default": "Pêche de loisirs",
       "definition_default": "Pêche de loisirs"
     },
-
 	{
       "type":"ACTIVITE_HUMAINE",
       "cd_nomenclature": "ACTIVITE_HUMAINE_4",
-      "mnemonique": "Pisciculture",
-      "label_default": "Pisciculture",
-      "definition_default": "Pisciculture"
+      "mnemonique": "Ornemental",
+      "label_default": "Ornemental",
+      "definition_default": "Ornemental"
     },
 	{
       "type":"ACTIVITE_HUMAINE",
@@ -529,7 +473,6 @@
       "label_default": "Extraction de matériaux (carrière)",
       "definition_default": "Extraction de matériaux (carrière)"
     },
-	
 	{
       "type":"ACTIVITE_HUMAINE",
       "cd_nomenclature": "ACTIVITE_HUMAINE_7",
@@ -544,7 +487,6 @@
       "label_default": "Autre",
       "definition_default": "Autre "
     },
-	
 	{
       "type":"ACTIVITE_HUMAINE",
       "cd_nomenclature": "ACTIVITE_HUMAINE_9",
@@ -559,86 +501,6 @@
       "label_default": "Activité de conservation de la nature",
       "definition_default": "Activité de conservation de la nature"
     },
-    {
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_1",
-      "mnemonique": "Réserve_Nat",
-      "label_default": "Réserve Naturelle Nationale",
-      "definition_default": "Réserve Naturelle Nationale"
-    },
-    {
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_2",
-      "mnemonique": "Réserve_Régionale",
-      "label_default": "Réserve Naturelle Régionale",
-      "definition_default": "Réserve Naturelle Régionale"
-    },
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_3",
-      "mnemonique": "Arrêté_protection",
-      "label_default": "Arrêté de protection de biotope",
-      "definition_default": "Arrêté de protection de biotope"
-    },
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_4",
-      "mnemonique": "Parc_Régional",
-      "label_default": "Parc Naturel Régional",
-      "definition_default": "Parc Naturel Régional"
-    },
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_5",
-      "mnemonique": "Parc_National",
-      "label_default": "Parc National",
-      "definition_default": "Parc National"
-    },
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_6",
-      "mnemonique": "Conservatoire_Littoral",
-      "label_default": "Conservatoire du Littoral",
-      "definition_default": "Conservatoire du Littoral"
-    },
-	
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_7",
-      "mnemonique": "Forêt_domaniale",
-      "label_default": "Forêt domaniale",
-      "definition_default": "Forêt domaniale"
-    },
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_8",
-      "mnemonique": "Espace_Naturel",
-      "label_default": "Espace Naturel Sensible",
-      "definition_default": "Espace Naturel Sensible "
-    },
-	
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_9",
-      "mnemonique": "Réserve_biologie",
-      "label_default": "Réserve biologie intégrale",
-      "definition_default": "Réserve biologie intégrale"
-    },	
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_10",
-      "mnemonique": "Forêt_communale",
-      "label_default": "Forêt communale",
-      "definition_default": "Forêt communale"
-    },
-	{
-      "type":"SITE_PROTEGE",
-      "cd_nomenclature": "SITE_PROTEGE_11",
-      "mnemonique": "Site_Natura",
-      "label_default": "Site Natura 2000",
-      "definition_default": "Site Natura 2000"
-    },
-
     {
       "type":"PLUVIOSITE",
       "cd_nomenclature": "PLUVIOSITE_1",
@@ -668,29 +530,29 @@
       "definition_default": "Aucune"
     },
     {
-      "type":"ENSOLEILLEMENT",
-      "cd_nomenclature": "ENSOLEILLEMENT_1",
+      "type":"COUVERTURE_NUAGEUSE",
+      "cd_nomenclature": "COUVERTURE_NUAGEUSE_1",
       "mnemonique": "0-25",
       "label_default": "0-25 %",
       "definition_default": "0-25 %"
     },
     {
-      "type":"ENSOLEILLEMENT",
-      "cd_nomenclature": "ENSOLEILLEMENT_2",
+      "type":"COUVERTURE_NUAGEUSE",
+      "cd_nomenclature": "COUVERTURE_NUAGEUSE_2",
       "mnemonique": "25-50",
       "label_default": "25-50 %",
       "definition_default": "25-50 % "
     },
 	{
-      "type":"ENSOLEILLEMENT",
-      "cd_nomenclature": "ENSOLEILLEMENT_3",
+      "type":"COUVERTURE_NUAGEUSE",
+      "cd_nomenclature": "COUVERTURE_NUAGEUSE_3",
       "mnemonique": "50-75",
       "label_default": "50-75 %",
       "definition_default": "50-75 %"
     },
 	{
-      "type":"ENSOLEILLEMENT",
-      "cd_nomenclature": "ENSOLEILLEMENT_4",
+      "type":"COUVERTURE_NUAGEUSE",
+      "cd_nomenclature": "COUVERTURE_NUAGEUSE_4",
       "mnemonique": "75-100",
       "label_default": "75-100 %",
       "definition_default": "75-100 %"
@@ -732,124 +594,24 @@
     },
     {
       "type":"VENT",
-      "cd_nomenclature": "VENT_1",
-      "mnemonique": "Beaufort_0",
-      "label_default": "Beaufort 0",
-      "definition_default": "Calme: Les feuilles des arbres ne témoignent aucun mouvement"
+      "cd_nomenclature": "VENT_0",
+      "mnemonique": "Absence_vent",
+      "label_default": "Absence de vent",
+      "definition_default": "Absence de vent"
     },
     {
+      "type":"VENT",
+      "cd_nomenclature": "VENT_1",
+      "mnemonique": "Vent_faible",
+      "label_default": "Vent faible",
+      "definition_default": "Vent faible"
+    },
+	{
       "type":"VENT",
       "cd_nomenclature": "VENT_2",
-      "mnemonique": "Beaufort_1",
-      "label_default": "Beaufort 1",
-      "definition_default": "Très légère brise: Les girouettes ne s'orientent pas"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_3",
-      "mnemonique": "Beaufort_2",
-      "label_default": "Beaufort 2",
-      "definition_default": "Légère brise: On sent le vent sur le visage. Les feuilles s'agitent. Les girouettes s'orientent"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_4",
-      "mnemonique": "Beaufort_3",
-      "label_default": "Beaufort 3",
-      "definition_default": "Petite brise: Les feuilles sont sans cesse en mouvement"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_5",
-      "mnemonique": "Beaufort_4",
-      "label_default": "Beaufort 4",
-      "definition_default": "Jolie brise: Les poussières s'envolent. Les petites branches plient"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_6",
-      "mnemonique": "Beaufort_5",
-      "label_default": "Beaufort 5",
-      "definition_default": "Bonne brise: Le tronc des arbustes et arbrisseaux en feuilles balance. La cime de tous les arbres est agitée"
-    },
-	
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_7",
-      "mnemonique": "Beaufort_6",
-      "label_default": "Beaufort 6",
-      "definition_default": "Vent frais: On entend siffler le vent. Les branches de large diamètre s'agitent. Les parapluies sont susceptibles de se retourner"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_8",
-      "mnemonique": "Beaufort_7",
-      "label_default": "Beaufort 7",
-      "definition_default": "Grand frais: Tous les arbres balancent. La marche contre le vent peut devenir difficile"
-    },
-	
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_9",
-      "mnemonique": "Beaufort_8",
-      "label_default": "Beaufort 8",
-      "definition_default": "Coup de vent: Les branches sont susceptibles de casser. La marche contre le vent est très difficile, voire impossible"
-    },	
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_10",
-      "mnemonique": "Beaufort_9",
-      "label_default": "Beaufort 9",
-      "definition_default": "Fort coup de vent: Le vent peut légèrement endommager les bâtiments : envols de tuiles, d'ardoises, chutes de cheminées"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_11",
-      "mnemonique": "Beaufort_10",
-      "label_default": "Beaufort 10",
-      "definition_default": "Tempête: Dégâts importants aux bâtiments. Les toits sont susceptibles de s'envoler. Certains arbres sont déracinés"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_12",
-      "mnemonique": "Beaufort_11",
-      "label_default": "Beaufort 11",
-      "definition_default": "Violente tempête: Ravages étendus et importants"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_13",
-      "mnemonique": "Beaufort_12",
-      "label_default": "Beaufort 12",
-      "definition_default": "Ouragan: Dégâts très importants de l'ordre de la catastrophe naturelle"
-    },
-    {
-      "type":"NOMBRE_ESTIME",
-      "cd_nomenclature": "VENT_1",
-      "mnemonique": "nombre_1",
-      "label_default": "De 1 à 5",
-      "definition_default": "De 1 à 5"
-    },
-    {
-      "type":"NOMBRE_ESTIME",
-      "cd_nomenclature": "VENT_2",
-      "mnemonique": "nombre_2",
-      "label_default": "De 6 à 10",
-      "definition_default": "De 6 à 10"
-    },
-	{
-      "type":"NOMBRE_ESTIME",
-      "cd_nomenclature": "VENT_3",
-      "mnemonique": "nombre_3",
-      "label_default": "De 10 à 50",
-      "definition_default": "De 10 à 50"
-    },
-	{
-      "type":"NOMBRE_ESTIME",
-      "cd_nomenclature": "nombre_4",
-      "mnemonique": "nombre_4",
-      "label_default": "De 50 à 100",
-      "definition_default": "De 50 à 100"
+      "mnemonique": "Vent_fort",
+      "label_default": "Vent fort",
+      "definition_default": "Vent fort"
     }
   ]
 }

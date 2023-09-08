@@ -1,0 +1,133 @@
+{
+  "genre": "M",
+  "label": "nichoir",
+  "label_list": "nichoirs",
+  "map_label_field_name": "base_site_name",
+  "geometry_type": "Point",
+  "display_properties": [
+    "id_inventor",
+    "referent_mail",
+    "referent_tel",
+    "base_site_name",
+    "base_site_code",
+    "first_use_date",
+    "pose_localisation",
+    "localite_precision",
+    "nichoir_type",
+    "adresse",
+    "proprietaire_nom",
+    "proprietaire_mail",
+    "proprietaire_tel",
+    "nichoir_referent",
+    "base_site_description"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "NICHOIR"
+      },
+      "hidden": true
+    },
+    "base_site_code": {
+      "attribut_label": "Code du site",
+      "required": false,
+      "hidden": true
+    },
+    "base_site_name": {
+      "attribut_label": "Identifiant du nichoir",
+      "required": true,
+      "hidden": false
+    },
+    "first_use_date": {
+      "type_widget": "date",
+      "attribut_label": "Date de pose",
+      "required": true
+    },
+    "pose_localisation": {
+      "type_widget": "select",
+      "attribut_label": "Lieu de pose",
+      "required": true,
+      "values": [
+        "église",
+        "grange/hangar",
+        "grenier/combles",
+        "garage",
+        "bergerie",
+        "arbre",
+        "poteau",
+        "pigeonnier/tour",
+        "Autres"
+      ]
+    },
+    "nichoir_type": {
+      "type_widget": "select",
+      "attribut_label": "Type de nichoir",
+      "required": true,
+      "values": [
+        "effraie",
+        "chevêche",
+        "huppe",
+        "mésange",
+        "faucon pèlerin",
+        "faucon crécerelle",
+        "étourneau",
+        "petit-duc/colombin",
+        "gîte chiro",
+        "autre"
+      ]
+    },
+    "adresse": {
+      "type_widget": "text",
+      "attribut_label": "Adresse",
+      "required": true
+    },
+    "proprietaire_nom": {
+      "type_widget": "text",
+      "attribut_label": "Nom du propriétaire",
+      "required": true
+    },
+    "proprietaire_mail": {
+      "type_widget": "text",
+      "attribut_label": "E-mail (propriétaire)"
+    },
+    "proprietaire_tel": {
+      "type_widget": "text",
+      "attribut_label": "Numéro de tel (propriétaire)",
+      "required": true
+    },
+    "id_inventor": {
+      "attribut_label": "Référent du nichoir"
+    },
+    "referent_mail": {
+      "type_widget": "text",
+      "attribut_label": "E-mail (référent)"
+    },
+    "referent_tel": {
+      "type_widget": "text",
+      "attribut_label": "Numéro de tel (référent)"
+    },
+    "localite_precision": {
+      "type_widget": "text",
+      "attribut_label": "Précision sur la localisation"
+    },
+    "predateur": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "indices de présence de prédateur"
+    },
+    "base_site_description": {
+      "type_widget": "textarea",
+      "attribut_label": "Remarque"
+    },
+    "medias": {
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_base_sites"
+    }
+  }
+}
