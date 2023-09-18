@@ -1,0 +1,16 @@
+{
+  "genre":"F",
+  "cruved": {"C": 3, "U": 3, "D": 3},
+  "label": "Ligne de lecture",
+  "label_list": "Lignes de lecture",
+  "map_label_field_name": "base_site_name",
+  "geometry_type": "LineString",
+  "display_properties": ["base_site_name", "base_site_description"],
+  "display_list": [
+    "base_site_name",
+    "nb_visits",
+    "last_visit"
+  ],
+    "specific": {
+  }
+}

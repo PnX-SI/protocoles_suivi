@@ -19,14 +19,21 @@
     },
     "hauteur_nard": {
       "type_widget": "number",
-      "attribut_label": "Hauteur du nard",
+      "attribut_label": "Hauteur du nard (en cm)",
       "min": 0,
       "required": true
     },
     "hauteur_moy_vegetation": {
       "type_widget": "number",
-      "attribut_label": "Hauteur moyenne de la végétation",
+      "attribut_label": "Hauteur moyenne de la végétation (en cm)",
       "min": 0,
+      "required": true
+    },
+    "recouvrement_vegetation": {
+      "type_widget": "number",
+      "attribut_label": "Recouvrement de végération (%)",
+      "min": 0,
+      "max": 100,
       "required": true
     },
     "medias": {

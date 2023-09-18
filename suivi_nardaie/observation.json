@@ -2,19 +2,30 @@
   "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "cd_nom",
-    "pourcentage_recouvrement"
+    "pourcentage_recouvrement",
+    "num_micro_placette"
   ],
   "redirect_to_parent": true,
   "specific": {
     "pourcentage_recouvrement": {
       "type_widget": "number",
-      "attribut_label": "Pourcentage recouvrement",
+      "attribut_label": "Pourcentage de recouvrement",
       "required": true,
       "min": 0,
       "max": 100
+    },
+    "num_micro_placette": {
+      "type_widget": "number",
+      "attribut_label": "Numéro de micro placette",
+      "required": true,
+      "min": 1,
+      "max": 15
+    },
+    "medias": {
+      "hidden": true
+    },
+    "comments" : {
+      "hidden": true
     }
-  },
-  "medias": {
-    "hidden": true
   }
 }
