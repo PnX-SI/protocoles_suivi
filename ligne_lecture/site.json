@@ -12,6 +12,10 @@
     "last_visit"
   ],
     "specific": {
+      "base_site_code": {
+        "hidden": true,
+        "required": false
+      },
       "borne_1": {
         "type_widget": "number",
         "attribut_label": "Borne GPS 1"

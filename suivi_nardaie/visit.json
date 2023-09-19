@@ -5,13 +5,15 @@
     "visit_date_min",
     "observers",
     "hauteur_nard",
-    "hauteur_moy_vegetation"
+    "hauteur_moy_vegetation",
+    "recouvrement_vegetation",
+    "comments"
   ],
   "display_list": [
     "visit_date_min",
     "observers",
     "nb_observations",
-    "pourcentage_recouvrement"
+    "recouvrement_vegetation"
   ],
   "specific": {
     "id_dataset": {

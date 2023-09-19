@@ -23,6 +23,9 @@
     "id_inventor": {
       "hidden": true
     },
+    "medias": {
+      "hidden": true
+    },
     "id_nomenclature_type_site": {
       "type_widget": "nomenclature",
       "attribut_label": "Type site",
