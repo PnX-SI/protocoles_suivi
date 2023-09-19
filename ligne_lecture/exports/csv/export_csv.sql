@@ -21,7 +21,8 @@ tbv."comments" AS commentaire_visite,
 obs.id_observation AS id_observation,
 t.lb_nom AS tax_nom_scientifique,
 t.cd_nom AS tax_cd_nom,
-toc."data"->>'num_point' AS num_point
+toc."data"->>'num_point' AS num_point,
+m.module_code
 from gn_monitoring.t_base_sites s
 LEFT JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site 
 JOIN gn_monitoring.t_base_visits tbv ON tbv.id_base_site = s.id_base_site 
