@@ -13,7 +13,7 @@
   ],
     "specific": {
       "base_site_code": {
-        "hidden": true,
+        "hidden": false,
         "required": false
       },
       "borne_1": {
