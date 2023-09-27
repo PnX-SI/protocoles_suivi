@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_nardaie AS
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_ligne_lecture AS
 WITH source AS (
 	SELECT
         id_source

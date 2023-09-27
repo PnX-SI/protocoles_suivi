@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_export_nardaie_all
+CREATE OR REPLACE VIEW gn_monitoring.v_export_ligne_lecture_all
  AS with observers as (
      SELECT 
      cvo2.id_base_visit,
@@ -19,8 +19,9 @@ o.observateurs,
 tbv.id_dataset as id_dataset,
 tbv."comments" AS commentaire_visite,
 obs.id_observation AS id_observation,
-t.lb_nom AS tax_nom_scientifique,
-t.cd_nom AS tax_cd_nom,
+t.lb_nom AS nom_scientifique,
+t.nom_vern AS nom_vern,
+t.cd_nom AS cd_nom,
 toc."data"->>'num_point' AS num_point,
 m.module_code
 from gn_monitoring.t_base_sites s
@@ -32,4 +33,4 @@ LEFT JOIN gn_commons.t_modules m ON m.id_module = tbv.id_module
 JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit 
 JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = obs.id_observation 
 JOIN taxonomie.taxref t ON t.cd_nom = obs.cd_nom
-WHERE m.module_code::text = 'LIGNE_LECTURE';
+WHERE m.module_code::text = 'ligne_lecture';
