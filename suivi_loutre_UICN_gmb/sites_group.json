@@ -1,6 +1,5 @@
 {
   "chained": false,
-  "cruved": {"C": 3, "U": 3, "D": 3},
   "label": "Zone hydrographique",
   "label_list": "Zones hydrographiques",
   "sorts": [
@@ -32,9 +31,9 @@
       "required": true,
       "hidden": false,
       "value": "Blaireautières de ",
-      "title":"Nom unique associé à chaque blaireautière. Doit commencer par 'Blaireautière de... suivie du nom de lieu-dit'." 
+      "title": "Nom unique associé à chaque blaireautière. Doit commencer par 'Blaireautière de... suivie du nom de lieu-dit'."
     },
-    
+
     "sites_group_code": {
       "attribut_label": "Code du groupe de site",
       "required": false,
