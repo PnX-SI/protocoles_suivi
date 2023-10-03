@@ -7,9 +7,5 @@
         }
       }
     }
-  },
-  "permission_objects": [
-    "GNM_SITES",
-    "GNM_VISITES"
-  ]
+  }
 }

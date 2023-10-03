@@ -9,10 +9,5 @@
       }
     }
   },
-  "synthese_object": "visit",
-  "permission_objects": [
-    "GNM_GRP_SITES",
-    "GNM_SITES",
-    "GNM_VISITES"
-  ]
+  "synthese_object": "visit"
 }
