@@ -2,17 +2,26 @@
   "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "cd_nom",
-    "Num. point"
+    "num_segment"
   ],
   "redirect_to_parent": true,
   "specific": {
-    "num_point": {
+    "num_segment": {
       "type_widget": "number",
-      "attribut_label": "Numéro du point",
+      "attribut_label": "Numéro du segment",
       "required": true,
       "min": 1,
       "max": 100
     },
+    "hauteur_strate": {
+      "type_widget": "text",
+      "hidden": true
+    },
+    "denombrement": {
+      "type_widget": "number",
+      "hidden": true
+    },
+    
     "medias": {
       "hidden": true
     },
