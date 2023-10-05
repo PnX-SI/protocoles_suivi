@@ -31,8 +31,7 @@
     },
     "presence_juvenile": {
       "type_widget": "bool_checkbox",
-      "attribut_label": "Présence de juvéniles ? (si oui ne pas les compter)",
-      "default": false
+      "attribut_label": "Présence de juvéniles ? (si oui ne pas les compter)"
     },
     "comments": {
       "attribute_label": "Commentaire"

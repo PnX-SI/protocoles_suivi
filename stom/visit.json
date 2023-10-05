@@ -12,7 +12,19 @@
     "visi",
     "deneigement",
     "paturage",
-    "comments"
+    "comments",
+    "habitat_input",
+    "arb_inf_30cm",
+    "arb_inf_1m",
+    "arb_1_4m",
+    "arb_sup_4m",
+    "roche",
+    "sol_nu",
+    "herb",
+    "elem_paysager",
+    "comment_paysage"
+
+
   ],
   "display_list": [
     "visit_date_min",
@@ -23,7 +35,8 @@
     "debutant": {
       "type_widget": "radio",
       "attribut_label": "Observateur débutant",
-      "values": ["Oui", "Non"]
+      "values": ["Oui", "Non"],
+      "value": "Non"
     },
     "heure": {
       "type_widget": "time",
@@ -68,7 +81,7 @@
         "1 = Aucune trace de paturage dans le milieu",
         "2 = Toutes les situations intermédiaires",
         "3 = Plus de 95% des plantes herbacées sont pâturées et rases (<10 cm)",
-        "4 = Prairie de fauche"
+        "4 = Prairie de fauche / production végétale"
       ]
     },
     "medias": {
@@ -89,52 +102,60 @@
     "roche": {
       "type_widget": "number",
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "Rochers (%)"
+      "attribut_label": "Rochers (%)",
+      "required":  "({value}) => value.habitat_input == true"
     },
     "sol_nu": {
       "type_widget": "number",
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "Sol nu (%)"
+      "attribut_label": "Sol nu (%)",
+      "required":  "({value}) => value.habitat_input == true"
     },
     "herb": {
       "type_widget": "number",
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "Herbacées (%)"
+      "attribut_label": "Herbacées (%)", 
+      "required":  "({value}) => value.habitat_input == true"
     },
     "arb_inf_30cm": {
       "type_widget": "number",
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "Ligneux inf 30cm (%)"
+      "attribut_label": "Ligneux inf 30cm (%)",
+      "required":  "({value}) => value.habitat_input == true"
     },
     "arb_inf_1m": {
       "type_widget": "number",
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "Ligneux 30cm - 1m (%)"
+      "attribut_label": "Ligneux 30cm - 1m (%)",
+      "required":  "({value}) => value.habitat_input == true"
     },
     "arb_1_4m": {
       "type_widget": "number",
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "Ligneux 1m - 4m (%)"
+      "attribut_label": "Ligneux 1m - 4m (%)",
+      "required":  "({value}) => value.habitat_input == true"
     },
     "arb_sup_4m": {
       "type_widget": "number",
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "Ligneux > 4m (%)"
+      "attribut_label": "Ligneux > 4m (%)",
+      "required":  "({value}) => value.habitat_input == true"
     },
     "elem_paysager": {
       "type_widget": "multiselect",
       "values": [
-        {"value": "Câblage", "key": "Câblage"},
-        {"value": "Point d'eau", "key": "Point d'eau"},
-        {"value": "Clôture", "key": "Clôture"},
-        {"value": "Groupe isolé d'arbres", "key": "Groupe isolé d'arbres"},
-        {"value": "Ecobuage", "key": "Ecobuage"},
-        {"value": "Bâti", "key": "Bâti"},
-        {"value": "Falaise", "key": "Falaise"},
-        {"value": "Autres", "key": "Autres"}
+        {"value": "Bâti", "label": "Bâti"},
+        {"value": "Câblage", "label": "Câblage"},
+        {"value": "Clôture", "label": "Clôture"},
+        {"value": "Ecobuage", "label": "Ecobuage"},
+        {"value": "Falaise", "label": "Falaise"},
+        {"value": "Groupe isolé d'arbres", "label": "Groupe isolé d'arbres"},
+        {"value": "Point d'eau", "label": "Point d'eau"},
+        {"value": "Autres", "label": "Autres"}
       ],
       "hidden": "({value}) => !value.habitat_input",
-      "attribut_label": "Elément paysager"
+      "attribut_label": "Elément paysager",
+      "required":  "({value}) => value.habitat_input == true"
     },
     "comment_paysage": {
       "type_widget": "textarea",
