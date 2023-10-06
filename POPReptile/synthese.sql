@@ -93,6 +93,5 @@ CREATE OR REPLACE VIEW gn_monitoring.v_synthese_POPReptile
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
   WHERE m.module_code::text = 'POPReptile'::text;
 
-ALTER TABLE gn_monitoring.v_synthese_POPReptile
-    OWNER TO geonatadmin;
+
 
