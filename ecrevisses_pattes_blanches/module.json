@@ -6,6 +6,11 @@
             "label": "Observations",
             "type": "csv",
             "method": "observations"
+        },
+        {
+            "label": "Analyse",
+            "type": "csv",
+            "method": "analyse"
         }
     ]
 }
