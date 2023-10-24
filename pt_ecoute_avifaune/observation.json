@@ -12,7 +12,7 @@
     "nb_dist_inf_100_m",
     "nb_dist_supp_100_m",
     "en_vol",
-    "code_pid_nomenclature_behaviourheno"
+    "id_nomenclature_behaviour"
   ],
   "redirect_to_parent": true,
   "specific": {
