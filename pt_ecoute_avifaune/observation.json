@@ -12,7 +12,7 @@
     "nb_dist_inf_100_m",
     "nb_dist_supp_100_m",
     "en_vol",
-    "code_pheno"
+    "code_pid_nomenclature_behaviourheno"
   ],
   "redirect_to_parent": true,
   "specific": {
@@ -50,17 +50,34 @@
       "description": "Observé en vol",
       "default": false
     },
-    "code_pheno": {
-      "type_widget": "select",
+    "id_nomenclature_behaviour": {
+      "type_widget": "nomenclature",
       "attribut_label": "Code phénologique",
-      "description": "Code phénologique",
-      "values": [
+      "code_nomenclature_type": "OCC_COMPORTEMENT",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "OCC_COMPORTEMENT",
+        "cd_nomenclature": "1"
+      },
+      "cd_nomenclatures": [
         "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
+        "CA_01",
+        "CA_02",
+        "CA_03",
+        "CA_04",
+        "CA_05",
+        "CA_06",
+        "CA_07",
+        "CA_08",
+        "CA_09",
+        "CA_10",
+        "CA_11",
+        "CA_12",
+        "CA_13",
+        "CA_14",
+        "CA_15",
+        "CA_16"
       ]
     },
     "comments": {
