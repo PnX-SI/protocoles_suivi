@@ -40,7 +40,8 @@
   "specific": {
     "heure": {
       "type_widget": "time",
-      "attribut_label": "Heure de début"
+      "attribut_label": "Heure de début",
+      "required": true
     },
     "num_passage": {
       "type_widget": "select",
@@ -49,7 +50,8 @@
       "values": [
         "1",
         "2"
-      ]
+      ],
+      "required": true
     },
     "id_dataset": {
       "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
@@ -63,42 +65,48 @@
       "description": "recouvrement en ligneux de la strate 16-32m toutes espèces confondues",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "st_veg_lign_8_16": {
       "attribut_label": "Recouvrement ligneux 8-16m (%)",
       "description": "recouvrement en ligneux de la strate 8-16m toutes espèces confondues",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "st_veg_lign_4_8": {
       "attribut_label": "Recouvrement ligneux 4-8m (%)",
       "description": "recouvrement en ligneux de la strate 4-8m toutes espèces confondues",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "st_veg_lign_2_4": {
       "attribut_label": "Recouvrement ligneux 2-4m (%)",
       "description": "recouvrement en ligneux de la strate 2-4m toutes espèces confondues",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "st_veg_lign_1_2": {
       "attribut_label": "Recouvrement ligneux 1-2m(%)",
       "description": "recouvrement en ligneux de la strate 1-2m toutes espèces confondues",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "st_veg_lign_lower_1": {
       "attribut_label": "Recouvrement ligneux <1m (%)",
       "description": "recouvrement en ligneux de la strate inférieur à 1m toutes espèces confondues",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "veg_lig_sp_1": {
       "attribut_label": "Espèce ligneux 1",
@@ -157,7 +165,7 @@
       "default": 0
     },
     "veg_lig_rec_total": {
-      "attribut_label": "Recouvrement ligneux (%)",
+      "attribut_label": "Recouvrement ligneux total (%)",
       "description": "% de recouvrement total des ligneux",
       "type_widget": "number",
       "min": 0,
@@ -168,28 +176,32 @@
       "description": "% de recouvrement de la strate herbacée",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "sth_bloc_rocher": {
       "attribut_label": "Recouvrement bloc/rocher(%)",
       "description": "% de recouvrement en bloc/rocher",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "sth_pierraille": {
       "attribut_label": "Recouvrement pierraille (%)",
       "description": "% de recouvrement en pierraille",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "sth_sol_nu": {
       "attribut_label": "Recouvrement sol nu(%)",
       "description": "% de recouvrement sol nu",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     }
   }
 }
