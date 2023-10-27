@@ -53,7 +53,7 @@ WITH source AS (
     v.id_base_site,
     v.id_base_visit,
     (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_dist_inf_100_m')::integer AS count_min,
-    (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_dist_inf_100_m')::integer AS count_max
+    (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_dist_inf_100_m')::integer AS count_max,
     (toc."data"->>'id_nomenclature_behaviour')::integer as id_nomenclature_behaviour
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site

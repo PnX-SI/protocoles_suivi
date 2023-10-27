@@ -169,7 +169,8 @@
       "description": "% de recouvrement total des ligneux",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "required": true
     },
     "sth_herbacee": {
       "attribut_label": "Recouvrement strate herbacée (%)",
