@@ -25,7 +25,7 @@ WITH source AS (
  SELECT to2.uuid_observation AS unique_id_sinp,
     v.uuid_base_visit AS unique_id_sinp_grp,
     source.id_source,
-    v.id_base_visit AS entity_source_pk_value,
+    to2.id_observation AS entity_source_pk_value,
     v.id_dataset,
     ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO'::character varying, 'St'::character varying) AS id_nomenclature_geo_object_nature,
     v.id_nomenclature_tech_collect_campanule,
@@ -52,6 +52,7 @@ WITH source AS (
     obs.ids_observers,
     v.id_base_site,
     v.id_base_visit,
+    to2.id_observation,
     (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_dist_inf_100_m')::integer AS count_min,
     (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_dist_inf_100_m')::integer AS count_max,
     (toc."data"->>'id_nomenclature_behaviour')::integer as id_nomenclature_behaviour
