@@ -74,7 +74,7 @@ LEFT JOIN gn_commons.t_modules m ON m.id_module = tbv.id_module
 JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit
 JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = obs.id_observation
 JOIN taxonomie.taxref t ON t.cd_nom = obs.cd_nom
-WHERE m.module_code::text = 'pt_ecoute_avifaune'
+WHERE m.module_code::text = :module_code
 ORDER BY tsg.id_sites_group, tbv.visit_date_min, s.base_site_name
 ;
 
@@ -133,7 +133,7 @@ LEFT JOIN gn_commons.t_modules m ON m.id_module = tbv.id_module
 JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit
 JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = obs.id_observation
 JOIN taxonomie.taxref t ON t.cd_nom = obs.cd_nom
-WHERE m.module_code::text = 'pt_ecoute_avifaune';
+WHERE m.module_code::text = :module_code;
 
 
 CREATE OR REPLACE VIEW gn_monitoring.v_export_pt_ecoute_avifaune_sites
@@ -146,8 +146,8 @@ AS
     st_x(s.geom) AS x,
     st_y(s.geom) AS y,
     a.jname ->> 'COM'::text AS commune,
-    a.jname ->> 'SEC'::text AS secteur,
-    :id_dataset_of_module as id_dataset
+    a.jname ->> 'SEC'::text AS secteur
+--tbv.id_dataset
    FROM gn_monitoring.t_base_sites s
      JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
      LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
@@ -164,4 +164,4 @@ AS
                   WHERE sa.id_base_site = s.id_base_site
                   GROUP BY sa.id_base_site, ta.type_code) d_1
           GROUP BY d_1.id_base_site) a ON true
- WHERE tsc.id_module =  (SELECT id_module FROM gn_commons.t_modules tm WHERE module_code = 'pt_ecoute_avifaune');
+ WHERE tsc.id_module =  (SELECT id_module FROM gn_commons.t_modules tm WHERE module_code = :module_code);

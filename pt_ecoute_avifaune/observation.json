@@ -14,6 +14,12 @@
     "en_vol",
     "id_nomenclature_behaviour"
   ],
+  "sorts": [
+    {
+      "prop": "id_observation",
+      "dir": "asc"
+    }
+  ],
   "redirect_to_parent": true,
   "specific": {
     "nb_0_5": {
@@ -37,12 +43,14 @@
     "nb_dist_inf_100_m": {
       "type_widget": "number",
       "attribut_label": "Rayon de 100m",
-      "description": "Effectif dans un rayon de 100m"
+      "description": "Effectif dans un rayon de 100m",
+      "required": true
     },
     "nb_dist_supp_100_m": {
       "type_widget": "number",
       "attribut_label": "Au delà de 100m",
-      "description": "Effectif au delà de 100m"
+      "description": "Effectif au delà de 100m",
+      "required": true
     },
     "en_vol": {
       "type_widget": "bool_checkbox",
