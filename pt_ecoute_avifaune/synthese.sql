@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_stom AS
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_pt_ecoute_avifaune AS
 WITH source AS (
 	SELECT
         id_source
@@ -33,9 +33,12 @@ WITH source AS (
     ref_nomenclatures.get_id_nomenclature('TYP_DENBR'::character varying, 'Co'::character varying) AS id_nomenclature_type_count,
     ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE'::character varying, 'Te'::character varying) AS id_nomenclature_source_status,
     ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO'::character varying, '1'::character varying) AS id_nomenclature_info_geo_type,
-    ref_nomenclatures.get_id_nomenclature('NATURALITE', '1') as id_nomenclature_naturalness,
-    --ref_nomenclatures.get_id_nomenclature('STADE_VIE', '2') as id_nomenclature_life_stage, -- on ne compte que des adultes sur le pt_ecoute_avifaune
-    ref_nomenclatures.get_id_nomenclature('TYP_GRP', 'REL') as id_nomenclature_grp_typ,
+    ref_nomenclatures.get_id_nomenclature('NATURALITE'::character varying, '1'::character varying) AS id_nomenclature_naturalness,
+    ref_nomenclatures.get_id_nomenclature('TYP_GRP'::character varying, 'REL'::character varying) AS id_nomenclature_grp_typ,
+        CASE
+            WHEN ((toc.data ->> 'en_vol'::text)::boolean) = true THEN ref_nomenclatures.get_id_nomenclature('METH_OBS'::character varying, '0'::character varying)
+            ELSE ref_nomenclatures.get_id_nomenclature('METH_OBS'::character varying, '1'::character varying)
+        END AS id_nomenclature_obs_technique,
     t.cd_nom,
     t.nom_complet AS nom_cite,
     alt.altitude_min,
@@ -53,9 +56,8 @@ WITH source AS (
     v.id_base_site,
     v.id_base_visit,
     to2.id_observation,
-    (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_dist_inf_100_m')::integer AS count_min,
-    (toc."data"->>'nb_0_5')::integer + (toc."data"->>'nb_5_10')::integer + (toc."data"->>'nb_10_15')::integer + (toc."data"->>'nb_dist_inf_100_m')::integer AS count_max,
-    (toc."data"->>'id_nomenclature_behaviour')::integer as id_nomenclature_behaviour
+    ((toc.data ->> 'nb_0_5'::text)::integer) + ((toc.data ->> 'nb_5_10'::text)::integer) + ((toc.data ->> 'nb_10_15'::text)::integer) + ((toc.data ->> 'nb_dist_inf_100_m'::text)::integer) AS count_min,
+    ((toc.data ->> 'nb_0_5'::text)::integer) + ((toc.data ->> 'nb_5_10'::text)::integer) + ((toc.data ->> 'nb_10_15'::text)::integer) + ((toc.data ->> 'nb_dist_inf_100_m'::text)::integer) AS count_max
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_commons.t_modules m ON m.id_module = v.id_module
@@ -66,4 +68,4 @@ WITH source AS (
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'pt_ecoute_avifaune'::TEXT;
+  WHERE m.module_code::text = 'pt_ecoute_avifaune'::text;
