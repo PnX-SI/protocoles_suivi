@@ -62,6 +62,9 @@
         "arbre",
         "poteau",
         "pigeonnier/tour",
+        "façade de bâtiment",
+        "acrotère de bâtiment",
+        "toit terrasse",
         "Autres"
       ]
     },
@@ -78,7 +81,9 @@
         "faucon crécerelle",
         "étourneau",
         "petit-duc/colombin",
-        "gîte chiro",
+        "gîte chiro (fissuricole en bois)",
+        "gîte chiro (fissuricole en béton bois)",
+        "gîte chiro (arboricole en bois)",
         "autre"
       ]
     },
