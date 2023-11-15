@@ -21,6 +21,14 @@
     "nichoir_referent",
     "base_site_description"
   ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "proprietaire_nom",
+    "nichoir_type",
+    "last_visit",
+    "nb_visits"
+  ],
   "specific": {
     "id_nomenclature_type_site": {
       "type_widget": "nomenclature",
@@ -40,7 +48,7 @@
       "hidden": true
     },
     "base_site_name": {
-      "attribut_label": "Identifiant du nichoir",
+      "attribut_label": "Nom du nichoir",
       "required": true,
       "hidden": false
     },
@@ -54,16 +62,16 @@
       "attribut_label": "Lieu de pose",
       "required": true,
       "values": [
+        "arbre",
+        "acrotère de bâtiment",
+        "bergerie",
         "église",
+        "façade de bâtiment",
         "grange/hangar",
         "grenier/combles",
         "garage",
-        "bergerie",
-        "arbre",
         "poteau",
         "pigeonnier/tour",
-        "façade de bâtiment",
-        "acrotère de bâtiment",
         "toit terrasse",
         "Autres"
       ]
@@ -73,18 +81,21 @@
       "attribut_label": "Type de nichoir",
       "required": true,
       "values": [
-        "effraie",
-        "chevêche",
-        "huppe",
-        "mésange",
-        "faucon pèlerin",
-        "faucon crécerelle",
-        "étourneau",
-        "petit-duc/colombin",
-        "gîte chiro (fissuricole en bois)",
-        "gîte chiro (fissuricole en béton bois)",
-        "gîte chiro (arboricole en bois)",
-        "autre"
+        "Chevêche",
+        "Effraie",
+        "Étourneau",
+        "Faucon pèlerin",
+        "Faucon crécerelle",
+        "Huppe fasciée",
+        "Gîte chiro (arboricole en bois)",
+        "Gîte chiro (fissuricole en bois)",
+        "Gîte chiro (fissuricole en béton bois)",
+        "Mésange",
+        "Mésange bleue",
+        "Mésange charbonnière",
+        "Petit-duc/colombin",
+        "Rougequeue",
+        "Autre"
       ]
     },
     "adresse": {

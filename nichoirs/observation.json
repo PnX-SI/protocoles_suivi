@@ -8,6 +8,7 @@
     "cd_nom",
     "cd_nom_precision",
     "nidification",
+    "adulte",
     "oeuf",
     "jeune_vivant",
     "jeune_mort"
@@ -44,17 +45,29 @@
       "values": ["Oui", "Non"],
       "required": true
     },
+    "adulte": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'adulte",
+      "hidden": "({value}) => value.nidification != 'Oui'",
+      "required": "({value}) => value.nidification != 'Oui'",
+      "min": 0,
+      "max": 50
+    },
     "oeuf": {
       "type_widget": "number",
       "attribut_label": "Nombre oeufs",
-      "required": true,
+      "hidden": "({value}) => value.nidification != 'Oui'",
+      "required": "({value}) => value.nidification != 'Oui'",
+      "value" : 0,
       "min": 0,
       "max": 20
     },
     "jeune_vivant": {
       "type_widget": "number",
       "attribut_label": "Nombre jeunes vivants",
-      "required": true,
+      "hidden": "({value}) => value.nidification != 'Oui'",
+      "required": "({value}) => value.nidification != 'Oui'",
+      "value" : 0,
       "min": 0,
       "max": 20
     },
