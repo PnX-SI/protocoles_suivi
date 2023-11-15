@@ -24,7 +24,6 @@
   "display_list": [
     "base_site_name",
     "id_inventor",
-    "proprietaire_nom",
     "nichoir_type",
     "last_visit",
     "nb_visits"
