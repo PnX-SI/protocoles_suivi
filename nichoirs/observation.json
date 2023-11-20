@@ -35,10 +35,6 @@
       "required": true,
       "id_list": "__MODULE.ID_LIST_TAXONOMY"
     },
-    "cd_nom_precision": {
-      "type_widget": "text",
-      "attribut_label": "Précision sur l'espèce"
-    },
     "nidification": {
       "type_widget": "radio",
       "attribut_label": "Occupation",
@@ -47,34 +43,35 @@
     },
     "adulte": {
       "type_widget": "number",
-      "attribut_label": "Nombre d'adulte",
+      "attribut_label": "Nombre d'adultes",
       "hidden": "({value}) => value.nidification != 'Oui'",
-      "required": "({value}) => value.nidification != 'Oui'",
+      "required": false,
       "min": 0,
       "max": 50
     },
     "oeuf": {
       "type_widget": "number",
-      "attribut_label": "Nombre oeufs",
+      "attribut_label": "Nombre d'oeufs",
       "hidden": "({value}) => value.nidification != 'Oui'",
-      "required": "({value}) => value.nidification != 'Oui'",
+      "required": false,
       "value" : 0,
       "min": 0,
       "max": 20
     },
     "jeune_vivant": {
       "type_widget": "number",
-      "attribut_label": "Nombre jeunes vivants",
+      "attribut_label": "Nombre de jeunes vivants",
       "hidden": "({value}) => value.nidification != 'Oui'",
-      "required": "({value}) => value.nidification != 'Oui'",
+      "required": false,
       "value" : 0,
       "min": 0,
       "max": 20
     },
     "jeune_mort": {
       "type_widget": "number",
-      "attribut_label": "Nombre jeunes morts",
-      "required": true,
+      "attribut_label": "Nombre de jeunes morts",
+      "hidden": "({value}) => value.nidification != 'Oui'",
+      "required": false,
       "min": 0,
       "max": 20
     },
