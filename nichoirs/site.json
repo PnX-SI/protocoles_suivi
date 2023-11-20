@@ -63,7 +63,9 @@
       "values": [
         "arbre",
         "acrotère de bâtiment",
+        "aménagement de combles",
         "bergerie",
+        "caissons a rhinolophes",
         "église",
         "façade de bâtiment",
         "grange/hangar",
@@ -71,6 +73,7 @@
         "garage",
         "poteau",
         "pigeonnier/tour",
+        "toit",
         "toit terrasse",
         "Autres"
       ]
@@ -81,26 +84,34 @@
       "required": true,
       "values": [
         "Chevêche",
-        "Effraie",
+        "Chouette de Tengmalm",
+        "Chouette hulotte",
+        "Effraie des clochers",
         "Étourneau",
         "Faucon pèlerin",
         "Faucon crécerelle",
+        "Hirondelle de fenêtre",
+        "Hirondelle rustique",
         "Huppe fasciée",
         "Gîte chiro (arboricole en bois)",
         "Gîte chiro (fissuricole en bois)",
         "Gîte chiro (fissuricole en béton bois)",
-        "Mésange",
         "Mésange bleue",
         "Mésange charbonnière",
+        "Moineau friquet",
+        "Moineau domestique",
         "Petit-duc/colombin",
+        "Rougegorge",
         "Rougequeue",
-        "Autre"
+        "Rougequeue à front blanc",
+        "Sitelle torchepot",
+        "Autre (préciser dans le champs remarque)"
       ]
     },
     "adresse": {
       "type_widget": "text",
       "attribut_label": "Adresse",
-      "required": true
+      "required": false
     },
     "proprietaire_nom": {
       "type_widget": "text",
