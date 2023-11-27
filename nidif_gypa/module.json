@@ -1,0 +1,8 @@
+{
+    "module_label": "Suivi de la nidification du Gypaète Barbu",
+    "module_desc": "Suivi de la nidification du Gypaète Barbu",
+    "export_csv": [
+        { "label": "Export observations CSV", "type":"csv" , "method": "observations"},
+        { "label": "Export sites CSV", "type":"csv" , "method": "sites" }
+    ]
+}
