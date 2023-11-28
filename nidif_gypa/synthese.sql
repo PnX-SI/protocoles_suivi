@@ -62,4 +62,4 @@ WITH source AS (
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'MONITORING_NIDIF_GYPA'::TEXT;
+  WHERE m.module_code::text = 'nidif_gypa'::TEXT;
