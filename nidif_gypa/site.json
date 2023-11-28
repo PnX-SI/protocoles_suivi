@@ -2,7 +2,7 @@
   "label": "Aire",
   "label_list": "Aires",
   "genre": "F",
-  "geometry_type": "Polygon",
+  "geometry_type": "Point",
   "display_properties": [
     "base_site_name",
     "base_site_description",
