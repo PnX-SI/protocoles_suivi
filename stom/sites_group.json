@@ -1,6 +1,5 @@
 {
     "chained": false,
-    "cruved": {"C": 3, "U": 3, "D": 3},
     "label": "Site",
     "label_list": "Sites",
     "sorts": [
@@ -30,4 +29,4 @@
       }
     }
   }
-  
+

@@ -1,6 +1,5 @@
 {
   "chained": false,
-  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "visit_date_min",
     "observers"
