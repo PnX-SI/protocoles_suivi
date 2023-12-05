@@ -8,6 +8,7 @@
     "chargement_aire",
     "bague_plastique",
     "bague_mnhn",
+    "nom_individu",
     "comments"
   ],
   "display_list" : [
@@ -77,6 +78,10 @@
     "type_widget": "text",
     "attribut_label": "Bague mnhn"
     },
+    "nom_individu": {
+      "type_widget": "text",
+      "attribut_label": "Nom de l'individu"
+      },
     "indiv_a_aire": {
       "type_widget": "bool_checkbox",
       "attribut_label": "Individu à l'aire ?",
