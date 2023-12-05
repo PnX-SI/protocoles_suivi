@@ -11,8 +11,7 @@
     "comments"
   ],
   "display_list" : [
-    "hour_obs",
-    "count_min",
+    "count",
     "id_nomenclature_behaviour"
   ],
   "redirect_to_parent": true,
