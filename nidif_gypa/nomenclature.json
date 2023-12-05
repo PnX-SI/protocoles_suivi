@@ -1,0 +1,12 @@
+{
+  "types": [],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "AIRE_GYPA",
+      "mnemonique": "Aire de gypaète",
+      "label_default": "Aire de gypaète",
+      "definition_default": "Aire de gypaète"
+    }
+  ]
+}

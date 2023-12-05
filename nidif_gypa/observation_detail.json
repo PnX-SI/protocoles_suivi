@@ -1,0 +1,29 @@
+{
+  "display_properties": [
+    "comments"
+  ],
+  "redirect_to_parent": true,
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon",
+      "type_util": "taxonomy",
+      "required": true,
+      "hidden": true,
+      "value": 2852,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+    "hour_obs": {
+    "type_widget": "time",
+    "attribut_label": "Heure de l'observation"
+    },
+    "bague_plastique": {
+    "type_widget": "text",
+    "attribut_label": "Bague plastique"
+    },
+    "bague_mnhn": {
+    "type_widget": "text",
+    "attribut_label": "Bague mnhn"
+    }
+  }
+}

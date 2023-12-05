@@ -1,0 +1,96 @@
+{
+  "display_properties": [
+    "count",
+    "id_nomenclature_sex",
+    "id_nomenclature_life_stage",
+    "id_nomenclature_behaviour",
+    "indiv_a_aire",
+    "chargement_aire",
+    "bague_plastique",
+    "bague_mnhn",
+    "nom_individu",
+    "comments"
+  ],
+  "display_list" : [
+    "count",
+    "id_nomenclature_behaviour"
+  ],
+  "redirect_to_parent": true,
+  "specific": {
+    "cd_nom": {
+      "type_widget": "text",
+      "attribut_label": "cd nom",
+      "type_util": "taxonomy",
+      "value": 2852,
+      "hidden": true
+    },
+    "medias": {
+      "hidden": true
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Sexe",
+      "code_nomenclature_type": "SEXE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "SEXE",
+        "cd_nomenclature": "6"
+      },
+      "cd_nomenclatures": ["2","3","5", "6"]
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Stade de vie",
+      "code_nomenclature_type": "STADE_VIE",
+      "required": true,
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "STADE_VIE",
+        "cd_nomenclature": "1"
+      },
+      "cd_nomenclatures": ["1", "2", "3", "4", "5"]
+
+    },
+    "id_nomenclature_behaviour": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Comportement",
+      "code_nomenclature_type": "OCC_COMPORTEMENT",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "OCC_COMPORTEMENT",
+        "cd_nomenclature": "1"
+      },
+      "cd_nomenclatures": ["17", "1", "4", "8", "9", "10", "14", "15", "19", "21", "22", "23"]
+
+  },
+    "count": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individus",
+      "required": true
+    },
+    "bague_plastique": {
+    "type_widget": "text",
+    "attribut_label": "Bague plastique"
+    },
+    "bague_mnhn": {
+    "type_widget": "text",
+    "attribut_label": "Bague mnhn"
+    },
+    "nom_individu": {
+      "type_widget": "text",
+      "attribut_label": "Nom de l'individu"
+      },
+    "indiv_a_aire": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Individu à l'aire ?",
+      "value": false
+      },
+    "chargement_aire": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Chargement de l'aire",
+      "value": false
+      }
+  }
+}
