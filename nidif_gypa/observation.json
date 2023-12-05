@@ -21,7 +21,7 @@
       "type_widget": "text",
       "attribut_label": "cd nom",
       "type_util": "taxonomy",
-      "value": 3511,
+      "value": 2852,
       "hidden": true
     },
     "medias": {
@@ -89,7 +89,7 @@
       },
     "chargement_aire": {
       "type_widget": "bool_checkbox",
-      "attribut_label": "Chargement de l'air",
+      "attribut_label": "Chargement de l'aire",
       "value": false
       }
   }
