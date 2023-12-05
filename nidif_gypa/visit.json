@@ -11,8 +11,8 @@
     "comments"
   ],
   "display_list": [
-    "id_base_site",
-    "visit_date_min"
+    "visit_date_min",
+    "nb_observations"
   ],
   "specific": {
     "obs_txt": {
