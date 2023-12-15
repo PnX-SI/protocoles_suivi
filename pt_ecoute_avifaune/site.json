@@ -1,15 +1,9 @@
 {
-  "cruved": {
-    "C": 3,
-    "U": 3,
-    "D": 3
-  },
   "label": "Point d'écoute",
   "label_list": "Points d'écoute",
   "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
   "display_properties": [
-    "id_sites_group",
     "base_site_name",
     "annee_prospection",
     "base_site_description",
@@ -20,7 +14,6 @@
     "annee_prospection",
     "nb_visits",
     "last_visit",
-    "id_sites_group",
     "altitude_min"
   ],
   "specific": {
