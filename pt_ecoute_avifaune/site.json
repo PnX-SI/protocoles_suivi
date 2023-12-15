@@ -1,0 +1,58 @@
+{
+  "label": "Point d'écoute",
+  "label_list": "Points d'écoute",
+  "map_label_field_name": "base_site_name",
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "annee_prospection",
+    "base_site_description",
+    "altitude_min"
+  ],
+  "display_list": [
+    "base_site_name",
+    "annee_prospection",
+    "nb_visits",
+    "last_visit",
+    "altitude_min"
+  ],
+  "specific": {
+    "base_site_name": {
+      "required": true,
+      "hidden": false,
+      "attribut_label": "Identifiant du point d'écoute"
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "PT_ECOUTE_AVIFAUNE"
+      },
+      "hidden": true
+    },
+    "annee_prospection": {
+      "attribut_label": "Annee prospection",
+      "description": "Année où le passage est programmé",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "base_site_code": {
+      "hidden": true,
+      "required": false
+    },
+    "id_inventor": {
+      "hidden": true,
+      "required": false
+    },
+    "first_use_date": {
+      "hidden": true,
+      "required": false
+    }
+  }
+}

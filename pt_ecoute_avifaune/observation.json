@@ -1,0 +1,97 @@
+{
+  "display_properties": [
+    "cd_nom",
+    "nb_0_5",
+    "nb_5_10",
+    "nb_10_15",
+    "nb_dist_inf_100_m",
+    "nb_dist_supp_100_m",
+    "en_vol",
+    "id_nomenclature_behaviour"
+  ],
+  "sorts": [
+    {
+      "prop": "id_observation",
+      "dir": "asc"
+    }
+  ],
+  "redirect_to_parent": true,
+  "specific": {
+    "nb_0_5": {
+      "type_widget": "number",
+      "attribut_label": "0'-5'",
+      "description": "Effectif 0'-5'",
+      "required": true
+    },
+    "nb_5_10": {
+      "type_widget": "number",
+      "attribut_label": "5'-10'",
+      "description": "Effectif 5'-10'",
+      "required": true
+    },
+    "nb_10_15": {
+      "type_widget": "number",
+      "attribut_label": "10'-15'",
+      "description": "Effectif 10'-15'",
+      "required": true
+    },
+    "nb_dist_inf_100_m": {
+      "type_widget": "number",
+      "attribut_label": "Rayon de 100m",
+      "description": "Effectif dans un rayon de 100m",
+      "required": true
+    },
+    "nb_dist_supp_100_m": {
+      "type_widget": "number",
+      "attribut_label": "Au delà de 100m",
+      "description": "Effectif au delà de 100m",
+      "required": true
+    },
+    "en_vol": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Observé en vol",
+      "description": "Observé en vol",
+      "default": false
+    },
+    "id_nomenclature_behaviour": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Code phénologique",
+      "code_nomenclature_type": "OCC_COMPORTEMENT",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "OCC_COMPORTEMENT",
+        "cd_nomenclature": "1"
+      },
+      "cd_nomenclatures": [
+        "1",
+        "CA_01",
+        "CA_02",
+        "CA_03",
+        "CA_04",
+        "CA_05",
+        "CA_06",
+        "CA_07",
+        "CA_08",
+        "CA_09",
+        "CA_10",
+        "CA_11",
+        "CA_12",
+        "CA_13",
+        "CA_14",
+        "CA_15",
+        "CA_16"
+      ]
+    },
+    "comments": {
+      "attribute_label": "Commentaire"
+    },
+    "medias": {
+      "hidden": true,
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "description": "Médias",
+      "schema_dot_table": "gn_monitoring.t_observations"
+    }
+  }
+}
