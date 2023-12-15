@@ -1,10 +1,5 @@
 {
   "chained": false,
-  "cruved": {
-    "C": 1,
-    "U": 1,
-    "D": 3
-  },
   "display_properties": [
     "visit_date_min",
     "observers",
@@ -66,7 +61,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "st_veg_lign_8_16": {
       "attribut_label": "Recouvrement ligneux 8-16m (%)",
@@ -74,7 +70,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "st_veg_lign_4_8": {
       "attribut_label": "Recouvrement ligneux 4-8m (%)",
@@ -82,7 +79,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "st_veg_lign_2_4": {
       "attribut_label": "Recouvrement ligneux 2-4m (%)",
@@ -90,7 +88,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "st_veg_lign_1_2": {
       "attribut_label": "Recouvrement ligneux 1-2m(%)",
@@ -98,7 +97,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "st_veg_lign_lower_1": {
       "attribut_label": "Recouvrement ligneux <1m (%)",
@@ -106,63 +106,72 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_sp_1": {
       "attribut_label": "Espèce ligneux 1",
       "description": "Composition végétal en ligneux espèce 1",
       "type_widget": "taxonomy",
       "type_util": "taxonomy",
-      "id_list": "1000009"
+      "id_list": "1000009",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_sp_1_rec": {
       "attribut_label": "Recouvrement sp. 1 (%)",
       "description": "végétal en ligneux espèce 1 % recouvrement",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_sp_2": {
       "attribut_label": "Espèce ligneux 2",
       "description": "Composition végétal en ligneux espèce 2",
       "type_widget": "taxonomy",
       "type_util": "taxonomy",
-      "id_list": "1000009"
+      "id_list": "1000009",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_sp_2_rec": {
       "attribut_label": "Recouvrement sp. 2 (%)C",
       "description": "végétal en ligneux espèce 2 % recouvrement",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_sp_3": {
       "attribut_label": "Espèce ligneux 4",
       "description": "Composition végétal en ligneux espèce 3",
       "type_widget": "taxonomy",
       "type_util": "taxonomy",
-      "id_list": "1000009"
+      "id_list": "1000009",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_sp_3_rec": {
       "attribut_label": "Recouvrement sp. 3 (%)",
       "description": "végétal en ligneux espèce 3 % recouvrement",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_sp_4": {
       "attribut_label": "Espèce ligneux 4",
       "description": "Composition végétal en ligneux espèce 4",
       "type_widget": "taxonomy",
       "type_util": "taxonomy",
-      "id_list": "1000009"
+      "id_list": "1000009",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_sp_4_rec": {
       "attribut_label": "Recouvrement sp. 4 (%)",
       "description": "végétal en ligneux espèce 4 % recouvrement",
       "type_widget": "number",
       "min": 0,
-      "default": 0
+      "default": 0,
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "veg_lig_rec_total": {
       "attribut_label": "Recouvrement ligneux total (%)",
@@ -170,7 +179,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "sth_herbacee": {
       "attribut_label": "Recouvrement strate herbacée (%)",
@@ -178,7 +188,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "sth_bloc_rocher": {
       "attribut_label": "Recouvrement bloc/rocher(%)",
@@ -186,7 +197,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "sth_pierraille": {
       "attribut_label": "Recouvrement pierraille (%)",
@@ -194,7 +206,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     },
     "sth_sol_nu": {
       "attribut_label": "Recouvrement sol nu(%)",
@@ -202,7 +215,8 @@
       "type_widget": "number",
       "min": 0,
       "default": 0,
-      "required": true
+      "required": "({value}) => value.num_passage == 1",
+      "hidden": "({value}) => !(value.num_passage == 1)"
     }
   }
 }
