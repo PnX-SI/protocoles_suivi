@@ -37,7 +37,7 @@
     "adulte": {
       "type_widget": "number",
       "attribut_label": "Nombre d'adultes",
-      "hidden": "({value}) => value.nidification != 'Oui'",
+      "hidden": false,
       "required": false,
       "min": 0,
       "max": 50
@@ -45,7 +45,7 @@
     "oeuf": {
       "type_widget": "number",
       "attribut_label": "Nombre d'oeufs",
-      "hidden": "({value}) => value.nidification != 'Oui'",
+      "hidden": false,
       "required": false,
       "value" : 0,
       "min": 0,
@@ -54,7 +54,7 @@
     "jeune_vivant": {
       "type_widget": "number",
       "attribut_label": "Nombre de jeunes vivants",
-      "hidden": "({value}) => value.nidification != 'Oui'",
+      "hidden": false,
       "required": false,
       "value" : 0,
       "min": 0,
@@ -63,7 +63,7 @@
     "jeune_mort": {
       "type_widget": "number",
       "attribut_label": "Nombre de jeunes morts",
-      "hidden": "({value}) => value.nidification != 'Oui'",
+      "hidden": false,
       "required": false,
       "min": 0,
       "max": 20
