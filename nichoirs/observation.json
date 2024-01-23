@@ -7,7 +7,6 @@
   "display_properties": [
     "cd_nom",
     "cd_nom_precision",
-    "nidification",
     "adulte",
     "oeuf",
     "jeune_vivant",
@@ -34,12 +33,6 @@
       "type_util": "taxonomy",
       "required": true,
       "id_list": "__MODULE.ID_LIST_TAXONOMY"
-    },
-    "nidification": {
-      "type_widget": "radio",
-      "attribut_label": "Occupation",
-      "values": ["Oui", "Non"],
-      "required": true
     },
     "adulte": {
       "type_widget": "number",

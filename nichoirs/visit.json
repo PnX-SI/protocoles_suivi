@@ -6,6 +6,7 @@
     "visit_date_min",
     "observers",
     "etat_nichoir",
+    "nidification",
     "comments"
   ],
   "display_list": [
@@ -35,6 +36,12 @@
       "attribut_label": "Etat du nichoir",
       "required": true,
       "values": ["bon état", "à réparer", "à replacer", "non trouvé", "autre"]
+    },
+    "nidification": {
+      "type_widget": "radio",
+      "attribut_label": "Occupation",
+      "values": ["Oui", "Non"],
+      "required": true
     },
     "comments": {
       "type_widget": "textarea",

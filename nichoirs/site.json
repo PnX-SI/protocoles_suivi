@@ -73,6 +73,8 @@
         "garage",
         "poteau",
         "pigeonnier/tour",
+        "piquet",
+        "piquet de vigne",
         "toit",
         "toit terrasse",
         "Autres"
@@ -83,7 +85,7 @@
       "attribut_label": "Type de nichoir",
       "required": true,
       "values": [
-        "Chevêche",
+        "Chevêche d'Athéna",
         "Chouette de Tengmalm",
         "Chouette hulotte",
         "Effraie des clochers",
