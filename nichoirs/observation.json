@@ -6,7 +6,6 @@
   "genre": "F",
   "display_properties": [
     "cd_nom",
-    "cd_nom_precision",
     "adulte",
     "oeuf",
     "jeune_vivant",

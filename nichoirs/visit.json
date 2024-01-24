@@ -12,6 +12,7 @@
   "display_list": [
     "visit_date_min",
     "observers",
+    "nidification",
     "nb_observations"
   ],
   "specific": {
