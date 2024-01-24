@@ -7,7 +7,7 @@
   "display_properties": [
     "cd_nom",
     "cd_nom_precision",
-    "nidification",
+    "adulte",
     "oeuf",
     "jeune_vivant",
     "jeune_mort"
@@ -34,28 +34,37 @@
       "required": true,
       "id_list": "__MODULE.ID_LIST_TAXONOMY"
     },
-    "cd_nom_precision": {
-      "type_widget": "text",
-      "attribut_label": "Précision sur l'espèce"
+    "adulte": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'adultes",
+      "hidden": false,
+      "required": false,
+      "min": 0,
+      "max": 50
     },
     "oeuf": {
       "type_widget": "number",
-      "attribut_label": "Nombre oeufs",
-      "required": true,
+      "attribut_label": "Nombre d'oeufs",
+      "hidden": false,
+      "required": false,
+      "value" : 0,
       "min": 0,
       "max": 20
     },
     "jeune_vivant": {
       "type_widget": "number",
-      "attribut_label": "Nombre jeunes vivants",
-      "required": true,
+      "attribut_label": "Nombre de jeunes vivants",
+      "hidden": false,
+      "required": false,
+      "value" : 0,
       "min": 0,
       "max": 20
     },
     "jeune_mort": {
       "type_widget": "number",
-      "attribut_label": "Nombre jeunes morts",
-      "required": true,
+      "attribut_label": "Nombre de jeunes morts",
+      "hidden": false,
+      "required": false,
       "min": 0,
       "max": 20
     },

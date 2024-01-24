@@ -21,6 +21,13 @@
     "nichoir_referent",
     "base_site_description"
   ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "nichoir_type",
+    "last_visit",
+    "nb_visits"
+  ],
   "specific": {
     "id_nomenclature_type_site": {
       "type_widget": "nomenclature",
@@ -40,7 +47,7 @@
       "hidden": true
     },
     "base_site_name": {
-      "attribut_label": "Identifiant du nichoir",
+      "attribut_label": "Nom du nichoir",
       "required": true,
       "hidden": false
     },
@@ -54,14 +61,22 @@
       "attribut_label": "Lieu de pose",
       "required": true,
       "values": [
+        "arbre",
+        "acrotère de bâtiment",
+        "aménagement de combles",
+        "bergerie",
+        "caissons a rhinolophes",
         "église",
+        "façade de bâtiment",
         "grange/hangar",
         "grenier/combles",
         "garage",
-        "bergerie",
-        "arbre",
         "poteau",
         "pigeonnier/tour",
+        "piquet",
+        "piquet de vigne",
+        "toit",
+        "toit terrasse",
         "Autres"
       ]
     },
@@ -70,22 +85,35 @@
       "attribut_label": "Type de nichoir",
       "required": true,
       "values": [
-        "effraie",
-        "chevêche",
-        "huppe",
-        "mésange",
-        "faucon pèlerin",
-        "faucon crécerelle",
-        "étourneau",
-        "petit-duc/colombin",
-        "gîte chiro",
-        "autre"
+        "Chevêche d'Athéna",
+        "Chouette de Tengmalm",
+        "Chouette hulotte",
+        "Effraie des clochers",
+        "Étourneau",
+        "Faucon pèlerin",
+        "Faucon crécerelle",
+        "Hirondelle de fenêtre",
+        "Hirondelle rustique",
+        "Huppe fasciée",
+        "Gîte chiro (arboricole en bois)",
+        "Gîte chiro (fissuricole en bois)",
+        "Gîte chiro (fissuricole en béton bois)",
+        "Mésange bleue",
+        "Mésange charbonnière",
+        "Moineau friquet",
+        "Moineau domestique",
+        "Petit-duc/colombin",
+        "Rougegorge",
+        "Rougequeue",
+        "Rougequeue à front blanc",
+        "Sitelle torchepot",
+        "Autre (préciser dans le champs remarque)"
       ]
     },
     "adresse": {
       "type_widget": "text",
       "attribut_label": "Adresse",
-      "required": true
+      "required": false
     },
     "proprietaire_nom": {
       "type_widget": "text",
