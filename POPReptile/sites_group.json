@@ -1,7 +1,6 @@
 {
   "genre":"F",
   "label": "Aire",
-  "map_label_field_name": "base_site_name",
   "export_pdf": [
     {
       "template": "fiche_aire.html",
@@ -10,20 +9,16 @@
   ],
   "label_list": "Aires",
   "display_properties": [
-    "id_dataset",
     "id_inventor",
     "expertise",
-    "commune",
     "sites_group_name",
     "habitat_principal",
     "comments"
   ],
   "display_list": [
-    "sites_group_name",
-    "nb_sites"
+    "sites_group_name"
   ],
   "specific": {
-
     "id_inventor": {
       "type_widget": "datalist",
       "attribut_label": "Observateur principal",
@@ -35,65 +30,37 @@
       "required": true
     },
     "expertise": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Expertise",
-      "code_nomenclature_type": "EXPERTISE",
-      "required": false,
-      "hidden": false,
-      "type_util": "nomenclature"
-    },
-    "commune": {
-      "type_widget": "municipalities",
-      "attribut_label": "Commune",
+      "type_widget": "select",
       "required": true,
-      "value_field_name": "area_code",
-      "type_util": "area",
-      "title":"Veuillez saisir les principales communes concernées par l'aire"
+      "attribut_label": "Expertise",
+      "values": ["Débutant", "Assez expérimenté", "Chevronné"]
     },
-      "sites_group_name": {
-        "type_widget": "text",
-        "attribut_label": "Nom de l'aire",
-        "required": true,
-        "definition": "Nom du groupe site."
-
-      },
-
-      "comments": {
-        "type_widget": "textarea",
-        "attribut_label": "Commentaire"
-      },
-
-      "habitat_principal":{
-        "type_widget": "datalist",
-        "attribut_label": "Habitat principal",
-        "api": "habref/habitats/autocomplete",
-        "application": "GeoNature",
-        "keyValue": "cd_hab",
-        "keyLabel": "search_name",
-        "type_util": "habitat",
-        "definition":"Veuillez préciser l'habitat principal de l'aire",
-        "params": {
-            "cd_typo": 7,
-            "search_name": ""
-        }
-
-      },
-      "sites_group_description": {
-        "type_widget": "textarea",
-        "attribut_label": "Description",
-        "hidden":true
-      },
-      "sites_group_code": {
-        "type_widget": "text",
-        "attribut_label": "Numéro de l'aire",
-        "required": false,
-        "hidden":true
-      },
-      "nb_visits": {
-        "attribut_label": "Nombre de passages"
-      }
-
-
-
+    "sites_group_name": {
+      "type_widget": "text",
+      "attribut_label": "Nom de l'aire",
+      "required": true,
+      "definition": "Nom du groupe site." 
+    },
+    "sites_group_code": {
+      "type_widget": "text",
+      "attribut_label": "Numéro de l'aire",
+      "required": false,
+      "hidden":true
+    },
+    "sites_group_description": {
+      "type_widget": "textarea",
+      "attribut_label": "Description",
+      "hidden":true
+    },
+    "habitat_principal": {
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Habitat principal",
+      "values": ["Forêt", "Buisson / haie (< 5 m de hauteur)", "Milieu agricole (prairie, élevage)", "Milieu agricole (culture, autre)", "Milieu ouvert non agricole (lande, steppe)", "Sol sans végétation (dune, sol rocheux)", "Zone urbaine, espace vert"]
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
   }
-}
+}   
