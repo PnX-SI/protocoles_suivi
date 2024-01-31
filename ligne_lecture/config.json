@@ -3,9 +3,7 @@
     "module": {
       "site": {
         "visit": {
-          "observation": {
-            "observation_detail": null
-          }
+          "observation": null
         }
       }
     }
