@@ -1,119 +1,3 @@
-delete from gn_synthese.synthese ;
-
-delete from gn_monitoring.t_base_visits ;
-
-
-select concat(
-'{"la":"li"}'::json,
-'{"lo":"lu"}'::json
-);
-
-select  '{"la":"li"}'::jsonb ||'{"lo":"lu"}'::jsonb;
-
-
-
-
-
-
-
--- gn_monitoring.v_synthese_nidif_gypa source
-  WHERE m.module_code::text = 'nidif_gypa'::text;
-
- 
- select * from gn_monitoring.comportement_mapping cm;
- 
-
-update gn_monitoring.t_observation_complements o
-set data = o."data" ||jsonb_build_object(
-	'comportement', 
-	case 
-		when o."data"->>'id_nomenclature_behaviour'= '558' then null
-		when o."data"->>'id_nomenclature_behaviour'= '559' then null 
-		when o."data"->>'id_nomenclature_behaviour'= '566' then null --chasse alim
-		when o."data"->>'id_nomenclature_behaviour'= '568' then '["Passage en vol"]' 
-		when o."data"->>'id_nomenclature_behaviour'= '571' then null --esivage 
-		when o."data"->>'id_nomenclature_behaviour'= '573' then null '["Posé"]'
-		when o."data"->>'id_nomenclature_behaviour'= '577' then null '["Accouplement"]'
-		when o."data"->>'id_nomenclature_behaviour'= '579' then '["Tandem"]' 
-		when o."data"->>'id_nomenclature_behaviour'= '580' then '["Territorial"]',
-	end
-	) 
-from gn_monitoring.t_base_visits v
-join gn_monitoring.t_observations t using(id_base_visit)
-where v.id_module = 9 and t.id_observation  = o.id_observation ;
-
-
-
-update gn_monitoring.t_observation_complements o
-set data = o."data" ||jsonb_build_object(
-	'comportement', 
-	case 
-		when o."data"->>'id_nomenclature_behaviour'= '563' then jsonb_build_array('Accouplement', 'Posé')
-		when o."data"->>'id_nomenclature_behaviour'= '559' then null 
-		when o."data"->>'id_nomenclature_behaviour'= '566' then null --chasse alim
-		when o."data"->>'id_nomenclature_behaviour'= '568' then  jsonb_build_array('Passage en vol') 
-		when o."data"->>'id_nomenclature_behaviour'= '571' then null --esivage 
-		when o."data"->>'id_nomenclature_behaviour'= '573' then jsonb_build_array('Posé')
-		when o."data"->>'id_nomenclature_behaviour'= '577' then jsonb_build_array('Accouplement')
-		when o."data"->>'id_nomenclature_behaviour'= '579' then jsonb_build_array('Tandem')
-		when o."data"->>'id_nomenclature_behaviour'= '580' then jsonb_build_array('Territorial')
-
-	end
-	) 
-from gn_monitoring.t_base_visits v
-join gn_monitoring.t_observations t using(id_base_visit)
-where v.id_module = 55 and t.id_observation  = o.id_observation;
-
-
-select * from gn_commons.t_modules tm ;
-
-
-select distinct "data"->>'comportement'
-from gn_monitoring.t_observation_complements;
-
-
-select distinct toc."data"->>'id_nomenclature_behaviour' from gn_monitoring.t_observation_complements toc where toc."data"->>'id_nomenclature_behaviour' is not null
-order by toc."data"->>'id_nomenclature_behaviour'
-;
-
-SELECT COUNT(*) 
-FROM gn_monitoring.v_synthese_nidif_gypa WHERE id_base_visit::varchar = '8';
-
-select * from gn_commons.t_modules tm ;
-
-
--- gn_monitoring.comportement_mapping definition
-
--- Drop table
-
-DROP TABLE gn_monitoring.comportement_mapping;
-
-CREATE TABLE gn_monitoring.comportement_mapping (
-	ordre int4 NOT NULL,
-	val varchar(50) NULL,
-	cd_nomenclature varchar(10) NULL,
-	CONSTRAINT comportement_mapping_pkey PRIMARY KEY (ordre)
-);
-
-
-
-INSERT INTO gn_monitoring.comportement_mapping (ordre,val,cd_nomenclature) VALUES
-	 (6,'Accouplement','19'),
-	 (1,'Jeune envolé',NULL),
-	 (12,'Aire vide',NULL),
-	 (2,'Nourrissage des jeunes','14'),
-	 (3,'Jeune au nid',NULL),
-	 (8,'Recharge de l''aire',NULL),
-	 (5,'Relève à l''aire',NULL),
-	 (10,'Passage en vol','10'),
-	 (9,'Tandem','21'),
-	 (7,'Territorial','22');
-INSERT INTO gn_monitoring.comportement_mapping (ordre,val,cd_nomenclature) VALUES
-	 (11,'Posé','15'),
-	 (4,'Couvaison','');
-
- drop view gn_monitoring.v_synthese_nidif_gypa;
-
 
 CREATE OR REPLACE VIEW gn_monitoring.v_synthese_nidif_gypa
 AS WITH source AS (
@@ -128,7 +12,7 @@ AS WITH source AS (
            FROM gn_monitoring.t_visit_complements v_1
              JOIN gn_monitoring.cor_visit_observer cvo ON cvo.id_base_visit = v_1.id_base_visit
              JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
-          GROUP BY v_1.id_base_visit, cvo.id_role
+          GROUP BY v_1.id_base_visit
         ), unnest_comp AS (
          SELECT jsonb_array_elements_text((toc1.data ->> 'comportement'::text)::jsonb) AS v,
             toc1.id_observation
@@ -194,7 +78,4 @@ AS WITH source AS (
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-     
-     
-     
-     
+     where m.module_code = 'nidif_gypa';
