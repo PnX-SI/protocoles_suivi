@@ -24,8 +24,8 @@
 
 
 
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
-CREATE VIEW gn_monitoring.v_synthese_:module_code AS
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_suivi_Camphi_gmb;
+CREATE VIEW gn_monitoring.v_synthese_suivi_Camphi_gmb AS
 
 WITH source AS (
 
@@ -34,7 +34,7 @@ WITH source AS (
         id_source
 
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 
 ), sites AS (
@@ -182,9 +182,5 @@ SELECT
 	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
     
  	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max) ON TRUE
-    WHERE m.module_code = :'module_code'
+    WHERE m.module_code = :module_code
     ;
-
-
-SELECT * FROM gn_monitoring.v_synthese_:module_code
-

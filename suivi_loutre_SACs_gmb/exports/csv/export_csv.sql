@@ -152,8 +152,8 @@ data_monitoring AS (
 			when obscompl.data ->> 'technique_observation'::text = 'null' then null
 			else obscompl.data ->> 'technique_observation'::text
 		end AS technique_observation
-
 	FROM gn_monitoring.t_sites_groups grpsite
+		JOIN gn_monitoring.cor_sites_group_module grpsitemodule on grpsitemodule.id_sites_group = grpsite.id_sites_group
 		JOIN gn_monitoring.t_site_complements sitecompl ON grpsite.id_sites_group = sitecompl.id_sites_group
 		JOIN gn_monitoring.t_base_sites site ON sitecompl.id_base_site = site.id_base_site
 		JOIN gn_monitoring.t_base_visits visite ON visite.id_base_site = site.id_base_site
@@ -162,9 +162,7 @@ data_monitoring AS (
 		JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = visite.id_base_visit
 		JOIN taxonomie.taxref tx ON obs.cd_nom = tx.cd_nom
 		JOIN gn_monitoring.t_observation_complements obscompl ON obscompl.id_observation = obs.id_observation
-
-	WHERE grpsite.id_module = gn_commons.get_id_module_bycode('suiviloutreuicn'::text)
-
+	WHERE grpsitemodule.id_module = gn_commons.get_id_module_bycode('suiviloutreuicn'::text)
 ),
 
 --ty_habarsa
