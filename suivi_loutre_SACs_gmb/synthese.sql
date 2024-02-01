@@ -24,8 +24,8 @@
 
 
 
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
-CREATE VIEW gn_monitoring.v_synthese_:module_code AS
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_suivi_loutre_SACs_gmb;
+CREATE VIEW gn_monitoring.v_synthese_suivi_loutre_SACs_gmb AS
 
 WITH source AS (
 
@@ -34,7 +34,7 @@ WITH source AS (
         id_source
 
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 
 ), sites AS (
@@ -83,9 +83,7 @@ WITH source AS (
     ON r.id_role = cvo.id_role
     GROUP BY id_base_visit
 )
-
-SELECT
-		
+SELECT	
         o.uuid_observation AS unique_id_sinp, 
 		v.uuid_base_visit AS unique_id_sinp_grp,
 		source.id_source,
@@ -174,13 +172,10 @@ SELECT
 		v.comments AS comment_context,
 		o.comments AS comment_description,
 		obs.ids_observers,
-		
 		-- ## Colonnes complémentaires qui ont leur utilité dans la fonction synthese.import_row_from_table
 		v.id_base_site,
 		v.id_base_visit
-
     FROM gn_monitoring.t_observations o
-
     JOIN gn_monitoring.t_observation_complements obscompl using(id_observation)
     JOIN visits v ON v.id_base_visit = o.id_base_visit
     JOIN sites s ON s.id_base_site = v.id_base_site
@@ -188,11 +183,8 @@ SELECT
 	JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
 	JOIN source ON TRUE
 	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
  	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max) ON TRUE
-    WHERE m.module_code = :'module_code'
+    WHERE m.module_code = :module_code
     ;
 
-
-SELECT * FROM gn_monitoring.v_synthese_:module_code
 
