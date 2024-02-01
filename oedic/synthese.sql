@@ -11,7 +11,7 @@ CREATE VIEW gn_monitoring.v_synthese_oedicnemes AS
 WITH source AS (
 	SELECT id_source
 	FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code')) -- ici 'MONITORING_<module_code>.upper()'
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 )SELECT
 		o.uuid_observation AS unique_id_sinp,
@@ -90,4 +90,4 @@ LEFT JOIN LATERAL (
 	ON r.id_role = cvo.id_role
 	WHERE cvo.id_base_visit = v.id_base_visit
 ) obs ON true
-WHERE m.module_code = :'module_code';
+WHERE m.module_code = :module_code;

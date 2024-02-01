@@ -5,7 +5,7 @@ WITH source AS (
     SELECT
         id_source
     FROM gn_synthese.t_sources
-    WHERE name_source = CONCAT('MONITORING_', UPPER('apollons'))
+    WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
     LIMIT 1
 ), observers AS (
     SELECT
@@ -67,7 +67,7 @@ WITH source AS (
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'apollons'::TEXT
+  WHERE m.module_code = :module_code
     AND COALESCE((vc.DATA->>'count_stade_l1')::int, 0) +
     COALESCE((vc.DATA->>'count_stade_l2')::int, 0) +
     COALESCE((vc.DATA->>'count_stade_l3')::int, 0) +

@@ -1,27 +1,26 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_pt_ecoute_avifaune AS
-WITH source AS (
-	SELECT
-        id_source
-    FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER('pt_ecoute_avifaune'))
-	LIMIT 1
-), observers AS (
-    SELECT
-        CASE
-            WHEN cvo.id_role IS NULL THEN v."data"->>'observers_txt'
-            ELSE STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ')
-        END as observers,
-        CASE
-            WHEN cvo.id_role IS NOT null then array_agg(r.id_role)
-            ELSE NULL
-        END AS ids_observers,
-        v.id_base_visit
-    FROM gn_monitoring.t_visit_complements v
-    LEFT JOIN gn_monitoring.cor_visit_observer cvo ON cvo.id_base_visit  = v.id_base_visit
-    LEFT JOIN utilisateurs.t_roles r
-    ON r.id_role = cvo.id_role
-    GROUP BY v.id_base_visit, cvo.id_role
-)
+
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_pt_ecoute_avifaune
+AS WITH source AS (
+         SELECT t_sources.id_source
+           FROM gn_synthese.t_sources
+          WHERE t_sources.name_source::text = concat('MONITORING_', upper('pt_ecoute_avifaune'::text))
+         LIMIT 1
+        ), observers AS (
+         SELECT
+                CASE
+                    WHEN cvo.id_role IS NULL THEN v_1.data ->> 'observers_txt'::text
+                    ELSE string_agg(concat(r.nom_role, ' ', r.prenom_role), ' ; '::text)
+                END AS observers,
+                CASE
+                    WHEN cvo.id_role IS NOT NULL THEN array_agg(r.id_role)
+                    ELSE NULL::integer[]
+                END AS ids_observers,
+            v_1.id_base_visit
+           FROM gn_monitoring.t_visit_complements v_1
+             LEFT JOIN gn_monitoring.cor_visit_observer cvo ON cvo.id_base_visit = v_1.id_base_visit
+             LEFT JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
+          GROUP BY v_1.id_base_visit, cvo.id_role
+        )
  SELECT to2.uuid_observation AS unique_id_sinp,
     v.uuid_base_visit AS unique_id_sinp_grp,
     source.id_source,
@@ -56,8 +55,24 @@ WITH source AS (
     v.id_base_site,
     v.id_base_visit,
     to2.id_observation,
-    ((toc.data ->> 'nb_0_5'::text)::integer) + ((toc.data ->> 'nb_5_10'::text)::integer) + ((toc.data ->> 'nb_10_15'::text)::integer) + ((toc.data ->> 'nb_dist_inf_100_m'::text)::integer) AS count_min,
-    ((toc.data ->> 'nb_0_5'::text)::integer) + ((toc.data ->> 'nb_5_10'::text)::integer) + ((toc.data ->> 'nb_10_15'::text)::integer) + ((toc.data ->> 'nb_dist_inf_100_m'::text)::integer) AS count_max
+    COALESCE(
+	  	NULLIF(
+		  	COALESCE((toc.data ->> 'nb_0_5')::integer,0) + 
+		  	COALESCE((toc.data ->> 'nb_5_10')::integer,0) + 
+		  	COALESCE((toc.data ->> 'nb_10_15')::integer,0) + 
+		  	COALESCE((toc.data ->> 'nb_dist_inf_100_m')::integer,0)
+	  	, 0)
+	  , COALESCE((toc.data ->> 'nb_dist_supp_100_m')::integer,0) 
+	  )  AS count_min,
+     COALESCE(
+	  	NULLIF(
+		  	COALESCE((toc.data ->> 'nb_0_5')::integer,0) + 
+		  	COALESCE((toc.data ->> 'nb_5_10')::integer,0) + 
+		  	COALESCE((toc.data ->> 'nb_10_15')::integer,0) + 
+		  	COALESCE((toc.data ->> 'nb_dist_inf_100_m')::integer,0)
+	  	, 0)
+	  , COALESCE((toc.data ->> 'nb_dist_supp_100_m')::integer,0) 
+	  ) AS count_max
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_commons.t_modules m ON m.id_module = v.id_module
@@ -69,3 +84,4 @@ WITH source AS (
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
   WHERE m.module_code::text = 'pt_ecoute_avifaune'::text;
+ 
