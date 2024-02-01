@@ -3,7 +3,7 @@ WITH source AS (
     SELECT
         id_source
     FROM gn_synthese.t_sources
-    WHERE name_source = CONCAT('MONITORING_', UPPER('LICHENS_BIO_INDICATEURS'))
+    WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
     LIMIT 1
 )
  SELECT to2.uuid_observation AS unique_id_sinp,
@@ -53,4 +53,4 @@ LEFT JOIN LATERAL ( SELECT string_agg(concat(UPPER(tr.nom_role), ' ', tr.prenom_
        WHERE cvo.id_base_visit = v.id_base_visit
     GROUP BY cvo.id_base_visit)
 obs ON TRUE
-  WHERE m.module_code::text = 'lichens_bio_indicateurs'::TEXT;
+  WHERE m.module_code::text = :module_code;
