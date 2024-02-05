@@ -1,6 +1,5 @@
 {
   "chained": false,
-  "cruved": {"C": 3, "U": 3, "D": 3},
   "label": "Site",
   "label_list": "Sites",
   "sorts": [
@@ -24,10 +23,10 @@
     "sites_group_name",
     "sites_group_code",
     "commune_site",
-    "nb_sites" 
+    "nb_sites"
   ],
   "map_label_field_name": "base_site_code",
-  
+
 
 
   "keep": [

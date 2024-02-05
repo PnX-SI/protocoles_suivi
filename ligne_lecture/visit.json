@@ -1,0 +1,20 @@
+{
+  "chained": false,
+  "display_properties": [
+    "visit_date_min",
+    "observers"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "nb_observations"
+  ],
+  "specific": {
+    "medias": {
+      "hidden": true
+    },
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
+    }
+  }
+}

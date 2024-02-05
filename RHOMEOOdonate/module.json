@@ -1,14 +1,7 @@
 {
-  "cruved": {"C":1, "U":1, "D": 1},
   "module_label":"RHOMEOOdonate",
   "module_desc":"Module pour le protocole de suivi RhoMeO des odonates",
-  "color":"#e5fffe", 
-  "permission_objects" : [
-      "GNM_GRP_SITES", 
-      "GNM_SITES", 
-      "GNM_VISITES", 
-      "GNM_OBSERVATIONS"
-  ],
+  "color": "#e5fffe",
   "export_csv": [
     { "label": "Format standard CSV", "type":"csv" , "method": "standard" },
     { "label": "RHOMEO calculette CSV", "type":"csv" , "method": "calculette" }

@@ -1,17 +1,18 @@
 {
   "chained": false,
-  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "visit_date_min",
     "observers",
     "hauteur_nard",
-    "hauteur_moy_vegetation"
+    "hauteur_moy_vegetation",
+    "recouvrement_vegetation",
+    "comments"
   ],
   "display_list": [
     "visit_date_min",
     "observers",
     "nb_observations",
-    "pourcentage_recouvrement"
+    "recouvrement_vegetation"
   ],
   "specific": {
     "id_dataset": {
@@ -19,14 +20,21 @@
     },
     "hauteur_nard": {
       "type_widget": "number",
-      "attribut_label": "Hauteur du nard",
+      "attribut_label": "Hauteur du nard (en cm)",
       "min": 0,
       "required": true
     },
     "hauteur_moy_vegetation": {
       "type_widget": "number",
-      "attribut_label": "Hauteur moyenne de la végétation",
+      "attribut_label": "Hauteur moyenne de la végétation (en cm)",
       "min": 0,
+      "required": true
+    },
+    "recouvrement_vegetation": {
+      "type_widget": "number",
+      "attribut_label": "Recouvrement de végération (%)",
+      "min": 0,
+      "max": 100,
       "required": true
     },
     "medias": {

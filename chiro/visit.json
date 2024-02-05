@@ -1,5 +1,4 @@
 {
-  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "id_base_site",
     "visit_date_min",
@@ -18,11 +17,8 @@
     "observers"
   ],
   "map_label_field_name": "base_site_code",
-  "chain_show": [
-  ],
-  "keep": [
-
-  ],
+  "chain_show": [],
+  "keep": [],
   "specific": {
     "id_dataset": {
       "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
@@ -54,7 +50,7 @@
     },
     "comments": {
       "type_widget": "textarea",
-      "attribut_label":"Commentaire (autres indices, présence d'autres espèces, etc..)"
+      "attribut_label": "Commentaire (autres indices, présence d'autres espèces, etc..)"
     },
     "medias": {
       "hidden": true,

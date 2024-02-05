@@ -1,5 +1,4 @@
 {
-  "cruved": {"C": 1, "U": 1, "D": 2},
   "display_properties": [
     "uuid_observation",
     "cd_nom",
@@ -45,6 +44,7 @@
       "attribut_label": "Para taxon",
       "description": "A remplir si groupe de taxon",
       "values": [
+        "Apothécies noires à rebord marron",
         "Crustacé verdatre",
         "Crustacé aérolé",
         "Crustacé gris/bleu",
