@@ -1,0 +1,12 @@
+{
+    "types": [],
+    "nomenclatures": [
+      {
+        "type": "TYPE_SITE",
+        "cd_nomenclature": "LIGNE_LECTURE",
+        "mnemonique": "Ligne de lecture",
+        "label_default": "Ligne de lecture",
+        "definition_default": "Ligne de lecture"
+      }
+    ]
+  }

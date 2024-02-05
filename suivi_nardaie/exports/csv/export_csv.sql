@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW gn_monitoring.v_export_nardaie_all
+CREATE OR REPLACE VIEW gn_monitoring.v_export_suivi_nardaie_all
  as with observers as (
      SELECT 
      cvo2.id_base_visit,
@@ -24,9 +24,9 @@ tbv."comments" AS commentaire_visite,
 tvc."data"->>'hauteur_nard' AS hauteur_nard,
 tvc."data"->>'hauteur_moy_vegetation' AS hauteur_moy_vegetation,
 obs.id_observation AS id_observation,
-t.lb_nom AS tax_nom_scientifique,
-t.nom_vern as tax_nom_vern,
-t.cd_nom AS tax_cd_nom,
+t.lb_nom AS nom_scientifique,
+t.nom_vern as nom_vern,
+t.cd_nom AS cd_nom,
 toc."data"->>'pourcentage_recouvrement' AS pourcentage_recouvrement
 from gn_monitoring.t_base_sites s
 LEFT JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site 
@@ -37,4 +37,4 @@ LEFT JOIN gn_commons.t_modules m ON m.id_module = tbv.id_module
 JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit 
 JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = obs.id_observation 
 JOIN taxonomie.taxref t ON t.cd_nom = obs.cd_nom
-WHERE m.module_code::text = 'NARDAIE';
+WHERE m.module_code::text = 'suivi_nardaie';

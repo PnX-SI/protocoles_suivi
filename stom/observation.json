@@ -1,5 +1,4 @@
 {
-  "cruved": {"C": 1, "U": 1, "D": 3},
   "display_properties": [
     "cd_nom",
     "nb_0_5",
@@ -31,8 +30,7 @@
     },
     "presence_juvenile": {
       "type_widget": "bool_checkbox",
-      "attribut_label": "Présence de juvéniles ? (si oui ne pas les compter)",
-      "default": false
+      "attribut_label": "Présence de juvéniles ? (si oui ne pas les compter)"
     },
     "comments": {
       "attribute_label": "Commentaire"

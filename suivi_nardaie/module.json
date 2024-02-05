@@ -1,5 +1,5 @@
 {
-    "module_label":"NARDAIE",
+    "module_label":"SUIVI_NARDAIE",
     "module_desc":"Suivi des pelouses à nard",
     "export_csv": [
         { "label": "Placettes et relevés", "type":"csv" , "method": "all" }

@@ -1,9 +1,4 @@
 {
-  "cruved": {
-    "C": 3,
-    "U": 3,
-    "D": 3
-  },
   "sorts": [
     {
       "prop": "base_site_name",
@@ -19,7 +14,6 @@
   "display_properties": [
     "id_sites_group",
     "base_site_code",
-    "base_site_code",
     "base_site_name",
     "base_site_description",
     "pente",
@@ -30,6 +24,7 @@
     "nb_visits"
   ],
   "display_list": [
+    "base_site_code",
     "base_site_name",
     "last_visit",
     "nb_visits"

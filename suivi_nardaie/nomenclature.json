@@ -11,8 +11,8 @@
       "type": "TYPE_SITE",
       "cd_nomenclature": "SUIVI_NARDAIE",
       "mnemonique": "Suivi_nardaie",
-      "label_default": "Placette suivie nardaie",
-      "definition_default": "Placette de suivi de nardaie"
+      "label_default": "Quadra de suivi du nardaie (11*11)",
+      "definition_default": "Quadra de 11m par 11m"
     }
   ]
 }

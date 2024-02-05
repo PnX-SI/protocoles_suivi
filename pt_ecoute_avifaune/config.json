@@ -1,0 +1,20 @@
+{
+  "tree": {
+    "module": {
+      "site": {
+        "visit": {
+          "observation": null
+        }
+      }
+    }
+  },
+  "data": {
+    "nomenclature": [
+      "JDD_DATA_TYPE"
+    ],
+    "user": [
+      "__CODE_LIST_INVENTOR",
+      "__CODE_LIST_OBSERVER"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "types": [
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "PT_ECOUTE_AVIFAUNE",
+      "mnemonique": "Site_PT_ECOUTE_AVIFAUNE",
+      "label_default": "Site point écoute avifaune",
+      "definition_default": "Point d'écoute du protocole point écoute avifaune"
+    }
+  ]
+}
