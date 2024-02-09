@@ -9,5 +9,9 @@
         }
       }
     }
+  },
+  "data": {
+    "nomenclature": ["TYPE_SITE"],
+    "user": ["__CODE_LIST_OBSERVER"]
   }
 }

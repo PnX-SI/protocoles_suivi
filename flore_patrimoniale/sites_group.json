@@ -1,5 +1,4 @@
-{   "chained": false,
-    "label": "Réserve Naturelle",
+{   "label": "Réserve Naturelle",
     "label_list": "Réserve Naturelle",
     "map_label_field_name": "sites_group_name",
     "display_properties": [
@@ -15,7 +14,7 @@
       "sites_group_name": {
         "required": false,
         "hidden": false,
-        "attribut_label": "Nom de la zone",
+        "attribut_label": "Nom de la réserve",
         "type_widget": "text"
       }, 
       "sites_group_description": {

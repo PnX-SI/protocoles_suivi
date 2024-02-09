@@ -1,15 +1,7 @@
-{
-  "sorts": [
-    {
-      "prop": "base_site_name",
-      "dir": "asc"
-    }
-  ],
-  "filters": {},
-  "map_label_field_name": "base_site_code",
-  "label": "Dalle",
-  "label_list": "Dalles",
-  "genre": "F",
+{ "map_label_field_name": "base_site_code",
+  "label": "Site",
+  "label_list": "Sites",
+  "genre": "M",
   "geometry_type": "Point",
   "display_properties": [
     "id_sites_group",
@@ -34,12 +26,18 @@
       "type_util": "nomenclature",
       "value": {
         "code_nomenclature_type": "TYPE_SITE",
-        "cd_nomenclature": "APO_DALLES"
+        "cd_nomenclature": "7"
       },
       "hidden": true
     },
     "id_sites_group": {
-      "attribut_label": "Secteur",
+      "type_widget": "datalist",
+      "attribut_label": "Réserve Naturelle",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
       "required": false,
       "hidden": false
     },

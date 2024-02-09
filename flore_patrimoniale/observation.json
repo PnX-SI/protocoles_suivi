@@ -31,13 +31,6 @@
       "attribut_label": "Nombre (estimé)",
       "hidden": false
     },
-    "id_nomenclature_braunblanq_abdom": {
-        "type_widget": "nomenclature",
-        "attribut_label": "Abondance (coefficient de Braun-Blanquet)",
-        "code_nomenclature_type": "BRAUNBLANQABDOM",
-        "type_util": "nomenclature",
-        "required": true
-      },
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire"
