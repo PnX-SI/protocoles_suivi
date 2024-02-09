@@ -1,5 +1,7 @@
 {
   "description_field_name":"cd_nom",
+  "label": "observation",
+  "label_list": "observations",
   "genre":"F",
 "display_properties": [
   "cd_nom",
@@ -12,9 +14,7 @@
   "nombre",
   "id_nomenclature_braunblanq_abdom"
 ],
-
   "specific": {
-
     "cd_nom": {
       "type_widget": "taxonomy",
       "attribut_label": "Espèces observées",

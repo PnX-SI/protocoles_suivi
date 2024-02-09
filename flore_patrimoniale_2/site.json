@@ -7,10 +7,10 @@
   ],
   "filters": {},
   "map_label_field_name": "base_site_code",
-  "label": "Site",
-  "label_list": "Sites",
-  "genre": "M",
-  "geometry_type": "Polygon",
+  "label": "Dalle",
+  "label_list": "Dalles",
+  "genre": "F",
+  "geometry_type": "Point",
   "display_properties": [
     "id_sites_group",
     "base_site_code",
@@ -29,19 +29,17 @@
   ],
   "specific": {
     "id_nomenclature_type_site": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Type de site/rattachement à une zone",
-      "code_nomenclature_type": "TYPE_SITE",
+      "type_widget": "text",
+      "attribut_label": "Type site",
       "type_util": "nomenclature",
-      "required": true,
       "value": {
         "code_nomenclature_type": "TYPE_SITE",
-        "cd_nomenclature": "7"
+        "cd_nomenclature": "APO_DALLES"
       },
       "hidden": true
     },
     "id_sites_group": {
-      "attribut_label": "Réserve naturelle",
+      "attribut_label": "Secteur",
       "required": false,
       "hidden": false
     },
@@ -49,22 +47,7 @@
       "type_widget": "text",
       "attribut_label": "Code inital (1er fiche)",
       "required": false,
-      "hidden": true
-    },
-    "id_inventor": {
-      "hidden": true,
-	    "required": false
-    },
-    "first_use_date": {
-      "hidden": true,
-	    "required": false
-    },
-    "nb_visits": {
-      "attribut_label": "Nb. de visites"
-    },
-    "last_visit": {
-      "attribut_label": "Dernière visite",
-      "type_util": "date"
+      "hidden": false
     }
   }
 }
