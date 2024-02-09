@@ -1,0 +1,7 @@
+{
+  "module_label": "Flore test",
+  "module_desc": "Module pour le protocole de suivi des flore test",
+  "b_draw_sites_group": true,
+  "genre":"F",
+  "color":"#e1d2fe"
+}
