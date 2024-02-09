@@ -20,10 +20,6 @@
       "type_widget": "textarea",
       "attribut_label": "Remarques libres"
     },
-    "id_dataset": {
-      "attribut_label": "Jeu de données associé",
-      "hidden" : false
-    },
     "medias": {
       "hidden": true
     }

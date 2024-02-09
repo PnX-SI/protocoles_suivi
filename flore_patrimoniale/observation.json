@@ -27,8 +27,8 @@
       "type_util": "taxonomy"
     } ,
     "nombre": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Nombre (estimé)",
+      "type_widget": "number",
+      "attribut_label": "Nombre",
       "hidden": false
     },
     "comments": {
