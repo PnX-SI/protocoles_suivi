@@ -1,0 +1,13 @@
+{
+  "tree": {
+    "module": {
+      "site": null,
+      "sites_group": {
+        "site": {
+          "visit": null
+        }
+      }
+    }
+  },
+  "synthese_object": "visit"
+}

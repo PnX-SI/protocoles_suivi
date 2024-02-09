@@ -1,0 +1,70 @@
+{
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "map_label_field_name": "base_site_code",
+  "label": "Site",
+  "label_list": "Sites",
+  "genre": "M",
+  "geometry_type": "Polygon",
+  "display_properties": [
+    "id_sites_group",
+    "base_site_code",
+    "base_site_name",
+    "initial_code",
+    "id_inventor",
+    "base_site_description",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type de site/rattachement à une zone",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "7"
+      },
+      "hidden": true
+    },
+    "id_sites_group": {
+      "attribut_label": "Réserve naturelle",
+      "required": false,
+      "hidden": false
+    },
+    "initial_code": {
+      "type_widget": "text",
+      "attribut_label": "Code inital (1er fiche)",
+      "required": false,
+      "hidden": true
+    },
+    "id_inventor": {
+      "hidden": true,
+	    "required": false
+    },
+    "first_use_date": {
+      "hidden": true,
+	    "required": false
+    },
+    "nb_visits": {
+      "attribut_label": "Nb. de visites"
+    },
+    "last_visit": {
+      "attribut_label": "Dernière visite",
+      "type_util": "date"
+    }
+  }
+}
