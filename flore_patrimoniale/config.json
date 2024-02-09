@@ -1,13 +1,15 @@
 {
   "tree": {
     "module": {
-      "site": null,
-      "sites_group": {
-        "site": {
-          "visit": null
+      "site": {
+        "visit": {
+          "observation": null
         }
       }
     }
   },
-  "synthese_object": "visit"
+  "data": {
+    "nomenclature": ["TYPE_SITE"],
+    "user": [ "__CODE_LIST_OBSERVER"]
+  }
 }
