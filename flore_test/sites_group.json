@@ -1,6 +1,7 @@
 {   "label": "Réserve Naturelle",
     "label_list": "Réserve Naturelle",
     "map_label_field_name": "sites_group_name",
+    "genre": "F",
     "display_properties": [
       "sites_group_name",
       "sites_group_description"

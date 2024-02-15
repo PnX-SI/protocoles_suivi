@@ -9,6 +9,7 @@
     "base_site_name",
     "initial_code",
     "id_inventor",
+    "surface",
     "base_site_description",
     "last_visit",
     "nb_visits"
@@ -16,6 +17,7 @@
   "display_list": [
     "base_site_name",
     "id_inventor",
+    "surface",
     "last_visit",
     "nb_visits"
   ],
@@ -41,10 +43,22 @@
       "required": false,
       "hidden": false
     },
-    "initial_code": {
+    "surface": {
+      "type_widget": "number",
+      "attribut_label": "Surface en m²",
+      "required": true,
+      "hidden": false
+    },
+    "base_site_code": {
       "type_widget": "text",
       "attribut_label": "Code inital (1er fiche)",
       "required": false,
+      "hidden": true
+    },
+    "first_use_date": {
+      "type_widget": "date",
+      "attribut_label": "Date de description",
+      "required": true,
       "hidden": false
     }
   }

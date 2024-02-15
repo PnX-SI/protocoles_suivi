@@ -11,8 +11,7 @@
 ],
 "display_list": [
   "cd_nom",
-  "nombre",
-  "id_nomenclature_braunblanq_abdom"
+  "nombre"
 ],
   "specific": {
     "cd_nom": {
