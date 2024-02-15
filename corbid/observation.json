@@ -25,16 +25,11 @@
 ],
   "specific": {
     "cd_nom": {
-      "type_widget": "taxonomy",
-      "attribut_label": "Espèces observées",
-      "keyValue": "cd_nom",
-      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
-      "multiple": false,
-      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
-      "application": "TaxHub",
+      "type_widget": "number",
+      "attribut_label": "cd nom",
+      "hidden": true,
       "required": true,
-      "type_util": "taxonomy"
-     
+      "value": 199685  
     } ,
     "id_nomenclature_stade": {
       "type_widget": "datalist",
