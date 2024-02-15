@@ -1,0 +1,138 @@
+{
+  "display_properties": [
+    "id_base_site",
+    "id_dataset",
+    "observers",
+    "visit_date_min",
+    "time_start",
+    "temperature",
+    "cloudiness",
+    "rain",
+    "wind",
+    "time_end",
+    "comments"
+  ],
+  "display_list": [
+    "id_base_site",
+    "visit_date_min",
+    "observers"
+  ],
+  "map_label_field_name": "base_site_name",
+  "specific": {
+    "visit_date_min": {
+      "attribut_label": "Date",
+      "required": true
+    },
+    "time_start": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début du relevé",
+      "required": true
+    },
+    "hors_quadrat": {
+      "type_widget": "radio",
+      "attribut_label": "hors quadrat ???",
+      "values": ["Oui", "Non"],
+      "required": true
+    },
+    "quadrat": {
+      "type_widget": "select",
+      "attribut_label": "Vent",
+      "values": ["Nul","Faible", "Moyen", "Soutenu", "Rafales"],
+      "required": true
+    },
+    "temperature": {
+      "type_widget": "number",
+      "attribut_label": "Température au début du relevé",
+      "required": true
+    },
+    "cloudiness": {
+      "type_widget": "select",
+      "attribut_label": "Couverture nuageuse",
+      "values": ["0 à 10%","10 à 25%", "25 à 50%", "Plus de 50%"],
+      "required": true
+    },
+    "rain": {
+      "type_widget": "select",
+      "attribut_label": "Pluie",
+      "values": ["Pas de précipitations","Averses", "Pluie continue", "Orage"],
+      "required": true
+    },
+    "wind": {
+      "type_widget": "select",
+      "attribut_label": "Vent",
+      "values": ["Nul","Faible", "Moyen", "Soutenu", "Rafales"],
+      "required": true
+    },
+    "physicochimie_ph": {
+      "type_widget": "number",
+      "attribut_label": "Ph",
+      "required": false
+    },
+    "physicochimie_conductivite": {
+      "type_widget": "number",
+      "attribut_label": "Conductivitée",
+      "required": false
+    },
+    "physicochimie_O2_dissous_mg_l": {
+      "type_widget": "number",
+      "attribut_label": "O2 dissous mg/l",
+      "required": false
+    },
+    "physicochimie_tx_O2": {
+      "type_widget": "number",
+      "attribut_label": "tauxx O2 (%)",
+      "required": false
+    },
+    "physicochimie_temp": {
+      "type_widget": "number",
+      "attribut_label": "Température",
+      "required": false
+    },
+    "habitat_hauteur_lame_eau_classe": {
+      "type_widget": "select",
+      "attribut_label": "Lame eau classe",
+      "values": ["0","0,5 à 4", "4 à 8", "8  à 15", "15 à 20",  "plus de  20"],
+      "required": false
+    },
+    "habitat_hauteur_lame_eau_cm": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur lame d'eau (cm)",
+      "required": false
+    },
+    "habitat_hauteur_sediments_cm": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur sediments (cm)",
+      "required": false
+    },
+    "habitat_substrat_organique": {
+      "type_widget": "select",
+      "attribut_label": "Substrat organique",
+      "values": ["Absence","Traces/présence", "Majoritaire"], 
+      "required": false
+    },
+    "habitat_granulo_sediments_majoritaire": {
+      "type_widget": "select",
+      "attribut_label": "Granulo sediments majoritaire",
+      "values": ["<2mm","2<X<5mm", ">5mm"],
+      "required": false
+    },
+    "habitat_commentaires": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaires",
+      "required": false
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaires",
+      "required": false
+    },
+    "time_end": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin du relevé",
+      "required": false
+    },
+    "medias": {
+      "hidden": true
+    }
+  }
+}

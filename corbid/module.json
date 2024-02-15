@@ -1,0 +1,8 @@
+{
+  "module_label": "Suivi CORBID",
+  "module_desc": "Protocole du suivie sur les Cordulegaster bidentata, quadrat 50x50 cm, 10 coup de tamis, comptage des larve à chaque coup de tamis.
+  mesure sur l'eau (t°, physico-chimique...), profondeur sédiment, hauteur eau…",
+  "b_draw_sites_group": true,
+  "genre":"F",
+  "color":"#e1d2fe"
+}
