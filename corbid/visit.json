@@ -5,6 +5,8 @@
     "observers",
     "visit_date_min",
     "time_start",
+    "hors_quadrat",
+    "quadrat",
     "temperature",
     "cloudiness",
     "rain",
@@ -62,63 +64,81 @@
       "attribut_label": "Vent",
       "values": ["Nul","Faible", "Moyen", "Soutenu", "Rafales"],
       "required": true
+    }, 
+    "data_abiotique": {
+      "type_widget": "radio",
+      "attribut_label": "Transmission de données abiotique ?",
+      "values": ["Physico-chimie", "Habitat", "Autres", "Non"],
+      "default": "Non",
+      "required": true
     },
     "physicochimie_ph": {
       "type_widget": "number",
-      "attribut_label": "Ph",
+      "attribut_label": "Physico-chimie - Ph",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
     "physicochimie_conductivite": {
       "type_widget": "number",
-      "attribut_label": "Conductivitée",
+      "attribut_label": "Physico-chimie - Conductivitée",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
     "physicochimie_O2_dissous_mg_l": {
       "type_widget": "number",
-      "attribut_label": "O2 dissous mg/l",
+      "attribut_label": "Physico-chimie - O2 dissous mg/l",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
     "physicochimie_tx_O2": {
       "type_widget": "number",
-      "attribut_label": "tauxx O2 (%)",
+      "attribut_label": "Physico-chimie - taux O2 (%)",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
     "physicochimie_temp": {
       "type_widget": "number",
-      "attribut_label": "Température",
+      "attribut_label": "Physico-chimie - Température",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
     "habitat_hauteur_lame_eau_classe": {
       "type_widget": "select",
-      "attribut_label": "Lame eau classe",
+      "attribut_label": "Habitat - Lame eau classe",
       "values": ["0","0,5 à 4", "4 à 8", "8  à 15", "15 à 20",  "plus de  20"],
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
       "required": false
     },
     "habitat_hauteur_lame_eau_cm": {
       "type_widget": "number",
-      "attribut_label": "Hauteur lame d'eau (cm)",
+      "attribut_label": "Habitat - Hauteur lame d'eau (cm)",
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
       "required": false
     },
     "habitat_hauteur_sediments_cm": {
       "type_widget": "number",
-      "attribut_label": "Hauteur sediments (cm)",
+      "attribut_label": "Habitat - Hauteur sediments (cm)",
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
       "required": false
     },
     "habitat_substrat_organique": {
       "type_widget": "select",
-      "attribut_label": "Substrat organique",
+      "attribut_label": "Habitat - Substrat organique",
       "values": ["Absence","Traces/présence", "Majoritaire"], 
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
       "required": false
     },
     "habitat_granulo_sediments_majoritaire": {
       "type_widget": "select",
-      "attribut_label": "Granulo sediments majoritaire",
+      "attribut_label": "Habitat - Granulo sediments majoritaire",
       "values": ["<2mm","2<X<5mm", ">5mm"],
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
       "required": false
     },
     "habitat_commentaires": {
       "type_widget": "textarea",
-      "attribut_label": "Commentaires",
+      "attribut_label": "Habitat - Commentaires",
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
       "required": false
     },
     "comments": {

@@ -4,12 +4,11 @@
   "label_list": "observations",
   "genre":"F",
 "display_properties": [
-  "cd_nom",
-  "id_nomenclature_determination_method",
   "id_nomenclature_observation_status",
+  "id_nomenclature_obs_technique",
+  "cd_nom",
   "id_nomenclature_stade",
   "id_nomenclature_sex",
-  "id_nomenclature_obs_technique",
   "num_cp_tamis",         
   "larve_stade",
   "larve_long_cm",
@@ -21,16 +20,17 @@
   "comments"
 ],
 "display_list": [
-  "cd_nom"
+  "id_nomenclature_observation_status",
+  "id_nomenclature_obs_technique",
+  "id_nomenclature_stade"
 ],
   "specific": {
     "cd_nom": {
-      "type_widget": "number",
-      "attribut_label": "cd nom",
-      "hidden": true,
-      "required": true,
-      "value": 199685  
-    } ,
+      "type_widget": "select",
+      "attribut_label": "Espèces",
+      "values": ["Cordulégastre annelé (Le)","Cordulégastre bidenté (Le)", "Cordulegaster"],
+      "required": false
+    },
     "id_nomenclature_stade": {
       "type_widget": "datalist",
       "attribut_label": "Stade Biologique",
@@ -40,26 +40,11 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "filters": {"label_default": ["Larve","Mue","Imago","Exuvie"]},
+      "filters": {"label_default": ["Larve","Mue","Imago","Exuvie","Inconnu"]},
       "required": true,
       "default": {
-        "label_default": "Larve"
+        "label_default": "Inconnu"
        }
-      },
-      "id_nomenclature_determination_method": {
-        "type_widget": "datalist",
-        "attribut_label": "Méthode de détermination",
-        "api": "nomenclatures/nomenclature/METH_DETERMIN",
-        "application": "GeoNature",
-        "keyValue": "id_nomenclature",
-        "keyLabel": "label_fr",
-        "data_path": "values",
-        "type_util": "nomenclature",
-        "filters": {"cd_nomenclature": ["1","2","18","21","22","20"]},
-        "required": true,
-        "default": {
-          "cd_nomenclature": "2"
-        }
       },
       "id_nomenclature_observation_status": {
         "type_widget": "datalist",
@@ -73,7 +58,7 @@
         "filters": {"cd_nomenclature": ["No","NSP","Pr"]},
         "required": true,
         "default": {
-          "cd_nomenclature": "Pr"
+          "cd_nomenclature": "No"
         }
       },
       "id_nomenclature_sex": {
@@ -89,7 +74,8 @@
         "required": true,
         "default": {
           "label_default": "Indéterminé"
-        }
+        },
+        "hidden" : "({value}) => value.id_nomenclature_observation_status != 88 "
       },
       "id_nomenclature_obs_technique": {
         "type_widget": "datalist",
@@ -109,7 +95,7 @@
      "num_cp_tamis": {
       "type_widget": "number",
       "attribut_label": "Nombre de coup de tamis",
-      "hidden": "({value}) => value.id_nomenclature_obs_technique == '52'",
+      "hidden": "({value}) => value.id_nomenclature_obs_technique = 194",
       "required": false,
       "min": 1,
       "max": 10
@@ -117,7 +103,7 @@
     "larve_stade": {
       "type_widget": "number",
       "attribut_label": "Stade de la larve",
-      "hidden": "({value}) => value.id_nomenclature_stade == 'Larve'  && value.id_nomenclature_observation_status === 'Pr'",
+      "hidden": "({value}) => value.id_nomenclature_stade != 7 ",
       "required": false,
       "min": 1,
       "max": 6
@@ -125,31 +111,31 @@
     "larve_long_cm": { 
       "type_widget": "number",
       "attribut_label": "Longeur de la larve",
-      "hidden": "({value}) => value.id_nomenclature_stade == 'Larve' && value.id_nomenclature_observation_status === 'Pr'",
+      "hidden": "({value}) => value.id_nomenclature_stade != 7",
       "required": false
     },
     "larve_large_tete_cm": {  
       "type_widget": "number",
       "attribut_label": "Largeur de la tête",
-      "hidden": "({value}) => value.id_nomenclature_stade == 'Larve'  && value.id_nomenclature_observation_status === 'Pr'",
+      "hidden": "({value}) => value.id_nomenclature_stade != 7",
       "required": false
     },
     "exuvie_support": {
-      "type_widget": "number",
+      "type_widget": "textarea",
       "attribut_label": "Support de l'exuvie",
-      "hidden": "({value}) => value.id_nomenclature_stade == 'Exuvie' && value.id_nomenclature_observation_status === 'Pr'",
+      "hidden":  "({value}) => value.id_nomenclature_stade != 12",
       "required": false
     },
     "exuvie_haut_cm": {
       "type_widget": "number",
       "attribut_label": "Haut de l'exuvie (cm)",
-      "hidden": "({value}) => value.id_nomenclature_stade == 'Exuvie' && value.id_nomenclature_observation_status === 'Pr'",
+      "hidden": "({value}) => value.id_nomenclature_stade != 12",
       "required": false
     },
     "exuvie_dist_eau_cm": {
       "type_widget": "number",
       "attribut_label": "Distance eau de l'exuvie (cm)",
-      "hidden": "({value}) => value.id_nomenclature_stade == 'Exuvie' && value.id_nomenclature_observation_status === 'Pr'",
+      "hidden": "({value}) => value.id_nomenclature_stade != 12",
       "required": false
     },
     "id_nomenclature_behaviour": {
@@ -162,7 +148,7 @@
       "data_path": "values",
       "type_util": "nomenclature",
       "filters": {"label_default": ["Passage en vol","Pond","Posé","Accouplement","Non renseigné","Erratique"]},
-      "hidden": "({value}) => value.id_nomenclature_stade == 'Imago' && value.id_nomenclature_observation_status === 'Pr'",
+      "hidden": "({value}) => value.id_nomenclature_stade != 16",
       "required": false,
       "default": {
         "label_default": "Non renseigné"
