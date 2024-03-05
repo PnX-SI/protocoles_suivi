@@ -3,7 +3,7 @@ CREATE VIEW gn_monitoring.v_synthese_prairies_fleuries AS
 WITH source AS (
 	SELECT id_source
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER('prairies_fleuries'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 ), observers AS (
     SELECT
@@ -62,4 +62,4 @@ WITH source AS (
      LEFT JOIN ref_nomenclatures.t_nomenclatures tbb ON tbb.id_nomenclature = (oc.data ->> 'id_nomenclature_abondance_braunblanquet')::int
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = 'prairies_fleuries'::text;
+  WHERE m.module_code::text = :module_code::text;
