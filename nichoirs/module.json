@@ -1,0 +1,9 @@
+{
+    "module_label":"NICHOIRS",
+    "module_desc":"Module de suivi de nichoirs",
+    "genre":"M",
+    "export_csv": [
+      { "label": "Format standard CSV", "type":"csv" , "method": "standard" },
+      { "label": "Format analyses CSV", "type":"csv" , "method": "analyses" }
+    ]
+}

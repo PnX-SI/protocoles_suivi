@@ -1,0 +1,199 @@
+{
+  "genre":"M",
+  "label": "Relevé",
+  "label_list": "Relevé",
+  "display_properties": [
+    "observers",
+    "visit_date_min",
+<<<<<<< HEAD
+=======
+    "cp_vivante",
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+    "mort_branch",
+    "def_foliaire",
+    "conso_ramifi_fine",
+    "conso_branch_petit",
+    "conso_branch_moy",
+    "rejets",
+    "rejet_long",
+    "gourmand",
+    "haut_gourmand",
+    "conso_feuillage",
+    "incision_collet",
+    "pres_pyrale",
+    "comments"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers"
+  ],
+  "specific": {
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du relevé",
+      "required": true
+    },
+<<<<<<< HEAD
+    "mort_branch": {
+      "type_widget": "number",
+      "attribut_label": "Mortalité  de branches",
+=======
+    "cp_vivante": {
+      "type_widget": "radio",
+      "attribut_label": "Cépée vivante",
+      "values": ["Oui", "Non"],
+      "value": "Non"
+    },
+    "mort_branch": {
+      "type_widget": "number",
+      "attribut_label": "Mortalité  de branches (%)",
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+      "required": false,
+      "min": 1,
+      "max": 100
+    },
+    "def_foliaire": {
+      "type_widget": "number",
+<<<<<<< HEAD
+      "attribut_label": "déficit foliaire",
+=======
+      "attribut_label": "Déficit foliaire (%)",
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+      "required": false,
+      "min": 1,
+      "max": 100
+    },
+    "conso_ramifi_fine": {
+      "type_widget": "number",
+<<<<<<< HEAD
+      "attribut_label": "Consommation d'écorce ramification fine",
+=======
+      "attribut_label": "Consommation d'écorce ramification fine (%)",
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+      "required": false,
+      "min": 1,
+      "max": 100
+    },
+    "conso_branch_petit": {
+      "type_widget": "number",
+<<<<<<< HEAD
+      "attribut_label": "Consommation d'écorce branches petites",
+=======
+      "attribut_label": "Consommation d'écorce branches petites (%)",
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+      "required": false,
+      "min": 1,
+      "max": 100
+    },
+    "conso_branch_moy": {
+      "type_widget": "number",
+<<<<<<< HEAD
+      "attribut_label": "Consommation d'écorce branches moyenne et tige",
+=======
+      "attribut_label": "Consommation d'écorce branches moyenne et tige (%)",
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+      "required": false,
+      "min": 1,
+      "max": 100
+    },
+    "rejets": {
+      "type_widget": "radio",
+<<<<<<< HEAD
+      "attribut_label": "Rejets (inf 20 cm) en classes",
+      "values": ["Oui", "Non"],
+      "required": true
+    },
+    "rejet_long": {
+      "type_widget": "number",
+      "attribut_label": "Rejets (longueur maxi)",
+      "required": false
+    },
+    "gourmand": {
+      "type_widget": "number",
+      "attribut_label": "Gourmands sur tige et BM (sup à 2cm) en classes",
+      "required": false,
+      "min": 0,
+      "max": 4
+=======
+      "attribut_label": "Rejets (inf 20 cm)",
+      "values": ["Oui", "Non"],
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+      "required": false
+    },
+    "rejet_long": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur max des gourmands (en m)",
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+      "required": false
+    },
+    "gourmand": {
+      "type_widget": "radio",
+      "attribut_label": "Gourmands sur tige et BM (sup à 2cm) en classes",
+      "values": ["Aucun", "Rares","Présents peu dynamiques","Fréquents","Couvrent la totalité "],
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+      "required": false
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+    },
+    "haut_gourmand": {
+      "type_widget": "number",
+      "attribut_label": "Rejets (longueur maxi)",
+<<<<<<< HEAD
+      "required": false
+    },
+    "conso_feuillage": {
+      "type_widget": "radio",
+      "attribut_label": "Consommation du feuillage sur les rejets et gourmands",
+      "values": ["Oui", "Non"],
+      "required": true
+    },
+    "incision_collet": {
+      "type_widget": "radio",
+      "attribut_label": "Faire une incision au collet si nécessaire",
+      "values": ["Oui", "Non"],
+      "required": true
+    },
+    "pres_pyrale": {
+      "type_widget": "radio",
+      "attribut_label": "Présence Pyrales",
+      "values": ["Oui", "Non"],
+      "required": true
+=======
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+      "required": false
+    },
+    "conso_feuillage": {
+      "type_widget": "select",
+      "attribut_label": "Consommation du feuillage sur les rejets et gourmands",
+      "values": ["0%", "1-10%","10-25%", "25-50%", "50-75%",">75%"],
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+      "required": false
+    },
+    "pres_pyrale": {
+      "type_widget": "textarea",
+      "attribut_label": "Précisions présence Pyrales",
+      "hidden": "({value}) => value.cp_vivante == 'Non'",
+      "required": false
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Remarques libres"
+    },
+    "id_dataset": {
+      "attribut_label": "JDD associé",
+<<<<<<< HEAD
+      "hidden" : false
+=======
+      "hidden" : true
+>>>>>>> d11065afac97790f4e0c2582dd53d79ded370742
+    },
+    "medias": {
+      "hidden": true
+    }
+  }
+}
