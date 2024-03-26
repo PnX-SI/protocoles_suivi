@@ -4,6 +4,9 @@ Ce module est conçu pour la surveillance et le suivi des dommages de la pyrale 
 Il est adapté au protocole fourni par le Département de la santé des forêts. (en Annexe 13) : [Protocole du DSF](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://info.agriculture.gouv.fr/gedei/site/bo-agri/instruction-2017-964/telechargement&ved=2ahUKEwiI5L36j5KFAxVvUqQEHSqKAYcQFnoECBMQAQ&usg=AOvVaw05KxxViZJ9_pYOyBl1xGEu
 )
 
+Point de vigilance pour le moment le fichier synthese.sql n'est pas réalisé, car les données n'ont pas vocation à être synchronisé sur la base de données `gn_synthese.synthese`.
+Même si cela génère un warning à l'installation, il n'y a pas d'erreur ou de problématique à l'utilisation du module.
+
 
 ## Groupe de Sites
 
