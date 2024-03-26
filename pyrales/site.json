@@ -1,4 +1,5 @@
-{ "label": "Cépée",
+{ "genre":"F",
+  "label": "Cépée",
   "label_list": "Cépée",
   "map_label_field_name": "base_site_name",
   "geometry_type": "Point",
@@ -37,7 +38,7 @@
       "required": true
     },
     "h_max": {
-      "type_widget": "number",
+      "type_widget": "text",
       "attribut_label": "Hauteur maximale (précision 0,5m)",
       "required": true
     },
@@ -50,10 +51,6 @@
       "required": false,
       "hidden" : true 
     },
-    "id_nomenclature_type_site": {
-      "required": true,
-      "hidden" : false 
-    },
     "id_digitiser": {
       "required": false,
       "hidden" : true 
@@ -64,6 +61,18 @@
     },
     "medias": {
       "required": false,
+      "hidden": true
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type de site/rattachement à une zone",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "7"
+      },
       "hidden": true
     },
     "nb_visits": {
