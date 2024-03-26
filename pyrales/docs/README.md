@@ -1,7 +1,7 @@
 # Documentation du Module Pyrale
 
-Ce module est conçu pour la surveillance et le suivi des dommages de la pyrale du buis en milieu forestier.
-Il est adaptés au protocole fournis par le Département de la santé des forêts (en Annexe 13) : [Protocole du DSF](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://info.agriculture.gouv.fr/gedei/site/bo-agri/instruction-2017-964/telechargement&ved=2ahUKEwiI5L36j5KFAxVvUqQEHSqKAYcQFnoECBMQAQ&usg=AOvVaw05KxxViZJ9_pYOyBl1xGEu
+Ce module est conçu pour la surveillance et le suivi des dommages de la pyrale du buis en milieu forestier. 
+Il est adapté au protocole fourni par le Département de la santé des forêts. (en Annexe 13) : [Protocole du DSF](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://info.agriculture.gouv.fr/gedei/site/bo-agri/instruction-2017-964/telechargement&ved=2ahUKEwiI5L36j5KFAxVvUqQEHSqKAYcQFnoECBMQAQ&usg=AOvVaw05KxxViZJ9_pYOyBl1xGEu
 )
 
 
