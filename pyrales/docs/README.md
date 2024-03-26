@@ -8,12 +8,7 @@ Point de vigilance pour le moment le fichier synthese.sql n'est pas réalisé, c
 Même si cela génère un warning à l'installation, il n'y a pas d'erreur ou de problématique à l'utilisation du module.
 
 
-## Groupe de Sites
-
-### Description générale
-
-Ce groupe de sites contient des informations sur l'environnement dans lequel sont les placettes.
-
+## Groupe de Sites - Placette
 #### Propriétés affichées :
 
 - `Code CO`
@@ -28,11 +23,9 @@ Ce groupe de sites contient des informations sur l'environnement dans lequel son
 - `Recouvrement du sous étage de buis (%)`
 - `Couvert Forestier libre (%)`
 
-## Sites
+## Sites / Cépée
 
-### Cépée
-
-Ce fichier définit les propriétés des sites individuels où sont effectués les relevés sur lequel ont définie une cépée.
+Les sites représente ici une **cépée** permettant la saisies de différentes informations.
 
 #### Propriétés affichées :
 
@@ -45,12 +38,7 @@ Ce fichier définit les propriétés des sites individuels où sont effectués l
 - `Dernier relevé`
 - `Nb. de relevé`
 
-## Visites
-
-### Relevé
-
-Ce fichier contient les détails des relevés effectués sur une cépée.
-
+## Visites / Relevée
 #### Propriétés affichées :
 
 - `Date du relevé`
