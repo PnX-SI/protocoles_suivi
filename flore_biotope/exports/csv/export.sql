@@ -1,12 +1,12 @@
 --- Export de la liste des taxons observés sur un site avec mention au première et dernière date de visites
 CREATE
-OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_inventaires_cumulatifs AS AS WITH module AS (
+OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_inventaires_cumulatifs AS WITH module AS (
     SELECT
         tm.id_module
     FROM
         gn_commons.t_modules tm
     WHERE
-        tm.module_code = 'flore_biotope'
+        tm.module_code = :module_code
 ),
 type_plante AS (
     SELECT
@@ -78,9 +78,9 @@ from
     JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
     JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
     JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module
-    AND mod.module_code = 'flore_biotope'
+    AND mod.module_code = :module_code
     LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
-    LEFT JOIN ref_nomenclatures.t_nomenclatures tn ON (toc.data ->> 'id_nomenclature_exposition') :: integer = tn.id_nomenclature
+    LEFT JOIN ref_nomenclatures.t_nomenclatures tn ON (tsc.data ->> 'id_nomenclature_exposition') :: integer = tn.id_nomenclature
     LEFT JOIN LATERAL (
         SELECT
             d_1.id_base_site,
@@ -115,7 +115,7 @@ OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_observations AS WITH module
     FROM
         gn_commons.t_modules tm
     WHERE
-        tm.module_code = 'flore_biotope'
+        tm.module_code = :module_code
 ),
 type_plante AS (
     SELECT
