@@ -18,13 +18,10 @@
   "geometry_type": "Polygon",
   "display_properties": [
     "id_sites_group",
-    "base_site_code",
-    "base_site_code",
     "base_site_name",
     "base_site_description",
     "pente",
     "id_nomenclature_exposition",
-    "surface",
     "altitude_moyenne",
     "phytosociologie",
     "grand_type_milieu",
@@ -38,6 +35,12 @@
     "nb_visits"
   ],
   "specific": {
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code",
+      "required": false,
+      "hidden": true
+    },
     "id_nomenclature_type_site": {
       "type_widget": "text",
       "attribut_label": "Type site",
@@ -46,12 +49,6 @@
         "code_nomenclature_type": "TYPE_SITE",
         "cd_nomenclature": "FLORE_BIOTOPE"
       },
-      "hidden": true
-    },
-    "base_site_code": {
-      "type_widget": "text",
-      "attribut_label": "Code",
-      "required": false,
       "hidden": true
     },
     "pente": {
