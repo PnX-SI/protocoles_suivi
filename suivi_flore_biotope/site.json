@@ -48,19 +48,23 @@
       },
       "hidden": true
     },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code",
+      "required": false,
+      "hidden": true
+    },
     "pente": {
       "type_widget": "number",
-      "attribut_label": "Pente"
+      "attribut_label": "Pente (°)",
+      "min": 0,
+      "max": 90
     },
     "id_nomenclature_exposition": {
       "type_widget": "nomenclature",
       "attribut_label": "Exposition",
       "code_nomenclature_type": "EXPOSITION",
       "type_util": "nomenclature"
-    },
-    "surface": {
-      "type_widget": "number",
-      "attribut_label": "Surface (ha)"
     },
     "altitude_moyenne": {
       "type_widget": "number",
