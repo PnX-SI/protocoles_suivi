@@ -1,0 +1,18 @@
+{   "chained": false,
+    "display_properties": [
+      "cd_nom",
+      "nb_count"
+    ],
+    "display_list": [
+      "cd_nom",
+      "nb_count"
+    ],
+    "specific": {
+      "nb_count": {
+        "type_widget": "number",
+        "attribut_label": "Effectif dénombré",
+        "required": true,
+        "min": 1
+      }
+    }
+  }
