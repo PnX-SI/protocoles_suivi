@@ -3,6 +3,5 @@
     "module_desc":"Suivi Especes Exotiques Envahissantes Floristiques",
     "map_label_field_name": "sites_group_name",
     "b_draw_sites_group": true,
-    "color":" #C70039",
     "genre":"F"   
 }
