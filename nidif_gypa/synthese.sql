@@ -30,7 +30,7 @@ AS WITH source AS (
     source.id_source,
     v.id_base_visit AS entity_source_pk_value,
     v.id_dataset,
-    ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO'::character varying, 'In'::character varying) AS id_nomenclature_geo_object_nature,
+    ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO'::character varying, 'St'::character varying) AS id_nomenclature_geo_object_nature,
     v.id_nomenclature_tech_collect_campanule,
     ref_nomenclatures.get_id_nomenclature('ETA_BIO'::character varying, '2'::character varying) AS id_nomenclature_bio_condition,
     ref_nomenclatures.get_id_nomenclature('STAT_BIOGEO'::character varying, '1'::character varying) AS id_nomenclature_biogeo_status,
@@ -45,7 +45,8 @@ AS WITH source AS (
     case 
     	when cm.val in ('Passage en vol', 'Posé', 'Aire vide') then ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '1')
     	else ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '3')
-    end as id_nomenclature_bio_status,
+    end as id_nomenclature_bio_status, -- pour calcul automatique de la sensibilité
+    ref_nomenclatures.get_id_nomenclature('NIV_PRECIS', '2') AS id_nomenclature_diffusion_level, -- on force un niveau diffusion = maille car c'est toujours le site de nidif qui est suivi
     ref_nomenclatures.get_id_nomenclature('TYP_GRP'::character varying, 'REL'::character varying) AS id_nomenclature_grp_typ,
     t.cd_nom,
     t.nom_complet AS nom_cite,
