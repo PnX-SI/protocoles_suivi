@@ -10,7 +10,7 @@
       "attribut_label": "Numéro du segment",
       "required": true,
       "min": 1,
-      "max": 100
+      "max": 1000
     },
     "medias": {
       "hidden": true

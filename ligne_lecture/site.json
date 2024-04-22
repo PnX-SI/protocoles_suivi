@@ -4,7 +4,7 @@
   "label_list": "Lignes de lecture",
   "map_label_field_name": "base_site_name",
   "geometry_type": "LineString",
-  "display_properties": ["base_site_name", "base_site_description", "borne_1", "borne_2"],
+  "display_properties": ["base_site_name", "base_site_code", "base_site_description", "borne_1", "borne_2"],
   "display_list": [
     "base_site_name",
     "nb_visits",
