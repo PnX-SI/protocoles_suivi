@@ -30,16 +30,10 @@
       "attribut_label": "Heure de début du relevé",
       "required": true
     },
-    "hors_quadrat": {
-      "type_widget": "radio",
-      "attribut_label": "hors quadrat ???",
-      "values": ["Oui", "Non"],
-      "required": true
-    },
     "quadrat": {
       "type_widget": "select",
-      "attribut_label": "Vent",
-      "values": ["Nul","Faible", "Moyen", "Soutenu", "Rafales"],
+      "attribut_label": "Quadrat",
+      "values": ["1a" ,"1b" ,"2a" ,"2b" ,"3a" ,"3b" ,"4a" ,"4b" ,"5a" ,"5b" ,"6a" ,"6b" ,"8a" ,"8b" ,"HQ"],
       "required": true
     },
     "temperature": {
@@ -67,10 +61,16 @@
     }, 
     "data_abiotique": {
       "type_widget": "radio",
-      "attribut_label": "Transmission de données abiotique ?",
-      "values": ["Physico-chimie", "Habitat", "Autres", "Non"],
+      "attribut_label": "Transmission de données abiotiques ?",
+      "values": ["Physico-chimie", "Habitat", "Données laboratoire", "Non"],
       "default": "Non",
       "required": true
+    },
+    "physicochimie_temp": {
+      "type_widget": "number",
+      "attribut_label": "Physico-chimie - Température",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
+      "required": false
     },
     "physicochimie_ph": {
       "type_widget": "number",
@@ -93,12 +93,6 @@
     "physicochimie_tx_O2": {
       "type_widget": "number",
       "attribut_label": "Physico-chimie - taux O2 (%)",
-      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
-      "required": false
-    },
-    "physicochimie_temp": {
-      "type_widget": "number",
-      "attribut_label": "Physico-chimie - Température",
       "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
@@ -139,6 +133,72 @@
       "type_widget": "textarea",
       "attribut_label": "Habitat - Commentaires",
       "hidden": "({value}) => value.data_abiotique != 'Habitat'",
+      "required": false
+    },
+    "data_labo_DBO5": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - DBO5 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_COD": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - COD (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_PO4": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - PO4 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_Ptotal": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Ptotal (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_NH4": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - NH4 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_NO2": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - NO2 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_NO3": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - NO3 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_chlorures": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Chlorures (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_sulfates": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Sulfates (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_cuivre µg/l": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Cuivre µg/l",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_micropolluants": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Micropolluants",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
       "required": false
     },
     "comments": {

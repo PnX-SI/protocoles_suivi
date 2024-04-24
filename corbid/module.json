@@ -1,7 +1,7 @@
 {
-  "module_label": "Suivi CORBID",
-  "module_desc": "Suivie sur les Cordulegaster bidentata, quadrat 50x50 cm, 10 coup de tamis, ...",
+  "module_label": "Suivi Cordulegaster",
+  "module_desc": "Suivie sur les Cordulegaster, quadrat 50x50 cm, coup de tamis, ...",
   "b_draw_sites_group": true,
   "genre":"F",
-  "color":"#e1d2fe"
+  "color":"#FAF38F"
 }

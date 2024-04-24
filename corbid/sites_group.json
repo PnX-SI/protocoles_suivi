@@ -1,6 +1,8 @@
-{   "label": "Réserve Naturelle",
-    "label_list": "Réserve Naturelle",
+{   "label": "Air d'études",
+    "label_list": "Air d'études",
     "map_label_field_name": "sites_group_name",
+    "color":"#FAF38F",
+    "genre": "F",
     "display_properties": [
       "sites_group_name",
       "sites_group_description"
@@ -14,7 +16,7 @@
       "sites_group_name": {
         "required": false,
         "hidden": false,
-        "attribut_label": "Nom de la réserve",
+        "attribut_label": "Nom de l'air d'études",
         "type_widget": "text"
       }, 
       "sites_group_description": {
@@ -24,8 +26,11 @@
         "type_widget": "text"
       }, 
       "sites_group_code": {
-        "required": false,
-        "hidden": true
+        "type_widget": "select",
+        "required": true,
+        "hidden": false,
+        "attribut_label": "Type d'air d'études",
+        "values": ["Espace Naturel Sensible", "Natura 2000", "Réserve Naturelle","Site sous convention","Autres"]
       }, 
       "medias": {
         "required": false,

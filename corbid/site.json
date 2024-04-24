@@ -5,10 +5,15 @@
   "geometry_type": "Polygon",
   "display_properties": [
     "id_sites_group",
-    "base_site_code",
     "base_site_name",
-    "id_inventor",
     "base_site_description",
+    "type_milieu",
+    "tuf", 
+    "altitude_min",
+    "couv_arboree",
+    "couv_herbacee", 
+    "especes_dominantes", 
+    "type_boisement",
     "last_visit",
     "nb_visits"
   ],
@@ -32,7 +37,7 @@
     },
     "id_sites_group": {
       "type_widget": "datalist",
-      "attribut_label": "Réserve Naturelle",
+      "attribut_label": "Air d'études",
       "type_util": "sites_group",
       "keyValue": "id_sites_group",
       "keyLabel": "sites_group_name",
@@ -51,15 +56,18 @@
       "attribut_label": "Date de création du site",
       "required": true
     },
-    "altitude": {
-      "type_widget": "number",
-      "attribut_label": "Altitude"
-    },    
-    "type_milieu": {
+    "type_hab_larve": {
       "type_widget": "select",
-      "attribut_label": "Type de milieu",
-      "values": ["Source/exsurgence","Ruisselet","Tufière"],
-      "required": false,
+      "attribut_label": "Type d’habitat larvaire",
+      "values": ["Source/exsurgence","Ruisselet","Vasques","Eau dormante"],
+      "required": true,
+      "hidden": false    
+    },
+    "tuf": { 
+      "type_widget": "radio",
+      "attribut_label": "Habitat tufeux ?",
+      "values": ["Oui", "Non"],
+      "required": true,
       "hidden": false    
     },
     "couv_arboree": {
@@ -68,6 +76,11 @@
       "values": ["0-25%","25-50%","50-75%","75-100%"],
       "required": true,
       "hidden": false    
+    },
+    "altitude_min": {
+      "attribut_label": "Altitude",
+      "required": false,
+      "hidden": true    
     },
     "couv_herbacee": {
       "type_widget": "select",
@@ -79,14 +92,14 @@
     "especes_dominantes": {
       "type_widget": "text",
       "attribut_label": "Espèces dominantes présentes : ",
-      "required": false,
+      "required": true,
       "hidden": false    
     },
     "type_boisement": {
       "type_widget": "text",
       "attribut_label": "Type de boisement",
-      "values": ["Feuillus","Mixtes","Résineux"],
-      "required": false,
+      "values": ["Feuillus","Résineux","Mixtes","Non boisé"],
+      "required": true,
       "hidden": false    
     },
     "base_site_code": {
