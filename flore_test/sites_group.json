@@ -1,7 +1,7 @@
-{   "label": "Réserve Naturelle",
-    "label_list": "Réserve Naturelle",
+{   "label": "Site d'observation",
+    "label_list": "Site d'observation",
     "map_label_field_name": "sites_group_name",
-    "genre": "F",
+    "genre": "M",
     "display_properties": [
       "sites_group_name",
       "sites_group_description"
@@ -15,7 +15,7 @@
       "sites_group_name": {
         "required": false,
         "hidden": false,
-        "attribut_label": "Nom de la réserve",
+        "attribut_label": "Nom du site",
         "type_widget": "text"
       }, 
       "sites_group_description": {
