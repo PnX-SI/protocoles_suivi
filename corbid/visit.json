@@ -11,6 +11,7 @@
     "cloudiness",
     "rain",
     "wind",
+    "data_abiotique",
     "physicochimie_temp",
     "physicochimie_ph",
     "physicochimie_conductivite",
