@@ -5,13 +5,34 @@
     "observers",
     "visit_date_min",
     "time_start",
-    "hors_quadrat",
+    "time_end",
     "quadrat",
     "temperature",
     "cloudiness",
     "rain",
     "wind",
-    "time_end",
+    "physicochimie_temp",
+    "physicochimie_ph",
+    "physicochimie_conductivite",
+    "physicochimie_O2_dissous_mg_l",
+    "physicochimie_tx_O2",
+    "habitat_hauteur_lame_eau_classe",
+    "habitat_hauteur_lame_eau_cm",
+    "habitat_hauteur_sediments_cm", 
+    "habitat_substrat_organique",  
+    "habitat_granulo_sediments_majoritaire",  
+    "habitat_commentaires", 
+    "data_labo_DBO5", 
+    "data_labo_COD", 
+    "data_labo_PO4",
+    "data_labo_Ptotal", 
+    "data_labo_NH4",  
+    "data_labo_NO2", 
+    "data_labo_NO3",
+    "data_labo_chlorures", 
+    "data_labo_sulfates", 
+    "data_labo_cuivre",
+    "data_labo_micropolluants",
     "comments"
   ],
   "display_list": [
@@ -72,19 +93,19 @@
       "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
-    "physicochimie_ph": {
+    "physicochimie_ph": {  
       "type_widget": "number",
       "attribut_label": "Physico-chimie - Ph",
       "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
-    "physicochimie_conductivite": {
+    "physicochimie_conductivite": { 
       "type_widget": "number",
       "attribut_label": "Physico-chimie - Conductivitée",
       "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
       "required": false
     },
-    "physicochimie_O2_dissous_mg_l": {
+    "physicochimie_O2_dissous_mg_l": { 
       "type_widget": "number",
       "attribut_label": "Physico-chimie - O2 dissous mg/l",
       "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
@@ -189,13 +210,13 @@
       "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
       "required": false
     },
-    "data_labo_cuivre µg/l": {
+    "data_labo_cuivre": {
       "type_widget": "textarea",
       "attribut_label": "Labo - Cuivre µg/l",
       "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
       "required": false
     },
-    "data_labo_micropolluants": {
+    "data_labo_micropolluants": {  
       "type_widget": "textarea",
       "attribut_label": "Labo - Micropolluants",
       "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
