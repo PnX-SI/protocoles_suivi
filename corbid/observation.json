@@ -100,16 +100,16 @@
         "keyLabel": "label_fr",
         "data_path": "values",
         "type_util": "nomenclature",
-        "filters": {"cd_nomenclature": ["52","10","11","12","59","60","61","62","133"]},
+        "filters": {"cd_nomenclature": ["10","52","59","60"]},
         "required": true,
         "default": {
-          "cd_nomenclature": "133"
+          "cd_nomenclature": "194"
         }
       },
      "num_cp_tamis": {
       "type_widget": "number",
       "attribut_label": "Nombre de coup de tamis",
-      "hidden": "({value}) => value.id_nomenclature_obs_technique = '194'",
+      "hidden": "({value}) => value.id_nomenclature_obs_technique == '194'",
       "required": false,
       "min": 1,
       "max": 10
