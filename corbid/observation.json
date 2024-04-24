@@ -103,7 +103,7 @@
         "filters": {"cd_nomenclature": ["10","52","59","60"]},
         "required": true,
         "default": {
-          "cd_nomenclature": "194"
+          "id_nomenclature": "194"
         }
       },
      "num_cp_tamis": {
