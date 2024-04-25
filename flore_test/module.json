@@ -1,7 +1,6 @@
 {
-  "module_label": "Flore test",
-  "module_desc": "Module pour le protocole de suivi des flore test",
+  "module_label": "Flore patrimoniale",
+  "module_desc": "Module pour le protocole de suivi des flores patrimoniales",
   "b_draw_sites_group": true,
-  "genre":"F",
-  "color":"#e1d2fe"
+  "genre":"F"
 }
