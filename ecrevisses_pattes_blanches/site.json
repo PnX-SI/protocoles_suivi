@@ -1,0 +1,75 @@
+{
+  "cruved": {
+    "C": 3,
+    "U": 3,
+    "D": 3
+  },
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "map_label_field_name": "base_site_code",
+  "label": "Site",
+  "label_list": "Sites",
+  "genre": "M",
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_code",
+    "base_site_name",
+    "base_site_description",
+    "bassin_versant",
+    "sous_bassin_versant",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_code",
+    "base_site_name",
+    "last_visit",
+    "bassin_versant",
+    "nb_visits"
+  ],
+  "specific": {
+    "base_site_name": {
+      "attribut_label": "Nom du cours d'eau"
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "PT_ECREVISSES"
+      },
+      "hidden": true
+    },
+    "bassin_versant": {
+      "attribut_label": "Bassin versant",
+      "type_widget": "select",
+      "values": [
+        "ADG",
+        "LB",
+        "RMC"
+      ]
+    },
+    "sous_bassin_versant": {
+      "type_widget": "select",
+      "attribut_label": "Sous bassin versant",
+      "values": [
+        "LOT",
+        "CHA",
+        "GALEIZON",
+        "GARD",
+        "TARN",
+        "GARD_AL",
+        "CEZE_LU",
+        "ALLIER",
+        "BES",
+        "TRU"
+      ]
+    }
+  }
+}
