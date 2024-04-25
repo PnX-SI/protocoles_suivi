@@ -16,11 +16,18 @@
   ],
   "specific": {
     "cd_nom": {
-      "type_widget": "taxonomy",
-      "attribut_label": "Taxon",
-      "type_util": "taxonomy",
+      "type_widget": "radio",
+      "values": [
+        {
+          "value": 18437,
+          "label": "Écrevisse à pattes blanches (Austropotamobius pallipes)"
+        },
+        {
+          "value": 162667,
+          "label": "Écrevisse signal (Pacifastacus leniusculus)"
+        }
+      ],
       "required": true,
-      "id_list": "__MODULE.ID_LIST_TAXONOMY",
       "value": 18437
     },
     "id_nomenclature_statut_observation": {
@@ -32,28 +39,33 @@
     },
     "nb_0_50m": {
       "type_widget": "number",
-      "attribut_label": "0-50m(nombre)",
-      "hidden": "({value}) => value.cd_nom?.cd_nom != 18437"
+      "attribut_label": "0-50m (nombre)",
+      "hidden": "({value}) => value.cd_nom != 18437",
+      "required": "({value}) => value.cd_nom == 18437"
     },
     "nb_50_100m": {
       "type_widget": "number",
-      "attribut_label": "50-100m(nombre)",
-      "hidden": "({value}) => value.cd_nom?.cd_nom != 18437"
+      "attribut_label": "50 - 100m (nombre)",
+      "hidden": "({value}) => value.cd_nom != 18437",
+      "required": "({value}) => value.cd_nom == 18437"
     },
     "nb_100_150m": {
       "type_widget": "number",
-      "attribut_label": "100-150m(nombre)",
-      "hidden": "({value}) => value.cd_nom?.cd_nom != 18437"
+      "attribut_label": "100-150m (nombre)",
+      "hidden": "({value}) => value.cd_nom != 18437",
+      "required": "({value}) => value.cd_nom == 18437"
     },
     "nb_150_200m": {
       "type_widget": "number",
-      "attribut_label": "150-200m(nombre)",
-      "hidden": "({value}) => value.cd_nom?.cd_nom != 18437"
+      "attribut_label": "150-200m (nombre)",
+      "hidden": "({value}) => value.cd_nom != 18437",
+      "required": "({value}) => value.cd_nom == 18437"
     },
     "nb": {
       "type_widget": "number",
       "attribut_label": "Nombre",
-      "hidden": "({value}) => value.cd_nom?.cd_nom == 18437"
+      "hidden": "({value}) => value.cd_nom == 18437",
+      "required": "({value}) => value.cd_nom != 18437"
     },
     "statut_source": {
       "type_widget": "datalist",

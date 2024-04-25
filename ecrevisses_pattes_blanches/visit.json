@@ -25,7 +25,7 @@
     "litiere",
     "ripisylve",
     "etat_de_la_ripisylve",
-    "remarques_normalisées",
+    "remarques_normalisees",
     "occupation_du_sol",
     "lineaire_assec_m",
     "comments"
@@ -53,19 +53,22 @@
         "Nocturne",
         "Diurne"
       ],
-      "attribut_label": "periode"
+      "attribut_label": "Période"
     },
     "lineaire_prospection": {
       "type_widget": "number",
-      "attribut_label": "lineaire_prospection"
+      "attribut_label": "Lineaire prospection"
     },
     "participants_nom": {
       "type_widget": "text",
-      "attribut_label": "participants(nom)"
+      "attribut_label": "Participant s(nom)"
     },
     "organisme": {
       "type_widget": "text",
-      "attribut_label": "organisme"
+      "attribut_label": "Organisme"
+    },
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
     },
     "conditions_d_observation": {
       "type_widget": "select",
@@ -74,7 +77,7 @@
         "Moyennes",
         "Mauvaises"
       ],
-      "attribut_label": "conditions_d_observation"
+      "attribut_label": "Conditions d'observation"
     },
     "technique": {
       "type_widget": "select",
@@ -83,7 +86,7 @@
         "Visuelle",
         "Nasses"
       ],
-      "attribut_label": "technique"
+      "attribut_label": "Technique"
     },
     "chevelu_racinaire": {
       "type_widget": "radio",
@@ -93,7 +96,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "chevelu_racinaire"
+      "attribut_label": "Chevelu racinaire"
     },
     "vegetation_aquatique": {
       "type_widget": "radio",
@@ -103,7 +106,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "vegetation_aquatique"
+      "attribut_label": "Vegetation aquatique"
     },
     "embacle_branchage": {
       "type_widget": "radio",
@@ -113,7 +116,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "embacle_branchage"
+      "attribut_label": "Embacle branchage"
     },
     "sous_berges": {
       "type_widget": "radio",
@@ -123,7 +126,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "sous_berges"
+      "attribut_label": "Sous berges"
     },
     "colmatage": {
       "type_widget": "radio",
@@ -133,15 +136,15 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "colmatage"
+      "attribut_label": "Colmatage"
     },
     "evolution": {
       "type_widget": "text",
-      "attribut_label": "evolution"
+      "attribut_label": "Evolution"
     },
     "largeur_du_cours_d_eau_cm": {
       "type_widget": "number",
-      "attribut_label": "largeur du cours d'eau (cm)"
+      "attribut_label": "Largeur du cours d'eau (cm)"
     },
     "limon_sable": {
       "type_widget": "radio",
@@ -151,7 +154,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "limon_sable"
+      "attribut_label": "Limon sable"
     },
     "graviers": {
       "type_widget": "radio",
@@ -161,7 +164,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "graviers (2.5-25mm)"
+      "attribut_label": "Graviers (2.5-25mm)"
     },
     "pierre_galets": {
       "type_widget": "radio",
@@ -171,7 +174,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "pierre_galets (25-250mm)"
+      "attribut_label": "Pierre galets (25-250mm)"
     },
     "blocs": {
       "type_widget": "radio",
@@ -181,7 +184,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "blocs (>250mm)"
+      "attribut_label": "Blocs (>250mm)"
     },
     "dalle": {
       "type_widget": "radio",
@@ -191,7 +194,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "dalle"
+      "attribut_label": "Dalle"
     },
     "litiere": {
       "type_widget": "radio",
@@ -201,7 +204,7 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "litiere"
+      "attribut_label": "Litiere"
     },
     "ripisylve": {
       "type_widget": "radio",
@@ -211,23 +214,23 @@
       ],
       "required": true,
       "value": "non",
-      "attribut_label": "ripisylve"
+      "attribut_label": "Ripisylve"
     },
     "etat_de_la_ripisylve": {
       "type_widget": "text",
-      "attribut_label": "etat_de_la_ripisylve"
+      "attribut_label": "Etat de la ripisylve"
     },
-    "remarques_normalisées": {
+    "remarques_normalisees": {
       "type_widget": "text",
-      "attribut_label": "remarques_normalisées"
+      "attribut_label": "Remarques normalisées"
     },
     "occupation_du_sol": {
       "type_widget": "text",
-      "attribut_label": "occupation_du_sol"
+      "attribut_label": "Occupation du sol"
     },
     "lineaire_assec_m": {
       "type_widget": "text",
-      "attribut_label": "lineaire assec (m)"
+      "attribut_label": "Lineaire assec (m)"
     }
   }
 }
