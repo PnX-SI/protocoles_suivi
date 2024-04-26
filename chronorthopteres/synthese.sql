@@ -58,5 +58,6 @@ left join utilisateurs.t_roles tr on tr.id_role = tbv.id_digitiser
 left join taxonomie.taxref t on to2.cd_nom = t.cd_nom 
 left join t_source on true
 left join lateral ref_geo.fct_get_altitude_intersection(tbs.geom_local) alt (altitude_min, altitude_max) ON true
-where tsc.id_module = 35 		
+left join gn_commons.t_modules tm on tm.id_module = tsc.id_module 
+where tm.module_label ilike 'ChronOrthopteres'
 );
