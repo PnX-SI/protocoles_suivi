@@ -52,7 +52,7 @@
                   "Sporobole d'Inde",
                   "Véronique voyageuse",
                   "Vigne-vierge commune"]
-    },
+    }, 
     "base_site_name": {
       "required": true,
       "hidden": false,
