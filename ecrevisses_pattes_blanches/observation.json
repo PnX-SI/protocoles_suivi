@@ -1,0 +1,91 @@
+{
+  "display_properties": [
+    "uuid_observation",
+    "cd_nom",
+    "id_nomenclature_statut_observation",
+    "nb_0_50m",
+    "nb_50_100m",
+    "nb_100_150m",
+    "nb_150_200m",
+    "nb",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "id_nomenclature_statut_observation"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "radio",
+      "values": [
+        {
+          "value": 18437,
+          "label": "Écrevisse à pattes blanches (Austropotamobius pallipes)"
+        },
+        {
+          "value": 162667,
+          "label": "Écrevisse signal (Pacifastacus leniusculus)"
+        }
+      ],
+      "required": true,
+      "value": 18437
+    },
+    "id_nomenclature_statut_observation": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Statut d'observation",
+      "code_nomenclature_type": "STATUT_OBS",
+      "required": true,
+      "type_util": "nomenclature"
+    },
+    "nb_0_50m": {
+      "type_widget": "number",
+      "attribut_label": "0-50m (nombre)",
+      "hidden": "({value}) => value.cd_nom != 18437",
+      "required": "({value}) => value.cd_nom == 18437"
+    },
+    "nb_50_100m": {
+      "type_widget": "number",
+      "attribut_label": "50 - 100m (nombre)",
+      "hidden": "({value}) => value.cd_nom != 18437",
+      "required": "({value}) => value.cd_nom == 18437"
+    },
+    "nb_100_150m": {
+      "type_widget": "number",
+      "attribut_label": "100-150m (nombre)",
+      "hidden": "({value}) => value.cd_nom != 18437",
+      "required": "({value}) => value.cd_nom == 18437"
+    },
+    "nb_150_200m": {
+      "type_widget": "number",
+      "attribut_label": "150-200m (nombre)",
+      "hidden": "({value}) => value.cd_nom != 18437",
+      "required": "({value}) => value.cd_nom == 18437"
+    },
+    "nb": {
+      "type_widget": "number",
+      "attribut_label": "Nombre",
+      "hidden": "({value}) => value.cd_nom == 18437",
+      "required": "({value}) => value.cd_nom != 18437"
+    },
+    "statut_source": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut de la source",
+      "api": "nomenclatures/nomenclature/STATUT_SOURCE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": false,
+      "hidden": true,
+      "default": {
+        "cd_nomenclature": "Te"
+      }
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "required": false
+    }
+  }
+}
