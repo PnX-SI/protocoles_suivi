@@ -40,7 +40,7 @@ zonages AS
 FROM ref_geo.l_areas la
 JOIN ref_geo.bib_areas_types bat ON la.id_type = bat.id_type
 JOIN gn_monitoring.cor_site_area csa ON csa.id_area = la.id_area
-WHERE bat.type_code = ANY (ARRAY['ZNIEFF1', 'ZPS', 'ZCS', 'SIC', 'RNCFS', 'RNR', 'RNN', 'ZC']::text[])
+WHERE bat.type_code = ANY (ARRAY['ZNIEFF1', 'ZNIEFF2', 'ZPS', 'ZCS', 'SIC', 'RNCFS', 'RNR', 'RNN', 'ZC']::text[])
 GROUP BY id_base_site
 ),
 info_sites AS
@@ -179,7 +179,7 @@ zonages AS
 FROM ref_geo.l_areas la
 JOIN ref_geo.bib_areas_types bat ON la.id_type = bat.id_type
 JOIN gn_monitoring.cor_site_area csa ON csa.id_area = la.id_area
-WHERE bat.type_code = ANY (ARRAY['ZNIEFF1', 'ZPS', 'ZCS', 'SIC', 'RNCFS', 'RNR', 'RNN', 'ZC']::text[])
+WHERE bat.type_code = ANY (ARRAY['ZNIEFF1', 'ZNIEFF2', 'ZPS', 'ZCS', 'SIC', 'RNCFS', 'RNR', 'RNN', 'ZC']::text[])
 GROUP BY id_base_site
 ),
 info_sites AS
