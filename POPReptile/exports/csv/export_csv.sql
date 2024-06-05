@@ -54,7 +54,7 @@ FROM gn_monitoring.t_base_sites s
 LEFT JOIN com USING (id_base_site)
 LEFT JOIN dep USING (id_base_site)
 LEFT JOIN zonages USING (id_base_site))
-SELECT DISTINCT
+SELECT
     -- identifiant unique
     o.uuid_observation,
     -- Site et variables associées
@@ -193,7 +193,7 @@ FROM gn_monitoring.t_base_sites s
 LEFT JOIN com USING (id_base_site)
 LEFT JOIN dep USING (id_base_site)
 LEFT JOIN zonages USING (id_base_site))
- SELECT DISTINCT
+SELECT
     -- Aire et site
     tsg.sites_group_name AS aire_etude,
     tsg.uuid_sites_group AS uuid_aire_etude,
