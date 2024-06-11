@@ -142,7 +142,7 @@
       "hidden": "({value}) => !(value.num_passage == 2)"
     },
     "veg_lig_sp_3": {
-      "attribut_label": "Espèce ligneux 4",
+      "attribut_label": "Espèce ligneux 3",
       "description": "Composition végétal en ligneux espèce 3",
       "type_widget": "taxonomy",
       "type_util": "taxonomy",
