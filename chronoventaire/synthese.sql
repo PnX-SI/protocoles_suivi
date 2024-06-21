@@ -1,3 +1,24 @@
+-- Vue générique pour alimenter la synthèse dans le cadre d'un protocole site-visite-observation
+-- 
+-- Ce fichier peut être copié dans le dossier du sous-module et renommé en synthese.sql (et au besoin personnalisé)
+-- le fichier sera joué à l'installation avec la valeur de module_code qui sera attribué automatiquement
+--
+--
+-- Personalisations possibles
+--
+--  - ajouter des champs specifiques qui peuvent alimenter la synthese
+--      jointure avec les table de complement
+--
+--  - choisir les valeurs de champs de nomenclatures qui seront propres au modules
+
+
+-- ce fichier contient une variable :module_code (ou :'module_code')
+-- utiliser psql avec l'option -v module_code=<module_code
+
+-- ne pas remplacer cette variable, elle est indispensable pour les scripts d'installations
+-- le module pouvant être installé avec un code différent de l'original
+
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_chronoventaire;
 CREATE OR REPLACE VIEW gn_monitoring.v_synthese_chronoventaire
 AS WITH t_source AS (
          SELECT t_sources.id_source
