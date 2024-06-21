@@ -67,6 +67,12 @@
       "min": 0,
       "max": 20
     },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "remarque supplémentaire (date d'envole poussin)",
+      "hidden": false,
+      "required": false
+    },
     "medias": {
       "type_widget": "medias",
       "attribut_label": "Médias",
