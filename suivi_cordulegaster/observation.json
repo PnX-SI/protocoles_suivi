@@ -1,0 +1,181 @@
+{
+  "description_field_name":"cd_nom",
+  "label": "observation",
+  "label_list": "observations",
+  "genre":"F",
+"display_properties": [
+  "id_nomenclature_observation_status",
+  "id_nomenclature_obs_technique",
+  "cd_nom",
+  "id_nomenclature_stade",
+  "id_nomenclature_sex",
+  "num_cp_tamis",         
+  "larve_stade",
+  "larve_long_cm",
+  "larve_large_tete_cm",
+  "exuvie_support",
+  "exuvie_haut_cm",
+  "exuvie_dist_eau_cm",
+  "id_nomenclature_behaviour",
+  "comments"
+],
+"display_list": [
+  "id_nomenclature_observation_status",
+  "id_nomenclature_obs_technique",
+  "id_nomenclature_stade"
+], 
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèces observées",
+      "keyValue": "cd_nom",
+      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
+      "multiple": false,
+      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": false,
+      "type_util": "taxonomy"
+    },
+    "id_nomenclature_stade": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade Biologique",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "filters": {"label_default": ["Larve","Mue","Imago","Exuvie","Inconnu"]},
+      "required": true,
+      "default": {
+        "label_default": "Inconnu"
+       }
+      },
+      "id_nomenclature_eta_bio": {
+        "type_widget": "datalist",
+        "attribut_label": "Stade Biologique",
+        "api": "nomenclatures/nomenclature/ETA_BIO",
+        "application": "GeoNature",
+        "keyValue": "id_nomenclature",
+        "keyLabel": "label_fr",
+        "data_path": "values",
+        "type_util": "nomenclature",
+        "filters": {"label_default": ["Observé vivant", "Trouvé mort"]},
+        "required": true,
+        "default": {
+          "label_default": "Observé vivant"
+         }
+        },
+      "id_nomenclature_observation_status": {
+        "type_widget": "datalist",
+        "attribut_label": "Statut d'observation",
+        "api": "nomenclatures/nomenclature/STATUT_OBS",
+        "application": "GeoNature",
+        "keyValue": "id_nomenclature",
+        "keyLabel": "label_fr",
+        "data_path": "values",
+        "type_util": "nomenclature",
+        "filters": {"cd_nomenclature": ["No","NSP","Pr"]},
+        "required": true,
+        "default": {
+          "cd_nomenclature": "No"
+        }
+      },
+      "id_nomenclature_sex": {
+        "type_widget": "datalist",
+        "attribut_label": "Sexe",
+        "api": "nomenclatures/nomenclature/SEXE",
+        "application": "GeoNature",
+        "keyValue": "id_nomenclature",
+        "keyLabel": "label_fr",
+        "data_path": "values",
+        "type_util": "nomenclature",
+        "filters": {"label_default": ["Indéterminé","Femelle","Mâle"]},
+        "required": true,
+        "default": {
+          "label_default": "Indéterminé"
+        }
+      },
+      "id_nomenclature_obs_technique": {
+        "type_widget": "datalist",
+        "attribut_label": "Techniques d'observation",
+        "api": "nomenclatures/nomenclature/TECHNIQUE_OBS",
+        "application": "GeoNature",
+        "keyValue": "id_nomenclature",
+        "keyLabel": "label_fr",
+        "data_path": "values",
+        "type_util": "nomenclature",
+        "filters": {"cd_nomenclature": ["10","52","59","60"]},
+        "required": true,
+        "default": {
+          "cd_nomenclature": "52"
+        }
+      },
+     "num_cp_tamis": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de coup de tamis",
+      "hidden": false,
+      "required": false,
+      "min": 1,
+      "max": 10
+    },
+    "larve_stade": {
+      "type_widget": "number",
+      "attribut_label": "Stade de la larve",
+      "hidden": "({value}) => value.id_nomenclature_stade != 7 ",
+      "required": false,
+      "min": 1,
+      "max": 6
+    },
+    "larve_long_cm": { 
+      "type_widget": "number",
+      "attribut_label": "Longeur de la larve",
+      "hidden": "({value}) => value.id_nomenclature_stade != 7",
+      "required": false
+    },
+    "larve_large_tete_cm": {  
+      "type_widget": "number",
+      "attribut_label": "Largeur de la tête",
+      "hidden": "({value}) => value.id_nomenclature_stade != 7",
+      "required": false
+    },
+    "exuvie_support": {
+      "type_widget": "textarea",
+      "attribut_label": "Support de l'exuvie",
+      "hidden":  "({value}) => value.id_nomenclature_stade != 12",
+      "required": false
+    },
+    "exuvie_haut_cm": {
+      "type_widget": "number",
+      "attribut_label": "Haut de l'exuvie (cm)",
+      "hidden": "({value}) => value.id_nomenclature_stade != 12",
+      "required": false
+    },
+    "exuvie_dist_eau_cm": {
+      "type_widget": "number",
+      "attribut_label": "Distance eau de l'exuvie (cm)",
+      "hidden": "({value}) => value.id_nomenclature_stade != 12",
+      "required": false
+    },
+    "id_nomenclature_behaviour": {
+      "type_widget": "datalist",
+      "attribut_label": "Comportement des imago observées",
+      "api": "nomenclatures/nomenclature/OCC_COMPORTEMENT",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "filters": {"label_default": ["Passage en vol","Pond","Posé","Accouplement","Non renseigné","Erratique"]},
+      "hidden": "({value}) => value.id_nomenclature_stade != 16",
+      "required": false,
+      "default": {
+        "label_default": "Non renseigné"
+      }
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+}
+}

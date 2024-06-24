@@ -11,7 +11,7 @@
     "id_sites_group",
     "altitude_min"
   ],
-    "specific": {
+  "specific": {
     "id_sites_group": {
       "required": true,
       "hidden": false,
