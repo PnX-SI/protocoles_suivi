@@ -1,0 +1,82 @@
+{ "keep": [
+  "round",
+  "id_nomenclature_determination_method",
+  "id_sexe",
+  "id_nomenclature_stade"
+  ],
+  "chained": true,
+  "display_properties": [
+    "round",
+    "cd_nom",
+    "id_nomenclature_determination_method",
+    "id_sexe",
+    "id_nomenclature_stade",
+    "nb_count",
+    "comments"
+  ],
+  "display_list": [
+    "round",
+    "cd_nom",
+    "nb_count"
+  ],
+  "specific": {
+    "round": {
+      "type_widget": "select",
+      "attribut_label": "Round",
+      "required": true,
+      "values": ["Round 1 : 0-5mn", "Round 2 : 5-10mn", "Round 3 : 10-15mn", "Round 4 : 15-20mn", "Round 5 : 20-25mn", "Round 6 : 25-30mn", "Round 7 : 30-35mn", "Round 8 : 35-40mn", "Round 9 : 40-45mn", "Round 10 : 45-50mn", "Round 11 : 50-55mn", "Round 12 : 55-60mn"]
+    },
+    "id_sexe": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "filters": {"label_default": ["Indéterminé","Femelle","Mâle"]},
+      "required": true,
+      "default": {
+        "label_default": "Indéterminé"
+      }
+    },
+    "id_nomenclature_stade": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade Biologique",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "filters": {"label_default": ["Inconnu","Chrysalide","Imago","Chenille","Œuf"]},
+      "required": true,
+      "default": {
+        "label_default": "Imago"
+      }
+    },
+    "id_nomenclature_determination_method": {
+      "type_widget": "datalist",
+      "attribut_label": "Méthode de détermination",
+      "api": "nomenclatures/nomenclature/METH_DETERMIN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "filters": {"cd_nomenclature": ["1","2","18","21","22","20"]},
+      "required": true,
+      "default": {
+        "cd_nomenclature": "2"
+      }
+    },
+    "nb_count": {
+      "type_widget": "number",
+      "attribut_label": "Effectif dénombré",
+      "required": true,
+      "min": 1
+    }
+  }
+}
+
