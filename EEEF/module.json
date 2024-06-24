@@ -1,0 +1,7 @@
+{
+    "module_label":"EEEF  ",
+    "module_desc":"Suivi Especes Exotiques Envahissantes Floristiques",
+    "map_label_field_name": "sites_group_name",
+    "b_draw_sites_group": true,
+    "genre":"F"   
+}
