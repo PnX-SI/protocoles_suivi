@@ -1,0 +1,123 @@
+{ "label": "Station d'inventaire",
+  "label_list": "Station d'inventaire",
+  "map_label_field_name": "base_site_name",
+  "genre":"F",
+  "geometry_type": "Polygon",
+  "display_properties": [
+    "id_inventor",
+    "first_use_date",
+    "base_site_name",
+    "last_visit",
+    "CodeHabitatStation1",
+    "CodeHabitatStation2",
+    "CodeHabitatAdjacent1",
+    "CodeHabitatAdjacent2",
+    "nb_visits",
+    "desc_habitat",
+    "prospect_surf",
+    "comment_site"
+ ],
+  "display_list": [
+    "base_site_name",
+    "first_use_date",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "CHROCAPT"
+      },
+      "hidden": true
+    },
+    "CodeHabitatStation1":{
+      "type_widget": "datalist",
+      "attribut_label": "Type d’habitat principale autour de la station",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+          "cd_typo": 7,
+          "search_name": "",
+          "limit": "999999"
+      }
+    },
+    "CodeHabitatStation2":{
+      "type_widget": "datalist",
+      "attribut_label": "Type d’habitat secondaire autour de la station",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+          "cd_typo": 7,
+          "search_name": "",
+          "limit": "999999"
+      }
+    },
+    "CodeHabitatAdjacent1":{
+      "type_widget": "datalist",
+      "attribut_label": "Type d’habitat principale adjacent à la station",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+          "cd_typo": 7,
+          "search_name": "",
+          "limit": "999999"
+      }
+    },
+    "CodeHabitatAdjacent2":{
+      "type_widget": "datalist",
+      "attribut_label": "Type d’habitat secondaire adjacent à la station",
+      "api": "habref/habitats/autocomplete",
+      "application": "GeoNature",
+      "keyValue": "cd_hab",
+      "keyLabel": "search_name",
+      "type_util": "habitat",
+      "params": {
+          "cd_typo": 7,
+          "search_name": "",
+          "limit": "999999"
+      }
+    },
+    "prospect_surf": {
+      "type_widget": "number",
+      "attribut_label": "Surface de prospection en m2",
+      "value": 500
+    },
+    "comment_site": {
+      "type_widget": "text",
+      "attribut_label": "Description libre de l’habitat"
+    },
+    "base_site_name": {
+      "type_widget": "text",
+      "attribut_label": "Nom de la station",
+      "required": true
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code de la station",
+      "required": false,
+      "hidden": true
+    },
+    "nb_visits": {
+      "attribut_label": "Nb. de passages"
+    },
+    "last_visit": {
+      "attribut_label": "Dernier passage",
+      "type_util": "date"
+    }
+  }
+}
