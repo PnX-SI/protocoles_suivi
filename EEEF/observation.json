@@ -1,18 +1,17 @@
 {   "chained": false,
     "display_properties": [
-      "cd_nom",
-      "nb_count"
+      "cd_nom"
     ],
     "display_list": [
-      "cd_nom",
-      "nb_count"
+      "cd_nom"
     ],
     "specific": {
-      "nb_count": {
-        "type_widget": "number",
-        "attribut_label": "Effectif dénombré",
+      "cd_nom": {
+        "type_widget": "taxonomy",
+        "attribut_label": "Espèce",
+        "type_util": "taxonomy",
         "required": true,
-        "min": 1
+        "id_list": "__MODULE.ID_LIST_TAXONOMY"
       }
     }
   }
