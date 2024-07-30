@@ -17,6 +17,7 @@
     "confinement_est",
     "confinement_sud",
     "confinement_ouest",
+    "confinement",
     "id_nomenclature_exposition",
     "exposition_grade",
     "pente",
@@ -49,6 +50,15 @@
       "required": true,
       "min": 0,
       "max": 100,
+      "default": 0
+    },
+    "confinement": {
+      "attribut_label": "Confinement",
+      "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
+      "type_widget": "number",
+      "required": true,
+      "min": -1,
+      "max": 90,
       "default": 0
     },
     "confinement_nord": {
