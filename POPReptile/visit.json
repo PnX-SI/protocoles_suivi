@@ -3,14 +3,17 @@
   "label": "Passage",
   "label_list": "Passages",
   "display_properties": [
-    "observers",
     "id_dataset",
-    "num_passage",
+    "observers",
+    "expertise",
     "visit_date_min",
+    "num_passage",
+    "etat_site",
+    "date_changement_etat_site",
+    "accessibility",
+    "methode_prospection",
     "Heure_debut",
     "Heure_fin",
-    "meteo",
-    "vent",
     "comments"
   ],
   "display_list": [
@@ -22,21 +25,52 @@
   "keep": [
     "observers",
     "visit_date_min",
+    "accessibility",
     "Heure_debut",
     "Heure_fin",
-    "meteo",
-    "vent",
     "comments"
   ],
   "specific": {
     "num_passage": {
       "type_widget": "number",
       "attribut_label": "Numéro de passage",
+      "definition": "Usuellement entre 1 et 6. Si plus de passages sont renseignés, une sélection sera opérée.",
       "required": true,
       "min": 1,
-      "max":6,
-      "value": 1
+      "max":20,
+      "default": 1
     },
+    "accessibility": {
+      "type_widget": "radio",
+      "required": true,
+      "attribut_label": "Accessibilité",
+      "definition": "Le transect est-il accessible ?",
+      "values": ["Oui", "Non"],
+      "value": "Oui",
+      "default": "Oui"
+    },
+    "etat_site": {
+      "type_widget": "radio",
+      "attribut_label": "Etat du transect",
+      "definition": "Le transect a-t-il fait l'objet d'une dégradation ou de création / restauration d'habitat favorable aux reptiles ? Sinon, cochez transect existant. À ne renseigner que pour le premier passage de l'année.",
+      "values": ["Transect existant", "Transect nouvellement créé (travaux, etc.)", "Transect restauré (travaux, etc.)", "Transect détruit (travaux, etc.)"],
+      "required": "({value}) => value.accessibility === 'Oui' && (value.num_passage === 1)",
+      "hidden": "({value}) => value.accessibility === 'Non' || (value.num_passage !== 1)"
+    },
+    "date_changement_etat_site": {
+      "type_widget": "date",
+      "attribut_label": "Date des travaux sur le transect",
+      "definition": "À ne renseigner que pour le premier passage de l'année.",
+      "required": false,
+      "hidden": "({value}) => value.etat_site === 'Transect existant' || (value.num_passage !== 1)"
+    },
+    "expertise": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Expertise",
+      "definition": "Expertise de l'observateur principal.",
+      "values": ["Débutant", "Assez expérimenté", "Chevronné"]
+   },
     "id_base_site": {
       "type_widget": "site",
       "required": false,
@@ -45,33 +79,32 @@
     "Heure_debut": {
       "type_widget": "time",
       "attribut_label": "Heure de début",
-      "required": true
+      "required": "({value}) => value.accessibility === 'Oui'",
+      "hidden": "({value}) => value.accessibility === 'Non'"
     },
     "Heure_fin": {
       "type_widget": "time",
       "attribut_label": "Heure de fin",
-      "required": true
-    },
-    "meteo": {
-      "type_widget": "select",
-      "required": false,
-      "attribut_label": "Météo",
-      "values": ["Ensoleillé", "Belles éclaircies", "Nuageux prédominant", "Très nuageux", "Orageux", "Pluvieux", "Ciel voilé"]
-    },  
-    "vent": {
-      "type_widget": "select",
-      "required": false,
-      "attribut_label": "Vent",
-      "values": ["Absence de vent", "Vent faible", "Vent fort"]
+      "required": "({value}) => value.accessibility === 'Oui'",
+      "hidden": "({value}) => value.accessibility === 'Non'"
     },
     "comments": {
       "type_widget": "textarea",
-      "attribut_label": "Commentaire"
+      "attribut_label": "Commentaire",
+      "required": false
     },
     "visit_date_min": {
       "type_widget": "date",
       "attribut_label": "Date du passage",
       "required": true
+    },
+    "methode_prospection": {
+      "type_widget": "datalist",
+      "multiple": true,
+      "attribut_label": "Méthode de prospection",
+      "values": ["Par observation directe", "Par plaques"],
+      "required": "({value}) => value.accessibility === 'Oui'",
+      "hidden": "({value}) => value.accessibility === 'Non'"
     },
     "nb_observations": {
       "attribut_label": "Nb. d'observations"
