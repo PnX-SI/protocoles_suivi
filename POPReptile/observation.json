@@ -1,25 +1,22 @@
 {
   "description_field_name":"cd_nom",
   "label": "observation ou une absence",
-  "label_list": "observations ou des absences",
+  "label_list": "observations ou absences",
   "genre":"F",
-"display_properties": [
-  "presence",
-  "cd_nom",
-  "stade_vie",
-  "abondance",
-  "type_denombrement",
-  "nombre_compte",
-  "nombre_estime_min",
-  "nombre_estime_max",
-  "comments"
-],
-"display_list": [
-  "cd_nom",
-  "nombre_compte",
-  "nombre_estime_min",
-  "nombre_estime_max"
-],
+  "display_properties": [
+    "presence",
+    "cd_nom",
+    "id_nomenclature_typ_denbr",
+    "count_min",
+    "count_max",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "id_nomenclature_typ_denbr",
+    "count_min",
+    "count_max"
+  ],
   "specific": {
     "presence": {
        "type_widget": "radio",
@@ -36,54 +33,45 @@
       "multiple": false,
       "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
       "application": "TaxHub",
-      "required": true,
+      "required": "({value}) => value.presence === 'Oui'",
       "type_util": "taxonomy",
       "value": 186278,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
       "hidden":"({value}) => value.presence === 'Non'"
     },
-    "stade_vie": {
-      "type_widget": "select",
-      "required": true,
-      "attribut_label": "Stade de vie",
-      "values": ["Indéterminé", "Nouveaux-nés", "Juvéniles", "Adultes"],
-      "value": "Indéterminé",
-      "hidden":"({value}) => value.presence === 'Non'"
+    "id_nomenclature_typ_denbr": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de dénombrement",
+      "api": "nomenclatures/nomenclature/TYP_DENBR",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": "({value}) => value.presence === 'Oui'",
+      "hidden":"({value}) => value.presence === 'Non'",
+      "filters": {
+          "cd_nomenclature": ["Co", "Es"]
+      }
     },
-    "abondance": {
-      "type_widget": "checkbox",
-      "attribut_label": "Abondance",
-      "values": ["Nombre d'individus observés à vue", "Nombre d'individus observés sur/sous plaques"],
-      "hidden":"({value}) => value.presence === 'Non'"
-    },
-    "type_denombrement": {
-      "type_widget": "radio",
-      "attribut_label": "Précision du dénombrement",
-      "values": ["Compté", "Estimé"],
-      "hidden":"({value}) => value.presence === 'Non'"
-    },
-    "nombre_compte": {
+    "count_min": {
       "type_widget": "number",
-      "attribut_label": "Nombre (compté)",
+      "attribut_label": "Nombre minimum",
+      "required": "({value}) => value.presence === 'Oui'",
+      "hidden":"({value}) => value.presence === 'Non'",
+      "min": 0
+    },
+    "count_max": {
+      "type_widget": "number",
+      "attribut_label": "Nombre maximum",
       "required": false,
-      "min": 0,
-      "max": 100,
-      "hidden": "({value}) => value.type_denombrement != 'Compté'"
-    },
-    "nombre_estime_min": {
-      "type_widget": "number",
-      "attribut_label": "Nombre minimal (estimé)",
-	    "required": false,
-      "hidden": "({value}) => value.type_denombrement != 'Estimé'"
-    },
-    "nombre_estime_max": {
-      "type_widget": "number",
-      "attribut_label": "Nombre maximal (estimé)",
-      "required": false,
-      "hidden": "({value}) => value.type_denombrement != 'Estimé'"
+      "hidden":"({value}) => value.presence === 'Non'",
+      "min": "({value}) => value.count_min"
     },
     "comments": {
       "type_widget": "textarea",
-      "attribut_label": "Commentaire (sexe des individus observés etc)"
+      "required": false,
+      "attribut_label": "Commentaire"
     }
   }
 }
