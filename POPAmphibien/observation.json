@@ -1,67 +1,44 @@
 {
   "description_field_name":"cd_nom",
+  "label": "observation ou une absence",
+  "label_list": "Observations ou absences",
   "genre":"F",
   "display_properties": [
-  "cd_nom",
-  "id_nomenclature_stade",
-  "id_nomenclature_sex",
-  "id_nomenclature_typ_denbr",
-  "count_min",
-  "count_max",
-  "comments"
-],
-"display_list": [
-  "cd_nom",
-  "id_nomenclature_typ_denbr",
-  "count_min",
-  "count_max"
-],
+    "presence",
+    "cd_nom",
+    "id_nomenclature_typ_denbr",
+    "count_min",
+    "count_max",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "id_nomenclature_typ_denbr",
+    "count_min",
+    "count_max"
+  ],
   "specific": {
+    "presence": {
+       "type_widget": "radio",
+       "required": true,
+       "attribut_label": "Avez-vous observé des amphibiens lors de la prospection",
+       "values": ["Oui", "Non"],
+       "value": "Oui"
+    },
     "cd_nom": {
       "type_widget": "taxonomy",
-      "attribut_label": "Espèces observées",
+      "attribut_label": "Espèce observée",
       "keyValue": "cd_nom",
       "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
       "multiple": false,
       "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
       "application": "TaxHub",
-      "required": false,
-      "type_util": "taxonomy"
+      "required": "({value}) => value.presence === 'Oui'",
+      "type_util": "taxonomy",
+      "value": 914450,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
+      "hidden":"({value}) => value.presence === 'Non'"
     } ,
-    "id_nomenclature_stade": {
-      "type_widget": "datalist",
-      "attribut_label": "Stade de vie",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
-      "required": true,
-      "filters": {
-          "cd_nomenclature": ["1", "2", "3", "8", "9"]
-      },
-      "default": {
-        "cd_nomenclature": "1"
-      }
-    },
-    "id_nomenclature_sex": {
-      "type_widget": "datalist",
-      "attribut_label": "Sexe",
-      "api": "nomenclatures/nomenclature/SEXE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
-      "required": true,
-      "filters": {
-          "cd_nomenclature": ["1", "2", "3"]
-      },
-      "default": {
-        "cd_nomenclature": "1"
-      }
-    },
     "id_nomenclature_typ_denbr": {
       "type_widget": "datalist",
       "attribut_label": "Type de dénombrement",
@@ -71,7 +48,8 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": false,
+      "required": "({value}) => value.presence === 'Oui'",
+      "hidden":"({value}) => value.presence === 'Non'",
       "filters": {
           "cd_nomenclature": ["Co", "Es"]
       }
@@ -79,14 +57,15 @@
     "count_min": {
       "type_widget": "number",
       "attribut_label": "Nombre minimum",
-      "required": false,
-      "min": 1,
-      "value": 1
+      "required": "({value}) => value.presence === 'Oui'",
+      "hidden":"({value}) => value.presence === 'Non'",
+      "min": 0
     },
     "count_max": {
       "type_widget": "number",
       "attribut_label": "Nombre maximum",
-      "required": "({value}) => value.count_min !=1",
+      "required": false,
+      "hidden":"({value}) => value.presence === 'Non'",
       "min": "({value}) => value.count_min"
     },
     "comments": {

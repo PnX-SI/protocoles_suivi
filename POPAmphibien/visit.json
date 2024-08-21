@@ -5,19 +5,15 @@
   "display_properties": [
     "id_dataset",
     "observers",
-    "num_passage",
+    "expertise",
     "visit_date_min",
+    "num_passage",
+    "etat_site",
+    "date_changement_etat_site",
     "accessibility",
-    "pluviosite",
-    "couverture_nuageuse",
-    "vent",
-    "turbidite",
-    "vegetation_aquatique_principale", 
-    "rives",
-    "habitat_terrestre_environnant", 
-    "activite_humaine",
     "methode_de_prospection",
-    "presence_amphibien",
+    "Heure_debut",
+    "Heure_fin",
     "comments"
   ],
   "display_list": [
@@ -30,14 +26,6 @@
     "observers",
     "visit_date_min",
     "accessibility",
-    "pluviosite",
-    "couverture_nuageuse",
-    "vent",
-    "turbidite",
-    "vegetation_aquatique_principale", 
-    "rives",
-    "habitat_terrestre_environnant", 
-    "activite_humaine",
     "methode_de_prospection",
     "presence_amphibien",
     "comments"
@@ -49,88 +37,49 @@
       "attribut_label": "Site"
     },
     "num_passage": {
-      "type_widget": "select",
-      "required": true,
+      "type_widget": "number",
       "attribut_label": "Numéro de passage",
-      "values": ["1er passage", "2eme passage", "3eme passage"]
+      "definition": "Usuellement entre 1 et 3. Si plus de passages sont renseignés, une sélection sera opérée.",
+      "required": true,
+      "min": 1,
+      "max": 10,
+      "default": 1
     },
     "visit_date_min": {
       "type_widget": "date",
       "attribut_label": "Date du passage",
       "required": true
     },
+    "expertise": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Expertise",
+      "definition": "Expertise de l'observateur principal.",
+      "values": ["Débutant", "Assez expérimenté", "Chevronné"]
+   },
     "accessibility": {
        "type_widget": "radio",
        "required": true,
-       "attribut_label": "Le site est accessible",
+       "attribut_label": "Accessibilité",
+       "definition": "Le site est accessible ?",
        "values": ["Oui", "Non"],
-       "value": "Oui"
+       "value": "Oui",
+       "default": "Oui"
     },
-    "pluviosite": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Pluviosité",
-      "code_nomenclature_type": "PLUVIOSITE",
-	    "required": false,
-      "type_util": "nomenclature", 
-      "hidden":"({value}) => value.accessibility === 'Non'"
+    "etat_site": {
+      "type_widget": "radio",
+      "attribut_label": "Etat du site",
+      "definition": "Le site a-t-il fait l'objet de dégradation ou de création / restauration pour le rendre favorable aux amphibiens ? Sinon, cochez site existant. Cette information n'est à renseigner que pour le premier passage de l'année.",
+      "values": ["Site existant", "Site nouvellement créé (travaux, etc.)", "Site restauré (travaux, assainissement de l'eau, etc.)", "Site détruit (travaux, pollution de l'eau, etc.)"],
+      "required": "({value}) => value.accessibility === 'Oui' && (value.num_passage === 1)",
+      "hidden": "({value}) => value.accessibility === 'Non' || (value.num_passage !== 1)"
     },
-    "couverture_nuageuse": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Couverture nuageuse",
-      "code_nomenclature_type": "COUVERTURE_NUAGEUSE",
-	    "required": false,
-      "type_util": "nomenclature",
-      "hidden":"({value}) => value.accessibility === 'Non'"
-    },
-    "vent": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Vent",
-      "code_nomenclature_type": "VENT",
+    "date_changement_etat_site": {
+      "type_widget": "date",
+      "attribut_label": "Date des travaux sur le site",
+      "definition": "À ne renseigner que pour le premier passage de l'année.",
       "required": false,
-      "type_util": "nomenclature" ,
-      "hidden":"({value}) => value.accessibility === 'Non'"   
-    },
-    "turbidite": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Turbidité",
-      "code_nomenclature_type": "TURBIDITE",
-      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
-      "type_util": "nomenclature",
-      "hidden":"({value}) => value.accessibility === 'Non'"
-    },
-    "vegetation_aquatique_principale": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Végétation aquatique principale",
-      "code_nomenclature_type": "VEGETATION_AQUATIQUE",
-      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
-      "type_util": "nomenclature",
-      "hidden":"({value}) => value.accessibility === 'Non'"
-    },
-    "rives": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Rives",
-      "code_nomenclature_type": "RIVES",
-      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
-      "type_util": "nomenclature",
-      "title":"Indiquer la catégorie majoritaire",
-      "hidden":"({value}) => value.accessibility === 'Non'"
-    },
-    "habitat_terrestre_environnant": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Habitat terrestre environnant",
-      "code_nomenclature_type": "HABITAT_TERRESTRE_MAJORITAIRE",
-      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
-      "type_util": "nomenclature",
-      "title":"Indiquer la catégorie majoritaire",
-      "hidden":"({value}) => value.accessibility === 'Non'"
-    },
-    "activite_humaine": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Activité humaine",
-      "code_nomenclature_type": "ACTIVITE_HUMAINE",
-      "required": "({value}) => value.accessibility === 'Oui' && value.num_passage === '1er passage'",
-      "type_util": "nomenclature",
-      "hidden":"({value}) => value.accessibility === 'Non'"
+      "hidden": "({value}) => value.etat_site === 'Site existant' || (value.num_passage !== 1)"
     },
     "methode_de_prospection": {
       "type_widget": "datalist",
@@ -144,21 +93,26 @@
       "type_util": "nomenclature",
       "required": "({value}) => value.accessibility === 'Oui'",
       "default": {
-        "cd_nomenclature": "1"
+        "cd_nomenclature": "METHODE_PROSPECTION_1"
       },
       "hidden":"({value}) => value.accessibility === 'Non'"
+    },
+    "Heure_debut": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début",
+      "required": "({value}) => value.accessibility === 'Oui'",
+      "hidden": "({value}) => value.accessibility === 'Non'"
+    },
+    "Heure_fin": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin",
+      "required": "({value}) => value.accessibility === 'Oui'",
+      "hidden": "({value}) => value.accessibility === 'Non'"
     },
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire"
     },
-    "presence_amphibien": {
-      "type_widget": "radio",
-      "attribut_label": "Présence d’amphibiens",
-      "values": ["Oui", "Non"],
-      "required": "({value}) => value.accessibility === 'Oui'",
-      "hidden":"({value}) => value.accessibility === 'Non'"
-    }, 
     "nb_observations": {
       "attribut_label": "Nb. d'observations"
     }
