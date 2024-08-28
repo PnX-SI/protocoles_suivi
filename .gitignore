@@ -1,4 +1,4 @@
 .vscode
 custom.json
 
-*x.DS_Store
+*.DS_Store
