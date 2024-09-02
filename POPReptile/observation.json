@@ -38,9 +38,11 @@
       "application": "TaxHub",
       "required": true,
       "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
       "value": 186278,
       "hidden":"({value}) => value.presence === 'Non'"
-    },
+  },
     "stade_vie": {
       "type_widget": "select",
       "required": true,

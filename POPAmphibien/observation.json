@@ -19,15 +19,11 @@
   "specific": {
     "cd_nom": {
       "type_widget": "taxonomy",
-      "attribut_label": "Espèces observées",
-      "keyValue": "cd_nom",
-      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
-      "multiple": false,
-      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
-      "application": "TaxHub",
-      "required": false,
-      "type_util": "taxonomy"
-    } ,
+      "attribut_label": "Taxon observé",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+  },
     "id_nomenclature_stade": {
       "type_widget": "datalist",
       "attribut_label": "Stade de vie",

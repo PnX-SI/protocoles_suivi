@@ -187,6 +187,13 @@
       "definition_default": "Eau claire"
     },
     {
+      "type":"TURBIDITE",
+      "cd_nomenclature": "TURBIDITE_5",
+      "mnemonique": "Assec",
+      "label_default": "Non évaluable (Assec)",
+      "definition_default": "Non évaluable (Assec)"
+    },
+    {
       "type":"CATEGORIE_PAYSAGERE",
       "cd_nomenclature": "CATEGORIE_PAYSAGERE_1",
       "mnemonique": "Zones_urbanisées",
