@@ -8,11 +8,14 @@ CREATE OR REPLACE VIEW gn_monitoring.v_export_ligne_lecture_all
      GROUP BY cvo2.id_base_visit  
  )
  SELECT 
-s.id_base_site AS id_placette_maitre,
-s.base_site_name AS nom_placette_maitre,
+s.id_base_site AS id_ligne_lecture,
+s.base_site_name AS nom_ligne_lecture,
+s.base_site_code AS code_ligne_lecture,
 st_astext(s.geom) AS geometrie,
 st_x(st_centroid(s.geom)) AS centroid_x,
 st_y(st_centroid(s.geom)) AS centroid_y,
+tsc."data"->>'borne_1' AS borne_1,
+tsc."data"->>'borne_2' AS borne_2,
 tbv.id_base_visit AS id_visit,
 tbv.visit_date_min AS date_visite,
 o.observateurs,
@@ -22,7 +25,7 @@ obs.id_observation AS id_observation,
 t.lb_nom AS nom_scientifique,
 t.nom_vern AS nom_vern,
 t.cd_nom AS cd_nom,
-toc."data"->>'num_point' AS num_point,
+toc."data"->>'num_segment' AS num_segment,
 m.module_code
 from gn_monitoring.t_base_sites s
 LEFT JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site 

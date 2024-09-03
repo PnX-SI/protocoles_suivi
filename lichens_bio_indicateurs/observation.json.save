@@ -44,7 +44,6 @@
       "attribut_label": "Para taxon",
       "description": "A remplir si groupe de taxon",
       "values": [
-        "Apothécies noires à rebord marron",
         "Crustacé verdatre",
         "Crustacé aérolé",
         "Crustacé gris/bleu",
@@ -54,7 +53,6 @@
         "Lirelle",
         "Parmelia brun",
         "Parmelia sulcata / saxatilis / submontana",
-        "Peau d’éléphant",
         "Périthèces",
         "Périthèces noir",
         "Pertusaria noir",
@@ -69,10 +67,16 @@
       ],
       "required": false
     },
+    "tout_cocher": {
+      "attribut_label": "Tout cocher/décocher",
+      "type_widget": "bool_checkbox",
+      "value": false,
+      "default": false
+    },
     "presence_arbre_1": {
       "attribut_label": "Présent arbre 1",
       "type_widget": "bool_checkbox",
-      "default": false
+      "default": 0
     },
     "presence_arbre_2": {
       "attribut_label": "Présent arbre 2",
@@ -137,5 +141,15 @@
       "attribut_label": "Remarques",
       "type_widget": "textarea"
     }
-  }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+    "console.log( objForm.value.tout_cocher );",
+    "const presence_arbre_1 = presence_arbre_2 = presence_arbre_3 = presence_arbre_4 = presence_arbre_5 = presence_arbre_6 = presence_arbre_7 = presence_arbre_8 = presence_arbre_9 = presence_arbre_10 = objForm.value.tout_cocher || false;",
+    "if (!objForm.controls.presence_arbre_1.dirty && !objForm.controls.presence_arbre_2.dirty && !objForm.controls.presence_arbre_3.dirty && !objForm.controls.presence_arbre_4.dirty && !objForm.controls.presence_arbre_5.dirty && !objForm.controls.presence_arbre_6.dirty && !objForm.controls.presence_arbre_7.dirty && !objForm.controls.presence_arbre_8.dirty && !objForm.controls.presence_arbre_9.dirty && !objForm.controls.presence_arbre_10.dirty ) {",
+    "objForm.patchValue({presence_arbre_1, presence_arbre_2, presence_arbre_3, presence_arbre_4, presence_arbre_5, presence_arbre_6, presence_arbre_7, presence_arbre_8, presence_arbre_9, presence_arbre_10})",
+    "}",
+    "}",
+    ""
+  ]
 }
