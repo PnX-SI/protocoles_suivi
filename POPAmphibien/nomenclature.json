@@ -215,35 +215,35 @@
     },
     {
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_1",
+      "cd_nomenclature": "1",
       "mnemonique": "Identification_jour",
       "label_default": "Identification à vue, de jour",
       "definition_default": "Identification à vue, de jour"
     },
     {
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_2",
+      "cd_nomenclature": "2",
       "mnemonique": "Capture_épuisette",
       "label_default": "Capture à l’épuisette (dérogation préfectorale obligatoire)",
-      "definition_default": "Capture à l’épuisette (dérogation préfectorale obligatoire) % "
+      "definition_default": "Capture à l’épuisette (dérogation préfectorale obligatoire)"
     },
 	{
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_3",
+      "cd_nomenclature": "3",
       "mnemonique": "Capture_nasses",
       "label_default": "Capture par nasses (dérogation préfectorale obligatoire)",
       "definition_default": "Capture par nasses (dérogation préfectorale obligatoire)"
     },
 	{
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_4",
+      "cd_nomenclature": "4",
       "mnemonique": "Identification_nuit",
       "label_default": "Identification à vue, de nuit (lampe)",
       "definition_default": "Identification à vue, de nuit (lampe)"
     },
 	{
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_5",
+      "cd_nomenclature": "5",
       "mnemonique": "Identification_écoute",
       "label_default": "Identification par écoute",
       "definition_default": "Identification par écoute"

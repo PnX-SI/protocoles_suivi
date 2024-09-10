@@ -93,7 +93,7 @@
       "type_util": "nomenclature",
       "required": "({value}) => value.accessibility === 'Oui'",
       "default": {
-        "cd_nomenclature": "METHODE_PROSPECTION_1"
+        "cd_nomenclature": "1"
       },
       "hidden":"({value}) => value.accessibility === 'Non'"
     },
