@@ -65,7 +65,6 @@
       "attribut_label": "Confinement Nord",
       "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
       "type_widget": "number",
-      "required": true,
       "min": -90,
       "max": 90,
       "default": 0
@@ -74,7 +73,6 @@
       "attribut_label": "Confinement Est",
       "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
       "type_widget": "number",
-      "required": true,
       "min": -90,
       "max": 90,
       "default": 0
@@ -83,7 +81,6 @@
       "attribut_label": "Confinement Sud",
       "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
       "type_widget": "number",
-      "required": true,
       "min": -90,
       "max": 90,
       "default": 0
@@ -92,7 +89,6 @@
       "attribut_label": "Confinement Ouest",
       "description": "Angle entre l’horizontale et la visée du sommet du versant opposé, à partir du point de relevé (centre de la placette). Viser en étant perpendiculaire au profil local du versant sur lequel on se situe. ",
       "type_widget": "number",
-      "required": true,
       "min": -90,
       "max": 90,
       "default": 0
