@@ -598,21 +598,21 @@
     },
     "description_arbre_1_diametre_1": {
       "attribut_label": "Description Arbre 1 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_1_diametre_2": {
       "attribut_label": "Description Arbre 1 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_1_temps_prospection": {
       "attribut_label": "Description Arbre 1 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -626,21 +626,21 @@
     },
     "description_arbre_2_diametre_1": {
       "attribut_label": "Description Arbre 2 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_2_diametre_2": {
       "attribut_label": "Description Arbre 2 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_2_temps_prospection": {
       "attribut_label": "Description Arbre 2 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -654,21 +654,21 @@
     },
     "description_arbre_3_diametre_1": {
       "attribut_label": "Description Arbre 3 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_3_diametre_2": {
       "attribut_label": "Description Arbre 3 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_3_temps_prospection": {
       "attribut_label": "Description Arbre 3 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -682,21 +682,21 @@
     },
     "description_arbre_4_diametre_1": {
       "attribut_label": "Description Arbre 4 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_4_diametre_2": {
       "attribut_label": "Description Arbre 4 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_4_temps_prospection": {
       "attribut_label": "Description Arbre 4 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -710,21 +710,21 @@
     },
     "description_arbre_5_diametre_1": {
       "attribut_label": "Description Arbre 5 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_5_diametre_2": {
       "attribut_label": "Description Arbre 5 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_5_temps_prospection": {
       "attribut_label": "Description Arbre 5 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -738,21 +738,21 @@
     },
     "description_arbre_6_diametre_1": {
       "attribut_label": "Description Arbre 6 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_6_diametre_2": {
       "attribut_label": "Description Arbre 6 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_6_temps_prospection": {
       "attribut_label": "Description Arbre 6 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -766,21 +766,21 @@
     },
     "description_arbre_7_diametre_1": {
       "attribut_label": "Description Arbre 7 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_7_diametre_2": {
       "attribut_label": "Description Arbre 7 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_7_temps_prospection": {
       "attribut_label": "Description Arbre 7 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -794,21 +794,21 @@
     },
     "description_arbre_8_diametre_1": {
       "attribut_label": "Description Arbre 8 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_8_diametre_2": {
       "attribut_label": "Description Arbre 8 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_8_temps_prospection": {
       "attribut_label": "Description Arbre 8 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -822,21 +822,21 @@
     },
     "description_arbre_9_diametre_1": {
       "attribut_label": "Description Arbre 9 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_9_diametre_2": {
       "attribut_label": "Description Arbre 9 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_9_temps_prospection": {
       "attribut_label": "Description Arbre 9 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
@@ -850,21 +850,21 @@
     },
     "description_arbre_10_diametre_1": {
       "attribut_label": "Description Arbre 10 - Diamètre 1",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_10_diametre_2": {
       "attribut_label": "Description Arbre 10 - Diamètre 2",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
     },
     "description_arbre_10_temps_prospection": {
       "attribut_label": "Description Arbre 10 - Temps de prospection",
-      "type_widget": "integer",
+      "type_widget": "number",
       "min": 0,
       "default": 0,
       "hidden": "({value}) => value.test_detectabilite"
