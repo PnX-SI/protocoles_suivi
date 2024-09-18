@@ -9,6 +9,8 @@
     "id_nomenclature_typ_denbr",
     "count_min",
     "count_max",
+    "id_nomenclature_stade",
+    "id_nomenclature_sex",
     "comments"
   ],
   "display_list": [
@@ -39,6 +41,42 @@
       "id_list": "__MODULE.ID_LIST_TAXONOMY",
       "hidden":"({value}) => value.presence === 'Non'"
     } ,
+    "id_nomenclature_stade": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden":"({value}) => value.presence === 'Non'",
+      "filters": {
+          "cd_nomenclature": ["1", "2", "3", "5", "8", "9"]
+      },
+      "default": {
+        "cd_nomenclature": "1"
+      }
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden":"({value}) => value.presence === 'Non'",
+      "filters": {
+          "cd_nomenclature": ["1", "2", "3", "5"]
+      },
+      "default": {
+        "cd_nomenclature": "1"
+      }
+    },
     "id_nomenclature_typ_denbr": {
       "type_widget": "datalist",
       "attribut_label": "Type de dénombrement",
