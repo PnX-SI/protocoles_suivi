@@ -102,13 +102,30 @@
     "count_max": {
       "type_widget": "number",
       "attribut_label": "Nombre maximum",
-      "required": false,
+      "required": "({value}) => value.count_min > 0",
       "hidden":"({value}) => value.presence === 'Non'",
-      "min": "({value}) => value.count_min"
+      "min": 0
     },
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire"
     }
-  }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+      "if (objForm.value.presence === 'Non' && !!objForm.value.id_nomenclature_sex) {",
+        "objForm.patchValue({id_nomenclature_typ_denbr : null, count_min : 0, count_max : 0, id_nomenclature_sex : null, id_nomenclature_stade: null}, {emitEvent : false})",
+      "}",
+      "if (objForm.value.presence === 'Oui' && objForm.value.count_min === 0) {",
+        "objForm.patchValue({count_min : null, count_max : null}, {emitEvent : false})",
+      "}",
+      "if (!!objForm.value.count_min && objForm.value.count_max < objForm.value.count_min) {",
+        "objForm.patchValue({count_max : objForm.value.count_min}, {emitEvent : false})",
+      "}",
+      "if (!!objForm.value.count_min && meta.nomenclatures[objForm.value.id_nomenclature_typ_denbr].cd_nomenclature === 'Co' && objForm.value.count_max !== objForm.value.count_min) {",
+        "objForm.patchValue({count_max : objForm.value.count_min}, {emitEvent : false})",
+      "}",
+    "}",
+    ""
+    ]
 }
