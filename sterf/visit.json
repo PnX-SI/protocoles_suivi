@@ -1,0 +1,63 @@
+{
+  "display_properties": [
+    "id_dataset",
+    "observers",
+    "visit_date_min",
+    "start_time",
+    "duration",
+    "meteo_cond",
+    "temperature",
+    "vent",
+    "ennuagement",
+    "comments"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "duration",
+    "meteo_cond"
+  ],
+  "keep": [
+   "id_dataset",
+   "observers"
+  ],
+  "specific": {
+    "duration": {
+      "type_widget": "number",
+      "required":true,
+      "attribut_label": "Durée de parcours du transect (en mn) *",
+      "min":1,
+      "value":10
+    },
+    "start_time": {
+      "type_widget": "time",
+      "required":true,
+      "attribut_label": "Heure de début du relevé *"
+    },
+    "meteo_cond": {
+      "type_widget": "radio",
+      "attribut_label": "Les conditions météorologiques favorables étaient-elles réunies ? *",
+      "required": true,
+      "values": ["Oui", "Non"],
+      "value":"Oui"
+    },
+    "temperature": {
+      "type_widget": "select",
+      "attribut_label": "Température (en °C)",
+      "required":false,
+      "values": ["inférieure à 13°", "13 à 15°", "16 à 20°", "21 à 25°","26 à 30°", "31 à 35°", "supérieure à 35°"]
+    },
+    "vent": {
+      "type_widget": "select",
+      "attribut_label": "Force du vent",
+      "required": false,
+      "values": ["Nul", "Léger", "Modéré", "Fort"]
+    },
+    "ennuagement": {
+      "type_widget": "select",
+      "attribut_label": "Ennuagement",
+      "required": false,
+      "values": ["Soleil", "Peu nuageux", "Nuageux", "Très nuageux", "Couvert"]
+    }
+  }
+}

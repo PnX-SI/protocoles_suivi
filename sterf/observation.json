@@ -1,0 +1,58 @@
+{
+  "display_properties": [
+    "cd_nom",
+    "id_nomenclature_determination_method",
+    "determiner",
+    "count_min",
+    "count_max",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "id_nomenclature_determination_method",
+    "count_min",
+    "count_max"
+  ],
+  "keep": [
+   "determiner",
+   "id_nomenclature_determination_method"
+  ],
+  "specific": {
+    "determiner": {
+      "type_widget": "datalist",
+      "attribut_label": "Déterminateur",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "required": true
+    },
+    "id_nomenclature_determination_method": {
+      "type_widget": "datalist",
+      "attribut_label": "Méthode de détermination",
+      "api": "nomenclatures/nomenclature/METH_DETERMIN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "default": {
+        "cd_nomenclature": "67"
+      }
+    },
+    "count_min": {
+      "type_widget": "number",
+      "attribut_label": "Effectif minimal dénombré",
+      "required": true,
+      "min": 1
+    },
+    "count_max": {
+      "type_widget": "number",
+      "attribut_label": "Effectif maximal dénombré",
+      "required": true,
+      "min": "({value}) => value.count_min "
+    }
+  }
+}
