@@ -1,0 +1,80 @@
+{
+  "cruved": {"C":1, "U":1, "D": 1},
+  "genre":"M",
+  "label": "Passage",
+  "label_list": "Passages",
+  "display_properties": [
+    "id_dataset",
+    "observers",
+    "num_passage",
+    "visit_date_min",
+    "temperature",
+    "nebulosite",
+    "vvent",
+    "comments"
+  ],
+  "display_list": [
+    "id_dataset",
+    "num_passage",
+    "visit_date_min",
+    "observers",
+    "nb_observations"
+  ],
+  "keep": [
+    "visit_date_min",
+    "temperature",
+    "nebulosite"
+  ],
+  "specific": {
+    "num_passage": {
+      "type_widget": "radio",
+      "attribut_label": "Numéro de passage",
+      "values": [1, 2, 3],
+      "required": true
+    },
+    "temperature": {
+      "type_widget": "number",
+      "attribut_label": "Temperature de l'air (°C)",
+      "required": true,
+      "min": 0,
+      "max": 60
+    },
+    "nebulosite": {
+      "type_widget": "radio",
+      "attribut_label": "Couverture nuageuse (Nebulosité)",
+      "values": ["0","1/4", "1/2", "3/4","1"],
+      "required": true
+    },
+    "vvent": {
+      "type_widget": "datalist",
+      "attribut_label": "Force de vent (beaufort)",
+      "values": [
+        {
+          "label":"0 : Calme (< 1 km/h)",
+          "value": 0
+        }, {
+          "label":"1 : Très légère brise (1 à 5 km/h)",
+          "value": 1
+        }, {
+          "label":"2 : Légère brise (6 à 11 km/h)",
+          "value": 2
+        }, {
+          "label":"3 : Petite brise (12 à 19 km/h)",
+          "value": 3
+        }, {
+          "label":"4 : Jolie brise (20 à 28 km/h)",
+          "value": 4
+        }, {
+          "label":"5 : Bonne brise (19 à 38 km/h)",
+          "value": 5
+        }
+      ],
+      "required": true
+    },
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du passage",
+      "required": true
+    }
+  }
+}

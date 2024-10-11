@@ -1,0 +1,61 @@
+{
+  "cruved": {"C":1, "U":1, "D": 1},
+  "genre":"M",
+  "label": "site",
+  "label_list": "Sites",
+  "geometry_type": "Point",
+  "map_label_field_name": "base_site_name",
+  "export_pdf": [
+      { "template": "fiche_aire.html", "label": "Export PDF" }
+  ],
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "display_properties": [
+    "base_site_name",
+    "id_sites_group",
+    "id_inventor",
+    "size_maille",
+    "first_use_date"
+ ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "first_use_date",
+    "nb_visits"
+  ],
+  "specific": {
+    "base_site_code": {
+      "hidden": true,
+      "required": false
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Groupe de site",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false,
+      "definition": "Liste des zones de prospections définies pour le protocole."
+    },
+    "id_nomenclature_type_site": {
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "RHOMEO_ORTHO"
+      },
+      "hidden": true
+    },
+    "size_maille": {
+      "type_widget": "number",
+      "attribut_label": "Taille de la maille (m2)",
+      "required": true,
+      "hidden": false,
+      "default": 900
+    }
+  }
+}
