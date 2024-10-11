@@ -1,0 +1,14 @@
+{
+  "module_label":"Petite chouette de montagne",
+  "module_desc":"Module pour le protocole de suivi national des tendances d'volution à long terme des populations de Petites Chouettes de Montagne sur sites de références",
+  "color":"#e5fffe",
+  "export_csv": [
+    { "label": "Observations", "type":"csv" , "method": "standard", "filter_dataset": true },
+    { "label": "Format ONF / LPO", "type":"csv" , "method": "onf_lpo", "filter_dataset": true }
+  ],
+  "specific": {
+    "b_draw_sites_group": {
+      "hidden": false
+    }
+  }
+}
