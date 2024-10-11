@@ -1,0 +1,425 @@
+{
+  "types": [
+    {
+      "mnemonique": "PHYSIO_VEGETALE",
+      "label_default": "Physionomie des formations végétale",
+      "definition_default": "Physionomie des formations végétales"
+    },
+    {
+      "mnemonique": "STRATE_FLORE",
+      "label_default": "Strate de végétation",
+      "definition_default": "Strate de végétation d’usage courant dans les travaux phytosociologiques"
+    },
+    {
+      "mnemonique": "STADE_PHENOL",
+      "label_default": "Stade phénologique",
+      "definition_default": "Stade phénologique d’usage courant dans les travaux phytosociologiques"
+    },
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type":"STADE_PHENOL",
+      "cd_nomenclature": "1",
+      "mnemonique": "en_feuille",
+      "label_default": "En feuille",
+      "label_fr": "En feuille",
+      "definition_default": "Végétation en feuille"
+    },
+    {
+      "type":"STADE_PHENOL",
+      "cd_nomenclature": "2",
+      "mnemonique": "en_fleur",
+      "label_default": "En fleur",
+      "label_fr": "En fleur",
+      "definition_default": "Végétation en fleur"
+    },
+    {
+      "type":"STADE_PHENOL",
+      "cd_nomenclature": "3",
+      "mnemonique": "en_fruit",
+      "label_default": "En fruit",
+      "label_fr": "En fruit",
+      "definition_default": "Végétation en fruit"
+    },
+    {
+      "type":"STADE_PHENOL",
+      "cd_nomenclature": "4",
+      "mnemonique": "en_senescence",
+      "label_default": "En sénéscence",
+      "label_fr": "En sénéscence",
+      "definition_default": "Végétation en sénéscence"
+    },
+    {
+      "type":"STRATE_FLORE",
+      "cd_nomenclature": "A",
+      "mnemonique": "arboree",
+      "label_default": "Strate arborée",
+      "label_fr": "Strate arborée",
+      "definition_default": "Strate composée des arbres dont la hauteur dépasse 5 mètres."
+    },
+    {
+      "type":"STRATE_FLORE",
+      "cd_nomenclature": "a",
+      "mnemonique": "arbustive",
+      "label_default": "Strate arbustive",
+      "label_fr": "Strate arbustive",
+      "definition_default": "Strate composée des plantes d'une hauteur de 1m à 8m, en général des arbustes ou des jeunes arbres, mais comprenant aussi les plantes grimpantes telles que le lierre."
+    },
+    {
+      "type":"STRATE_FLORE",
+      "cd_nomenclature": "sa",
+      "mnemonique": "sous_arbustive",
+      "label_default": "Strate sous-arbustive",
+      "label_fr": "Strate sous-arbustive",
+      "definition_default": ""
+    },
+    {
+      "type":"STRATE_FLORE",
+      "cd_nomenclature": "h",
+      "mnemonique": "herbacee",
+      "label_default": "Strate herbacée",
+      "label_fr": "Strate herbacée",
+      "definition_default": "Strate composée des plantes qui dépassent rarement 1m, dominée par les végétaux herbacés annuels : poacées, cypéracées, plantes à fleurs, ptéridophytes,..."
+    },
+    {
+      "type":"STRATE_FLORE",
+      "cd_nomenclature": "m",
+      "mnemonique": "muscinale",
+      "label_default": "Strate muscinale",
+      "label_fr": "Strate muscinale",
+      "definition_default": "Strate composée des plantes qui dépassent pas quelques centimètres de hauteur, constituée par les mousses et lichens au sol."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "FS",
+      "mnemonique": "fourre_sempervirent",
+      "label_default": "FS : Fourré sempervirent",
+      "label_fr": "Fourré sempervirent",
+      "definition_default": "Formation dominée par des espèces à feuillage persistant, épineuses ou non (Buxaie, Juniperaie, …)."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "FM",
+      "mnemonique": "fourre_mesophile",
+      "label_default": "FM : Fourré mésophile à sec",
+      "label_fr": "Fourré mésophile à sec",
+      "definition_default": "Formation dominée des espèces caducifoliées des autres situations (Coryllaie, coudraie, accru à …, fourré à Amelanchier, …)."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "FU",
+      "mnemonique": "fourre_humide",
+      "label_default": "FU : Fourré humide",
+      "label_fr": "Fourré humide",
+      "definition_default": "Formation dominée des des espèces caducifoliées des sols engorgés, des bordures d'eaux calmes et courantes (saulaie arbustive, fourré à bourdaine, …). Les aulnaies vertes sont traitées sous FM."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "FR",
+      "mnemonique": "fourre_artificiel",
+      "label_default": "FR : Fourré artificiel",
+      "label_fr": "Fourré artificiel",
+      "definition_default": "ex. : haie bocagère"
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "BFM",
+      "mnemonique": "bois_feuillu_mesophile",
+      "label_default": "BFM : Boisement feuillu (mésophile à sec)",
+      "label_fr": "Boisement feuillu (mésophile à sec)",
+      "definition_default": "Formation dominée par des espèces feuillues (> 75% de recouvrement) caducifoliées des autres situations, sèches ou mésophiles."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "BFH",
+      "mnemonique": "bois_feuillu_humide",
+      "label_default": "BFH : Boisement feuillu humide",
+      "label_fr": "Boisement feuillu humide",
+      "definition_default": "Formation dominée par des espèces feuillues (> 75% de recouvrement) caducifoliées des sols engorgés (nappe aﬄeurante ou peu profonde) et des situations alluviales et riveraines (nappe circulante à niveau variable et crues). Les boisements à sous bois de mégaphorbiaie non riverain ou alluviaux sont traités sous BFM."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "BCM",
+      "mnemonique": "bois_conifere_mesophile",
+      "label_default": "BCM : Boisement de conifère (mésophile à sec)",
+      "label_fr": "Boisement de conifère (mésophile à sec)",
+      "definition_default": "Formation dominée par les conifères (> 75% recouvrement) des situations sèches ou mésophiles. Les pré-bois de Mélèze, Arolle, Pin à crochet et de Thurifère sont considérés comme des formations arborescentes dès 15% de recouvrement (au lieu de 30% pour les autres essences)."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "BCH",
+      "mnemonique": "bois_conifere_humide",
+      "label_default": "BCH : Boisement de conifère humide",
+      "label_fr": "Boisement de conifère humide",
+      "definition_default": "Formation dominée par les conifères (> 75% recouvrement) des sols humides ou engorgés. Les pré-bois de Pin à crochet sur tourbe sont considérés comme des formations arborescentes dès 15% de recouvrement (au lieu de 30% pour les autres essences)."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "BMI",
+      "mnemonique": "bois_mixte",
+      "label_default": "BMI : Boisement mixte",
+      "label_fr": "Boisement mixte",
+      "definition_default": "Formation mixte conifères/feuillus ou feuillus sempervirents/feuillus caducifolié dans laquelle aucune des essences atteint individuellement 75% de la surface. Les combinaisons mixtes d’essences sont retenues dans la liste de peuplements."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "BFS",
+      "mnemonique": "bois_feuillu_sempervirent",
+      "label_default": "BFS : Boisement feuillu sempervirent",
+      "label_fr": "Boisement feuillu sempervirent",
+      "definition_default": "Formation dominée par des espèces feuillues (> 75% de recouvrement) sempervirentes."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "BA",
+      "mnemonique": "bois_artificiel",
+      "label_default": "BA : Boisement artificiel",
+      "label_fr": "Boisement artificiel",
+      "definition_default": "Boisement artificiel."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "AL",
+      "mnemonique": "alluvion",
+      "label_default": "AL : Végétation herbacée pionnière des alluvions",
+      "label_fr": "Végétation herbacée pionnière des alluvions",
+      "definition_default": "Formation très ouverte pionnière des alluvions actifs, régulièrement perturbés et alimentés, des torrents, des rivières et des ﬂeuves à régime nival (bilan hydrique largement déficient sur un substrat très drainant), riches en galets mêlés ou non de terre fine."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "CN",
+      "mnemonique": "combe_neige",
+      "label_default": "CN : Combe à neige de l'étage alpin (rarement plus bas)",
+      "label_fr": "Combe à neige de l'étage alpin (rarement plus bas)",
+      "definition_default": "Formation à degré d'ouverture variable des zones longuement enneigées de l'étage alpin (rare au subalpin) souvent dominée par des nanophanérophytes du genre Salix. Substrat variable, formes minérales caractérisées le tassement des éléments du substrat (fins à moyens)."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "DA",
+      "mnemonique": "dalle_rocheuse",
+      "label_default": "DA : Végétation pionnière des dalles rocheuses",
+      "label_fr": "Végétation pionnière des dalles rocheuses",
+      "definition_default": "Formation herbacée ouverte pionnière des aﬄeurements rocheux (souvent tabulaires avec pente peu marqué), riche en plantes grasses et à composition mixte vivaces et annuelles. Elle comprend la végétation pionnière des lapiaz vifs."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "RO",
+      "mnemonique": "parois_rocheuse",
+      "label_default": "RO : Végétation des parois et façades rocheuses",
+      "label_fr": "Végétation des parois et façades rocheuses",
+      "definition_default": "Formation clairsemée des anfractuosités rocheuses, végétation saxicole au sens strict, incluant la végétation des rochers frais méridionaux mais pas les suintements quasi permanents."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "EB",
+      "mnemonique": "eboulis",
+      "label_default": "EB : Végétation des éboulis",
+      "label_fr": "Végétation des éboulis",
+      "definition_default": "Formation très ouverte pionnière des éboulis et chaos rocheux, actifs ou stabilisés, comprenant la végétation colonisant les moraines. Formation caractérisée par la (quasi) absence de sol. Ne comprend pas les formations pionnières à saules nains des chaos rocheux longuement enneigés qui sont à coder sous CN (combes à neige)."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "GH",
+      "mnemonique": "grand_helophyte",
+      "label_default": "GH : Communauté de grands hélophytes",
+      "label_fr": "Communauté de grands hélophytes",
+      "definition_default": "Formation souvent dense de grands hélophytes graminoïdes (roselières au sens large à Phragmites, Phalaris, Typha, Schoenoplectus, Cladium...) comprenant à la fois les communautés franchement aquatique et les communautés terrestres (atterries)."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "RB",
+      "mnemonique": "petit_helophyte",
+      "label_default": "RB : Communauté de petits hélophytes",
+      "label_fr": "Communauté de petits hélophytes",
+      "definition_default": "Formation souvent clairsemée de petits hélophytes non graminoïdes des eaux stagnantes peu profondes à niveau variable (Sparganium sppl., Alisma sppl., Equisetum ﬂuviatile, Oenanthe aquatica, Rorippa amphibia, Butomus umbellatus, Sagitaria sagitifolia), également appelé roselière basse."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "MC",
+      "mnemonique": "magnocaricaie",
+      "label_default": "MC : Magnocariçaie",
+      "label_fr": "Magnocariçaie",
+      "definition_default": "Formation haute dominée par des hélophytes de la famille des cypéracées comprenant à la fois les communautés franchement aquatiques et des communautés terrestres à sol mouillé une partie de l'année."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "HM",
+      "mnemonique": "haut_marais",
+      "label_default": "HM : Haut-marais",
+      "label_fr": "Haut-marais",
+      "definition_default": "Formation mixte bryophytique (sphaignes), herbacée (cypéracée) et sous-arbustive (éricacées) formant un paysage lâchement moutonné de buttes de sphaignes et de creux plus ou moins inondés."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "BM",
+      "mnemonique": "bas_marais",
+      "label_default": "BM : Bas-marais et marais de transition",
+      "label_fr": "Bas-marais et marais de transition",
+      "definition_default": "Formation basse dominée par des cypéracées de petites et moyennes taille à nappe d'eau proche ou juste au dessus de la surface. Comprend aussi les formations amphibies franchement aquatiques (ceinture à Eriophorum scheuchzeri) des étages subalpin et alpin."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "MG",
+      "mnemonique": "megaphorbiaie",
+      "label_default": "MG : Mégaphorbiaie",
+      "label_fr": "Mégaphorbiaie",
+      "definition_default": "Formation dense et haute dominée par des dicotylédones à feuillage très recouvrant des milieux frais à humides, riches en éléments minéraux. Comprend aussi les formations montagnardes à subalpines mésophiles composition mixte entre graminées et dicotylédones (Calamagrostis sp. souvent), d’origine naturelle (praires de couloirs d’avalanche). Plaine, montagnard et subalpin. Urtica, Anthriscus, Convolvulus, lisière nitrophiles ?"
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "AQ",
+      "mnemonique": "aquatique",
+      "label_default": "AQ : Végétation aquatique",
+      "label_fr": "Végétation aquatique",
+      "definition_default": "Ensemble vaste de formations végétales strictement aquatiques (non hélophytiques), des eaux stagnantes et courantes, enracinées ou libres, immergées ou submergées. Comprend les herbiers à Sparganium angustifolium des étages subalpin et alpin."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "FO",
+      "mnemonique": "fontinale",
+      "label_default": "FO : Végétation fontinale",
+      "label_fr": "Végétation fontinale",
+      "definition_default": "Formation en majorité dominée par les bryophytes, avec végétation vasculaire peu diversifiée mais parfois assez recouvrante (Epilobium alsinifolium, Saxifraga aizoides, Carex frigida), colonisant les sources, les bords de ruisselets et les rochers suintants, milieux imbibé en permanence."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "EC",
+      "mnemonique": "eau_courante",
+      "label_default": "EC : Végétation amphibie des bordure d'eaux courantes",
+      "label_fr": "Végétation amphibie des bordure d'eaux courantes",
+      "definition_default": "Formation amphibie vivace dense (petits hélophytes souvent) et entremêlée occupant les petits cours d'eau et leurs berges ainsi que les lones et bras-mort à courant faible (comprend les herbiers à Glyceria, Berula, Apium, Nasturtium et Leersia)."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "EX",
+      "mnemonique": "greve_exondee",
+      "label_default": "EX : Végétation pionnière des grèves exondées",
+      "label_fr": "Végétation pionnière des grèves exondées",
+      "definition_default": "Formation pionnière annuelle et vivace de petite taille (Eleocharis acicularis, Littorella uniﬂora, Ludwigia palustris, Juncus bulbosus…) ou plus haute (Polygonum lapathifolium, Bidens pl.sp. etc.). des zones périodiquement exondées des eaux stagnantes et courantes, végétation à caractère amphibie souvent marqué."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "PS",
+      "mnemonique": "pelouse",
+      "label_default": "PS : Pelouse de basse et moyenne altitude",
+      "label_fr": "Pelouse de basse et moyenne altitude",
+      "definition_default": "Formation basse diversifiée, de hauteur moyenne inférieure à 50cm à dominante graminéenne, des sols maigres des étages planitiaire, collinéen et montagnard. Recouvrement minéral variable, comprend aussi les pelouses rocailleuses de colonisation d'éboulis et des roches altérées. La hauteur de certaines formations (ex. formation dense à Brome érigé) doit examinées attentivement pour distinguer la pelouse de la prairie."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "PA",
+      "mnemonique": "pelouse_alpine",
+      "label_default": "PA : Pelouse alpine et pâturage d'altitude",
+      "label_fr": "Pelouse alpine et pâturage d'altitude",
+      "definition_default": "Etages supérieurs (subalpin et alpin). Recouvrement minéral souvent important, comprend aussi les pelouses rocailleuses de colonisation d'éboulis et des roches altérées. L'altitude est le critère déterminant."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "TH",
+      "mnemonique": "pelouse_annuelle",
+      "label_default": "TH : Pelouse pionnière annuelle",
+      "label_fr": "Pelouse pionnière annuelle",
+      "definition_default": "Formation très ouverte primaire dominée par espèces annuelles de petite taille à cycle court, fréquemment sur substrats ﬁns et mobiles."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "PH",
+      "mnemonique": "prairie_humide",
+      "label_default": "PH : Prairie humide (et pelouse humide)",
+      "label_fr": "Prairie humide (et pelouse humide)",
+      "definition_default": "Formation herbacée d'origine anthropique diversiﬁée, dense et haute à dominante graminéenne, fauchée et/ou pâturée, humide à mouillée (nappe aﬄeurante) une partie de l'année, périodiquement inondée. Les prairies alluviales à Arrhenatherum elatius à tendance mésohygrophile des niveaux topo supérieurs sont traitées sous PM. Les formations basses méditerranéennes à Deschampsia media sont comprises dans PH."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "PM",
+      "mnemonique": "prairie",
+      "label_default": "PM : Prairie (mésophile et méso-xérophile)",
+      "label_fr": "Prairie (mésophile et méso-xérophile)",
+      "definition_default": "Formation diversiﬁée d'origine anthropique, dense et haute à dominante graminéenne de hauteur supérieure à 50 cm, fauchée et/ou pâturée, temporairement humide, exceptionnellement inondée et mouillée. Les formations semi hautes pâturées d'altitude ne sont pas comprises. La hauteur de certaines formations (ex. formation dense à Brome érigé) doit examinées attentivement pour distinguer la pelouse de la prairie. Les formations naturelles montagnardes à hautes herbes mixtes (graminées et dicotylédones) sont à coder sous MG Mégaphorbiaie."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "OU",
+      "mnemonique": "ourlet_herbace",
+      "label_default": "OU : Ourlet herbacé maigre",
+      "label_fr": "Ourlet herbacé maigre",
+      "definition_default": "Formation mésophile à méso-xérophile, peu élevée, développées sur des terrains maigres en bordure externe de végétations arbustives et forestières (conditions héliophiles à hémi-héliophiles) ou colonisant d’ancien espaces agro-pastoraux, dominée par des espèces à développement tardif, parmi lesquels les graminées sont (co-)dominantes. Les formations à Rubus sont codés OU ou OF en fonction de leur situation. Les manteaux arbustifs sont traités dans les fourré quand le recouvrement arbustif > 25 %, < 25 %, ils sont traités ici."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "OF",
+      "mnemonique": "ourlet_forestier",
+      "label_default": "OF : Coupes et ourlets forestiers",
+      "label_fr": "Coupes et ourlets forestiers",
+      "definition_default": "Formation intraforestière, constituée de grandes dicotylédones vivaces colonisant les coupes forestières récentes et les clairières à sol riches, ou de dicotylédones moins grande en situation de lisière et de clairière (Aegopodium, … ). Comprend également les formations de lisière intraforestièresd dominées par des graminées (Festuca gigantea, Bromus ramosus / benekenii, Calamagrostis varia, Elytrigia / Roegneria ou encore à Hordelymus europaeus ). A préciser JCV. Comprend les ronciers forestiers. Les formations riveraines à Petasites albus (souvent intraforestières) sont codées sous MG – Mégaphorbiaie. Les formations de lisère humides à Petasites albus sont quant à elles traités ici."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "RU",
+      "mnemonique": "ruderale",
+      "label_default": "RU : Friche herbacée et végétation rudérale",
+      "label_fr": "Friche herbacée et végétation rudérale",
+      "definition_default": "Formation dominée par des espèces annuelles et/ou bisannuelles des terrains agricoles, urbains, industriels irrégulièrement perturbé, souvent nitrophile. Comprend aussi la végétation rudérale vivace des reposoirs à bestiaux et des friches à graminées (chiendent) sur anciens terrains agricoles. Comprend également les formations vivaces de substitution de xénopytes (Reynoutria japonica/ bohemica ou Impatiens glandulifera."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "CU",
+      "mnemonique": "culture",
+      "label_default": "CU : Végétation des cultures",
+      "label_fr": "Végétation des cultures",
+      "definition_default": "Formation basse et très ouverte dominée par des plantes annuelles (à bisannuelles) des terrains agricoles exploités et les cultures arboricoles à terre retournée."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "HY",
+      "mnemonique": "hyperpietinee",
+      "label_default": "HY : Végétation rase hyperpiétinée",
+      "label_fr": "Végétation rase hyperpiétinée",
+      "definition_default": "Formation dominée par des plantes annuelles prostrées supportant le piétinement régulier de toute nature."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "MU",
+      "mnemonique": "murs",
+      "label_default": "MU : Végétation anthropique des murs",
+      "label_fr": "Végétation anthropique des murs",
+      "definition_default": "Formation colonisant les murs."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "AR",
+      "mnemonique": "autre",
+      "label_default": "AR : Autre formation herbacée artiﬁcielle",
+      "label_fr": "Autre formation herbacée artiﬁcielle",
+      "definition_default": "Autre formation herbacée artiﬁcielle."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "LA",
+      "mnemonique": "lande",
+      "label_default": "LA : Lande et landine",
+      "label_fr": "Lande et landine",
+      "definition_default": "Formation végétale dominée par des petits chaméphytes (landines) ou des grands chaméphytes (landes). Les seuils de recouvrement de la strate sous-arbustive sont donnés dans « Physionomies complexes »."
+    },
+    {
+      "type":"PHYSIO_VEGETALE",
+      "cd_nomenclature": "GA",
+      "mnemonique": "garrigue",
+      "label_default": "GA : Garrigue (incluant les et ourlets herbacés méditerranéens)",
+      "label_fr": "Garrigue",
+      "definition_default": "Formation végétale dominée par des chaméphytes des secteurs supra- et oro-méditerranéens."
+    },
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "PHYTOSOCIO",
+      "mnemonique": "Site_Phytosocio",
+      "label_default": "Site suivi phytosociologique",
+      "definition_default": "Site de relevé du protocole Phytosocio de suivi des habitats"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "module_label":"Suivi phytosocio",
+  "module_desc":"Module pour le suivi phytosociologique des milieux",
+  "color":"#e5fffe",
+  "export_csv": [
+    { "label": "Format standard CSV", "type":"csv" , "method": "standard" }
+  ],
+  "specific": {
+    "b_draw_sites_group": {
+      "hidden": false
+    }
+  }
+}
