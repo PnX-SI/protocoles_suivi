@@ -14,6 +14,13 @@
       "mnemonique": "TYPE_SITE",
       "label_default": "Type de sites",
       "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    },
+    {
+      "mnemonique": "BRAUNBLANQABDOM",
+      "label_default": "Braun Blanquet Pavillard, abondance-dominance",
+      "definition_default": "Nomenclature des valeurs pour l'échelle d'abondance-dominance de Braun-Blanquet Pavillard (1928)",
+      "label_fr" : "Braun Blanquet Pavillard, abondance-dominance",
+      "source": "SINP"
     }
   ],
   "nomenclatures": [
@@ -376,6 +383,76 @@
       "label_default": "GA : Garrigue (incluant les et ourlets herbacés méditerranéens)",
       "label_fr": "Garrigue",
       "definition_default": "Formation végétale dominée par des chaméphytes des secteurs supra- et oro-méditerranéens."
+    },
+    {
+      "type":"BRAUNBLANQABDOM",
+      "cd_nomenclature": "0",
+      "mnemonique": "0",
+      "label_default": "0",
+      "label_fr": "0",
+      "definition_default": "0 : Pas d'individus, aucun recouvrement (0%)",
+      "definition_fr": "Pas d'individus, aucun recouvrement (0%)",
+      "statut": "non validé"
+    },
+    {
+      "type":"BRAUNBLANQABDOM",
+      "cd_nomenclature": "+",
+      "mnemonique": "+",
+      "label_default": "+",
+      "label_fr": "+",
+      "definition_default": "+ : Individus rares ou très rares - Recouvrement très faible",
+      "definition_fr": "Individus rares ou très rares - Recouvrement très faible",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBLANQABDOM",
+      "cd_nomenclature": "1",
+      "mnemonique": "1",
+      "label_default": "1",
+      "label_fr": "1",
+      "definition_default": "1 : Individus assez abondants, mais degré de recouvrement faible (< 5%)",
+      "definition_fr": "Individus assez abondants, mais degré de recouvrement faible (< 5%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBLANQABDOM",
+      "cd_nomenclature": "2",
+      "mnemonique": "2",
+      "label_default": "2",
+      "label_fr": "2",
+      "definition_default": "2 : Individus très abondants ou recouvrant au moins 1/20 de la surface (5 à 25%)",
+      "definition_fr": "Individus très abondants ou recouvrant au moins 1/20 de la surface (5 à 25%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBLANQABDOM",
+      "cd_nomenclature": "3",
+      "mnemonique": "3",
+      "label_default": "3",
+      "label_fr": "3",
+      "definition_default": "3 : Nombre d'individus quelconque, recouvrant de 1/4 à 1/2 de la surface (25 - 50%)",
+      "definition_fr": "Nombre d'individus quelconque, recouvrant de 1/4 à 1/2 de la surface (25 - 50%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBLANQABDOM",
+      "cd_nomenclature": "4",
+      "mnemonique": "4",
+      "label_default": "4",
+      "label_fr": "4",
+      "definition_default": "4 : Nombre d'individus quelconque, recouvrant de 1/2 à 3/4 de la surface (50 - 75%)",
+      "definition_fr": "Nombre d'individus quelconque, recouvrant de 1/2 à 3/4 de la surface (50 - 75%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBLANQABDOM",
+      "cd_nomenclature": "5",
+      "mnemonique": "5",
+      "label_default": "5",
+      "label_fr": "5",
+      "definition_default": "5 : Nombre d'individus quelconque, recouvrant plus des 3/4 de la surface (> 75%)",
+      "definition_fr": "Nombre d'individus quelconque, recouvrant plus des 3/4 de la surface (> 75%)",
+      "statut": "Validé"
     },
     {
       "type": "TYPE_SITE",
