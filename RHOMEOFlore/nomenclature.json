@@ -21,6 +21,13 @@
       "definition_default": "Nomenclature des valeurs pour l'échelle d'abondance-dominance de Braun-Blanquet Pavillard (1928)",
       "label_fr" : "Braun Blanquet Pavillard, abondance-dominance",
       "source": "SINP"
+    },
+    {
+      "mnemonique": "BRAUNBARK",
+      "label_default": "Braun Blanquet Barkman, abondance-dominance",
+      "definition_default": "Nomenclature des valeurs de l'échelle de Braun-Blanquet Barkman complétée telle que dans le dictionnaire de sociologie et synécologie végétales (Géhu, 2006)",
+      "label_fr" : "Braun Blanquet Barkman, abondance-dominance",
+      "source": "SINP"
     }
   ],
   "nomenclatures": [
@@ -452,6 +459,116 @@
       "label_fr": "5",
       "definition_default": "5 : Nombre d'individus quelconque, recouvrant plus des 3/4 de la surface (> 75%)",
       "definition_fr": "Nombre d'individus quelconque, recouvrant plus des 3/4 de la surface (> 75%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "i",
+      "mnemonique": "i",
+      "label_default": "i",
+      "label_fr": "i",
+      "definition_default": "i : Un seul individu présent, recouvrement très faible (<5%)",
+      "definition_fr": "Un seul individu présent, recouvrement très faible (<5%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "r",
+      "mnemonique": "r",
+      "label_default": "r",
+      "label_fr": "r",
+      "definition_default": "r : Individus rares ou très rares, recouvrement faible (<5%)",
+      "definition_fr": "Individus rares ou très rares, recouvrement faible (<5%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "+",
+      "mnemonique": "+",
+      "label_default": "+",
+      "label_fr": "+",
+      "definition_default": "+ : Individus peu abondants, recouvrement faible (<5%)",
+      "definition_fr": "Individus peu abondants, recouvrement faible (<5%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "1",
+      "mnemonique": "1",
+      "label_default": "1",
+      "label_fr": "1",
+      "definition_default": "1 : Individus assez abondants, recouvrement faible (< 5%)",
+      "definition_fr": "Individus assez abondants, recouvrement faible (< 5%)",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "2",
+      "mnemonique": "2",
+      "label_default": "2",
+      "label_fr": "2",
+      "definition_default": "2 : Individus abondants, recouvrement de 5 à 25%",
+      "definition_fr": "Individus abondants, recouvrement de 5 à 25%",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "2m",
+      "mnemonique": "2m",
+      "label_default": "2m",
+      "label_fr": "2m",
+      "definition_default": "2m : Individus abondants, recouvrement < 5%",
+      "definition_fr": "Individus abondants, recouvrement < 5%",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "2a",
+      "mnemonique": "2a",
+      "label_default": "2a",
+      "label_fr": "2a",
+      "definition_default": "2a : Individus en nombre quelconque, recouvrement entre 5 et 12,5%",
+      "definition_fr": "Individus en nombre quelconque, recouvrement entre 5 et 12,5%",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "2b",
+      "mnemonique": "2b",
+      "label_default": "2b",
+      "label_fr": "2b",
+      "definition_default": "2b : Individus en nombre quelconque, recouvrement entre 12,5 et 25%",
+      "definition_fr": "Individus en nombre quelconque, recouvrement entre 12,5 et 25%",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "3",
+      "mnemonique": "3",
+      "label_default": "3",
+      "label_fr": "3",
+      "definition_default": "3 : Individus en nombre quelconque, recouvrement entre 25 et 50%",
+      "definition_fr": "Individus en nombre quelconque, recouvrement entre 25 et 50%",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "4",
+      "mnemonique": "4",
+      "label_default": "4",
+      "label_fr": "4",
+      "definition_default": "4 : Individus en nombre quelconque, recouvrement entre 50 et 75%",
+      "definition_fr": "Individus en nombre quelconque, recouvrement entre 50 et 75%",
+      "statut": "Validé"
+    },
+    {
+      "type":"BRAUNBARK",
+      "cd_nomenclature": "5",
+      "mnemonique": "5",
+      "label_default": "5",
+      "label_fr": "5",
+      "definition_default": "5 : Individus en nombre quelconque, recouvrement > 75%",
+      "definition_fr": "Individus en nombre quelconque, recouvrement > 75%",
       "statut": "Validé"
     },
     {
