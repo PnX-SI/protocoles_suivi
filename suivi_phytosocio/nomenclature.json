@@ -11,6 +11,11 @@
       "definition_default": "Strate de végétation d’usage courant dans les travaux phytosociologiques"
     },
     {
+      "mnemonique": "STADE_PHENOL",
+      "label_default": "Stade phénologique",
+      "definition_default": "Stade phénologique d’usage courant dans les travaux phytosociologiques"
+    },
+    {
       "mnemonique": "TYPE_SITE",
       "label_default": "Type de sites",
       "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
@@ -31,6 +36,38 @@
     }
   ],
   "nomenclatures": [
+    {
+      "type":"STADE_PHENOL",
+      "cd_nomenclature": "1",
+      "mnemonique": "en_feuille",
+      "label_default": "En feuille",
+      "label_fr": "En feuille",
+      "definition_default": "Végétation en feuille"
+    },
+    {
+      "type":"STADE_PHENOL",
+      "cd_nomenclature": "2",
+      "mnemonique": "en_fleur",
+      "label_default": "En fleur",
+      "label_fr": "En fleur",
+      "definition_default": "Végétation en fleur"
+    },
+    {
+      "type":"STADE_PHENOL",
+      "cd_nomenclature": "3",
+      "mnemonique": "en_fruit",
+      "label_default": "En fruit",
+      "label_fr": "En fruit",
+      "definition_default": "Végétation en fruit"
+    },
+    {
+      "type":"STADE_PHENOL",
+      "cd_nomenclature": "4",
+      "mnemonique": "en_senescence",
+      "label_default": "En sénéscence",
+      "label_fr": "En sénéscence",
+      "definition_default": "Végétation en sénéscence"
+    },
     {
       "type":"STRATE_FLORE",
       "cd_nomenclature": "A",
@@ -573,10 +610,10 @@
     },
     {
       "type": "TYPE_SITE",
-      "cd_nomenclature": "RHOMEO_FLO",
-      "mnemonique": "Site_RHOMEO_flore",
-      "label_default": "Site RHOMEO flore",
-      "definition_default": "Site de relevé du protocole RHOMEO flore"
+      "cd_nomenclature": "PHYTOSOCIO",
+      "mnemonique": "Site_Phytosocio",
+      "label_default": "Site suivi phytosociologique",
+      "definition_default": "Site de relevé du protocole Phytosocio de suivi des habitats"
     }
   ]
 }

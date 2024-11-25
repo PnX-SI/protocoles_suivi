@@ -1,0 +1,15 @@
+{
+  "cruved": {"C":1, "U":1, "D": 1},
+  "module_label":"RHOMEOOthoptere",
+  "module_desc":"Module pour le protocole de suivi RhoMeO des Othopteres",
+  "color":"#e5fffe",
+  "export_csv": [
+    { "label": "Format standard CSV", "type":"csv" , "method": "standard" },
+    { "label": "RHOMEO calculette CSV", "type":"csv" , "method": "calculette" }
+  ],
+  "specific": {
+    "b_draw_sites_group": {
+      "hidden": false
+    }
+  }
+}

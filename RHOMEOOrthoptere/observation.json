@@ -1,0 +1,95 @@
+{
+  "cruved": {"C":1, "U":1, "D": 1},
+  "description_field_name":"cd_nom",
+  "genre":"F",
+  "display_properties": [
+    "cd_nom",
+    "abondance",
+    "id_nomenclature_behaviour",
+    "id_nomenclature_life_stage",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "num_tranche",
+    "nombre",
+    "nombre_compte"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèce observée",
+      "multiple": false,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    },
+    "abondance": {
+      "type_widget": "datalist",
+      "attribut_label": "Abondance",
+      "values": [
+        {
+          "label":"n < 5",
+          "value": "R"
+        }, {
+          "label":"5 < n < 20",
+          "value": "PC"
+        }, {
+          "label":"20 < n < 100",
+          "value": "C"
+        }, {
+          "label":"100 < n",
+          "value": "TC"
+        }
+      ],
+      "required": true
+    },
+    "id_nomenclature_behaviour": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de comportement reproducteur",
+      "api": "nomenclatures/nomenclature/OCC_COMPORTEMENT",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "params": {
+          "regne": "Animalia",
+          "group2_inpn": "Insectes"
+      },
+      "filters": {
+        "label_fr": ["Non renseigné","Pond", "Accouplement"]
+      },
+      "default": null,
+      "multiple": false,
+      "required": "({value}) => !value.id_nomenclature_life_stage"
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "keyTitle": "definition_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "params": {
+          "regne": "Animalia"
+      },
+      "filters": {
+        "label_fr": ["Larve", "Adulte"]
+      },
+      "default": {
+        "cd_nomenclature": "2"
+      },
+      "multiple": true,
+      "required": "({value}) => !value.id_nomenclature_behaviour"
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+  }
+}

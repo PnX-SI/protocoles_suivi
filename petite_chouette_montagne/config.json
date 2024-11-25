@@ -1,0 +1,24 @@
+{
+  "tree": {
+    "module": {
+      "sites_group": {
+        "site": {
+          "visit": {
+            "observation": null
+          }
+        }
+      },
+      "site": {
+        "visit": {
+          "observation": null
+        }
+      }
+    }
+  },
+  "data": {
+    "taxonomy": {
+      "id_list": "__ID_COMPONENT_TAXONOMY"
+    }
+  },
+  "synthese_object": "observation"
+}
