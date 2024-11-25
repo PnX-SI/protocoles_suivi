@@ -63,7 +63,7 @@ AS WITH t_source AS (
     tbv.id_digitiser,
     tbs.id_inventor,
     concat(tr.nom_role, ' ', tr.prenom_role) AS observers,
-    tsc.id_module,
+    tbv.id_module,
     tbv.comments AS comment_context,
     to2.comments AS comment_description,
     obs.ids_observers,
