@@ -62,4 +62,4 @@ WITH source AS (
      LEFT JOIN ref_nomenclatures.t_nomenclatures tbb ON tbb.id_nomenclature = (oc.data ->> 'id_nomenclature_abondance_braunblanquet')::int
      JOIN source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-  WHERE m.module_code::text = :module_code::text;
+  WHERE m.module_code::text = :module_code;
