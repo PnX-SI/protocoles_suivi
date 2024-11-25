@@ -24,8 +24,8 @@
 
 
 
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
-CREATE VIEW gn_monitoring.v_synthese_:module_code AS
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_micromam_analyse_pelotes_rejection_gmb;
+CREATE VIEW gn_monitoring.v_synthese_micromam_analyse_pelotes_rejection_gmb AS
 
 WITH source AS (
 
@@ -34,7 +34,7 @@ WITH source AS (
         id_source
 
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 
 ), sites AS (
@@ -196,9 +196,5 @@ SELECT
     
  	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max) ON TRUE
  	left JOIN determinateurs_monit on determinateurs_monit.id_base_visit = obs.id_base_visit
-    WHERE m.module_code = :'module_code'
+    WHERE m.module_code = :module_code
     ;
-
-
-SELECT * FROM gn_monitoring.v_synthese_:module_code
-
