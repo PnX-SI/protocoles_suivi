@@ -1,9 +1,4 @@
 {
-  "cruved": {
-    "C": 3,
-    "U": 3,
-    "D": 3
-  },
   "sorts": [
     {
       "prop": "base_site_name",

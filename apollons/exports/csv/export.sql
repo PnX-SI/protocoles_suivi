@@ -29,7 +29,9 @@ ON tbv.id_base_site = tbs.id_base_site
 JOIN gn_monitoring.t_visit_complements AS tvc
 ON tvc.id_base_visit  = tbv.id_base_visit
 JOIN gn_monitoring.t_site_complements AS tsc
-ON tbs.id_base_site = tsc.id_base_site AND tsc.id_module = (SELECT id_module FROM mod)
+ON tbs.id_base_site = tsc.id_base_site 
+JOIN gn_monitoring.cor_site_module csm 
+ON  tbs.id_base_site = csm.id_base_site  AND csm.id_module = (SELECT id_module FROM mod)
 JOIN LATERAL (
     SELECT string_agg(concat_ws(' ', tr.nom_role, tr.prenom_role), ',') AS observateur, cvo.id_base_visit
     FROM gn_monitoring.cor_visit_observer AS cvo
