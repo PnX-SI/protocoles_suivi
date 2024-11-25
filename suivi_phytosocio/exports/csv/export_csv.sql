@@ -20,26 +20,25 @@ WITH source AS (
 
     SELECT
 
-        id_base_site,
+        s.id_base_site,
 		sg.sites_group_name,
 		sg.sites_group_code,
 		sg.sites_group_description,
-		base_site_name,
-		base_site_description,
-		id_inventor,
-		CONCAT(r.nom_role, ' ', prenom_role) inventor,
-		COALESCE (t_base_sites.meta_update_date, first_use_date) AS date_site,
-		altitude_min,
-		altitude_max,
-		geom_local,
-		st_x(ST_Centroid(geom)) AS wgs84_x,
-		st_y(ST_Centroid(geom))AS wgs84_y,
-		st_x(ST_Centroid(geom_local)) AS l93_x,
-		st_y(ST_Centroid(geom_local))AS l93_y,
+		s.base_site_name,
+		s.base_site_description,
+		s.id_inventor,
+		CONCAT(r.nom_role, ' ', r.prenom_role) inventor,
+		COALESCE (s.meta_update_date, s.first_use_date) AS date_site,
+		s.altitude_min,
+		s.altitude_max,
+		s.geom_local,
+		st_x(ST_Centroid(s.geom)) AS wgs84_x,
+		st_y(ST_Centroid(s.geom))AS wgs84_y,
+		st_x(ST_Centroid(s.geom_local)) AS l93_x,
+		st_y(ST_Centroid(s.geom_local))AS l93_y,
 		(sc."data"::json#>>'{num_placette}')::text AS num_placette,
 		(sc."data"::json#>>'{num_transect}')::text AS num_transect
-
-        FROM gn_monitoring.t_base_sites
+        FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
     	JOIN utilisateurs.t_roles r ON  id_inventor = r.id_role
