@@ -70,7 +70,7 @@ LEFT JOIN gn_commons.t_modules m ON m.id_module = tbv.id_module
 JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit 
 JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = obs.id_observation 
 JOIN taxonomie.taxref t ON t.cd_nom = obs.cd_nom
-WHERE m.module_code::text = 'stom'
+WHERE m.module_code::text = :module_code
 ORDER BY tsg.id_sites_group, tbv.visit_date_min, s.base_site_name
 ;
 
@@ -127,35 +127,47 @@ LEFT JOIN gn_commons.t_modules m ON m.id_module = tbv.id_module
 JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = tbv.id_base_visit 
 JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = obs.id_observation 
 JOIN taxonomie.taxref t ON t.cd_nom = obs.cd_nom
-WHERE m.module_code::text = 'stom';
+WHERE m.module_code::text = :module_code;
 
 
 CREATE OR REPLACE VIEW gn_monitoring.v_export_stom_sites
-AS 
- SELECT 
- 	tsg.id_sites_group AS id_site,
- 	tsg.sites_group_name AS nom_site,
+AS SELECT 
+    tsg.id_sites_group AS id_site,
+    tsg.sites_group_name AS nom_site,
     s.id_base_site AS id_point_ecoute,
     s.base_site_name AS nom_point_ecoute,
     st_x(s.geom) AS x,
     st_y(s.geom) AS y,
     a.jname ->> 'COM'::text AS commune,
-    a.jname ->> 'SEC'::text AS secteur,
-    :id_dataset_of_module as id_dataset
-   FROM gn_monitoring.t_base_sites s
-     JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
-     LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
-     LEFT JOIN LATERAL ( SELECT d_1.id_base_site,
-            json_object_agg(d_1.type_code, d_1.o_name) AS jname,
-            json_object_agg(d_1.type_code, d_1.o_code) AS jcode
-           FROM ( SELECT sa.id_base_site,
-                    ta.type_code,
-                    string_agg(DISTINCT a_1.area_name::text, ','::text) AS o_name,
-                    string_agg(DISTINCT a_1.area_code::text, ','::text) AS o_code
-                   FROM gn_monitoring.cor_site_area sa
-                     JOIN ref_geo.l_areas a_1 ON sa.id_area = a_1.id_area
-                     JOIN ref_geo.bib_areas_types ta ON ta.id_type = a_1.id_type
-                  WHERE sa.id_base_site = s.id_base_site
-                  GROUP BY sa.id_base_site, ta.type_code) d_1
-          GROUP BY d_1.id_base_site) a ON true
- WHERE tsc.id_module =  (SELECT id_module FROM gn_commons.t_modules tm WHERE module_code = 'stom');
+    a.jname ->> 'SEC'::text AS secteur, 
+    (
+        SELECT id_dataset
+        FROM gn_commons.t_modules tm
+        JOIN gn_commons.cor_module_dataset cmd 
+        ON tm.id_module = cmd.id_module 
+        WHERE module_code = :module_code
+        LIMIT 1
+    ) as id_dataset
+FROM gn_monitoring.t_base_sites s
+JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
+JOIN gn_monitoring.cor_site_module csm ON s.id_base_site =csm.id_base_site 
+LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
+LEFT JOIN LATERAL ( 
+    SELECT 
+        d_1.id_base_site,
+        json_object_agg(d_1.type_code, d_1.o_name) AS jname,
+        json_object_agg(d_1.type_code, d_1.o_code) AS jcode
+        FROM ( 
+            SELECT sa.id_base_site,
+                ta.type_code,
+                string_agg(DISTINCT a_1.area_name::text, ','::text) AS o_name,
+                string_agg(DISTINCT a_1.area_code::text, ','::text) AS o_code
+            FROM gn_monitoring.cor_site_area sa
+            JOIN ref_geo.l_areas a_1 ON sa.id_area = a_1.id_area
+            JOIN ref_geo.bib_areas_types ta ON ta.id_type = a_1.id_type
+            WHERE sa.id_base_site = s.id_base_site
+            GROUP BY sa.id_base_site, ta.type_code
+        ) d_1
+        GROUP BY d_1.id_base_site
+) a ON true
+ WHERE csm.id_module =  (SELECT id_module FROM gn_commons.t_modules tm WHERE module_code =:module_code);
