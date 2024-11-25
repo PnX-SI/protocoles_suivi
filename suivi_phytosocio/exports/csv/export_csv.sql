@@ -1,5 +1,3 @@
-alter table gn_monitoring.t_base_sites alter column id_nomenclature_type_site drop not null;
-
 -------------------------------------------------final --phytosociologique standard------------------------------------------
 -- View: gn_monitoring.v_export_phytosociologique_standard
 
