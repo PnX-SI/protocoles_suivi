@@ -49,7 +49,13 @@ FROM gn_monitoring.t_base_sites s
 LEFT JOIN com_dep USING (id_base_site)
 LEFT JOIN zonages USING (id_base_site)
 -- On s'assure de ne prendre qu'un ensemble (commune - département) par observation
-WHERE row_num = 1)
+WHERE row_num = 1),
+num_passages_calc AS
+(SELECT
+    id_base_visit,
+    row_number() OVER (PARTITION BY id_base_site, date_part('year', visit_date_min) ORDER BY visit_date_min ASC) as num_passage_calc
+FROM gn_monitoring.t_base_visits
+)
 SELECT
     -- identifiant unique
     o.uuid_observation,
@@ -84,6 +90,7 @@ SELECT
     NULLIF(REPLACE((vc.data::json->'Heure_debut')::text,'"',''),'null') AS heure_debut,
     NULLIF(REPLACE((vc.data::json->'Heure_fin')::text,'"',''),'null') AS heure_fin,
     NULLIF(REPLACE((vc.data::json->'num_passage')::text,'"',''),'null') AS num_passage,
+    npc.num_passage_calc,
     NULLIF(REPLACE((vc.data::json->'expertise')::text,'"',''),'null') AS expertise_operateur,
     NULLIF(REPLACE((vc.data::json->'methode_prospection')::text,'"',''),'null') AS methode_prospection,
     NULLIF(REPLACE((vc.data::json->'accessibility')::text, '"', ''), 'null') AS accessibilite,
@@ -106,6 +113,7 @@ SELECT
 FROM gn_monitoring.t_observations o
 JOIN gn_monitoring.t_observation_complements oc USING (id_observation)
 JOIN gn_monitoring.t_base_visits v USING (id_base_visit)
+JOIN num_passages_calc npc USING (id_base_visit)
 JOIN gn_monitoring.t_visit_complements vc USING (id_base_visit)
 JOIN gn_monitoring.t_base_sites s USING (id_base_site)
 JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
@@ -183,7 +191,13 @@ FROM gn_monitoring.t_base_sites s
 LEFT JOIN com_dep USING (id_base_site)
 LEFT JOIN zonages USING (id_base_site)
 -- On s'assure de ne prendre qu'un ensemble (commune - département) par observation
-WHERE row_num = 1)
+WHERE row_num = 1),
+num_passages_calc AS
+(SELECT
+    id_base_visit,
+    row_number() OVER (PARTITION BY id_base_site, date_part('year', visit_date_min) ORDER BY visit_date_min ASC) as num_passage_calc
+FROM gn_monitoring.t_base_visits
+)
 SELECT
     -- Aire et site
     REPLACE(trim(unaccent(tsg.sites_group_name)), ' ', '_') AS aire_etude, -- Uniformisation des noms
@@ -213,6 +227,7 @@ SELECT
     NULLIF(REPLACE((vc.data::json->'Heure_debut')::text,'"',''),'null') AS heure_debut,
     NULLIF(REPLACE((vc.data::json->'Heure_fin')::text,'"',''),'null') AS heure_fin,
     NULLIF(REPLACE((vc.data::json->'num_passage')::text,'"',''),'null') AS num_passage,
+    npc.num_passage_calc,
     NULLIF(REPLACE((vc.data::json->'expertise')::text,'"',''),'null') AS expertise_operateur,
     NULLIF(REPLACE((vc.data::json->'methode_prospection')::text,'"',''),'null') AS methode_prospection,
     NULLIF(REPLACE((vc.data::json->'accessibility')::text, '"', ''), 'null') AS accessibilite,
@@ -228,6 +243,7 @@ SELECT
     observations.count_min AS abondance_total_min,
     observations.count_max AS abondance_total_max
 FROM gn_monitoring.t_base_visits v
+JOIN num_passages_calc npc USING (id_base_visit)
 JOIN gn_monitoring.t_visit_complements vc USING (id_base_visit)
 JOIN gn_monitoring.t_base_sites s USING (id_base_site)
 JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
