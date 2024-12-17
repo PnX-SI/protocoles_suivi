@@ -19,29 +19,27 @@ WITH source AS (
 ), sites AS (
 
     SELECT
-
-        id_base_site,
+        s.id_base_site,
 		sg.sites_group_name,
 		sg.sites_group_description,
 		sg.comments sites_group_comments,
-		base_site_name,
-		base_site_description,
-		id_inventor,
+		s.base_site_name,
+		s.base_site_description,
+		s.id_inventor,
 		CONCAT(tr.nom_role, ' ', tr.prenom_role) AS inventor,
-		COALESCE (t_base_sites.meta_update_date, first_use_date) AS date_site,
-		altitude_min,
-		altitude_max,
-		geom_local,
-		st_x(ST_Centroid(geom)) AS wgs84_x,
-		st_y(ST_Centroid(geom)) AS wgs84_y,
-		st_x(ST_Centroid(geom_local)) AS l93_x,
-		st_y(ST_Centroid(geom_local)) AS l93_y,
+		COALESCE (s.meta_update_date, s.first_use_date) AS date_site,
+		s.altitude_min,
+		s.altitude_max,
+		s.geom_local,
+		st_x(ST_Centroid(s.geom)) AS wgs84_x,
+		st_y(ST_Centroid(s.geom)) AS wgs84_y,
+		st_x(ST_Centroid(s.geom_local)) AS l93_x,
+		st_y(ST_Centroid(s.geom_local)) AS l93_y,
 		(sc.data::json#>>'{size_maille}')::text AS site_size_maille
-
-        FROM gn_monitoring.t_base_sites
-		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
-		JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
-		JOIN utilisateurs.t_roles tr ON tr.id_role = t_base_sites.id_inventor
+	FROM gn_monitoring.t_base_sites s
+	JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
+	JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
+	JOIN utilisateurs.t_roles tr ON tr.id_role = s.id_inventor
 
 ), visits AS (
     
@@ -147,10 +145,7 @@ SELECT
         ON t.cd_nom = o.cd_nom
 	JOIN source 
         ON TRUE
-	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
+	JOIN observers obs ON obs.id_base_visit = v.id_base_visit 
     WHERE m.module_code = :module_code
     ;
 
