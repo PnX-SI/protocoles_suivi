@@ -89,7 +89,7 @@ SELECT
     tsg.sites_group_description AS description_aire,
     ref_nomenclatures.get_nomenclature_label(NULLIF(json_extract_path(tsg.data::json,'categories_paysageres')::text, 'null')::integer, 'fr') as habitat_principal,
     -- Site et variables associées
-    REPLACE(trim(unaccent(s.base_site_name)), ' ', '_') AS nom_site -- Uniformisation site
+    REPLACE(trim(unaccent(s.base_site_name)), ' ', '_') AS nom_site, -- Uniformisation site
     st_astext(s.geom) as wkt_wgs,
     st_x(s.geom) AS x_wgs,
     st_y(s.geom) AS y_wgs,
@@ -145,7 +145,8 @@ LEFT JOIN gn_meta.t_datasets d USING (id_dataset)
 LEFT JOIN info_sites i USING (id_base_site)
 LEFT JOIN obs USING (id_base_visit)
 LEFT JOIN methods USING (id_base_visit)
-WHERE m.module_code = 'popamphibien';
+WHERE m.module_code = 'popamphibien'
+ORDER BY v.id_dataset, tsg.sites_group_name, s.base_site_name, visit_date_min;
 
 ---------------------------------------------------POPAmphibien analyses------------------------------------------
 -- View: gn_monitoring.v_export_popamphibien_analyses
@@ -284,4 +285,5 @@ LEFT JOIN gn_meta.t_datasets d ON d.id_dataset = v.id_dataset
 LEFT JOIN info_sites i USING (id_base_site)
 LEFT JOIN obs USING (id_base_visit)
 LEFT JOIN methods USING (id_base_visit)
-WHERE m.module_code::text = 'popamphibien';
+WHERE m.module_code = 'popamphibien'
+ORDER BY v.id_dataset, tsg.sites_group_name, s.base_site_name, visit_date_min;
