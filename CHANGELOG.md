@@ -12,12 +12,13 @@ Ensemble de protocoles compatibles avec le module GeoNature `gn_module_monitorin
   * RHOMEOOrthoptere
 * POPAmphibien (@cen-cgeier, @DonovanMaillard, @lpojgc)
 * POPReptile (@cen-cgeier, @DonovanMaillard, @lpojgc)
-* GMB - Micromammifères (analyse des pelotes de rejection) (@Splendens)
-* GMB - Campagnols amphibies  (@Splendens)
-* GMB - Colonies de chiroptères (@Splendens)
-* GMB - Loutres d'Europe (SACs) (@Splendens)
-* GMB - Loutres d'Europe (UICN) (@Splendens)
-* GMB - Terriers de blaireau (@Splendens)
+* GMB (@Splendens):
+   * Micromammifères (analyse des pelotes de rejection)
+   * Campagnols amphibies
+   * Colonies de chiroptères
+   * Loutres d'Europe (SACs)
+   * Loutres d'Europe (UICN)
+   * Terriers de blaireau
 * Chronocapture (@DonovanMaillard)
 * Piégeages passifs (@DonovanMaillard)
 * STOM (@TheoLechemia)
@@ -30,7 +31,7 @@ Ensemble de protocoles compatibles avec le module GeoNature `gn_module_monitorin
 * Osmodermes (@amandine-sahl)
 * Chiroptères : suivis des gites  (@TheoLechemia, @amandine-sahl)
 * Prairies fleuries (@amandine-sahl)
-* Point écoute avifaune coeur de parc   
+* Point écoute avifaune coeur de parc (@amandine-sahl)
 * Nidification du gypaète  (@TheoLechemia)
 * Petite chouette de montagne (@cen-cgeier)
 * Pyrales (@afourneyron)
