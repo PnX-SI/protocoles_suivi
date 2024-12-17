@@ -1,39 +1,39 @@
 
-0.1.0 (2024-11-25)
+0.1.0 (2024-12-17)
 ------------------
 
 Ensemble de protocoles compatibles avec le module GeoNature `gn_module_monitoring` <= 0.7.0
 
 **Protocoles**
-* RHOMEO:
+* RHOMEO (@cen-cgeier): 
   * RHOMEOAmphibien
   * RHOMEOFlore
   * RHOMEOOdonate
   * RHOMEOOrthoptere
-* POPAmphibien
-* POPReptile  
-* GMB - Micromammifères (analyse des pelotes de rejection)
-* GMB - Campagnols amphibies
-* GMB - Colonies de chiroptères
-* GMB - Loutres d'Europe (SACs)
-* GMB - Loutres d'Europe (UICN)
-* GMB - Terriers de blaireau
-* Chronocapture
-* Piégeages passifs
-* STOM
-* STERF
-* Apollons 
-* Oedicnèmes 
-* Points d'écoute cheveche
-* Ecrevisses à pattes blanches 
-* Lichens (bio-indicateurs) 
-* Osmodermes
-* Chiroptères : suivis des gites
-* Prairies fleuries
+* POPAmphibien (@cen-cgeier, @DonovanMaillard, @lpojgc)
+* POPReptile (@cen-cgeier, @DonovanMaillard, @lpojgc)
+* GMB - Micromammifères (analyse des pelotes de rejection) (@Splendens)
+* GMB - Campagnols amphibies  (@Splendens)
+* GMB - Colonies de chiroptères (@Splendens)
+* GMB - Loutres d'Europe (SACs) (@Splendens)
+* GMB - Loutres d'Europe (UICN) (@Splendens)
+* GMB - Terriers de blaireau (@Splendens)
+* Chronocapture (@DonovanMaillard)
+* Piégeages passifs (@DonovanMaillard)
+* STOM (@TheoLechemia)
+* STERF (@DonovanMaillard)
+* Apollons (@amandine-sahl)
+* Oedicnèmes (@amandine-sahl)
+* Points d'écoute cheveche (@amandine-sahl)
+* Ecrevisses à pattes blanches  (@amandine-sahl)
+* Lichens bio-indicateurs (@amandine-sahl)
+* Osmodermes (@amandine-sahl)
+* Chiroptères : suivis des gites  (@TheoLechemia, @amandine-sahl)
+* Prairies fleuries (@amandine-sahl)
 * Point écoute avifaune coeur de parc   
-* Nidification du gypaète
-* Petite chouette de montagne
-* Pyrales
-* Suivi nardaie
-* Suivi phytosociologie
+* Nidification du gypaète  (@TheoLechemia)
+* Petite chouette de montagne (@cen-cgeier)
+* Pyrales (@afourneyron)
+* Suivi nardaie (@TheoLechemia)
+* Suivi phytosociologie (@cen-cgeier)
 
