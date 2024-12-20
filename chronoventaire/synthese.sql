@@ -51,8 +51,8 @@ AS WITH t_source AS (
     COALESCE((toc.data #>> '{nb_count}'::text[])::integer, 0) AS count_max,
     to2.cd_nom,
     t.nom_complet AS nom_cite,
-    alt.altitude_min,
-    alt.altitude_max,
+    tbs.altitude_min,
+    tbs.altitude_max,
     tbs.geom AS the_geom_4326,
     st_centroid(tbs.geom) AS the_geom_point,
     tbs.geom_local AS the_geom_local,
@@ -78,7 +78,6 @@ AS WITH t_source AS (
      LEFT JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
      LEFT JOIN utilisateurs.t_roles tr ON tr.id_role = tbv.id_digitiser
      LEFT JOIN taxonomie.taxref t ON to2.cd_nom = t.cd_nom
-     LEFT JOIN t_source ON true
-     LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(tbs.geom_local) alt(altitude_min, altitude_max) ON true
+     LEFT JOIN t_source ON true 
      LEFT JOIN gn_commons.t_modules tm ON tm.id_module = tbv.id_module
   WHERE tm.module_label::text ~~* 'CHRONOVENTAIRE'::text AND to2.cd_nom IS NOT NULL AND to2.uuid_observation IS NOT NULL;

@@ -34,7 +34,8 @@ WITH source AS (
 		st_y(ST_Centroid(s.geom))AS wgs84_y,
 		st_x(ST_Centroid(s.geom_local)) AS l93_x,
 		st_y(ST_Centroid(s.geom_local))AS l93_y,
-		sg.comments
+		sg.comments,
+		s.altitude_min
         FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
@@ -95,7 +96,7 @@ SELECT
 		s.base_site_description "Description du numéro",
 		s.inventor "Créateur du point",
 		s.date_site "date de création du point",
-		alt.altitude_min altitude,
+		s.altitude_min altitude,
 		ST_AsText(s.geom_local) wkt_l93,
 		s.l93_x x_l93,
 		s.l93_y y_l93,
@@ -148,10 +149,7 @@ SELECT
         ON t.cd_nom = o.cd_nom
 	JOIN source 
         ON TRUE
-	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
+	JOIN observers obs ON obs.id_base_visit = v.id_base_visit 
     WHERE m.module_code = :module_code
     ;
 
@@ -201,7 +199,8 @@ WITH source AS (
 		st_y(ST_Centroid(s.geom))AS wgs84_y,
 		st_x(ST_Centroid(s.geom_local)) AS l93_x,
 		st_y(ST_Centroid(s.geom_local))AS l93_y,
-		sg.comments
+		sg.comments,
+		s.altitude_min
         FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
@@ -300,7 +299,7 @@ SELECT
 		s.base_site_description "Description du numéro",
 		s.inventor "Créateur du point",
 		s.date_site "date de création du point",
-		alt.altitude_min altitude,
+		s.altitude_min AS altitude,
 		ST_AsText(s.geom_local) wkt_l93,
 		s.l93_x x_l93,
 		s.l93_y y_l93,
@@ -360,8 +359,5 @@ SELECT
 	JOIN source 
         ON TRUE
 	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
     WHERE m.module_code = :module_code
     ;

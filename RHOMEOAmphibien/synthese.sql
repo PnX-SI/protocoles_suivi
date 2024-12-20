@@ -58,7 +58,9 @@ WITH source AS (
 		(sc.data::json#>>'{esp_veget}')::text AS esp_veget,
 		(sc.data::json#>>'{esp_poisson}')::text AS esp_poisson,
 		(sc.data::json#>>'{esp_ecrevisse}')::text AS esp_ecrevisse,
-		base_site_description
+		base_site_description,
+		s.altitude_min,
+		s.altitude_max 
         FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
@@ -144,8 +146,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.the_geom_4326,
 		s.the_geom_point,
 		s.the_geom_local,
@@ -205,8 +207,6 @@ SELECT
 	JOIN source 
         ON TRUE
 	JOIN observers obs 
-		ON obs.id_base_visit = v.id_base_visit
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.the_geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
+		ON obs.id_base_visit = v.id_base_visit 
     WHERE m.module_code = :module_code
     ;

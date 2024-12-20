@@ -15,8 +15,8 @@ SELECT
     s.base_site_name AS nom_site,
     st_x(s.geom_local) AS x_lambert93,
     st_y(s.geom_local) AS y_lambert93,
-    alt.altitude_min AS altitude_min,
-    alt.altitude_max AS altitude_max,
+    s.altitude_min AS altitude_min,
+    s.altitude_max AS altitude_max,
     ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'milieu_aquatique')::text,'null')::integer, 'fr') AS milieu_aquatique,
     ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'variation_eau')::text,'null')::integer, 'fr') AS variation_eau,
     ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'courant')::text,'null')::integer, 'fr') AS courant,
@@ -85,11 +85,10 @@ LEFT JOIN LATERAL ( SELECT array_agg(r.id_role) AS ids_observers,
     JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
     LEFT JOIN utilisateurs.bib_organismes org ON org.id_organisme =r.id_organisme
     WHERE cvo.id_base_visit = v.id_base_visit) obs ON true
-LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
 LEFT JOIN LATERAL (SELECT ref_nomenclatures.get_nomenclature_label(json_array_elements(vc.data::json #> '{methode_de_prospection}')::text::integer,'fr') AS methodes ) meth ON TRUE
 WHERE m.module_code = 'popamphibien'
 GROUP BY o.uuid_observation, obs.organismes_rattaches, dep.area_name, dep.area_code, tsg.sites_group_name, o.cd_nom, t.lb_nom, t.nom_vern, o.comments, oc.data, v.visit_date_min, v.id_dataset, d.dataset_name, v.comments, v.uuid_base_visit,
-s.base_site_name, sc.data, vc.data, alt.altitude_min, alt.altitude_max, obs.observers, com.area_name, s.geom_local;
+s.base_site_name, sc.data, vc.data, s.altitude_min, s.altitude_max, obs.observers, com.area_name, s.geom_local;
 
 
 ---------------------------------------------------POPAmphibien analyses------------------------------------------
@@ -116,8 +115,8 @@ SELECT
     s.base_site_name AS nom_site,
     st_x(s.geom_local) AS x_lambert93,
     st_y(s.geom_local) AS y_lambert93,
-    alt.altitude_min AS altitude_min,
-    alt.altitude_max AS altitude_max,
+    s.altitude_min AS altitude_min,
+    s.altitude_max AS altitude_max,
     ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'milieu_aquatique')::text,'null')::integer, 'fr') AS milieu_aquatique,
     ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'variation_eau')::text,'null')::integer, 'fr') AS variation_eau,
     ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'courant')::text,'null')::integer, 'fr') AS courant,
@@ -182,9 +181,8 @@ LEFT JOIN LATERAL ( SELECT array_agg(r.id_role) AS ids_observers,
     FROM gn_monitoring.cor_visit_observer cvo
     JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
     LEFT JOIN utilisateurs.bib_organismes org ON org.id_organisme =r.id_organisme
-    WHERE cvo.id_base_visit = v.id_base_visit) obs ON true
-LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+    WHERE cvo.id_base_visit = v.id_base_visit) obs ON true 
 LEFT JOIN lateral (SELECT ref_nomenclatures.get_nomenclature_label(json_array_elements(vc.data::json #> '{methode_de_prospection}')::text::integer,'fr') as methodes ) meth on true
 WHERE m.module_code = 'popamphibien'
-GROUP BY v.id_base_visit, v.id_dataset, d.dataset_name, tsg.sites_group_name, s.base_site_name, s.geom_local, alt.altitude_min, alt.altitude_max, sc.data, dep.area_name, dep.area_code, com.area_name, sp.area_name, 
+GROUP BY v.id_base_visit, v.id_dataset, d.dataset_name, tsg.sites_group_name, s.base_site_name, s.geom_local, s.altitude_min, s.altitude_max, sc.data, dep.area_name, dep.area_code, com.area_name, sp.area_name, 
 vc.data, obs.observers, obs.organismes_rattaches, observations.diversite, observations.taxons_latin, observations.taxons_fr, observations.count_min, observations.count_max ;

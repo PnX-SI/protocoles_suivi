@@ -169,10 +169,7 @@ SELECT
         ON t.cd_nom = o.cd_nom
 	JOIN source 
         ON TRUE
-	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
+	JOIN observers obs ON obs.id_base_visit = v.id_base_visit 
     WHERE m.module_code = 'RHOMEOOdonate'
     ;
 
