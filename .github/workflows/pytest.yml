@@ -94,9 +94,12 @@ jobs:
         geonature db autoupgrade -x local-srid=2154 
     - name: Install monitoring module database
       run: |
-        export GEONATURE_CONFIG_FILE=`curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml`
+        
+        curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
+        export GEONATURE_CONFIG_FILE=output.txt
         geonature upgrade-modules-db MONITORINGS 
     - name: Test install monitoring
       run: |
-        export GEONATURE_CONFIG_FILE=`curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml`
+        curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
+        export GEONATURE_CONFIG_FILE=output.txt
         geonature monitorings install apollons
