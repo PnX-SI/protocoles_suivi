@@ -19,8 +19,8 @@
 -- ne pas remplacer cette variable, elle est indispensable pour les scripts d'installations
 -- le module pouvant être installé avec un code différent de l'original
 
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
-CREATE VIEW gn_monitoring.v_synthese_:module_code AS
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_suivi_phytosocio;
+CREATE VIEW gn_monitoring.v_synthese_suivi_phytosocio AS
 
 WITH source AS (
 
@@ -29,24 +29,23 @@ WITH source AS (
         id_source
 
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 
 ), sites AS (
 
     SELECT
-
         id_base_site,
-        geom AS the_geom_4326,
-	    ST_CENTROID(geom) AS the_geom_point,
-	    geom_local as geom_local ,
-		id_nomenclature_type_site,
+        s.geom AS the_geom_4326,
+	    ST_CENTROID(s.geom) AS the_geom_point,
+	    s.geom_local as geom_local ,
 		sg.sites_group_name,
 		sg.sites_group_description,
 		base_site_name,
-		base_site_description
-
-        FROM gn_monitoring.t_base_sites
+		base_site_description,
+		s.altitude_min,
+		s.altitude_max
+        FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
 
@@ -90,15 +89,12 @@ WITH source AS (
     ON r.id_role = cvo.id_role
     GROUP BY id_base_visit
 )
-
 SELECT
-		
         o.uuid_observation AS unique_id_sinp, 
 		v.uuid_base_visit AS unique_id_sinp_grp,
 		source.id_source,
 		o.id_observation AS entity_source_pk_value,
 		v.id_dataset,
-		s.id_nomenclature_type_site,
         ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO', 'St') AS id_nomenclature_geo_object_nature,
 		--id_nomenclature_obs_technique, -- METH_OBS
 		--id_nomenclature_bio_status, -- STATUT_BIO
@@ -136,8 +132,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.the_geom_4326,
 		s.the_geom_point,
 		s.geom_local,
@@ -179,9 +175,6 @@ SELECT
         ON t.cd_nom = o.cd_nom
 	JOIN source 
         ON TRUE
-	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
-    WHERE m.module_code = :'module_code'
+	JOIN observers obs ON obs.id_base_visit = v.id_base_visit 
+    WHERE m.module_code = :module_code
     ;

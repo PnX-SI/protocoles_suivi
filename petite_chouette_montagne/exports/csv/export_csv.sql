@@ -18,33 +18,28 @@ WITH source AS (
 	LIMIT 1
 
 ), sites AS (
-
     SELECT
-
-        id_base_site,
+        s.id_base_site,
 		sg.sites_group_name,
 		sg.sites_group_code,
 		sg.sites_group_description,
 		sg.comments sites_group_comments,
-		base_site_name,
-		base_site_description,
-		id_inventor,
-		CONCAT(r.nom_role, ' ', prenom_role) inventor,
-		COALESCE (t_base_sites.meta_update_date, first_use_date) AS date_site,
-		altitude_min,
-		geom_local,
-		st_x(ST_Centroid(geom)) AS wgs84_x,
-		st_y(ST_Centroid(geom))AS wgs84_y,
-		st_x(ST_Centroid(geom_local)) AS l93_x,
-		st_y(ST_Centroid(geom_local))AS l93_y,
-		comments
-
-        FROM gn_monitoring.t_base_sites
+		s.base_site_name,
+		s.base_site_description,
+		s.id_inventor,
+		CONCAT(r.nom_role, ' ', r.prenom_role) inventor,
+		COALESCE (s.meta_update_date, s.first_use_date) AS date_site, 
+		s.geom_local,
+		st_x(ST_Centroid(s.geom)) AS wgs84_x,
+		st_y(ST_Centroid(s.geom))AS wgs84_y,
+		st_x(ST_Centroid(s.geom_local)) AS l93_x,
+		st_y(ST_Centroid(s.geom_local))AS l93_y,
+		sg.comments,
+		s.altitude_min
+        FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
     	JOIN utilisateurs.t_roles r ON  id_inventor = r.id_role
-
-
 ), visits AS (
     
     SELECT
@@ -102,7 +97,7 @@ SELECT
 		s.inventor "Créateur du point",
 		s.date_site "date de création du point",
 		s.altitude_min altitude,
-		ST_AsText(geom_local) wkt_l93,
+		ST_AsText(s.geom_local) wkt_l93,
 		s.l93_x x_l93,
 		s.l93_y y_l93,
 		s.wgs84_x x_wgs84,
@@ -154,10 +149,7 @@ SELECT
         ON t.cd_nom = o.cd_nom
 	JOIN source 
         ON TRUE
-	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
+	JOIN observers obs ON obs.id_base_visit = v.id_base_visit 
     WHERE m.module_code = :module_code
     ;
 
@@ -191,28 +183,25 @@ WITH source AS (
 	LIMIT 1
 
 ), sites AS (
-
     SELECT
-
-        id_base_site,
+        s.id_base_site,
 		sg.sites_group_name,
 		sg.sites_group_code,
 		sg.sites_group_description,
 		sg.comments sites_group_comments,
-		base_site_name,
-		base_site_description,
-		id_inventor,
-		CONCAT(r.nom_role, ' ', prenom_role) inventor,
-		COALESCE (t_base_sites.meta_update_date, first_use_date) AS date_site,
-		altitude_min,
-		geom_local,
-		st_x(ST_Centroid(geom)) AS wgs84_x,
-		st_y(ST_Centroid(geom))AS wgs84_y,
-		st_x(ST_Centroid(geom_local)) AS l93_x,
-		st_y(ST_Centroid(geom_local))AS l93_y,
-		comments
-
-        FROM gn_monitoring.t_base_sites
+		s.base_site_name,
+		s.base_site_description,
+		s.id_inventor,
+		CONCAT(r.nom_role, ' ', r.prenom_role) inventor,
+		COALESCE (s.meta_update_date, first_use_date) AS date_site, 
+		s.geom_local,
+		st_x(ST_Centroid(s.geom)) AS wgs84_x,
+		st_y(ST_Centroid(s.geom))AS wgs84_y,
+		st_x(ST_Centroid(s.geom_local)) AS l93_x,
+		st_y(ST_Centroid(s.geom_local))AS l93_y,
+		sg.comments,
+		s.altitude_min
+        FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
     	JOIN utilisateurs.t_roles r ON  id_inventor = r.id_role
@@ -310,8 +299,8 @@ SELECT
 		s.base_site_description "Description du numéro",
 		s.inventor "Créateur du point",
 		s.date_site "date de création du point",
-		s.altitude_min altitude,
-		ST_AsText(geom_local) wkt_l93,
+		s.altitude_min AS altitude,
+		ST_AsText(s.geom_local) wkt_l93,
 		s.l93_x x_l93,
 		s.l93_y y_l93,
 		s.wgs84_x x_wgs84,
@@ -370,8 +359,5 @@ SELECT
 	JOIN source 
         ON TRUE
 	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
     WHERE m.module_code = :module_code
     ;

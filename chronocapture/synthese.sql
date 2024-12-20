@@ -18,9 +18,10 @@ WITH source AS (
         uuid_base_site,
         geom AS the_geom_4326,
 	    ST_CENTROID(geom) AS the_geom_point,
-	    geom_local as geom_local
-
-        FROM gn_monitoring.t_base_sites
+	    geom_local as geom_local,
+		s.altitude_min,
+		s.altitude_max
+        FROM gn_monitoring.t_base_sites s
 
 ), visits AS (
     
@@ -85,8 +86,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.the_geom_4326,	-- v.
 		s.the_geom_point,	-- v.
 		s.geom_local as the_geom_local,	-- v.
@@ -120,5 +121,4 @@ SELECT
 	--JOIN gn_monitoring.t_observations o ON o.id_base_visit = v.id_base_visit 
 	JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation=o.id_observation
 	JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max) ON true
     WHERE m.module_code = 'chronocapture';

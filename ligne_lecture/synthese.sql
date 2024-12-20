@@ -33,8 +33,8 @@ AS WITH source AS (
     ref_nomenclatures.get_id_nomenclature('METH_OBS'::character varying, '0'::character varying) AS id_nomenclature_obs_technique, --vu
     t.cd_nom,
     t.nom_complet AS nom_cite,
-    alt.altitude_min,
-    alt.altitude_max,
+    s.altitude_min,
+    s.altitude_max,
     st_centroid(s.geom) AS the_geom_4326,
     st_centroid(s.geom) AS the_geom_point,
     st_centroid(s.geom_local) AS the_geom_local,
@@ -55,7 +55,6 @@ AS WITH source AS (
      JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
      JOIN taxonomie.taxref t ON t.cd_nom = to2.cd_nom
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-     JOIN source ON true
-     LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+     JOIN source ON true 
   WHERE upper(m.module_code::text) = 'LIGNE_LECTURE'::text;
   

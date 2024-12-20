@@ -19,13 +19,13 @@
 -- ne pas remplacer cette variable, elle est indispensable pour les scripts d'installations
 -- le module pouvant être installé avec un code différent de l'original
 
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_POPAmphibien;
 
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_:module_code
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_POPAmphibien
 AS WITH source AS (
          SELECT id_source
            FROM gn_synthese.t_sources
-          WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code'))
+          WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
         )
  SELECT 
  	o.uuid_observation AS unique_id_sinp,
@@ -48,8 +48,8 @@ AS WITH source AS (
     o.id_observation,
     o.cd_nom,
     t.nom_complet AS nom_cite,
-    alt.altitude_min,
-    alt.altitude_max,
+    s.altitude_min,
+    s.altitude_max,
     s.geom AS the_geom_4326,
     st_centroid(s.geom) AS the_geom_point,
     s.geom_local AS the_geom_local,
@@ -95,5 +95,4 @@ AS WITH source AS (
            FROM gn_monitoring.cor_visit_observer cvo
              JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
           WHERE cvo.id_base_visit = v.id_base_visit) obs ON true
-     LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
-    WHERE m.module_code = :'module_code';
+    WHERE m.module_code = :module_code;

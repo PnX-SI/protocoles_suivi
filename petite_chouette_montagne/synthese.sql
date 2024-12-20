@@ -19,8 +19,8 @@
 -- ne pas remplacer cette variable, elle est indispensable pour les scripts d'installations
 -- le module pouvant être installé avec un code différent de l'original
 
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
-CREATE VIEW gn_monitoring.v_synthese_:module_code AS
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_petite_chouette_montagne;
+CREATE VIEW gn_monitoring.v_synthese_petite_chouette_montagne AS
 
 WITH source AS (
 
@@ -29,7 +29,7 @@ WITH source AS (
         id_source
 
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 
 ), sites AS (
@@ -39,8 +39,9 @@ WITH source AS (
         id_base_site,
         geom AS the_geom_4326,
 	    ST_CENTROID(geom) AS the_geom_point,
-	    geom_local as geom_local
-
+	    geom_local as geom_local,
+		altitude_min,
+		altitude_max
         FROM gn_monitoring.t_base_sites
 
 ), visits AS (
@@ -116,8 +117,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.the_geom_4326,
 		s.the_geom_point,
 		s.geom_local as the_geom_local,
@@ -156,11 +157,6 @@ SELECT
 	JOIN source
         ON TRUE
 	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
-    WHERE m.module_code = :'module_code'
+    WHERE m.module_code = :module_code
     ;
 
-
---SELECT * FROM gn_monitoring.v_synthese_:module_code

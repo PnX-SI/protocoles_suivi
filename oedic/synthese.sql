@@ -11,7 +11,7 @@ CREATE VIEW gn_monitoring.v_synthese_oedicnemes AS
 WITH source AS (
 	SELECT id_source
 	FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code')) -- ici 'MONITORING_<module_code>.upper()'
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 )SELECT
 		o.uuid_observation AS unique_id_sinp,
@@ -45,7 +45,7 @@ WITH source AS (
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-	    alt.altitude_max,
+	    s.altitude_max,
 		s.geom AS the_geom_4326,
 		ST_CENTROID(s.geom) AS the_geom_point,
 		s.geom_local AS the_geom_local,
@@ -79,8 +79,7 @@ JOIN gn_monitoring.t_observations o ON vc.id_base_visit = o.id_base_visit
 JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation = o.id_observation
 JOIN ref_nomenclatures.t_nomenclatures   n
 ON n.id_nomenclature = (oc.data->>'id_nomenclature_nature_observation')::int
-JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
-LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max) ON true
+JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom 
 LEFT JOIN LATERAL (
 	SELECT
 		array_agg(r.id_role) AS ids_observers,
@@ -90,4 +89,4 @@ LEFT JOIN LATERAL (
 	ON r.id_role = cvo.id_role
 	WHERE cvo.id_base_visit = v.id_base_visit
 ) obs ON true
-WHERE m.module_code = :'module_code';
+WHERE m.module_code = :module_code;
