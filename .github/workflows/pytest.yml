@@ -102,4 +102,4 @@ jobs:
       run: |
         curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
         export GEONATURE_CONFIG_FILE=output.txt
-        geonature monitorings install apollons
+        for protocole in ./*/; do geonature monitorings install $protocole; done
