@@ -33,8 +33,8 @@ WITH source AS (
     1 AS count_max,
     o.cd_nom,
     t.nom_complet AS nom_cite,
-    alt.altitude_min,
-    alt.altitude_max,
+    s.altitude_min,
+    s.altitude_max,
     s.geom AS the_geom_4326,
     st_centroid(s.geom) AS the_geom_point,
     s.geom_local AS the_geom_local,
@@ -60,6 +60,5 @@ WITH source AS (
      JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      LEFT JOIN ref_nomenclatures.t_nomenclatures tbb ON tbb.id_nomenclature = (oc.data ->> 'id_nomenclature_abondance_braunblanquet')::int
-     JOIN source ON true
-     LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+     JOIN source ON true 
   WHERE m.module_code::text = :module_code;

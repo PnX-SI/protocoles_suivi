@@ -39,8 +39,9 @@ WITH source AS (
         id_base_site,
         geom AS the_geom_4326,
 	    ST_CENTROID(geom) AS the_geom_point,
-	    geom_local as geom_local
-
+	    geom_local as geom_local,
+		altitude_min,
+		altitude_max
         FROM gn_monitoring.t_base_sites
 
 ), visits AS (
@@ -116,8 +117,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.the_geom_4326,
 		s.the_geom_point,
 		s.geom_local as the_geom_local,
@@ -156,9 +157,6 @@ SELECT
 	JOIN source
         ON TRUE
 	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
     WHERE m.module_code = :module_code
     ;
 

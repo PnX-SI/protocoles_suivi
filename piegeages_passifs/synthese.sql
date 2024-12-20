@@ -60,8 +60,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.geom AS the_geom_4326,
 		ST_Centroid(s.geom) AS the_geom_point,
 		s.geom_local as the_geom_local,
@@ -93,5 +93,4 @@ SELECT
 	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
 	JOIN determiner det ON det.id_observation = o.id_observation
 	JOIN gn_commons.t_modules m ON v.id_module=m.id_module
-	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max) ON true
  	WHERE m.module_code = :module_code;

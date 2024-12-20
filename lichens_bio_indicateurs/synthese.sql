@@ -21,8 +21,8 @@ AS WITH source AS (
     ref_nomenclatures.get_id_nomenclature('TYP_GRP'::character varying, 'REL'::character varying) AS id_nomenclature_grp_typ,
     t.cd_nom,
     t.nom_complet AS nom_cite,
-    alt.altitude_min,
-    alt.altitude_max,
+    s.altitude_min,
+    s.altitude_max,
     s.geom AS the_geom_4326,
     st_centroid(s.geom) AS the_geom_point,
     s.geom_local AS the_geom_local,
@@ -45,8 +45,7 @@ AS WITH source AS (
      JOIN gn_monitoring.t_observations to2 ON to2.id_base_visit = vc.id_base_visit
      JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
      JOIN taxonomie.taxref t ON t.cd_nom = to2.cd_nom
-     JOIN source ON true
-     LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+     JOIN source ON true 
      LEFT JOIN LATERAL ( SELECT string_agg(concat(upper(tr.nom_role::text), ' ', tr.prenom_role), ', '::text) AS observers,
             array_agg(tr.id_role) AS ids_observers
            FROM gn_monitoring.cor_visit_observer cvo

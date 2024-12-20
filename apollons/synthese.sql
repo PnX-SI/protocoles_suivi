@@ -43,8 +43,8 @@ WITH source AS (
     COALESCE((vc.DATA->>'count_stade_l5')::int, 0)  AS count_max,
     t.cd_nom,
     t.nom_complet AS nom_cite,
-    alt.altitude_min,
-    alt.altitude_max,
+    s.altitude_min,
+    s.altitude_max,
     s.geom AS the_geom_4326,
     st_centroid(s.geom) AS the_geom_point,
     s.geom_local AS the_geom_local,
@@ -66,7 +66,6 @@ WITH source AS (
      JOIN taxonomie.taxref t ON t.cd_nom = ((vc.data ->> 'cd_nom'::text)::integer)
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
      JOIN source ON true
-     LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
   WHERE m.module_code = :module_code
     AND COALESCE((vc.DATA->>'count_stade_l1')::int, 0) +
     COALESCE((vc.DATA->>'count_stade_l2')::int, 0) +

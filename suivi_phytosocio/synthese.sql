@@ -42,7 +42,9 @@ WITH source AS (
 		sg.sites_group_name,
 		sg.sites_group_description,
 		base_site_name,
-		base_site_description
+		base_site_description,
+		s.altitude_min,
+		s.altitude_max
         FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
@@ -130,8 +132,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.the_geom_4326,
 		s.the_geom_point,
 		s.geom_local,
@@ -173,9 +175,6 @@ SELECT
         ON t.cd_nom = o.cd_nom
 	JOIN source 
         ON TRUE
-	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
+	JOIN observers obs ON obs.id_base_visit = v.id_base_visit 
     WHERE m.module_code = :module_code
     ;

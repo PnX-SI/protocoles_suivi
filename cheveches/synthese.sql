@@ -52,8 +52,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.geom AS the_geom_4326,
 		ST_CENTROID(s.geom) AS the_geom_point,
 		s.geom_local AS the_geom_local,
@@ -89,8 +89,6 @@ SELECT
 	JOIN taxonomie.taxref t ON cd_nom = (vc.data->>'cd_nom')::int
 	LEFT OUTER JOIN observers obs ON obs.id_base_visit = v.id_base_visit
 	JOIN source 
-        ON TRUE
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
+        ON TRUE 
     WHERE m.module_code =  :module_code
     ;
