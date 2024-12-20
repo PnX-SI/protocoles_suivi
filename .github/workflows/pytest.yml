@@ -88,7 +88,8 @@ jobs:
       working-directory: .
     - name: Install geonature database
       run: | 
-        export GEONATURE_CONFIG_FILE=`curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml`
+        curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
+        export GEONATURE_CONFIG_FILE=output.txt
         geonature db upgrade geonature@head -x local-srid=2154
         geonature db autoupgrade -x local-srid=2154 
     - name: Install monitoring module database
