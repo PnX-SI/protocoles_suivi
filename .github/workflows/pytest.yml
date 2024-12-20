@@ -104,4 +104,7 @@ jobs:
         export GEONATURE_CONFIG_FILE=output.txt
         mkdir -p /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/media/monitorings/
         cp -r * /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/media/monitorings/
-        for protocole in ./*/; do geonature monitorings install $protocole; done
+        for protocole in ./*/; echo do geonature monitorings install $protocole|grep error| exit 1; done
+
+
+        
