@@ -84,7 +84,7 @@ jobs:
       working-directory: .
     - name: Install monitoring module
       run: |
-        python -m pip install https://github.com/PnX-SI/gn_module_monitoring/archive/master.zip
+        python -m pip install https://github.com/PnX-SI/gn_module_monitoring/archive/main.zip
       working-directory: .
     - name: Install database
       run: |
