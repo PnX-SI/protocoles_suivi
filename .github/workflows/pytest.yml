@@ -77,7 +77,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y libgdal-dev
-    - name: Install dependencies
+    - name: Install geonature
       run: |
         python -m pip install --upgrade pip
         python -m pip install https://github.com/PnX-SI/GeoNature/archive/master.zip
@@ -87,18 +87,15 @@ jobs:
         python -m pip install https://github.com/PnX-SI/gn_module_monitoring/archive/main.zip
       working-directory: .
     - name: Install geonature database
-      run: |
+      run: | 
+        export GEONATURE_CONFIG_FILE=`curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml`
         geonature db upgrade geonature@head -x local-srid=2154
-        geonature db autoupgrade -x local-srid=2154
-      env:
-        GEONATURE_CONFIG_FILE: https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml
+        geonature db autoupgrade -x local-srid=2154 
     - name: Install monitoring module database
       run: |
-        geonature upgrade-modules-db MONITORINGS
-      env:
-        GEONATURE_CONFIG_FILE: https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml
+        export GEONATURE_CONFIG_FILE=`curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml`
+        geonature upgrade-modules-db MONITORINGS 
     - name: Test install monitoring
       run: |
+        export GEONATURE_CONFIG_FILE=`curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml`
         geonature monitorings install apollons
-      env:
-        GEONATURE_CONFIG_FILE: https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml
