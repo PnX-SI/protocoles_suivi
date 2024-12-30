@@ -1,29 +1,20 @@
 ------------------------------------------------- export loutre local ------------------------------------------
 -- View: gn_monitoring.v_export_suiviloutreuicn_telecharger_csv
 
-
 DROP VIEW  IF EXISTS  gn_monitoring.v_export_suiviloutreuicn_telecharger_csv;
-
 CREATE OR REPLACE VIEW gn_monitoring.v_export_suiviloutreuicn_telecharger_csv 
  AS
-
-
 WITH 
-
 observers_monit AS (
-
-	SELECT visite.id_base_visit as id_base_visit,
+		SELECT visite.id_base_visit as id_base_visit,
 		STRING_AGG(roles.nom_role || ' ' || roles.prenom_role, ', ' ORDER BY roles.nom_role, roles.prenom_role)  AS observateurs
-
-	FROM gn_monitoring.t_base_visits visite
+			FROM gn_monitoring.t_base_visits visite
 		JOIN gn_monitoring.cor_visit_observer visiteobser ON visiteobser.id_base_visit = visite.id_base_visit
 		LEFT JOIN utilisateurs.t_roles roles ON roles.id_role = visiteobser.id_role
 	GROUP BY visite.id_base_visit
 ),
-
 data_monitoring AS (
-
-	SELECT
+		SELECT
 		visite.id_base_visit as id_base_visit,
 		obs.id_observation as id_observation,
 		jdd.dataset_name as nom_jdd,
@@ -110,8 +101,7 @@ data_monitoring AS (
 		tx.nom_vern as nom_vern_taxon,
 		tx.nom_complet as nom_taxon,
 		tx.lb_nom as nom_complet_taxon,
-
-		case 
+				case 
 			when obscompl.data ->> 'sexe'::text = 'null' then null
 			else obscompl.data ->> 'sexe'::text
 		end AS sexe,
@@ -148,8 +138,8 @@ data_monitoring AS (
 			when obscompl.data ->> 'technique_observation'::text = 'null' then null
 			else obscompl.data ->> 'technique_observation'::text
 		end AS technique_observation
-
 	FROM gn_monitoring.t_sites_groups grpsite
+		JOIN gn_monitoring.cor_sites_group_module grpsitemodule on grpsitemodule.id_sites_group = grpsite.id_sites_group
 		JOIN gn_monitoring.t_site_complements sitecompl ON grpsite.id_sites_group = sitecompl.id_sites_group
 		JOIN gn_monitoring.t_base_sites site ON sitecompl.id_base_site = site.id_base_site
 		JOIN gn_monitoring.t_base_visits visite ON visite.id_base_site = site.id_base_site
@@ -158,12 +148,9 @@ data_monitoring AS (
 		JOIN gn_monitoring.t_observations obs ON obs.id_base_visit = visite.id_base_visit
 		JOIN taxonomie.taxref tx ON obs.cd_nom = tx.cd_nom
 		JOIN gn_monitoring.t_observation_complements obscompl ON obscompl.id_observation = obs.id_observation
-
-	WHERE grpsite.id_module = gn_commons.get_id_module_bycode('suiviloutreuicn'::text)
-
-),
-
---ty_habarsa
+			WHERE  grpsitemodule.id_module =  gn_commons.get_id_module_bycode('suiviloutreuicn'::text)
+		),
+		--ty_habarsa
 cor_ty_habarsa_visite as (	
 	SELECT visitecompl.id_base_visit as id_base_visit,
 	    visitecompl."data",
@@ -180,7 +167,6 @@ visite_ty_habarsa AS (
 	FROM cor_ty_habarsa_visite	
 	GROUP BY cor_ty_habarsa_visite.id_base_visit
 ),
-
 --hab_arsa_vg_fav
 cor_hab_arsa_vg_fav_visite as (	
 	SELECT visitecompl.id_base_visit as id_base_visit,
@@ -198,7 +184,6 @@ visite_hab_arsa_vg_fav AS (
 	FROM cor_hab_arsa_vg_fav_visite	
 	GROUP BY cor_hab_arsa_vg_fav_visite.id_base_visit
 ),
-
 
 --fraich_ep
 cor_fraich_ep_obs as (	
@@ -218,17 +203,14 @@ observation_fraich_ep AS (
 	GROUP BY cor_fraich_ep_obs.id_observation
 )
 
-
 SELECT
 --jdd pour filtre des exports
 datamonit.id_dataset,
 datamonit.nom_jdd,
 datamonit.nom_court_jdd,
-
 --groupe de sites
 datamonit.code_zonehydro,
 datamonit.nom_zonehydro,
-
 --site
 datamonit.code_site,
 datamonit.nom_site,
@@ -238,7 +220,6 @@ datamonit.geometrie,
 datamonit.x_l93,
 datamonit.y_l93,
 datamonit.site_description,
-
 --visite
 datamonit.uuid_visite,
 datamonit.date_visite,
@@ -258,7 +239,6 @@ datamonit.megaph,
 (ref_nomenclatures.get_nomenclature_label(datamonit.gestion::int, 'fr'))::text as gestion, 
 (ref_nomenclatures.get_nomenclature_label(datamonit.acces_riv::int, 'fr'))::text as acces_riv, 
 datamonit.remarques_visite,
-
 --observation
 datamonit.uuid_observation,
 datamonit.cd_nom,
@@ -277,13 +257,9 @@ datamonit.ty_catich,
 datamonit.nombre_individus::int,
 (ref_nomenclatures.get_nomenclature_label(datamonit.stade_de_vie::int, 'fr'))::text as stade_de_vie,
 (ref_nomenclatures.get_nomenclature_label(datamonit.sexe::int, 'fr'))::text as sexe
-
 FROM data_monitoring datamonit 
 JOIN observers_monit using(id_base_visit)
 left JOIN visite_ty_habarsa using(id_base_visit)
 left JOIN visite_hab_arsa_vg_fav using(id_base_visit)
 left JOIN observation_fraich_ep using(id_observation);
-
-
-
 

@@ -36,6 +36,7 @@ AS WITH observers AS (
     toc.data #>> '{nb_count}'::text[] AS count_max,
     to2.comments AS comment_obs
    FROM gn_monitoring.t_base_sites tbs
+   JOIN gn_monitoring.cor_site_module csm ON tbs.id_base_site = csm.id_base_site
      LEFT JOIN gn_monitoring.t_site_complements tsc ON tsc.id_base_site = tbs.id_base_site
      LEFT JOIN gn_monitoring.t_base_visits tbv ON tbs.id_base_site = tbv.id_base_site
      LEFT JOIN gn_monitoring.t_visit_complements tvc ON tvc.id_base_visit = tbv.id_base_visit
@@ -44,5 +45,8 @@ AS WITH observers AS (
      LEFT JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
      LEFT JOIN utilisateurs.t_roles tr ON tr.id_role = tbv.id_digitiser
      LEFT JOIN taxonomie.taxref t ON to2.cd_nom = t.cd_nom
-     LEFT JOIN gn_commons.t_modules tm ON tm.id_module = tsc.id_module
+     LEFT JOIN gn_commons.t_modules tm ON tm.id_module = csm.id_module
   WHERE tm.module_label::text ~~* 'ChronoVentaire'::text;
+
+
+

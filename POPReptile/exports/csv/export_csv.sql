@@ -21,8 +21,8 @@ SELECT
    	st_astext(s.geom) AS wkt,
     st_x(st_centroid(s.geom_local)) AS x_centroid_L93,
     st_y(st_centroid(s.geom_local)) AS y_centroid_L93,
-    alt.altitude_min AS altitude_min,
-    alt.altitude_max AS altitude_max,
+    s.altitude_min AS altitude_min,
+    s.altitude_max AS altitude_max,
     dep.area_name AS departement,
     dep.area_code AS code_dep,
     com.area_name AS commune,
@@ -96,8 +96,7 @@ LEFT JOIN LATERAL ( SELECT array_agg(r.id_role) AS ids_observers,
     FROM gn_monitoring.cor_visit_observer cvo
     JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
     LEFT JOIN utilisateurs.bib_organismes org ON org.id_organisme =r.id_organisme
-    WHERE cvo.id_base_visit = v.id_base_visit) obs ON true
-LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+    WHERE cvo.id_base_visit = v.id_base_visit) obs ON true 
 LEFT JOIN LATERAL (SELECT ref_nomenclatures.get_nomenclature_label(json_array_elements(vc.data::json #> '{methode_de_prospection}')::text::integer,'fr') AS methodes ) meth ON TRUE
 WHERE m.module_code = 'popreptile'
 GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52
@@ -142,8 +141,8 @@ SELECT
     st_astext(s.geom) AS wkt,
     st_x(st_centroid(s.geom_local)) AS x_centroid_L93,
     st_y(st_centroid(s.geom_local)) AS y_centroid_L93,
-    alt.altitude_min AS altitude_min,
-    alt.altitude_max AS altitude_max,
+    s.altitude_min AS altitude_min,
+    s.altitude_max AS altitude_max,
     dep.area_name AS departement,
     dep.area_code AS code_dep,
     com.area_name AS commune,
@@ -210,8 +209,7 @@ LEFT JOIN LATERAL ( SELECT array_agg(r.id_role) AS ids_observers,
     FROM gn_monitoring.cor_visit_observer cvo
     JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
     LEFT JOIN utilisateurs.bib_organismes org ON org.id_organisme =r.id_organisme
-    WHERE cvo.id_base_visit = v.id_base_visit) obs ON true
-LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+    WHERE cvo.id_base_visit = v.id_base_visit) obs ON true 
 LEFT JOIN lateral (SELECT ref_nomenclatures.get_nomenclature_label(json_array_elements(vc.data::json #> '{methode_de_prospection}')::text::integer,'fr') as methodes ) meth on true
 WHERE m.module_code = 'popreptile'
 GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45
