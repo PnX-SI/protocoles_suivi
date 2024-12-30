@@ -1,11 +1,7 @@
 {
     "module_label": "Apollons",
     "module_desc": "Module pour le protocole de suivi des dalles à orpins",
-    "b_draw_sites_group": {
-        "type_widget": "bool_checkbox",
-        "attribut_label": "Dessiner les groupes de sites",
-        "hidden": false
-    },
+    "b_draw_sites_group": true,
     "export_csv": [
         {
             "label": "Résultats par dalles",
