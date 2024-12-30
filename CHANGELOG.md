@@ -1,3 +1,15 @@
+1.0.0 (unreleased)
+------------------
+
+Ensemble de protocoles compatibles avec le module GeoNature `gn_module_monitoring` <= 1.0.0
+
+
+**🐛 Corrections**
+ * Mise en conformité des modules avec le nouveau modèle de données de gn_module_monitoring 1.0.0
+
+**🚀 Nouveautés**
+ * Ajout de tests d'installation des modules
+
 
 0.1.0 (2024-12-17)
 ------------------
