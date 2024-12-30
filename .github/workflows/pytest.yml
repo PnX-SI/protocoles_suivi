@@ -94,7 +94,6 @@ jobs:
         geonature db autoupgrade -x local-srid=2154 
     - name: Install monitoring module database
       run: |
-        
         curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
         export GEONATURE_CONFIG_FILE=output.txt
         geonature upgrade-modules-db MONITORINGS 
@@ -105,9 +104,9 @@ jobs:
         mkdir -p /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/media/monitorings/
         cp -r * /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/media/monitorings/
         # Test install module
-        for protocole in ./*/; do geonature monitorings install $protocole; done
+        for protocole in ./*/; do echo install ${protocole}; geonature monitorings install $protocole > install.log; done
         # Test sql
-        for protocole in ./*/; do geonature monitorings process_sql $protocole|grep -i error|exit 1; done
+        for protocole in ./*/; do echo process_sql ${protocole}; geonature monitorings process_sql $protocole |grep -i error |exit 1; done
 
 
         
