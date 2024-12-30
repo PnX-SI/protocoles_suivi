@@ -104,6 +104,8 @@ jobs:
         mkdir -p /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/media/monitorings/
         cp -r * /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/media/monitorings/
         # Test install module
+        echo "Test install modules"
         for protocole in ./*/; do echo install ${protocole}; geonature monitorings install $protocole > install.log; done
         # Test sql
-        for protocole in ./*/; do echo process_sql ${protocole}; geonature monitorings process_sql $protocole |grep -i error && exit 1; done
+        echo "Test process_sql modules"
+        for protocole in ./*/; do echo process_sql ${protocole}; geonature monitorings process_sql $protocole |grep -i error && exit 1 || echo "OK" ; done

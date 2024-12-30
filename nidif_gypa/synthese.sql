@@ -1,6 +1,6 @@
 SELECT 1;
 
--- Résoulution impossible manque la table comportement_mapping ?? 
+-- Résolution impossible manque la table comportement_mapping ?? 
 
 -- CREATE OR REPLACE VIEW gn_monitoring.v_synthese_nidif_gypa
 -- AS WITH source AS (
