@@ -106,7 +106,4 @@ jobs:
         # Test install module
         for protocole in ./*/; do echo install ${protocole}; geonature monitorings install $protocole > install.log; done
         # Test sql
-        for protocole in ./*/; do echo process_sql ${protocole}; geonature monitorings process_sql $protocole |grep -i error |exit 1; done
-
-
-        
+        for protocole in ./*/; do echo process_sql ${protocole}; geonature monitorings process_sql $protocole |grep -i error && exit 1; done
