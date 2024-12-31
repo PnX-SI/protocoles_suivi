@@ -1,4 +1,4 @@
-1.0.0 (unreleased)
+1.0.0 (2024-12-31)
 ------------------
 
 Ensemble de protocoles compatibles avec le module GeoNature `gn_module_monitoring` <= 1.0.0
