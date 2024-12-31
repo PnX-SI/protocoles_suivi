@@ -3,13 +3,15 @@
 
 Ensemble de protocoles compatibles avec le module GeoNature `gn_module_monitoring` <= 1.0.0
 
-
 **🐛 Corrections**
- * Mise en conformité des modules avec le nouveau modèle de données de gn_module_monitoring 1.0.0
+
+* Mise en conformité des sous-modules avec le nouveau modèle de données du module Monitoring 1.0.0 (#38)
+* Corrections diverses des sous-modules existants
+* Suppression de l'utilisation de la fonction inutile `ref_geo.fct_get_altitude_intersection` dans les fichiers `export_csv.sql` et `synthese.sql`
 
 **🚀 Nouveautés**
- * Ajout de tests d'installation des modules
 
+* Ajout de tests automatiques d'installation des sous-modules (#62)
 
 0.1.0 (2024-12-17)
 ------------------
