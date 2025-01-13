@@ -85,7 +85,7 @@
     },
     "rejet_long": {
       "type_widget": "number",
-      "attribut_label": "Hauteur max des gourmands (en m)",
+      "attribut_label": "Rejets (longueur maxi)",
       "hidden": "({value}) => value.cp_vivante == 'Non'",
       "required": false
     },
@@ -98,7 +98,7 @@
     },
     "haut_gourmand": {
       "type_widget": "number",
-      "attribut_label": "Rejets (longueur maxi)",
+      "attribut_label": "Hauteur max des gourmands (en m)",
       "hidden": "({value}) => value.cp_vivante == 'Non'",
       "required": false
     },
@@ -121,7 +121,7 @@
     },
     "id_dataset": {
       "attribut_label": "JDD associé",
-      "hidden" : false
+      "hidden" : true
     },
     "medias": {
       "hidden": true

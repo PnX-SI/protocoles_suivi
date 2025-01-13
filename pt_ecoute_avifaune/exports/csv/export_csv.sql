@@ -149,9 +149,11 @@ AS
     a.jname ->> 'SEC'::text AS secteur
 --tbv.id_dataset
    FROM gn_monitoring.t_base_sites s
-     JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
-     LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
-     LEFT JOIN LATERAL ( SELECT d_1.id_base_site,
+   JOIN gn_monitoring.cor_site_module csm
+   ON s.id_base_site = csm.id_base_site
+JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
+LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
+LEFT JOIN LATERAL ( SELECT d_1.id_base_site,
             json_object_agg(d_1.type_code, d_1.o_name) AS jname,
             json_object_agg(d_1.type_code, d_1.o_code) AS jcode
            FROM ( SELECT sa.id_base_site,
@@ -164,4 +166,4 @@ AS
                   WHERE sa.id_base_site = s.id_base_site
                   GROUP BY sa.id_base_site, ta.type_code) d_1
           GROUP BY d_1.id_base_site) a ON true
- WHERE tsc.id_module =  (SELECT id_module FROM gn_commons.t_modules tm WHERE module_code = :module_code);
+ WHERE csm.id_module =  (SELECT id_module FROM gn_commons.t_modules tm WHERE module_code = :module_code);
