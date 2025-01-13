@@ -1,0 +1,119 @@
+{ "map_label_field_name": "base_site_code",
+  "label": "Site",
+  "label_list": "Sites",
+  "genre": "M",
+  "geometry_type": "Polygon",
+  "display_properties": [
+    "id_sites_group",
+    "base_site_name",
+    "base_site_description",
+    "type_milieu",
+    "tuf", 
+    "altitude_min",
+    "couv_arboree",
+    "couv_herbacee", 
+    "especes_dominantes", 
+    "type_boisement",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "first_use_date",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "7"
+      },
+      "hidden": true
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Air d'études",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false
+    },
+    "base_site_name": {
+      "type_widget": "text",
+      "attribut_label": "Nom du site",
+      "required": true
+    },
+    "first_use_date": {
+      "type_widget": "date",
+      "attribut_label": "Date de création du site",
+      "required": true
+    },
+    "type_hab_larve": {
+      "type_widget": "select",
+      "attribut_label": "Type d’habitat larvaire",
+      "values": ["Source/exsurgence","Ruisselet","Vasques","Eau dormante"],
+      "required": true,
+      "hidden": false    
+    },
+    "tuf": { 
+      "type_widget": "radio",
+      "attribut_label": "Habitat tufeux ?",
+      "values": ["Oui", "Non"],
+      "required": true,
+      "hidden": false    
+    },
+    "couv_arboree": {
+      "type_widget": "select",
+      "attribut_label": "Couverture d'arborée",
+      "values": ["0-25%","25-50%","50-75%","75-100%"],
+      "required": true,
+      "hidden": false    
+    },
+    "altitude_min": {
+      "attribut_label": "Altitude",
+      "required": false,
+      "hidden": true    
+    },
+    "couv_herbacee": {
+      "type_widget": "select",
+      "attribut_label": "Couverture d'herbacée",
+      "values": ["0-25%","25-50%","50-75%","75-100%"],
+      "required": true,
+      "hidden": false    
+    },
+    "especes_dominantes": {
+      "type_widget": "text",
+      "attribut_label": "Espèces dominantes présentes : ",
+      "required": true,
+      "hidden": false    
+    },
+    "type_boisement": {
+      "type_widget": "text",
+      "attribut_label": "Type de boisement",
+      "values": ["Feuillus","Résineux","Mixtes","Non boisé"],
+      "required": true,
+      "hidden": false    
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code du site",
+      "required": false,
+      "hidden": true
+    },
+    "nb_visits": {
+      "attribut_label": "Nb. de passages"
+    },
+    "last_visit": {
+      "attribut_label": "Dernier passage",
+      "type_util": "date"
+    }
+  }
+}
