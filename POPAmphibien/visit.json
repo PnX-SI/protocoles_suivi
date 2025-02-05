@@ -23,12 +23,9 @@
     "nb_observations"
   ],
   "keep": [
+    "id_dataset",
     "observers",
-    "visit_date_min",
-    "accessibility",
-    "methode_de_prospection",
-    "presence_amphibien",
-    "comments"
+    "expertise"
   ],
   "specific": {
     "id_base_site": {
