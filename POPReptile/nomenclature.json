@@ -1,5 +1,13 @@
 {
   "types": [
   ],
-  "nomenclatures": []
+  "nomenclatures": [
+  {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "POPR",
+      "mnemonique": "Tr. POPR",
+      "label_default": "Transect POPReptile",
+      "definition_default": "Transect POPReptile"
+    }
+  ]
 }
