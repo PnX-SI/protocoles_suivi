@@ -18,6 +18,13 @@
   ],
   "nomenclatures": [
     {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "POPA",
+      "mnemonique": "Site POPA",
+      "label_default": "Site POPAmphibien",
+      "definition_default": "Site POPAmphibien"
+    },
+    {
       "type":"MILIEU_AQUATIQUE",
       "cd_nomenclature": "MILIEU_AQUATIQUE_1",
       "mnemonique": "Source",
