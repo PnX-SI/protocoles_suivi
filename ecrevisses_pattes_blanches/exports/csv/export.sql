@@ -71,7 +71,12 @@ AS WITH e_patte_blanche AS (
                     WHEN tn.cd_nomenclature::text = 'Pr'::text THEN 1
                     ELSE 0
                 END AS app_americaine_binaire,
-            tn.label_default AS app_americaine
+            tn.label_default AS app_americaine,
+            toc.data ->> 'nb'::text AS nb,
+            toc.data ->> 'nb_0_50m'::text AS nb_0_50m,
+            toc.data ->> 'nb_50_100m'::text AS nb_50_100m,
+            toc.data ->> 'nb_100_150m'::text AS nb_100_150m,
+            toc.data ->> 'nb_150_200m'::text AS nb_150_200m
            FROM gn_monitoring.t_base_visits tbv_1
              LEFT JOIN gn_monitoring.t_visit_complements tvc_1 ON tvc_1.id_base_visit = tbv_1.id_base_visit
              JOIN gn_commons.t_modules m_1 ON m_1.id_module = tbv_1.id_module
@@ -90,29 +95,19 @@ AS WITH e_patte_blanche AS (
     tbv.id_base_visit AS id_visit,
     tbv.visit_date_min AS date_visite,
     tvc.data ->> 'participants_nom'::text AS participants_nom,
-    tvc.data ->> 'blocs'::text AS blocs,
-    tvc.data ->> 'dalle'::text AS dalle,
-    tvc.data ->> 'litiere'::text AS litiere,
-    tvc.data ->> 'periode'::text AS periode,
-    tvc.data ->> 'graviers'::text AS graviers,
-    tvc.data ->> 'colmatage'::text AS colmatage,
-    tvc.data ->> 'evolution'::text AS evolution,
+    tvc.data ->> 'time_start'::text AS heure_debut,
+    tvc.data ->> 'time_end'::text AS heure_fin,
+    tvc.data ->> 'substrats_majoritaires'::text AS substrats_majoritaires,
+    tvc.data ->> 'habitats_aquatiques'::text AS habitats_aquatiques,  
+    tvc.data ->> 'periode'::text AS periode, 
+    tvc.data ->> 'colmatage'::text AS colmatage, 
     tvc.data ->> 'organisme'::text AS organisme,
     tvc.data ->> 'ripisylve'::text AS ripisylve,
-    tvc.data ->> 'technique'::text AS technique,
-    tvc.data ->> 'limon_sable'::text AS limon_sable,
-    tvc.data ->> 'sous_berges'::text AS sous_berges,
-    tvc.data ->> 'pierre_galets'::text AS pierre_galets,
-    tvc.data ->> 'lineaire_assec_m'::text AS lineaire_assec_m,
-    tvc.data ->> 'chevelu_racinaire'::text AS chevelu_racinaire,
-    tvc.data ->> 'embacle_branchage'::text AS embacle_branchage,
-    tvc.data ->> 'occupation_du_sol'::text AS occupation_du_sol,
-    tvc.data ->> 'etat_de_la_ripisylve'::text AS etat_de_la_ripisylve,
+    tvc.data ->> 'technique'::text AS technique, 
+    tvc.data ->> 'lineaire_assec_m'::text AS lineaire_assec_m, 
     tvc.data ->> 'lineaire_prospection'::text AS lineaire_prospection,
-    tvc.data ->> 'vegetation_aquatique'::text AS vegetation_aquatique,
-    tvc.data ->> 'remarques_normalisées'::text AS "remarques_normalisées",
-    tvc.data ->> 'conditions_d_observation'::text AS conditions_d_observation,
-    tvc.data ->> 'largeur_du_cours_d_eau_cm'::text AS largeur_du_cours_d_eau_cm,
+      tvc.data ->> 'conditions_d_observation'::text AS conditions_d_observation,
+    tvc.data ->> 'largeur_du_cours_d_eau_m'::text AS largeur_du_cours_d_eau_m,
     tbv.comments AS commentaire,
     epb.app_binaire,
     epb.app,
@@ -121,7 +116,12 @@ AS WITH e_patte_blanche AS (
     epb.nb_100_150m,
     epb.nb_150_200m,
     eam.app_americaine_binaire,
-    eam.app_americaine
+    eam.app_americaine,
+    eam.nb as americaine_nb,
+    eam.nb_0_50m as americaine_nb_0_50m,
+    eam.nb_50_100m as americaine_nb_50_100m,
+    eam.nb_100_150m as americaine_nb_100_150m,
+    eam.nb_150_200m as americaine_nb_150_200m
    FROM gn_monitoring.t_base_sites s
      LEFT JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
      JOIN gn_monitoring.t_base_visits tbv ON tbv.id_base_site = s.id_base_site
