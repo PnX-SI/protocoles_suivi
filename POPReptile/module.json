@@ -8,6 +8,10 @@
         { "label": "Observations en CSV", "type":"csv" , "method": "standard" },
         { "label": "Passages en CSV", "type":"csv" , "method": "analyses" }
     ],
+    "display_properties": [
+      "module_label",
+      "module_desc"
+    ],
     "specific": {
       "b_draw_sites_group": {
         "hidden": false
