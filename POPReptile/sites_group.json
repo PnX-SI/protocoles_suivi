@@ -1,16 +1,15 @@
 {
   "genre":"F",
   "label": "Aire",
+  "label_list": "Aires",
   "export_pdf": [
     {
       "template": "fiche_aire.html",
       "label": "Export PDF"
     }
   ],
-  "label_list": "Aires",
   "display_properties": [
     "id_inventor",
-    "expertise",
     "sites_group_name",
     "habitat_principal",
     "comments"
@@ -29,17 +28,11 @@
       "type_util": "user",
       "required": true
     },
-    "expertise": {
-      "type_widget": "select",
-      "required": true,
-      "attribut_label": "Expertise",
-      "values": ["Débutant", "Assez expérimenté", "Chevronné"]
-    },
     "sites_group_name": {
       "type_widget": "text",
       "attribut_label": "Nom de l'aire",
       "required": true,
-      "definition": "Nom du groupe site." 
+      "definition": "Si des données sur cette aire ont été transmises antérieurement via un fichier Excel, veuillez noter exactement le même nom d'aire OU informer la SHF (geomaticien@lashf.org) si vous souhaitez modifier le nom"
     },
     "sites_group_code": {
       "type_widget": "text",
@@ -54,13 +47,14 @@
     },
     "habitat_principal": {
       "type_widget": "select",
-      "required": false,
+      "required": true,
       "attribut_label": "Habitat principal",
       "values": ["Forêt", "Buisson / haie (< 5 m de hauteur)", "Milieu agricole (prairie, élevage)", "Milieu agricole (culture, autre)", "Milieu ouvert non agricole (lande, steppe)", "Sol sans végétation (dune, sol rocheux)", "Zone urbaine, espace vert"]
     },
     "comments": {
       "type_widget": "textarea",
-      "attribut_label": "Commentaire"
+      "attribut_label": "Commentaire",
+      "required": false
     }
   }
 }   

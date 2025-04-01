@@ -45,16 +45,15 @@ SELECT 1;
 --     (toc.data ->> 'id_nomenclature_life_stage'::text)::integer AS id_nomenclature_life_stage,
 --     (toc.data ->> 'id_nomenclature_sex'::text)::integer AS id_nomenclature_sex,
 --     COALESCE(ref_nomenclatures.get_id_nomenclature('OCC_COMPORTEMENT'::character varying, cm.cd_nomenclature), ref_nomenclatures.get_id_nomenclature('OCC_COMPORTEMENT'::character varying, '1'::character varying)) AS id_nomenclature_behaviour,
---     case 
---     	when cm.val in ('Passage en vol', 'Posé', 'Aire vide') then ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '1')
---     	else ref_nomenclatures.get_id_nomenclature('STATUT_BIO', '3')
---     end as id_nomenclature_bio_status, -- pour calcul automatique de la sensibilité
---     ref_nomenclatures.get_id_nomenclature('NIV_PRECIS', '2') AS id_nomenclature_diffusion_level, -- on force un niveau diffusion = maille car c'est toujours le site de nidif qui est suivi
+--         CASE
+--             WHEN cm.val::text = ANY (ARRAY['Passage en vol'::character varying::text, 'Posé'::character varying::text, 'Aire vide'::character varying::text]) THEN ref_nomenclatures.get_id_nomenclature('STATUT_BIO'::character varying, '1'::character varying)
+--             ELSE ref_nomenclatures.get_id_nomenclature('STATUT_BIO'::character varying, '3'::character varying)
+--         END AS id_nomenclature_bio_status,
 --     ref_nomenclatures.get_id_nomenclature('TYP_GRP'::character varying, 'REL'::character varying) AS id_nomenclature_grp_typ,
 --     t.cd_nom,
 --     t.nom_complet AS nom_cite,
---     s.altitude_min,
---     s.altitude_max,
+--     alt.altitude_min,
+--     alt.altitude_max,
 --     st_centroid(s.geom) AS the_geom_4326,
 --     st_centroid(s.geom) AS the_geom_point,
 --     st_centroid(s.geom_local) AS the_geom_local,
@@ -67,9 +66,9 @@ SELECT 1;
 --     obs.ids_observers,
 --     v.id_base_site,
 --     v.id_base_visit,
---     (toc.data ->> 'count'::text) as count_min,
---     (toc.data ->> 'count'::text) as count_max,
---     coalesce(vc."data", '{}'::jsonb) || coalesce(toc."data", '{}'::jsonb ) AS additional_data
+--     toc.data ->> 'count'::text AS count_min,
+--     toc.data ->> 'count'::text AS count_max,
+--     COALESCE(vc.data, '{}'::jsonb) || COALESCE(toc.data, '{}'::jsonb) AS additional_data
 --    FROM gn_monitoring.t_base_visits v
 --      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
 --      JOIN gn_commons.t_modules m ON m.id_module = v.id_module
@@ -77,8 +76,9 @@ SELECT 1;
 --      JOIN gn_monitoring.t_observations to2 ON to2.id_base_visit = vc.id_base_visit
 --      JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
 --      JOIN taxonomie.taxref t ON t.cd_nom = to2.cd_nom
---      left JOIN selected_comp sel ON sel.id_observation = toc.id_observation
+--      LEFT JOIN selected_comp sel ON sel.id_observation = toc.id_observation
 --      LEFT JOIN gn_monitoring.comportement_mapping cm ON cm.ordre = sel.ordre
 --      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
---      JOIN source ON true 
---      where m.module_code = 'nidif_gypa';
+--      JOIN source ON true
+--      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+--   WHERE m.module_code::text = 'nidif_gypa'::text;

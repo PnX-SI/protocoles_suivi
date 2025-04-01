@@ -1,3 +1,5 @@
+-- gn_monitoring.v_synthese_ligne_lecture source
+
 CREATE OR REPLACE VIEW gn_monitoring.v_synthese_ligne_lecture
 AS WITH source AS (
          SELECT t_sources.id_source
@@ -30,11 +32,11 @@ AS WITH source AS (
     ref_nomenclatures.get_id_nomenclature('NATURALITE'::character varying, '1'::character varying) AS id_nomenclature_naturalness,
     ref_nomenclatures.get_id_nomenclature('STADE_VIE'::character varying, '0'::character varying) AS id_nomenclature_life_stage,
     ref_nomenclatures.get_id_nomenclature('TYP_GRP'::character varying, 'REL'::character varying) AS id_nomenclature_grp_typ,
-    ref_nomenclatures.get_id_nomenclature('METH_OBS'::character varying, '0'::character varying) AS id_nomenclature_obs_technique, --vu
+    ref_nomenclatures.get_id_nomenclature('METH_OBS'::character varying, '0'::character varying) AS id_nomenclature_obs_technique,
     t.cd_nom,
     t.nom_complet AS nom_cite,
-    s.altitude_min,
-    s.altitude_max,
+    alt.altitude_min,
+    alt.altitude_max,
     st_centroid(s.geom) AS the_geom_4326,
     st_centroid(s.geom) AS the_geom_point,
     st_centroid(s.geom_local) AS the_geom_local,
@@ -55,6 +57,6 @@ AS WITH source AS (
      JOIN gn_monitoring.t_observation_complements toc ON toc.id_observation = to2.id_observation
      JOIN taxonomie.taxref t ON t.cd_nom = to2.cd_nom
      LEFT JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-     JOIN source ON true 
+     JOIN source ON true
+     LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
   WHERE upper(m.module_code::text) = 'LIGNE_LECTURE'::text;
-  

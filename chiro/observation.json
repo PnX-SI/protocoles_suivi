@@ -111,7 +111,7 @@
     "count_max": {
       "type_widget": "number",
       "attribut_label": "Dénombrement (maximum)",
-      "min": 1,
+      "min": "({value}) => value.count_min",
       "value": 1,
       "required": true
     },
