@@ -1,45 +1,58 @@
 {
   "description_field_name":"cd_nom",
+  "label": "observation ou une absence",
+  "label_list": "Observations ou absences",
   "genre":"F",
   "display_properties": [
-  "cd_nom",
-  "id_nomenclature_stade",
-  "id_nomenclature_sex",
-  "id_nomenclature_typ_denbr",
-  "count_min",
-  "count_max",
-  "comments"
-],
-"display_list": [
-  "cd_nom",
-  "id_nomenclature_typ_denbr",
-  "count_min",
-  "count_max"
-],
+    "presence",
+    "cd_nom",
+    "id_nomenclature_typ_denbr",
+    "count_min",
+    "count_max",
+    "id_nomenclature_stade",
+    "id_nomenclature_sex",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "id_nomenclature_typ_denbr",
+    "count_min",
+    "count_max"
+  ],
   "specific": {
+    "presence": {
+       "type_widget": "radio",
+       "required": true,
+       "attribut_label": "Avez-vous observé des amphibiens lors de la prospection",
+       "values": ["Oui", "Non"],
+       "value": "Oui"
+    },
     "cd_nom": {
       "type_widget": "taxonomy",
-      "attribut_label": "Espèces observées",
+      "attribut_label": "Espèce observée",
       "keyValue": "cd_nom",
       "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
       "multiple": false,
       "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
       "application": "TaxHub",
-      "required": false,
-      "type_util": "taxonomy"
+      "required": "({value}) => value.presence === 'Oui'",
+      "type_util": "taxonomy",
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
+      "hidden":"({value}) => value.presence === 'Non'"
     } ,
     "id_nomenclature_stade": {
       "type_widget": "datalist",
-      "attribut_label": "Stade de vie",
+      "attribut_label": "Stade de vie (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
       "api": "nomenclatures/nomenclature/STADE_VIE",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": true,
+      "required": false,
+      "hidden":"({value}) => value.presence === 'Non'",
       "filters": {
-          "cd_nomenclature": ["1", "2", "3", "8", "9"]
+          "cd_nomenclature": ["1", "2", "3", "5", "8", "9"]
       },
       "default": {
         "cd_nomenclature": "1"
@@ -47,16 +60,17 @@
     },
     "id_nomenclature_sex": {
       "type_widget": "datalist",
-      "attribut_label": "Sexe",
+      "attribut_label": "Sexe (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
       "api": "nomenclatures/nomenclature/SEXE",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": true,
+      "required": false,
+      "hidden":"({value}) => value.presence === 'Non'",
       "filters": {
-          "cd_nomenclature": ["1", "2", "3"]
+          "cd_nomenclature": ["1", "2", "3", "5"]
       },
       "default": {
         "cd_nomenclature": "1"
@@ -71,7 +85,8 @@
       "keyLabel": "label_fr",
       "data_path": "values",
       "type_util": "nomenclature",
-      "required": false,
+      "required": "({value}) => value.presence === 'Oui'",
+      "hidden":"({value}) => value.presence === 'Non'",
       "filters": {
           "cd_nomenclature": ["Co", "Es"]
       }
@@ -79,19 +94,37 @@
     "count_min": {
       "type_widget": "number",
       "attribut_label": "Nombre minimum",
-      "required": false,
-      "min": 1,
-      "value": 1
+      "required": "({value}) => value.presence === 'Oui'",
+      "hidden":"({value}) => value.presence === 'Non'",
+      "min": 0
     },
     "count_max": {
       "type_widget": "number",
       "attribut_label": "Nombre maximum",
-      "required": "({value}) => value.count_min !=1",
-      "min": "({value}) => value.count_min"
+      "required": "({value}) => value.count_min > 0",
+      "hidden":"({value}) => value.presence === 'Non'",
+      "min": 0
     },
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire"
     }
-  }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+      "if (objForm.value.presence === 'Non' && !!objForm.value.id_nomenclature_sex) {",
+        "objForm.patchValue({id_nomenclature_typ_denbr : null, count_min : 0, count_max : 0, id_nomenclature_sex : null, id_nomenclature_stade: null, cd_nom : {'cd_nom': 914450, 'lb_nom': 'Amphibia', 'nom_valide': 'Amphibia', 'nom_vern' : 'Amphibiens, batraciens'}}, {emitEvent : false})",
+      "}",
+      "if (objForm.value.presence === 'Oui' && objForm.value.count_min === 0) {",
+        "objForm.patchValue({count_min : null, count_max : null}, {emitEvent : false})",
+      "}",
+      "if (!!objForm.value.count_min && objForm.value.count_max < objForm.value.count_min) {",
+        "objForm.patchValue({count_max : objForm.value.count_min}, {emitEvent : false})",
+      "}",
+      "if (!!objForm.value.count_min && meta.nomenclatures[objForm.value.id_nomenclature_typ_denbr].cd_nomenclature === 'Co' && objForm.value.count_max !== objForm.value.count_min) {",
+        "objForm.patchValue({count_max : objForm.value.count_min}, {emitEvent : false})",
+      "}",
+    "}",
+    ""
+    ]
 }
