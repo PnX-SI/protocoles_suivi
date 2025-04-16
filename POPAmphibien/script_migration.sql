@@ -264,7 +264,7 @@ WHERE cd_nomenclature = '2' AND mnemonique = 'Capture_épuisette';
 -- Changement du type de site
 -- Dans la première implémentation du module POPA, les types de sites étaient mis par défaut au code_nomenclature "7" qui correspond à un gite chiro indeterminé.
 -- Il faut donc le modifier.
--- TODO En fonction de la version du monitoring dont vous disposez (près 1.0.0 ou post 1.0.0, vous devez utiliser une méthode différente.
+-- TODO En fonction de la version du monitoring dont vous disposez (pre 1.0.0 ou post 1.0.0, vous devez utiliser une méthode différente).
 WITH to_update AS
 (SELECT tc.id_base_site FROM gn_monitoring.t_site_complements tc
 JOIN gn_commons.t_modules m ON m.id_module = tc.id_module

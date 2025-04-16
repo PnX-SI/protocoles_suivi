@@ -7,5 +7,9 @@
     "export_csv": [
       { "label": "Format observations CSV", "type":"csv" , "method": "standard" },
       { "label": "Format analyses CSV", "type":"csv" , "method": "analyses" }
+    ],
+    "display_properties": [
+      "module_label",
+      "module_desc"
     ]
 }

@@ -36,7 +36,7 @@
     "num_passage": {
       "type_widget": "number",
       "attribut_label": "Numéro de passage",
-      "definition": "Usuellement entre 1 et 3. Si plus de passages sont renseignés, une sélection sera opérée",
+      "definition": "Usuellement entre 1 et 3. Si plus de passages sont renseignés, une sélection sera opérée.",
       "required": true,
       "min": 1,
       "max": 10,
@@ -51,7 +51,7 @@
       "type_widget": "select",
       "required": true,
       "attribut_label": "Expertise",
-      "definition": "Expertise de l'observateur principal",
+      "definition": "Expertise de l'observateur principal.",
       "values": ["Débutant", "Assez expérimenté", "Chevronné"]
    },
     "accessibility": {
@@ -66,8 +66,8 @@
     "etat_site": {
       "type_widget": "radio",
       "attribut_label": "Etat du site",
-      "definition": "À ne renseigner que pour le premier passage de l'année",
-      "values": ["Site existant préalablement suivi", "Site nouvellement créé (travaux, etc.)", "Site restauré (travaux, assainissement de l'eau, etc.)", "Site détruit (travaux, pollution de l'eau, etc.)"],
+      "definition": "Le site a-t-il fait l'objet de dégradation ou de création / restauration pour le rendre favorable aux amphibiens ? Sinon, cochez site existant. Cette information n'est à renseigner que pour le premier passage de l'année.",
+      "values": ["Site existant", "Site nouvellement créé (travaux, etc.)", "Site restauré (travaux, assainissement de l'eau, etc.)", "Site détruit (travaux, pollution de l'eau, etc.)"],
       "required": "({value}) => value.accessibility === 'Oui' && (value.num_passage === 1)",
       "hidden": "({value}) => value.accessibility === 'Non' || (value.num_passage !== 1)"
     },
