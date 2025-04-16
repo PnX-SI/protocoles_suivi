@@ -1,7 +1,7 @@
 {
   "description_field_name":"cd_nom",
   "label": "observation ou une absence",
-  "label_list": "Observations ou absences",
+  "label_list": "observations ou des absences",
   "genre":"F",
   "display_properties": [
     "presence",
@@ -42,7 +42,11 @@
     } ,
     "id_nomenclature_stade": {
       "type_widget": "datalist",
+<<<<<<< HEAD
+      "attribut_label": "Stade de vie",
+=======
       "attribut_label": "Stade de vie (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
+>>>>>>> ad14b3958371b80b16d953512eb4a385fadfc5e3
       "api": "nomenclatures/nomenclature/STADE_VIE",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
@@ -60,7 +64,11 @@
     },
     "id_nomenclature_sex": {
       "type_widget": "datalist",
+<<<<<<< HEAD
+      "attribut_label": "Sexe",
+=======
       "attribut_label": "Sexe (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
+>>>>>>> ad14b3958371b80b16d953512eb4a385fadfc5e3
       "api": "nomenclatures/nomenclature/SEXE",
       "application": "GeoNature",
       "keyValue": "id_nomenclature",
@@ -121,9 +129,12 @@
       "if (!!objForm.value.count_min && objForm.value.count_max < objForm.value.count_min) {",
         "objForm.patchValue({count_max : objForm.value.count_min}, {emitEvent : false})",
       "}",
-      "if (!!objForm.value.count_min && meta.nomenclatures[objForm.value.id_nomenclature_typ_denbr].cd_nomenclature === 'Co' && objForm.value.count_max !== objForm.value.count_min) {",
+<<<<<<< HEAD
+=======
+      "if (!!objForm.value.count_min && objForm.value.id_nomenclature_typ_denbr === 92 && objForm.value.count_max !== objForm.value.count_min) {",
         "objForm.patchValue({count_max : objForm.value.count_min}, {emitEvent : false})",
       "}",
+>>>>>>> ad14b3958371b80b16d953512eb4a385fadfc5e3
     "}",
     ""
     ]
