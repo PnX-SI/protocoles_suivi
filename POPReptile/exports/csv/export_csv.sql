@@ -12,7 +12,8 @@ WITH obs AS
     string_agg(DISTINCT org.nom_organisme::text, ', ') AS organismes_rattaches
 FROM gn_monitoring.cor_visit_observer cvo
 JOIN utilisateurs.t_roles r USING (id_role)
-JOIN utilisateurs.bib_organismes org USING (id_organisme)
+-- Pour que les observateurs apparaissent même s'ils ne sont pas rattachés à un organisme
+LEFT JOIN utilisateurs.bib_organismes org USING (id_organisme)
 GROUP BY id_base_visit),
 com_dep AS (
 SELECT
@@ -154,7 +155,8 @@ obs AS
     string_agg(DISTINCT org.nom_organisme::text, ', ') AS organismes_rattaches
 FROM gn_monitoring.cor_visit_observer cvo
 JOIN utilisateurs.t_roles r USING (id_role)
-JOIN utilisateurs.bib_organismes org USING (id_organisme)
+-- Pour que les observateurs apparaissent même s'ils ne sont pas rattachés à un organisme
+LEFT JOIN utilisateurs.bib_organismes org USING (id_organisme)
 GROUP BY id_base_visit),
 com_dep AS (
 SELECT
