@@ -1,4 +1,3 @@
-
 DROP VIEW IF EXISTS gn_monitoring.v_synthese_flore_patrimoniale;
 CREATE OR REPLACE VIEW gn_monitoring.v_synthese_flore_patrimoniale AS
 WITH t_source AS (
@@ -41,7 +40,7 @@ WITH t_source AS (
     tbv.id_digitiser,
     tbs.id_inventor,
     concat(tr.nom_role, ' ', tr.prenom_role) AS observers,
-    tsc.id_module,
+    tm.id_module,
     tbv.comments AS comment_context,
     to2.comments AS comment_description,
     obs.ids_observers,
@@ -57,7 +56,7 @@ WITH t_source AS (
      LEFT JOIN taxonomie.taxref t ON to2.cd_nom = t.cd_nom
      LEFT JOIN t_source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(tbs.geom_local) alt(altitude_min, altitude_max) ON true
-     LEFT JOIN gn_commons.t_modules tm ON tm.id_module = tsc.id_module
-  WHERE tm.module_label::text ilike 'FLORE%PATRIMONIALE'::text 
-  AND to2.cd_nom IS NOT NULL 
+     LEFT JOIN gn_commons.t_modules tm ON tbv.id_module = tm.id_module
+  WHERE tm.module_label::text ilike 'FLORE%PATRIMONIALE'::text
+  AND to2.cd_nom IS NOT NULL
   AND to2.uuid_observation IS NOT NULL;
