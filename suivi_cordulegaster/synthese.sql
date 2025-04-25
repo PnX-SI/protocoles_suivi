@@ -17,9 +17,8 @@
 
 -- ne pas remplacer cette variable, elle est indispensable pour les scripts d'installations
 -- le module pouvant être installé avec un code différent de l'original
-
 DROP VIEW IF EXISTS gn_monitoring.v_synthese_suivi_cordulegaster;
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_suivi_cordulegaster AS 
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_suivi_cordulegaster AS
 WITH t_source AS (
          SELECT t_sources.id_source
            FROM gn_synthese.t_sources
@@ -48,8 +47,8 @@ WITH t_source AS (
  	toc.data::json #> '{id_nomenclature_observation_status}' AS id_nomenclature_observation_status,
     ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE'::character varying, 'Te'::character varying) AS id_nomenclature_source_status,
     ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO'::character varying, '1'::character varying) AS id_nomenclature_info_geo_type,
-    1 AS count_min, 
-    1 AS count_max, 
+    1 AS count_min,
+    1 AS count_max,
     to2.cd_nom,
     t.nom_complet AS nom_cite,
     alt.altitude_min,
@@ -64,7 +63,7 @@ WITH t_source AS (
     tbv.id_digitiser,
     tbs.id_inventor,
     concat(tr.nom_role, ' ', tr.prenom_role) AS observers,
-    tsc.id_module,
+    tm.id_module,
     tbv.comments AS comment_context,
     to2.comments AS comment_description,
     obs.ids_observers,
@@ -80,7 +79,7 @@ WITH t_source AS (
      LEFT JOIN taxonomie.taxref t ON to2.cd_nom = t.cd_nom
      LEFT JOIN t_source ON true
      LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(tbs.geom_local) alt(altitude_min, altitude_max) ON true
-     LEFT JOIN gn_commons.t_modules tm ON tm.id_module = tsc.id_module
+     LEFT JOIN gn_commons.t_modules tm ON tbv.id_module = tm.id_module
   WHERE tm.module_label::text ~~* 'SUIVI_CORDULEGASTER'::text
   and to2.cd_nom is not null
   and to2.uuid_observation is not null;
