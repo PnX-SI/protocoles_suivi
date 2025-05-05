@@ -1,0 +1,13 @@
+{
+  "types": [
+  ],
+  "nomenclatures": [
+  {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "Cordulegaster",
+      "mnemonique": "Cordulegaster",
+      "label_default": "Site Cordulegaster",
+      "definition_default": "Site de relevé du protocole Cordulegaster"
+    }
+  ]
+}
