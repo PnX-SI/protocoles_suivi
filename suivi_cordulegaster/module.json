@@ -1,6 +1,6 @@
 {
   "module_label": "Suivi Cordulegaster",
-  "module_desc": "Suivie sur les Cordulegaster, quadrat 50x50 cm, coup de tamis, ...",
+  "module_desc": "Suivi sur les Cordulegaster, quadrat 50x50 cm, coup de tamis, ...",
   "b_draw_sites_group": true,
   "genre":"F"
 }
