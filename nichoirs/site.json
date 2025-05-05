@@ -154,11 +154,6 @@
     "base_site_description": {
       "type_widget": "textarea",
       "attribut_label": "Remarque"
-    },
-    "medias": {
-      "type_widget": "medias",
-      "attribut_label": "Médias",
-      "schema_dot_table": "gn_monitoring.t_base_sites"
     }
   }
 }
