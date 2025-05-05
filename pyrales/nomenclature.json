@@ -1,0 +1,13 @@
+{
+  "types": [
+  ],
+  "nomenclatures": [
+  {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "Pyrales du Buis",
+      "mnemonique": "Site_Pyrales_du_Buis",
+      "label_default": "Site Pyrales du Buis",
+      "definition_default": "Site de relevé du protocole Pyrales du Buis"
+    }
+  ]
+}
