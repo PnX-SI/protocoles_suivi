@@ -1,0 +1,39 @@
+{
+  "genre": "F",
+  "label": "Ligne de lecture",
+  "label_list": "Lignes de lecture",
+  "map_label_field_name": "base_site_name",
+  "geometry_type": "LineString",
+  "display_properties": ["base_site_name", "base_site_code", "base_site_description", "borne_1", "borne_2"],
+  "display_list": [
+    "base_site_name",
+    "nb_visits",
+    "last_visit"
+  ],
+    "specific": {
+      "base_site_code": {
+        "hidden": false,
+        "required": false
+      },
+      "borne_1": {
+        "type_widget": "number",
+        "attribut_label": "Borne GPS 1"
+      },
+      "borne_2": {
+        "type_widget": "number",
+        "attribut_label": "Borne GPS 2"
+      },
+      "id_nomenclature_type_site": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Type site",
+        "code_nomenclature_type": "TYPE_SITE",
+        "type_util": "nomenclature",
+        "required": true,
+        "value": {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "LIGNE_LECTURE"
+        },
+        "hidden": true
+      }
+  }
+}

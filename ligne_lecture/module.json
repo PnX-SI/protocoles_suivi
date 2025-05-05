@@ -1,0 +1,7 @@
+{
+    "module_label":"Ligne de lecture",
+    "module_desc":"Ligne de lecture",
+    "export_csv": [
+        { "label": "Lignes et observations", "type":"csv" , "method": "all" }
+    ]
+}

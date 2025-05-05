@@ -20,140 +20,79 @@
 -- le module pouvant être installé avec un code différent de l'original
 
 DROP VIEW IF EXISTS gn_monitoring.v_synthese_POPAmphibien;
-CREATE VIEW gn_monitoring.v_synthese_POPAmphibien AS
 
-WITH source AS (
-
-	SELECT
-
-        id_source
-
-    FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER('POPAmphibien'))
-	LIMIT 1
-
-), sites AS (
-
-    SELECT
-
-        id_base_site,
-        geom AS the_geom_4326,
-	    ST_CENTROID(geom) AS the_geom_point,
-	    geom_local as geom_local
-
-        FROM gn_monitoring.t_base_sites
-
-), visits AS (
-    
-    SELECT
-    
-        id_base_visit,
-        uuid_base_visit,
-        id_module,
-        id_base_site,
-        id_dataset,
-        id_digitiser,
-
-        visit_date_min AS date_min,
-	    COALESCE (visit_date_max, visit_date_min) AS date_max,
-        comments,
-
-	    --o.observers,
-	    --o.ids_observers,
-
-    	id_nomenclature_tech_collect_campanule,
-	    id_nomenclature_grp_typ
-
-        FROM gn_monitoring.t_base_visits
-
-), observers AS (
-    SELECT
-        array_agg(r.id_role) AS ids_observers,
-        STRING_AGG(CONCAT(r.nom_role, ' ', prenom_role), ' ; ') AS observers,
-        id_base_visit
-    FROM gn_monitoring.cor_visit_observer cvo
-    JOIN utilisateurs.t_roles r
-    ON r.id_role = cvo.id_role
-    GROUP BY id_base_visit
-)
-
-SELECT
-		
-        o.uuid_observation AS unique_id_sinp, 
-		v.uuid_base_visit AS unique_id_sinp_grp,
-		source.id_source,
-		o.id_observation AS entity_source_pk_value,
-		v.id_dataset,
-        ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO', 'St') AS id_nomenclature_geo_object_nature,
-
-		v.id_nomenclature_grp_typ, -- TYP_GRP
-		--id_nomen clature_obs_technique, -- METH_OBS
-		v.id_nomenclature_tech_collect_campanule, --TECHNIQUE_OBS
-		--id_nomenclature_bio_status, -- STATUT_BIO
-		--id_nomenclature_bio_condition, -- ETA_BIO
-		--id_nomenclature_naturalness, -- NATURALITE
-		--id_nomenclature_exist_proof, -- PREUVE_EXIST
-		--id_nomenclature_valid_status,  --STATUT_VALID
-		--id_nomenclature_diffusion_level, -- NIV_PRECIS
-		--id_nomenclature_life_stage, -- STADE_VIE
-		--id_nomenclature_sex, -- SEXE
- 		ref_nomenclatures.get_id_nomenclature('OBJ_DENBR','IND') AS id_nomenclature_obj_count,
- 		ref_nomenclatures.get_id_nomenclature('TYP_DENBR', 'Es') AS id_nomenclature_type_count,
- 		-- id_nomenclature_sensitivity, --SENSIBILITE
- 		ref_nomenclatures.get_id_nomenclature('STATUT_OBS', 'Pr') AS id_nomenclature_observation_status, 
-		-- id_nomenclature_blurring, -- DEE_FLOU
-        -- id_nomenclature_behaviour, -- OCC_COMPORTEMENT
-		ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE', 'Te') AS id_nomenclature_source_status,
-		ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO', '1') AS id_nomenclature_info_geo_type,
-
-		1 AS count_min,
-		1 AS count_max,
-		id_observation,
-		o.cd_nom,
-		t.nom_complet AS nom_cite,
-		--meta_v_taxref
-		--sample_number_proof
-		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
-		s.the_geom_4326,
-		s.the_geom_point,
-		s.geom_local as the_geom_local,
-		v.date_min,
-		v.date_max,
-		--validator
-		--validation_comment
-		obs.observers,
-		--determiner
-		v.id_digitiser,
-		--id_nomenclature_determination_method
-		--meta_validation_date
-		--meta_create_date,
-		--meta_update_date,
-		--last_action
-		v.id_module,
-		v.comments AS comment_context,
-		o.comments AS comment_description,
-		obs.ids_observers,
-		
-		-- ## Colonnes complémentaires qui ont leur utilité dans la fonction synthese.import_row_from_table
-		v.id_base_site,
-		v.id_base_visit
-
-    FROM gn_monitoring.t_observations o
-    JOIN visits v
-        ON v.id_base_visit = o.id_base_visit
-    JOIN sites s 
-        ON s.id_base_site = v.id_base_site
-	JOIN gn_commons.t_modules m 
-        ON m.id_module = v.id_module
-	JOIN taxonomie.taxref t 
-        ON t.cd_nom = o.cd_nom
-	JOIN source 
-        ON TRUE
-	JOIN observers obs ON obs.id_base_visit = v.id_base_visit
-    
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
-    WHERE m.module_code = 'POPAmphibien'
-    ;
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_POPAmphibien
+AS WITH source AS (
+         SELECT id_source
+           FROM gn_synthese.t_sources
+          WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
+        )
+ SELECT 
+ 	o.uuid_observation AS unique_id_sinp,
+    v.uuid_base_visit AS unique_id_sinp_grp,
+    (SELECT id_source FROM source) AS id_source,
+    o.id_observation AS entity_source_pk_value,
+    v.id_dataset,
+    ref_nomenclatures.get_id_nomenclature('METH_OBS'::character varying, '20'::character varying) AS id_nomenclature_obs_meth, 
+    nullif(json_extract_path(oc.data::json,'id_nomenclature_stade')::text,'null')::integer AS id_nomenclature_life_stage,
+    nullif(json_extract_path(oc.data::json,'id_nomenclature_sex')::text,'null')::integer AS id_nomenclature_sex,
+    ref_nomenclatures.get_id_nomenclature('OBJ_DENBR'::character varying, 'IND'::character varying) AS id_nomenclature_obj_count,
+    nullif(json_extract_path(oc.data::json,'id_nomenclature_typ_denbr')::text, 'null')::integer AS id_nomenclature_type_count,
+    ref_nomenclatures.get_id_nomenclature('STATUT_OBS'::character varying, 'Pr'::character varying) AS id_nomenclature_observation_status,
+    ref_nomenclatures.get_id_nomenclature('ETAT_BIO'::character varying, '1'::character varying) as id_nomenclature_bio_condition,
+    ref_nomenclatures.get_id_nomenclature('STATUT_SOURCE'::character varying, 'Te'::character varying) AS id_nomenclature_source_status,
+    ref_nomenclatures.get_id_nomenclature('TYP_INF_GEO'::character varying, '1'::character varying) AS id_nomenclature_info_geo_type,
+       NULLIF(oc.data::json ->> 'count_min'::text, 'null'::text)::integer                                 AS count_min,
+       COALESCE(NULLIF(oc.data::json ->> 'count_max'::text, 'null'::text)::integer,
+                NULLIF(oc.data::json ->> 'count_min'::text, 'null'::text)::integer)                       AS count_max,
+    o.id_observation,
+    o.cd_nom,
+    t.nom_complet AS nom_cite,
+    s.altitude_min,
+    s.altitude_max,
+    s.geom AS the_geom_4326,
+    st_centroid(s.geom) AS the_geom_point,
+    s.geom_local AS the_geom_local,
+    v.visit_date_min AS date_min,
+    v.visit_date_min AS date_max,
+    obs.observers,
+    v.id_digitiser,
+    ref_nomenclatures.get_id_nomenclature('METH_DETERMIN'::character varying, '1'::character varying) AS id_nomenclature_determination_method,
+    v.id_module as id_module,
+    v.comments AS comment_context,
+    o.comments AS comment_description,
+    obs.ids_observers,
+    v.id_base_site,
+    v.id_base_visit, 
+    json_build_object(
+    	'aire_etude', tsg.sites_group_name,
+        'nom_site', s.base_site_name,
+        'milieu_aquatique', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'milieu_aquatique')::text,'null')::integer, 'fr'),
+        'variation_eau', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'variation_eau')::text,'null')::integer, 'fr'),
+        'courant',  ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(sc.data::json,'courant')::text,'null')::integer, 'fr'),
+    	'num_passage', json_extract_path(vc.data::json,'num_passage')::text, 
+    	'accessibilite', (vc.data::json #> '{accessibility}'::text[]),
+    	'pluviosite', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'pluviosite')::text,'null')::integer, 'fr'),
+    	'couverture_nuageuse', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'couverture_nuageuse')::text,'null')::integer, 'fr'),
+    	'vent', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'vent')::text,'null')::integer, 'fr'),
+    	'turbidite', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'turbidite')::text,'null')::integer, 'fr'),
+    	'vegetation_aquatique_principale', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'vegetation_aquatique_principale')::text,'null')::integer, 'fr'),
+    	'rives', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'rives')::text,'null')::integer, 'fr'),
+    	'habitat_terrestre_environnant', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'habitat_terrestre_environnant')::text,'null')::integer, 'fr'),
+    	'activite_humaine', ref_nomenclatures.get_nomenclature_label(nullif(json_extract_path(vc.data::json,'activite_humaine')::text,'null')::integer, 'fr')
+    	) as additional_data
+   FROM gn_monitoring.t_base_visits v
+   	 JOIN gn_monitoring.t_visit_complements vc on v.id_base_visit = vc.id_base_visit 
+     JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
+     JOIN gn_monitoring.t_site_complements sc on sc.id_base_site = s.id_base_site
+     JOIN gn_monitoring.t_sites_groups tsg ON sc.id_sites_group = tsg.id_sites_group
+     JOIN gn_commons.t_modules m ON m.id_module = v.id_module
+     JOIN gn_monitoring.t_observations o ON o.id_base_visit = v.id_base_visit
+     JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation = o.id_observation
+     JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
+     LEFT JOIN LATERAL ( SELECT array_agg(r.id_role) AS ids_observers,
+            string_agg(concat(r.nom_role, ' ', r.prenom_role), ' ; '::text) AS observers
+           FROM gn_monitoring.cor_visit_observer cvo
+             JOIN utilisateurs.t_roles r ON r.id_role = cvo.id_role
+          WHERE cvo.id_base_visit = v.id_base_visit) obs ON true
+    WHERE m.module_code = :module_code;

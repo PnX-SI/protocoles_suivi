@@ -1,0 +1,16 @@
+{
+    "module_label": "Ecrevisses à pattes blanches",
+    "module_desc": "Module pour le protocole de suivis des écrevisses à pattes blanches",
+    "export_csv": [
+        {
+            "label": "Observations",
+            "type": "csv",
+            "method": "observations"
+        },
+        {
+            "label": "Analyse",
+            "type": "csv",
+            "method": "analyse"
+        }
+    ]
+}

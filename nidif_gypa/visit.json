@@ -1,0 +1,50 @@
+{
+  "display_properties": [
+    "id_base_site",
+    "visit_date_min",
+    "hour_min",
+    "hour_max",
+    "observers",
+    "obs_txt",
+    "visibility",
+    "etat_aire",
+    "comments"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "nb_observations"
+  ],
+  "specific": {
+    "obs_txt": {
+      "type_widget": "text",
+      "attribut_label": "Observateur(s) (champs libre)"
+    },
+    "visibility": {
+      "type_widget": "select",
+      "attribut_label": "Visibilité",
+      "values": ["Bonne", "Moyenne", "Mauvaise"]
+    },
+    "etat_aire": {
+      "type_widget": "select",
+      "attribut_label": "Etat de l'aire",
+      "values": [ 
+        "Aire chargée ou en construction",
+        "Dégradation de l'aire"
+      ]
+    },
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
+    },
+    "hour_min": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début de la visite",
+      "required": true
+      },
+      "hour_max": {
+        "type_widget": "time",
+        "attribut_label": "Heure de fin de la visite",
+        "required": true
+        }
+
+  }
+}

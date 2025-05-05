@@ -1,6 +1,5 @@
 {
-  "genre":"F",
-  "cruved": {"C": 3, "U": 3, "D": 3},
+  "genre": "F",
   "label": "Placette maître",
   "label_list": "Placette maître",
   "map_label_field_name": "base_site_name",
@@ -21,6 +20,9 @@
 	  "required": false
     },
     "id_inventor": {
+      "hidden": true
+    },
+    "medias": {
       "hidden": true
     },
     "id_nomenclature_type_site": {

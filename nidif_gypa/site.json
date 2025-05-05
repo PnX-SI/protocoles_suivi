@@ -1,0 +1,35 @@
+{
+  "label": "Aire",
+  "label_list": "Aires",
+  "genre": "F",
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "base_site_description",
+    "id_inventor",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "AIRE_GYPA"
+      },
+      "hidden": true
+    }
+  }
+}
+
+
+

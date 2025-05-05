@@ -3,18 +3,14 @@
   "label": "Passage",
   "label_list": "Passages",
   "display_properties": [
-
     "observers",
+    "id_dataset",
     "num_passage",
     "visit_date_min",
     "Heure_debut",
     "Heure_fin",
-    "temperature_air",
     "meteo",
-    "pluviosite",
-    "ensoleillement",
     "vent",
-    "presence_reptile",
     "comments"
   ],
   "display_list": [
@@ -28,82 +24,49 @@
     "visit_date_min",
     "Heure_debut",
     "Heure_fin",
-    "temperature_air",
     "meteo",
-    "pluviosite",
-    "ensoleillement",
     "vent",
-    "presence_reptile",
     "comments"
   ],
   "specific": {
     "num_passage": {
-      "type_widget": "text",
+      "type_widget": "number",
+      "attribut_label": "Numéro de passage",
       "required": true,
-      "attribut_label": "Numéro de passage"
+      "min": 1,
+      "max":6,
+      "value": 1
     },
     "id_base_site": {
       "type_widget": "site",
       "required": false,
-      "attribut_label": "Point d'obs."
+      "attribut_label": "Transect"
     },
     "Heure_debut": {
       "type_widget": "time",
       "attribut_label": "Heure de début",
-      "required": false
+      "required": true
     },
     "Heure_fin": {
       "type_widget": "time",
       "attribut_label": "Heure de fin",
-      "required": false
-    },
-    "temperature_air": {
-      "type_widget": "number",
-      "attribut_label": "Température de l’air (en °C)",
-      "required": false,
-      "min": -25,
-      "max": 60
+      "required": true
     },
     "meteo": {
-      "type_widget": "nomenclature",
+      "type_widget": "select",
+      "required": false,
       "attribut_label": "Météo",
-      "code_nomenclature_type": "METEO",
-	    "required": false,
-      "type_util": "nomenclature"
-    },
-
-    "pluviosite": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Pluviosité",
-      "code_nomenclature_type": "PLUVIOSITE",
-	    "required": false,
-      "type_util": "nomenclature"
-    },
-    "ensoleillement": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Ensoleillement (% de recouvrement nuageux)",
-      "code_nomenclature_type": "ENSOLEILLEMENT",
-	    "required": false,
-      "type_util": "nomenclature"
-
-    },
-
+      "values": ["Ensoleillé", "Belles éclaircies", "Nuageux prédominant", "Très nuageux", "Orageux", "Pluvieux", "Ciel voilé"]
+    },  
     "vent": {
-      "type_widget": "nomenclature",
+      "type_widget": "select",
+      "required": false,
       "attribut_label": "Vent",
-      "code_nomenclature_type": "VENT",
-	    "required": false,
-      "type_util": "nomenclature"    
+      "values": ["Absence de vent", "Vent faible", "Vent fort"]
     },
-
     "comments": {
       "type_widget": "textarea",
       "attribut_label": "Commentaire"
-    },
-    "presence_reptile": {
-      "type_widget": "radio",
-      "attribut_label": "Présence de reptiles",
-      "values": ["Oui", "Non"]
     },
     "visit_date_min": {
       "type_widget": "date",
@@ -113,6 +76,5 @@
     "nb_observations": {
       "attribut_label": "Nb. d'observations"
     }
-
   }
 }

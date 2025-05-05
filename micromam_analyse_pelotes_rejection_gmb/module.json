@@ -4,4 +4,5 @@
     "export_csv": [
       { "label": "Télécharger le CSV", "type":"csv" , "method": "telecharger_csv" }
       ]
+    }
 

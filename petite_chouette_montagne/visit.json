@@ -1,0 +1,102 @@
+{
+  "genre":"M",
+  "label": "Passage",
+  "label_list": "Passages",
+  "display_properties": [
+    "id_dataset",
+    "observers",
+    "num_passage",
+    "visit_date_min",
+    "device_repasse",
+    "fructif_fragus",
+    "time_sunset",
+    "etat_vent",
+    "etat_ciel",
+    "neige",
+    "comments"
+  ],
+  "display_list": [
+    "id_dataset",
+    "num_passage",
+    "visit_date_min",
+    "observers",
+    "nb_observations"
+  ],
+  "keep": [
+    "observers",
+    "visit_date_min",
+    "nb_observations"
+  ],
+  "specific": {
+    "observers":{
+      "multiple": true
+    },
+    "num_passage": {
+      "type_widget": "radio",
+      "attribut_label": "Numéro de passage dans la saison",
+      "values": [1, 2],
+      "required": true,
+      "value": 1
+    },
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du passage",
+      "required": true
+    },
+    "device_repasse":{
+      "type_widget": "datalist",
+      "attribut_label": "Appareil de repasse utilisé",
+      "api": "nomenclatures/nomenclature/AUDIO_DEVICE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_default",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "value": {
+        "code_nomenclature_type": "AUDIO_DEVICE",
+        "cd_nomenclature": "BOSE_MINILINK"
+      }
+    },
+    "fructif_fragus":{
+      "type_widget": "select",
+      "attribut_label": "Fructifications du hêtre automne précédent",
+      "values": [
+        "Ne sais pas","Mauvaise","Normale",
+        "Bonne","Exeptionnelle","Non concerné"
+      ],
+      "required": true
+    },
+    "time_sunset":{
+      "type_widget": "time",
+      "attribut_label": "Heure de coucher du soleil",
+      "required": false
+    },
+    "etat_vent":{
+      "type_widget": "select",
+      "attribut_label": "Etat du vent",
+      "values": [
+        "Null","Faible","Moyen",
+        "Fort","Très fort","Non renseigné"
+      ],
+      "required": false
+    },
+    "etat_ciel":{
+      "type_widget": "select",
+      "attribut_label": "Etat du ciel",
+      "values": [
+        "Dégagé","Couverture patielle","Couvert",
+        "Pluie éparce","Pluie","Orage","Neige"
+      ],
+      "required": false
+    },
+    "neige":{
+      "type_widget": "select",
+      "attribut_label": "Enneigement",
+      "values": [
+        "Sans neige","Enneigé"
+      ],
+      "required": false
+    }
+  }
+}

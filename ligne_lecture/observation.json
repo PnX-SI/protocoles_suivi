@@ -1,0 +1,22 @@
+{
+  "display_properties": [
+    "cd_nom",
+    "num_segment"
+  ],
+  "redirect_to_parent": true,
+  "specific": {
+    "num_segment": {
+      "type_widget": "number",
+      "attribut_label": "Numéro du segment",
+      "required": true,
+      "min": 1,
+      "max": 1000
+    },
+    "medias": {
+      "hidden": true
+    },
+    "comments" : {
+      "hidden": true
+    }
+  }
+}
