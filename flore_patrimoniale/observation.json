@@ -6,6 +6,7 @@
 "display_properties": [
   "cd_nom",
   "nombre",
+  "id_nomenclature_braunblanq_abdom",
   "comments"
 ],
 "display_list": [

@@ -1,0 +1,25 @@
+{
+  "tree": {
+    "module": {
+      "sites_group": {
+        "site": {
+          "visit": {
+            "observation": null
+          }
+        }
+      },
+      "site": {}
+    }
+  },
+  "data": {
+    "taxonomy": {
+      "id_list": "__ID_COMPONENT_TAXONOMY"
+    }
+  }, 
+  "permission_objects" : [
+      "GNM_GRP_SITES", 
+      "GNM_SITES", 
+      "GNM_VISITES", 
+      "GNM_OBSERVATIONS"
+  ]
+}

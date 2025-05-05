@@ -1,0 +1,45 @@
+{   "label": "Aire d'études",
+    "label_list": "Aire d'études",
+    "map_label_field_name": "sites_group_name",
+    "color":"#FAF38F",
+    "genre": "F",
+    "display_properties": [
+      "sites_group_name",
+      "sites_group_description"
+    ],
+    "display_list": [
+      "sites_group_name",
+      "nb_sites",
+      "nb_visits"
+    ],    
+    "specific": {
+      "sites_group_name": {
+        "required": false,
+        "hidden": false,
+        "attribut_label": "Nom de l'aire d'études",
+        "type_widget": "text"
+      }, 
+      "sites_group_description": {
+        "required": false,
+        "hidden": true,
+        "attribut_label": "Remarque/description",
+        "type_widget": "text"
+      }, 
+      "sites_group_code": {
+        "type_widget": "select",
+        "required": true,
+        "hidden": false,
+        "attribut_label": "Type d'aire d'études",
+        "values": ["Espace Naturel Sensible", "Natura 2000", "Réserve Naturelle","Site sous convention","Autres"]
+      }, 
+      "medias": {
+        "required": false,
+        "hidden": true
+      }, 
+      "nb_sites": {
+        "attribut_label": "Nombre de sites"
+      }, "nb_visits": {
+        "attribut_label": "Nombre de visites"
+      }           
+    }
+  }

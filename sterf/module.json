@@ -1,0 +1,7 @@
+{
+    "module_label":"Suivi Temporel des Rhopalocères de France",
+    "module_desc":"Module de saisie du protocole STERF",
+    "export_csv": [
+      { "label": "Format observations CSV", "type":"csv" , "method": "standard" }
+    ]
+}

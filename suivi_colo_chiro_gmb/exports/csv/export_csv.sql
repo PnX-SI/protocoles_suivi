@@ -144,8 +144,8 @@ data_monitoring AS (
 			else obscompl.data ->> 'sexe'::text
 		end AS sexe,
 		obs."comments" as commentaire_observation
-
-	FROM gn_monitoring.t_sites_groups grpsite
+FROM gn_monitoring.t_sites_groups grpsite
+		JOIN gn_monitoring.cor_sites_group_module grpsitemodule on grpsitemodule.id_sites_group = grpsite.id_sites_group
 		JOIN gn_monitoring.t_site_complements sitecompl ON grpsite.id_sites_group = sitecompl.id_sites_group
 		JOIN gn_monitoring.t_base_sites site ON sitecompl.id_base_site = site.id_base_site
 		JOIN utilisateurs.t_roles roles ON roles.id_role = site.id_inventor
@@ -156,7 +156,7 @@ data_monitoring AS (
 		JOIN taxonomie.taxref tx ON obs.cd_nom = tx.cd_nom
 		JOIN gn_monitoring.t_observation_complements obscompl ON obscompl.id_observation = obs.id_observation
 
-	WHERE grpsite.id_module = gn_commons.get_id_module_bycode('comptagechiros'::text)
+	WHERE grpsitemodule.id_module = gn_commons.get_id_module_bycode('comptagechiros'::text)
 
 ),
 

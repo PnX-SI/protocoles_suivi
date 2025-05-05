@@ -1,0 +1,240 @@
+{
+  "display_properties": [
+    "id_base_site",
+    "id_dataset",
+    "observers",
+    "visit_date_min",
+    "time_start",
+    "time_end",
+    "quadrat",
+    "temperature",
+    "cloudiness",
+    "rain",
+    "wind",
+    "data_abiotique",
+    "physicochimie_temp",
+    "physicochimie_ph",
+    "physicochimie_conductivite",
+    "physicochimie_O2_dissous_mg_l",
+    "physicochimie_tx_O2",
+    "habitat_hauteur_lame_eau_classe",
+    "habitat_hauteur_lame_eau_cm",
+    "habitat_hauteur_sediments_cm", 
+    "habitat_substrat_organique",  
+    "habitat_granulo_sediments_majoritaire",  
+    "habitat_commentaires", 
+    "data_labo_DBO5", 
+    "data_labo_COD", 
+    "data_labo_PO4",
+    "data_labo_Ptotal", 
+    "data_labo_NH4",  
+    "data_labo_NO2", 
+    "data_labo_NO3",
+    "data_labo_chlorures", 
+    "data_labo_sulfates", 
+    "data_labo_cuivre",
+    "data_labo_micropolluants",
+    "comments"
+  ],
+  "display_list": [
+    "id_base_site",
+    "visit_date_min",
+    "observers"
+  ],
+  "map_label_field_name": "base_site_name",
+  "specific": {
+    "visit_date_min": {
+      "attribut_label": "Date",
+      "required": true
+    },
+    "time_start": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début du relevé",
+      "required": true
+    },
+    "quadrat": {
+      "type_widget": "select",
+      "attribut_label": "Quadrat",
+      "values": ["1a" ,"1b" ,"2a" ,"2b" ,"3a" ,"3b" ,"4a" ,"4b" ,"5a" ,"5b" ,"6a" ,"6b" ,"8a" ,"8b" ,"HQ"],
+      "required": true
+    },
+    "temperature": {
+      "type_widget": "number",
+      "attribut_label": "Température au début du relevé",
+      "required": true
+    },
+    "cloudiness": {
+      "type_widget": "select",
+      "attribut_label": "Couverture nuageuse",
+      "values": ["0 à 10%","10 à 25%", "25 à 50%", "Plus de 50%"],
+      "required": true
+    },
+    "rain": {
+      "type_widget": "select",
+      "attribut_label": "Pluie",
+      "values": ["Pas de précipitations","Averses", "Pluie continue", "Orage"],
+      "required": true
+    },
+    "wind": {
+      "type_widget": "select",
+      "attribut_label": "Vent",
+      "values": ["Nul","Faible", "Moyen", "Soutenu", "Rafales"],
+      "required": true
+    }, 
+    "data_abiotique": {
+      "type_widget": "radio",
+      "attribut_label": "Transmission de données abiotiques ?",
+      "values": ["Physico-chimie", "Habitat", "Données laboratoire", "Non"],
+      "default": "Non",
+      "required": true
+    },
+    "physicochimie_temp": {
+      "type_widget": "number",
+      "attribut_label": "Physico-chimie - Température",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
+      "required": false
+    },
+    "physicochimie_ph": {  
+      "type_widget": "number",
+      "attribut_label": "Physico-chimie - Ph",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
+      "required": false
+    },
+    "physicochimie_conductivite": { 
+      "type_widget": "number",
+      "attribut_label": "Physico-chimie - Conductivitée",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
+      "required": false
+    },
+    "physicochimie_O2_dissous_mg_l": { 
+      "type_widget": "number",
+      "attribut_label": "Physico-chimie - O2 dissous mg/l",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
+      "required": false
+    },
+    "physicochimie_tx_O2": {
+      "type_widget": "number",
+      "attribut_label": "Physico-chimie - taux O2 (%)",
+      "hidden": "({value}) => value.data_abiotique != 'Physico-chimie'",
+      "required": false
+    },
+    "habitat_hauteur_lame_eau_classe": {
+      "type_widget": "select",
+      "attribut_label": "Habitat - Lame eau classe",
+      "values": ["0","0,5 à 4", "4 à 8", "8  à 15", "15 à 20",  "plus de  20"],
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
+      "required": false
+    },
+    "habitat_hauteur_lame_eau_cm": {
+      "type_widget": "number",
+      "attribut_label": "Habitat - Hauteur lame d'eau (cm)",
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
+      "required": false
+    },
+    "habitat_hauteur_sediments_cm": {
+      "type_widget": "number",
+      "attribut_label": "Habitat - Hauteur sediments (cm)",
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
+      "required": false
+    },
+    "habitat_substrat_organique": {
+      "type_widget": "select",
+      "attribut_label": "Habitat - Substrat organique",
+      "values": ["Absence","Traces/présence", "Majoritaire"], 
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
+      "required": false
+    },
+    "habitat_granulo_sediments_majoritaire": {
+      "type_widget": "select",
+      "attribut_label": "Habitat - Granulo sediments majoritaire",
+      "values": ["<2mm","2<X<5mm", ">5mm"],
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
+      "required": false
+    },
+    "habitat_commentaires": {
+      "type_widget": "textarea",
+      "attribut_label": "Habitat - Commentaires",
+      "hidden": "({value}) => value.data_abiotique != 'Habitat'",
+      "required": false
+    },
+    "data_labo_DBO5": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - DBO5 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_COD": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - COD (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_PO4": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - PO4 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_Ptotal": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Ptotal (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_NH4": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - NH4 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_NO2": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - NO2 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_NO3": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - NO3 (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_chlorures": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Chlorures (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_sulfates": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Sulfates (mg/l)",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_cuivre": {
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Cuivre µg/l",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "data_labo_micropolluants": {  
+      "type_widget": "textarea",
+      "attribut_label": "Labo - Micropolluants",
+      "hidden": "({value}) => value.data_abiotique != 'Données laboratoire'",
+      "required": false
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaires",
+      "required": false
+    },
+    "time_end": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin du relevé",
+      "required": false
+    },
+    "medias": {
+      "hidden": true
+    }
+  }
+}
