@@ -1,0 +1,102 @@
+
+{
+  "genre":"M",
+  "geometry_type": "LineString",
+  "label": "Transect",
+  "label_list": "Transects",
+  "map_label_field_name": "base_site_name",
+  "display_properties": [
+    "base_site_name",
+    "id_inventor",
+    "first_use_date",
+    "last_visit",
+    "nb_visits",
+    "tirage_site",
+    "habitat_1",
+    "habitat_2",
+    "habitat_3",
+    "habitat_4"
+ ],
+  "display_list": [
+    "base_site_name",
+    "first_use_date",
+    "last_visit",
+    "nb_visits"
+  ],
+  "keep": [
+   "id_inventor",
+   "tirage_site"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "STERF"
+      },
+      "hidden": true
+    },
+    "tirage_site": {
+      "type_widget": "select",
+      "attribut_label": "Modalité de sélection du site *",
+      "required": true,
+      "values": ["Tiré aléatoirement", "Choisi"],
+      "value":"Choisi"
+    },
+    "habitat_1": {
+      "type_widget": "select",
+      "attribut_label": "Habitat (subdivision 1) *",
+      "required": true,
+      "values": ["A. Forêt (arbres > 5m de hauteur)","B. Buissons ou jeune forêt (<5m de hauteur)","C. Pelouses, marais et landes","D. Milieux agricoles","E. Milieux bâtis ou urbanisés","G. Rochers terrestres ou côtiers"]
+    },
+    "habitat_2": {
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Habitat (subdivision 2)",
+      "values": [
+        "({value}) => {",
+        "  if (value.habitat_1 == 'A. Forêt (arbres > 5m de hauteur)') { return [ 'a. Feuillus exclusifs','b. Mixte dom. Feuillus (< 10% conifères)','c. Mixte dom. conifères (< 10% feuillus)','d. Conifères exclusifs','e. Mixte' ] }",
+        "  if (value.habitat_1 == 'B. Buissons ou jeune forêt (<5m de hauteur)') { return [ 'a. Feuillus exclusifs','b. Mixte dom. feuillus (< 10% conifères)','c. Mixte dom. conifères (< 10% feuillus)','d. Conifères exclusifs','e. Mixte' ] }",
+        "  if (value.habitat_1 == 'C. Pelouses, marais et landes') { return [ 'a. Pelouse calcaire sèche','b. Lande herbacée','c. Lande à bruyères','d. Autres pelouses sèches','e. Pelouse d altitude', 'f. Pelouse humide naturelle', 'g. Pelouse inondée/marais pâturé', 'h. Tourbière', 'i. Roselière', 'j. Marais salant (halophile)', 'k. Autres zones humides ouvertes' ] }",
+        "  if (value.habitat_1 == 'D. Milieux agricoles') { return [ 'a. Prairie cultivée','b. Prairie non cultivée','c. Prairie / cultures mixtes','d. Grandes cultures','e. Vergers / vignes / cultures maraîchères','f. Autres types de cultures' ] }",
+        "  if (value.habitat_1 == 'E. Milieux bâtis ou urbanisés') { return [ 'a Zone urbaine résidentielle','b Zone urbaine industrielle','c Zone suburbaine résidentielle','d Zone suburbaine industrelle','e Zone rurale' ] }",
+        "  else { return [ 'a. Falaise','b. Eboulis, pente rocheuse','c. Carrière','d. Autres sols rocheux' ]} ",
+        "}"
+      ]
+    },
+    "habitat_3": {
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Habitat (subdivision 3)",
+      "values": [
+        "({value}) => {",
+        "  if (value.habitat_1 == 'A. Forêt (arbres > 5m de hauteur)') { return [ '1. Sous-bois dense','2. Sous-bois clair','3. Clairière et lisière','4. Parc (arbres épars et prairies)' ] }",
+        "  if (value.habitat_1 == 'B. Buissons ou jeune forêt (<5m de hauteur)') { return [ '1. Forêt de régénération ou taillis','2. Buissons calcicoles','3. Lande arbustive non calcicole','4. Garrigue (calcaire) (Méditerr)','5. Maquis (non calcaire) (Méditerr)','6. Buissons de zones humides' ] }",
+        "  if (value.habitat_1 == 'C. Pelouses, marais et landes') { return [ '1. Entouré de haies avec arbres','2. Entouré de haies de buissons','3. Entouré de ligne d arbres sans haie','4. Avec buissons épars','5. Sans buissons épars','6. Groupes isolés de 1-10 arbres','7. Autres limites de terrain (digue, fossé, mur, ...)' ] }",
+        "  if (value.habitat_1 == 'D. Milieux agricoles') { return [ '1. Entouré de haies avec arbres','2. Entouré de haies de buissons','3. Entouré de ligne d arbres sans haie','4. Entouré de bandes herbeuses','5. Avec des groupes isolés de 1-10 arbres','6. Autre limite de terrain (digue, fossé, mur, ...)' ] }",
+        "  if (value.habitat_1 == 'E. Milieux bâtis ou urbanisés') { return [ '1. Zones bâties prédominantes','2. Jardin','3. Parc public, zone de loisirs','4. Bord d une route (< 50 m)','5. Bord d un chemin de fer (< 50 m)','6. Décharge d’ordures' ] }",
+        "  else { return [ '1. En montagne','2. En bord de mer','3. En bord de lac ou de rivière','4. Autre' ]} ",
+        "}"
+      ]
+    },
+    "habitat_4": {
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Habitat (subdivision 4)",
+      "values": [
+        "({value}) => {",
+        "  if (value.habitat_1 == 'A. Forêt (arbres > 5m de hauteur)') { return [ 'a. Non perturbé','b. Peu exploité','c. Fortement exploité','d. Pâturé' ] }",
+        "  if (value.habitat_1 == 'B. Buissons ou jeune forêt (<5m de hauteur)') { return [ 'a. Non perturbé','b. Peu exploité','c. Fortement exploité','d. Pâturé' ] }",
+        "  if (value.habitat_1 == 'C. Pelouses, marais et landes') { return [ 'a. Non perturbé/non exploité','b. Fauché','c. Pâturé' ] }",
+        "  if (value.habitat_1 == 'D. Milieux agricoles') { return [ 'a. Non exploité (jachère)','b. Fauché','c. Pâturé','d. Céréales','e. Arbres fruitiers','f. Autres cultures' ] }",
+        "  if (value.habitat_1 == 'E. Milieux bâtis ou urbanisés') { return [ 'a. Avec peu d espaces verts (< 25 %)','b. Avec des espaces verts surtout composés de pelouses','c. Avec des espaces verts buissonants (parterres, friches)','d. Avec des espaces verts fortement arborés','e. Avec un (des) potager(s)' ] }",
+        "  else { return [ 'a. A dominante calcaire avec végétation herbacée rase','b. A dominante calcaire avec végétation herbacée haute','c. A dominante calcaire avec végétation buissonnante','d. A dominante non calcaire avec végétation herbacée rase','e. A dominante non calcaire avec végétation herbacée haute','f. A dominante non calcaire avec végétation buissonnante' ]} ",
+        "}"
+      ]
+    }
+  }
+}

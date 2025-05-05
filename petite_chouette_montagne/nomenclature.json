@@ -1,0 +1,30 @@
+{
+  "types": [
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    },
+    {
+      "mnemonique": "AUDIO_DEVICE",
+      "label_default": "Appareil audio",
+      "definition_default": "Nomenclature des appareils de diffusion audio, utilisé notemment dans le cas du protocole Petites Chouettes de Montagnes"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "PT_CHT_MONT",
+      "mnemonique": "Petite_Chouette_Montagne",
+      "label_default": "Site petite chouette de montagne",
+      "definition_default": "Site de suivi des Petites Chouettes de Montagne"
+    },
+    {
+      "type": "AUDIO_DEVICE",
+      "cd_nomenclature": "BOSE_MINILINK",
+      "mnemonique": "bose_minilink",
+      "label_default": "Enceinte bose minilink calibré",
+      "definition_default": "Enceinte bose minilink calibré"
+    }
+  ]
+}

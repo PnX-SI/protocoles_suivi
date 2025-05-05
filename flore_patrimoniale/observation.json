@@ -1,0 +1,38 @@
+{
+  "description_field_name":"cd_nom",
+  "label": "observation",
+  "label_list": "observations",
+  "genre":"F",
+"display_properties": [
+  "cd_nom",
+  "nombre",
+  "id_nomenclature_braunblanq_abdom",
+  "comments"
+],
+"display_list": [
+  "cd_nom",
+  "nombre"
+],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèces observées",
+      "keyValue": "cd_nom",
+      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
+      "multiple": false,
+      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    } ,
+    "nombre": {
+      "type_widget": "number",
+      "attribut_label": "Nombre",
+      "hidden": false
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+}
+}

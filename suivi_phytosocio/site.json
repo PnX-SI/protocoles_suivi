@@ -1,0 +1,79 @@
+{
+  "genre":"M",
+  "label": "quadrat",
+  "label_list": "Quadrats",
+  "geometry_type": "Point",
+  "map_label_field_name": "base_site_name",
+  "export_pdf": [
+      { "template": "fiche_aire.html", "label": "Export PDF" }
+  ],
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "display_properties": [
+    "base_site_name",
+    "id_sites_group",
+    "num_transect",
+    "num_placette",
+    "id_inventor",
+    "first_use_date"
+ ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "first_use_date",
+    "nb_visits"
+  ],
+  "specific": {
+    "base_site_name": {
+      "hidden": true,
+      "required": false
+    },
+    "base_site_code": {
+      "hidden": true,
+      "required": false
+    },
+    "num_placette": {
+      "type_widget": "number",
+      "attribut_label": "N° de la placette",
+      "required": true,
+      "definition": "Position de la placette sur le transect.\nNoté '1' lorsque la placette est située à l'origine du transect."
+    },
+    "num_transect": {
+      "type_widget": "number",
+      "attribut_label": "N° du transect",
+      "required": true,
+      "definition": "0 pour un placement en dehors d'un transect"
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Groupe de site",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false,
+      "definition": "Liste des zones de prospections définies pour le protocole."
+    },
+    "id_nomenclature_type_site": {
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "PHYTOSOCIO"
+      },
+      "hidden": true
+    }
+  },
+  "change": [
+      "({objForm, meta}) => {",
+          "const base_site_name = 'T' + (objForm.value.num_transect) + 'Q' + (objForm.value.num_placette);",
+          "if (!objForm.controls.base_site_name.dirty) {",
+              "objForm.patchValue({base_site_name})",
+          "}",
+      "}",
+      ""
+  ]
+}

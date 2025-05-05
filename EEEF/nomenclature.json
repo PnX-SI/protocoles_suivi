@@ -1,0 +1,13 @@
+{
+  "types": [
+  ],
+  "nomenclatures": [
+  {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "EEEF",
+      "mnemonique": "Site_EEEF",
+      "label_default": "Site EEEF",
+      "definition_default": "Site de relevé du protocole EEEF"
+    }
+  ]
+}

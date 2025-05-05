@@ -1,0 +1,155 @@
+{
+  "display_properties": [
+    "uuid_observation",
+    "cd_nom",
+    "para_taxon",
+    "presence_arbre_1",
+    "presence_arbre_2",
+    "presence_arbre_3",
+    "presence_arbre_4",
+    "presence_arbre_5",
+    "presence_arbre_6",
+    "presence_arbre_7",
+    "presence_arbre_8",
+    "presence_arbre_9",
+    "presence_arbre_10",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "presence_arbre_1",
+    "presence_arbre_2",
+    "presence_arbre_3",
+    "presence_arbre_4",
+    "presence_arbre_5",
+    "presence_arbre_6",
+    "presence_arbre_7",
+    "presence_arbre_8",
+    "presence_arbre_9",
+    "presence_arbre_10"
+  ],
+  "keep": [
+    "id_nomenclature_observation_status"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+    "para_taxon": {
+      "type_widget": "select",
+      "attribut_label": "Para taxon",
+      "description": "A remplir si groupe de taxon",
+      "values": [
+        "Crustacé verdatre",
+        "Crustacé aérolé",
+        "Crustacé gris/bleu",
+        "Fruticuleux",
+        "Granuleux vert",
+        "Lepra amara / albescens",
+        "Lirelle",
+        "Parmelia brun",
+        "Parmelia sulcata / saxatilis / submontana",
+        "Périthèces",
+        "Périthèces noir",
+        "Pertusaria noir",
+        "Poudre verte",
+        "Poudre verte apothécies noires",
+        "Poudre jaune",
+        "Poudre jaune hypothalle noir",
+        "Squamules vertes",
+        "Thalle vert",
+        "Thalle apothécies rougeatre",
+        "Thalle sorédié vert/jaune"
+      ],
+      "required": false
+    },
+    "tout_cocher": {
+      "attribut_label": "Tout cocher/décocher",
+      "type_widget": "bool_checkbox",
+      "value": false,
+      "default": false
+    },
+    "presence_arbre_1": {
+      "attribut_label": "Présent arbre 1",
+      "type_widget": "bool_checkbox",
+      "default": 0
+    },
+    "presence_arbre_2": {
+      "attribut_label": "Présent arbre 2",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_3": {
+      "attribut_label": "Présent arbre 3",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_4": {
+      "attribut_label": "Présent arbre 4",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_5": {
+      "attribut_label": "Présent arbre 5",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_6": {
+      "attribut_label": "Présent arbre 6",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_7": {
+      "attribut_label": "Présent arbre 7",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_8": {
+      "attribut_label": "Présent arbre 8",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_9": {
+      "attribut_label": "Présent arbre 9",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "presence_arbre_10": {
+      "attribut_label": "Présent arbre 10",
+      "type_widget": "bool_checkbox",
+      "default": false
+    },
+    "id_nomenclature_observation_status": {
+      "type_widget": "datalist",
+      "attribut_label": "Statut d'observation",
+      "api": "nomenclatures/nomenclature/STATUT_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "hidden": true,
+      "default": {
+        "cd_nomenclature": "Pr"
+      }
+    },
+    "comments": {
+      "attribut_label": "Remarques",
+      "type_widget": "textarea"
+    }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+    "console.log( objForm.value.tout_cocher );",
+    "const presence_arbre_1 = presence_arbre_2 = presence_arbre_3 = presence_arbre_4 = presence_arbre_5 = presence_arbre_6 = presence_arbre_7 = presence_arbre_8 = presence_arbre_9 = presence_arbre_10 = objForm.value.tout_cocher || false;",
+    "if (!objForm.controls.presence_arbre_1.dirty && !objForm.controls.presence_arbre_2.dirty && !objForm.controls.presence_arbre_3.dirty && !objForm.controls.presence_arbre_4.dirty && !objForm.controls.presence_arbre_5.dirty && !objForm.controls.presence_arbre_6.dirty && !objForm.controls.presence_arbre_7.dirty && !objForm.controls.presence_arbre_8.dirty && !objForm.controls.presence_arbre_9.dirty && !objForm.controls.presence_arbre_10.dirty ) {",
+    "objForm.patchValue({presence_arbre_1, presence_arbre_2, presence_arbre_3, presence_arbre_4, presence_arbre_5, presence_arbre_6, presence_arbre_7, presence_arbre_8, presence_arbre_9, presence_arbre_10})",
+    "}",
+    "}",
+    ""
+  ]
+}

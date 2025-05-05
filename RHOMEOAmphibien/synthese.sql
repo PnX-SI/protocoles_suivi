@@ -19,8 +19,8 @@
 -- ne pas remplacer cette variable, elle est indispensable pour les scripts d'installations
 -- le module pouvant être installé avec un code différent de l'original
 
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_:module_code;
-CREATE VIEW gn_monitoring.v_synthese_:module_code AS
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_RHOMEOAmphibien;
+CREATE VIEW gn_monitoring.v_synthese_RHOMEOAmphibien AS
 
 WITH source AS (
 
@@ -29,7 +29,7 @@ WITH source AS (
         id_source
 
     FROM gn_synthese.t_sources
-	WHERE name_source = CONCAT('MONITORING_', UPPER(:'module_code'))
+	WHERE name_source = CONCAT('MONITORING_', UPPER(:module_code))
 	LIMIT 1
 
 ), sites AS (
@@ -37,14 +37,12 @@ WITH source AS (
     SELECT
 
         id_base_site,
-        geom AS the_geom_4326,
-	    ST_CENTROID(geom) AS the_geom_point,
-	    geom_local as the_geom_local,
-		id_nomenclature_type_site,
+        s.geom AS the_geom_4326,
+	    ST_CENTROID(s.geom) AS the_geom_point,
+	    s.geom_local as the_geom_local, 
 		sg.sites_group_name,
 		sg.sites_group_description,
-		base_site_name,
-		altitude_min,
+		base_site_name, 
 		ref_nomenclatures.get_nomenclature_label((sc.data::json#>>'{prospect_typo}')::int) AS prospect_typo,
 		ref_nomenclatures.get_nomenclature_label((sc.data::json#>>'{prospect_form}')::int) AS prospect_form,
 		(sc.data::json#>>'{profondeur_maxi}')::text AS profondeur_maxi,
@@ -60,16 +58,14 @@ WITH source AS (
 		(sc.data::json#>>'{esp_veget}')::text AS esp_veget,
 		(sc.data::json#>>'{esp_poisson}')::text AS esp_poisson,
 		(sc.data::json#>>'{esp_ecrevisse}')::text AS esp_ecrevisse,
-		base_site_description
-
-        FROM gn_monitoring.t_base_sites
+		base_site_description,
+		s.altitude_min,
+		s.altitude_max 
+        FROM gn_monitoring.t_base_sites s
 		JOIN gn_monitoring.t_site_complements sc USING (id_base_site)
 		LEFT JOIN gn_monitoring.t_sites_groups sg USING (id_sites_group)
-
 ), visits AS (
-    
     SELECT
-    
         id_base_visit,
         uuid_base_visit,
         id_module,
@@ -150,8 +146,8 @@ SELECT
 		--meta_v_taxref
 		--sample_number_proof
 		--digital_proofvue
-		alt.altitude_min,
-		alt.altitude_max,
+		s.altitude_min,
+		s.altitude_max,
 		s.the_geom_4326,
 		s.the_geom_point,
 		s.the_geom_local,
@@ -211,8 +207,6 @@ SELECT
 	JOIN source 
         ON TRUE
 	JOIN observers obs 
-		ON obs.id_base_visit = v.id_base_visit
- 	LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.the_geom_local) alt (altitude_min, altitude_max)
-        ON TRUE
-    WHERE m.module_code = :'module_code'
+		ON obs.id_base_visit = v.id_base_visit 
+    WHERE m.module_code = :module_code
     ;

@@ -43,8 +43,8 @@ SELECT
   ref_nomenclatures.get_id_nomenclature('TYP_GRP', 'REL') as id_nomenclature_grp_typ,
   t.cd_nom,
   t.nom_complet AS nom_cite,
-  alt.altitude_min,
-  alt.altitude_max,
+  s.altitude_min,
+  s.altitude_max,
   s.geom AS the_geom_4326,
   st_centroid(s.geom) AS the_geom_point,
   s.geom_local AS the_geom_local,
@@ -73,8 +73,7 @@ FROM
     (
       toc.data ->> 'id_nomenclature_statut_observation' :: text
     ) :: integer
-  ) = tn.id_nomenclature
-  LEFT JOIN LATERAL ref_geo.fct_get_altitude_intersection(s.geom_local) alt(altitude_min, altitude_max) ON true
+  ) = tn.id_nomenclature 
 WHERE
   m.module_code :: text = 'ecrevisses_pattes_blanches' :: TEXT
   AND tn.cd_nomenclature = 'Pr';

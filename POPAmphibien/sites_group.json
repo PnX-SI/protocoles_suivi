@@ -11,7 +11,6 @@
   ],
   "display_properties": [
     "id_inventor",
-    "commune",
     "sites_group_name",
     "categories_paysageres",
     "comments"
@@ -31,32 +30,24 @@
       "type_util": "user",
       "required": true
     },
-    "commune": {
-        "type_widget": "municipalities",
-        "attribut_label": "Commune",
-        "value_field_name": "id_area",
-        "type_util": "area",
-        "required": true,
-        "title":"Veuillez saisir les principales communes concernées par l'aire"
-      },
       "categories_paysageres": {
         "type_widget": "nomenclature",
-        "attribut_label": "Catégories paysagères",
+        "attribut_label": "Habitat principal",
         "code_nomenclature_type": "CATEGORIE_PAYSAGERE",
-        "required": false,
+        "required": true,
         "type_util": "nomenclature",
-        "title":"Indiquer la catégorie majoritaire"
+        "title":"Indiquer l'habitat majoritaire"
       },
       "comments": {
           "type_widget": "textarea",
-          "attribut_label": "Commentaire"
+          "attribut_label": "Commentaire",
+	  "required": false
        },
-
        "sites_group_name": {
         "type_widget": "text",
         "attribut_label": "Nom de l'aire",
         "required": true,
-        "definition": "Nom du groupe site."
+        "definition": "Si des données étaient transmises antérieurement via un fichier Excel, veuillez noter exactement le même nom d'aire OU informer la SHF (geomaticien@lashf.org) si vous souhaitez modifier le nom"
         },
       "sites_group_code": {
         "type_widget": "text",
@@ -72,6 +63,5 @@
       "nb_visits": {
         "attribut_label": "Nombre de passages"
       }
-
   }
 }

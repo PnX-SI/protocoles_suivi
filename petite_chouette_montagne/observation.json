@@ -1,0 +1,136 @@
+{
+  "description_field_name":"cd_nom",
+  "genre":"F",
+  "display_properties": [
+    "listen_time",
+    "cd_nom",
+    "duration_all",
+    "duration_repasse",
+    "nb_before_rep",
+    "nb_repasse",
+    "nb_total",
+    "chev_chant",
+    "hulotte",
+    "nb_hulotte",
+    "sexe",
+    "nb_passereau",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "listen_time",
+    "nb_total"
+  ],
+  "specific": {
+    "cd_nom":{
+      "type_widget": "datalist",
+      "attribut_label": "Taxon",
+      "keyValue": "cd_nom",
+      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
+      "multiple": false,
+      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    },
+    "listen_time": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début d'écoute",
+      "required": true
+    },
+    "duration_all":{
+      "type_widget": "number",
+      "attribut_label": "Durée totale passée au point d'écoute (min)",
+      "required": true,
+      "min": 0,
+      "max": 10
+    },
+    "duration_repasse":{
+      "type_widget": "number",
+      "attribut_label": "Durée de la repasse (min)",
+      "required": true,
+      "min": 0,
+      "max": 3
+    },
+    "nb_before_rep":{
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individu avant repasse",
+      "required": true,
+      "value":0
+    },
+    "nb_repasse":{
+      "type_widget": "number",
+      "attribut_label": "Nombre d'individu durant repasse",
+      "required": true,
+      "value":0
+    },
+    "nb_total":{
+      "type_widget": "number",
+      "attribut_label": "Nombre total d'individu jusqu'à la fin des 10 min",
+      "required": true,
+      "value":0
+    },
+    "hulotte": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Présence de Chouette Hulotte",
+      "values": ["Oui", "Non entendue"]
+    },
+    "nb_hulotte": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d’individus Hulotte différents contactés (entendus/vu…)",
+      "hidden": "({value}) => value.hulotte != 'Oui'",
+      "required": "({value}) => value.hulotte == 'Oui'",
+      "value":0
+    },
+    "chev_chant":{
+      "type_widget": "number",
+      "attribut_label": "Nombre total de Chevêchette chanteur",
+      "value":0,
+      "hidden": "({value}) => (value.cd_nom != (null || undefined) ? value.cd_nom != 3507 : true)",
+      "required": "({value}) => (value.cd_nom != (null || undefined) ? value.cd_nom == 3507 : false)"
+    },
+    "sexe":{
+      "type_widget": "datalist",
+      "attribut_label": "Sexe",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "params": {
+          "regne": "Animalia",
+          "group2_inpn": "Oiseaux"
+      },
+      "hidden": "({value}) => (value.cd_nom != (null || undefined) ? value.cd_nom != 3507 : true)",
+      "required": "({value}) => (value.cd_nom != (null || undefined) ? value.cd_nom == 3507 : false)"
+    },
+    "nb_passereau":{
+      "type_widget": "number",
+      "attribut_label": "Nbre espèces de passereaux qui répondent à la repasse Chevêchette dans un rayon de 10m",
+      "value":0,
+      "hidden": "({value}) => (value.cd_nom != (null || undefined) ? value.cd_nom != 3507 : true)",
+      "required": "({value}) => (value.cd_nom != (null || undefined) ? value.cd_nom == 3507 : false)"
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+  },
+  "change": [
+      "({objForm, meta}) => {",
+          "const nb_passereau = null;",
+          "const chev_chant = null;",
+          "const sexe = null;",
+          "const nb_total = (objForm.value.nb_before_rep + objForm.value.nb_repasse);",
+          "const nb_hulotte = 0;",
+          "objForm.patchValue({nb_total});",
+          "(objForm.value.cd_nom != (null || undefined) && objForm.value.cd_nom != 3507 ? objForm.patchValue({nb_passereau}) : '');",
+          "(objForm.value.cd_nom != (null || undefined) && objForm.value.cd_nom != 3507 ? objForm.patchValue({chev_chant}) : '');",
+          "(objForm.value.cd_nom != (null || undefined) && objForm.value.cd_nom != 3507 ? objForm.patchValue({sexe}) : '');",
+          "(objForm.value.hulotte != 'Oui' ? objForm.patchValue({nb_hulotte}) : '');",
+      "}",
+      ""
+  ]
+}
