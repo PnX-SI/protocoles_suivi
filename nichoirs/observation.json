@@ -11,10 +11,13 @@
     "jeune_vivant",
     "jeune_mort"
   ],
-  "id_base_visit": {
-      "type_widget": "text",
-      "attribut_label": "Id visite",
-      "hidden": true
+  "specific": {
+    "cd_nom": {
+       "type_widget": "taxonomy",
+       "attribut_label": "Espèce",
+       "type_util": "taxonomy",
+       "required": true,
+       "id_list": "__MODULE.ID_LIST_TAXONOMY"
     },
     "adulte": {
       "type_widget": "number",
@@ -56,5 +59,6 @@
       "hidden": false,
       "required": false
     }
+  }
 }
 
