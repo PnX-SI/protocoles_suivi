@@ -34,7 +34,7 @@ SELECT to2.uuid_observation                                                     
        tbs.uuid_base_site                                                                                 AS unique_id_sinp_grp,
        t_source.id_source,
        tbv.id_module,
-       to2.id_observation                                                                                 AS entity_source_pk_value,
+       to2.id_observation,                                                                                -- AS entity_source_pk_value,
        tbv.id_dataset,
        ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO'::character varying,
                                              'St'::character varying)                                     AS id_nomenclature_geo_object_nature,
