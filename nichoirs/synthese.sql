@@ -21,7 +21,7 @@
 
 DROP VIEW IF EXISTS gn_monitoring.v_synthese_nichoirs;
 CREATE OR REPLACE VIEW gn_monitoring.v_synthese_nichoirs AS
-    WITH t_source AS (SELECT t_sources.id_source
+WITH t_source AS (SELECT t_sources.id_source
                   FROM gn_synthese.t_sources
                   WHERE t_sources.name_source::text = concat('MONITORING_', upper('NICHOIRS'::text))),
      observers AS (SELECT array_agg(r.id_role)                                            AS ids_observers,
@@ -34,7 +34,7 @@ SELECT to2.uuid_observation                                                     
        tbs.uuid_base_site                                                                                 AS unique_id_sinp_grp,
        t_source.id_source,
        tbv.id_module,
-       to2.id_observation,                                                                                -- AS entity_source_pk_value,
+       --to2.id_observation                                                                                  AS entity_source_pk_value,
        tbv.id_dataset,
        ref_nomenclatures.get_id_nomenclature('NAT_OBJ_GEO'::character varying,
                                              'St'::character varying)                                     AS id_nomenclature_geo_object_nature,
@@ -100,7 +100,8 @@ SELECT to2.uuid_observation                                                     
        to2.comments                                                                                       AS comment_description,
        tsc.id_sites_group,
        tbs.id_base_site,
-       tbv.id_base_visit
+       tbv.id_base_visit,
+       to2.id_observation
 FROM gn_monitoring.t_base_sites tbs
          LEFT JOIN gn_monitoring.t_site_complements tsc ON tsc.id_base_site = tbs.id_base_site
          LEFT JOIN gn_monitoring.t_base_visits tbv ON tbs.id_base_site = tbv.id_base_site
@@ -115,3 +116,6 @@ FROM gn_monitoring.t_base_sites tbs
 WHERE tm.module_label::text ~~* 'Nichoirs'::text
   AND to2.cd_nom IS NOT NULL
   AND to2.uuid_observation IS NOT NULL;
+
+
+grant delete, insert, references, select, trigger, truncate, update on gn_monitoring.v_synthese_nichoirs to geonature;
