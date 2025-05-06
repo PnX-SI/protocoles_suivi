@@ -99,7 +99,8 @@ SELECT to2.uuid_observation                                                     
        tbv.comments                                                                                       AS comment_context,
        to2.comments                                                                                       AS comment_description,
        tsc.id_sites_group,
-       tbs.id_base_site
+       tbs.id_base_site,
+       tbv.id_base_visit
 FROM gn_monitoring.t_base_sites tbs
          LEFT JOIN gn_monitoring.t_site_complements tsc ON tsc.id_base_site = tbs.id_base_site
          LEFT JOIN gn_monitoring.t_base_visits tbv ON tbs.id_base_site = tbv.id_base_site
