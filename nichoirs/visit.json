@@ -1,0 +1,44 @@
+{
+  "chained": false,
+  "genre": "M",
+  "label": "Passage",
+  "display_properties": [
+    "visit_date_min",
+    "observers",
+    "etat_nichoir",
+    "nidification",
+    "comments"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers",
+    "nidification",
+    "nb_observations"
+  ],
+  "specific": {
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du passage",
+      "required": true
+    },
+    "etat_nichoir": {
+      "type_widget": "select",
+      "attribut_label": "Etat du nichoir",
+      "required": true,
+      "values": ["bon état", "à réparer", "à replacer", "non trouvé", "autre"]
+    },
+    "nidification": {
+      "type_widget": "radio",
+      "attribut_label": "Occupation",
+      "values": ["Oui", "Non"],
+      "required": true
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    },
+    "medias": {
+      "hidden": true
+    }
+  }
+}
