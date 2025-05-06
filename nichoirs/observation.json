@@ -11,21 +11,7 @@
     "jeune_vivant",
     "jeune_mort"
   ],
-  "uuid_field_name": "uuid_observation",
   "specific": {
-    "uuid_observation": {
-      "attribut_label": "uuid"
-    },
-    "id_observation": {
-      "type_widget": "text",
-      "attribut_label": "Id observation",
-      "hidden": true
-    },
-    "id_base_visit": {
-      "type_widget": "text",
-      "attribut_label": "Id visite",
-      "hidden": true
-    },
     "cd_nom": {
       "type_widget": "taxonomy",
       "attribut_label": "Espèce",
