@@ -1,0 +1,21 @@
+{
+    "module_label": "Suivis botanique de site",
+    "module_desc": "Suivi flore biotope",
+    "export_csv": [
+        {
+            "label": "Observations",
+            "type": "csv",
+            "method": "observations"
+        },
+        {
+            "label": "Sites",
+            "type": "csv",
+            "method": "sites"
+        },
+        {
+            "label": "Inventaires cumulatifs",
+            "type": "csv",
+            "method": "inventaires_cumulatifs"
+        }
+    ]
+}

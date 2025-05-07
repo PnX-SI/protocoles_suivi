@@ -1,0 +1,140 @@
+{
+  "cruved": {
+    "C": 3,
+    "U": 3,
+    "D": 3
+  },
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "map_label_field_name": "base_site_code",
+  "label": "Biotope",
+  "label_list": "Biotopes",
+  "genre": "M",
+  "geometry_type": "Polygon",
+  "display_properties": [
+    "id_sites_group",
+    "base_site_name",
+    "base_site_description",
+    "pente",
+    "id_nomenclature_exposition",
+    "altitude_moyenne",
+    "phytosociologie",
+    "grand_type_milieu",
+    "utilisation_agricole_historique",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code",
+      "required": false,
+      "hidden": true
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "FLORE_BIOTOPE"
+      },
+      "hidden": true
+    },
+    "pente": {
+      "type_widget": "number",
+      "attribut_label": "Pente (°)",
+      "min": 0,
+      "max": 90
+    },
+    "id_nomenclature_exposition": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Exposition",
+      "code_nomenclature_type": "EXPOSITION",
+      "type_util": "nomenclature"
+    },
+    "altitude_moyenne": {
+      "type_widget": "number",
+      "attribut_label": "Altitude moyenne (m)"
+    },
+    "phytosociologie": {
+      "type_widget": "select",
+      "attribut_label": "Phytosociologie"
+    },
+    "grand_type_milieu": {
+      "type_widget": "select",
+      "attribut_label": "Grand type de milieu",
+      "values": [
+        "1 - Sources, ruisselets et suintements sur calcaire",
+        "2 - Sources et ruisselets sur silice",
+        "3 - Rivières",
+        "4 - Bancs de sable, de graviers et de galets",
+        "5 - Formations herbacées luxuriantes (mégaphorbaies)",
+        "6 - Forêts de bord des eaux (ripisylves)",
+        "7 - Suintements temporaires sur silice",
+        "8 - Mares temporaires",
+        "9 - Mares permanentes",
+        "10 - Tourbières de transition entre terre et eau",
+        "11 - Bas marais et prairies humides sur calcaire",
+        "12 - Bas marais acides",
+        "13 - Tourbières hautes actives",
+        "14 - Grottes, gouffres et avens calcaires",
+        "15 - Falaises calcaires",
+        "16 - Éboulis calcaires",
+        "17 - Falaises siliceuses",
+        "18 - Éboulis et chaos siliceux",
+        "19 - Pelouses sur dalles et sur débris rocheux",
+        "20 - Pelouses à armérie de Gérard sur arènes dolomitiques",
+        "21 - Pelouses sèches d'allure steppique des Causses",
+        "22 - Prairies semi-sèches à brome érigé sur marnes et argiles",
+        "23 - Pelouses pionnières à plantes annuelles sur silice",
+        "24 - Pelouses montagnardes sur silice",
+        "25 - Pelouses des sommets sur silice",
+        "26 - Pâturages et prairies des vallées",
+        "27 - Prairies à fourrage des montagnes",
+        "28 - Prairies humides sur sol assez riche",
+        "29 - Pelouses humides à jonc rude et à nard",
+        "30 - Cultures et jardins sur sol frais (adventices)",
+        "31 - Cultures sur sol calcaire sec (messicoles)",
+        "32 - Bords des chemins et des reposoirs du bétail (rudérales)",
+        "33 - Coupes et clairières forestières",
+        "34 - Buissons sur calcaire aux étages méditerranéens (matorrals)",
+        "35 - Buissons et lisières sur sol calcaire sec",
+        "36 - Buissons et lisières sur sol calcaire frais (fruticées)",
+        "37 - Buissons à cistes, à bruyère cendrée et à genêts sur silice (matorrals)",
+        "38 - Buissons à bruyère arborescente et à chêne vert sur silice (matorrals)",
+        "39 - Buissons à genêt à balais ou à ronces et lisières à fougère aigle sur sol siliceux",
+        "40 - Landes basses à bruyère, à callune ou à myrtille",
+        "41 - Landes à genêt purgatif",
+        "42 - Landes des sommets",
+        "43 - Chênaies vertes et mélangées à dautres feuillus",
+        "44 - Chênaies à feuilles caduques sur silice",
+        "45 - Chênaies à feuilles caduques sur calcaire",
+        "46 - Châtaigneraies",
+        "47 - Forêts et matorrals de pin de Salzmann",
+        "48 - Forêts de pin sylvestre sur calcaire",
+        "49 - Forêts de pin sylvestre sur silice",
+        "50 - Forêts de ravin à érables, à frênes, à tilleuls",
+        "51 - Hêtraies sur sol calcaire sec",
+        "52 - Hêtraies-sapinières sur sol peu acide",
+        "53 - Hêtraies-sapinières sur sol acide",
+        "55 - Boisements artificiels",
+        "54 - Hêtraies d'altitude"
+      ]
+    },
+    "utilisation_agricole_historique": {
+      "type_widget": "text",
+      "attribut_label": "historique utilisation terre"
+    }
+  }
+}
