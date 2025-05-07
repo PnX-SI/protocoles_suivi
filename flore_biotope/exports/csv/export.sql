@@ -1,12 +1,14 @@
 --- Export de la liste des taxons observés sur un site avec mention au première et dernière date de visites
 CREATE
-OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_inventaires_cumulatifs AS WITH module AS (
-    SELECT
-        tm.id_module
-    FROM
-        gn_commons.t_modules tm
-    WHERE
-        tm.module_code = :module_code
+OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_inventaires_cumulatifs AS WITH type_site AS (
+ SELECT
+        tm.id_module, cmt.id_type_site
+FROM
+    gn_commons.t_modules tm
+    JOIN  gn_monitoring.cor_module_type cmt 
+    ON cmt.id_module = tm.id_module
+WHERE
+    tm.module_code = 'flore_biotope'
 ),
 type_plante AS (
     SELECT
@@ -34,7 +36,8 @@ SELECT
 FROM
     gn_monitoring.t_base_sites tbs
     JOIN gn_monitoring.t_site_complements tsc ON tbs.id_base_site = tsc.id_base_site
-    JOIN module m ON m.id_module = tsc.id_module
+    JOIN gn_monitoring.cor_site_type cst ON tbs.id_base_site = cst.id_base_site
+    JOIN type_site m ON m.id_type_site = cst.id_type_site
     JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
     JOIN LATERAL (
         SELECT
@@ -57,6 +60,8 @@ FROM
 -- Export des sites
 CREATE
 OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_sites AS
+
+
 SELECT
     tsg.sites_group_name,
     tsg.sites_group_code,
@@ -78,7 +83,7 @@ from
     JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
     JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
     JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module
-    AND mod.module_code = :module_code
+    AND mod.module_code = 'flore_biotope'
     LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
     LEFT JOIN ref_nomenclatures.t_nomenclatures tn ON (tsc.data ->> 'id_nomenclature_exposition') :: integer = tn.id_nomenclature
     LEFT JOIN LATERAL (
@@ -109,13 +114,15 @@ from
 
 -- Export des observations
 CREATE
-OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_observations AS WITH module AS (
-    SELECT
-        tm.id_module
-    FROM
-        gn_commons.t_modules tm
-    WHERE
-        tm.module_code = :module_code
+OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_observations AS WITH type_site AS (
+ SELECT
+        tm.id_module, cmt.id_type_site
+FROM
+    gn_commons.t_modules tm
+    JOIN  gn_monitoring.cor_module_type cmt 
+    ON cmt.id_module = tm.id_module
+WHERE
+    tm.module_code = 'flore_biotope'
 ),
 type_plante AS (
     SELECT
@@ -155,7 +162,8 @@ SELECT
 FROM
     gn_monitoring.t_base_sites tbs
     JOIN gn_monitoring.t_site_complements tsc ON tbs.id_base_site = tsc.id_base_site
-    JOIN module m ON m.id_module = tsc.id_module
+    JOIN gn_monitoring.cor_site_type cst ON tbs.id_base_site = cst.id_base_site
+    JOIN type_site m ON m.id_type_site = cst.id_type_site
     LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
     JOIN gn_monitoring.t_base_visits tbv ON tbv.id_base_site = tbs.id_base_site
     LEFT JOIN gn_monitoring.t_visit_complements tvc ON tvc.id_base_visit = tbv.id_base_visit
