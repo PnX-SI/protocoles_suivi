@@ -40,32 +40,27 @@
     "nb_0_50m": {
       "type_widget": "number",
       "attribut_label": "0-50m (nombre)",
-      "hidden": "({value}) => value.cd_nom != 18437",
-      "required": "({value}) => value.cd_nom == 18437"
+      "value": "0"
     },
     "nb_50_100m": {
       "type_widget": "number",
       "attribut_label": "50 - 100m (nombre)",
-      "hidden": "({value}) => value.cd_nom != 18437",
-      "required": "({value}) => value.cd_nom == 18437"
+      "value": "0"
     },
     "nb_100_150m": {
       "type_widget": "number",
       "attribut_label": "100-150m (nombre)",
-      "hidden": "({value}) => value.cd_nom != 18437",
-      "required": "({value}) => value.cd_nom == 18437"
+      "value": "0"
     },
     "nb_150_200m": {
       "type_widget": "number",
       "attribut_label": "150-200m (nombre)",
-      "hidden": "({value}) => value.cd_nom != 18437",
-      "required": "({value}) => value.cd_nom == 18437"
+      "value": "0"
     },
     "nb": {
       "type_widget": "number",
-      "attribut_label": "Nombre",
-      "hidden": "({value}) => value.cd_nom == 18437",
-      "required": "({value}) => value.cd_nom != 18437"
+      "attribut_label": "Nombre (NE PAS REMPLIR remplacé par les champs nombre par tronçons)",
+      "hidden": "TRUE"
     },
     "statut_source": {
       "type_widget": "datalist",
