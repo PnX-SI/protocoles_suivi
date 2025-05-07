@@ -59,7 +59,7 @@
     },
     "nb": {
       "type_widget": "number",
-      "attribut_label": "Nombre (NE PAS REMPLIR remplacé par les champs nombre par troçons)",
+      "attribut_label": "Nombre (NE PAS REMPLIR remplacé par les champs nombre par tronçons)",
       "hidden": "TRUE"
     },
     "statut_source": {
