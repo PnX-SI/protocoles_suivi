@@ -6,25 +6,12 @@
   "display_properties": [
     "base_site_name",
     "id_sites_group",
-    "id_inventor",
     "first_use_date",
-    "base_site_description",
-    "methode_prospection",
-    "type_materiaux",
-    "nb_plaques",
     "milieu_transect",
-    "milieu_bordier",
-    "milieu_mosaique_vegetale",
-    "milieu_homogene",
-    "milieu_anthropique",
-    "milieu_transect_autre",
-    "microhabitat_favorable",
-    "frequentation_humaine",
-    "comment"
-  ],
+    "base_site_description"
+    ],
   "display_list": [
     "base_site_name",
-    "id_sites_group",
     "last_visit",
     "nb_visits"
   ],
@@ -35,13 +22,14 @@
       "type_util": "nomenclature",
       "value": {
           "code_nomenclature_type": "TYPE_SITE",
-          "cd_nomenclature": "7"
+          "cd_nomenclature": "POPR"
       },
       "hidden": true
     },
     "base_site_name": {
         "type_widget": "text",
         "attribut_label": "Nom du transect",
+	"definition": "Si des données sur l'aire associée ont été transmises antérieurement via un fichier Excel, veuillez contacter Florèn Hugon (floren.hugon@biodivact.fr) pour établir ensemble la correspondance site-transect entre le format Excel et le format Geonature",
         "required": true
     },
     "base_site_code": {
@@ -62,79 +50,18 @@
       "keyLabel": "sites_group_name",
       "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
       "application": "GeoNature",
-      "required": true,
-      "hidden": false
-    },
-    "methode_prospection": {
-      "type_widget": "radio",
-      "attribut_label": "Méthode de prospection",
-      "values": ["Par observation directe uniquement", "Par plaques uniquement", "Par plaques et observation directe"]
-    },
-    "type_materiaux": {
-      "type_widget": "select",
       "required": false,
-      "attribut_label": "Type de matériaux",
-      "hidden": "({value}) => value.methode_prospection === 'Par observation directe uniquement'",
-      "values": ["Tapis de Carrière", "Fibrociment", "Tôle métallique", "Autre"]
-    },
-	  "nb_plaques": {
-      "type_widget": "number",
-      "attribut_label": "Nombre de plaques sur le transect",
-      "required": false,
-      "min": 1,
-      "max":99,
-      "value": 1,
-      "hidden": "({value}) => value.methode_prospection === 'Par observation directe uniquement'"
+      "hidden": true
     },
     "milieu_transect": {
       "type_widget": "radio",
-      "attribut_label": "Description de la configuration du milieu autour du transect",
+      "attribut_label": "Description du milieu du transect",
+      "required": true,
       "values": ["Milieux bordiers", "Milieux mosaïque végétale", "Milieux structuration végétale homogène", "Milieux Anthropiques"]
     },
-    "milieu_bordier": {
-      "type_widget": "select",
+    "id_inventor": {
       "required": false,
-      "attribut_label": "Milieux bordiers (linéaires)",
-      "hidden": "({value}) => value.milieu_transect != 'Milieux bordiers'",
-      "values": ["Lisière intra-forestière", "Lisière périphérie forestière", "Haie bocagère", "Muret entre parcelle", "Talus entre parcelle", "Bord de chemin ou bord de route", "Voie de chemin de fer", "Bord de canal ou rivière", "Périphérie étang ou mare ou marais"]
-    },
-    "milieu_mosaique_vegetale": {
-      "type_widget": "select",
-      "required": false,
-      "attribut_label": "Milieux mosaïque végétale",
-      "hidden": "({value}) => value.milieu_transect != 'Milieux mosaïque végétale'",
-      "values": ["Mosaïque ouverte", "Mosaïque intermédiaire", "Mosaïque fermée"]
-    },
-    "milieu_homogene": {
-      "type_widget": "select",
-      "required": false,
-      "attribut_label": "Milieux à structuration végétale homogène",
-      "hidden": "({value}) => value.milieu_transect != 'Milieux structuration végétale homogène'",
-      "values": ["Milieu fermé arboré (arbre de haut jet)", "Milieu fermé non-arboré (arbuste, arbrisseaux < 4m)", "Milieu ouvert à végétation haute (1-2m, arbrisseaux-sous arbrisseaux)", "Milieu ouvert à végétation moyenne (50cm-1m, arbrisseaux-sous arbrisseaux, herbacées", "Milieu ouvert à végétation basse (herbacée < 50cm) ou absente"]
-    },
-    "milieu_anthropique": {
-      "type_widget": "select",
-      "required": false,
-      "attribut_label": "Milieux Anthropiques",
-      "hidden": "({value}) => value.milieu_transect != 'Milieux Anthropiques'",
-      "values": ["Bâtiments agricoles, infrastructures", "Habitation", "Ruines", "Site industriel", "Zone de stockage/déchets", "Autre (préciser)"]
-    },
-    "milieu_transect_autre": {
-      "type_widget": "text",
-      "attribut_label": "Autres (préciser)",
-      "hidden": "({value}) => value.milieu_anthropique != 'Autre (préciser)'"
-    },
-    "microhabitat_favorable": {
-      "type_widget": "select",
-      "required": false,
-      "attribut_label": "Présence de micro-habitats favorables",
-      "values": ["Aucun", "Pierres", "Souches", "Tas de bois"]
-    },
-    "frequentation_humaine": {
-      "type_widget": "select",
-      "required": false,
-      "attribut_label": "Fréquentation humaine",
-      "values": ["Absente/Rare", "Ponctuelle", "Moyenne", "Importante"]
+      "hidden": true
     },
     "nb_visits": {
       "attribut_label": "Nb. de passages"
