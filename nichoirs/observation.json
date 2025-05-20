@@ -1,0 +1,68 @@
+{
+  "id_field_name": "id_observation",
+  "description_field_name": "id_observation",
+  "chained": true,
+  "label": "Observation",
+  "genre": "F",
+  "display_properties": [
+    "cd_nom",
+    "adulte",
+    "oeuf",
+    "jeune_vivant",
+    "jeune_mort"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèce",
+      "type_util": "taxonomy",
+      "required": true,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+    "adulte": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'adultes",
+      "hidden": false,
+      "required": false,
+      "min": 0,
+      "max": 50
+    },
+    "oeuf": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'oeufs",
+      "hidden": false,
+      "required": false,
+      "value" : 0,
+      "min": 0,
+      "max": 20
+    },
+    "jeune_vivant": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de jeunes vivants",
+      "hidden": false,
+      "required": false,
+      "value" : 0,
+      "min": 0,
+      "max": 20
+    },
+    "jeune_mort": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de jeunes morts",
+      "hidden": false,
+      "required": false,
+      "min": 0,
+      "max": 20
+    },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "remarque supplémentaire (date d'envole poussin)",
+      "hidden": false,
+      "required": false
+    },
+    "medias": {
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_observations"
+    }
+  }
+}
