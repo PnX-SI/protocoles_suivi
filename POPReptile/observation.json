@@ -113,7 +113,7 @@
   },
   "change": [
     "({objForm, meta}) => {",
-      "if (objForm.value.presence === 'Non' && !!objForm.value.id_nomenclature_sex) {",
+      "if (objForm.value.presence === 'Non') {",
         "objForm.patchValue({id_nomenclature_typ_denbr : null, count_min : 0, count_max : 0, id_nomenclature_sex : null, id_nomenclature_stade: null, cd_nom : {'cd_nom': 186278, 'lb_nom': 'Squamata', 'nom_valide': 'Squamata', 'nom_vern' : 'Squamates'}}, {emitEvent : false})",
       "}",
       "if (objForm.value.presence === 'Oui' && objForm.value.count_min === 0) {",
