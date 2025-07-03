@@ -3,70 +3,27 @@
     {
       "mnemonique": "CATEGORIE_PAYSAGERE",
       "label_default": "Catégories paysagères",
-      "definition_default": "Catégories paysagères (protocôle de suivi POPAmphibien)"
+      "definition_default": "Catégories paysagères (protocole de suivi POPAmphibien)"
     },
     {
       "mnemonique": "MILIEU_AQUATIQUE",
       "label_default": "Milieu aquatique",
-      "definition_default": "Milieu aquatique (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "TURBIDITE",
-      "label_default": "turbidite",
-      "definition_default": "Turbidite (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "VARIATION_EAU",
-      "label_default": "Variation du niveau d’eau",
-      "definition_default": "Variation du niveau d’eau (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "COURANT_EAU",
-      "label_default": "Courant d’eau",
-      "definition_default": "Courant d’eau (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "VEGETATION_AQUATIQUE",
-      "label_default": "Végétation aquatique principale",
-      "definition_default": "Végétation aquatique principale (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "RIVES",
-      "label_default": "Rives",
-      "definition_default": "Rives (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "HABITAT_TERRESTRE_MAJORITAIRE",
-      "label_default": "Habitat terrestre environnant majoritaire",
-      "definition_default": "Habitat terrestre environnant majoritaire(protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "ACTIVITE_HUMAINE",
-      "label_default": "Activité humaine",
-      "definition_default": "Activité humaine(protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "PLUVIOSITE",
-      "label_default": "Pluviosité",
-      "definition_default": "Pluviosité (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "COUVERTURE_NUAGEUSE",
-      "label_default": "Couverture nuageuse",
-      "definition_default": "couverture nuageuse (protocôle de suivi POPAmphibien)"
+      "definition_default": "Milieu aquatique (protocole de suivi POPAmphibien)"
     },
     {
       "mnemonique": "METHODE_PROSPECTION",
       "label_default": "Méthode de prospection",
-      "definition_default": "Méthode de prospection (protocôle de suivi POPAmphibien)"
-    },
-    {
-      "mnemonique": "VENT",
-      "label_default": "Vent",
-      "definition_default": "vent (protocôle de suivi POPAmphibien)"
+      "definition_default": "Méthode de prospection (protocole de suivi POPAmphibien)"
     }
   ],
   "nomenclatures": [
+    {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "POPA",
+      "mnemonique": "Site POPA",
+      "label_default": "Site POPAmphibien",
+      "definition_default": "Site POPAmphibien"
+    },
     {
       "type":"MILIEU_AQUATIQUE",
       "cd_nomenclature": "MILIEU_AQUATIQUE_1",
@@ -84,7 +41,7 @@
 	{
       "type":"MILIEU_AQUATIQUE",
       "cd_nomenclature": "MILIEU_AQUATIQUE_3",
-      "mnemonique": "Ruissele",
+      "mnemonique": "Ruisselet",
       "label_default": "Ruisselet/Ruisseau (< 3 m de large)",
       "definition_default": "Ruisselet/Ruisseau (< 3 m de large) "
     },
@@ -113,8 +70,8 @@
       "type":"MILIEU_AQUATIQUE",
       "cd_nomenclature": "MILIEU_AQUATIQUE_7",
       "mnemonique": "Mare",
-      "label_default": "Mare (- de 50 m²)",
-      "definition_default": "Mare (- de 50 m²)"
+      "label_default": "Mare (< 50 m²)",
+      "definition_default": "Mare (< 50 m²)"
     },
 	{
       "type":"MILIEU_AQUATIQUE",
@@ -159,34 +116,6 @@
       "definition_default": "Etang (50 à 450 m²)"
     },
     {
-      "type":"TURBIDITE",
-      "cd_nomenclature": "TURBIDITE_1",
-      "mnemonique": "Eutrophisation",
-      "label_default": "Eutrophisation (présence d’algues filamenteuses)",
-      "definition_default": "Eutrophisation (présence d’algues filamenteuses) "
-    },
-    {
-      "type":"TURBIDITE",
-      "cd_nomenclature": "TURBIDITE_2",
-      "mnemonique": "eau-trouble",
-      "label_default": "Turbidité (eau trouble)",
-      "definition_default": "Turbidité (eau trouble)"
-    },
-	{
-      "type":"TURBIDITE",
-      "cd_nomenclature": "TURBIDITE_3",
-      "mnemonique": "Eutrophisation_turbidité",
-      "label_default": "Eutrophisation et turbidité",
-      "definition_default": "Eutrophisation et turbidité"
-    },
-	{
-      "type":"TURBIDITE",
-      "cd_nomenclature": "TURBIDITE_4",
-      "mnemonique": "Eau_claire",
-      "label_default": "Eau claire",
-      "definition_default": "Eau claire"
-    },
-    {
       "type":"CATEGORIE_PAYSAGERE",
       "cd_nomenclature": "CATEGORIE_PAYSAGERE_1",
       "mnemonique": "Zones_urbanisées",
@@ -203,7 +132,7 @@
 	{
       "type":"CATEGORIE_PAYSAGERE",
       "cd_nomenclature": "CATEGORIE_PAYSAGERE_3",
-      "mnemonique": "Prairiese",
+      "mnemonique": "Prairies",
       "label_default": "Prairies",
       "definition_default": "Prairies"
     },
@@ -292,326 +221,39 @@
       "definition_default": "Eaux maritimes"
     },
     {
-      "type":"VARIATION_EAU",
-      "cd_nomenclature": "VARIATION_EAU_1",
-      "mnemonique": "Assèchement",
-      "label_default": "Assèchement périodique",
-      "definition_default": "Assèchement périodique"
-    },
-    {
-      "type":"VARIATION_EAU",
-      "cd_nomenclature": "VARIATION_EAU_2",
-      "mnemonique": "Niveau_eau_1",
-      "label_default": "Niveau de l’eau très variable au cours de l’année",
-      "definition_default": "Niveau de l’eau très variable au cours de l’année"
-    },
-	{
-      "type":"VARIATION_EAU",
-      "cd_nomenclature": "VARIATION_EAU_3",
-      "mnemonique": "Niveau_eau_2",
-      "label_default": "Niveau de l’eau relativement constant au cours de l’année",
-      "definition_default": "Niveau de l’eau relativement constant au cours de l’année"
-    },
-	{
-      "type":"VARIATION_EAU",
-      "cd_nomenclature": "VARIATION_EAU_4",
-      "mnemonique": "Inconnu",
-      "label_default": "Inconnu",
-      "definition_default": "Inconnu"
-    },
-    {
-      "type":"COURANT_EAU",
-      "cd_nomenclature": "COURANT_EAU_1",
-      "mnemonique": "Aucun",
-      "label_default": "Aucun (eau stagnante)",
-      "definition_default": "Aucun (eau stagnante)"
-    },
-    {
-      "type":"COURANT_EAU",
-      "cd_nomenclature": "COURANT_EAU_2",
-      "mnemonique": "Courant_lent",
-      "label_default": "Courant lent",
-      "definition_default": "Courant lent"
-    },
-	{
-      "type":"COURANT_EAU",
-      "cd_nomenclature": "COURANT_EAU_3",
-      "mnemonique": "Courant_rapide",
-      "label_default": "Courant rapide",
-      "definition_default": "Courant rapide"
-    },
-    {
-      "type":"VEGETATION_AQUATIQUE",
-      "cd_nomenclature": "VEGETATION_AQUATIQUE_1",
-      "mnemonique": "Présence_herbiers",
-      "label_default": "Présence d’herbiers (végétation submergée)",
-      "definition_default": "Présence d’herbiers (végétation submergée)"
-    },
-    {
-      "type":"VEGETATION_AQUATIQUE",
-      "cd_nomenclature": "VEGETATION_AQUATIQUE_2",
-      "mnemonique": "Présence_hélophytes",
-      "label_default": "Présence d’hélophytes (appareil végétatif aérien)",
-      "definition_default": "Présence d’hélophytes (appareil végétatif aérien)"
-    },
-	{
-      "type":"VEGETATION_AQUATIQUE",
-      "cd_nomenclature": "VEGETATION_AQUATIQUE_3",
-      "mnemonique": "végétation_flottante",
-      "label_default": "Présence de végétation flottante",
-      "definition_default": "Présence de végétation flottante"
-    },
-	{
-      "type":"VEGETATION_AQUATIQUE",
-      "cd_nomenclature": "VEGETATION_AQUATIQUE_4",
-      "mnemonique": "Absence_végétation",
-      "label_default": "Absence de végétation aquatique",
-      "definition_default": "Absence de végétation aquatique"
-    },
-    {
-      "type":"RIVES",
-      "cd_nomenclature": "RIVES_1",
-      "mnemonique": "Rives_nues",
-      "label_default": "Rives majoritairement nues",
-      "definition_default": "Rives majoritairement nues"
-    },
-    {
-      "type":"RIVES",
-      "cd_nomenclature": "RIVES_2",
-      "mnemonique": "végétation_herbacée",
-      "label_default": "Rives avec une majorité de végétation herbacée",
-      "definition_default": "Rives avec une majorité de végétation herbacée"
-    },
-    {
-      "type":"RIVES",
-      "cd_nomenclature": "RIVES_3",
-      "mnemonique": "végétation_ligneuse",
-      "label_default": "Rives avec une majorité de végétation ligneuse",
-      "definition_default": "Rives avec une majorité de végétation ligneuse"
-    },
-    {
-      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_1",
-      "mnemonique": "Forêt",
-      "label_default": "Forêt",
-      "definition_default": "Forêt"
-    },
-    {
-      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_2",
-      "mnemonique": "Buisson_haie",
-      "label_default": "Buisson / haie (< 5 m de hauteur)",
-      "definition_default": "Buisson / haie (< 5 m de hauteur)"
-    },
-	{
-      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_3",
-      "mnemonique": "Milieu_agricole_1",
-      "label_default": "Milieu agricole (prairie, élevage)",
-      "definition_default": "Milieu agricole (prairie, élevage)"
-    },
-	{
-      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_4",
-      "mnemonique": "Milieu_agricole_2",
-      "label_default": "Milieu agricole (culture, autre)",
-      "definition_default": "Milieu agricole (culture, autre)"
-    },
-	{
-      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_5",
-      "mnemonique": "Milieu_ouvert",
-      "label_default": "Milieu ouvert non agricole (lande, steppe)",
-      "definition_default": "Milieu ouvert non agricole (lande, steppe)"
-    },
-	{
-      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_6",
-      "mnemonique": "Sol_sans_végétation",
-      "label_default": "Sol sans végétation (dune, sol rocheux)",
-      "definition_default": "Sol sans végétation (dune, sol rocheux)"
-    },
-	{
-      "type":"HABITAT_TERRESTRE_MAJORITAIRE",
-      "cd_nomenclature": "HABITAT_TERRESTRE_MAJORITAIRE_7",
-      "mnemonique": "Zone_urbaine",
-      "label_default": "Zone urbaine, espace vert",
-      "definition_default": "Zone urbaine, espace vert"
-    },
-    {
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_1",
-      "mnemonique": "Abreuvement",
-      "label_default": "Abreuvement",
-      "definition_default": "Abreuvement"
-    },
-    {
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_2",
-      "mnemonique": "Pêche",
-      "label_default": "Pêche de loisirs",
-      "definition_default": "Pêche de loisirs"
-    },
-	{
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_4",
-      "mnemonique": "Ornemental",
-      "label_default": "Ornemental",
-      "definition_default": "Ornemental"
-    },
-	{
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_5",
-      "mnemonique": "Aucune",
-      "label_default": "Aucune activité humaine",
-      "definition_default": "Aucune activité humaine"
-    },
-	{
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_6",
-      "mnemonique": "matériaux",
-      "label_default": "Extraction de matériaux (carrière)",
-      "definition_default": "Extraction de matériaux (carrière)"
-    },
-	{
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_7",
-      "mnemonique": "eaux_usées",
-      "label_default": "Traitement des eaux usées",
-      "definition_default": "Traitement des eaux usées"
-    },
-	{
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_8",
-      "mnemonique": "Autre",
-      "label_default": "Autre",
-      "definition_default": "Autre "
-    },
-	{
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_9",
-      "mnemonique": "Inconnu",
-      "label_default": "Inconnu",
-      "definition_default": "Inconnu"
-    },	
-	{
-      "type":"ACTIVITE_HUMAINE",
-      "cd_nomenclature": "ACTIVITE_HUMAINE_10",
-      "mnemonique": "conservation_nature",
-      "label_default": "Activité de conservation de la nature",
-      "definition_default": "Activité de conservation de la nature"
-    },
-    {
-      "type":"PLUVIOSITE",
-      "cd_nomenclature": "PLUVIOSITE_1",
-      "mnemonique": "Bruine",
-      "label_default": "Bruine",
-      "definition_default": "Bruine"
-    },
-    {
-      "type":"PLUVIOSITE",
-      "cd_nomenclature": "PLUVIOSITE_2",
-      "mnemonique": "Averse",
-      "label_default": "Averse intermittente",
-      "definition_default": "Averse intermittente"
-    },
-	{
-      "type":"PLUVIOSITE",
-      "cd_nomenclature": "PLUVIOSITE_3",
-      "mnemonique": "Pluie",
-      "label_default": "Pluie continue",
-      "definition_default": "Pluie continue"
-    },
-    {
-      "type":"PLUVIOSITE",
-      "cd_nomenclature": "PLUVIOSITE_4",
-      "mnemonique": "aucune",
-      "label_default": "Aucune",
-      "definition_default": "Aucune"
-    },
-    {
-      "type":"COUVERTURE_NUAGEUSE",
-      "cd_nomenclature": "COUVERTURE_NUAGEUSE_1",
-      "mnemonique": "0-25",
-      "label_default": "0-25 %",
-      "definition_default": "0-25 %"
-    },
-    {
-      "type":"COUVERTURE_NUAGEUSE",
-      "cd_nomenclature": "COUVERTURE_NUAGEUSE_2",
-      "mnemonique": "25-50",
-      "label_default": "25-50 %",
-      "definition_default": "25-50 % "
-    },
-	{
-      "type":"COUVERTURE_NUAGEUSE",
-      "cd_nomenclature": "COUVERTURE_NUAGEUSE_3",
-      "mnemonique": "50-75",
-      "label_default": "50-75 %",
-      "definition_default": "50-75 %"
-    },
-	{
-      "type":"COUVERTURE_NUAGEUSE",
-      "cd_nomenclature": "COUVERTURE_NUAGEUSE_4",
-      "mnemonique": "75-100",
-      "label_default": "75-100 %",
-      "definition_default": "75-100 %"
-    },
-    {
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_1",
+      "cd_nomenclature": "1",
       "mnemonique": "Identification_jour",
       "label_default": "Identification à vue, de jour",
       "definition_default": "Identification à vue, de jour"
     },
     {
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_2",
+      "cd_nomenclature": "2",
       "mnemonique": "Capture_épuisette",
       "label_default": "Capture à l’épuisette (dérogation préfectorale obligatoire)",
-      "definition_default": "Capture à l’épuisette (dérogation préfectorale obligatoire) % "
+      "definition_default": "Capture à l’épuisette (dérogation préfectorale obligatoire)"
     },
 	{
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_3",
+      "cd_nomenclature": "3",
       "mnemonique": "Capture_nasses",
       "label_default": "Capture par nasses (dérogation préfectorale obligatoire)",
       "definition_default": "Capture par nasses (dérogation préfectorale obligatoire)"
     },
 	{
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_4",
+      "cd_nomenclature": "4",
       "mnemonique": "Identification_nuit",
       "label_default": "Identification à vue, de nuit (lampe)",
       "definition_default": "Identification à vue, de nuit (lampe)"
     },
 	{
       "type":"METHODE_PROSPECTION",
-      "cd_nomenclature": "METHODE_PROSPECTION_5",
+      "cd_nomenclature": "5",
       "mnemonique": "Identification_écoute",
       "label_default": "Identification par écoute",
       "definition_default": "Identification par écoute"
-    },
-    {
-      "type":"VENT",
-      "cd_nomenclature": "VENT_0",
-      "mnemonique": "Absence_vent",
-      "label_default": "Absence de vent",
-      "definition_default": "Absence de vent"
-    },
-    {
-      "type":"VENT",
-      "cd_nomenclature": "VENT_1",
-      "mnemonique": "Vent_faible",
-      "label_default": "Vent faible",
-      "definition_default": "Vent faible"
-    },
-	{
-      "type":"VENT",
-      "cd_nomenclature": "VENT_2",
-      "mnemonique": "Vent_fort",
-      "label_default": "Vent fort",
-      "definition_default": "Vent fort"
     }
   ]
 }
