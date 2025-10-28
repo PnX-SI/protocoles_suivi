@@ -218,5 +218,30 @@
       "required": "({value}) => value.num_passage == 2",
       "hidden": "({value}) => !(value.num_passage == 2)"
     }
-  }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+    "const sp1 =  objForm.value.veg_lig_sp_1 || null;",
+    "if (sp1 === null) {objForm.controls.veg_lig_sp_1.setErrors(null);}",
+    "else if (! typeof sp1 === 'object') {objForm.controls.veg_lig_sp_1.setErrors({'incorrect': true});}",
+    "else if (! Number.isInteger(sp1.cd_nom)) {objForm.controls.veg_lig_sp_1.setErrors({'incorrect': true});}",
+    "else {objForm.controls.veg_lig_sp_1.setErrors(null);}",
+    "const sp2 =  objForm.value.veg_lig_sp_2 || null;",
+    "if (sp2 === null) {objForm.controls.veg_lig_sp_2.setErrors(null);}",
+    "else if (! typeof sp2 === 'object') {objForm.controls.veg_lig_sp_2.setErrors({'incorrect': true});}",
+    "else if (! Number.isInteger(sp2.cd_nom)) {objForm.controls.veg_lig_sp_2.setErrors({'incorrect': true});}",
+    "else {objForm.controls.veg_lig_sp_2.setErrors(null);}",
+    "const sp3 =  objForm.value.veg_lig_sp_3 || null;",
+    "if (sp3 === null) {objForm.controls.veg_lig_sp_3.setErrors(null);}",
+    "else if (! typeof sp3 === 'object') {objForm.controls.veg_lig_sp_3.setErrors({'incorrect': true});}",
+    "else if (! Number.isInteger(sp3.cd_nom)) {objForm.controls.veg_lig_sp_3.setErrors({'incorrect': true});}",
+    "else {objForm.controls.veg_lig_sp_3.setErrors(null);}",
+    "const sp4 =  objForm.value.veg_lig_sp_4 || null;",
+    "if (sp4 === null) {objForm.controls.veg_lig_sp_4.setErrors(null);}",
+    "else if (! typeof sp4 === 'object') {objForm.controls.veg_lig_sp_4.setErrors({'incorrect': true});}",
+    "else if (! Number.isInteger(sp4.cd_nom)) {objForm.controls.veg_lig_sp_4.setErrors({'incorrect': true});}",
+    "else {objForm.controls.veg_lig_sp_4.setErrors(null);}",
+    "}",
+    ""
+  ]
 }
