@@ -11,5 +11,10 @@
     {
       "prop": "sites_group_name"
     }
-  ]
+  ],
+  "specific": {
+    "nb_sites": {
+      "attribut_label": "Nombre de biotopes"
+    }
+  }
 }

@@ -1,12 +1,12 @@
 {
   "display_properties": [
     "cd_nom",
-    "id_nomenclature_obj_count",
     "id_nomenclature_life_stage",
-    "recouvrement",
-    "id_nomenclature_abondance_braunblanquet",
+    "id_nomenclature_obj_count",
     "id_nomenclature_type_count",
     "count_min",
+    "recouvrement",
+    "id_nomenclature_abondance_braunblanquet",
     "num_herbier",
     "comments"
   ],
@@ -34,7 +34,7 @@
       "type_util": "nomenclature",
       "value": {
         "code_nomenclature_type": "OBJ_DENBR",
-        "cd_nomenclature": "TOUF"
+        "cd_nomenclature": "IND"
       },
       "cd_nomenclatures": [
         "IND",
@@ -44,10 +44,24 @@
         "SURF"
       ]
     },
+    "id_nomenclature_life_stage": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Phénologie dominante",
+      "code_nomenclature_type": "STADE_VIE",
+      "required": true,
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "STADE_VIE",
+        "cd_nomenclature": "1"
+      },
+      "regne": "Plantae"
+    },
     "count_min": {
       "type_widget": "number",
-      "attribut_label": "Nombre",
-      "min": 0
+      "attribut_label": "Nombre ou surface (m2)",
+      "required": true,
+      "min": 0,
+      "value": 1
     },
     "recouvrement": {
       "type_widget": "number",
@@ -57,30 +71,22 @@
     },
     "id_nomenclature_abondance_braunblanquet": {
       "type_widget": "nomenclature",
-      "attribut_label": "Abondance",
+      "attribut_label": "Abondance/dominance (Braun Blanquet)",
       "code_nomenclature_type": "BRAUNBLANQABDOM",
       "type_util": "nomenclature"
     },
-    "id_nomenclature_life_stage": {
-      "type_widget": "datalist",
-      "attribut_label": "Phénologie",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "params": {
-        "regne": "Plantae"
-      },
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
-      "required": true,
-      "default": {
-        "cd_nomenclature": "0"
-      }
-    },
     "num_herbier": {
       "type_widget": "text",
-      "attribut_label": "Numéro échantillon herbier"
+      "attribut_label": "Code échantillon herbier"
     }
   }
+  ,
+  "change": [
+    "({objForm, meta}) => {",
+    "if (meta.nomenclatures[objForm.value.id_nomenclature_obj_count].cd_nomenclature === 'SURF') {",
+    "objForm.patchValue({count_min : null}, {emitEvent : false})",
+    "}",
+    "}",
+    ""
+  ]
 }
