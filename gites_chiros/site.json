@@ -1,0 +1,142 @@
+{
+  "label": "Gîte",
+  "genre": "M",
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "base_site_code",
+    "type_site_chiro_lvl1",
+    "type_site_chiro_lvl2",
+    "situation_site",
+    "id_inventor",
+    "first_use_date",
+    "structure_referente",
+    "base_site_description",
+    "nb_visits",
+    "last_visit",
+    "hybrid_chiro_activities",
+    "hybrid_chiros_spots"
+  ],
+  "display_list": [
+    "base_site_code",
+    "display_type_site_chiro",
+    "last_visit",
+    "nb_visits"
+  ],
+  "sorts": [
+    {"prop": "last_visit", "dir": "desc"}
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "doc": "Type de site selon la nomenclature GN, obligatoire dans t_base_site. Toujours à 'Site chiroptère'.",
+      "type_widget": "text",
+      "type_util": "nomenclature",
+      "attribut_label": "Type site",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "CHI"
+      },
+      "required": true,
+      "hidden": true
+    },
+    "display_type_site_chiro": {
+      "doc": "Type de gîte le plus précis renseigné, alimenté automatiquement à partir des champs lvl1/lvl2. Utilisé pour affichage dans la liste des sites, masqué dans le formulaire et la fiche du site.",
+      "type_widget": "text",
+      "type_util": "nomenclature",
+      "attribut_label": "Type de gîte",
+      "hidden": true
+    },
+    "type_site_chiro_lvl1": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de gîte (niveau 1)",
+      "api": "nomenclatures/nomenclature/TYPE_GITE_CHIRO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "filters": {
+        "cd_nomenclature": ["0100", "0200", "0300", "0400", "0500", "0600", "0700", "0800"]
+      }
+    },
+    "type_site_chiro_lvl2": {
+      "type_widget": "datalist",
+      "attribut_label": "Type de gîte (niveau 2)",
+      "api": "nomenclatures/nomenclature/TYPE_GITE_CHIRO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": [
+        "({value, meta}) => {",
+          "var no_lvl2 = ['0300', '0800'];",
+          "var type_site_lvl1 = meta.nomenclatures[value.type_site_chiro_lvl1] || {};",
+          "return value.type_site_chiro_lvl1 === null || no_lvl2.includes(type_site_lvl1.cd_nomenclature)",
+        "}"
+      ],
+      "filters": [
+        "({value, meta}) => {",
+          "return {",
+            "cd_nomenclature: Object.values(meta.nomenclatures).filter(",
+              "(item) => (item.id_broader === value.type_site_chiro_lvl1)",
+            ").map(",
+              "(item) => item.cd_nomenclature",
+            ")",
+          "};",
+        "}"
+      ]
+    },
+    "situation_site": {
+      "type_widget": "datalist",
+      "attribut_label": "Situation du gîte",
+      "definition": "Situation du gîte par rapport au niveau du sol : au dessus (épigé), en dessous (hypogé) ou mixte.",
+      "api": "nomenclatures/nomenclature/SITUATION_GITE_CHIRO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "structure_referente": {
+      "type_widget": "text",
+      "attribut_label": "Structure référente",
+      "definition": "Structure référente pour le gîte (gestion, comptages, etc.)",
+      "required": true
+    },
+    "base_site_description": {
+      "attribut_label": "Description du gîte"
+    },
+    "nb_visits": {
+      "attribut_label": "Nombre de visites"
+    },
+    "last_visit": {
+      "attribut_label": "Date de la dernière visite"
+    },
+    "hybrid_chiro_activities": {
+      "type_widget": "text",
+      "attribut_label": "Nature de la fréquentation",
+      "definition": "Natures de fréquentation constatées lors des observations sur le site.",
+      "hidden": true,
+      "required": false
+    },
+    "hybrid_chiros_spots": {
+      "type_widget": "text",
+      "attribut_label": "Emplacements fonctionnels",
+      "definition": "Localisation des individus observés sur le site.",
+      "hidden": true,
+      "required": false
+    }
+  },
+  "change": [
+    "({objForm}) => {",
+      "objForm.patchValue({",
+        "display_type_site_chiro: objForm.value.type_site_chiro_lvl2 || objForm.value.type_site_chiro_lvl1",
+      "});",
+    "}",
+    ""
+  ]
+}
