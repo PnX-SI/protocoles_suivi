@@ -16,6 +16,11 @@
       "label": "Sites",
       "type": "csv",
       "method": "sites"
+    },
+    {
+      "label": "Erreur de saisie",
+      "type": "csv",
+      "method": "erreur"
     }
   ]
 }
