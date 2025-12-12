@@ -1,0 +1,45 @@
+{
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "map_label_field_name": "base_site_name",
+  "label": "Dortoir",
+  "label_list": "Dortoirs",
+  "genre": "M",
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "base_site_description",
+    "id_inventor",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "base_site_code": {
+      "hidden": false,
+      "required": false
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "CRAVE_DORTOIR"
+      },
+      "hidden": true
+    },
+    "types_site": {
+      "default": "__MODULE.TYPES_SITE",
+      "hidden": true
+    }
+  }
+}

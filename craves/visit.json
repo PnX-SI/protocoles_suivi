@@ -1,0 +1,59 @@
+{
+  "display_properties": [
+    "visit_date_min",
+    "time_observation_start",
+    "time_observation_end",
+    "count",
+    "observers"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "time_observation_start",
+    "time_observation_end",
+    "count",
+    "observers"
+  ],
+  "map_label_field_name": "base_site_code",
+  "chain_show": [
+    "visit_date_min"
+  ],
+  "keep": [
+    "visit_date_min",
+    "observers",
+    "id_dataset",
+    "comment"
+  ],
+  "specific": {
+    "visit_date_min": {
+      "attribut_label": "Date"
+    },
+    "time_observation_start": {
+      "attribut_label": "Heure de début (entrée au dortoir)",
+      "type_widget": "time",
+      "required": true
+    },
+    "time_observation_end": {
+      "attribut_label": "Heure de fin (entrée au dortoir)",
+      "type_widget": "time",
+      "required": true
+    },
+    "cd_nom": {
+      "type_widget": "text",
+      "attribut_label": "cd nom",
+      "type_util": "taxonomy",
+      "value": 4488,
+      "hidden": true
+    },
+    "count": {
+      "attribut_label": "Nombre",
+      "description": "Nombre d'individus",
+      "type_widget": "number",
+      "required": true,
+      "min": 0,
+      "default": 0
+    },
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
+    }
+  }
+}

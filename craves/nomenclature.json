@@ -1,0 +1,11 @@
+{
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "CRAVE_DORTOIR",
+      "mnemonique": "crave_dortoir",
+      "label_default": "Dortoir craves",
+      "definition_default": "Dortoir craves"
+    }
+  ]
+}
