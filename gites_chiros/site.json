@@ -27,15 +27,16 @@
     {"prop": "last_visit", "dir": "desc"}
   ],
   "specific": {
-    "id_nomenclature_type_site": {
-      "doc": "Type de site selon la nomenclature GN, obligatoire dans t_base_site. Toujours à 'Site chiroptère'.",
-      "type_widget": "text",
-      "type_util": "nomenclature",
-      "attribut_label": "Type site",
-      "value": {
-        "code_nomenclature_type": "TYPE_SITE",
-        "cd_nomenclature": "CHI"
-      },
+    "types_site": {
+      "attribut_label": "Type(s) de site",
+      "doc": "Type de site selon la nomenclature GN, toujours à 'Site chiroptère'. Le type utilisateur est renseigné dans type_site_chiro_lvl1 / _lvl2.",
+      "nullDefault": false,
+      "default": [
+        {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "CHI"
+        }
+      ],
       "required": true,
       "hidden": true
     },
