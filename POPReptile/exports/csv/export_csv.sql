@@ -124,7 +124,7 @@ JOIN taxonomie.taxref t USING (cd_nom)
 LEFT JOIN gn_meta.t_datasets d USING (id_dataset)
 LEFT JOIN info_sites i USING (id_base_site)
 LEFT JOIN obs USING (id_base_visit)
-WHERE m.module_code = 'popreptile'
+WHERE m.module_code = :module_code
 ORDER BY v.id_dataset, tsg.sites_group_name, s.base_site_name, v.visit_date_min;
 
 --------------------------------------------------POPReptile analyses------------------------------------------
@@ -255,5 +255,5 @@ LEFT JOIN observations USING (id_base_visit)
 LEFT JOIN gn_meta.t_datasets d ON d.id_dataset = v.id_dataset
 LEFT JOIN info_sites i USING (id_base_site)
 LEFT JOIN obs USING (id_base_visit)
-WHERE m.module_code = 'popreptile'
+WHERE m.module_code = :module_code
 ORDER BY v.id_dataset, tsg.sites_group_name, s.base_site_name, visit_date_min;
