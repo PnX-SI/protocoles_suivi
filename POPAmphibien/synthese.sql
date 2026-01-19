@@ -1,16 +1,10 @@
 -- synthese.sql propre au protocole POPAmphibien.
 -- Ce fichier a été généré à partir d'une copie du fichier synthese_svo.sql du module monitoring
 -- (Vue générique pour alimenter la synthèse dans le cadre d'un protocole site-visite-observation)
--- 
--- Le fichier sera joué à l'installation avec la valeur de module_code qui sera attribué automatiquement
--- Il contient une variable :module_code (ou :'module_code')
--- utiliser psql avec l'option -v module_code=<module_code
--- Ne pas remplacer cette variable, elle est indispensable pour les scripts d'installations
--- le module pouvant être installé avec un code différent de l'original
 
-DROP VIEW IF EXISTS gn_monitoring.v_synthese_POPAmphibien;
+DROP VIEW IF EXISTS gn_monitoring.v_synthese_popamphibien;
 
-CREATE OR REPLACE VIEW gn_monitoring.v_synthese_POPAmphibien
+CREATE OR REPLACE VIEW gn_monitoring.v_synthese_popamphibien
 AS WITH source AS (
     SELECT
         id_source
