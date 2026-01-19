@@ -4,33 +4,35 @@
 -- Après ce script, il est également conseillé de mettre à jour les données de la synthèse
 
 -- Requête pour éventuelle récupération des données avant migration pour POPAmphibien
-CREATE TABLE perso.tmp_bkp_monitoring_popa AS (SELECT
-							o.uuid_observation,
-							tsg.id_sites_group,
-							tsg.DATA AS sites_group_json,
-							sc.id_base_site,
-							sc.DATA AS site_json,
-							vc.id_base_visit,
-							vc.DATA AS visit_json,
-							oc.id_observation,
-							oc.DATA AS obs_json
-							FROM gn_monitoring.t_base_visits v
-							     JOIN gn_monitoring.t_visit_complements vc on v.id_base_visit = vc.id_base_visit
-							     JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
-							     JOIN gn_monitoring.t_site_complements sc on sc.id_base_site = s.id_base_site
-							     JOIN gn_monitoring.t_sites_groups tsg ON sc.id_sites_group = tsg.id_sites_group
-							     JOIN gn_commons.t_modules m ON m.id_module = v.id_module
-							     JOIN gn_monitoring.t_observations o ON o.id_base_visit = v.id_base_visit
-							     JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation = o.id_observation
-							     LEFT JOIN gn_commons.t_medias tm ON (tm.id_table_location = gn_commons.get_table_location_id('gn_monitoring', 't_observations') AND tm.uuid_attached_row = o.uuid_observation)
-							     JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
-							WHERE m.module_code ilike 'popamphibien';
+CREATE SCHEMA backup_pop_amphibien;
+CREATE TABLE backup_pop_amphibien.tmp_bkp_monitoring_popa AS (SELECT
+	o.uuid_observation,
+	tsg.id_sites_group,
+	tsg.DATA AS sites_group_json,
+	sc.id_base_site,
+	sc.DATA AS site_json,
+	vc.id_base_visit,
+	vc.DATA AS visit_json,
+	oc.id_observation,
+	oc.DATA AS obs_json
+	FROM gn_monitoring.t_base_visits v
+	JOIN gn_monitoring.t_visit_complements vc on v.id_base_visit = vc.id_base_visit
+	JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
+	JOIN gn_monitoring.t_site_complements sc on sc.id_base_site = s.id_base_site
+	JOIN gn_monitoring.t_sites_groups tsg ON sc.id_sites_group = tsg.id_sites_group
+	JOIN gn_commons.t_modules m ON m.id_module = v.id_module
+	JOIN gn_monitoring.t_observations o ON o.id_base_visit = v.id_base_visit
+	JOIN gn_monitoring.t_observation_complements oc ON oc.id_observation = o.id_observation
+	LEFT JOIN gn_commons.t_medias tm ON (tm.id_table_location = gn_commons.get_table_location_id('gn_monitoring', 't_observations') AND tm.uuid_attached_row = o.uuid_observation)
+	JOIN taxonomie.taxref t ON t.cd_nom = o.cd_nom
+	WHERE m.module_code ilike 'popamphibien';
+
 -- On sauvegarde aussi les nomenclatures qu'on suppprimera pour garder une correspondance des IDs !
-CREATE TABLE perso.tmp_bkp_monitoring_popa_nomenclature AS (SELECT
-								*
-								FROM ref_nomenclatures.t_nomenclatures n
-								WHERE n.id_type IN (SELECT id_type FROM ref_nomenclatures.bib_nomenclatures_types WHERE mnemonique
-IN ('TURBIDITE', 'VARIATION_EAU', 'COURANT_EAU', 'VEGETATION_AQUATIQUE', 'RIVES', 'HABITAT_TERRESTRE_MAJORITAIRE', 'ACTIVITE_HUMAINE', 'PLUVIOSITE', 'COUVERTURE_NUAGEUSE', 'VENT'))
+CREATE TABLE backup_pop_amphibien.tmp_bkp_monitoring_popa_nomenclature AS (SELECT
+	*
+	FROM ref_nomenclatures.t_nomenclatures n
+	WHERE n.id_type IN (SELECT id_type FROM ref_nomenclatures.bib_nomenclatures_types WHERE mnemonique
+		IN ('TURBIDITE', 'VARIATION_EAU', 'COURANT_EAU', 'VEGETATION_AQUATIQUE', 'RIVES', 'HABITAT_TERRESTRE_MAJORITAIRE', 'ACTIVITE_HUMAINE', 'PLUVIOSITE', 'COUVERTURE_NUAGEUSE', 'VENT'))
 
 ------------------
 -- POPAmphibien --
@@ -210,8 +212,10 @@ WHERE tu.id_base_visit = vc.id_base_visit;
 -- - retrait des attributs courant, variation_eau
 WITH to_update AS
 (SELECT tc.id_base_site, tc.DATA - 'courant' - 'variation_eau' AS new_json_data FROM gn_monitoring.t_site_complements tc
-JOIN gn_commons.t_modules m ON m.id_module = tc.id_module
-WHERE m.module_code ilike 'popamphibien')
+	JOIN gn_monitoring.cor_site_module csm
+	ON csm.id_base_site = tc.id_base_site
+	JOIN gn_commons.t_modules m ON m.id_module = csm.id_module
+	WHERE m.module_code ilike 'popamphibien')
 UPDATE gn_monitoring.t_site_complements tc
 SET "data" = tu.new_json_data
 FROM to_update tu
@@ -222,8 +226,10 @@ WHERE tu.id_base_site = tc.id_base_site;
 -- - retrait de l'attribut "commune"
 WITH to_update AS
 (SELECT tg.id_sites_group, tg.DATA - 'commune' AS new_json_data FROM gn_monitoring.t_sites_groups tg
-JOIN gn_commons.t_modules m ON m.id_module = tg.id_module
-WHERE m.module_code ilike 'popamphibien')
+	JOIN gn_monitoring.cor_sites_group_module cgm
+	ON tg.id_sites_group = cgm.id_sites_group
+	JOIN gn_commons.t_modules m ON m.id_module = cgm.id_module
+	WHERE m.module_code ilike 'popamphibien')
 UPDATE gn_monitoring.t_sites_groups tg
 SET "data" = tu.new_json_data
 FROM to_update tu
@@ -270,11 +276,12 @@ WHERE cd_nomenclature = '2' AND mnemonique = 'Capture_épuisette';
 -- Changement du type de site
 -- Dans la première implémentation du module POPA, les types de sites étaient mis par défaut au code_nomenclature "7" qui correspond à un gite chiro indeterminé.
 -- Il faut donc le modifier.
--- TODO En fonction de la version du monitoring dont vous disposez (pre 1.0.0 ou post 1.0.0, vous devez utiliser une méthode différente).
 WITH to_update AS
 (SELECT tc.id_base_site FROM gn_monitoring.t_site_complements tc
-JOIN gn_commons.t_modules m ON m.id_module = tc.id_module
-WHERE m.module_code ilike 'popamphibien')
+	JOIN gn_monitoring.cor_site_module csm
+	ON csm.id_base_site = tc.id_base_site
+	JOIN gn_commons.t_modules m ON m.id_module = csm.id_module
+	WHERE m.module_code ilike 'popamphibien')
 UPDATE gn_monitoring.t_base_sites
 SET id_nomenclature_type_site = ref_nomenclatures.get_id_nomenclature('TYPE_SITE', 'POPA')
 WHERE t_base_sites.id_base_site IN (SELECT id_base_site FROM to_update);
