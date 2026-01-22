@@ -1,0 +1,40 @@
+{
+    "specific": {
+        "cd_nom": {
+            "attribut_label": "Taxon",
+            "id_list": "1000001",
+            "required": true,
+            "type_util": "taxonomy",
+            "type_widget": "taxonomy"
+        },
+        "nb_loges": {
+            "attribut_label": "Nombre de loges",
+            "type_util": "number",
+            "required": true,
+            "min": 0
+        },
+        "nb_ebauches": {
+            "attribut_label": "Nombre d'ébauches",
+            "type_util": "number",
+            "required": true,
+            "min": 0
+        },
+        "diametre": {
+            "attribut_label": "Diamètre",
+            "type_util": "number",
+            "required": true,
+            "min": 0
+        },
+        "penture": {
+            "attribut_label": "Penture",
+            "type_util": "number",
+            "required": true,
+            "min": 0
+        },
+        "ancien_code": {
+            "attribut_label": "Ancien code",
+            "type_util": "text",
+            "required": false
+        }
+    }
+}

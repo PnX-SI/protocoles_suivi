@@ -58,7 +58,8 @@ AS WITH source AS (
     (toc.data ->> 'id_nomenclature_sex'::text)::integer AS id_nomenclature_sex,
     (toc.data ->> 'id_nomenclature_obs_technique'::text)::integer AS id_nomenclature_obs_technique,
     (toc.data ->> 'count_min'::text)::integer AS count_min,
-    (toc.data ->> 'count_max'::text)::integer AS count_max
+    (toc.data ->> 'count_max'::text)::integer AS count_max,
+     to2.id_observation
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_commons.t_modules m ON m.id_module = v.id_module

@@ -1,0 +1,71 @@
+{
+    "roost_type": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Type de gite",
+        "code_nomenclature_type": "CHIRO_ROOST_TYPE",
+        "type_util": "nomenclature",
+        "required": true
+    },
+    "place_name": {
+        "type_widget": "text",
+        "attribut_label": "Lieux-dit"
+    },
+    "owner_name": {
+        "type_widget": "text",
+        "attribut_label": "Nom propriétaire"
+    },
+    "owner_adress": {
+        "type_widget": "text",
+        "attribut_label": "Adresse propriétaire"
+    },
+    "owner_tel": {
+        "type_widget": "text",
+        "attribut_label": "Tel propriétaire"
+    },
+    "owner_mail": {
+        "type_widget": "text",
+        "attribut_label": "Email propriétaire"
+    },
+    "opening": {
+        "type_widget": "textarea",
+        "attribut_label": "Ouverture"
+    },
+    "threat": {
+        "type_widget": "textarea",
+        "attribut_label": "Menace(s)",
+        "rows": 3
+    },
+    "recommandation": {
+        "type_widget": "textarea",
+        "attribut_label": "Mesure(s) préconisé(s)",
+        "rows": 3
+    },
+    "adjustments_type": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Aménagement",
+        "code_nomenclature_type": "CHIRO_ADJUSTMENTS",
+        "type_util": "nomenclature"
+    },
+    "adjustments_date": {
+        "type_widget": "date",
+        "required": false,
+        "attribut_label": "Date de l'aménagement"
+    },
+    "owner_comments": {
+        "type_widget": "textarea",
+        "attribut_label": "Propriétaire informations complémentaires",
+        "rows": 3
+    },
+    "id_nomenclature_attendance": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Fréquentation",
+        "code_nomenclature_type": "CHI_FREQUENTATION",
+        "type_util": "nomenclature",
+        "required": false
+    },
+    "site_code_national": {
+        "type_widget": "text",
+        "attribut_label": "Code du site au niveau des autres reseaux",
+        "hidden": true
+    }
+}
