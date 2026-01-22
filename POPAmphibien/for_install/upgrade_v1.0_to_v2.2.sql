@@ -1,5 +1,6 @@
 -- Script pour migration des données de POPAmphibien
--- En janvier 2025, nouveau format convenu pour les données
+-- Attention : ce script est uniquement adapté aux versions >= 1.0.0 du monitoring et demande des adaptations si vous êtes dans d'autres versions.
+-- En janvier 2025, nouveau format convenu pour les données POPAmphibien par la SHF, publié dans une version 2 du protocole.
 -- Avant de jouer ce script, il est fortement conseillé d'archiver les anciens schémas (back-up BDD, et/ou back-up csv (...) par exemple avec les deux requêtes ci-dessous)
 -- Après ce script, il est également conseillé de mettre à jour les données de la synthèse
 
