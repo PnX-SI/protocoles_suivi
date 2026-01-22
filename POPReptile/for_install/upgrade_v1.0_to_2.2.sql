@@ -1,6 +1,6 @@
 -- Script pour migration des données de POPReptile
 -- Attention : ce script est uniquement adapté aux versions > 1.0.0 du monitoring et demande des adaptations si vous êtes dans d'autres versions.
--- En septembre 2024, nouveau format convenu pour les données POPReptile par la SHF
+-- En septembre 2024, nouveau format convenu pour les données POPReptile par la SHF, publié dans une version 2 du protocole dès janvier 2025
 -- Avant de jouer ce script, il est fortement conseillé d'archiver les anciens schémas (back-up BDD, et/ou back-up csv (...) par exemple avec la requête ci-dessous
 -- Après ce script, il est également conseillé de mettre à jour les données de la synthèse
 
