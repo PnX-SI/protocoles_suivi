@@ -92,8 +92,8 @@ SELECT
     -- Site et variables associées
     REPLACE(trim(unaccent(s.base_site_name)), ' ', '_') AS nom_site, -- Uniformisation site
     st_astext(s.geom) as wkt_wgs,
-    st_x(s.geom) AS x_wgs,
-    st_y(s.geom) AS y_wgs,
+    st_x(st_centroid(s.geom)) AS x_wgs,
+    st_y(st_centroid(s.geom)) AS y_wgs,
     s.altitude_min AS altitude_min,
     s.altitude_max AS altitude_max,
     i.departement AS departement,
@@ -240,8 +240,8 @@ SELECT
     tsg.comments AS commentaire_aire,
     REPLACE(trim(unaccent(s.base_site_name)), ' ', '_') AS nom_site, -- Uniformisation site
     st_astext(s.geom) AS wkt_wgs,
-    st_x(s.geom) AS x_wgs,
-    st_y(s.geom) AS y_wgs,
+    st_x(st_centroid(s.geom)) AS x_wgs,
+    st_y(st_centroid(s.geom)) AS y_wgs,
     s.altitude_min AS altitude_min,
     s.altitude_max AS altitude_max,
     i.departement AS departement,
