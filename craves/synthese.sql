@@ -58,17 +58,16 @@ SELECT
 		COALESCE (v.visit_date_max, v.visit_date_min) AS date_max,
 		--validator
 		--validation_comment
-		obs.observers,
+		CONCAT_WS(' ; ', obs.observers, observers_txt) as observers,
 		--determiner
-		v.id_digitiser,
+		--v.v.id_digitiser,
 		--id_nomenclature_determination_method
 		--meta_validation_date
 		--meta_create_date,
 		--meta_update_date,
 		--last_action
 		v.id_module,
-		v.comments AS comment_description,
-		obs.ids_observers,
+		v.comments AS comment_description, 
     	s.base_site_name AS place_name,
 		-- ## Colonnes complémentaires qui ont leur utilité dans la fonction synthese.import_row_from_table
 		v.id_base_site,

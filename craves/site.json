@@ -6,8 +6,8 @@
     }
   ],
   "map_label_field_name": "base_site_name",
-  "label": "Dortoir",
-  "label_list": "Dortoirs",
+  "label": "Point d'observation",
+  "label_list": "Points d'observation",
   "genre": "M",
   "geometry_type": "Point",
   "display_properties": [
@@ -33,7 +33,7 @@
       "type_util": "nomenclature",
       "value": {
         "code_nomenclature_type": "TYPE_SITE",
-        "cd_nomenclature": "CRAVE_DORTOIR"
+        "cd_nomenclature": "CRAVE_POINT_OBS"
       },
       "hidden": true
     },

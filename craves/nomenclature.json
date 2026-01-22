@@ -2,10 +2,10 @@
   "nomenclatures": [
     {
       "type": "TYPE_SITE",
-      "cd_nomenclature": "CRAVE_DORTOIR",
-      "mnemonique": "crave_dortoir",
-      "label_default": "Dortoir craves",
-      "definition_default": "Dortoir craves"
+      "cd_nomenclature": "CRAVE_POINT_OBS",
+      "mnemonique": "crave_point_obs",
+      "label_default": "Points d'observation des dortoirs craves",
+      "definition_default": "Points d'observation des dortoirs craves. Utilisé pour les comptages"
     }
   ]
 }

@@ -4,7 +4,8 @@
     "time_observation_start",
     "time_observation_end",
     "count",
-    "observers"
+    "observers",
+    "observers_txt"
   ],
   "display_list": [
     "visit_date_min",
@@ -27,6 +28,14 @@
     "visit_date_min": {
       "attribut_label": "Date"
     },
+    "observers_txt": {
+      "type_widget": "text",
+      "attribut_label": "Observateur (extérieur, format : NOM prénom si plusieurs séparer par des ;)",
+      "hidden": false
+    },
+    "observers" : {
+      "required":false
+    }, 
     "time_observation_start": {
       "attribut_label": "Heure de début (entrée au dortoir)",
       "type_widget": "time",
