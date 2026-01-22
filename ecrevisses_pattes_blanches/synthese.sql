@@ -1,4 +1,5 @@
-DROP VIEW gn_monitoring.v_synthese_ecrevisses_pattes_blanches;
+DROP view IF EXISTS gn_monitoring.v_synthese_ecrevisses_pattes_blanches
+;
 CREATE
 OR REPLACE VIEW gn_monitoring.v_synthese_ecrevisses_pattes_blanches AS 
 WITH source AS (

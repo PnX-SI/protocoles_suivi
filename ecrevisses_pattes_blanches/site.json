@@ -31,6 +31,15 @@
     "base_site_name": {
       "attribut_label": "Nom du cours d'eau"
     },
+
+    "id_inventor": {
+      "type_widget": "observers",
+      "attribut_label": "Observateur",
+      "type_util": "user",
+      "code_list": "__MODULE.ID_LIST_OBSERVER",
+      "required": true,
+      "multi_select": false
+    },
     "id_nomenclature_type_site": {
       "type_widget": "text",
       "attribut_label": "Type site",

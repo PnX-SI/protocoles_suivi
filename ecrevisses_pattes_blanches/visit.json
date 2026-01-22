@@ -43,6 +43,14 @@
     "comment"
   ],
   "specific": {
+    "observers": {
+      "type_widget": "observers",
+      "attribut_label": "Observateur",
+      "type_util": "user",
+      "code_list": "__MODULE.ID_LIST_OBSERVER",
+      "required": true,
+      "multi_select": true
+    },
     "time_start": {
       "attribut_label": "Heure de début",
       "type_widget": "time"
