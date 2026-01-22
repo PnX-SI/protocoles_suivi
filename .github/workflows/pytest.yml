@@ -10,26 +10,36 @@ on:
       - master  
       - develop
 
+  workflow_call:
+    inputs:
+      geonature_ref:
+        description: 'La branche, tag ou SHA de GeoNature à utiliser'
+        default: 'master'
+        required: false
+        type: string
+
 jobs:
-  build: 
-    runs-on: ubuntu-latest 
+  build:
+    runs-on: ubuntu-latest
+
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - name: "Debian 11"
-            python-version: "3.9"
-            postgres-version: 13
-            postgis-version: 3.2
+        debian-version: [ '12']
+        include: 
+          - debian-version: '12'
+            python-version: '3.11'
+            postgres-version: '15'
+            postgis-version: '3.3'
 
-    name: ${{ matrix.name }}
+    name: Debian ${{ matrix.debian-version }}
 
     services:
       postgres:
-        image: postgis/postgis:${{ matrix.postgres-version }}-${{ matrix.postgis-version }}
+        image: ghcr.io/pnx-si/geonature-db:2.15.4
         env:
           POSTGRES_DB: geonature2db
-          POSTGRES_PASSWORD: geonatpasswd
+          POSTGRES_PASSWORD: geonatadmin
           POSTGRES_USER: geonatadmin
         ports:
           - 5432:5432
@@ -48,62 +58,154 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
+    env:
+      MODULE_DIR: ${{ github.workspace }}/extra/${{ github.event.repository.name }}
+
     steps:
-    - name: Add postgis_raster database extension
-      if: ${{ matrix.postgis-version >= 3 }}
-      run: |
-        psql -h localhost -U geonatadmin -d geonature2db -tc 'CREATE EXTENSION "postgis_raster";'
-      env:
-        PGPASSWORD: geonatpasswd
-    - name: Add database extensions
-      run: |
-        psql -h localhost -U geonatadmin -d geonature2db -tc 'CREATE EXTENSION "hstore";'
-        psql -h localhost -U geonatadmin -d geonature2db -tc 'CREATE EXTENSION "uuid-ossp";'
-        psql -h localhost -U geonatadmin -d geonature2db -tc 'CREATE EXTENSION "pg_trgm";'
-        psql -h localhost -U geonatadmin -d geonature2db -tc 'CREATE EXTENSION "unaccent";'
-        psql -h localhost -U geonatadmin -d geonature2db -tc 'CREATE EXTENSION "ltree";'
-      env:
-        PGPASSWORD: geonatpasswd
-    - uses: actions/checkout@v2
-      with:
-        submodules: recursive
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install GDAL
-      run: |
-        sudo apt update
-        sudo apt install -y libgdal-dev
-    - name: Install geonature
-      run: |
-        python -m pip install --upgrade pip
-        python -m pip install https://github.com/PnX-SI/GeoNature/archive/master.zip
-      working-directory: .
-    - name: Install monitoring module
-      run: |
-        python -m pip install https://github.com/PnX-SI/gn_module_monitoring/archive/main.zip
-      working-directory: .
-    - name: Install geonature database
-      run: | 
-        curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
-        export GEONATURE_CONFIG_FILE=output.txt
-        geonature db upgrade geonature@head -x local-srid=2154
-        geonature db autoupgrade -x local-srid=2154 
-    - name: Install monitoring module database
-      run: |
-        curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
-        export GEONATURE_CONFIG_FILE=output.txt
-        geonature upgrade-modules-db MONITORINGS 
-    - name: Test install monitoring
-      run: |
-        curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
-        export GEONATURE_CONFIG_FILE=output.txt
-        mkdir -p /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/media/monitorings/
-        cp -r * /opt/hostedtoolcache/Python/3.9.20/x64/lib/python3.9/site-packages/media/monitorings/
-        # Test install module
-        echo "Test install modules"
-        for protocole in ./*/; do echo install ${protocole}; geonature monitorings install $protocole > install.log; done
-        # Test sql
-        echo "Test process_sql modules"
-        for protocole in ./*/; do echo process_sql ${protocole}; geonature monitorings process_sql $protocole |grep -i error && exit 1 || echo "OK" ; done
+      - name: Clone GeoNature
+        uses: actions/checkout@v4
+        with:
+          repository: pnx-si/geonature
+          ref: ${{ inputs.geonature_ref }}
+          submodules: true
+      - name: Clone ${{ github.event.repository.name }} module
+        uses: actions/checkout@v4
+        with:
+          path: ${{ env.MODULE_DIR }}
+      - name: Add database extensions
+        run: |
+          psql -h localhost -U geonatadmin -d geonature2db -f install/assets/db/add_pg_extensions.sql
+        env:
+          PGPASSWORD: geonatpasswd
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+      - name: Install GDAL
+        run: |
+          sudo apt update
+          sudo apt install -y libgdal-dev
+      - name: Install dependencies
+        if: github.action_ref == 'master'
+        run: |
+          echo 'Installation des requirements de prod'
+          python -m pip install --upgrade pip
+          python -m pip install \
+            -e ..[tests] \
+            -r requirements.txt
+        working-directory: ./backend
+      - name: Install dependencies
+        if: github.action_ref != 'master'
+        run: |
+          echo 'Installation des requirements de dev'
+          python -m pip install --upgrade pip
+          python -m pip install \
+            -e ..[tests] \
+            -r requirements-dev.txt
+        working-directory: ./backend 
+      - name: Install core modules backend
+        run: |
+          pip install -e contrib/occtax
+          pip install -e contrib/gn_module_occhab
+          pip install -e contrib/gn_module_validation
+      - name: Install modules database
+        run: |
+          geonature db autoupgrade
+          geonature upgrade-modules-db
+        env:
+          GEONATURE_CONFIG_FILE: config/test_config.toml
+      - name: Show database status
+        run: |
+          geonature db status --dependencies
+        env:
+          GEONATURE_CONFIG_FILE: config/test_config.toml
+      - name: Install monitoring module
+        run: |
+          python -m pip install https://github.com/PnX-SI/gn_module_monitoring/archive/main.zip
+        working-directory: .
+      - name: Install monitoring module database
+        run: | 
+          geonature upgrade-modules-db MONITORINGS 
+        env:
+          GEONATURE_CONFIG_FILE: config/test_config.toml 
+      - name: Test json validity 
+        run: | 
+          find . -name "*.json" -print0 | while IFS= read -r -d '' file; do
+            if ! jq empty "$file" 2>/dev/null; then
+              echo "❌ JSON invalide : $file"
+              errors=1
+            fi
+          done
+        working-directory: ${{ github.workspace }}/extra/protocoles_suivi
+      - name: Test install monitoring protocols
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/PnX-SI/GeoNature/refs/heads/master/config/test_config.toml -o output.txt 
+          export GEONATURE_CONFIG_FILE=output.txt
+          
+          # Copie des répertoires monitorings dans les médias de GeoNature
+          MONITORINGS_DST="$GITHUB_WORKSPACE/backend/media/monitorings"
+          mkdir -p $MONITORINGS_DST
+          cp -r * $MONITORINGS_DST
+
+
+          echo "CONTENU DU DOSSIER COPIÉ : $MONITORINGS_DST "
+          ls -al "$MONITORINGS_DST"
+
+          # Test install module
+          echo "Test install modules"
+          for d in */ ; do
+            protocole="${d%/}"
+            [ -d "$protocole" ] || continue
+
+            echo "➡️  install ${protocole}"
+            log="install_${protocole}.log"
+
+            # Lancer l'installation et capturer TOUT (stdout+stderr)
+            if ! geonature monitorings install "$protocole" > "$log" 2>&1; then
+              echo "❌ Commande échouée pour ${protocole} (voir $log)"
+              tail -n 50 "$log" || true
+              exit 1
+            fi
+
+            # Dernière ligne non vide
+            last_line="$(sed -e '/^[[:space:]]*$/d' -e '$!d' "$log")"
+            echo "Dernière ligne: $last_line"
+
+            expected_re="^Sous-module monitoring '${protocole}' installé$"
+            if printf '%s\n' "$last_line" | grep -Eq "$expected_re"; then
+              echo "✔️ ${protocole} OK : Module installé"
+            else
+              echo "❌ ${protocole} KO : Erreur à l'installation"
+              echo "Attendu (regex) : $expected_re"
+              echo "Reçu           : $last_line"
+              echo "---- Extrait du log ----"
+              tail -n 50 "$log" || true
+              exit 1
+            fi
+          done 
+
+          echo "Test process_sql modules"
+          for d in */ ; do
+            protocole="${d%/}"
+            [ -d "$protocole" ] || continue
+
+            echo "➡️  process_sql ${protocole}"
+            if ! out="$(geonature monitorings process_sql "$protocole" 2>&1)"; then
+              echo "❌ process_sql KO (code ≠ 0) pour ${protocole}"
+              printf '%s\n' "$out" | tail -n 100
+              exit 1
+            fi
+
+            if printf '%s\n' "$out" | grep -Eiq '\berror\b' && \
+              ! printf '%s\n' "$out" | grep -Eiq '\b0 +errors?\b'; then
+              echo "❌ Erreurs trouvées dans la sortie pour ${protocole}"
+              printf '%s\n' "$out" | tail -n 100
+              exit 1
+            fi
+
+            echo "OK"
+
+          done 
+        working-directory: ${{ github.workspace }}/extra/protocoles_suivi
+ 
