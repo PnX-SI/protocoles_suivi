@@ -1,0 +1,127 @@
+{
+  "types": [
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    },
+    {
+      "mnemonique": "SUIVI_VT",
+      "label_default": "Classes de vent",
+      "definition_default": "Classes des vents des protocoles ILA, STELI et STERF"
+    },
+    {
+      "mnemonique": "SUIVI_TP",
+      "label_default": "Classes de températures du protocole ILA, STELI et STERF",
+      "definition_default": "Classes de températures du protocole ILA, STELI et STERF"
+    },
+    {
+      "mnemonique": "SUIVI_CN",
+      "label_default": "Classes de couvertures nuageuses du protocole ILA, STELI et STERF",
+      "definition_default": "Classes de couvertures nuageuses du protocole ILA, STELI et STERF"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "STERF",
+      "mnemonique": "Site suivi par le protocole STERF",
+      "label_default": "Site suivi par le protocole STERF",
+      "definition_default": "Site suivi par le protocole STERF"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "SUIVI_TP01",
+      "mnemonique": "13-15°C",
+      "label_default": "13-15°C",
+      "definition_default": "Température de l'air entre 13 et 15°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP02",
+      "mnemonique": "16-20°C",
+      "label_default": "16-20°C",
+      "definition_default": "Température de l'air entre 16 et 20°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP03",
+      "mnemonique": "21-25°C",
+      "label_default": "21-25°C",
+      "definition_default": "Température de l'air entre 21 et 25°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP04",
+      "mnemonique": "26-30°C",
+      "label_default": "26-30°C",
+      "definition_default": "Température de l'air entre 26 et 30°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP05",
+      "mnemonique": "31-35°C",
+      "label_default": "31-35°C",
+      "definition_default": "Température de l'air entre 31 et 35°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP06",
+      "mnemonique": ">35°C",
+      "label_default": ">35°C",
+      "definition_default": "Température de l'air supérieure à 35°C"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN01",
+      "mnemonique": "0-10%",
+      "label_default": "0-10%",
+      "definition_default": "Couverture nuageuses entre 0 et 10%"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN02",
+      "mnemonique": "10-25%",
+      "label_default": "10-25%",
+      "definition_default": "Couverture nuageuses entre 10 et 25%"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN03",
+      "mnemonique": "25-50%",
+      "label_default": "25-50%",
+      "definition_default": "Couverture nuageuses entre 25 et 50%"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN04",
+      "mnemonique": "50-75%",
+      "label_default": "50-75%",
+      "definition_default": "Couverture nuageuses entre 50 et 75%"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN05",
+      "mnemonique": "75-100%",
+      "label_default": "75-100%",
+      "definition_default": "Couverture nuageuses entre 75 et 100%"
+    },
+    {
+      "type": "SUIVI_VT",
+      "cd_nomenclature": "VT01",
+      "mnemonique": "Nul",
+      "label_default": "Nul",
+      "definition_default": "Vent nul."
+    },
+    {
+      "type": "SUIVI_VT",
+      "cd_nomenclature": "VT02",
+      "mnemonique": "Léger",
+      "label_default": "Léger",
+      "definition_default": "Vent léger."
+    },
+    {
+      "type": "SUIVI_VT",
+      "cd_nomenclature": "VT03",
+      "mnemonique": "Modéré",
+      "label_default": "Modéré",
+      "definition_default": "Vent modéré."
+    },
+    {
+      "type": "SUIVI_VT",
+      "cd_nomenclature": "VT04",
+      "mnemonique": "Fort",
+      "label_default": "Fort",
+      "definition_default": "Vent fort."
+    }
+  ]
+}
