@@ -1,0 +1,107 @@
+{
+  "genre":"M",
+  "label": "Transect",
+  "label_list": "Transects",
+  "geometry_type": "LineString",
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "display_properties": [
+    "id_sites_group",
+    "base_site_code",
+    "base_site_name",
+    "altitude_min",
+    "altitude_max",
+    "habitat",
+    "gestion",
+    "impact",
+    "base_site_description"
+ ],
+  "display_list": [
+    "base_site_code",
+    "base_site_name",
+    "nb_visits"
+  ],
+  "keep": [
+    "id_sites_group",
+    "habitat",
+    "gestion",
+    "impact"
+  ],
+  "specific": {
+    "base_site_code":{
+      "attribut_label": "Code du transect"
+    },
+    "base_site_name":{
+      "attribut_label": "Nom du transect"
+    },
+    "base_site_description":{
+      "attribut_label": "Commentaires"
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Site CEN du suivi",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": true,
+      "hidden": false,
+      "definition": "Liste des sites du CEN afférents au suivi"
+    },
+    "id_inventor": {
+      "hidden " : true,
+      "required": false
+    },
+    "habitat":{
+      "attribut_label": "Habitat",
+      "type_widget": "select",
+      "values": [
+        "Berges",
+        "Brachypodaie",
+        "Cariçaie",
+        "Dalle / Pelouse écorchée",
+        "Friche",
+        "Fruticée",
+        "Lande",
+        "Lisière / Forestière",
+        "Mégaphorbiaie",
+        "Ourlet",
+        "Pelouse calcaire",
+        "Pelouse sableuse",
+        "Prairie humide",
+        "Prairie piquetée",
+        "Roselière"
+      ],
+      "required": true,
+      "hidden": false
+    },
+    "gestion":{
+      "attribut_label": "Gestion",
+      "type_widget": "select",
+      "values": [
+        "Autre",
+        "Broyage",
+        "Débroussaillage",
+        "Etrépage",
+        "Fauche",
+        "Pas d'intervention",
+        "Pâturage"
+      ],
+      "required": true,
+      "hidden": false
+    },
+    "nb_visits": {
+      "attribut_label": "Nb. passages"
+    },
+    "impact":{
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Impact de la gestion",
+      "values": ["OUI", "NON"],
+      "value": "NON",
+      "hidden":false
+    }
+  }
+}
