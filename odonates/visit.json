@@ -1,0 +1,192 @@
+{
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "genre":"M",
+  "label": "Passage",
+  "label_list": "Passages",
+  "display_properties": [
+    "id_base_site",
+    "id_observer",
+    "qObserver",
+    "observers",
+    "visit_date_min",
+    "heureDebut",
+    "heureFin",
+    "passage",
+    "periode",
+    "pluviosite",
+    "couvertureNuageuse",
+    "tempAir",
+    "humidite",
+    "vent",
+    "pertubations",
+    "comments"
+  ],
+  "display_list": [
+    "passage",
+    "visit_date_min",
+    "observers",
+    "nb_observations"
+  ],
+  "keep": [
+    "observers",
+    "visit_date_min",
+    "pluviosite",
+    "couvertureNuageuse",
+    "vent",
+    "comments"
+  ],
+  "specific": {
+    "id_base_site": {
+      "type_widget": "datalist",
+      "attribut_label": "Site",
+      "type_util": "site",
+      "keyValue": "id_base_site",
+      "keyLabel": "base_site_name",
+      "api": "__MONITORINGS_PATH/list/caracterisation_mare/site",
+      "params": [
+        "({meta}) => ({",
+        "id_module: meta.parents.module.config.id_module_main_sites,",
+        "order_by: 'base_site_name'",
+        "})"
+        ],
+      "application": "GeoNature",
+      "required": true,
+      "hidden": false
+    },
+    "id_observer": {
+      "type_widget": "datalist",
+      "attribut_label": "Observateur principal",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": false,
+      "required": true
+    },
+    "qObserver":{
+      "type_widget": "datalist",
+      "required": false,
+      "attribut_label": "Qualité de l'observateur",
+      "values": [
+          "Propriétaire", 
+          "Gestionnaire", 
+          "Locataire", 
+          "Simple observateur",
+          "Autre"
+        ],
+      "multiple": true
+    },
+    "observers": {
+      "attribut_label": "Observateur(s) complémentaire(s)",
+      "required": false
+    },
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date du début du passage",
+      "required": true
+    },
+    "heureDebut": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début",
+      "required": true
+    },
+    "heureFin": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin",
+      "required": true
+    },
+    "passage": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Numéro de passage",
+      "values": ["1er passage (01/04-15/06)", "2eme passage (16/06-31/07)", "3eme passage (01/08-31/09)"]
+    },
+    "periode": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Période de passage",
+      "values": ["Session 1", "Session 2", "Session 3"]
+    },
+    "tempAir": {
+      "type_widget": "number",
+      "attribut_label": "Température de l’air (en °C)",
+      "required": false,
+      "min": -50,
+      "max": 60
+    },
+    "humidite": {
+      "type_widget": "number",
+      "attribut_label": "Humidité relative (en %)",
+      "required": false,
+      "min": 0,
+      "max": 100
+    },
+    "pluviosite": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Pluviosité",
+      "code_nomenclature_type": "PLUVIOSITE",
+	    "required": false,
+      "type_util": "nomenclature", 
+      "hidden": false
+    },
+    "couverture_nuageuse": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Couverture nuageuse",
+      "code_nomenclature_type": "COUVERTURE_NUAGEUSE",
+	    "required": false,
+      "type_util": "nomenclature",
+      "hidden": false
+    },
+    "vent": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Vent",
+      "code_nomenclature_type": "VENT_2",
+      "required": false,
+      "type_util": "nomenclature" ,
+      "hidden": false
+    },
+    "pertubations": {
+      "type_widget": "text",
+      "attribut_label": "Pertubations",
+      "required": false
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire",
+      "required": false
+    }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+
+    "if (objForm.controls.observers.status == 'INVALID') {",
+      "objForm.controls['observers'].setValue([meta.id_role]);",
+    "}",
+
+    "if (objForm.controls['heureDebut'].value != null &&",
+    "objForm.controls['heureFin'].value != null &&",
+      "objForm.controls['visit_date_min'].value != null) {",
+        "var checkDate = new Date(",
+          "objForm.controls.visit_date_min.value.year,",
+          "objForm.controls.visit_date_min.value.month,",
+          "objForm.controls.visit_date_min.value.day,",
+          "parseInt(objForm.controls.heureDebut.value.split(':')[0]),",
+          "parseInt(objForm.controls.heureDebut.value.split(':')[1])",
+        ") <= new Date(",
+        "objForm.controls.visit_date_min.value.year,",
+          "objForm.controls.visit_date_min.value.month,",
+          "objForm.controls.visit_date_min.value.day,",
+          "parseInt(objForm.controls.heureFin.value.split(':')[0]),",
+          "parseInt(objForm.controls.heureFin.value.split(':')[1])",
+        ");",
+
+        "if (checkDate == false) {",
+          "objForm.controls.heureFin.setValue(null);",
+          "objForm.controls.heureFin.status = 'INVALID';",
+        "}",
+      "}",
+
+  "}"
+  ]
+}
