@@ -1,0 +1,15 @@
+{
+  "module_code": "sterf",
+  "module_label":"STERF",
+  "module_desc":"Module pour le protocole de suivi des rhopalocères STERF",
+  "specific": {
+    "b_draw_sites_group": {
+      "hidden": false
+    }
+  },
+  "export_csv": [
+    { "label": "Transects STERF", "type":"csv" , "method": "transect"},
+    { "label": "Ensemble des suivis STERF", "type":"csv" , "method": "obs"},
+    { "label": "Ensemble des suivis STERF pour export vers l'OPIE", "type":"csv", "method": "opie" }
+  ]
+}

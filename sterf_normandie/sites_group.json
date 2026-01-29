@@ -1,0 +1,92 @@
+{
+  "genre":"M",
+  "label": "Site suivi",
+  "label_list": "Site suivi",
+  "map_label_field_name": "base_site_name",
+  "b_draw_sites_group": false,
+  "sorts": [
+    {"prop": "commune"}
+  ],
+  "display_properties": [
+    "sites_group_code",
+    "sites_group_name",
+    "sites_group_description",
+    "id_dataset",
+    "id_resp",
+    "commune",
+    "annee_debut",
+    "annee_fin",
+    "sentinelle_climat"
+  ],
+  "display_list": [
+    "commune",
+    "sites_group_description",
+    "nb_sites"
+  ],
+  "specific": {
+    "sites_group_code": {
+      "attribut_label": "Code STERF",
+      "hidden": false,
+      "required": true
+    },
+    "annee_debut": {
+      "type_widget": "number",
+      "attribut_label": "Année de lancement du suivi",
+      "min" : 1993,
+      "value": 2024,
+      "required": true
+    },
+    "annee_fin": {
+      "type_widget": "number",
+      "attribut_label": "Année d'arrêt du suivi",
+      "min" : 1993,
+      "required": false
+    },
+    "sentinelle_climat":{
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Programme Sentinelle du Climat",
+      "values": ["Oui", "Non"],
+      "value": "Non",
+      "hidden":false
+    },
+    "id_resp": {
+      "type_widget": "datalist",
+      "attribut_label": "Responsable du suivi",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": false,
+      "required": false
+    },
+    "id_dataset": {
+      "type_widget": "dataset",
+      "type_util": "dataset",
+      "attribut_label": "Jeu de données",
+      "required": true,
+      "value": 1342
+    },
+    "sites_group_name":{
+      "attribut_label": "Code",
+      "hidden":false,
+      "required":false
+    },
+    "sites_group_description":{
+      "attribut_label": "Nom",
+      "hidden": false
+    },
+    "commune":{
+      "type_widget": "text",
+      "attribut_label": "Commune"
+    },
+    "nb_sites": {
+      "attribut_label": "Nb. transects",
+      "hidden": false
+    },
+    "nb_visits": {
+      "attribut_label": "Nb. passages"
+    }
+  }
+}

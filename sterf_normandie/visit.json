@@ -1,0 +1,210 @@
+{
+  "description_field_name": "num_passage",
+  "genre":"M",
+  "label": "Passage",
+  "label_list": "Passages",
+  "display_properties": [
+    "num_passage",
+    "observers",
+    "annee",
+    "visit_date_min",
+    "visit_date_max",
+    "heure_debut",
+    "heure_fin",
+    "id_nomenclature_tp",
+    "id_nomenclature_cn",
+    "id_nomenclature_vt",
+    "occ_sol",
+    "occ_sol_detail",
+    "hab_1",
+    "lisiere",
+    "hab_2",
+    "gestion",
+    "comments"
+  ],
+  "display_list": [
+    "num_passage",
+    "visit_date_min",
+    "observers",
+    "occ_sol",
+    "nb_observations"
+  ],
+  "keep": [
+    "annee",
+    "occ_sol",
+    "occ_sol_detail",
+    "hab_1",
+    "lisiere",
+    "hab_2",
+    "gestion",
+    "id_dataset",
+    "observers"
+  ],
+  "specific": {
+    "num_passage": {
+      "type_widget": "number",
+      "attribut_label": "Numéro de passage",
+      "min" : 1,
+      "required": true
+    },
+    "annee": {
+      "type_widget": "number",
+      "attribut_label": "Année",
+      "min" : 1993,
+      "value": 2025,
+      "required": true
+    },
+    "visit_date_min":{
+      "attribut_label": "Date de début du passage",
+      "required": true
+    },
+    "visit_date_max":{
+      "attribut_label": "Date de fin du passage" ,  
+      "definition": "Date de fin de passage (à remplir si différente de la date de début du passage)",
+      "required": false,
+      "hidden": false
+    },
+    "heure_debut": {
+      "type_widget": "time",
+      "attribut_label": "Heure d'arrivée",
+      "required": true
+    },
+    "heure_fin": {
+      "type_widget": "time",
+      "attribut_label": "Heure de départ",
+      "required": false
+    },
+    "id_nomenclature_tp":{
+      "type_widget": "datalist",
+      "attribut_label": "Température",
+      "api": "nomenclatures/nomenclature/SUIVI_TP",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "multiple": false,
+      "required": true
+    },
+    "id_nomenclature_cn":{
+      "type_widget": "datalist",
+      "attribut_label": "Couverture nuageuse",
+      "api": "nomenclatures/nomenclature/SUIVI_CN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "multiple": false,
+      "required": true
+    },
+    "id_nomenclature_vt":{
+      "type_widget": "datalist",
+      "attribut_label": "Vent",
+      "api": "nomenclatures/nomenclature/SUIVI_VT",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "filters" : {
+        "cd_nomenclature": ["VT01","VT02","VT03","VT04"]
+      },
+      "multiple": false,
+      "required": true
+    },
+    "source":{
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Source de la donnée",
+      "values": [        
+        "Intranet SER", 
+        "Excel", 
+        "GeoNature", 
+        "Qfield/Qgis"
+      ],
+      "value": "GeoNature",
+      "hidden":false
+    },
+    "hab_1": {
+      "attribut_label": "Habitat principal",
+      "type_widget": "text",
+      "required": true,
+      "hidden": false,
+      "definition": "Habitat du protocole STERF",
+      "link_definition":"https://www.vigienature.fr/sites/vigienature/files/atoms/files/sterf_classification_habitats.pdf"
+    },
+    "lisiere":{
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Lisière ?",
+      "values": ["Oui", "Non"],
+      "value": "Non",
+      "hidden":false
+    },
+    "hab_2": {
+      "attribut_label": "Habitat secondaire",
+      "type_widget": "text",
+      "hidden": "({value}) => value.lisiere != 'Oui'",
+      "required": "({value}) => value.lisiere == 'Oui'"
+    },
+    "occ_sol": {
+      "attribut_label": "Occupation du sol à grande échelle",
+      "type_widget": "select",
+      "values": ["Forêts et milieux semi-naturels", "Territoires agricoles", "Territoires artificialisés","Zones humides"],
+      "required": true,
+      "hidden": false
+    },
+    "occ_sol_detail": {
+      "attribut_label": "Occupation du sol détaillée",
+      "values": [
+        "Cultures permanentes", 
+        "Espaces verts artificialisés", 
+        "Forêt (feuillus, conifères, mixtes)",
+        "Forêts et végétation arbustive en mutation",
+        "Landes, broussailles",
+        "Pelouses, pâturages naturels",
+        "Prairie",
+        "Zones humides intérieures ou maritimes",
+        "Zones urbaines (hors espaces verts)"
+      ],
+      "type_widget": "select",
+      "required": true,
+      "hidden": false      
+    },
+    "gestion":{
+      "attribut_label": "Gestion",
+      "type_widget": "select",
+      "values": [
+        "Autre",
+        "Broyage",
+        "Débroussaillage",
+        "Etrépage",
+        "Fauche",
+        "Pas d'intervention",
+        "Pâturage"
+      ],
+      "required": false,
+      "hidden": false
+    }
+  },
+  "change": [
+      "({objForm, meta}) => {",
+          "const occ_sol = (meta.parents.site.properties.occ_sol);",
+          "const occ_sol_detail = (meta.parents.site.properties.occ_sol_detail);",
+          "const hab_1 = (meta.parents.site.properties.hab_1);",
+          "const lisiere = (meta.parents.site.properties.lisiere);",
+          "const hab_2 = (meta.parents.site.properties.hab_2);",
+          "const gestion = (meta.parents.site.properties.gestion);",
+          "const observers = (meta.parents.sites_group.properties.id_resp);",
+          "(objForm.value.occ_sol == (null || undefined)  && meta.parents.site.properties.occ_sol != (null || undefined) ? objForm.patchValue({occ_sol}) : '');",
+          "(objForm.value.occ_sol_detail == (null || undefined) ? objForm.patchValue({occ_sol_detail}) : '');",
+          "(objForm.value.hab_1 == (null || undefined) ? objForm.patchValue({hab_1}) : '');",
+          "(objForm.value.lisiere == (null || undefined) ? objForm.patchValue({lisiere}) : '');",
+          "(objForm.value.hab_2 == (null || undefined) ? objForm.patchValue({hab_2}) : '');",
+          "(objForm.value.gestion == (null || undefined) ? objForm.patchValue({gestion}) : '');",
+          "(objForm.value.observers == (null || undefined)  && meta.parents.sites_group.properties.id_resp != (null || undefined) ? objForm.patchValue({observers}) : '');",
+      "}",
+      ""
+  ]
+}

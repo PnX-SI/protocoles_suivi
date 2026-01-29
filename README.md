@@ -32,6 +32,7 @@ Récupérer une archive du dépot
 * Piégeages passifs
 * STOM
 * STERF
+* STERF du CEN Normandie
 * Apollons 
 * Oedicnèmes 
 * Points d'écoute cheveche
