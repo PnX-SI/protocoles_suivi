@@ -13,8 +13,11 @@
     }
   ],
   "specific": {
+    "sites_group_code": {
+      "value": "site"
+    },
     "nb_sites": {
-      "attribut_label": "Nombre de biotopes"
+      "attribut_label": "Nombre de phytocénoses"
     }
   }
 }
