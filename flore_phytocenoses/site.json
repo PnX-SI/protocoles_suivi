@@ -12,14 +12,15 @@
   ],
   "filters": {},
   "map_label_field_name": "base_site_code",
-  "label": "Biotope",
-  "label_list": "Biotopes",
-  "genre": "M",
+  "label": "phytocénose",
+  "label_list": "phytocénoses",
+  "genre": "F",
   "geometry_type": "Polygon",
   "display_properties": [
     "id_sites_group",
     "base_site_name",
     "base_site_description",
+    "id_inventor",
     "pente",
     "id_nomenclature_exposition",
     "altitude_moyenne",
@@ -32,23 +33,24 @@
   "display_list": [
     "base_site_name",
     "last_visit",
-    "nb_visits"
+    "nb_visits",
+    "grand_type_milieu"
   ],
   "specific": {
+    "id_sites_group": {
+      "hidden": true
+    }, 
+    "base_site_name": {
+      "value": "phytocénose"
+    }, 
     "base_site_code": {
       "type_widget": "text",
       "attribut_label": "Code",
       "required": false,
       "hidden": true
     },
-    "id_nomenclature_type_site": {
-      "type_widget": "text",
-      "attribut_label": "Type site",
-      "type_util": "nomenclature",
-      "value": {
-        "code_nomenclature_type": "TYPE_SITE",
-        "cd_nomenclature": "FLORE_BIOTOPE"
-      },
+    "types_site": {
+      "default": "__MODULE.TYPES_SITE" ,
       "hidden": true
     },
     "pente": {
@@ -135,6 +137,10 @@
     "utilisation_agricole_historique": {
       "type_widget": "text",
       "attribut_label": "historique utilisation terre"
+    },
+    "base_site_description":{
+      "attribut_label": "Description",
+      "required": true
     }
   }
 }

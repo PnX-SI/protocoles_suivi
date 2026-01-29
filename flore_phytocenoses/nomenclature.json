@@ -3,10 +3,10 @@
   "nomenclatures": [
     {
       "type": "TYPE_SITE",
-      "cd_nomenclature": "FLORE_BIOTOPE",
-      "mnemonique": "Flore biotope",
-      "label_default": "Pairies sources",
-      "definition_default": "Pairies sources"
+      "cd_nomenclature": "FLORE_PHYTOCENOSE",
+      "mnemonique": "phytocenose",
+      "label_default": "phytocenoses",
+      "definition_default": "phytocenose"
     },
     {
       "type": "BRAUNBLANQABDOM",

@@ -54,7 +54,20 @@
         "code_nomenclature_type": "STADE_VIE",
         "cd_nomenclature": "1"
       },
-      "regne": "Plantae"
+      "regne": "Plantae",
+      "cd_nomenclatures": [
+        "18",
+        "19",
+        "20",
+        "27",
+        "FLO",
+        "FLORAISON_BOUTON",  
+        "FLORAISON_DEBUT",  
+        "FLORAISON_FIN", 
+        "DISSEMINATION",
+        "VEGETATIF",
+        "TIGE"
+      ]
     },
     "count_min": {
       "type_widget": "number",

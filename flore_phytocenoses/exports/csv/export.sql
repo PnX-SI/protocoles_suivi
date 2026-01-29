@@ -1,6 +1,6 @@
 --- Export de la liste des taxons observés sur un site avec mention au première et dernière date de visites
 CREATE
-OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_inventaires_cumulatifs AS WITH type_site AS (
+OR REPLACE VIEW gn_monitoring.v_export_flore_phytocenoses_inventaires_cumulatifs AS WITH type_site AS (
  SELECT
         tm.id_module, cmt.id_type_site
 FROM
@@ -8,7 +8,7 @@ FROM
     JOIN  gn_monitoring.cor_module_type cmt 
     ON cmt.id_module = tm.id_module
 WHERE
-    tm.module_code = 'flore_biotope'
+    tm.module_code = 'flore_phytocenoses'
 ),
 type_plante AS (
     SELECT
@@ -59,10 +59,18 @@ FROM
 
 -- Export des sites
 CREATE
-OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_sites AS
-
-
-SELECT
+OR REPLACE VIEW gn_monitoring.v_export_flore_phytocenoses_sites AS 
+WITH sites AS (
+	SELECT tbs.id_base_site 
+	FROM gn_monitoring.t_base_sites tbs 
+	JOIN gn_monitoring.cor_site_type cst 
+	ON cst.id_base_site = tbs.id_base_site 
+	JOIN gn_monitoring.cor_module_type cmt 
+	ON cmt.id_type_site = cst.id_type_site 
+	JOIN gn_commons.t_modules tm 
+	ON tm.id_module = cmt.id_module 
+	WHERE tm.module_code ILIKE 'flore_phytocenoses'
+)SELECT
     tsg.sites_group_name,
     tsg.sites_group_code,
     s.id_base_site,
@@ -80,10 +88,8 @@ SELECT
     (st_area(s.geom_local) / 1000) AS surface_calculee
 from
     gn_monitoring.t_base_sites s
-    JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site
-    JOIN gn_monitoring.cor_site_module csm on s.id_base_site = csm.id_base_site
-    JOIN gn_commons.t_modules mod on mod.id_module = csm.id_module
-    AND mod.module_code = 'flore_biotope'
+    JOIN sites ss ON ss.id_base_site = s.id_base_site 
+    JOIN gn_monitoring.t_site_complements tsc ON s.id_base_site = tsc.id_base_site 
     LEFT JOIN gn_monitoring.t_sites_groups tsg ON tsg.id_sites_group = tsc.id_sites_group
     LEFT JOIN ref_nomenclatures.t_nomenclatures tn ON (tsc.data ->> 'id_nomenclature_exposition') :: integer = tn.id_nomenclature
     LEFT JOIN LATERAL (
@@ -112,9 +118,10 @@ from
             d_1.id_base_site
     ) a ON TRUE;
 
+
 -- Export des observations
 CREATE
-OR REPLACE VIEW gn_monitoring.v_export_flore_biotope_observations AS WITH type_site AS (
+OR REPLACE VIEW gn_monitoring.v_export_flore_phytocenoses_observations AS WITH type_site AS (
  SELECT
         tm.id_module, cmt.id_type_site
 FROM
@@ -122,7 +129,7 @@ FROM
     JOIN  gn_monitoring.cor_module_type cmt 
     ON cmt.id_module = tm.id_module
 WHERE
-    tm.module_code = 'flore_biotope'
+    tm.module_code = 'flore_phytocenoses'
 ),
 type_plante AS (
     SELECT
@@ -142,6 +149,7 @@ SELECT
     observateurs.observateurs_noms,
     tvc.data ->> 'gestion_courante' as gestion_courante,
     tvc.data ->> 'historique_gestion' as historique_gestion,
+    tsc.data ->> 'grand_type_milieu' as grand_type_milieu,
     tbv.comments AS commentaire,
     obs.id_observation,
     t.regne,

@@ -1,6 +1,6 @@
 {
-    "module_label": "Suivis botanique de site",
-    "module_desc": "Suivi flore biotope",
+    "module_label": "Suivis botaniques de phytocénoses",
+    "module_desc": "Suivi des phytocénoses",
     "export_csv": [
         {
             "label": "Observations",
