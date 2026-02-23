@@ -1,0 +1,41 @@
+{   "label": "Zones",
+    "label_list": "Zones",
+    "map_label_field_name": "sites_group_name",
+    "display_properties": [
+      "sites_group_name",
+      "sites_group_description"
+    ],
+    "display_list": [
+      "sites_group_name",
+      "nb_sites",
+      "nb_visits"
+    ],    
+    "specific": {
+      "sites_group_name": {
+        "required": false,
+        "hidden": false,
+        "attribut_label": "Nom de la zone",
+        "type_widget": "text"
+      }, 
+      "sites_group_description": {
+        "required": false,
+        "hidden": true,
+        "attribut_label": "Remarque/description",
+        "type_widget": "text"
+      }, 
+      "sites_group_code": {
+        "required": false,
+        "hidden": true
+      }, 
+      "medias": {
+        "required": false,
+        "hidden": true
+      }, 
+      "nb_sites": {
+        "attribut_label": "Nombre de tâches"
+      }, "nb_visits": {
+        "attribut_label": "Nombre de relevés"
+      }           
+    }
+  }
+  

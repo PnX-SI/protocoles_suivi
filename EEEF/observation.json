@@ -1,0 +1,17 @@
+{   "chained": false,
+    "display_properties": [
+      "cd_nom"
+    ],
+    "display_list": [
+      "cd_nom"
+    ],
+    "specific": {
+      "cd_nom": {
+        "type_widget": "taxonomy",
+        "attribut_label": "Espèce",
+        "type_util": "taxonomy",
+        "required": true,
+        "id_list": "__MODULE.ID_LIST_TAXONOMY"
+      }
+    }
+  }
