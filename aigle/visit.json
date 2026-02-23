@@ -1,0 +1,69 @@
+{
+  "display_properties": [
+    "type_site_aigle",
+    "id_base_site",
+    "observers",
+    "visit_date_min",
+    "visit_duration",
+    "id_nomenclature_aire_activity",
+    "id_nomenclature_behaviour_home_range",
+    "comments",
+    "id_nomenclature_reprodution_status"
+  ],
+  "display_list": ["visit_date_min", "observers"],
+  "label": "Contrôle",
+  "genre": "M",
+  "map_label_field_name": "base_site_name",
+  "specific": {
+    "id_dataset": {
+      "hidden": "({meta}) => meta.dataset && Object.keys(meta.dataset).length == 1"
+    },
+    "comments": {
+      "type_widget": "textarea"
+    },
+    "visit_duration": {
+      "type_widget": "number",
+      "attribut_label": "Durée de la visite (en heure)",
+      "required": true,
+      "min": 0,
+      "max": 20
+    },
+    "type_site_aigle": {
+      "type_widget": "select",
+      "attribut_label": "Aire ou domaine vital ?",
+      "values": ["Aire", "Domaine vital"],
+      "required": true
+    },
+    "id_nomenclature_aire_activity": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Activités liées à l'aire",
+      "code_nomenclature_type": "AIGLE_ACTIVITE_AIRE",
+      "type_util": "nomenclature",
+      "multi_select": true,
+      "required": "({value}) =>  value.type_site_aigle == 'Aire'",
+      "hidden": "({value}) =>  !value.type_site_aigle ||  value.type_site_aigle == 'Domaine vital'"
+    },
+    "id_nomenclature_behaviour_home_range": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Informations concernant les comportements liés au domaine vital",
+      "code_nomenclature_type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "type_util": "nomenclature",
+      "multi_select": true,
+      "required": "({value}) => value.type_site_aigle == 'Domaine vital'",
+      "hidden": "({value}) =>  !value.type_site_aigle || value.type_site_aigle == 'Aire'"
+    },
+    "id_nomenclature_reprodution_status": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Statut de reproduction 'expert' ; à modifier si besoin:",
+      "code_nomenclature_type": "AIGLE_STATUT_REPRODUCTION",
+      "type_util": "nomenclature",
+      "hidden": "({value}) => !value.type_site_aigle || value.type_site_aigle == 'Aire' "
+    },
+    "medias": {
+      "hidden": true,
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_base_visits"
+    }
+  }
+}

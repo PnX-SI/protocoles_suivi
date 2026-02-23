@@ -1,0 +1,66 @@
+{
+  "display_properties": [
+    "id_nomenclature_topology",
+    "altitude",
+    "heigth",
+    "id_nomenclature_position_cliff",
+    "id_nomenclature_orientation",
+    "id_nomenclature_substratum",
+    "discover_year",
+    "valid"
+  ],
+
+  "specific": {
+    "id_nomenclature_topology": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Topologie",
+      "code_nomenclature_type": "AIGLE_AIRE_TOPOLOGY",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "altitude": {
+      "type_widget": "number",
+      "attribut_label": "Altitude",
+      "required": true,
+      "min": 0
+    },
+    "heigth": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur de la falaise",
+      "required": true,
+      "min": 0
+    },
+    "id_nomenclature_position_cliff": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Position dans la falaise",
+      "code_nomenclature_type": "AIGLE_POSITION_FALAISE",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "id_nomenclature_orientation": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Orientation",
+      "code_nomenclature_type": "AIGLE_ORIENTATION_AIRE",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "id_nomenclature_substratum": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Substrat",
+      "code_nomenclature_type": "AIGLE_SUBSTRAT",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "discover_year": {
+      "type_widget": "number",
+      "attribut_label": "Année découverte",
+      "required": true,
+      "min": 1850
+    },
+    "valid": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Validé",
+      "value": false
+    }
+  }
+}

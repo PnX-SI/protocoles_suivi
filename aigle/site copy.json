@@ -1,0 +1,73 @@
+{
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "label": "Aire / domaine vital",
+  "label_list": "Aires / domaines vitaux",
+  "genre": "F",
+  "geometry_type": "Point, Polygon",
+  "display_properties": [
+    "types_site",
+    "base_site_name",
+    "base_site_code"
+  ],
+  "display_list": [
+    "base_site_name",
+    "nb_visits",
+    "owner_name"
+  ],
+  "specific": {
+    "base_site_code" : {
+      "attribut_label": "Numéro"
+    },
+      "id_nomenclature_topology": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Topologie",
+        "code_nomenclature_type": "AIGLE_AIRE_TOPOLOGY",
+        "type_util": "nomenclature",
+        "required": true
+    },
+      "heigth": {
+        "type_widget": "number",
+        "attribut_label": "Hauteur de la falaise",
+        "required": true,
+        "min": 0
+    },
+      "id_nomenclature_position_cliff": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Position dans la falaise",
+        "code_nomenclature_type": "AIGLE_POSITION_FALAISE",
+        "type_util": "nomenclature",
+        "required": true
+    },
+      "id_nomenclature_orientation": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Orientation",
+        "code_nomenclature_type": "AIGLE_ORIENTATION_AIRE",
+        "type_util": "nomenclature",
+        "required": true
+    },
+      "id_nomenclature_substratum": {
+        "type_widget": "nomenclature",
+        "attribut_label": "Substrat",
+        "code_nomenclature_type": "AIGLE_SUBSTRAT",
+        "type_util": "nomenclature",
+        "required": true
+    },
+      "discover_year": {
+        "type_widget": "number",
+        "attribut_label": "Année découverte",
+        "required": true,
+        "min": 1850
+    },
+    "valid": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Validé",
+      "value": false
+    }
+  }
+}

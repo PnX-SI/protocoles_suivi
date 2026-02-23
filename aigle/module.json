@@ -1,0 +1,13 @@
+{
+    "module_label":"Aigle",
+    "module_desc": "Suivi de la reproduction de l'aigle royage",
+    "display_properties": [
+        "module_label",
+        "module_desc"
+      ],
+    "export_csv": [
+        { "label": "Observations", "type":"csv" , "method": "observations" },
+        { "label": "Sites", "type":"csv" , "method": "sites" }
+    ]
+
+}

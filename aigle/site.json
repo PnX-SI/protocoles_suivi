@@ -1,0 +1,29 @@
+{
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "label": "Aire / domaine vital",
+  "label_list": "Aires / domaines vitaux",
+  "genre": "F",
+  "geometry_type": "Point, Polygon",
+  "display_properties": [
+    "types_site",
+    "base_site_name",
+    "base_site_code"
+  ],
+  "display_list": [
+    "base_site_name",
+    "types_site",
+    "nb_visits",
+    "owner_name"
+  ],
+  "specific": {
+    "base_site_code" : {
+      "attribut_label": "Numéro"
+    }
+  }
+}
