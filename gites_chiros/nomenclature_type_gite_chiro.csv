@@ -1,0 +1,52 @@
+code;label;definition
+0100;Cavité naturelle;Partie creuse, d'origine naturelle, dans la roche ou le sol (même si l’homme y est intervenu en modifiant certaines parties).
+0101;Abri sous roche;Cavité naturelle peu profonde s'enfonçant dans une paroi rocheuse, souvent à la base de celle-ci.
+0102;Aven / Gouffre / Abîmes / Scialet ;Cavité naturelle à tendance verticale.
+0103;Grotte / Caverne;Cavité naturelle à tendance horizontale.
+0104;Terrier;Cavité creusée par un animal dans le sol.
+0105;Autre;Autre cavité naturelle.
+0200;Falaise / Milieu rocheux;Affleurement rocheux accessible depuis la surface. Parmi les milieux rocheux, on distingue les escarpements rocheux créés par le travail des eaux, les rochers proprement dits et les éboulis rocheux.
+0201;Chaos rocheux;Amas de gros blocs, propice aux espèces cavernicoles (oreillards, petits rhino, …)
+0202;Eboulis rocheux;Amas de petites pierres, propice aux espèces fissuricoles.
+0203;Falaise;Escarpement rocheux créé par le travail des eaux.
+0204;Autre;Autre milieu rocheux.
+0300;Arbre gîte;Arbre susceptible d'héberger des chauves-souris.
+0400;Cavité anthropique;Partie creuse, creusée par l'humain, dans la roche ou le sol (même si, à l’abandon depuis un certain temps, elle semble avoir repris une certaine naturalité).
+0401;Carrière d'extraction;Cavité d'où l'on extrait des matières pour l'industrie, parfois semi-souterraines, y compris de faibles dimensions, même abandonnées ou en cas de changement d’usage (catacombes, champignonnière, galerie…)
+0402;Mine;Cavité d'où l'on extrait des matières pour l'industrie, parfois semi-souterraines.
+0403;Habitat troglodytique;Cavité creusée par l'humain servant d'habitation (maisons troglodytes, …)
+0404;Fausse grotte (enrochement);Construction ornementale reproduisant peu ou prou une grotte.
+0405;Autre;Autre cavité anthropique. Comprend par exemple les cavités de compensation, puits, …
+0500;Bâti;Structure artificielle construite par l'humain pour un usage spécifique.
+0501;Maison;Bâtiment à fonction d’habitat individuel.
+0502;Immeuble;Bâtiment à fonction d’habitat collectif.
+0503;Château / manoir;Bâtiment à fonction d’habitat avec valeur patrimoniale, généralement de grandes dimensions, même en cas de changement d’usage.
+0504;Cabanon / remise / abri de jardin;
+0505;Bâtiment public;Bâtiment accueillant du public :  école, mairie, salle des fêtes, …
+0506;Edifice religieux;
+0507;Fortifications militaires;Structure militaire maçonée : citadelles, remparts, forts, fortins, douves,  …
+0508;Blockhaus / bunker / casemate / poudrière;Structure militaire bétonnée
+0509;Bâtiment d'élevage;Bâtiment agricole accueillant des animaux domestiques : écuries, stabulations, bergeries, …
+0510;Bâtiment industriel;Usine, centrale hydroélectrique, …
+0511;Grange / hangar;
+0512;Tombe / caveau / fosse;Bâtiment à fonction funéraire, comprend généralement une valeur symbolique ou patrimoniale.
+0513;Glacière;
+0514;Four à chaux;
+0515;Moulin;
+0516;Pigeonnier;
+0517;Autre;Autre structure bâtie. Comprend par exemple : ruines, maison pour chiro pour mesures compensatoires, …
+0600;Ouvrage d'art;Construction de génie civil, autre qu’un bâtiment, qui permet d’assurer et/ou de protéger la continuité d’une voie de circulation. Il existe trois grands types d’ouvrages d’art routiers : les ponts, les ouvrages de soutènements et les tunnels.
+0601;Pont / viaduc;
+0602;Aqueduc;
+0603;Buse / ponceau;
+0604;Tunnel;
+0605;Château d'eau;
+0606;Barrage;
+0607;Mur de soutènement;
+0608;Autre;Bief, décharge de crue, ...
+0700;Gite artificiel;Construction déstinée à abriter des chauves-souris ou des oiseaux (nichoir).
+0701;Gîte fissuricole;Gîte artificiel à destination des chiros fissuricoles, comprend de petites infractuosités. Briques, gîtes intégrés dans des constructions …
+0702;Gîte volume tube;Gîte artificiel à destination des chiros de plus grande taille, comprend une entrée donant sur un volume intérieur. Inclut les gîtes arboricoles découpés et refixés sur un autre arbre.
+0703;Nichoir autres espèces;Gîte artificiel à destination d'autres espèces (oiseaux, micromammifères...) et utilisé par les chiros.
+0704;Autre;Autre gîte artificiel.
+0800;Autre;Tout type de gîte qui ne peut être attribué aux catégories proposées.

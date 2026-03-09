@@ -1,0 +1,294 @@
+{
+  "types": [
+    {
+      "mnemonique": "TYPE_GITE_CHIRO",
+      "label_default": "Type de gîte",
+      "definition_default": "Type de gîte à chiroptère, sur deux niveaux."
+    },
+    {
+      "mnemonique": "SITUATION_GITE_CHIRO",
+      "label_default": "Situation du gîte",
+      "definition_default": "Situation d'un gîte à chiroptères par rapport au niveau du sol."
+    },
+    {
+      "mnemonique": "EMPLACEMENT_CHIROS",
+      "label_default": "Emplacement fonctionnel",
+      "definition_default": "Localisation des individus observés au sein d'un gîte à chiroptères."
+    },
+    {
+      "mnemonique": "NATURE_FREQUENTATION_CHIRO",
+      "label_default": "Nature de la fréquentation",
+      "definition_default": "Indique la nature de la fréquentation du gîte par l'espèce au moment de l'observation. L'information sera alors attribuée automatiquement au site/localité (plusieurs attributions possibles pour un même gîte)"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "SITUATION_GITE_CHIRO",
+      "cd_nomenclature": "1",
+      "mnemonique": "Épigé",
+      "label_default": "Épigé",
+      "definition_default": "Le gîte est situé au dessus de la surface de la terre."
+    },
+    {
+      "type": "SITUATION_GITE_CHIRO",
+      "cd_nomenclature": "2",
+      "mnemonique": "Hypogé",
+      "label_default": "Hypogé",
+      "definition_default": "Le gîte est situé en dessous de la surface de la terre."
+    },
+    {
+      "type": "SITUATION_GITE_CHIRO",
+      "cd_nomenclature": "3",
+      "mnemonique": "Mixte",
+      "label_default": "Mixte",
+      "definition_default": "Le gîte se situe en partie au dessus et en dessous de la surface de la terre."
+    },
+    {
+      "type": "SITUATION_GITE_CHIRO",
+      "cd_nomenclature": "4",
+      "mnemonique": "Indéterminé",
+      "label_default": "Indéterminé",
+      "definition_default": "L'information n'est pas renseignée."
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "1",
+      "mnemonique": "Volume souterrain",
+      "label_default": "Volume souterrain",
+      "definition_default": "Chiro présent dans le volume de la cavité"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "2",
+      "mnemonique": "Fissure",
+      "label_default": "Fissure",
+      "definition_default": "Chiro présent dans une fissure de la paroi de la cavité"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "3",
+      "mnemonique": "Trou",
+      "label_default": "Trou",
+      "definition_default": "Trou"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "4",
+      "mnemonique": "Plaque",
+      "label_default": "Plaque",
+      "definition_default": "Plaque"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "5",
+      "mnemonique": "Branche creuse / tronc creux",
+      "label_default": "Branche creuse / tronc creux",
+      "definition_default": "Branche creuse / tronc creux"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "6",
+      "mnemonique": "Branche morte / cassure du bois",
+      "label_default": "Branche morte / cassure du bois",
+      "definition_default": "Branche morte / cassure du bois"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "7",
+      "mnemonique": "Ecorce décolée",
+      "label_default": "Ecorce décolée",
+      "definition_default": "Ecorce décolée"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "8",
+      "mnemonique": "Fente et fissure",
+      "label_default": "Fente et fissure",
+      "definition_default": "Fente et fissure"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "9",
+      "mnemonique": "Loge de pic",
+      "label_default": "Loge de pic",
+      "definition_default": "Loge de pic"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "10",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "11",
+      "mnemonique": "Cave / crypte / vide sanitaire",
+      "label_default": "Cave / crypte / vide sanitaire",
+      "definition_default": "Cave / crypte / vide sanitaire"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "12",
+      "mnemonique": "Mur / façade / bardage / paroi",
+      "label_default": "Mur / façade / bardage / paroi",
+      "definition_default": "Mur / façade / bardage / paroi"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "13",
+      "mnemonique": "Salle / pièce / cage d'escalier",
+      "label_default": "Salle / pièce / cage d'escalier",
+      "definition_default": "Salle / pièce / cage d'escalier"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "14",
+      "mnemonique": "Volet",
+      "label_default": "Volet",
+      "definition_default": "Volet"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "15",
+      "mnemonique": "Préau / appenti",
+      "label_default": "Préau / appenti",
+      "definition_default": "Préau / appenti"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "16",
+      "mnemonique": "Comble / grenier",
+      "label_default": "Comble / grenier",
+      "definition_default": "Comble / grenier"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "17",
+      "mnemonique": "Charpente / couverture",
+      "label_default": "Charpente / couverture",
+      "definition_default": "Charpente / couverture"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "18",
+      "mnemonique": "Cheminée",
+      "label_default": "Cheminée",
+      "definition_default": "Cheminée"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "19",
+      "mnemonique": "Clocher / tour / donjon",
+      "label_default": "Clocher / tour / donjon",
+      "definition_default": "Clocher / tour / donjon"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "20",
+      "mnemonique": "Joint de dilatation",
+      "label_default": "Joint de dilatation",
+      "definition_default": "Joint de dilatation"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "21",
+      "mnemonique": "Corniche",
+      "label_default": "Corniche",
+      "definition_default": "Corniche"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "22",
+      "mnemonique": "Culée",
+      "label_default": "Culée",
+      "definition_default": "Culée"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "23",
+      "mnemonique": "Galerie",
+      "label_default": "Galerie",
+      "definition_default": "Conduite d’eau, d’Edf, de barrage, …"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "24",
+      "mnemonique": "Tablier",
+      "label_default": "Tablier",
+      "definition_default": "Tablier"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "25",
+      "mnemonique": "Voute",
+      "label_default": "Voute",
+      "definition_default": "Voute"
+    },
+    {
+      "type": "EMPLACEMENT_CHIROS",
+      "cd_nomenclature": "26",
+      "mnemonique": "Barbacane / gargouille / drain",
+      "label_default": "Barbacane / gargouille / drain",
+      "definition_default": "Barbacane / gargouille / drain"
+    },
+    {
+      "type": "NATURE_FREQUENTATION_CHIRO",
+      "cd_nomenclature": "1",
+      "mnemonique": "Hibernation",
+      "label_default": "Hibernation",
+      "definition_default": "Phase de lethargie profonde durant la saison hivernale"
+    },
+    {
+      "type": "NATURE_FREQUENTATION_CHIRO",
+      "cd_nomenclature": "2",
+      "mnemonique": "Parturition",
+      "label_default": "Parturition",
+      "definition_default": "Activité de mise-bas"
+    },
+    {
+      "type": "NATURE_FREQUENTATION_CHIRO",
+      "cd_nomenclature": "3",
+      "mnemonique": "Parturition ?",
+      "label_default": "Parturition ?",
+      "definition_default": "Activité de mise-bas possible mais non prouvée"
+    },
+    {
+      "type": "NATURE_FREQUENTATION_CHIRO",
+      "cd_nomenclature": "4",
+      "mnemonique": "Swarming",
+      "label_default": "Swarming",
+      "definition_default": "Regroupment avec pic d'activité"
+    },
+    {
+      "type": "NATURE_FREQUENTATION_CHIRO",
+      "cd_nomenclature": "5",
+      "mnemonique": "LEK",
+      "label_default": "LEK",
+      "definition_default": "Activité de parade sur une aire"
+    },
+    {
+      "type": "NATURE_FREQUENTATION_CHIRO",
+      "cd_nomenclature": "6",
+      "mnemonique": "Accouplement autre",
+      "label_default": "Accouplement autre",
+      "definition_default": "Activité d'accouplement autre que Swarming ou LEK"
+    },
+    {
+      "type": "NATURE_FREQUENTATION_CHIRO",
+      "cd_nomenclature": "7",
+      "mnemonique": "Estivage",
+      "label_default": "Estivage",
+      "definition_default": "Présence d'un ou plusieurs individus sans mise bas durant l'été"
+    },
+    {
+      "type": "NATURE_FREQUENTATION_CHIRO",
+      "cd_nomenclature": "8",
+      "mnemonique": "Transit",
+      "label_default": "Transit",
+      "definition_default": "Présence d'un ou plusieurs individus sans mise bas durant le printemps ou l'automne"
+    }
+  ]
+}
+
+
