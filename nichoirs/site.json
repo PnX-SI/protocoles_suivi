@@ -1,0 +1,167 @@
+{
+  "genre": "M",
+  "label": "nichoir",
+  "label_list": "nichoirs",
+  "map_label_field_name": "base_site_name",
+  "geometry_type": "Point",
+  "display_properties": [
+    "id_inventor",
+    "referent_mail",
+    "referent_tel",
+    "base_site_name",
+    "base_site_code",
+    "id_dataset",
+    "first_use_date",
+    "pose_localisation",
+    "localite_precision",
+    "nichoir_type",
+    "adresse",
+    "proprietaire_nom",
+    "proprietaire_mail",
+    "proprietaire_tel",
+    "nichoir_referent",
+    "base_site_description"
+  ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "nichoir_type",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type site",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "NICHOIR"
+      },
+      "hidden": true
+    },
+    "base_site_code": {
+      "attribut_label": "Code du site",
+      "required": false,
+      "hidden": true
+    },
+    "base_site_name": {
+      "attribut_label": "Nom du nichoir",
+      "required": true,
+      "hidden": false
+    },
+    "first_use_date": {
+      "type_widget": "date",
+      "attribut_label": "Date de pose",
+      "required": true
+    },
+    "id_dataset": {
+      "type_widget": "dataset",
+      "attribut_label": "Jeu de données",
+      "type_util": "dataset",
+      "required": false,
+      "module_code": "__MODULE.MODULE_CODE"
+    },
+    "pose_localisation": {
+      "type_widget": "select",
+      "attribut_label": "Lieu de pose",
+      "required": true,
+      "values": [
+        "arbre",
+        "acrotère de bâtiment",
+        "aménagement de combles",
+        "Bâti",
+        "Bâti extérieur",
+        "Bâti intérieur",
+        "bergerie",
+        "caissons a rhinolophes",
+        "église",
+        "façade de bâtiment",
+        "grange/hangar",
+        "grenier/combles",
+        "garage",
+        "poteau",
+        "pigeonnier/tour",
+        "piquet",
+        "piquet de vigne",
+        "toit",
+        "toit terrasse",
+        "Autres"
+      ]
+    },
+    "nichoir_type": {
+      "type_widget": "select",
+      "attribut_label": "Type de nichoir",
+      "required": true,
+      "values": [
+        "Chevêche d'Athéna",
+        "Chouette de Tengmalm",
+        "Chouette hulotte",
+        "Effraie des clochers",
+        "Étourneau",
+        "Faucon pèlerin",
+        "Faucon crécerelle",
+        "Hirondelle de fenêtre",
+        "Hirondelle rustique",
+        "Huppe fasciée",
+        "Gîte chiro (arboricole en bois)",
+        "Gîte chiro (fissuricole en bois)",
+        "Gîte chiro (fissuricole en béton bois)",
+        "Mésange bleue",
+        "Mésange charbonnière",
+        "Moineau friquet",
+        "Moineau domestique",
+        "Petit-duc/colombin",
+        "Rougegorge",
+        "Rougequeue",
+        "Rougequeue à front blanc",
+        "Sitelle torchepot",
+        "Autre (préciser dans le champs remarque)"
+      ]
+    },
+    "adresse": {
+      "type_widget": "text",
+      "attribut_label": "Adresse",
+      "required": false
+    },
+    "proprietaire_nom": {
+      "type_widget": "text",
+      "attribut_label": "Nom du propriétaire",
+      "required": true
+    },
+    "proprietaire_mail": {
+      "type_widget": "text",
+      "attribut_label": "E-mail (propriétaire)"
+    },
+    "proprietaire_tel": {
+      "type_widget": "text",
+      "attribut_label": "Numéro de tel (propriétaire)",
+      "required": true
+    },
+    "id_inventor": {
+      "attribut_label": "Référent du nichoir"
+    },
+    "referent_mail": {
+      "type_widget": "text",
+      "attribut_label": "E-mail (référent)"
+    },
+    "referent_tel": {
+      "type_widget": "text",
+      "attribut_label": "Numéro de tel (référent)"
+    },
+    "localite_precision": {
+      "type_widget": "text",
+      "attribut_label": "Précision sur la localisation"
+    },
+    "predateur": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "indices de présence de prédateur"
+    },
+    "base_site_description": {
+      "type_widget": "textarea",
+      "attribut_label": "Remarque (autres informations)"
+    }
+  }
+}
