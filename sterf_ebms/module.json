@@ -1,0 +1,27 @@
+{
+  "module_code": "sterf_ebms",
+  "module_label": "STERF-eBMS",
+  "module_desc": "Suivi temporel des rhopalocères français (eBMS)",
+  "export_csv": [
+    {
+      "label": "Transects (export pour eBMS)",
+      "type": "csv",
+      "method": "transects"
+    },
+    {
+      "label": "Sections (export pour eBMS)",
+      "type": "csv",
+      "method": "sections"
+    },
+    {
+      "label": "Visites de transects (export pour eBMS)",
+      "type": "csv",
+      "method": "transect_visits"
+    },
+    {
+      "label": "Observations (export pour eBMS)",
+      "type": "csv",
+      "method": "section_observations"
+    }
+  ]
+}
