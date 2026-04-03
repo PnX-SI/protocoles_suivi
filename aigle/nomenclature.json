@@ -484,13 +484,6 @@
     },
     {
       "type": "AIGLE_ACTIVITE_AIRE",
-      "cd_nomenclature": "2_ADULTES_SUR_L'AIRE",
-      "mnemonique": "2 adultes sur l'aire",
-      "label_default": "2 adultes sur l'aire",
-      "definition_default": "2 adultes sur l'aire"
-    },
-    {
-      "type": "AIGLE_ACTIVITE_AIRE",
       "cd_nomenclature": "APPORT_DE_PROIE_SUR_L'AIRE",
       "mnemonique": "apport de proie sur l'aire",
       "label_default": "apport de proie sur l'aire",
@@ -509,20 +502,6 @@
       "mnemonique": "nourrissage",
       "label_default": "nourrissage",
       "definition_default": "nourrissage"
-    },
-    {
-      "type": "AIGLE_ACTIVITE_AIRE",
-      "cd_nomenclature": "1_JEUNE_BLANC_VU",
-      "mnemonique": "1 jeune blanc vu",
-      "label_default": "1 jeune blanc vu",
-      "definition_default": "1 jeune blanc vu"
-    },
-    {
-      "type": "AIGLE_ACTIVITE_AIRE",
-      "cd_nomenclature": "1_JEUNES_NOIR_VU",
-      "mnemonique": "1 jeunes noir vu",
-      "label_default": "1 jeunes noir vu",
-      "definition_default": "1 jeunes noir vu"
     },
     {
       "type": "AIGLE_ACTIVITE_AIRE",
@@ -568,31 +547,10 @@
     },
     {
       "type": "AIGLE_ACTIVITE_AIRE",
-      "cd_nomenclature": "1_ADULTE_SUR_L'AIRE",
-      "mnemonique": "1 adulte sur l'aire",
-      "label_default": "1 adulte sur l'aire",
-      "definition_default": "1 adulte sur l'aire"
-    },
-    {
-      "type": "AIGLE_ACTIVITE_AIRE",
       "cd_nomenclature": "RELÈVE_À_L'AIRE",
       "mnemonique": "relève à l'aire",
       "label_default": "relève à l'aire",
       "definition_default": "relève à l'aire"
-    },
-    {
-      "type": "AIGLE_ACTIVITE_AIRE",
-      "cd_nomenclature": "2_JEUNES_BLANCS_VUS",
-      "mnemonique": "2 jeunes blancs vus",
-      "label_default": "2 jeunes blancs vus",
-      "definition_default": "2 jeunes blancs vus"
-    },
-    {
-      "type": "AIGLE_ACTIVITE_AIRE",
-      "cd_nomenclature": "2_JEUNES_NOIRS_VUS",
-      "mnemonique": "2 jeunes noirs vus",
-      "label_default": "2 jeunes noirs vus",
-      "definition_default": "2 jeunes noirs vus"
     },
     {
       "type": "AIGLE_ACTIVITE_AIRE",
@@ -601,7 +559,6 @@
       "label_default": "aire vide",
       "definition_default": "aire vide"
     },
-
     {
       "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
       "cd_nomenclature": "AUCUN_COMPORTEMENT",

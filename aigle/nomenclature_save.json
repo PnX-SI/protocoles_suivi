@@ -1,0 +1,761 @@
+{
+  "types": [
+    {
+      "mnemonique": "AIGLE_AIRE_TOPOLOGY",
+      "label_default": "Topologie des aire d'aigle",
+      "definition_default": "Topologie des aire d'aigle"
+    },
+    {
+      "mnemonique": "AIGLE_POSITION_FALAISE",
+      "label_default": "Poisition dans la falaise des aires d'aigle",
+      "definition_default": "Poisition dans la falaise des aires d'aigle"
+    },
+    {
+      "mnemonique": "AIGLE_ORIENTATION_AIRE",
+      "label_default": "Orientation des aires d'aigles",
+      "definition_default": "Orientation des aires d'aigles"
+    },
+    {
+      "mnemonique": "AIGLE_SUBSTRAT",
+      "label_default": "Substrat des aires d'aigles",
+      "definition_default": "Substrat des aires d'aigles"
+    },
+    {
+      "mnemonique": "AIGLE_ACTIVITE_AIRE",
+      "label_default": "Informations concernant les activités liées à l'aire",
+      "definition_default": "Informations concernant les activités liées à l'aire"
+    },
+    {
+      "mnemonique": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "label_default": "Informations concernant les comportements liés au domaine vital",
+      "definition_default": "Informations concernant les comportements liés au domaine vital"
+    },
+
+    {
+      "mnemonique": "AIGLE_STATUT_REPRODUCTION",
+      "label_default": "Statut de reproduction du domaine vital",
+      "definition_default": "Statut de reproduction du domaine vital"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "AIRE_AIGLE",
+      "mnemonique": "Aire aigle",
+      "label_default": "Aire d'aigle",
+      "definition_default": "Aire d'aigle"
+    },
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "DOMAINE_VITAL",
+      "mnemonique": "Aire aigle",
+      "label_default": "Domaine vital",
+      "definition_default": "Domaine vital"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "FAL",
+      "mnemonique": "Falaise",
+      "label_default": "Falaise",
+      "definition_default": "Falaise"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "RAV",
+      "mnemonique": "Ravin",
+      "label_default": "Ravin",
+      "definition_default": "Ravin"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "BARRE",
+      "mnemonique": "Barre",
+      "label_default": "Barre",
+      "definition_default": "Barre"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "AIGUI",
+      "mnemonique": "Aiguille",
+      "label_default": "Aiguille",
+      "definition_default": "Aiguille"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "COULOIR",
+      "mnemonique": "Couloir",
+      "label_default": "Couloir",
+      "definition_default": "Couloir"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "ARBRE",
+      "mnemonique": "Arbre",
+      "label_default": "Arbre",
+      "definition_default": "Arbre"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "GORGE",
+      "mnemonique": "Gorge",
+      "label_default": "Gorge",
+      "definition_default": "Gorge"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "Niche",
+      "mnemonique": "Niche",
+      "label_default": "Niche",
+      "definition_default": "Niche"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "Tour",
+      "mnemonique": "Tour",
+      "label_default": "Tour",
+      "definition_default": "Tour"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "VIRE",
+      "mnemonique": "Vire",
+      "label_default": "Vire",
+      "definition_default": "Vire"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "Rognon",
+      "mnemonique": "Rognon",
+      "label_default": "Rognon",
+      "definition_default": "Rognon"
+    },
+    {
+      "type": "AIGLE_AIRE_TOPOLOGY",
+      "cd_nomenclature": "INCONNUE",
+      "mnemonique": "Inconnue",
+      "label_default": "Inconnue",
+      "definition_default": "Inconnue"
+    },
+    {
+      "type": "AIGLE_POSITION_FALAISE",
+      "cd_nomenclature": "HAUT",
+      "mnemonique": "haut",
+      "label_default": "haut",
+      "definition_default": "haut"
+    },
+    {
+      "type": "AIGLE_POSITION_FALAISE",
+      "cd_nomenclature": "MILIEU",
+      "mnemonique": "milieu",
+      "label_default": "milieu",
+      "definition_default": "milieu"
+    },
+    {
+      "type": "AIGLE_POSITION_FALAISE",
+      "cd_nomenclature": "BAS",
+      "mnemonique": "bas",
+      "label_default": "bas",
+      "definition_default": "bas"
+    },
+    {
+      "type": "AIGLE_POSITION_FALAISE",
+      "cd_nomenclature": "INCONNUE",
+      "mnemonique": "inconnue",
+      "label_default": "inconnue",
+      "definition_default": "inconnue"
+    },
+    {
+      "type": "AIGLE_POSITION_FALAISE",
+      "cd_nomenclature": "SANS_OBJET",
+      "mnemonique": "sans objet",
+      "label_default": "sans objet",
+      "definition_default": "sans objet"
+    },
+
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "NORD",
+      "mnemonique": "Nord",
+      "label_default": "Nord",
+      "definition_default": "Nord"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "NORD-EST",
+      "mnemonique": "Nord-est",
+      "label_default": "Nord-est",
+      "definition_default": "Nord-est"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "EST",
+      "mnemonique": "Est",
+      "label_default": "Est",
+      "definition_default": "Est"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "SUD-EST",
+      "mnemonique": "Sud-Est",
+      "label_default": "Sud-Est",
+      "definition_default": "Sud-Est"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "SUD",
+      "mnemonique": "Sud",
+      "label_default": "Sud",
+      "definition_default": "Sud"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "SUD-OUEST",
+      "mnemonique": "Sud-ouest",
+      "label_default": "Sud-ouest",
+      "definition_default": "Sud-ouest"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "OUEST",
+      "mnemonique": "Ouest",
+      "label_default": "Ouest",
+      "definition_default": "Ouest"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "NORD-OUEST",
+      "mnemonique": "Nord-ouest",
+      "label_default": "Nord-ouest",
+      "definition_default": "Nord-ouest"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "INCONNUE",
+      "mnemonique": "inconnue",
+      "label_default": "inconnue",
+      "definition_default": "inconnue"
+    },
+    {
+      "type": "AIGLE_ORIENTATION_AIRE",
+      "cd_nomenclature": "NULLE",
+      "mnemonique": "nulle",
+      "label_default": "nulle",
+      "definition_default": "nulle"
+    },
+
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "CALCAIRES",
+      "mnemonique": "calcaires",
+      "label_default": "calcaires",
+      "definition_default": "calcaires"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "QUARTZITES",
+      "mnemonique": "quartzites",
+      "label_default": "quartzites",
+      "definition_default": "quartzites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "FLYSCHS",
+      "mnemonique": "flyschs",
+      "label_default": "flyschs",
+      "definition_default": "flyschs"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "CRISTALLIN",
+      "mnemonique": "cristallin",
+      "label_default": "cristallin",
+      "definition_default": "cristallin"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "MAGMATIQUES",
+      "mnemonique": "magmatiques",
+      "label_default": "magmatiques",
+      "definition_default": "magmatiques"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "MÉTAMORPHIQUE",
+      "mnemonique": "métamorphique",
+      "label_default": "métamorphique",
+      "definition_default": "métamorphique"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "SÉDIMENTAIRES",
+      "mnemonique": "sédimentaires",
+      "label_default": "sédimentaires",
+      "definition_default": "sédimentaires"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "VÉGÉTAL",
+      "mnemonique": "végétal",
+      "label_default": "végétal",
+      "definition_default": "végétal"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "INCONNU",
+      "mnemonique": "inconnu",
+      "label_default": "inconnu",
+      "definition_default": "inconnu"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "BASALTES",
+      "mnemonique": "basaltes",
+      "label_default": "basaltes",
+      "definition_default": "basaltes"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "SPILITES",
+      "mnemonique": "spilites",
+      "label_default": "spilites",
+      "definition_default": "spilites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "ANDÉSITES",
+      "mnemonique": "andésites",
+      "label_default": "andésites",
+      "definition_default": "andésites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "DIORITES",
+      "mnemonique": "diorites",
+      "label_default": "diorites",
+      "definition_default": "diorites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "DOLÉRITES",
+      "mnemonique": "dolérites",
+      "label_default": "dolérites",
+      "definition_default": "dolérites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "SYÉRITES",
+      "mnemonique": "syérites",
+      "label_default": "syérites",
+      "definition_default": "syérites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "CALCSCHISTES",
+      "mnemonique": "calcschistes",
+      "label_default": "calcschistes",
+      "definition_default": "calcschistes"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "CIPOLINS",
+      "mnemonique": "cipolins",
+      "label_default": "cipolins",
+      "definition_default": "cipolins"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "GRÈS",
+      "mnemonique": "grès",
+      "label_default": "grès",
+      "definition_default": "grès"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "MICASCHISTES",
+      "mnemonique": "micaschistes",
+      "label_default": "micaschistes",
+      "definition_default": "micaschistes"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "CARGNEULES",
+      "mnemonique": "cargneules",
+      "label_default": "cargneules",
+      "definition_default": "cargneules"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "LEPTYRITES",
+      "mnemonique": "leptyrites",
+      "label_default": "leptyrites",
+      "definition_default": "leptyrites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "DACITES",
+      "mnemonique": "dacites",
+      "label_default": "dacites",
+      "definition_default": "dacites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "GRANITES",
+      "mnemonique": "granites",
+      "label_default": "granites",
+      "definition_default": "granites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "CONGLOMÉRATS",
+      "mnemonique": "conglomérats",
+      "label_default": "conglomérats",
+      "definition_default": "conglomérats"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "GABBROS",
+      "mnemonique": "gabbros",
+      "label_default": "gabbros",
+      "definition_default": "gabbros"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "SCHISTES",
+      "mnemonique": "schistes",
+      "label_default": "schistes",
+      "definition_default": "schistes"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "GNEISS",
+      "mnemonique": "gneiss",
+      "label_default": "gneiss",
+      "definition_default": "gneiss"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "DOLOMIES",
+      "mnemonique": "Dolomies",
+      "label_default": "Dolomies",
+      "definition_default": "Dolomies"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "GYPSES",
+      "mnemonique": "gypses",
+      "label_default": "gypses",
+      "definition_default": "gypses"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "MARNES",
+      "mnemonique": "marnes",
+      "label_default": "marnes",
+      "definition_default": "marnes"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "RHYOLITES",
+      "mnemonique": "rhyolites",
+      "label_default": "rhyolites",
+      "definition_default": "rhyolites"
+    },
+    {
+      "type": "AIGLE_SUBSTRAT",
+      "cd_nomenclature": "AMPHIBOLITES",
+      "mnemonique": "Amphibolites",
+      "label_default": "Amphibolites",
+      "definition_default": "Amphibolites"
+    },
+
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "DÉPOT_DE_BRANCHE",
+      "mnemonique": "dépot de branche",
+      "label_default": "dépot de branche",
+      "definition_default": "dépot de branche"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "ACCOUPLEMENT_SUR_L'AIRE",
+      "mnemonique": "accouplement sur l'aire",
+      "label_default": "accouplement sur l'aire",
+      "definition_default": "accouplement sur l'aire"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "2_ADULTES_SUR_L'AIRE",
+      "mnemonique": "2 adultes sur l'aire",
+      "label_default": "2 adultes sur l'aire",
+      "definition_default": "2 adultes sur l'aire"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "APPORT_DE_PROIE_SUR_L'AIRE",
+      "mnemonique": "apport de proie sur l'aire",
+      "label_default": "apport de proie sur l'aire",
+      "definition_default": "apport de proie sur l'aire"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "COUVAISON",
+      "mnemonique": "couvaison",
+      "label_default": "couvaison",
+      "definition_default": "couvaison"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "NOURRISSAGE",
+      "mnemonique": "nourrissage",
+      "label_default": "nourrissage",
+      "definition_default": "nourrissage"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "1_JEUNE_BLANC_VU",
+      "mnemonique": "1 jeune blanc vu",
+      "label_default": "1 jeune blanc vu",
+      "definition_default": "1 jeune blanc vu"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "1_JEUNES_NOIR_VU",
+      "mnemonique": "1 jeunes noir vu",
+      "label_default": "1 jeunes noir vu",
+      "definition_default": "1 jeunes noir vu"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "1_JEUNE_ENVOLÉ",
+      "mnemonique": "1 jeune envolé",
+      "label_default": "1 jeune envolé",
+      "definition_default": "1 jeune envolé"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "2_JEUNES_ENVOLÉS",
+      "mnemonique": "2 jeunes envolés",
+      "label_default": "2 jeunes envolés",
+      "definition_default": "2 jeunes envolés"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "ŒUF(S)_ABANDONNÉ(S)",
+      "mnemonique": "œuf(s) abandonné(s)",
+      "label_default": "œuf(s) abandonné(s)",
+      "definition_default": "œuf(s) abandonné(s)"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "JEUNE(S)_MORT(S)",
+      "mnemonique": "jeune(s) mort(s)",
+      "label_default": "jeune(s) mort(s)",
+      "definition_default": "jeune(s) mort(s)"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "AUCUNE_ACTIVITÉ_CONSTATÉE",
+      "mnemonique": "aucune activité constatée",
+      "label_default": "aucune activité constatée",
+      "definition_default": "aucune activité constatée"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "AUTRE_(VOIR_REMARQUES)",
+      "mnemonique": "autre (voir remarques)",
+      "label_default": "autre (voir remarques)",
+      "definition_default": "autre (voir remarques)"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "1_ADULTE_SUR_L'AIRE",
+      "mnemonique": "1 adulte sur l'aire",
+      "label_default": "1 adulte sur l'aire",
+      "definition_default": "1 adulte sur l'aire"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "RELÈVE_À_L'AIRE",
+      "mnemonique": "relève à l'aire",
+      "label_default": "relève à l'aire",
+      "definition_default": "relève à l'aire"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "2_JEUNES_BLANCS_VUS",
+      "mnemonique": "2 jeunes blancs vus",
+      "label_default": "2 jeunes blancs vus",
+      "definition_default": "2 jeunes blancs vus"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "2_JEUNES_NOIRS_VUS",
+      "mnemonique": "2 jeunes noirs vus",
+      "label_default": "2 jeunes noirs vus",
+      "definition_default": "2 jeunes noirs vus"
+    },
+    {
+      "type": "AIGLE_ACTIVITE_AIRE",
+      "cd_nomenclature": "AIRE_VIDE",
+      "mnemonique": "aire vide",
+      "label_default": "aire vide",
+      "definition_default": "aire vide"
+    },
+
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "AUCUN_COMPORTEMENT",
+      "mnemonique": "aucun comportement",
+      "label_default": "aucun comportement",
+      "definition_default": "aucun comportement"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "FESTONS",
+      "mnemonique": "festons",
+      "label_default": "festons",
+      "definition_default": "festons"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "TRANSPORT_DE_BRANCHE",
+      "mnemonique": "transport de branche",
+      "label_default": "transport de branche",
+      "definition_default": "transport de branche"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "ACCOUPLEMENT",
+      "mnemonique": "accouplement",
+      "label_default": "accouplement",
+      "definition_default": "accouplement"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "AUTRE_(VOIR_REMARQUES)",
+      "mnemonique": "autre (voir remarques)",
+      "label_default": "autre (voir remarques)",
+      "definition_default": "autre (voir remarques)"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "2_JEUNES_SEULS",
+      "mnemonique": "2 jeunes seuls",
+      "label_default": "2 jeunes seuls",
+      "definition_default": "2 jeunes seuls"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "1_JEUNE_SEUL",
+      "mnemonique": "1 jeune seul",
+      "label_default": "1 jeune seul",
+      "definition_default": "1 jeune seul"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "COMBAT(S)",
+      "mnemonique": "combat(s)",
+      "label_default": "combat(s)",
+      "definition_default": "combat(s)"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "CRI(S)",
+      "mnemonique": "Cri(s)",
+      "label_default": "Cri(s)",
+      "definition_default": "Cri(s)"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "TRANSPORT_DE_PROIE",
+      "mnemonique": "transport de proie",
+      "label_default": "transport de proie",
+      "definition_default": "transport de proie"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "VOL_EN_TANDEM",
+      "mnemonique": "vol en tandem",
+      "label_default": "vol en tandem",
+      "definition_default": "vol en tandem"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "RASSEMBLEMENT_D'AIGLES",
+      "mnemonique": "rassemblement d'aigles",
+      "label_default": "rassemblement d'aigles",
+      "definition_default": "rassemblement d'aigles"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "AIGLE(S)_PERCHÉ(S)",
+      "mnemonique": "aigle(s) perché(s)",
+      "label_default": "aigle(s) perché(s)",
+      "definition_default": "aigle(s) perché(s)"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "1_JEUNE_AVEC_LES_ADULTES",
+      "mnemonique": "1 jeune avec les adultes",
+      "label_default": "1 jeune avec les adultes",
+      "definition_default": "1 jeune avec les adultes"
+    },
+    {
+      "type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
+      "cd_nomenclature": "2_JEUNES_AVEC_LES_ADULTES",
+      "mnemonique": "2 jeunes avec les adultes",
+      "label_default": "2 jeunes avec les adultes",
+      "definition_default": "2 jeunes avec les adultes"
+    },
+
+    {
+      "type": "AIGLE_STATUT_REPRODUCTION",
+      "cd_nomenclature": "NON_SUIVI",
+      "mnemonique": "non suivi",
+      "label_default": "non suivi",
+      "definition_default": "non suivi"
+    },
+    {
+      "type": "AIGLE_STATUT_REPRODUCTION",
+      "cd_nomenclature": "REPRODUCTION_EN_COURS",
+      "mnemonique": "reproduction en cours",
+      "label_default": "reproduction en cours",
+      "definition_default": "reproduction en cours"
+    },
+    {
+      "type": "AIGLE_STATUT_REPRODUCTION",
+      "cd_nomenclature": "1_JEUNE_ENVOLÉ",
+      "mnemonique": "1 jeune envolé",
+      "label_default": "1 jeune envolé",
+      "definition_default": "1 jeune envolé"
+    },
+    {
+      "type": "AIGLE_STATUT_REPRODUCTION",
+      "cd_nomenclature": "2_JEUNES_ENVOLÉS",
+      "mnemonique": "2 jeunes envolés",
+      "label_default": "2 jeunes envolés",
+      "definition_default": "2 jeunes envolés"
+    },
+    {
+      "type": "AIGLE_STATUT_REPRODUCTION",
+      "cd_nomenclature": "ÉCHEC",
+      "mnemonique": "échec",
+      "label_default": "échec",
+      "definition_default": "échec"
+    },
+    {
+      "type": "AIGLE_STATUT_REPRODUCTION",
+      "cd_nomenclature": "PAS_DE_CONCLUSION_POSSIBLE",
+      "mnemonique": "pas de conclusion possible",
+      "label_default": "pas de conclusion possible",
+      "definition_default": "pas de conclusion possible"
+    },
+    {
+      "type": "AIGLE_STATUT_REPRODUCTION",
+      "cd_nomenclature": "PAS_DE_REPRODUCTION_CONSTATÉE",
+      "mnemonique": "pas de reproduction constatée",
+      "label_default": "pas de reproduction constatée",
+      "definition_default": "pas de reproduction constatée"
+    }
+  ]
+}

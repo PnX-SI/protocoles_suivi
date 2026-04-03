@@ -2,9 +2,7 @@
   "tree": {
     "module": {
       "site": {
-        "visit": {
-          "observation": null
-        }
+        "visit": null
       }
     }
   }

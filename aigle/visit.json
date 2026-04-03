@@ -1,13 +1,15 @@
 {
   "display_properties": [
-    "type_site_aigle",
     "id_base_site",
     "observers",
     "visit_date_min",
     "visit_duration",
     "id_nomenclature_aire_activity",
-    "id_nomenclature_behaviour_home_range",
+    "nb_adulte",
+    "nb_jeune_blanc",
+    "nb_jeune_noir",
     "comments",
+    "bilan_final",
     "id_nomenclature_reprodution_status"
   ],
   "display_list": ["visit_date_min", "observers"],
@@ -28,42 +30,57 @@
       "min": 0,
       "max": 20
     },
-    "type_site_aigle": {
-      "type_widget": "select",
-      "attribut_label": "Aire ou domaine vital ?",
-      "values": ["Aire", "Domaine vital"],
-      "required": true
-    },
     "id_nomenclature_aire_activity": {
       "type_widget": "nomenclature",
       "attribut_label": "Activités liées à l'aire",
       "code_nomenclature_type": "AIGLE_ACTIVITE_AIRE",
       "type_util": "nomenclature",
       "multi_select": true,
-      "required": "({value}) =>  value.type_site_aigle == 'Aire'",
-      "hidden": "({value}) =>  !value.type_site_aigle ||  value.type_site_aigle == 'Domaine vital'"
+      "required": false
     },
-    "id_nomenclature_behaviour_home_range": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Informations concernant les comportements liés au domaine vital",
-      "code_nomenclature_type": "AIGLE_COMPORTEMENT_DOMAINE_VITAL",
-      "type_util": "nomenclature",
-      "multi_select": true,
-      "required": "({value}) => value.type_site_aigle == 'Domaine vital'",
-      "hidden": "({value}) =>  !value.type_site_aigle || value.type_site_aigle == 'Aire'"
+    "nb_adulte": {
+      "type_widget": "number",
+      "attribut_label": "Nombre d'adulte",
+      "required": false,
+      "min": 0,
+      "max": 20
+    },
+    "nb_jeune_blanc": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de jeune blanc",
+      "required": false,
+      "min": 0,
+      "max": 20
+    },
+    "nb_jeune_noir": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de jeune noir",
+      "required": false,
+      "min": 0,
+      "max": 20
+    },
+    "bilan_final": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Bilan final (statut expert)",
+      "value": false
     },
     "id_nomenclature_reprodution_status": {
       "type_widget": "nomenclature",
       "attribut_label": "Statut de reproduction 'expert' ; à modifier si besoin:",
       "code_nomenclature_type": "AIGLE_STATUT_REPRODUCTION",
       "type_util": "nomenclature",
-      "hidden": "({value}) => !value.type_site_aigle || value.type_site_aigle == 'Aire' "
+      "hidden": "({value}) => !value.bilan_final"
     },
     "medias": {
       "hidden": true,
       "type_widget": "medias",
       "attribut_label": "Médias",
       "schema_dot_table": "gn_monitoring.t_base_visits"
+    },
+    "nb_observations": {
+      "attribut_label": "Nombre d'observations",
+      "type_widget": "number",
+      "hidden": true
     }
   }
 }
