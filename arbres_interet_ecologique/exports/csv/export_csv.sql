@@ -1,3 +1,4 @@
+
 CREATE OR REPLACE VIEW gn_monitoring.v_export_arbres_interet_ecologique_arbres
 AS WITH selected_type_site AS (
          SELECT DISTINCT cst.id_base_site
@@ -76,7 +77,7 @@ AS WITH selected_type_site AS (
            FROM unnest_dmh u
              JOIN ref_nomenclatures.t_nomenclatures tn ON tn.id_nomenclature = u.id_nomenclature_dmh
         )
-SELECT DISTINCT s.id_base_site,
+ SELECT DISTINCT s.id_base_site,
     s.base_site_code AS code_arbre,
     prf.area_code AS code_prf,
     concat(upper(tr.nom_role::text), ' ', tr.prenom_role) AS observateur,
@@ -119,27 +120,25 @@ SELECT DISTINCT s.id_base_site,
     st_astext(s.geom) AS wkt,
     tbs.taxon_observes,
     s.geom
-FROM selected_site tbs
-JOIN gn_monitoring.t_base_sites s ON s.id_base_site = tbs.id_base_site
-JOIN gn_monitoring.t_site_complements tsc ON tbs.id_base_site = tsc.id_base_site
-LEFT JOIN marquage m ON m.id_base_site = tbs.id_base_site
-LEFT JOIN taxonomie.taxref t ON ((tsc.data ->> 'cd_nom_essence'::text)::integer) = t.cd_nom
-LEFT JOIN indexed_dmh dmh_1 ON dmh_1.id_base_site = tbs.id_base_site AND dmh_1.row_number = 1
-LEFT JOIN indexed_dmh dmh_2 ON dmh_2.id_base_site = tbs.id_base_site AND dmh_2.row_number = 2
-LEFT JOIN indexed_dmh dmh_3 ON dmh_3.id_base_site = tbs.id_base_site AND dmh_3.row_number = 3
-LEFT JOIN indexed_dmh dmh_4 ON dmh_4.id_base_site = tbs.id_base_site AND dmh_4.row_number = 4
-LEFT JOIN indexed_dmh dmh_5 ON dmh_5.id_base_site = tbs.id_base_site AND dmh_5.row_number = 5
-LEFT JOIN indexed_dmh dmh_6 ON dmh_6.id_base_site = tbs.id_base_site AND dmh_6.row_number = 6
-LEFT JOIN indexed_dmh dmh_7 ON dmh_7.id_base_site = tbs.id_base_site AND dmh_7.row_number = 7
-LEFT JOIN indexed_dmh dmh_8 ON dmh_8.id_base_site = tbs.id_base_site AND dmh_8.row_number = 8
-LEFT JOIN (
-	SELECT la.area_code, sa.id_base_site
-	FROM gn_monitoring.cor_site_area csa
-	JOIN ref_geo.l_areas la ON la.id_area = csa.id_area
-	JOIN ref_geo.bib_areas_types bat ON bat.id_type = la.id_type AND bat.type_code::text = 'ONF_PRF'::text
-) prf ON prf.id_base_site = tbs.id_base_site
-LEFT JOIN utilisateurs.t_roles tr ON tr.id_role = s.id_inventor;
-
+   FROM selected_site tbs
+     JOIN gn_monitoring.t_base_sites s ON s.id_base_site = tbs.id_base_site
+     JOIN gn_monitoring.t_site_complements tsc ON tbs.id_base_site = tsc.id_base_site
+     LEFT JOIN marquage m ON m.id_base_site = tbs.id_base_site
+     LEFT JOIN taxonomie.taxref t ON ((tsc.data ->> 'cd_nom_essence'::text)::integer) = t.cd_nom
+     LEFT JOIN indexed_dmh dmh_1 ON dmh_1.id_base_site = tbs.id_base_site AND dmh_1.row_number = 1
+     LEFT JOIN indexed_dmh dmh_2 ON dmh_2.id_base_site = tbs.id_base_site AND dmh_2.row_number = 2
+     LEFT JOIN indexed_dmh dmh_3 ON dmh_3.id_base_site = tbs.id_base_site AND dmh_3.row_number = 3
+     LEFT JOIN indexed_dmh dmh_4 ON dmh_4.id_base_site = tbs.id_base_site AND dmh_4.row_number = 4
+     LEFT JOIN indexed_dmh dmh_5 ON dmh_5.id_base_site = tbs.id_base_site AND dmh_5.row_number = 5
+     LEFT JOIN indexed_dmh dmh_6 ON dmh_6.id_base_site = tbs.id_base_site AND dmh_6.row_number = 6
+     LEFT JOIN indexed_dmh dmh_7 ON dmh_7.id_base_site = tbs.id_base_site AND dmh_7.row_number = 7
+     LEFT JOIN indexed_dmh dmh_8 ON dmh_8.id_base_site = tbs.id_base_site AND dmh_8.row_number = 8
+     LEFT JOIN ( SELECT la.area_code,
+            csa.id_base_site
+           FROM gn_monitoring.cor_site_area csa
+             JOIN ref_geo.l_areas la ON la.id_area = csa.id_area
+             JOIN ref_geo.bib_areas_types bat ON bat.id_type = la.id_type AND bat.type_code::text = 'ONF_PRF'::text) prf ON prf.id_base_site = tbs.id_base_site
+     LEFT JOIN utilisateurs.t_roles tr ON tr.id_role = s.id_inventor;
 
 CREATE OR REPLACE VIEW gn_monitoring.v_export_arbres_interet_ecologique_observations
 AS WITH observers AS (
