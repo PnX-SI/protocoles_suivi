@@ -1,0 +1,23 @@
+# Portion de configuration du module à ajouter au fichier odk2gn_config.toml
+#  permettant de configurer la récupération des données du module arbres_interet_ecologique
+
+[[modules]]
+module_code = "arbres_interet_ecologique"
+# booléen indiquant la création de sites
+can_create_site = true
+[modules.SITE]
+types_site = "types_site"
+# nom du champ nom du site
+base_site_name = "base_site_name"
+# nom du champ description du site
+base_site_description = "base_site_description"
+# nom du champ definissant l'inventeur du site
+id_inventor = "id_inventor"
+# nom du groupe contenant les champs additionnels
+data = "site_creation"
+# nom du champ de date de première utilisation du site
+first_use_date = "first_use_date"
+# nom du champ de geométrie
+geom = "geom"
+[modules.VISIT]
+observers_repeat = "id_inventor"

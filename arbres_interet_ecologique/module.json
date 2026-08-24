@@ -1,0 +1,16 @@
+{
+    "module_label": "Arbres d'interet écologiques",
+    "module_desc": "Arbres d'interet écologiques",
+    "export_csv": [
+        {
+            "label": "Arbres",
+            "type": "csv",
+            "method": "arbres"
+        },
+        {
+            "label": "Observations de taxon",
+            "type": "csv",
+            "method": "observations"
+        }
+    ]
+}

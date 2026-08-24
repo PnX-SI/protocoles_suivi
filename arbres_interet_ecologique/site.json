@@ -1,0 +1,70 @@
+{
+  "sorts": [
+    {
+      "prop": "base_site_name",
+      "dir": "asc"
+    }
+  ],
+  "filters": {},
+  "map_label_field_name": "base_site_code",
+  "label": "Arbre",
+  "label_list": "Arbres",
+  "genre": "M",
+  "geometry_type": "Point",
+  "display_properties": [
+    "first_use_date",
+    "types_site",
+    "base_site_name",
+    "id_inventor",
+    "last_visit",
+    "nb_visits",
+    "cd_nom_essence",
+    "diametre",
+    "diametre_estime",
+    "categorie_aie",
+    "id_nomenclature_marquage"
+  ],
+  "display_list": [
+    "id_base_site",
+    "cd_nom_essence",
+    "base_site_name",
+    "first_use_date",
+    "id_inventor",
+    "types_site",
+    "categorie_aie"
+  ],
+  "specific": {
+    "types_site": {},
+    "base_site_name": {
+      "type_widget": "text",
+      "value": "AIE",
+      "hidden": true,
+      "attribut_label": "Nom"
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "hidden": true
+    },
+    "cd_nom_essence": {
+      "attribut_label": "Essence"
+    },
+    "diametre": {
+      "attribut_label": "Diamètre"
+    },
+    "diametre_estime": {
+      "attribut_label": "Diamètre estimé"
+    },
+        "id_nomenclature_marquage": {
+            "type_widget": "nomenclature",
+            "attribut_label": "Marquage",
+            "code_nomenclature_type": "ARBRES_MARQUAGE",
+            "type_util": "nomenclature",
+           
+      "required": false,
+      "multiple": true
+        }, 
+    "medias": {
+      "hidden": false
+    }
+  }
+}

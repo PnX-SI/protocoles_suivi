@@ -6,9 +6,7 @@
     "id_nomenclature_cavite",
     "circ",
     "diam",
-    "id_nomenclature_vital",
-    "id_nomenclature_cavite",
-    "id_nomenclature_indices",
+    "id_nomenclature_vital", 
     "id_nomenclature_prospection",
     "id_nomenclature_suite",
     "id_nomenclature_photo_orientation",
@@ -21,6 +19,14 @@
     "nb_observations"
   ],
   "specific" :{
+    "observers": {
+      "type_widget": "observers",
+      "attribut_label": "Observateur",
+      "type_util": "user",
+      "code_list": "__MODULE.ID_LIST_OBSERVER",
+      "required": true,
+      "multi_select": true
+    },
     "id_base_site": {
       "type_widget": "site",
       "required": true,
@@ -58,7 +64,8 @@
       "type_widget": "nomenclature",
       "attribut_label": "Indices",
       "code_nomenclature_type": "OSMO_INDICES",
-      "type_util": "nomenclature"
+      "type_util": "nomenclature",
+      "multi_select": true
     },
     "id_nomenclature_prospection": {
       "type_widget": "nomenclature",

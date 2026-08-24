@@ -1,0 +1,70 @@
+{
+  "specific": {
+    "ancien_code": {
+      "attribut_label": "Ancien code",
+      "required": false,
+      "type_widget": "text"
+    },
+    "cd_nom_essence": {
+      "attribut_label": "Essence",
+      "id_list": "1000009",
+      "required": true,
+      "type_util": "taxonomy",
+      "type_widget": "taxonomy"
+    },
+    "diametre": {
+      "attribut_label": "Diamètre",
+      "max": 300,
+      "min": 10,
+      "required": true,
+      "type_widget": "number"
+    },
+    "diametre_estime": {
+      "attribut_label": "Diamètre estimé",
+      "type_widget": "bool_checkbox",
+      "value": false
+    },
+    "espece_loges": {
+      "attribut_label": "Espèce (loge)",
+      "description": "Espèce à l origine de la loge",
+      "required": true,
+      "type_widget": "select",
+      "values": [
+        "Pic noir",
+        "Pic vert",
+        "Pic épeiche",
+        "Autre"
+      ]
+    },
+    "id_nomenclature_marquage": {
+      "api": "nomenclatures/nomenclature/ARBRES_MARQUAGE",
+      "application": "GeoNature",
+      "attribut_label": "Marquage",
+      "data_path": "values",
+      "designStyle": "bootstrap",
+      "keyLabel": "label_fr",
+      "keyValue": "id_nomenclature",
+      "multiple": true,
+      "required": false,
+      "type_util": "nomenclature",
+      "type_widget": "datalist"
+    },
+    "nb_ebauches": {
+      "attribut_label": "Nombre ébauches",
+      "min": 0,
+      "required": true,
+      "type_widget": "number"
+    },
+    "nb_loges": {
+      "attribut_label": "Nombre de loges",
+      "min": 0,
+      "required": true,
+      "type_widget": "number"
+    },
+    "num_plaquette": {
+      "attribut_label": "Code plaquette",
+      "required": true,
+      "type_widget": "text"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "specific": {
+    "categorie_aie": {
+      "attribut_label": "Type AIE",
+      "required": true,
+      "type_widget": "multiselect",
+      "values": [
+        {
+          "label": "DMH",
+          "value": "dmh"
+        },
+        {
+          "label": "Dortoir/reposoir",
+          "value": "dortoir reposoir"
+        },
+        {
+          "label": "Emergent",
+          "value": "emergent"
+        },
+        {
+          "label": "Port atypique/tabulaire",
+          "value": "port atypique tabulaire"
+        },
+        {
+          "label": "Essence minoritaire",
+          "value": "essence minoritaire"
+        },
+        {
+          "label": "Arbre mort",
+          "value": "arbre mort"
+        },
+        {
+          "label": "Autre",
+          "value": "autre"
+        }
+      ]
+    },
+    "diametre": {
+      "attribut_label": "Diamètre (cm)",
+      "max": 300,
+      "min": 10,
+      "required": true,
+      "type_widget": "number"
+    },
+    "diametre_estime": {
+      "attribut_label": "Diamètre estimé",
+      "type_widget": "bool_checkbox",
+      "value": false
+    },
+    "id_nomenclature_dmh": {
+      "api": "nomenclatures/nomenclature/ARBRES_DMH",
+      "application": "GeoNature",
+      "attribut_label": "DMH",
+      "data_path": "values",
+      "designStyle": "bootstrap",
+      "keyLabel": "label_fr",
+      "keyValue": "id_nomenclature",
+      "multiple": true,
+      "type_util": "nomenclature",
+      "type_widget": "datalist"
+    },
+    "id_nomenclature_marquage": {
+      "api": "nomenclatures/nomenclature/ARBRES_MARQUAGE",
+      "application": "GeoNature",
+      "attribut_label": "Marquage",
+      "data_path": "values",
+      "designStyle": "bootstrap",
+      "keyLabel": "label_fr",
+      "keyValue": "id_nomenclature",
+      "multiple": true,
+      "required": false,
+      "type_util": "nomenclature",
+      "type_widget": "datalist"
+    }
+  }
+}

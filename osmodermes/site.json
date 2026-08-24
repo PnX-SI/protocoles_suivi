@@ -3,7 +3,7 @@
   "display_properties": [
     "base_site_name",
     "base_site_code",
-    "id_nomenclature_essence",
+    "cd_nom_essence",
     "id_nomenclature_synthese",
     "proprietaire",
     "secteur",
@@ -14,12 +14,48 @@
   ],
   "display_list": [
     "base_site_name",
-    "id_nomenclature_essence",
+    "cd_nom_essence",
     "id_nomenclature_synthese",
     "last_visit",
     "nb_visits"
   ],
   "specific": {
+    "cd_nom_essence": {
+      "attribut_label": "Essence",
+      "id_list": "1000009",
+      "required": true,
+      "type_util": "taxonomy",
+      "type_widget": "taxonomy"
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code arbre"
+    },
+    "diametre": {
+      "attribut_label": "Diamètre",
+      "type_widget": "number",
+      "required": true,
+      "min": 10,
+      "max": 300
+    },
+    "diametre_estime": {
+      "attribut_label": "Diamètre estimé",
+      "type_widget": "bool_checkbox",
+      "value": false
+    },
+    "id_nomenclature_marquage": {
+      "type_widget": "datalist",
+      "attribut_label": "Marquage",
+      "api": "nomenclatures/nomenclature/ARBRES_MARQUAGE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "multiple": true,
+      "designStyle": "bootstrap"
+    },
     "id_nomenclature_type_site": {
       "type_widget": "text",
       "attribut_label": "Type site",
@@ -30,20 +66,9 @@
       },
       "hidden": true
     },
-    "base_site_code": {
-      "type_widget": "text",
-      "attribut_label": "Code arbre"
-    },
     "code_arbre_pnc": {
       "type_widget": "text",
       "attribut_label": "Code arbre pnc"
-    },
-    "id_nomenclature_essence": {
-      "type_widget": "nomenclature",
-      "attribut_label": "Essence",
-      "code_nomenclature_type": "OSMO_ESSENCES",
-      "type_util": "nomenclature",
-      "required": true
     },
     "id_nomenclature_synthese": {
       "type_widget": "nomenclature",

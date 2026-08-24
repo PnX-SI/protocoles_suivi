@@ -1,0 +1,525 @@
+{
+  "types": [
+    {
+      "mnemonique": "ARBRES_DMH",
+      "label_default": "Type de dendromicrohabitats",
+      "definition_default": "Liste des dendromicrohabitats"
+    },
+    {
+      "mnemonique": "ARBRES_MARQUAGE",
+      "label_default": "Type de marquage",
+      "definition_default": "Liste des type sde marquage pouvant être réalisée sur les arbres"
+    },
+    {
+      "mnemonique": "ARBRES_AIE_CATEGORIE",
+      "label_default": "Type de catégories d'AIE",
+      "definition_default": "Liste des types de catégorie pouvant permettre de classifier un abre comme AIE"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "ARBRES_AIE",
+      "mnemonique": "ARBRES_AIE",
+      "label_default": "Arbres d'intéret écologique",
+      "definition_default": "Arbres d'intéret écologique"
+    },
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "ARBRES_LOGES",
+      "mnemonique": "ARBRES_LOGES",
+      "label_default": "Arbres à loges",
+      "definition_default": "Arbres à loges"
+    },
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "ARBRES_CHIRO",
+      "mnemonique": "ARBRES_CHIRO",
+      "label_default": "Arbres à chiroptères",
+      "definition_default": "arbres à chiroptères"
+    },
+    {
+      "type": "ARBRES_MARQUAGE",
+      "cd_nomenclature": "Cercle",
+      "mnemonique": "Cercle",
+      "label_default": "Cercle",
+      "definition_default": "Cercle"
+    },
+    {
+      "type": "ARBRES_MARQUAGE",
+      "cd_nomenclature": "Triangle",
+      "mnemonique": "Triangle",
+      "label_default": "Triangle",
+      "definition_default": "Triangle"
+    },
+    {
+      "type": "ARBRES_MARQUAGE",
+      "cd_nomenclature": "Point",
+      "mnemonique": "Point",
+      "label_default": "Point",
+      "definition_default": "Point"
+    },
+    {
+      "type": "ARBRES_MARQUAGE",
+      "cd_nomenclature": "Rubalise",
+      "mnemonique": "Rubalise",
+      "label_default": "Rubalise",
+      "definition_default": "Rubalise"
+    },
+    {
+      "type": "ARBRES_MARQUAGE",
+      "cd_nomenclature": "Plaquette",
+      "mnemonique": "Plaquette",
+      "label_default": "Plaquette",
+      "definition_default": "Plaquette"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_101",
+      "mnemonique": "101",
+      "label_default": "101 - loges de Pics",
+      "definition_default": "101 = loges de Pics"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1011",
+      "mnemonique": "1011",
+      "label_default": "1011 - loge de petite taille",
+      "definition_default": "1011 = loge de petite taille"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1012",
+      "mnemonique": "1012",
+      "label_default": "1012 - loge de taille moyenne",
+      "definition_default": "1012 = loge de taille moyenne"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1013",
+      "mnemonique": "1013",
+      "label_default": "1013 - loge de grande taille",
+      "definition_default": "1013 = loge de grande taille"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1014",
+      "mnemonique": "1014",
+      "label_default": "1014 - flûte de pic",
+      "definition_default": "1014 = flûte de pic"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_102",
+      "mnemonique": "102",
+      "label_default": "102 - cavités à terreau",
+      "definition_default": "102 = cavités à terreau"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1021",
+      "mnemonique": "1021",
+      "label_default": "1021 - cavité à terreau de pied",
+      "definition_default": "1021 = cavité à terreau de pied"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1022",
+      "mnemonique": "1022",
+      "label_default": "1022 - cavité à terreau de tronc",
+      "definition_default": "1022 = cavité à terreau de tronc"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1023",
+      "mnemonique": "1023",
+      "label_default": "1023 - cavité à terreau semi-ouverte",
+      "definition_default": "1023 = cavité à terreau semi-ouverte"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1024",
+      "mnemonique": "1024",
+      "label_default": "1024 - cavité à terreau en contact avec le sol, ouverte vers le haut",
+      "definition_default": "1024 = cavité à terreau en contact avec le sol, ouverte vers le haut"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1025",
+      "mnemonique": "1025",
+      "label_default": "1025 - cavité à terreau sans contact avec le sol, ouverte vers le haut",
+      "definition_default": "1025 = cavité à terreau sans contact avec le sol, ouverte vers le haut"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1026",
+      "mnemonique": "1026",
+      "label_default": "1026 - branche creuse",
+      "definition_default": "1026 = branche creuse"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_103",
+      "mnemonique": "103",
+      "label_default": "103 - orifices et galeries d'insectes",
+      "definition_default": "103 = orifices et galeries d'insectes"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_104",
+      "mnemonique": "104",
+      "label_default": "104 - concavités",
+      "definition_default": "104 = concavités"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1041",
+      "mnemonique": "1041",
+      "label_default": "1041 - dendrotelme",
+      "definition_default": "1041 = dendrotelme"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1042",
+      "mnemonique": "1042",
+      "label_default": "1042 - trou de nourrissage de pic",
+      "definition_default": "1042 = trou de nourrissage de pic"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1043",
+      "mnemonique": "1043",
+      "label_default": "1043 - concavité à fond dur de tronc",
+      "definition_default": "1043 = concavité à fond dur de tronc"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1044",
+      "mnemonique": "1044",
+      "label_default": "1044 - concavité racinaire",
+      "definition_default": "1044 = concavité racinaire"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_105",
+      "mnemonique": "105",
+      "label_default": "105 - aubier apparent",
+      "definition_default": "105 = aubier apparent"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1051",
+      "mnemonique": "1051",
+      "label_default": "1051 - bois sans écorce",
+      "definition_default": "1051 = bois sans écorce"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1052",
+      "mnemonique": "1052",
+      "label_default": "1052 - blessure due au feu",
+      "definition_default": "1052 = blessure due au feu"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1053",
+      "mnemonique": "1053",
+      "label_default": "1053 - écorce décollée ouverte vers le bas",
+      "definition_default": "1053 = écorce décollée ouverte vers le bas"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1054",
+      "mnemonique": "1054",
+      "label_default": "1054 - écorce décollée ouverte vers le haut",
+      "definition_default": "1054 = écorce décollée ouverte vers le haut"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_106",
+      "mnemonique": "106",
+      "label_default": "106 - aubier et bois de cœur apparents",
+      "definition_default": "106 = aubier et bois de cœur apparents"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1061",
+      "mnemonique": "1061",
+      "label_default": "1061 - cime brisée",
+      "definition_default": "1061 = cime brisée"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1062",
+      "mnemonique": "1062",
+      "label_default": "1062 - bris de charpentière ",
+      "definition_default": "1062 = bris de charpentière "
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1063",
+      "mnemonique": "1063",
+      "label_default": "1063 - fente",
+      "definition_default": "1063 = fente"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1064",
+      "mnemonique": "1064",
+      "label_default": "1064 - fente causée par la foudre",
+      "definition_default": "1064 = fente causée par la foudre"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1065",
+      "mnemonique": "1065",
+      "label_default": "1065 - fente au niveau d'une fourche",
+      "definition_default": "1065 = fente au niveau d'une fourche"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_107",
+      "mnemonique": "107",
+      "label_default": "107 - Bois mort dans le houppier",
+      "definition_default": "107 = Bois mort dans le houppier"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1071",
+      "mnemonique": "1071",
+      "label_default": "1071 - branches mortes",
+      "definition_default": "1071 = branches mortes"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1072",
+      "mnemonique": "1072",
+      "label_default": "1072 - cime morte",
+      "definition_default": "1072 = cime morte"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1073",
+      "mnemonique": "1073",
+      "label_default": "1073 - vestige de charpentière brisée",
+      "definition_default": "1073 = vestige de charpentière brisée"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_108",
+      "mnemonique": "108",
+      "label_default": "108 - agglomérations de gourmands ou de rameaux",
+      "definition_default": "108 = agglomérations de gourmands ou de rameaux"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1081",
+      "mnemonique": "1081",
+      "label_default": "1081 - balais de sorcière",
+      "definition_default": "1081 = balais de sorcière"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1082",
+      "mnemonique": "1082",
+      "label_default": "1082 - gourmands/brogne",
+      "definition_default": "1082 = gourmands/brogne"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_109",
+      "mnemonique": "109",
+      "label_default": "109 - loupes et chancres",
+      "definition_default": "109 = loupes et chancres"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1091",
+      "mnemonique": "1091",
+      "label_default": "1091 - loupe ",
+      "definition_default": "1091 = loupe "
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1092",
+      "mnemonique": "1092",
+      "label_default": "1092 - chancre",
+      "definition_default": "1092 = chancre"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_110",
+      "mnemonique": "110",
+      "label_default": "110 - polypore pérenne",
+      "definition_default": "110 = polypore pérenne"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_111",
+      "mnemonique": "111",
+      "label_default": "111 - sporophores de champignons éphémères et myxomycètes",
+      "definition_default": "111 = sporophores de champignons éphémères et myxomycètes"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1111",
+      "mnemonique": "1111",
+      "label_default": "1111 - polypore annuel",
+      "definition_default": "1111 = polypore annuel"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1112",
+      "mnemonique": "1112",
+      "label_default": "1112 - agaricale charnu",
+      "definition_default": "1112 = agaricale charnu"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1113",
+      "mnemonique": "1113",
+      "label_default": "1113 - pyrénomycètes",
+      "definition_default": "1113 = pyrénomycètes"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1114",
+      "mnemonique": "1114",
+      "label_default": "1114 - myxomycète ",
+      "definition_default": "1114 = myxomycète "
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_112",
+      "mnemonique": "112",
+      "label_default": "112 - plantes et lichens épiphytiques ou parasites",
+      "definition_default": "112 = plantes et lichens épiphytiques ou parasites"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1121",
+      "mnemonique": "1121",
+      "label_default": "1121 - bryophytes",
+      "definition_default": "1121 = bryophytes"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1122",
+      "mnemonique": "1122",
+      "label_default": "1122 - lichens foliacées ou fruticuleux ",
+      "definition_default": "1122 = lichens foliacées ou fruticuleux "
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1123",
+      "mnemonique": "1123",
+      "label_default": "1123 - lierres ou lianes",
+      "definition_default": "1123 = lierres ou lianes"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1124",
+      "mnemonique": "1124",
+      "label_default": "1124 - fougères",
+      "definition_default": "1124 = fougères"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1125",
+      "mnemonique": "1125",
+      "label_default": "1125 - gui",
+      "definition_default": "1125 = gui"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_113",
+      "mnemonique": "113",
+      "label_default": "113 - nids",
+      "definition_default": "113 = nids"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1131",
+      "mnemonique": "1131",
+      "label_default": "1131 - nid de vertébré ",
+      "definition_default": "1131 = nid de vertébré "
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1132",
+      "mnemonique": "1132",
+      "label_default": "1132 - nid d'invertébré",
+      "definition_default": "1132 = nid d'invertébré"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_114",
+      "mnemonique": "114",
+      "label_default": "114 - microsols",
+      "definition_default": "114 = microsols"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1141",
+      "mnemonique": "1141",
+      "label_default": "1141 - microsol d'écorce",
+      "definition_default": "1141 = microsol d'écorce"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1142",
+      "mnemonique": "1142",
+      "label_default": "1142 - microsol du houppier",
+      "definition_default": "1142 = microsol du houppier"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_115",
+      "mnemonique": "115",
+      "label_default": "115 - coulées de sève et de résine",
+      "definition_default": "115 = coulées de sève et de résine"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1151",
+      "mnemonique": "1151",
+      "label_default": "1151 - coulée de sève active",
+      "definition_default": "1151 = coulée de sève active"
+    },
+    {
+      "type": "ARBRES_DMH",
+      "cd_nomenclature": "DMH_1152",
+      "mnemonique": "1152",
+      "label_default": "1152 - coulée abondante de résine",
+      "definition_default": "1152 = coulée abondante de résine"
+    },
+    {
+      "type": "ARBRES_AIE_CATEGORIE",
+      "cd_nomenclature": "AIE_DHM",
+      "mnemonique": "AIE_DHM",
+      "label_default": "DMH",
+      "definition_default": "Arbres porteurs de dendromicro-habitat"
+    },
+    {
+      "type": "ARBRES_AIE_CATEGORIE",
+      "cd_nomenclature": "AIE_DORTOIR",
+      "mnemonique": "AIE_DORTOIR",
+      "label_default": "Dortoir/reposoir",
+      "definition_default": "Arbres Dortoir/reposoir"
+    },
+    {
+      "type": "ARBRES_AIE_CATEGORIE",
+      "cd_nomenclature": "AIE_EMERGENT",
+      "mnemonique": "AIE_EMERGENT",
+      "label_default": "Emergent",
+      "definition_default": "Arbres emergent"
+    },
+    {
+      "type": "ARBRES_AIE_CATEGORIE",
+      "cd_nomenclature": "AIE_ATYPIQUE",
+      "mnemonique": "AIE_ATYPIQUE",
+      "label_default": "Atypique",
+      "definition_default": "Arbres atypique"
+    }
+  ]
+}
