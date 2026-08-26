@@ -1,0 +1,356 @@
+{
+  "genre": "F",
+  "label": "Section",
+  "label_list": "Sections",
+  "geometry_type": "LineString",
+  "description_field_name": "base_site_name",
+  "display_properties": [
+    "uuid_base_site",
+    "base_site_name",
+    "base_site_code",
+    "base_site_description",
+    "id_digitiser",
+    "id_inventor",
+    "first_use_date",
+    "nb_visits",
+    "last_visit",
+    "linear_habitat",
+    "habitat_main_1",
+    "habitat_main_2",
+    "habitat_main_3",
+    "habitat_main_4",
+    "habitat_secondary_1",
+    "habitat_secondary_2",
+    "habitat_secondary_3",
+    "habitat_secondary_4",
+    "land_management",
+    "land_management_2",
+    "comments"
+  ],
+  "display_list": [
+    "base_site_code",
+    "base_site_name",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "uuid_base_site": {
+      "attribut_label": "UUID"
+    },
+    "base_site_code": {
+      "definition": "Pour assurer la cohérence avec l'eBMS, utilisez le format de numérotation suivant : S1, S2, S3, etc."
+    },
+    "id_digitiser": {
+      "attribut_label": "Créateur·ice"
+    },
+    "id_inventor": {
+      "attribut_label": "Observateur·ice par défaut"
+    },
+    "first_use_date": {
+      "attribut_label": "Date de première utilisation",
+      "type_widget": "date",
+      "required": true
+    },
+    "linear_habitat": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Habitat linéaire",
+      "code_nomenclature_type": "EBMS_LINEAR_HABITAT",
+      "required": true,
+      "type_util": "nomenclature"
+    },
+    "habitat_main_1": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Habitat principal (niveau 1), optionnel",
+      "definition": "habitat principal sur la section, si différent du transect",
+      "link_definition":"https://www.vigienature.fr/sites/vigienature/files/atoms/files/sterf_classification_habitats.pdf",
+      "code_nomenclature_type": "STERF_HAB_N1",
+      "required": false,
+      "type_util": "nomenclature"
+    },
+    "habitat_main_2": {
+      "type_widget": "select",
+      "attribut_label": "Habitat principal (niveau 2), optionnel",
+      "required": false,
+      "values": [
+        "({value, meta}) => {",
+        "  const level1 = meta.nomenclatures[value.habitat_main_1];",
+        "  if (level1 === undefined) return [];",
+        "  const filterNomenclatures = (startsWith) =>",
+        "    Object.values(meta.nomenclatures).filter(n => n.cd_nomenclature?.startsWith(startsWith));",
+        "  const mapToLabels = (nomenclatures) =>",
+        "    nomenclatures.map(n => n.label_default);",
+        "  switch (level1.cd_nomenclature) {",
+        "    case 'HAB1_A':",
+        "    case 'HAB1_B':",
+        "      return mapToLabels(filterNomenclatures('HAB2_AB_'));",
+        "    case 'HAB1_C':",
+        "      return mapToLabels(filterNomenclatures('HAB2_C_'));",
+        "    case 'HAB1_D':",
+        "      return mapToLabels(filterNomenclatures('HAB2_D_'));",
+        "    case 'HAB1_E':",
+        "      return mapToLabels(filterNomenclatures('HAB2_E_'));",
+        "    case 'HAB1_G':",
+        "      return mapToLabels(filterNomenclatures('HAB2_G_'));",
+        "  }",
+        "  return []",
+        "}"
+      ]
+    },
+    "habitat_main_3": {
+      "type_widget": "select",
+      "attribut_label": "Habitat principal (niveau 3), optionnel",
+      "required": false,
+      "values": [
+        "({value, meta}) => {",
+        "  const level1 = meta.nomenclatures[value.habitat_main_1];",
+        "  if (level1 === undefined) return [];",
+        "  const filterNomenclatures = (startsWith) =>",
+        "    Object.values(meta.nomenclatures).filter(n => n.cd_nomenclature?.startsWith(startsWith));",
+        "  const mapToLabels = (nomenclatures) =>",
+        "    nomenclatures.map(n => n.label_default);",
+        "  switch (level1.cd_nomenclature) {",
+        "    case 'HAB1_A':",
+        "      return mapToLabels(filterNomenclatures('HAB3_A_'));",
+        "    case 'HAB1_B':",
+        "      return mapToLabels(filterNomenclatures('HAB3_B_'));",
+        "    case 'HAB1_C':",
+        "      return mapToLabels(filterNomenclatures('HAB3_C_'));",
+        "    case 'HAB1_D':",
+        "      return mapToLabels(filterNomenclatures('HAB3_D_'));",
+        "    case 'HAB1_E':",
+        "      return mapToLabels(filterNomenclatures('HAB3_E_'));",
+        "    case 'HAB1_G':",
+        "      return mapToLabels(filterNomenclatures('HAB3_G_'));",
+        "  }",
+        "  return []",
+        "}"
+      ]
+    },
+    "habitat_main_4": {
+      "type_widget": "select",
+      "attribut_label": "Habitat principal (niveau 4), optionnel",
+      "required": false,
+      "values": [
+        "({value, meta}) => {",
+        "  const level1 = meta.nomenclatures[value.habitat_main_1];",
+        "  if (level1 === undefined) return [];",
+        "  const filterNomenclatures = (startsWith) =>",
+        "    Object.values(meta.nomenclatures).filter(n => n.cd_nomenclature?.startsWith(startsWith));",
+        "  const mapToLabels = (nomenclatures) =>",
+        "    nomenclatures.map(n => n.label_default);",
+        "  switch (level1.cd_nomenclature) {",
+        "    case 'HAB1_A':",
+        "    case 'HAB1_B':",
+        "      return mapToLabels(filterNomenclatures('HAB4_AB_'));",
+        "    case 'HAB1_C':",
+        "      return mapToLabels(filterNomenclatures('HAB4_C_'));",
+        "    case 'HAB1_D':",
+        "      return mapToLabels(filterNomenclatures('HAB4_D_'));",
+        "    case 'HAB1_E':",
+        "      return mapToLabels(filterNomenclatures('HAB4_E_'));",
+        "    case 'HAB1_G':",
+        "      return mapToLabels(filterNomenclatures('HAB4_G_'));",
+        "  }",
+        "  return []",
+        "}"
+      ]
+    },
+    "habitat_secondary_1": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Habitat secondaire (niveau 1), optionnel",
+      "definition": "autre habitat recontré sur la section ou sur l'autre côté de la section",
+      "code_nomenclature_type": "STERF_HAB_N1",
+      "required": false,
+      "type_util": "nomenclature",
+      "filters": {
+        "cd_nomenclature": ["HAB1_AB_B"]
+      }
+    },
+    "habitat_secondary_2": {
+      "type_widget": "select",
+      "attribut_label": "Habitat secondaire (niveau 2), optionnel",
+      "required": false,
+      "values": [
+        "({value, meta}) => {",
+        "  const level1 = meta.nomenclatures[value.habitat_secondary_1];",
+        "  if (level1 === undefined) return [];",
+        "  const filterNomenclatures = (startsWith) =>",
+        "    Object.values(meta.nomenclatures).filter(n => n.cd_nomenclature?.startsWith(startsWith));",
+        "  const mapToLabels = (nomenclatures) =>",
+        "    nomenclatures.map(n => n.label_default);",
+        "  switch (level1.cd_nomenclature) {",
+        "    case 'HAB1_A':",
+        "    case 'HAB1_B':",
+        "      return mapToLabels(filterNomenclatures('HAB2_AB_'));",
+        "    case 'HAB1_C':",
+        "      return mapToLabels(filterNomenclatures('HAB2_C_'));",
+        "    case 'HAB1_D':",
+        "      return mapToLabels(filterNomenclatures('HAB2_D_'));",
+        "    case 'HAB1_E':",
+        "      return mapToLabels(filterNomenclatures('HAB2_E_'));",
+        "    case 'HAB1_G':",
+        "      return mapToLabels(filterNomenclatures('HAB2_G_'));",
+        "  }",
+        "  return []",
+        "}"
+      ]
+    },
+    "habitat_secondary_3": {
+      "type_widget": "select",
+      "attribut_label": "Habitat secondaire (niveau 3), optionnel",
+      "required": false,
+      "values": [
+        "({value, meta}) => {",
+        "  const level1 = meta.nomenclatures[value.habitat_secondary_1];",
+        "  if (level1 === undefined) return [];",
+        "  const filterNomenclatures = (startsWith) =>",
+        "    Object.values(meta.nomenclatures).filter(n => n.cd_nomenclature?.startsWith(startsWith));",
+        "  const mapToLabels = (nomenclatures) =>",
+        "    nomenclatures.map(n => n.label_default);",
+        "  switch (level1.cd_nomenclature) {",
+        "    case 'HAB1_A':",
+        "      return mapToLabels(filterNomenclatures('HAB3_A_'));",
+        "    case 'HAB1_B':",
+        "      return mapToLabels(filterNomenclatures('HAB3_B_'));",
+        "    case 'HAB1_C':",
+        "      return mapToLabels(filterNomenclatures('HAB3_C_'));",
+        "    case 'HAB1_D':",
+        "      return mapToLabels(filterNomenclatures('HAB3_D_'));",
+        "    case 'HAB1_E':",
+        "      return mapToLabels(filterNomenclatures('HAB3_E_'));",
+        "    case 'HAB1_G':",
+        "      return mapToLabels(filterNomenclatures('HAB3_G_'));",
+        "  }",
+        "  return []",
+        "}"
+      ]
+    },
+    "habitat_secondary_4": {
+      "type_widget": "select",
+      "attribut_label": "Habitat secondaire (niveau 4), optionnel",
+      "required": false,
+      "values": [
+        "({value, meta}) => {",
+        "  const level1 = meta.nomenclatures[value.habitat_secondary_1];",
+        "  if (level1 === undefined) return [];",
+        "  const filterNomenclatures = (startsWith) =>",
+        "    Object.values(meta.nomenclatures).filter(n => n.cd_nomenclature?.startsWith(startsWith));",
+        "  const mapToLabels = (nomenclatures) =>",
+        "    nomenclatures.map(n => n.label_default);",
+        "  switch (level1.cd_nomenclature) {",
+        "    case 'HAB1_A':",
+        "    case 'HAB1_B':",
+        "      return mapToLabels(filterNomenclatures('HAB4_AB_'));",
+        "    case 'HAB1_C':",
+        "      return mapToLabels(filterNomenclatures('HAB4_C_'));",
+        "    case 'HAB1_D':",
+        "      return mapToLabels(filterNomenclatures('HAB4_D_'));",
+        "    case 'HAB1_E':",
+        "      return mapToLabels(filterNomenclatures('HAB4_E_'));",
+        "    case 'HAB1_G':",
+        "      return mapToLabels(filterNomenclatures('HAB4_G_'));",
+        "  }",
+        "  return []",
+        "}"
+      ]
+    },
+    "habitat_nomenclature_2": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Nomenclature d'habitat Sterf (niveau 2) [interne]",
+      "code_nomenclature_type": "STERF_HAB_N2",
+      "required": false,
+      "hidden": true,
+      "type_util": "nomenclature"
+    },
+    "habitat_nomenclature_3": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Nomenclature d'habitat Sterf (niveau 3) [interne]",
+      "code_nomenclature_type": "STERF_HAB_N3",
+      "required": false,
+      "hidden": true,
+      "type_util": "nomenclature"
+    },
+    "habitat_nomenclature_4": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Nomenclature d'habitat Sterf (niveau 4) [interne]",
+      "code_nomenclature_type": "STERF_HAB_N4",
+      "required": false,
+      "hidden": true,
+      "type_util": "nomenclature"
+    },
+    "land_management": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Gestion du terrain (optionnel)",
+      "code_nomenclature_type": "EBMS_LAND_MANAGEMENT",
+      "required": false,
+      "type_util": "nomenclature"
+    },
+    "land_management_2": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Gestion du terrain (secondaire, optionnel)",
+      "code_nomenclature_type": "EBMS_LAND_MANAGEMENT",
+      "required": false,
+      "type_util": "nomenclature"
+    },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "Commentaires",
+      "definition": "Sur le gestionnaire ou la gestion du terrain"
+    },
+    "types_site": {
+      "default": {
+        "cd_nomenclature": "EBMS_SEC"
+      }
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "EBMS_SEC"
+      },
+      "hidden": true
+    }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+    "  const transect = meta.parents.sites_group;",
+    "  // Si ces champs sont vides, on remplit avec les valeurs du transect.",
+    "  [",
+    "    'land_tenure', 'land_tenure_2',",
+    "    'land_management', 'land_management_2'",
+    "  ].forEach(prop => {",
+    "    const form_value = objForm.value[prop];",
+    "    if (form_value === null || form_value === undefined) {",
+    "      const transect_value = transect.properties[prop]",
+    "      if (",
+    "        transect_value !== null",
+    "        && transect_value !== undefined",
+    "        && !objForm.controls[prop].dirty",
+    "      ) {",
+    "        objForm.patchValue({[prop]: transect_value});",
+    "      }",
+    "    }",
+    "  });",
+    "  ",
+    "  // Réinitialise les champs d'habitats lorsque le niveau 1 est modifié.",
+    "  ['main', 'secondary'].forEach(habitat_type => {",
+    "    const level1_name = 'habitat_' + habitat_type + '_1';",
+    "    const level1_value = objForm.controls[level1_name].value;",
+    "    window.sterf_ebms ??= {};",
+    "    window.sterf_ebms.prev ??= {};",
+    "    window.sterf_ebms.prev['sec_' + level1_name] ??= level1_value;",
+    "    if (level1_value != window.sterf_ebms.prev['sec_' + level1_name]) {",
+    "      objForm.patchValue({",
+    "        ['habitat_' + habitat_type + '_2']: null,",
+    "        ['habitat_' + habitat_type + '_3']: null,",
+    "        ['habitat_' + habitat_type + '_4']: null",
+    "      });",
+    "      window.sterf_ebms.prev['sec_' + level1_name] = level1_value;",
+    "    }",
+    "  });",
+    "}"
+  ]
+}
