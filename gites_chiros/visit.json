@@ -1,0 +1,30 @@
+{
+  "display_properties": [
+    "id_dataset",
+    "visit_date_min",
+    "exhaustiveness",
+    "observers",
+    "comments"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers"
+  ],
+  "specific": {
+    "visit_date_min": {
+      "type_widget": "date",
+      "attribut_label": "Date de la visite",
+      "required": true
+    },
+    "exhaustiveness": {
+      "type_widget": "select",
+      "attribut_label": "Exhaustivité du contrôle",
+      "definition": "Indique si l'intégralité du site à été prospecté ou non.",
+      "values": [
+        "Contrôle partiel",
+        "Contrôle exhaustif"
+      ],
+      "required": true
+    }
+  }
+}

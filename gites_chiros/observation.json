@@ -1,0 +1,214 @@
+{
+  "display_list": [
+    "cd_nom",
+    "id_nomenclature_observation_status",
+    "count_min",
+    "count_max",
+    "id_nomenclature_chiro_activity"
+  ],
+  "display_properties": [
+    "cd_nom",
+    "id_nomenclature_observation_status",
+    "id_nomenclature_bio_condition",
+    "count_min",
+    "count_max",
+    "id_nomenclature_sex",
+    "id_nomenclature_life_stage",
+    "with_juveniles",
+    "id_nomenclature_chiro_activity",
+    "id_nomenclature_chiros_spot",
+    "comments"
+  ],
+  "specific": {
+    "id_nomenclature_observation_status": {
+      "type_widget": "datalist",
+      "attribut_label": "Présent/Absent",
+      "api": "nomenclatures/nomenclature/STATUT_OBS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": true,
+      "default": {
+        "cd_nomenclature": "Pr"
+      },
+      "filters": {
+        "cd_nomenclature": [
+          "Pr",
+          "No"
+        ]
+      }
+    },
+    "id_nomenclature_bio_condition": {
+      "type_widget": "datalist",
+      "attribut_label": "État biologique",
+      "definition": "Statut biologique de l'individu (mort ou vivant)",
+      "api": "nomenclatures/nomenclature/ETA_BIO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'Pr'",
+      "default" : {
+        "cd_nomenclature": "2"
+      },
+      "filters": {
+        "cd_nomenclature": [
+          "2",
+          "3"
+        ]
+      }
+    },
+    "count_min": {
+      "type_widget": "number",
+      "attribut_label": "Effectif minimum",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'Pr'",
+      "min": 1,
+      "value": 1
+    },
+    "count_max": {
+      "type_widget": "number",
+      "attribut_label": "Effectif maximum",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'Pr'",
+      "min": "({value}) => (value.count_min)",
+      "value": 1
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe",
+      "definition": "Sexe du sujet",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'Pr'",
+      "default" : {
+        "cd_nomenclature": "6"
+      },
+      "filters": {
+        "cd_nomenclature": [
+          "2",
+          "3",
+          "5",
+          "6"
+        ]
+      }
+    },
+    "id_nomenclature_life_stage": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie",
+      "definition": "Stade de développement du sujet",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'Pr'",
+      "default": {
+        "cd_nomenclature": "2"
+      },
+      "filters": {
+        "cd_nomenclature": [
+          "2",
+          "3"
+        ]
+      }
+    },
+    "with_juveniles": {
+      "type_widget": "select",
+      "attribut_label": "Présence de juvéniles",
+      "definition": "Indique si des juvéniles de l'espèce (juste nés sans pelage) sont présents lors de l'observation.",
+      "values": [
+        "Présence",
+        "Absence"
+      ],
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": false
+    },
+    "id_nomenclature_chiro_activity": {
+      "type_widget": "datalist",
+      "attribut_label": "Nature de la fréquentation",
+      "definition": "Indique la nature de la fréquentation du gîte par l'espèce au moment de l'observation.",
+      "api": "nomenclatures/nomenclature/NATURE_FREQUENTATION_CHIRO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "hidden": "({value, meta}) => (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No'",
+      "required": false
+    },
+    "id_nomenclature_chiros_spot": {
+      "type_widget": "datalist",
+      "attribut_label": "Emplacement fonctionnel",
+      "definition": "Localisation au sein du gîte où les individus ont été observés.",
+      "api": "nomenclatures/nomenclature/EMPLACEMENT_CHIROS",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": [
+        "({value, meta}) => {",
+          "var no_spot = ['0700', '0800'];",
+          "var type_site_lvl1 = meta.nomenclatures[meta.parents.site.properties.type_site_chiro_lvl1] || {};",
+          "return (meta.nomenclatures[value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No' || no_spot.includes(type_site_lvl1.cd_nomenclature)",
+        "}"
+      ],
+      "filters": [
+        "({value, meta}) => {",
+          "var type_site_lvl1 = meta.nomenclatures[meta.parents.site.properties.type_site_chiro_lvl1] || {};",
+          "if (type_site_lvl1.cd_nomenclature == '0100') {",
+            "return {cd_nomenclature: ['1', '2', '3']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0200') {",
+            "return {cd_nomenclature: ['2', '3', '4']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0300') {",
+            "return {cd_nomenclature: ['5', '6', '7', '8', '9', '10']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0400') {",
+            "return {cd_nomenclature: ['1', '2', '3']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0500') {",
+            "return {cd_nomenclature: ['11', '12', '13', '14', '15', '16', '17', '18', '19', '20']}",
+          "} else if (type_site_lvl1.cd_nomenclature == '0600') {",
+            "return {cd_nomenclature: ['12', '13', '17', '20', '21', '22', '23', '24', '25', '26']}",
+          "}",
+        "}",
+        ""
+      ]
+    },
+    "comments": {
+      "type_widget": "text",
+      "attribut_label": "Commentaires"
+    }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+      "if ((meta.nomenclatures[objForm.value.id_nomenclature_observation_status] || {}).cd_nomenclature === 'No') {",
+        "objForm.patchValue({",
+          "id_nomenclature_bio_condition: null,",
+          "count_min: null,",
+          "count_max: null,",
+          "id_nomenclature_sex: null,",
+          "id_nomenclature_life_stage: null,",
+          "with_juveniles: null,",
+          "id_nomenclature_chiro_activity: null,",
+          "id_nomenclature_chiros_spot: null",
+        "});",
+      "};",
+      "if (!!objForm.value.count_min && objForm.value.count_max < objForm.value.count_min) {",
+        "objForm.patchValue({count_max : objForm.value.count_min}, {emitEvent : false})",
+      "}",
+    "}",
+    ""
+  ]
+}
