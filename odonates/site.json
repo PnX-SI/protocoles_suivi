@@ -1,0 +1,156 @@
+{
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "genre":"F",
+  "label": "Mare",
+  "label_list": "Mares",
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "display_properties": [
+    "pzhCode",
+    "base_site_name",
+    "id_inventor",
+    "observers",
+    "qObserver",
+    "observateurCompl",
+    "first_use_date",
+    "base_site_description",
+    "gestionnaire",
+    "owner",
+    "proprietepzh",
+    "typeZH",
+    "id_nomenclature_prospection"
+  ],
+  "display_list": [
+    "base_site_name",
+    "pzhCode",
+    "observers"
+  ],
+  "map_label_field_name": "base_site_name",
+  "geometry_type": "Polygon",
+  "specific": {
+    "id_inventor": {
+      "attribut_label": "Numérisateur",
+      "required": true,
+      "hidden": true
+    },
+    "observers": {
+      "type_widget": "datalist",
+      "attribut_label": "Observateurs",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": true,
+      "required": true
+    },
+    "qObserver": {
+      "type_widget": "datalist",
+      "required": false,
+      "attribut_label": "Qualité de l'observateur",
+      "values": [
+          "Propriétaire", 
+          "Gestionnaire", 
+          "Locataire", 
+          "Simple observateur",
+          "Autre"
+        ],
+      "multiple": true
+    },
+    "observateurCompl": {
+      "type_widget": "datalist",
+      "attribut_label": "Observateurs complémentaires",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": true,
+      "required": false
+    },
+    "pzhCode": {
+      "type_widget": "text",
+      "attribut_label": "Code de la mare",
+      "required": true,
+      "hidden": true
+    },
+    "first_use_date": {
+      "attribut_label": "Date de création",
+      "required": true
+    },
+    "base_site_name": {
+      "attribut_label": "Nom usuel de la petite zone humide"
+    },
+    "gestionnaire": {
+      "type_widget": "text",
+      "attribut_label": "Gestionnaire"
+    },
+    "owner": {
+      "type_widget": "text",
+      "attribut_label": "Propriétaire"
+    },
+    "proprietepzh": {
+      "type_widget": "select",
+      "attribut_label": "Propriété",
+      "values": [
+        "Public", 
+        "Privé", 
+        "Mixte", 
+        "Inconnu"
+      ]
+    },
+    "typeZH": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type de petite zone humide",
+      "code_nomenclature_type": "TYPEZH",
+      "required": true,
+      "type_util": "nomenclature",
+      "hidden": false
+    },
+    "id_nomenclature_type_site": {
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "MAR"
+      },
+      "hidden": true
+    },
+    "id_nomenclature_prospection": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Méthode(s) de prospection",
+      "code_nomenclature_type": "METHODE_PROSPECTION",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "base_site_code": {
+      "hidden": true,
+      "required": false
+    }
+  },
+  "change": [
+    "({objForm, meta}) => {",
+
+      "if (objForm.controls.observers.value == undefined) {",
+        "objForm.controls['observers'].setValue([meta.id_role]);",
+      "}",
+      "if (objForm.controls.pzhCode.value == undefined || objForm.controls.pzhCode.value == '') {",
+
+        "function create_UUID(){",
+          "var dt = new Date().getTime();",
+          "var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {",
+              "var r = (dt + Math.random()*16)%16 | 0;",
+              "dt = Math.floor(dt/16);",
+              "return (c=='x' ? r :(r&0x3|0x8)).toString(16);",
+          "});",
+          "return uuid;",
+        "}",
+
+        "objForm.controls['pzhCode'].setValue('Oasis_'.concat(create_UUID()));",
+
+      "}",
+
+    "}"
+  ]
+}
