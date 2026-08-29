@@ -30,6 +30,16 @@ AS WITH source AS (
     ref_nomenclatures.get_id_nomenclature('NATURALITE'::character varying, '1'::character varying) AS id_nomenclature_naturalness,
     ref_nomenclatures.get_id_nomenclature('STADE_VIE'::character varying, '2'::character varying) AS id_nomenclature_life_stage,
     ref_nomenclatures.get_id_nomenclature('TYP_GRP'::character varying, 'REL'::character varying) AS id_nomenclature_grp_typ,
+    (SELECT id_nomenclature FROM ref_nomenclatures.t_nomenclatures WHERE id_type = ref_nomenclatures.get_id_nomenclature_type('STATUT_BIO')
+    	AND (mnemonique ILIKE
+    		'Code Atlas ' ||
+	    	lpad(
+			    split_part(toc.data->>'code_atlas', ' - ', 1),
+			    2,
+			    '0'
+			  ) ||
+        '%')
+  	) AS id_nomenclature_bio_status,
     t.cd_nom,
     t.nom_complet AS nom_cite,
     s.altitude_min,
@@ -47,7 +57,8 @@ AS WITH source AS (
     v.id_base_site,
     v.id_base_visit,
     coalesce(((toc.data ->> 'nb_0_5'::text)::integer),0) + coalesce(((toc.data ->> 'nb_5_10'::text)::integer),0) + coalesce(((toc.data ->> 'nb_10_15'::text)::integer),0) + coalesce(((toc.data ->> 'nb_hors_proto'::text)::integer),0)       AS count_min,
-	  coalesce(((toc.data ->> 'nb_0_5'::text)::integer),0) + coalesce(((toc.data ->> 'nb_5_10'::text)::integer),0) + coalesce(((toc.data ->> 'nb_10_15'::text)::integer),0) + coalesce(((toc.data ->> 'nb_hors_proto'::text)::integer),0)       AS count_max
+	  coalesce(((toc.data ->> 'nb_0_5'::text)::integer),0) + coalesce(((toc.data ->> 'nb_5_10'::text)::integer),0) + coalesce(((toc.data ->> 'nb_10_15'::text)::integer),0) + coalesce(((toc.data ->> 'nb_hors_proto'::text)::integer),0)       AS count_max,
+  	json_build_object('code_atlas', toc.data ->> 'code_atlas'::text, 'nb_0_5', toc.data ->> 'nb_0_5'::text, 'nb_5_10', toc.data ->> 'nb_5_10'::text, 'nb_10_15', toc.data ->> 'nb_10_15'::text, 'nb_hors_proto', toc.data ->> 'nb_hors_proto'::text, 'presence_juvenile', toc.data ->> 'presence_juvenile'::text)::jsonb AS additional_data
    FROM gn_monitoring.t_base_visits v
      JOIN gn_monitoring.t_base_sites s ON s.id_base_site = v.id_base_site
      JOIN gn_commons.t_modules m ON m.id_module = v.id_module

@@ -44,6 +44,7 @@ AS WITH observers AS (
     toc.data ->> 'nb_10_15'::text AS nb_10_15,
     toc.data ->> 'nb_hors_proto'::text AS nb_hors_proto,
     toc.data ->> 'presence_juvenile'::text AS presence_juvenile,
+    toc.data ->> 'code_atlas'::text AS code_atlas,
     obs.comments AS commentaire_observation,
     tbv.id_dataset
    FROM gn_monitoring.t_base_sites s
@@ -100,6 +101,7 @@ toc."data"->>'nb_5_10' AS nb_5_10,
 toc."data"->>'nb_10_15' AS nb_10_15,
 toc."data"->>'nb_hors_proto' AS nb_hors_proto,
 toc."data"->>'presence_juvenile' AS presence_juvenile,
+toc."data"->>'code_atlas' AS code_atlas,
 obs."comments" AS commentaire_observation,
 tbv.id_dataset
 from gn_monitoring.t_base_sites s

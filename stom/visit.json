@@ -45,30 +45,30 @@
       "type_widget": "select",
       "required": true,
       "attribut_label": "Couverture nuageuse",
-      "values": ["0-33%", "33-66%", "66-100%"]
+      "values": ["1 - 0-33%", "2 - 33-66%", "3 - 66-100%"]
     },
     "pluie": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Pluie",
-      "values": ["1-Absente", "2-Intermittente", "3-Continue"]
+      "values": ["1 - Absente", "2 - Intermittente", "3 - Continue"]
     },
     "vent": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Vent",
-      "values": ["1-Absent", "2-Faible", "3-Moyen à fort"]
+      "values": ["1 - Absent", "2 - Faible", "3 - Moyen à fort"]
     },
     "visi": {
       "type_widget": "select",
       "required": true,
       "attribut_label": "Visibilité",
-      "values": ["1-Bonne", "2-Modérée", "3-Faible"]
+      "values": ["1 - Bonne", "2 - Modérée", "3 - Faible"]
     },
     "deneigement": {
       "type_widget": "number",
       "required": true,
-      "attribut_label": "Denneigement (en %)",
+      "attribut_label": "Déneigement (en %)",
       "min": 0,
       "max": 100
     },

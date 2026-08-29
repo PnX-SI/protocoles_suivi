@@ -28,6 +28,28 @@
       "type_widget": "number",
       "attribut_label": "Effectif au delà de 100m"
     },
+    "code_atlas":  {
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Code atlas",
+      "values": [ "1 - Espèce observée",
+                  "2 - Mâle chanteur",
+                  "3 - Couple en période de reproduction",
+                  "4 - Comportement territorial",
+                  "5 - Parade nuptiale",
+                  "6 - Visite d'un site de nidification probable",
+                  "7 - Cri d'alarme ou comportement agité",
+                  "8 - Plaque incubatrice",
+                  "9 - Construction d'un nid",
+                  "10 - Oiseau simulant une blessure",
+                  "11 - Découverte d'un nid",
+                  "12 - Jeunes venant de s'envoler ",
+                  "13 - Adulte gagnant ou quittant un site de nidification",
+                  "14 - Transport de nourriture",
+                  "15 - Nid avec oeufs",
+                  "16 - Jeunes au nid vus ou entendus"
+                ]
+  },
     "presence_juvenile": {
       "type_widget": "bool_checkbox",
       "attribut_label": "Présence de juvéniles ? (si oui ne pas les compter)"
