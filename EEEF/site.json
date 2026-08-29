@@ -1,0 +1,105 @@
+{
+  "label": "Tâche",
+  "label_list": "Tâche",
+  "map_label_field_name": "base_site_name",
+  "geometry_type": "Point",
+  "display_properties": [
+    "base_site_name",
+    "type_esp", 
+    "base_site_description" ],
+  "display_list": [
+    "base_site_name",
+    "nb_visits",
+    "last_visit"
+  ],
+  "specific": {
+    "type_esp": {
+      "type_widget": "select",
+      "attribut_label": "Espèces observées",
+      "required": true,
+      "values": [ "Ailante",
+                  "Ambroisie à feuille d'armoise",
+                  "Aster de Nouvelle-Belgique",
+                  "Azolla fausse-fougère",
+                  "Balsamine à petites fleurs",
+                  "Balsmine de balfour",
+                  "Balsmine du Cap",
+                  "Balsamine de l'Himalaya",
+                  "Bambous",
+                  "Berce du Caucase",
+                  "Bertéroa blanchi",
+                  "Bident à fruits noirs",
+                  "Buddleia",
+                  "Collomia à grandes fleurs",
+                  "Cotonéaster horizontal",
+                  "Érigéron annuel",
+                  "Érigéron du Canada",
+                  "Erable négundo",
+                  "Herbe de pampa",
+                  "Jonc ténu",
+                  "Jussie à grandes fleurs",
+                  "Lampourde à gros fruits",
+                  "Lindernie fausse-gratiole",
+                  "Onagre bisannuelle",
+                  "Onagre de Glaziou",
+                  "Oxalide de Dillenius",
+                  "Oxalide d'Europe",
+                  "Raisin d'Amérique",
+                  "Renouées du Japon",
+                  "Robinier faux-acacia",
+                  "Séneçon du Cap",
+                  "Solidages",
+                  "Sporobole d'Inde",
+                  "Véronique voyageuse",
+                  "Vigne-vierge commune"]
+    }, 
+    "base_site_name": {
+      "required": true,
+      "hidden": false,
+      "attribut_label": "Identifiant de la tâche"
+    },
+    "base_site_description": {
+      "type_widget": "text",
+      "attribute_label": "Description de la tâche",
+      "required": false,
+      "hidden": false
+    },
+    "id_nomenclature_type_site": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type de site/rattachement à une zone",
+      "code_nomenclature_type": "TYPE_SITE",
+      "type_util": "nomenclature",
+      "required": true,
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "7"
+      },
+      "hidden": true
+    },
+    "medias": {
+      "hidden": true,
+      "type_widget": "medias",
+      "attribut_label": "Médias",
+      "schema_dot_table": "gn_monitoring.t_observations"
+    }, 
+    "base_site_code": {
+      "hidden": true,
+	    "required": false
+    },
+    "id_inventor": {
+      "hidden": true,
+	    "required": false
+    },
+    "first_use_date": {
+      "hidden": true,
+	    "required": false
+    },
+    "nb_visits": {
+      "attribut_label": "Nb. de relevé"
+    },
+    "last_visit": {
+      "attribut_label": "Dernier relevé",
+      "type_util": "date"
+    }
+  }
+}
