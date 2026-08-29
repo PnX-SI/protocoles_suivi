@@ -1,0 +1,8 @@
+{
+  "module_label":"ILA",
+  "module_desc":"Module pour le protocole de suivi des orthoptères ILA",
+  "export_csv": [
+    { "label": "Transects ILA", "type":"csv" , "method": "transect"},
+    { "label": "Ensemble des suivis ILA", "type":"csv" , "method": "obs"}
+  ]
+}

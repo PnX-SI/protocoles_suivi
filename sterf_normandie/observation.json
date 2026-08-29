@@ -1,0 +1,85 @@
+{
+  "description_field_name":"cd_nom",
+  "genre":"F",
+  "display_properties": [
+    "cd_nom",
+    "effectif",
+    "comments"
+  ],
+  "display_list": [
+    "cd_nom",
+    "effectif",
+    "comments"
+  ],
+  "keep": [
+    "id_nomenclature_obs_technique",
+    "id_nomenclature_determination_method",
+    "id_nomenclature_type_count",
+    "id_nomenclature_obj_count"
+  ],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèce observée",
+      "multiple": false,
+      "id_list": "__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    },
+    "effectif": {
+      "type_widget": "number",
+      "attribut_label": "Effectif total",
+      "value": 1,
+      "required": true
+    },
+    "id_nomenclature_obs_technique": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Technique d'observation",
+      "code_nomenclature_type": "METH_OBS",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "METH_OBS",
+        "cd_nomenclature": "0"
+      },
+      "required": true,
+      "hidden": false
+    },
+    "id_nomenclature_determination_method": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Méthode de détermination",
+      "code_nomenclature_type": "METH_DETERMIN",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "METH_DETERMIN",
+        "cd_nomenclature": "18"
+      },
+      "required": true,
+      "hidden": false
+    },
+    "id_nomenclature_type_count": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Type de dénombrement",
+      "code_nomenclature_type": "TYP_DENBR",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYP_DENBR",
+        "cd_nomenclature": "Co"
+      },
+      "required": true,
+      "hidden": false
+    },
+    "id_nomenclature_obj_count": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Objet du dénombrement",
+      "code_nomenclature_type": "OBJ_DENBR",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "OBJ_DENBR",
+        "cd_nomenclature": "IND"
+      },
+      "required": true,
+      "hidden": false
+    }
+  }
+}

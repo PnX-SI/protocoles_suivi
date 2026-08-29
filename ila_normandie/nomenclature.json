@@ -1,0 +1,291 @@
+{
+  "types": [
+    {
+      "mnemonique": "TYPE_SITE",
+      "label_default": "Type de sites",
+      "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    },
+    {
+      "mnemonique": "SUIVI_VT",
+      "label_default": "Classes de vent",
+      "definition_default": "Classes des vents des protocoles ILA, STELI et STERF"
+    },
+    {
+      "mnemonique": "SUIVI_TP",
+      "label_default": "Classes de températures du protocole ILA, STELI et STERF",
+      "definition_default": "Classes de températures du protocole ILA, STELI et STERF"
+    },
+    {
+      "mnemonique": "SUIVI_CN",
+      "label_default": "Classes de couvertures nuageuses du protocole ILA, STELI et STERF",
+      "definition_default": "Classes de couvertures nuageuses du protocole ILA, STELI et STERF"
+    },
+    {
+      "mnemonique": "ILA_HAB",
+      "label_default": "Habitats du protocole ILA de suivi des orthoptères du CENN Normandie",
+      "definition_default": "Habitats du protocole ILA de suivi des orthoptères du CENN Normandie"
+    },
+    {
+      "mnemonique": "CENN_GEST",
+      "label_default": "Types de gestion du CENN Normandie",
+      "definition_default": "Types de gestion du CENN Normandie"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "ILA",
+      "mnemonique": "Site suivi par le protocole ILA",
+      "label_default": "Site suivi par le protocole ILA",
+      "definition_default": "Site suivi par le protocole ILA"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "SUIVI_TP01",
+      "mnemonique": "13-15°C",
+      "label_default": "13-15°C",
+      "definition_default": "Température de l'air entre 13 et 15°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP02",
+      "mnemonique": "16-20°C",
+      "label_default": "16-20°C",
+      "definition_default": "Température de l'air entre 16 et 20°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP03",
+      "mnemonique": "21-25°C",
+      "label_default": "21-25°C",
+      "definition_default": "Température de l'air entre 21 et 25°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP04",
+      "mnemonique": "26-30°C",
+      "label_default": "26-30°C",
+      "definition_default": "Température de l'air entre 26 et 30°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP05",
+      "mnemonique": "31-35°C",
+      "label_default": "31-35°C",
+      "definition_default": "Température de l'air entre 31 et 35°C"
+    },{
+      "type": "SUIVI_TP",
+      "cd_nomenclature": "TP06",
+      "mnemonique": ">35°C",
+      "label_default": ">35°C",
+      "definition_default": "Température de l'air supérieure à 35°C"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN01",
+      "mnemonique": "0-10%",
+      "label_default": "0-10%",
+      "definition_default": "Couverture nuageuses entre 0 et 10%"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN02",
+      "mnemonique": "10-25%",
+      "label_default": "10-25%",
+      "definition_default": "Couverture nuageuses entre 10 et 25%"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN03",
+      "mnemonique": "25-50%",
+      "label_default": "25-50%",
+      "definition_default": "Couverture nuageuses entre 25 et 50%"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN04",
+      "mnemonique": "50-75%",
+      "label_default": "50-75%",
+      "definition_default": "Couverture nuageuses entre 50 et 75%"
+    },{
+      "type": "SUIVI_CN",
+      "cd_nomenclature": "CN05",
+      "mnemonique": "75-100%",
+      "label_default": "75-100%",
+      "definition_default": "Couverture nuageuses entre 75 et 100%"
+    },
+    {
+      "type": "SUIVI_VT",
+      "cd_nomenclature": "VT01",
+      "mnemonique": "Nul",
+      "label_default": "Nul",
+      "definition_default": "Vent nul."
+    },
+    {
+      "type": "SUIVI_VT",
+      "cd_nomenclature": "VT02",
+      "mnemonique": "Léger",
+      "label_default": "Léger",
+      "definition_default": "Vent léger."
+    },
+    {
+      "type": "SUIVI_VT",
+      "cd_nomenclature": "VT03",
+      "mnemonique": "Modéré",
+      "label_default": "Modéré",
+      "definition_default": "Vent modéré."
+    },
+    {
+      "type": "SUIVI_VT",
+      "cd_nomenclature": "VT04",
+      "mnemonique": "Fort",
+      "label_default": "Fort",
+      "definition_default": "Vent fort."
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB01",
+      "mnemonique": "Berges",
+      "label_default": "Berges",
+      "definition_default": "Berges"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB02",
+      "mnemonique": "Brachypodaie",
+      "label_default": "Brachypodaie",
+      "definition_default": "Brachypodaie"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB03",
+      "mnemonique": "Dalle, pelouse écorchée",
+      "label_default": "Dalle, pelouse écorchée",
+      "definition_default": "Dalle, pelouse écorchée"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB04",
+      "mnemonique": "Friche",
+      "label_default": "Friche",
+      "definition_default": "Friche"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB05",
+      "mnemonique": "Fruticée",
+      "label_default": "Fruticée",
+      "definition_default": "Fruticée"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB06",
+      "mnemonique": "Lande",
+      "label_default": "Lande",
+      "definition_default": "Lande"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB07",
+      "mnemonique": "Lisière, forêt",
+      "label_default": "Lisière, forêt",
+      "definition_default": "Lisière, forêt"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB08",
+      "mnemonique": "Mégaphorbiaie",
+      "label_default": "Mégaphorbiaie",
+      "definition_default": "Mégaphorbiaie"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB09",
+      "mnemonique": "Ourlet",
+      "label_default": "Ourlet",
+      "definition_default": "Ourlet"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB10",
+      "mnemonique": "Pelouse calcaire",
+      "label_default": "Pelouse calcaire",
+      "definition_default": "Pelouse calcaire"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB11",
+      "mnemonique": "Pelouse sableuse",
+      "label_default": "Pelouse sableuse",
+      "definition_default": "Pelouse sableuse"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB12",
+      "mnemonique": "Prairie humide",
+      "label_default": "Prairie humide",
+      "definition_default": "Prairie humide"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB13",
+      "mnemonique": "Prairie piquetée",
+      "label_default": "Prairie piquetée",
+      "definition_default": "Prairie piquetée"
+    },
+    {
+      "type": "ILA_HAB",
+      "cd_nomenclature": "ILA_HAB14",
+      "mnemonique": "Roselière",
+      "label_default": "Roselière",
+      "definition_default": "Roselière"
+    },
+    {
+      "type": "CENN_GEST",
+      "cd_nomenclature": "CENN_GEST01",
+      "mnemonique": "Broyage",
+      "label_default": "Broyage",
+      "definition_default": "Broyage"
+    },
+    {
+      "type": "CENN_GEST",
+      "cd_nomenclature": "CENN_GEST02",
+      "mnemonique": "Débroussaillage",
+      "label_default": "Débroussaillage",
+      "definition_default": "Débroussaillage"
+    },
+    {
+      "type": "CENN_GEST",
+      "cd_nomenclature": "CENN_GEST03",
+      "mnemonique": "Etrépage",
+      "label_default": "Etrépage",
+      "definition_default": "Etrépage"
+    },
+    {
+      "type": "CENN_GEST",
+      "cd_nomenclature": "CENN_GEST04",
+      "mnemonique": "Fauche",
+      "label_default": "Fauche",
+      "definition_default": "Fauche"
+    },
+    {
+      "type": "CENN_GEST",
+      "cd_nomenclature": "CENN_GEST05",
+      "mnemonique": "Hersage",
+      "label_default": "Hersage",
+      "definition_default": "Hersage"
+    },
+    {
+      "type": "CENN_GEST",
+      "cd_nomenclature": "CENN_GEST06",
+      "mnemonique": "Pâturage",
+      "label_default": "Pâturage",
+      "definition_default": "Pâturage"
+    },
+    {
+      "type": "CENN_GEST",
+      "cd_nomenclature": "CENN_GEST07",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre"
+    },
+    {
+      "type": "CENN_GEST",
+      "cd_nomenclature": "CENN_GEST08",
+      "mnemonique": "Sans gestion",
+      "label_default": "Sans gestion",
+      "definition_default": "Sans gestion"
+    }
+  ]
+}

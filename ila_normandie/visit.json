@@ -1,0 +1,180 @@
+{
+  "description_field_name": "num_passage",
+  "genre":"M",
+  "label": "Passage",
+  "label_list": "Passages",
+  "display_properties": [
+    "num_passage",
+    "observers",
+    "annee",
+    "visit_date_min",
+    "visit_date_max",
+    "heure_debut",
+    "heure_fin",
+    "id_nomenclature_tp",
+    "id_nomenclature_cn",
+    "id_nomenclature_vt",
+    "habitat",
+    "gestion",
+    "impact",
+    "comments"
+  ],
+  "display_list": [
+    "num_passage",
+    "visit_date_min",
+    "annee",
+    "observers",
+    "habitat",
+    "nb_observations"
+  ],
+  "keep": [
+    "annee",
+    "id_dataset",
+    "id_nomenclature_tp",
+    "id_nomenclature_cn",
+    "id_nomenclature_vt",
+    "observers",
+    "habitat",
+    "gestion"
+  ],
+  "specific": {
+    "num_passage": {
+      "type_widget": "number",
+      "attribut_label": "Numéro de passage",
+      "min" : 1,
+      "max": 4,
+      "required": true
+    },
+    "annee": {
+      "type_widget": "number",
+      "attribut_label": "Année",
+      "min" : 1993,
+      "value": 2025,
+      "required": true
+    },
+    "visit_date_min":{
+      "attribut_label": "Date de début du passage",
+      "required": true
+    },
+    "visit_date_max":{
+      "attribut_label": "Date de fin du passage" , 
+      "required": false,
+      "hidden": true
+    },
+    "heure_debut": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début du passage",
+      "required": false
+    },
+    "heure_fin": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin du passage",
+      "required": false
+    },
+    "id_nomenclature_tp":{
+      "type_widget": "datalist",
+      "attribut_label": "Température",
+      "api": "nomenclatures/nomenclature/SUIVI_TP",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "multiple": false,
+      "required": true
+    },
+    "id_nomenclature_cn":{
+      "type_widget": "datalist",
+      "attribut_label": "Couverture nuageuse",
+      "api": "nomenclatures/nomenclature/SUIVI_CN",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "multiple": false,
+      "required": true
+    },
+    "id_nomenclature_vt":{
+      "type_widget": "datalist",
+      "attribut_label": "Vent",
+      "api": "nomenclatures/nomenclature/SUIVI_VT",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "multiple": false,
+      "required": true
+    },
+    "source":{
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Source de la donnée",
+      "values": [
+        "Intranet SER", 
+        "Excel", 
+        "GeoNature", 
+        "Qfield/Qgis"
+      ],
+      "value": "GeoNature",
+      "hidden": true
+    },
+    "habitat":{
+      "attribut_label": "Habitat",
+      "type_widget": "select",
+      "values": [
+        "Berges",
+        "Brachypodaie",
+        "Cariçaie",
+        "Dalle / Pelouse écorchée",
+        "Friche",
+        "Fruticée",
+        "Lande",
+        "Lisière / Forestière",
+        "Mégaphorbiaie",
+        "Ourlet",
+        "Pelouse calcaire",
+        "Pelouse sableuse",
+        "Prairie humide",
+        "Prairie piquetée",
+        "Roselière"
+      ],
+      "required": true,
+      "hidden": false
+    },
+    "gestion":{
+      "attribut_label": "Gestion",
+      "type_widget": "select",
+      "values": [
+        "Autre",
+        "Broyage",
+        "Débroussaillage",
+        "Etrépage",
+        "Fauche",
+        "Pas d'intervention",
+        "Pâturage"
+      ],
+      "required": true,
+      "hidden": false
+    },
+    "impact":{
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Impact de la gestion",
+      "values": ["OUI", "NON"],
+      "hidden":false
+    }
+  },
+  "change": [
+      "({objForm, meta}) => {",
+          "const habitat = (meta.parents.site.properties.habitat);",
+          "const gestion = (meta.parents.site.properties.gestion);",
+          "const impact = (meta.parents.site.properties.impact);",
+          "(objForm.value.habitat == (null || undefined)  && meta.parents.site.properties.habitat != (null || undefined) ? objForm.patchValue({habitat}) : '');",
+          "(objForm.value.gestion == (null || undefined) ? objForm.patchValue({gestion}) : '');",
+          "(objForm.value.impact == (null || undefined) ? objForm.patchValue({impact}) : '');",
+          "}",
+      ""
+  ]
+}

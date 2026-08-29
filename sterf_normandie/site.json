@@ -1,0 +1,136 @@
+{
+  "genre":"M",
+  "label": "Transect",
+  "label_list": "Transects",
+  "geometry_type": "LineString",
+  "map_label_field_name": "base_site_code",
+  "sorts": [
+    {"prop": "base_site_name", "dir": "asc"}
+  ],
+  "display_properties": [
+    "id_sites_group",
+    "base_site_code",
+    "base_site_name",
+    "occ_sol",
+    "occ_sol_detail",
+    "hab_1",
+    "lisiere",
+    "hab_2",
+    "gestion",
+    "altitude_min",
+    "altitude_max",
+    "base_site_description"
+ ],
+  "display_list": [
+    "base_site_code",
+    "base_site_name",
+    "nb_visits"
+  ],
+  "keep": [
+    "id_sites_group",
+    "occ_sol",
+    "occ_sol_detail",
+    "hab_1",
+    "lisiere",
+    "hab_2"
+  ],
+  "specific": {
+    "nb_visits":{
+      "attribut_label": "Nb. passages"
+    },
+    "base_site_code":{
+      "attribut_label": "Code du transect"
+    },
+    "base_site_name":{
+      "attribut_label": "Nom du transect"
+    },
+    "base_site_description":{
+      "attribut_label": "Commentaires"
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Site CEN",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": true,
+      "hidden": false
+    },
+    "id_inventor": {
+      "hidden " :false,
+      "required": false
+    },
+    "id_nomenclature_type_site": {
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "code_nomenclature_type": "TYPE_SITE",
+      "value": {
+          "code_nomenclature_type": "TYPE_SITE",
+          "cd_nomenclature": "STERF"
+      }
+    },
+    "hab_1": {
+      "attribut_label": "Hab. principal",
+      "type_widget": "text",
+      "required": true,
+      "hidden": false,
+      "definition": "Habitat du protocole STERF",
+      "link_definition":"https://www.vigienature.fr/sites/vigienature/files/atoms/files/sterf_classification_habitats.pdf"
+    },
+    "lisiere":{
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Lisière",
+      "values": ["Oui", "Non"],
+      "value": "Non",
+      "hidden":false
+    },
+    "hab_2": {
+      "attribut_label": "Hab. secondaire",
+      "type_widget": "text",
+      "hidden": "({value}) => value.lisiere != 'Oui'",
+      "required": "({value}) => value.lisiere == 'Oui'"
+    },
+    "occ_sol": {
+      "attribut_label": "OS niveau 1",
+      "type_widget": "select",
+      "values": ["Forêts et milieux semi-naturels", "Territoires agricoles", "Territoires artificialisés","Zones humides"],
+      "required": true,
+      "hidden": false
+    },
+    "occ_sol_detail": {
+      "attribut_label": "OS niveau 2",
+      "values": [
+        "Cultures permanentes", 
+        "Espaces verts artificialisés", 
+        "Forêt (feuillus, conifères, mixtes)",
+        "Forêts et végétation arbustive en mutation",
+        "Landes, broussailles",
+        "Pelouses, pâturages naturels",
+        "Prairie",
+        "Zones humides intérieures ou maritimes",
+        "Zones urbaines (hors espaces verts)"
+      ],
+      "type_widget": "select",
+      "required": true,
+      "hidden": false      
+    },
+    "gestion":{
+      "attribut_label": "Gestion",
+      "type_widget": "select",
+      "values": [
+        "Autre",
+        "Broyage",
+        "Débroussaillage",
+        "Etrépage",
+        "Fauche",
+        "Pas d'intervention",
+        "Pâturage"
+      ],
+      "required": false,
+      "hidden": false
+    }
+  }
+}
