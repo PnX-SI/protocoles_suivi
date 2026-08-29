@@ -1,0 +1,65 @@
+{ "map_label_field_name": "base_site_code",
+  "label": "Site",
+  "label_list": "Sites",
+  "genre": "M",
+  "geometry_type": "Point",
+  "display_properties": [
+    "id_sites_group",
+    "base_site_code",
+    "base_site_name",
+    "initial_code",
+    "id_inventor",
+    "surface",
+    "base_site_description",
+    "last_visit",
+    "nb_visits"
+  ],
+  "display_list": [
+    "base_site_name",
+    "id_inventor",
+    "surface",
+    "last_visit",
+    "nb_visits"
+  ],
+  "specific": {
+    "id_nomenclature_type_site": {
+      "type_widget": "text",
+      "attribut_label": "Type site",
+      "type_util": "nomenclature",
+      "value": {
+        "code_nomenclature_type": "TYPE_SITE",
+        "cd_nomenclature": "7"
+      },
+      "hidden": true
+    },
+    "id_sites_group": {
+      "type_widget": "datalist",
+      "attribut_label": "Air d'études",
+      "type_util": "sites_group",
+      "keyValue": "id_sites_group",
+      "keyLabel": "sites_group_name",
+      "api": "__MONITORINGS_PATH/list/__MODULE.MODULE_CODE/sites_group?id_module=__MODULE.ID_MODULE",
+      "application": "GeoNature",
+      "required": false,
+      "hidden": false
+    },
+    "surface": {
+      "type_widget": "number",
+      "attribut_label": "Surface en m²",
+      "required": true,
+      "hidden": false
+    },
+    "base_site_code": {
+      "type_widget": "text",
+      "attribut_label": "Code inital (1er fiche)",
+      "required": false,
+      "hidden": true
+    },
+    "first_use_date": {
+      "type_widget": "date",
+      "attribut_label": "Date de description",
+      "required": true,
+      "hidden": false
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "types": [
+  ],
+  "nomenclatures": [
+  {
+      "type":"TYPE_SITE",
+      "cd_nomenclature": "Flore patrimoniale",
+      "mnemonique": "Site_Flore_patrimoniale",
+      "label_default": "Site Flore patrimoniale",
+      "definition_default": "Site de relevé du protocole Flore patrimoniale"
+    }
+  ]
+}
