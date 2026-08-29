@@ -242,7 +242,7 @@ WITH source AS (
 	WITH agg1 as (
 		SELECT 
 			oc.id_observation,
-				replace(replace(replace(replace(replace(replace(replace(replace(replace(
+				replace(replace(replace(replace(replace(replace(replace(replace(replace(replace(
 						unnest(array[n3.label_default,n2.label_default,n1.label_default]),
 					'Mixte','2'),
 					'Tandem','3'),
@@ -252,7 +252,8 @@ WITH source AS (
 					'Immature','7'),
 					'Emergent','8'),
 					'Non renseigné','1'),
-					'Indéterminé','1')::int
+					'Indéterminé','1'),
+					'Inconnu')::int
 				 AS comportement
 		FROM gn_monitoring.t_observations o
 			JOIN gn_monitoring.t_observation_complements oc USING (id_observation)
