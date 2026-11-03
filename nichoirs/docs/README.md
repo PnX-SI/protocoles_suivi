@@ -85,20 +85,3 @@ La vue `gn_monitoring.v_synthese_nichoirs` (`synthese.sql`) alimente la synthès
 
 La vue `gn_monitoring.v_qgis_nichoirs` (`synthese_personnalisation.sql`) reprend la même logique
 avec les colonnes `nb_nichoirs`, `nb_nichoirs_occupes` et `nb_nichees_estimees` pour la cartographie.
-
-## Analyses
-
-Le script [`analyse_nichoirs.sql.sample`](analyse_nichoirs.sql.sample) crée des vues de travail
-(`gn_monitoring.v_nichoirs_an_*`) et propose des requêtes de synthèse. Il est volontairement
-nommé en `.sql.sample` : l'installation du sous-module exécute tous les fichiers `.sql` du dossier.
-Pour l'utiliser, le lancer manuellement (psql, DBeaver…).
-
-- synthèse générale (parc, occupation, productivité, par année / type / lieu de pose / commune / espèce) ;
-- diagnostic des jeux de données des nichoirs (JDD NULL, programme « Une chouette, un village »,
-  Agri-mare), confronté aux mentions trouvées dans les commentaires, avec proposition de rattachement ;
-- analyses avancées (fidélité inter-annuelle, délai pose → occupation, succès reproducteur,
-  adéquation type de nichoir / espèce, état du parc, contrôle qualité, doublons spatiaux).
-
-Les mots-clés recherchés sont paramétrés dans la vue `gn_monitoring.v_nichoirs_an_programmes`.
-La partie 5 (correction des JDD) est commentée et doit être relue avant exécution.
-Le script ne tient pas encore compte des groupes de nichoirs (nombre de nichoirs > 1).
