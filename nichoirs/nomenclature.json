@@ -4,6 +4,21 @@
       "mnemonique": "TYPE_SITE",
       "label_default": "Type de sites",
       "definition_default": "Nomenclature des types de sites suivi dans gn_monitoring."
+    },
+    {
+      "mnemonique": "NICHOIR_MODELE",
+      "label_default": "Modèle de nichoir",
+      "definition_default": "Marques et modèles de nichoirs et gîtes artificiels (module de suivi des nichoirs)"
+    },
+    {
+      "mnemonique": "NICHOIR_MATERIAU",
+      "label_default": "Matériau de nichoir",
+      "definition_default": "Matériau principal d'un nichoir ou gîte artificiel (module de suivi des nichoirs)"
+    },
+    {
+      "mnemonique": "NICHOIR_TYPE_POSE",
+      "label_default": "Technique de pose de nichoir",
+      "definition_default": "Technique de pose d'un nichoir ou gîte artificiel (module de suivi des nichoirs)"
     }
   ],
   "nomenclatures": [
@@ -13,6 +28,195 @@
       "mnemonique": "nichoir",
       "label_default": "Nichoir",
       "definition_default": "Nichoir"
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "SCHW_1FQ",
+      "mnemonique": "Schwegler 1FQ",
+      "label_default": "Schwegler 1FQ – gîte de façade à chauves-souris",
+      "definition_default": "Schwegler 1FQ, gîte de façade pour chiroptères, béton de bois, 1 cavité."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "SCHW_1SP",
+      "mnemonique": "Schwegler 1SP",
+      "label_default": "Schwegler 1SP – nichoir colonie à moineaux",
+      "definition_default": "Schwegler 1SP, nichoir collectif pour moineaux, béton de bois, 3 cavités (réf. LPO JO0143)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "SCHW_2H",
+      "mnemonique": "Schwegler 2H",
+      "label_default": "Schwegler 2H – nichoir semi-ouvert",
+      "definition_default": "Schwegler 2H, nichoir semi-ouvert pour espèces semi-cavernicoles, béton de bois (réf. LPO JO0119)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "SCHW_9B",
+      "mnemonique": "Schwegler 9B",
+      "label_default": "Schwegler 9B – nid double à hirondelles de fenêtre",
+      "definition_default": "Schwegler n°9B, nid double pour hirondelles de fenêtre, béton de bois, 2 cavités (réf. LPO JO0414)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "SCHW_10",
+      "mnemonique": "Schwegler 10",
+      "label_default": "Schwegler n°10 – nid à hirondelle rustique",
+      "definition_default": "Schwegler n°10, nid pour hirondelle rustique, béton de bois (réf. LPO JO0415)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "SCHW_28",
+      "mnemonique": "Schwegler 28",
+      "label_default": "Schwegler n°28 – nichoir à faucon crécerelle",
+      "definition_default": "Schwegler n°28, nichoir pour faucon crécerelle, béton de bois."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "WS_BEAUMARIS",
+      "mnemonique": "WoodStone Beaumaris",
+      "label_default": "WoodStone Beaumaris – gîte à chauves-souris",
+      "definition_default": "WoodStone Beaumaris (midi ou maxi), gîte pour chiroptères, béton de bois (Vivara)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "WS_HIRONDELLE_DBL",
+      "mnemonique": "WoodStone nid double",
+      "label_default": "WoodStone – nid double à hirondelles de fenêtre",
+      "definition_default": "WoodStone, nid double pour hirondelles de fenêtre, béton de bois, 2 cavités (Vivara)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "WS_MOINEAU",
+      "mnemonique": "WoodStone moineaux",
+      "label_default": "WoodStone – nichoir à moineaux",
+      "definition_default": "WoodStone, nichoir pour moineaux, béton de bois, 2 cavités (réf. LPO JO0999)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "GENESIS_MARTINET",
+      "mnemonique": "GENESIS martinets",
+      "label_default": "GENESIS – nichoir à martinets à encastrer",
+      "definition_default": "GENESIS, nichoir à martinets à encastrer (SKU), 1 à 3 cavités selon la version."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "LPO_JO1063",
+      "mnemonique": "LPO JO1063",
+      "label_default": "Boutique LPO JO1063 – gîte à chauves-souris à intégrer",
+      "definition_default": "Gîte pour chauves-souris à intégrer au bâti, béton de bois (réf. LPO JO1063)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "LPO_JO0023",
+      "mnemonique": "LPO JO0023",
+      "label_default": "Boutique LPO JO0023 – nid double à hirondelles de fenêtre",
+      "definition_default": "Nid double pour hirondelles de fenêtre, béton de bois, 2 cavités (réf. LPO JO0023)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "CHIRO_ENCASTRE",
+      "mnemonique": "Gîte chiro à encastrer",
+      "label_default": "Gîte à chauves-souris à encastrer (bois)",
+      "definition_default": "Gîte à chauves-souris à encastrer dans la maçonnerie, bois."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "SUR_MESURE",
+      "mnemonique": "Sur mesure",
+      "label_default": "Fabrication sur mesure / artisanale",
+      "definition_default": "Nichoir ou gîte fabriqué sur mesure ou de façon artisanale (préciser dans « Précision sur le modèle »)."
+    },
+    {
+      "type": "NICHOIR_MODELE",
+      "cd_nomenclature": "AUTRE",
+      "mnemonique": "Autre modèle",
+      "label_default": "Autre modèle (préciser)",
+      "definition_default": "Modèle non listé : préciser la marque et la référence dans « Précision sur le modèle »."
+    },
+    {
+      "type": "NICHOIR_MATERIAU",
+      "cd_nomenclature": "BOIS",
+      "mnemonique": "Bois",
+      "label_default": "Bois",
+      "definition_default": "Bois massif ou contreplaqué."
+    },
+    {
+      "type": "NICHOIR_MATERIAU",
+      "cd_nomenclature": "BETON_BOIS",
+      "mnemonique": "Béton de bois",
+      "label_default": "Béton de bois",
+      "definition_default": "Béton de bois (type Schwegler, WoodStone)."
+    },
+    {
+      "type": "NICHOIR_MATERIAU",
+      "cd_nomenclature": "TERRE_CUITE",
+      "mnemonique": "Terre cuite",
+      "label_default": "Terre cuite",
+      "definition_default": "Terre cuite."
+    },
+    {
+      "type": "NICHOIR_MATERIAU",
+      "cd_nomenclature": "BRIQUE",
+      "mnemonique": "Brique",
+      "label_default": "Brique",
+      "definition_default": "Brique ou bloc maçonné."
+    },
+    {
+      "type": "NICHOIR_MATERIAU",
+      "cd_nomenclature": "PLASTIQUE",
+      "mnemonique": "Plastique / composite",
+      "label_default": "Plastique / composite",
+      "definition_default": "Plastique, résine ou matériau composite."
+    },
+    {
+      "type": "NICHOIR_MATERIAU",
+      "cd_nomenclature": "AUTRE",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre matériau."
+    },
+    {
+      "type": "NICHOIR_TYPE_POSE",
+      "cd_nomenclature": "APPLIQUE",
+      "mnemonique": "En applique (excroissance)",
+      "label_default": "En applique (excroissance)",
+      "definition_default": "Nichoir fixé en saillie sur la façade ou le support."
+    },
+    {
+      "type": "NICHOIR_TYPE_POSE",
+      "cd_nomenclature": "ITE",
+      "mnemonique": "Intégré à l'isolation (ITE)",
+      "label_default": "Intégré à l'isolation (ITE)",
+      "definition_default": "Nichoir intégré dans l'isolation thermique par l'extérieur."
+    },
+    {
+      "type": "NICHOIR_TYPE_POSE",
+      "cd_nomenclature": "ENCASTRE",
+      "mnemonique": "Encastré dans la maçonnerie",
+      "label_default": "Encastré dans la maçonnerie",
+      "definition_default": "Nichoir encastré dans le mur ou la maçonnerie."
+    },
+    {
+      "type": "NICHOIR_TYPE_POSE",
+      "cd_nomenclature": "CAISSON",
+      "mnemonique": "Caisson",
+      "label_default": "Caisson",
+      "definition_default": "Nichoir dans un caisson rapporté (sous toiture, en façade…)."
+    },
+    {
+      "type": "NICHOIR_TYPE_POSE",
+      "cd_nomenclature": "SUSPENDU",
+      "mnemonique": "Suspendu / accroché",
+      "label_default": "Suspendu / accroché",
+      "definition_default": "Nichoir suspendu ou accroché (branche, crochet, câble)."
+    },
+    {
+      "type": "NICHOIR_TYPE_POSE",
+      "cd_nomenclature": "AUTRE",
+      "mnemonique": "Autre",
+      "label_default": "Autre",
+      "definition_default": "Autre technique de pose."
     }
   ]
 }

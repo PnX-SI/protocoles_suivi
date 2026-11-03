@@ -26,7 +26,7 @@
     "type_widget": "dataset",
     "attribut_label": "Jeu de données",
     "type_util": "dataset",
-    "required": false,
+    "required": true,
     "module_code": "__MODULE.MODULE_CODE"
 },
     "etat_nichoir": {
@@ -38,6 +38,7 @@
     "nidification": {
       "type_widget": "radio",
       "attribut_label": "Occupation",
+      "definition": "Pour un groupe de nichoirs : « Oui » si au moins un nichoir est occupé.",
       "values": ["Oui", "Non"],
       "required": true
     },

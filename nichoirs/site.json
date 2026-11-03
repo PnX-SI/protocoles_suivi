@@ -15,17 +15,25 @@
     "pose_localisation",
     "localite_precision",
     "nichoir_type",
+    "nb_nichoirs",
+    "caracteristiques_connues",
+    "id_nomenclature_modele_nichoir",
+    "modele_precision",
+    "id_nomenclature_materiau",
+    "id_nomenclature_type_pose",
+    "nb_cavites",
+    "hauteur_sol",
     "adresse",
     "proprietaire_nom",
     "proprietaire_mail",
     "proprietaire_tel",
-    "nichoir_referent",
     "base_site_description"
   ],
   "display_list": [
     "base_site_name",
     "id_inventor",
     "nichoir_type",
+    "nb_nichoirs",
     "last_visit",
     "nb_visits"
   ],
@@ -121,6 +129,64 @@
         "Sitelle torchepot",
         "Autre (préciser dans le champs remarque)"
       ]
+    },
+    "nb_nichoirs": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de nichoirs",
+      "definition": "1 = nichoir suivi individuellement. Plus de 1 = groupe de nichoirs identiques (même façade, même espèce cible, même modèle) suivis ensemble : les observations porteront alors sur le nombre de nichoirs occupés et de nichées.",
+      "required": true,
+      "min": 1,
+      "max": 500,
+      "value": 1
+    },
+    "caracteristiques_connues": {
+      "type_widget": "bool_checkbox",
+      "attribut_label": "Renseigner les caractéristiques techniques (modèle, matériau, pose)",
+      "definition": "À cocher si vous connaissez la marque, le modèle ou la technique de pose du nichoir. Facultatif.",
+      "value": false
+    },
+    "id_nomenclature_modele_nichoir": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Marque / modèle",
+      "code_nomenclature_type": "NICHOIR_MODELE",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": "({value}) => !value.caracteristiques_connues"
+    },
+    "modele_precision": {
+      "type_widget": "text",
+      "attribut_label": "Précision sur le modèle (référence, modèle non listé)",
+      "hidden": "({value}) => !value.caracteristiques_connues"
+    },
+    "id_nomenclature_materiau": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Matériau",
+      "code_nomenclature_type": "NICHOIR_MATERIAU",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": "({value}) => !value.caracteristiques_connues"
+    },
+    "id_nomenclature_type_pose": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Technique de pose",
+      "code_nomenclature_type": "NICHOIR_TYPE_POSE",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": "({value}) => !value.caracteristiques_connues"
+    },
+    "nb_cavites": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de cavités par nichoir",
+      "min": 1,
+      "max": 50,
+      "hidden": "({value}) => !value.caracteristiques_connues"
+    },
+    "hauteur_sol": {
+      "type_widget": "number",
+      "attribut_label": "Hauteur du nichoir par rapport au sol (m)",
+      "min": 0,
+      "max": 200,
+      "hidden": "({value}) => !value.caracteristiques_connues"
     },
     "adresse": {
       "type_widget": "text",

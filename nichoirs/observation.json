@@ -9,7 +9,10 @@
     "adulte",
     "oeuf",
     "jeune_vivant",
-    "jeune_mort"
+    "jeune_mort",
+    "nb_nichoirs_occupes",
+    "nb_nichees_estimees",
+    "comments"
   ],
   "specific": {
     "cd_nom": {
@@ -22,7 +25,7 @@
     "adulte": {
       "type_widget": "number",
       "attribut_label": "Nombre d'adultes",
-      "hidden": false,
+      "hidden": "({meta}) => Number(((((meta || {}).parents || {}).site || {}).properties || {}).nb_nichoirs || 1) > 1",
       "required": false,
       "min": 0,
       "max": 50
@@ -30,32 +33,49 @@
     "oeuf": {
       "type_widget": "number",
       "attribut_label": "Nombre d'oeufs",
-      "hidden": false,
+      "hidden": "({meta}) => Number(((((meta || {}).parents || {}).site || {}).properties || {}).nb_nichoirs || 1) > 1",
       "required": false,
-      "value" : 0,
+      "value": 0,
       "min": 0,
       "max": 20
     },
     "jeune_vivant": {
       "type_widget": "number",
       "attribut_label": "Nombre de jeunes vivants",
-      "hidden": false,
+      "hidden": "({meta}) => Number(((((meta || {}).parents || {}).site || {}).properties || {}).nb_nichoirs || 1) > 1",
       "required": false,
-      "value" : 0,
+      "value": 0,
       "min": 0,
       "max": 20
     },
     "jeune_mort": {
       "type_widget": "number",
       "attribut_label": "Nombre de jeunes morts",
-      "hidden": false,
+      "hidden": "({meta}) => Number(((((meta || {}).parents || {}).site || {}).properties || {}).nb_nichoirs || 1) > 1",
       "required": false,
       "min": 0,
       "max": 20
     },
+    "nb_nichoirs_occupes": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de nichoirs occupés",
+      "definition": "Nombre de nichoirs du groupe occupés par l'espèce lors du passage (au plus le nombre de nichoirs du site).",
+      "min": 0,
+      "max": 500,
+      "hidden": "({meta}) => Number(((((meta || {}).parents || {}).site || {}).properties || {}).nb_nichoirs || 1) <= 1",
+      "required": "({meta}) => Number(((((meta || {}).parents || {}).site || {}).properties || {}).nb_nichoirs || 1) > 1"
+    },
+    "nb_nichees_estimees": {
+      "type_widget": "number",
+      "attribut_label": "Nombre de nichées estimé",
+      "definition": "Estimation du nombre de nichées (couples nicheurs) de l'espèce sur l'ensemble du groupe de nichoirs.",
+      "min": 0,
+      "max": 1000,
+      "hidden": "({meta}) => Number(((((meta || {}).parents || {}).site || {}).properties || {}).nb_nichoirs || 1) <= 1"
+    },
     "comments": {
       "type_widget": "text",
-      "attribut_label": "Remarque supplémentaire (date d'envol des jeunes)",
+      "attribut_label": "Remarque (date d'envol, précisions sur l'occupation)",
       "hidden": false,
       "required": false
     },
