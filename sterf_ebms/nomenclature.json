@@ -1,0 +1,1100 @@
+{
+  "types": [
+    {
+      "mnemonique": "STERF_HAB_N1",
+      "label_default": "Habitat (niveau 1)",
+      "definition_default": "Habitat STERF, 1ère subdivision"
+    },
+    {
+      "mnemonique": "STERF_HAB_N2",
+      "label_default": "Habitat (niveau 2)",
+      "definition_default": "Habitat STERF, 2ème subdivision"
+    },
+    {
+      "mnemonique": "STERF_HAB_N3",
+      "label_default": "Habitat (niveau 3)",
+      "definition_default": "Habitat STERF, 3ème subdivision"
+    },
+    {
+      "mnemonique": "STERF_HAB_N4",
+      "label_default": "Habitat (niveau 4)",
+      "definition_default": "Habitat STERF, 4ème subdivision"
+    },
+    {
+      "mnemonique": "EBMS_TRN_WIDTH",
+      "label_default": "Largeur du transect",
+      "definition_default": "Largeur utilisée pour les sections de ce transect (nomenclature eBMS n°92)"
+    },
+    {
+      "mnemonique": "BEAUFORT",
+      "label_default": "Échelle de Beaufort",
+      "definition_default": "Échelle de mesure empirique de la vitesse du vent"
+    },
+    {
+      "mnemonique": "EBMS_LAND_TENURE",
+      "label_default": "Gestionnaire du terrain",
+      "definition_default": "Qui gère le terrain, ou quel est le type d'occupation (nomenclature eBMS n°840)"
+    },
+    {
+      "mnemonique": "EBMS_LAND_MANAGEMENT",
+      "label_default": "Gestion du terrain",
+      "definition_default": "Comment le terrain est-il utilisé (nomenclature eBMS n°836)"
+    },
+    {
+      "mnemonique": "EBMS_LINEAR_HABITAT",
+      "label_default": "Habitat linéaire",
+      "definition_default": "Habitat linéaire (nomenclature eBMS n°835)"
+    },
+    {
+      "mnemonique": "STERF_FLORAL_COVER",
+      "label_default": "Couverture florale",
+      "definition_default": "Valeurs de disponibilité florale"
+    }
+  ],
+  "nomenclatures": [
+    {
+      "type": "TYPE_SITE",
+      "cd_nomenclature": "EBMS_SEC",
+      "mnemonique": "EbmsSection",
+      "label_default": "Section eBMS",
+      "definition_default": "Section STERF-eBMS (équiv. transect STERF)"
+    },
+    {
+      "type": "STERF_HAB_N1",
+      "cd_nomenclature": "HAB1_A",
+      "mnemonique": "A",
+      "label_default": "A. Forêt",
+      "definition_default": "Forêt (arbres > 5m de hauteur)"
+    },
+    {
+      "type": "STERF_HAB_N1",
+      "cd_nomenclature": "HAB1_B",
+      "mnemonique": "B",
+      "label_default": "B. Buissons ou jeune forêt",
+      "definition_default": "Buissons ou jeune forêt (arbres < 5m de hauteur)"
+    },
+    {
+      "type": "STERF_HAB_N1",
+      "cd_nomenclature": "HAB1_C",
+      "mnemonique": "C",
+      "label_default": "C. Pelouses, marais et landes",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N1",
+      "cd_nomenclature": "HAB1_D",
+      "mnemonique": "D",
+      "label_default": "D. Milieux agricoles",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N1",
+      "cd_nomenclature": "HAB1_E",
+      "mnemonique": "E",
+      "label_default": "E. Milieux bâtis ou urbanisés",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N1",
+      "cd_nomenclature": "HAB1_G",
+      "mnemonique": "G",
+      "label_default": "G. Rochers terrestres ou côtiers",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_AB_A",
+      "mnemonique": "a",
+      "label_default": "a. Feuillus exclusifs",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_AB_B",
+      "mnemonique": "b",
+      "label_default": "b. Mixte à dominante feuillus",
+      "definition_default": "< 10% conifères"
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_AB_C",
+      "mnemonique": "c",
+      "label_default": "c. Mixte à dominante conifères",
+      "definition_default": "< 10% feuillus"
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_AB_D",
+      "mnemonique": "d",
+      "label_default": "d. Conifères exclusifs",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_A",
+      "mnemonique": "a",
+      "label_default": "a. Pelouse calcaire sèche",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_B",
+      "mnemonique": "b",
+      "label_default": "b. Lande herbacée",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_C",
+      "mnemonique": "c",
+      "label_default": "c. Lande à bruyères",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_D",
+      "mnemonique": "d",
+      "label_default": "d. Autres pelouses sèches",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_E",
+      "mnemonique": "e",
+      "label_default": "e. Pelouse d'altitude",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_F",
+      "mnemonique": "f",
+      "label_default": "f. Pelouse humide naturelle",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_G",
+      "mnemonique": "g",
+      "label_default": "g. Pelouse inondée ou marais paturé",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_H",
+      "mnemonique": "h",
+      "label_default": "h. Tourbière",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_I",
+      "mnemonique": "i",
+      "label_default": "i. Roselière",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_J",
+      "mnemonique": "j",
+      "label_default": "j. Marais salant (halophile)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_C_K",
+      "mnemonique": "k",
+      "label_default": "k. Autres zones humides ouvertes",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_D_A",
+      "mnemonique": "a",
+      "label_default": "a. Prairie cultivée",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_D_B",
+      "mnemonique": "b",
+      "label_default": "b. Prairie non cultivée",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_D_C",
+      "mnemonique": "c",
+      "label_default": "c. Prairie et culture mixtes",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_D_D",
+      "mnemonique": "d",
+      "label_default": "d. Grandes cultures",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_D_E",
+      "mnemonique": "e",
+      "label_default": "e. Vergers, vignes, cultures maraîchères",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_D_F",
+      "mnemonique": "f",
+      "label_default": "f. Autres types de cultures",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_E_A",
+      "mnemonique": "a",
+      "label_default": "a. Zone urbaine résidentielle",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_E_B",
+      "mnemonique": "b",
+      "label_default": "b. Zone urbaine industrielle",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_E_C",
+      "mnemonique": "c",
+      "label_default": "c. Zone suburbaine résidentielle",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_E_D",
+      "mnemonique": "d",
+      "label_default": "d. Zone suburbaine industrielle",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_E_E",
+      "mnemonique": "e",
+      "label_default": "e. Zone rurale",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_G_A",
+      "mnemonique": "a",
+      "label_default": "a. Falaise",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_G_B",
+      "mnemonique": "b",
+      "label_default": "b. Éboulis, pente rocheuse",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_G_C",
+      "mnemonique": "c",
+      "label_default": "c. Carrière",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N2",
+      "cd_nomenclature": "HAB2_G_D",
+      "mnemonique": "d",
+      "label_default": "d. Autres sols rocheux",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_A_1",
+      "mnemonique": "1",
+      "label_default": "1. Sous-bois dense",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_A_2",
+      "mnemonique": "2",
+      "label_default": "2. Sous-bois clair",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_A_3",
+      "mnemonique": "3",
+      "label_default": "3. Clairière et lisière",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_A_4",
+      "mnemonique": "4",
+      "label_default": "4. Parc (arbres épars et prairies)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_B_1",
+      "mnemonique": "1",
+      "label_default": "1. Forêt de régénération ou taillis",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_B_2",
+      "mnemonique": "2",
+      "label_default": "2. Buissons calcicoles",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_B_3",
+      "mnemonique": "3",
+      "label_default": "3. Lande arbustive non calcicole",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_B_4",
+      "mnemonique": "4",
+      "label_default": "4. Garrigue (calcaire)",
+      "definition_default": "Habitat méditerranéen"
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_B_5",
+      "mnemonique": "5",
+      "label_default": "5. Maquis (non calcaire)",
+      "definition_default": "Habitat méditerranéen"
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_B_6",
+      "mnemonique": "6",
+      "label_default": "6. Buissons de zones humides",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_C_1",
+      "mnemonique": "1",
+      "label_default": "1. Entouré de haies avec arbres",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_C_2",
+      "mnemonique": "2",
+      "label_default": "2. Entouré de haies de buissons",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_C_3",
+      "mnemonique": "3",
+      "label_default": "3. Entouré de lignes d'arbres sans haie",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_C_4",
+      "mnemonique": "4",
+      "label_default": "4. Avec buissons épars",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_C_5",
+      "mnemonique": "5",
+      "label_default": "5. Sans buissons épars",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_C_6",
+      "mnemonique": "6",
+      "label_default": "6. Groupes isolés de 1-10 arbres",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_C_7",
+      "mnemonique": "7",
+      "label_default": "7. Autres limites de terrain",
+      "definition_default": "Exemples : digue, fossé, mur, etc."
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_D_1",
+      "mnemonique": "1",
+      "label_default": "1. Entouré de haies avec arbres",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_D_2",
+      "mnemonique": "2",
+      "label_default": "2. Entouré de haies de buissons",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_D_3",
+      "mnemonique": "3",
+      "label_default": "3. Entouré de lignes d'arbres sans haie",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_D_4",
+      "mnemonique": "4",
+      "label_default": "4. Entouré de bandes herbeuses",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_D_5",
+      "mnemonique": "5",
+      "label_default": "5. Groupes isolés de 1-10 arbres",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_D_6",
+      "mnemonique": "6",
+      "label_default": "6. Autres limites de terrain",
+      "definition_default": "Exemples : digue, fossé, mur, etc."
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_E_1",
+      "mnemonique": "1",
+      "label_default": "1. Zones bâties prédominantes",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_E_2",
+      "mnemonique": "2",
+      "label_default": "2. Jardin",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_E_3",
+      "mnemonique": "3",
+      "label_default": "3. Parc public, zone de loisirs",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_E_4",
+      "mnemonique": "4",
+      "label_default": "4. Bord d'une route (< 50 m)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_E_5",
+      "mnemonique": "5",
+      "label_default": "5. Bord d'un chemin de fer (< 50 m)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_E_6",
+      "mnemonique": "6",
+      "label_default": "6. Décharge d'ordures",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_G_1",
+      "mnemonique": "1",
+      "label_default": "1. En montagne",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_G_2",
+      "mnemonique": "2",
+      "label_default": "2. En bord de mer",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_G_3",
+      "mnemonique": "3",
+      "label_default": "3. En bord de lac ou de rivière",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N3",
+      "cd_nomenclature": "HAB3_G_4",
+      "mnemonique": "4",
+      "label_default": "4. Autre",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_AB_A",
+      "mnemonique": "a",
+      "label_default": "a. Non perturbé",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_AB_B",
+      "mnemonique": "b",
+      "label_default": "b. Peu exploité",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_AB_C",
+      "mnemonique": "c",
+      "label_default": "c. Fortement exploité",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_AB_D",
+      "mnemonique": "d",
+      "label_default": "d. Pâturé",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_C_A",
+      "mnemonique": "a",
+      "label_default": "a. Non perturbé / non exploité",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_C_B",
+      "mnemonique": "b",
+      "label_default": "b. Fauché",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_C_C",
+      "mnemonique": "c",
+      "label_default": "c. Pâturé",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_D_A",
+      "mnemonique": "a",
+      "label_default": "a. Non exploité (jachère)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_D_B",
+      "mnemonique": "b",
+      "label_default": "b. Fauché",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_D_C",
+      "mnemonique": "c",
+      "label_default": "c. Pâturé",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_D_D",
+      "mnemonique": "d",
+      "label_default": "d. Céréales",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_D_E",
+      "mnemonique": "e",
+      "label_default": "e. Arbres fruitiers",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_D_F",
+      "mnemonique": "f",
+      "label_default": "f. Autres cultures",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_E_A",
+      "mnemonique": "a",
+      "label_default": "a. Avec peu d'espaces verts (< 25 %)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_E_B",
+      "mnemonique": "b",
+      "label_default": "b. Avec des espaces verts surtout composés de pelouses",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_E_C",
+      "mnemonique": "c",
+      "label_default": "c. Avec des espaces verts buissonants (parterres, friches)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_E_D",
+      "mnemonique": "d",
+      "label_default": "d. Avec des espaces verts fortement arborés",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_E_E",
+      "mnemonique": "e",
+      "label_default": "e. Avec un ou des potagers",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_G_A",
+      "mnemonique": "a",
+      "label_default": "a. À dominante calcaire avec végétation herbacée rare",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_G_B",
+      "mnemonique": "b",
+      "label_default": "b. À dominante calcaire avec végétation herbacée haute",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_G_C",
+      "mnemonique": "c",
+      "label_default": "c. À dominante calcaire avec végétation buissonnante",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_G_D",
+      "mnemonique": "d",
+      "label_default": "d. À dominante non calcaire avec végétation herbacée rare",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_G_E",
+      "mnemonique": "e",
+      "label_default": "e. À dominante non calcaire avec végétation herbacée haute",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_HAB_N4",
+      "cd_nomenclature": "HAB4_G_F",
+      "mnemonique": "f",
+      "label_default": "f. À dominante non calcaire avec végétation buissonnante",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_TRN_WIDTH",
+      "cd_nomenclature": "W05",
+      "mnemonique": "5m",
+      "label_default": "A. 5 mètres",
+      "definition_default": "Les sections font 5 mètres de largeur (largeur compatible STERF)."
+    },
+    {
+      "type": "EBMS_TRN_WIDTH",
+      "cd_nomenclature": "W06",
+      "mnemonique": "6m",
+      "label_default": "B. 6 mètres",
+      "definition_default": "Les sections font 6 mètres de largeur (eBMS uniquement)."
+    },
+    {
+      "type": "EBMS_TRN_WIDTH",
+      "cd_nomenclature": "W10",
+      "mnemonique": "10m",
+      "label_default": "C. 10 mètres",
+      "definition_default": "Les sections font 10 mètres de largeur (eBMS uniquement)."
+    },
+    {
+      "type": "EBMS_TRN_WIDTH",
+      "cd_nomenclature": "WXX",
+      "mnemonique": "Xm",
+      "label_default": "D. Autre",
+      "definition_default": "Les sections ont des largeurs différentes, inconnues ou variables (eBMS uniquement)."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B00",
+      "mnemonique": "0",
+      "label_default": "00. Calme",
+      "label_en": "0. Smoke rises vertically",
+      "definition_default": "La fumée monte verticalement. Les feuilles des arbres ne témoignent d'aucun mouvement."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B01",
+      "mnemonique": "1",
+      "label_default": "01. Très légère brise",
+      "label_en": "1. Slight smoke drift",
+      "definition_default": "La fumée indique la direction du vent. Les girouettes ne s'orientent pas."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B02",
+      "mnemonique": "2",
+      "label_default": "02. Légère brise",
+      "label_en": "2. Wind felt on face, leaves rustle",
+      "definition_default": "On sent le vent sur le visage. Les feuilles s'agitent. Les girouettes s'orientent."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B03",
+      "mnemonique": "3",
+      "label_default": "03. Petite brise",
+      "label_en": "3. Leaves and twigs in slight motion",
+      "definition_default": "Les drapeaux flottent au vent. Les feuilles sont sans cesse en mouvement."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B04",
+      "mnemonique": "4",
+      "label_default": "04. Jolie brise",
+      "label_en": "4. Dust raised and small branches move",
+      "definition_default": "Les poussières s'envolent. Les petites branches plient."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B05",
+      "mnemonique": "5",
+      "label_default": "05. Bonne brise",
+      "label_en": "5. Small trees in leaf begin to sway",
+      "definition_default": "Le tronc des arbustes et arbrisseaux en feuilles balance. La cime de tous les arbres est agitée. Des vaguelettes se forment sur les eaux intérieures."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B06",
+      "mnemonique": "6",
+      "label_default": "06. Vent frais",
+      "label_en": "6. Large branches move and trees sway",
+      "definition_default": "On entend siffler le vent. Les branches de large diamètre s'agitent. Les parapluies sont susceptibles de se retourner."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B07",
+      "mnemonique": "7",
+      "label_default": "07. Grand frais",
+      "definition_default": "Tous les arbres balancent. La marche contre le vent peut devenir difficile."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B08",
+      "mnemonique": "8",
+      "label_default": "08. Coup de vent",
+      "definition_default": "Les branches sont susceptibles de casser. La marche contre le vent est très difficile, voire impossible."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B09",
+      "mnemonique": "9",
+      "label_default": "09. Fort coup de vent",
+      "definition_default": "Le vent peut légèrement endommager les bâtiments : envols de tuiles, d'ardoises, chutes de cheminées."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B10",
+      "mnemonique": "10",
+      "label_default": "10. Tempête",
+      "definition_default": "Dégâts importants aux bâtiments. Les toits sont susceptibles de s'envoler. Certains arbres sont déracinés."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B11",
+      "mnemonique": "11",
+      "label_default": "11. Violente tempête",
+      "definition_default": "Ravages étendus et importants."
+    },
+    {
+      "type": "BEAUFORT",
+      "cd_nomenclature": "B12",
+      "mnemonique": "12",
+      "label_default": "12. Vent d'ouragan",
+      "definition_default": "Dégâts très importants de l'ordre de la catastrophe naturelle."
+    },
+    {
+      "type": "EBMS_LAND_TENURE",
+      "cd_nomenclature": "LT_FARMING",
+      "mnemonique": "Farming",
+      "label_default": "Agriculture",
+      "label_en": "Farming",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_TENURE",
+      "cd_nomenclature": "LT_FORESTRY",
+      "mnemonique": "Forestry",
+      "label_default": "Sylviculture",
+      "label_en": "Forestry",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_TENURE",
+      "cd_nomenclature": "LT_MILITARY",
+      "mnemonique": "Military",
+      "label_default": "Terrain militaire",
+      "label_en": "Military",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_TENURE",
+      "cd_nomenclature": "LT_NATURE_CONSERVATION",
+      "mnemonique": "NatureConservation",
+      "label_default": "Espace naturel conservé",
+      "label_en": "Nature Conservation",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_TENURE",
+      "cd_nomenclature": "LT_PRIVATE_COMPANY",
+      "mnemonique": "PrivateCompany",
+      "label_default": "Entreprise privée",
+      "label_en": "Private Company",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_TENURE",
+      "cd_nomenclature": "LT_PRIVATE_PERSON",
+      "mnemonique": "PrivatePerson",
+      "label_default": "Particulier",
+      "label_en": "Private Person",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_TENURE",
+      "cd_nomenclature": "LT_PUBLIC",
+      "mnemonique": "Public",
+      "label_default": "Lieu public",
+      "label_en": "Public",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_TENURE",
+      "cd_nomenclature": "LT_UNKNOWN",
+      "mnemonique": "Unknown",
+      "label_default": "Inconnu",
+      "label_en": "Unknown",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_BURNING",
+      "mnemonique": "Burning",
+      "label_default": "Brûlis",
+      "label_en": "Burning",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_COPPICING",
+      "mnemonique": "Coppicing",
+      "label_default": "Taillis",
+      "label_en": "Coppicing",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_EXTRACTION",
+      "mnemonique": "Extraction",
+      "label_default": "Extraction",
+      "label_en": "Extraction (e.g. sod/peat cutting, aggregate extraction, topsoil stripping etc.)",
+      "definition_default": "Par exemple : coupe de gazon/tourbe, extraction d'agrégats, décapage de la couche arable, etc."
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_FARMING",
+      "mnemonique": "Farming",
+      "label_default": "Agriculture",
+      "label_en": "Farming",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_FORESTRY",
+      "mnemonique": "Forestry",
+      "label_default": "Sylviculture",
+      "label_en": "Forestry",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_GRAZING",
+      "mnemonique": "Grazing",
+      "label_default": "Pâturage",
+      "label_en": "Grazing",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_HERBICIDE_SPRAYING",
+      "mnemonique": "HerbicideSpraying",
+      "label_default": "Pulvérisation d'herbicide",
+      "label_en": "Herbicide spraying",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_LAND_DRAINAGE",
+      "mnemonique": "LandDrainage",
+      "label_default": "Drainage",
+      "label_en": "Land drainage",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_MOWING",
+      "mnemonique": "Mowing",
+      "label_default": "Fauchage",
+      "label_en": "Mowing",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_NONE",
+      "mnemonique": "None",
+      "label_default": "Pas de gestion",
+      "label_en": "No-management",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_OTHER",
+      "mnemonique": "Other",
+      "label_default": "Autre",
+      "label_en": "Other",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_PEST_MANAGEMENT",
+      "mnemonique": "PestManagement",
+      "label_default": "Lutte contre les ravageurs",
+      "label_en": "Pest management (e.g. insecticide spraying)",
+      "definition_default": "Par exemple : pulvérisation d'insecticides."
+    },
+    {
+      "type": "EBMS_LAND_MANAGEMENT",
+      "cd_nomenclature": "LM_TURF_CUTTING",
+      "mnemonique": "TurfCutting",
+      "label_default": "Tonte de gazon",
+      "label_en": "Turf cutting",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LINEAR_HABITAT",
+      "cd_nomenclature": "LH_DITCH",
+      "mnemonique": "Ditch",
+      "label_default": "Fossé",
+      "label_en": "Ditch",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LINEAR_HABITAT",
+      "cd_nomenclature": "LH_FIELD_MARGIN",
+      "mnemonique": "FieldMargin",
+      "label_default": "Bordure de champ",
+      "label_en": "Field margin",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LINEAR_HABITAT",
+      "cd_nomenclature": "LH_FOREST_EDGE",
+      "mnemonique": "ForestEdge",
+      "label_default": "Lisière forestière",
+      "label_en": "Forest edge",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LINEAR_HABITAT",
+      "cd_nomenclature": "LH_HEDGE",
+      "mnemonique": "Hedge",
+      "label_default": "Haie",
+      "label_en": "Hedge",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LINEAR_HABITAT",
+      "cd_nomenclature": "LH_NOT_ASSIGNED",
+      "mnemonique": "NotAssigned",
+      "label_default": "Non assigné",
+      "label_en": "Not assigned",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LINEAR_HABITAT",
+      "cd_nomenclature": "LH_NOT_LH",
+      "mnemonique": "NotLinearHabitat",
+      "label_default": "Non linéaire",
+      "label_en": "Not linear habitat",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LINEAR_HABITAT",
+      "cd_nomenclature": "LH_RIVER_LIKE",
+      "mnemonique": "RiverOrPondBank",
+      "label_default": "Rive d'une rivière ou d'un étang",
+      "label_en": "River/pond bank",
+      "definition_default": null
+    },
+    {
+      "type": "EBMS_LINEAR_HABITAT",
+      "cd_nomenclature": "LH_ROAD",
+      "mnemonique": "Road",
+      "label_default": "Route ou chemin",
+      "label_en": "Road/path",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_FLORAL_COVER",
+      "cd_nomenclature": "FC_1_NONE",
+      "mnemonique": "None",
+      "label_default": "F1 : pas ou peu de fleurs (moins de 5% de la surface)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_FLORAL_COVER",
+      "cd_nomenclature": "FC_2_AVERAGE",
+      "mnemonique": "Average",
+      "label_default": "F2 : moyennement fleurie (5 à 20%)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_FLORAL_COVER",
+      "cd_nomenclature": "FC_3_COVERED",
+      "mnemonique": "Covered",
+      "label_default": "F3 : fleurie (+ de 20%)",
+      "definition_default": null
+    },
+    {
+      "type": "STERF_FLORAL_COVER",
+      "cd_nomenclature": "FC_4_COVERED_COLORED",
+      "mnemonique": "CoveredColored",
+      "label_default": "F4 : fleurie et couleurs variées",
+      "definition_default": null
+    }
+  ]
+}

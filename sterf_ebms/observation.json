@@ -1,0 +1,22 @@
+{
+  "label": "Observation",
+  "label_list": "Observations",
+  "genre": "F",
+  "description_field_name": "id_observation",
+  "display_properties": [
+    "cd_nom",
+    "effectif",
+    "comments"
+  ],
+  "specific": {
+    "cd_nom": {
+      "attribut_label": "Taxon"
+    },
+    "effectif": {
+      "type_widget": "number",
+      "attribut_label": "Effectif",
+      "value": 1,
+      "required": true
+    }
+  }
+}
