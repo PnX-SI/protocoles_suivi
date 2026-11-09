@@ -9,10 +9,10 @@
   "nomenclatures": [
     {
       "type": "TYPE_SITE",
-      "cd_nomenclature": "CHROCAPT",
-      "mnemonique": "Site_chronocapture",
-      "label_default": "Site ChronoCapture",
-      "definition_default": "Site de relevé du protocole ChronoCapture"
+      "cd_nomenclature": "CHROVEN",
+      "mnemonique": "Site_chronoventaire",
+      "label_default": "Site ChronoVentaire",
+      "definition_default": "Site de relevé du protocole ChronoVentaire"
     }
   ]
 }
