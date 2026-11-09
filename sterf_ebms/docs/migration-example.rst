@@ -37,6 +37,10 @@ les entités de visites et observations.
    avoir effectué une copie de votre base de données, et de préférence sur une
    instance de test clonée depuis votre production !
 
+   Vous pouvez télécharger le :download:`script complet de migration
+   <migration.sql>` pour l'étudier en parallèle de la documentation, qui va en
+   reprendre les différentes sections point par point.
+
 
 Migrations des transects
 ------------------------
@@ -171,7 +175,7 @@ niveau correspond à la valeur ``E``, on va récupérer l'ID de la valeur
    FROM gn_monitoring.t_base_sites tbs
    JOIN gn_monitoring.t_site_complements tsc USING (id_base_site)
    WHERE
-       EXTRACT(DAY FROM meta_create_date) = EXTRACT(DAY FROM NOW())
+       EXTRACT(DAY FROM tsg.meta_create_date) = EXTRACT(DAY FROM NOW())
        AND tsg.id_sites_group = tsc.id_sites_group
        AND tsc.data ? 'habitat_1'
 
@@ -310,5 +314,38 @@ module pour apparaitre lors de la consultation du site.
    SET id_module = gn_commons.get_id_module_bycode('sterf_ebms')
    WHERE id_module = gn_commons.get_id_module_bycode('sterf');
 
-Les observations ne nécessitent pas de traitement particulier, à part la
-transformation des attributs, mais à ce stade vous avez l'habitude !
+Pour les observations il est nécessaire de récupérer au moins l'attribut de
+comptage, mais à ce stade vous avez l'habitude !
+
+.. code-block:: sql
+
+   WITH visit_sterf AS (
+       SELECT id_base_visit
+       FROM gn_monitoring.t_base_visits
+       WHERE id_module = (SELECT id_module FROM gn_commons.t_modules WHERE module_code = 'sterf_ebms')
+   ),
+   observation_sterf AS (
+       SELECT id_observation
+       FROM gn_monitoring.t_observations
+       WHERE id_base_visit IN (SELECT id_base_visit FROM visit_sterf)
+   )
+   UPDATE gn_monitoring.t_observation_complements
+   SET data=data || jsonb_build_object('effectif', data->'count_min')
+   WHERE
+       id_observation IN (SELECT id_observation FROM observation_sterf)
+       AND data->>'effectif' IS NULL;
+
+
+Migrations optionnelles
+-----------------------
+
+Il est aussi possible d'associer automatiquement le jeu de données qui était
+configuré pour l'ancien module :
+
+.. code-block:: sql
+
+   INSERT INTO gn_commons.cor_module_dataset
+   SELECT (SELECT id_module FROM gn_commons.t_modules WHERE module_code = 'sterf_ebms'), id_dataset
+   FROM gn_commons.cor_module_dataset
+   WHERE id_module = (SELECT id_module FROM gn_commons.t_modules WHERE module_code = 'sterf')
+   ON CONFLICT DO NOTHING;

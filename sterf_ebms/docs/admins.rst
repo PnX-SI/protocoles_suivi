@@ -11,10 +11,19 @@ exporter ses données à l'eBMS.
 Installation
 ------------
 
-Le module a été développé avec GeoNature en version 2.15 et le module
-`Monitoring`_ en version 1.0.3 et doit fonctionner avec ces versions minimales.
+Ce module a besoin de GeoNature et du module `Monitoring`_ pour fonctionner.
 
 .. _Monitoring: https://github.com/PnX-SI/gn_module_monitoring
+
+* Versions minimales :
+
+  * GeoNature 2.15
+  * module Monitoring 1.0.3
+
+* Dernières versions testées :
+
+  * GeoNature 2.17.5
+  * module Monitoring 1.3.2
 
 La dernière version du module est toujours disponible sur son `propre dépôt`_.
 Une version récente est également mise à disposition sur le `dépôt commun`_ aux
@@ -132,8 +141,8 @@ checkout la version souhaitée.
    cd ~/modules/sterf_ebms  # adapter le dossier
    tar xf /tmp/sterf-ebms-X.Y.Z.tar.gz
 
-La seule manipulation nécessaire après chaque mise à jour est la recréation des
-vues du module :
+Selon les modifications qui ont eu lieu entre la nouvelle version et précédente,
+vous aurez peut-être besoin de recréer les vues du module :
 
 .. code-block:: bash
 
@@ -153,8 +162,8 @@ exhaustif sur les besoins de chaque structure. Par conséquent, il est possible
 de modifier le module pour que celui-ci s'adapte à vos besoins, en respectant
 certaines contraintes pour vous faciliter la maintenance du module.
 
-Si vous comptez modifier le module, il est sans doute préférable de cloner le
-dépôt du module plutôt que télécharger une archive, de façon à pouvoir
+Si vous comptez modifier le module, il est sans doute préférable de *cloner le
+dépôt du module* plutôt que télécharger une archive, de façon à pouvoir
 enregistrer et suivre vos modifications avec Git et avoir une vision claire des
 différences lors d'une possible mise à jour future du module.
 
@@ -277,19 +286,16 @@ risquer de manquer d'éléments au moment de l'intégration. Chaque transect,
 section, visite et observation est identifiée avec un UUID pour éviter les
 dédoublements de données.
 
-Vous pouvez envoyer vos données par e-mail à `l'adresse de l'eBMS`_. **Nous vous
-prions de bien vouloir nous mettre en copie** via notre `adresse de gestion de
-données`_, de façon à pouvoir suivre l'utilisation du module et le bon
-déroulement des échanges de données dans le cadre de l'animation du programme.
-Nous vous recommandons dans votre e-mail de préciser que ces données ont été
-produites à l'aide de ce module, si possible avec le numéro de version du
-module, et d'ajouter un lien vers la :doc:`documentation des données <data>`.
+Vous pouvez envoyer vos données par e-mail à `l’adresse de notre gestionnaire de
+données`_, de façon à ce que nous puissions suivre l'utilisation du module et le
+bon déroulement des échanges de données dans le cadre de l'animation du
+programme. Si possible, veuillez nous préciser le numéro de version du module
+(fichier ``VERSION``) dans votre e-mail.
 
 Si vous avez des questions sur vos exports ou que vous souhaitez un retour sur
 vos données avant l'envoi à l'eBMS, n'hésitez pas à nous écrire directement.
 
-.. _l'adresse de l'eBMS: ebms@ceh.ac.uk
-.. _adresse de gestion de données: sig@insectes.org
+.. _l’adresse de notre gestionnaire de données: sig@insectes.org
 
 Vous pouvez également consulter la :doc:`documentation des données <data>`
 pour en savoir plus sur le format des exports.
@@ -352,3 +358,32 @@ Voici la liste des choix qui ont été faits :
 * La méthode de détermination est non renseignée ;
 * Le commentaire de contexte est celui de la visite ;
 * Le commentaire de l'occurence est celui de l'observation.
+
+
+.. _module_conservation:
+
+Conserver un module existant
+----------------------------
+
+Si votre structure n'est pas en capacité de migrer depuis un module Sterf déjà
+installé vers ce nouveau module, pour des raisons de temps, de financements ou
+de besoins de l'équipe déjà implémentés et trop complexes à porter sur ce
+module, vous avez toujours l'option de conserver votre module tout en adaptant
+ou créant de nouvelles vues d'exports CSV de façon à produire des exports
+compatibles avec l'eBMS.
+
+Pour cela, vous devez lire dans le détail les différentes sections de cette
+documentation pour maîtriser tous les aspects du module. La documentation sur
+les données en particulier présente chaque colonne des différents exports à
+produire. Une lecture détaillée du fichier ``exports/csv/export_csv.sql`` est
+fortement recommandée pour saisir les différentes nuances du format attendu.
+
+L'Opie peut vous accompagner dans cette démarche, n'hésitez pas à nous contacter
+pour que l'on puisse voir ensemble si vos exports semblent conformes. L'objectif
+est d'arriver aussi proche que possible de notre format : chaque différence
+imprévue étant un frein potentiel à l'intégration dans l'eBMS, il vaut mieux
+viser une correspondance maximale.
+
+L'Opie ne peut cependant pas traiter des exports de données d'un autre format
+pour les envoyer à l'eBMS ; ce module a justement été développé pour éviter ce
+travail long et fastidieux.

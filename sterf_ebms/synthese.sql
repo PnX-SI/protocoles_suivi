@@ -32,7 +32,6 @@ WITH
             id_dataset,
             id_digitiser,
             visit_date_min AS date_min,
-            COALESCE(visit_date_max, visit_date_min) AS date_max,
             comments,
             id_nomenclature_tech_collect_campanule,
             id_nomenclature_grp_typ
@@ -133,8 +132,8 @@ SELECT
     s.geom_local as the_geom_local,
     -- Date minimale = date de la visite.
     v.date_min,
-    -- Date minimale = date de la visite.
-    v.date_max,
+    -- Date maximale = date de la visite.
+    v.date_min as date_max,
     -- Observateur·ice·s.
     obs.observers,
     -- Détermination = observateur·ice·s.
