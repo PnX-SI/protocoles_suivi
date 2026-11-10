@@ -14,7 +14,8 @@ Récupérer une archive du dépot
 ```  
 
 ### Protocoles partagés :
- 
+
+#### Nationaux / Généraux
 * RHOMEO:
   * RHOMEOAmphibien
   * RHOMEOFlore
@@ -22,28 +23,41 @@ Récupérer une archive du dépot
   * RHOMEOOrthoptere
 * POPAmphibien
 * POPReptile  
+* Chronocapture
+* Piégeages passifs
+* STOM
+* STERF
+
+#### Locaux
+##### 🦢 Avifaune
+* Nidification du gypaète
+* Œdicnèmes 
+* Petite chouette de montagne
+* Points d'écoute chevêche
+* Point écoute avifaune coeur de parc
+
+##### 🦋 Entomofaune
+* Apollons 
+* Osmodermes
+* Pyrales
+
+##### 🦇 Mammofaune
 * GMB - Micromammifères (analyse des pelotes de rejection)
 * GMB - Campagnols amphibies
 * GMB - Colonies de chiroptères
 * GMB - Loutres d'Europe (SACs)
 * GMB - Loutres d'Europe (UICN)
 * GMB - Terriers de blaireau
-* Chronocapture
-* Piégeages passifs
-* STOM
-* STERF
-* Apollons 
-* Oedicnèmes 
-* Points d'écoute cheveche
-* Ecrevisses à pattes blanches 
-* Lichens (bio-indicateurs) 
-* Osmodermes
 * Chiroptères : suivis des gites
+
+##### 🦐 Astacofaune
+* Ecrevisses à pattes blanches 
+
+##### 🪻 Flore
 * Prairies fleuries
-* Point écoute avifaune coeur de parc   
-* Nidification du gypaète
-* Petite chouette de montagne
-* Pyrales
 * Suivi nardaie
 * Suivi phytosociologie
+
+##### 🍄‍🟫 Cryptoflore
+* Lichens (bio-indicateurs) 
 
