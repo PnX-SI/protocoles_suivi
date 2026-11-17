@@ -1,0 +1,68 @@
+{
+  "chained": false,
+  "display_properties": [
+    "observers",
+    "id_dataset",
+    "visit_date_min",
+    "tech_gestion",
+    "comments",
+    "surface",
+    "densite",
+    "nb_plan",
+    "haut_max"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "tech_gestion",
+    "observers",
+    "haut_max"
+  ],
+  "specific": {
+    "tech_gestion": {
+      "type_widget": "select",
+      "required": true,
+      "attribut_label": "Technique de gestion",
+      "values": ["Aucune gestion","Arrachage","Fauche","Cerclage","Paturage","Bachage", "Autre technique de lutte à préciser"]
+    },
+    "surface": {
+      "type_widget": "number",
+      "required": false,
+      "attribut_label": "Surface (en m²)"
+    },
+    "densite": {
+      "type_widget": "select",
+      "required": false,
+      "attribut_label": "Densité ou recouvrement (0 à 100%)",
+      "values": ["1-5%","5-25%","25-50%","50-75%","75-100%"]
+    },
+    "nb_plan": {
+      "type_widget": "number",
+      "required": false,
+      "attribut_label": "Nombre de plan(s)"
+    },
+    "haut_max": {
+      "type_widget": "number",
+      "required": false,
+      "attribut_label": "Hauteur maximale (cm)"
+    },
+    "medias": {
+      "hidden": false
+    },
+    "id_digitiser": {
+      "hidden": true,
+      "required": false
+    },
+    "id_dataset": {
+      "attribut_label": "Jeu de données",
+      "hidden": false
+    },
+    "comments": {
+      "hidden": false,
+      "attribut_label": "Commentaires"
+    },
+    "observers": {
+      "hidden": true,
+      "required": false
+    }
+  }
+}
