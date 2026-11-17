@@ -1,0 +1,134 @@
+{
+    "types": [
+      {
+        "mnemonique": "PLUVIOSITE",
+        "label_default": "Pluviosité",
+        "definition_default": "Pluviosité (protocole de suivi Amphibien)"
+      },
+      {
+        "mnemonique": "COUVERTURE_NUAGEUSE",
+        "label_default": "Couverture nuageuse",
+        "definition_default": "couverture nuageuse (protocole de suivi Amphibien)"
+      },
+      {
+        "mnemonique": "VENT_2",
+        "label_default": "Vent",
+        "definition_default": "vent (protocole de suivi Odonates)"
+      }
+    ],
+    "nomenclatures": [
+      {
+        "type":"PLUVIOSITE",
+        "cd_nomenclature": "PLUVIOSITE_1",
+        "mnemonique": "Bruine",
+        "label_default": "Bruine",
+        "definition_default": "Bruine"
+        },
+        {
+        "type":"PLUVIOSITE",
+        "cd_nomenclature": "PLUVIOSITE_2",
+        "mnemonique": "Averse",
+        "label_default": "Averse intermittente",
+        "definition_default": "Averse intermittente"
+        },
+        {
+        "type":"PLUVIOSITE",
+        "cd_nomenclature": "PLUVIOSITE_3",
+        "mnemonique": "Pluie",
+        "label_default": "Pluie continue",
+        "definition_default": "Pluie continue"
+        },
+        {
+        "type":"PLUVIOSITE",
+        "cd_nomenclature": "PLUVIOSITE_4",
+        "mnemonique": "aucune",
+        "label_default": "Aucune",
+        "definition_default": "Aucune"
+        },
+        {
+          "type":"COUVERTURE_NUAGEUSE",
+          "cd_nomenclature": "COUVERTURE_NUAGEUSE_1",
+          "mnemonique": "0-25",
+          "label_default": "0-25 %",
+          "definition_default": "0-25 %"
+        },
+        {
+          "type":"COUVERTURE_NUAGEUSE",
+          "cd_nomenclature": "COUVERTURE_NUAGEUSE_2",
+          "mnemonique": "25-50",
+          "label_default": "25-50 %",
+          "definition_default": "25-50 % "
+        },
+        {
+          "type":"COUVERTURE_NUAGEUSE",
+          "cd_nomenclature": "COUVERTURE_NUAGEUSE_3",
+          "mnemonique": "50-75",
+          "label_default": "50-75 %",
+          "definition_default": "50-75 %"
+        },
+        {
+          "type":"COUVERTURE_NUAGEUSE",
+          "cd_nomenclature": "COUVERTURE_NUAGEUSE_4",
+          "mnemonique": "75-100",
+          "label_default": "75-100 %",
+          "definition_default": "75-100 %"
+        },
+        {
+            "type":"VENT_2",
+            "cd_nomenclature": "VENT_0",
+            "mnemonique": "Absence_vent",
+            "label_default": "Absence de vent",
+            "definition_default": "Absence de vent"
+          },
+          {
+            "type":"VENT_2",
+            "cd_nomenclature": "VENT_1",
+            "mnemonique": "Calme",
+            "label_default": "Calme",
+            "definition_default": "Calme"
+          },
+          {
+            "type":"VENT_2",
+            "cd_nomenclature": "VENT_2",
+            "mnemonique": "Vent_tres_legere_brise",
+            "label_default": "Très légère brise",
+            "definition_default": "Très légère brise"
+          },
+          {
+            "type":"VENT_2",
+            "cd_nomenclature": "VENT_3",
+            "mnemonique": "Vent_legere_brise",
+            "label_default": "Légère brise",
+            "definition_default": "Légère brise"
+          },
+          {
+            "type":"VENT_2",
+            "cd_nomenclature": "VENT_4",
+            "mnemonique": "Vent_petite_brise",
+            "label_default": "Petite brise",
+            "definition_default": "Petite brise"
+          },
+          {
+            "type":"VENT_2",
+            "cd_nomenclature": "VENT_5",
+            "mnemonique": "Vent_jolie_brise",
+            "label_default": "Jolie brise",
+            "definition_default": "Jolie brise"
+          },
+          {
+            "type":"VENT_2",
+            "cd_nomenclature": "VENT_6",
+            "mnemonique": "Vent_frais",
+            "label_default": "Vent frais",
+            "definition_default": "Vent Frais"
+          },
+          {
+            "type":"VENT_2",
+            "cd_nomenclature": "VENT_7",
+            "mnemonique": "Vent_grand_frais",
+            "label_default": "Vent grand frais",
+            "definition_default": "Vent grand Frais"
+          }
+    ]
+  }
+  

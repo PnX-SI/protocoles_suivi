@@ -1,0 +1,136 @@
+{
+  "cruved": {"C": 1, "U": 1, "D": 3},
+  "description_field_name":"cd_nom",
+  "genre":"F",
+  "display_properties": [
+  "cd_nom",
+  "id_nomenclature_stade",
+  "id_nomenclature_etat_bio",
+  "id_nomenclature_sex",
+  "id_nomenclature_behaviour",
+  "count_tranche",
+  "count_min",
+  "count_max",
+  "count_exact",
+  "comments"
+],
+"display_list": [
+  "cd_nom",
+  "count_min",
+  "count_max"
+],
+  "specific": {
+    "cd_nom": {
+      "type_widget": "taxonomy",
+      "attribut_label": "Espèces/taxons observés",
+      "keyValue": "cd_nom",
+      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
+      "multiple": false,
+      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
+      "application": "TaxHub",
+      "required": true,
+      "type_util": "taxonomy"
+    } ,
+    "count_exact":{
+      "type_widget": "number",
+      "attribut_label": "Nombre exacte",
+      "required": false,
+      "min": 0
+    },
+    "count_tranche": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Nombre tranche",
+      "code_nomenclature_type": "COUNT_TRANCHE",
+      "type_util": "nomenclature",
+      "required": true
+    },
+    "count_min": {
+      "type_widget": "number",
+      "attribut_label": "Nombre minimum",
+      "required": false,
+      "value": 1
+    },
+    "count_max": {
+      "type_widget": "number",
+      "attribut_label": "Nombre maximum",
+      "required": false
+    },
+    "id_nomenclature_etat_bio": {
+      "type_widget": "datalist",
+      "attribut_label": "Etat biologique",
+      "api": "nomenclatures/nomenclature/ETA_BIO",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "multiple": false,
+      "hidden": false,
+      "filters": {
+        "cd_nomenclature": ["1", "0", "2", "3"]
+      }
+    },
+    "id_nomenclature_stade": {
+      "type_widget": "datalist",
+      "attribut_label": "Stade de vie le plus avancé",
+      "api": "nomenclatures/nomenclature/STADE_VIE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "hidden": false,
+      "value": {
+        "code_nomenclature_type": "STADE_VIE",
+        "cd_nomenclature": "1"
+      },
+      "filters": {
+        "cd_nomenclature": ["11", "4", "1", "3", "6"]
+      }
+    },
+    "id_nomenclature_sex": {
+      "type_widget": "datalist",
+      "attribut_label": "Sexe majoritaire",
+      "api": "nomenclatures/nomenclature/SEXE",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "required": false,
+      "value": {
+        "code_nomenclature_type": "SEXE",
+        "cd_nomenclature": "0"
+      },
+      "filters": {
+        "cd_nomenclature": ["2","0","3","5"]
+      },
+      "hidden": false
+    },
+
+    "id_nomenclature_behaviour": {
+      "type_widget": "datalist",
+      "attribut_label": "Comportement (possibilité de choisir plusieurs options)",
+      "api": "nomenclatures/nomenclature/OCC_COMPORTEMENT",
+      "application": "GeoNature",
+      "keyValue": "id_nomenclature",
+      "keyLabel": "label_fr",
+      "data_path": "values",
+      "type_util": "nomenclature",
+      "params": {
+        "regne": "Animalia",
+        "group3_inpn": "Odonates"
+      },
+      "filters": {
+        "label_fr": ["Chasse/alimentation", "Cœur copulatoire", "Inconnu", "Passage en vol", "Pond", "Posé", "Repos", "Tandem", "Territorial"]
+      },
+      "multiple": true,
+      "required": false
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Commentaire"
+    }
+  }
+}
