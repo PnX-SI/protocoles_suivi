@@ -1,0 +1,26 @@
+{
+  "display_properties": [
+    "id_base_site",
+    "id_dataset",
+    "observers",
+    "visit_date_min",
+    "comments"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "observers"
+  ],
+  "map_label_field_name": "base_site_name",
+  "specific": {
+    "visit_date_min": {
+      "attribut_label": "Date"
+    },
+    "comments": {
+      "type_widget": "textarea",
+      "attribut_label": "Remarques libres"
+    },
+    "medias": {
+      "hidden": true
+    }
+  }
+}
