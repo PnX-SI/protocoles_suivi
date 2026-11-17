@@ -1,0 +1,92 @@
+{
+  "genre": "F",
+  "label": "Visite",
+  "label_list": "Visites",
+  "description_field_name": "visit_date_min",
+  "display_properties": [
+    "id_base_site",
+    "any_butt",
+    "visit_date_min",
+    "observers",
+    "nb_observations",
+    "start_hour",
+    "end_hour",
+    "temperature",
+    "cloud_cover",
+    "wind_speed",
+    "floral_cover",
+    "completed",
+    "reliability",
+    "comments",
+    "dataset"
+  ],
+  "display_list": [
+    "visit_date_min",
+    "start_hour",
+    "end_hour",
+    "nb_observations",
+    "any_butt",
+    "completed"
+  ],
+  "specific": {
+    "any_butt": {
+      "type_widget": "radio",
+      "attribut_label": "Avez-vous vu des papillons lors de cette visite ?",
+      "values": ["Oui", "Non"],
+      "value": "Oui"
+    },
+    "visit_date_max": {
+      "required": false,
+      "hidden": true
+    },
+    "start_hour": {
+      "type_widget": "time",
+      "attribut_label": "Heure de début",
+      "required": true
+    },
+    "end_hour": {
+      "type_widget": "time",
+      "attribut_label": "Heure de fin",
+      "required": true
+    },
+    "temperature": {
+      "type_widget": "number",
+      "attribut_label": "Température (°C)",
+      "required": true
+    },
+    "cloud_cover": {
+      "type_widget": "number",
+      "attribut_label": "Couverture nuageuse (pourcentage)",
+      "required": true,
+      "min": 0,
+      "max": 100
+    },
+    "wind_speed": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Vitesse du vent",
+      "code_nomenclature_type": "BEAUFORT",
+      "required": true,
+      "type_util": "nomenclature"
+    },
+    "floral_cover": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Couverture florale",
+      "code_nomenclature_type": "STERF_FLORAL_COVER",
+      "required": false,
+      "type_util": "nomenclature"
+    },
+    "completed": {
+      "type_widget": "radio",
+      "attribut_label": "Visite complète",
+      "values": ["Oui", "Non, la visite n'a pas pu être complètement effectuée"],
+      "value": "Oui"
+    },
+    "reliability": {
+      "type_widget": "radio",
+      "attribut_label": "Fiabilité",
+      "definition": "Est-ce que les conditions permettent un décompte fidèle (A) ou non (B), voire ne permettent pas de décompte du tout (C) ?",
+      "values": ["A. Conditions appropriées", "B. Conditions inappropriées", "C. Relevé impossible"],
+      "value": "A. Conditions appropriées"
+    }
+  }
+}
