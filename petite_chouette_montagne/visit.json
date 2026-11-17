@@ -44,17 +44,12 @@
       "required": true
     },
     "device_repasse":{
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Appareil de repasse utilisé",
-      "api": "nomenclatures/nomenclature/AUDIO_DEVICE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_default",
-      "data_path": "values",
+      "code_nomenclature_type": "AUDIO_DEVICE",
       "type_util": "nomenclature",
       "required": false,
       "value": {
-        "code_nomenclature_type": "AUDIO_DEVICE",
         "cd_nomenclature": "BOSE_MINILINK"
       }
     },

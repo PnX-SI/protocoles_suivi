@@ -22,23 +22,15 @@
     "nb_observations"
   ],
 
-  "specific" :{
-
-
+  "specific": {
     "id_nomenclature_tech_collect_campanule": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Technique de collecte (Campanule)",
-      "api": "nomenclatures/nomenclature/TECHNIQUE_OBS",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "TECHNIQUE_OBS",
       "type_util": "nomenclature",
       "hidden": true,
-      "filters": {
-        "cd_nomenclature": ["2"]
-      },
-      "default": {
+      "cd_nomenclatures": ["2"],
+      "value": {
         "cd_nomenclature": "2"
       }
     },
@@ -50,7 +42,6 @@
       "value": "Oui",
       "required": true
     },
-    
 
     "visit_date_min": {
       "attribut_label": "Date de la collecte des pelotes",
@@ -61,33 +52,31 @@
     "visit_date_max": {
       "attribut_label": "Date de la détermination des restes osseux",
       "hidden": false,
-      "required": false,
       "required": "({value}) => value.pelotes == 'Oui'"
-        
     },
 
     "observers": {
-        "type_widget": "datalist",
-        "attribut_label": "Observateurs",
-        "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
-        "application": "GeoNature",
-        "keyValue": "id_role",
-        "keyLabel": "nom_complet",
-        "type_util": "user",
-        "multiple": true,
-        "required": true
+      "type_widget": "datalist",
+      "attribut_label": "Observateurs",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": true,
+      "required": true
     },
 
     "determinateur": {
-        "type_widget": "datalist",
-        "attribut_label": "Déterminateurs",
-        "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
-        "application": "GeoNature",
-        "keyValue": "id_role",
-        "keyLabel": "nom_complet",
-        "type_util": "user",
-        "multiple": true,
-        "required": true
+      "type_widget": "datalist",
+      "attribut_label": "Déterminateurs",
+      "api": "users/menu/__MODULE.ID_LIST_OBSERVER",
+      "application": "GeoNature",
+      "keyValue": "id_role",
+      "keyLabel": "nom_complet",
+      "type_util": "user",
+      "multiple": true,
+      "required": true
     },
 
     "nombre": {
@@ -97,24 +86,15 @@
     },
 
     "predateur": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Prédateur occupant le site",
-      "api": "nomenclatures/nomenclature/PRED_PELOTES",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "PRED_PELOTES",
       "type_util": "nomenclature",
       "hidden": false
     },
-
-
-    "comments":{
+    "comments": {
       "attribut_label": "Remarques",
       "type_widget": "textarea"
     }
-
   }
 }
-
-

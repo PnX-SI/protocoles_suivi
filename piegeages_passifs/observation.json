@@ -41,30 +41,22 @@
       }
     },
     "id_nomenclature_life_stage": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Stade de vie",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "STADE_VIE",
       "type_util": "nomenclature",
       "required": true,
-      "default": {
+      "value": {
         "cd_nomenclature": "15"
       }
     },
     "id_nomenclature_sex": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Sexe",
-      "api": "nomenclatures/nomenclature/SEXE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "SEXE",
       "type_util": "nomenclature",
       "required": true,
-      "default": {
+      "value": {
         "cd_nomenclature": "6"
       }
     },
@@ -73,6 +65,6 @@
       "attribut_label": "Effectif dénombré",
       "required": true,
       "min": 1
-    }    
+    }
   }
 }

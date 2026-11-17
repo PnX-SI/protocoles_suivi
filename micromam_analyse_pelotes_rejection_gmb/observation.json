@@ -1,7 +1,7 @@
 {
   "display_properties": [
     "uuid_observation",
-    "cd_nom", 
+    "cd_nom",
     "technique_observation",
     "statut_observation",
     "statut_source",
@@ -9,7 +9,6 @@
     "nb",
     "comments"
   ],
-
 
   "display_list": [
     "uuid_observation",
@@ -20,85 +19,54 @@
   ],
 
   "specific": {
-    
     "cd_nom": {
-        "type_widget": "taxonomy",
-        "attribut_label": "Taxon",
-        "type_util": "taxonomy",
-        "required": true,
-        "id_list": "__MODULE.ID_LIST_TAXONOMY"
-    },
-
-
-    "technique_observation": {
-      "type_widget": "datalist",
-      "attribut_label": "Méthode d'observation",
-      "api": "nomenclatures/nomenclature/METH_OBS",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
-      "multiple": false,
+      "type_widget": "taxonomy",
+      "attribut_label": "Taxon",
+      "type_util": "taxonomy",
       "required": true,
-      "hidden": true,
-      "filters": {
-        "cd_nomenclature": ["10"]
-      },
-      "default": {
+      "id_list": "__MODULE.ID_LIST_TAXONOMY"
+    },
+    "technique_observation": {
+      "type_widget": "nomenclature",
+      "attribut_label": "Méthode d'observation",
+      "code_nomenclature_type": "observation",
+      "required": true,
+      "type_util": "nomenclature",
+      "cd_nomenclatures": ["10"],
+      "value": {
         "cd_nomenclature": "10"
       }
     },
-
     "statut_observation": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Statut d'observation",
-      "api": "nomenclatures/nomenclature/STATUT_OBS",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
+      "code_nomenclature_type": "STATUT_OBS",
       "required": true,
       "multiple": false,
       "hidden": true,
-      "default": {
+      "value": {
         "cd_nomenclature": "Pr"
-      }
+      },
+      "type_util": "nomenclature"
     },
-
-
     "statut_source": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Statut de la source",
-      "api": "nomenclatures/nomenclature/STATUT_SOURCE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
-      "required": false,
-      "multiple": false,
-      "default": {
+      "code_nomenclature_type": "STATUT_SOURCE",
+      "value": {
         "cd_nomenclature": "Te"
-      }
+      },
+      "type_util": "nomenclature"
     },
-
     "etat_biologique": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Etat biologique de l'observation",
-      "api": "nomenclatures/nomenclature/ETA_BIO",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "ETA_BIO",
       "type_util": "nomenclature",
       "multiple": false,
       "hidden": true,
-      "filters": {
-        "cd_nomenclature": ["3"]
-      },
-      "default": {
+      "cd_nomenclatures": ["3"],
+      "value": {
         "cd_nomenclature": "3"
       }
     },
@@ -109,12 +77,9 @@
       "attribut_label": "Nombre"
     },
 
-    "comments" : {
+    "comments": {
       "type_widget": "textarea",
       "required": false
     }
-
   }
-
 }
-    
