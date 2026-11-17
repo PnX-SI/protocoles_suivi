@@ -63,13 +63,9 @@
       "hidden": "TRUE"
     },
     "statut_source": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Statut de la source",
-      "api": "nomenclatures/nomenclature/STATUT_SOURCE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "STATUT_SOURCE",
       "type_util": "nomenclature",
       "required": false,
       "multiple": false,

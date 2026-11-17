@@ -96,7 +96,7 @@
       "required": true
     },
     "methode_prospection": {
-      "type_widget": "datalist",
+      "type_widget": "multiselect",
       "multiple": true,
       "attribut_label": "Méthode de prospection",
       "values": ["Par observation directe", "Par plaques"],

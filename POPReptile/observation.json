@@ -28,32 +28,16 @@
        "value": "Oui"
     },
     "cd_nom": {
-      "type_widget": "taxonomy",
-      "attribut_label": "Espèce observée",
-      "keyValue": "cd_nom",
-      "keyLabel": "__MODULE.TAXONOMY_DISPLAY_FIELD_NAME",
-      "multiple": false,
-      "api": "taxref/allnamebylist/__MODULE.ID_LIST_TAXONOMY",
-      "application": "TaxHub",
-      "required": "({value}) => value.presence === 'Oui'",
-      "type_util": "taxonomy",
-      "id_list": "__MODULE.ID_LIST_TAXONOMY",
       "hidden":"({value}) => value.presence === 'Non'"
     },
     "id_nomenclature_typ_denbr": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Type de dénombrement",
-      "api": "nomenclatures/nomenclature/TYP_DENBR",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
+      "code_nomenclature_type": "TYP_DENBR",
       "required": "({value}) => value.presence === 'Oui'",
       "hidden":"({value}) => value.presence === 'Non'",
-      "filters": {
-          "cd_nomenclature": ["Co", "Es"]
-      }
+      "type_util": "nomenclature",
+      "cd_nomenclatures": ["Co", "Es"]
     },
     "count_min": {
       "type_widget": "number",
@@ -70,40 +54,24 @@
       "min": 0
     },
     "id_nomenclature_stade": {
-      "type_widget": "datalist",
+      "id_nomenclature_stade": "nomenclature",
       "attribut_label": "Stade de vie (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
+      "code_nomenclature_type": "STADE_VIE",
       "required": false,
       "hidden":"({value}) => value.presence === 'Non'",
-      "filters": {
-          "cd_nomenclature": ["1", "2", "3", "5", "9", "10"]
-      },
-      "default": {
-        "cd_nomenclature": "1"
-      }
+      "type_util": "nomenclature",
+      "cd_nomenclatures":["1", "2", "3", "5", "9", "10"],
+      "value": {"cd_nomenclature": "1"}
     },
     "id_nomenclature_sex": {
-      "type_widget": "datalist",
-      "attribut_label": "Sexe (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
-      "api": "nomenclatures/nomenclature/SEXE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
-      "type_util": "nomenclature",
+      "id_nomenclature_stade": "nomenclature",
+      "attribut_label":  "Sexe (Cette information optionnelle ne sera pas analysée dans le cadre des suivis POP)",
+      "code_nomenclature_type": "SEXE",
       "required": false,
       "hidden":"({value}) => value.presence === 'Non'",
-      "filters": {
-          "cd_nomenclature": ["1", "2", "3", "5"]
-      },
-      "default": {
-        "cd_nomenclature": "1"
-      }
+      "type_util": "nomenclature",
+      "cd_nomenclature": ["1", "2", "3", "5"],
+      "value": {"cd_nomenclature": "1"}
     },
     "comments": {
       "type_widget": "textarea",

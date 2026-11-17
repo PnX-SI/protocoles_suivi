@@ -48,29 +48,19 @@
       "value": false
     },
     "id_nomenclature_dmh": {
-      "api": "nomenclatures/nomenclature/ARBRES_DMH",
-      "application": "GeoNature",
+      "type_widget": "nomenclature",
       "attribut_label": "DMH",
-      "data_path": "values",
-      "designStyle": "bootstrap",
-      "keyLabel": "label_fr",
-      "keyValue": "id_nomenclature",
+      "code_nomenclature_type": "ARBRES_DMH",
       "multiple": true,
-      "type_util": "nomenclature",
-      "type_widget": "datalist"
+      "type_util": "nomenclature"
     },
     "id_nomenclature_marquage": {
-      "api": "nomenclatures/nomenclature/ARBRES_MARQUAGE",
-      "application": "GeoNature",
+      "type_widget": "nomenclature",
       "attribut_label": "Marquage",
-      "data_path": "values",
-      "designStyle": "bootstrap",
-      "keyLabel": "label_fr",
-      "keyValue": "id_nomenclature",
+      "code_nomenclature_type": "ARBRES_MARQUAGE",
       "multiple": true,
       "required": false,
-      "type_util": "nomenclature",
-      "type_widget": "datalist"
+      "type_util": "nomenclature"
     }
   }
 }
