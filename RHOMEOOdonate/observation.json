@@ -58,58 +58,35 @@
       "definition": "1 : individu isolé\nx : individus multiples"
     },
     "id_nomenclature_behaviour": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Type de comportement reproducteur",
-      "api": "nomenclatures/nomenclature/OCC_COMPORTEMENT",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "OCC_COMPORTEMENT",
       "type_util": "nomenclature",
-      "params": {
-          "regne": "Animalia",
-          "group2_inpn": "Insectes"
-      },
-      "filters": {
-        "label_fr": ["Non renseigné","Tandem", "Territorial", "Pond", "Accouplement"]
-      },
-      "default": null,
+       "cd_nomenclatures" : ["21","22","23","19","1"],
+      "regne": "Animalia",
+      "group2_inpn": "Insectes"  ,
       "multiple": true,
       "required": "({value}) => !value.id_nomenclature_life_stage"
     },
     "id_nomenclature_life_stage": {
-      "type_widget": "datalist",
-      "attribut_label": "Stade de vie",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "keyTitle": "definition_fr",
-      "data_path": "values",
+      "type_widget": "nomenclature",
+      "code_nomenclature_type": "Stade de vie",
+      "api": "STADE_VIE",
       "type_util": "nomenclature",
-      "params": {
-          "regne": "Animalia"
-      },
+      "regne": "Animalia" ,
       "filters": {
-        "label_fr": ["Emergent", "Immature"]
+        "label_fr": ["25", "4"]
       },
-      "default": null,
       "multiple": true,
       "required": "({value}) => !value.id_nomenclature_behaviour"
     },
     "id_nomenclature_sex": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Sexe",
-      "api": "nomenclatures/nomenclature/SEXE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "SEXE",
       "type_util": "nomenclature",
-      "params": {
-          "regne": "Animalia",
-          "group2_inpn": "Insectes"
-      },
+      "regne": "Animalia",
+      "group2_inpn": "Insectes",
       "required": true
     },
     "nb_exuvie": {

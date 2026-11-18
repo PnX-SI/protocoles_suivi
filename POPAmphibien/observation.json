@@ -57,7 +57,7 @@
       "required": false,
       "hidden":"({value}) => value.presence === 'Non'",
       "type_util": "nomenclature",
-      "cd_nomenclature": ["1", "2", "3", "5"],
+      "cd_nomenclatures": ["1", "2", "3", "5"],
       "value": {"cd_nomenclature": "1"}
     },
     "id_nomenclature_typ_denbr": {

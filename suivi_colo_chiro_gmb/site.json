@@ -64,25 +64,17 @@
     },
 
     "type_sous_site": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Type de sous-site (gîte)",
-      "api": "nomenclatures/nomenclature/TYPE_SOUS_SITE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "TYPE_SOUS_SITE",
       "type_util": "nomenclature",
       "required": true
     },
 
     "cat_sous_site": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Catégorie du sous-site (gîte)",
-      "api": "nomenclatures/nomenclature/CAT_SOUS_SITE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "CAT_SOUS_SITE",
       "type_util": "nomenclature",
       "required": true
     },
@@ -91,6 +83,6 @@
       "default": {"cd_nomenclature": "GITECHIROS"},
       "hidden": true
     }
-  
+
   }
 }

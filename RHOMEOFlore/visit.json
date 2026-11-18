@@ -90,7 +90,7 @@
     "id_nomenclature_physio_veg": {
       "type_widget": "nomenclature",
       "attribut_label": "Physionomie",
-      "api": "nomenclatures/nomenclature/PHYSIO_VEGETALE",
+      "code_nomenclature_type": "PHYSIO_VEGETALE" ,
       "type_util": "nomenclature",
       "required": true,
       "cd_nomenclatures": [
