@@ -61,7 +61,7 @@
       "definition": "Liste des zones de prospections définies pour le protocole."
     },
     "desc_pente": {
-      "type_widget": "datalist",
+      "type_widget": "select",
       "attribut_label": "Profil du terrain",
       "values": [
         {
@@ -82,7 +82,7 @@
       "definition": "Element descriptif de la typologie globale du terrain"
     },
     "expo": {
-      "type_widget": "datalist",
+      "type_widget": "select",
       "attribut_label": "Exposition du terrain",
       "values": [
         {

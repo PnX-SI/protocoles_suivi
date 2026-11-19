@@ -1,5 +1,5 @@
 {
-  "genre":"M",
+  "genre": "M",
   "label": "Passage",
   "label_list": "Passages",
   "display_properties": [
@@ -65,41 +65,53 @@
       "required": true
     },
     "surf_releve": {
-      "type_widget": "datalist",
+      "type_widget": "select",
       "attribut_label": "Surface du relevé (m²)",
       "values": [
         {
-          "label":"4 (2 x 2)",
+          "label": "4 (2 x 2)",
           "value": 4
-        }, {
-          "label":"16 (4 x 4)",
+        },
+        {
+          "label": "16 (4 x 4)",
           "value": 16
-        }, {
-          "label":"49 (7 x 7)",
+        },
+        {
+          "label": "49 (7 x 7)",
           "value": 49
-        }, {
-          "label":"225 (15 x 15)",
+        },
+        {
+          "label": "225 (15 x 15)",
           "value": 225
         }
       ],
       "required": true
     },
     "id_nomenclature_physio_veg": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Physionomie",
-      "api": "nomenclatures/nomenclature/PHYSIO_VEGETALE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_default",
-      "data_path": "values",
+      "code_nomenclature_type": "PHYSIO_VEGETALE" ,
       "type_util": "nomenclature",
       "required": true,
-      "filters" : {
-        "cd_nomenclature": [
-          "AL","AQ","EC","EX","FO","RB","BM","HM","GH",
-          "MC","PH","MG","CN","LA","FU","BFH","BCH"
-        ]
-      }
+      "cd_nomenclatures": [
+        "AL",
+        "AQ",
+        "EC",
+        "EX",
+        "FO",
+        "RB",
+        "BM",
+        "HM",
+        "GH",
+        "MC",
+        "PH",
+        "MG",
+        "CN",
+        "LA",
+        "FU",
+        "BFH",
+        "BCH"
+      ]
     },
     "heigth_arbore": {
       "type_widget": "number",

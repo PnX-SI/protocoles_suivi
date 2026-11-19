@@ -1,11 +1,11 @@
 {
   "display_properties": [
     "uuid_observation",
-    "cd_nom", 
+    "cd_nom",
     "technique_observation",
     "nombre_individus" ,
-    "sexe", 
-    "stade_de_vie", 
+    "sexe",
+    "stade_de_vie",
     "etat_biologique",
     "statut_observation",
     "comments",
@@ -29,7 +29,7 @@
 
   "specific": {
 
-    
+
     "cd_nom": {
         "type_widget": "taxonomy",
         "attribut_label": "Taxon",
@@ -39,19 +39,13 @@
     },
 
     "technique_observation": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Méthode d'observation",
-      "api": "nomenclatures/nomenclature/METH_OBS",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "METH_OBS",
       "type_util": "nomenclature",
       "required": true,
-      "filters": {
-        "cd_nomenclature": ["9008","20","4","27","1","6","21","9008","12","23","3","0"]
-      },
-      "default": {
+      "cd_nomenclatures": ["9008","20","4","27","1","6","21","9008","12","23","3","0"],
+      "value": {
         "cd_nomenclature": "6"
       }
     },
@@ -66,18 +60,11 @@
     },
 
     "sexe": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Sexe",
-      "api": "nomenclatures/nomenclature/SEXE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "SEXE",
       "type_util": "nomenclature",
-      "required": false,
-      "filters": {
-        "cd_nomenclature": ["2","0","3"]
-      },
+      "cd_nomenclatures": ["2","0","3"],
       "default": {
         "cd_nomenclature": "0"
       },
@@ -87,18 +74,11 @@
 
 
     "stade_de_vie": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Stade de vie",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "STADE_VIE",
       "type_util": "nomenclature",
-      "required": true,
-      "filters": {
-        "cd_nomenclature": ["2","1","3","5"]
-      },
+      "cd_nomenclatures": ["2","1","3","5"],
       "default": {
         "cd_nomenclature": "1"
       },
@@ -107,29 +87,19 @@
     },
 
     "etat_biologique": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Etat biologique de l'observation",
-      "api": "nomenclatures/nomenclature/ETA_BIO",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "ETA_BIO",
       "type_util": "nomenclature",
       "required": false,
-      "filters": {
-        "cd_nomenclature": ["2","3","9001"]
-      }
+      "cd_nomenclatures": ["2","3","9001"]
     },
 
 
     "statut_observation": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Statut d'observation",
-      "api": "nomenclatures/nomenclature/STATUT_OBS",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "STATUT_OBS",
       "type_util": "nomenclature",
       "required": true,
       "default": {
@@ -143,15 +113,10 @@
 
 
     "fraich_ep": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Fraîcheur épreintes",
-      "api": "nomenclatures/nomenclature/FRAICHEUR_EPREINTES",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "FRAICHEUR_EPREINTES",
       "type_util": "nomenclature",
-      "required": true,
       "hidden": "({value}) => !(value.cd_nom && value.cd_nom.cd_nom == 60630)",
       "required": "({value}) => value.cd_nom && value.cd_nom.cd_nom == 60630"
 
@@ -178,4 +143,3 @@
   }
 
 }
-    

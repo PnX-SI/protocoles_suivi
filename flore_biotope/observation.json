@@ -21,10 +21,7 @@
         "code_nomenclature_type": "TYP_DENBR",
         "cd_nomenclature": "Es"
       },
-      "cd_nomenclatures": [
-        "Es",
-        "Co"
-      ]
+      "cd_nomenclatures": ["Es", "Co"]
     },
     "id_nomenclature_obj_count": {
       "type_widget": "nomenclature",
@@ -36,13 +33,7 @@
         "code_nomenclature_type": "OBJ_DENBR",
         "cd_nomenclature": "TOUF"
       },
-      "cd_nomenclatures": [
-        "IND",
-        "HAM",
-        "TIGE",
-        "TOUF",
-        "SURF"
-      ]
+      "cd_nomenclatures": ["IND", "HAM", "TIGE", "TOUF", "SURF"]
     },
     "count_min": {
       "type_widget": "number",
@@ -62,16 +53,10 @@
       "type_util": "nomenclature"
     },
     "id_nomenclature_life_stage": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Phénologie",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "params": {
-        "regne": "Plantae"
-      },
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "STADE_VIE",
+      "regne": "Plantae",
       "type_util": "nomenclature",
       "required": true,
       "default": {

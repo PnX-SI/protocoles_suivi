@@ -1,6 +1,6 @@
 {
-  "description_field_name":"cd_nom",
-  "genre":"F",
+  "description_field_name": "cd_nom",
+  "genre": "F",
   "display_properties": [
     "cd_nom",
     "abondance",
@@ -8,12 +8,7 @@
     "id_nomenclature_life_stage",
     "comments"
   ],
-  "display_list": [
-    "cd_nom",
-    "num_tranche",
-    "nombre",
-    "nombre_compte"
-  ],
+  "display_list": ["cd_nom", "num_tranche", "nombre", "nombre_compte"],
   "specific": {
     "cd_nom": {
       "type_widget": "taxonomy",
@@ -25,62 +20,47 @@
       "type_util": "taxonomy"
     },
     "abondance": {
-      "type_widget": "datalist",
+      "type_widget": "select",
       "attribut_label": "Abondance",
       "values": [
         {
-          "label":"n < 5",
+          "label": "n < 5",
           "value": "R"
-        }, {
-          "label":"5 < n < 20",
+        },
+        {
+          "label": "5 < n < 20",
           "value": "PC"
-        }, {
-          "label":"20 < n < 100",
+        },
+        {
+          "label": "20 < n < 100",
           "value": "C"
-        }, {
-          "label":"100 < n",
+        },
+        {
+          "label": "100 < n",
           "value": "TC"
         }
       ],
       "required": true
     },
     "id_nomenclature_behaviour": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Type de comportement reproducteur",
-      "api": "nomenclatures/nomenclature/OCC_COMPORTEMENT",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "OCC_COMPORTEMENT",
       "type_util": "nomenclature",
-      "params": {
-          "regne": "Animalia",
-          "group2_inpn": "Insectes"
-      },
-      "filters": {
-        "label_fr": ["Non renseigné","Pond", "Accouplement"]
-      },
-      "default": null,
+      "regne": "Animalia",
+      "group2_inpn": "Insectes",
+      "cd_nomenclatures": ["1", "23", "19"],
       "multiple": false,
       "required": "({value}) => !value.id_nomenclature_life_stage"
     },
     "id_nomenclature_life_stage": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Stade de vie",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "keyTitle": "definition_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "STADE_VIE",
       "type_util": "nomenclature",
-      "params": {
-          "regne": "Animalia"
-      },
-      "filters": {
-        "label_fr": ["Larve", "Adulte"]
-      },
-      "default": {
+      "regne": "Animalia",
+      "cd_nomenclatures":   ["6", "2"] ,
+      "value": {
         "cd_nomenclature": "2"
       },
       "multiple": true,

@@ -1,8 +1,9 @@
-{ "keep": [
-  "round",
-  "id_nomenclature_determination_method",
-  "id_sexe",
-  "id_nomenclature_stade"
+{
+  "keep": [
+    "round",
+    "id_nomenclature_determination_method",
+    "id_sexe",
+    "id_nomenclature_stade"
   ],
   "chained": true,
   "display_properties": [
@@ -14,62 +15,53 @@
     "nb_count",
     "comments"
   ],
-  "display_list": [
-    "round",
-    "cd_nom",
-    "nb_count"
-  ],
+  "display_list": ["round", "cd_nom", "nb_count"],
   "specific": {
     "round": {
       "type_widget": "select",
       "attribut_label": "Round",
       "required": true,
-      "values": ["Round 1 : 0-5mn", "Round 2 : 5-10mn", "Round 3 : 10-15mn", "Round 4 : 15-20mn", "Round 5 : 20-25mn", "Round 6 : 25-30mn", "Round 7 : 30-35mn", "Round 8 : 35-40mn", "Round 9 : 40-45mn", "Round 10 : 45-50mn", "Round 11 : 50-55mn", "Round 12 : 55-60mn"]
+      "values": [
+        "Round 1 : 0-5mn",
+        "Round 2 : 5-10mn",
+        "Round 3 : 10-15mn",
+        "Round 4 : 15-20mn",
+        "Round 5 : 20-25mn",
+        "Round 6 : 25-30mn",
+        "Round 7 : 30-35mn",
+        "Round 8 : 35-40mn",
+        "Round 9 : 40-45mn",
+        "Round 10 : 45-50mn",
+        "Round 11 : 50-55mn",
+        "Round 12 : 55-60mn"
+      ]
     },
     "id_sexe": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Sexe",
-      "api": "nomenclatures/nomenclature/SEXE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "SEXE",
       "type_util": "nomenclature",
-      "filters": {"label_default": ["Indéterminé","Femelle","Mâle"]},
+      "cd_nomenclatures": ["1", "2", "3"],
       "required": true,
-      "default": {
-        "label_default": "Indéterminé"
-      }
+      "value": { "cd_nomenclature": "1" }
     },
     "id_nomenclature_stade": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Stade Biologique",
-      "api": "nomenclatures/nomenclature/STADE_VIE",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "STADE_VIE",
       "type_util": "nomenclature",
-      "filters": {"label_default": ["Inconnu","Chrysalide","Imago","Chenille","Œuf"]},
+      "cd_nomenclatures": ["0", "12", "15", "7", "9"],
       "required": true,
-      "default": {
-        "label_default": "Imago"
-      }
+      "value": { "cd_nomenclature": "0" }
     },
     "id_nomenclature_determination_method": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Méthode de détermination",
-      "api": "nomenclatures/nomenclature/METH_DETERMIN",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "METH_DETERMIN",
       "type_util": "nomenclature",
-      "filters": {"cd_nomenclature": ["1","2","18","21","22","20"]},
+      "cd_nomenclatures": ["1", "2", "18", "21", "22", "20"],
       "required": true,
-      "default": {
-        "cd_nomenclature": "2"
-      }
+      "value": { "cd_nomenclature": "2" }
     },
     "nb_count": {
       "type_widget": "number",
@@ -79,4 +71,3 @@
     }
   }
 }
-

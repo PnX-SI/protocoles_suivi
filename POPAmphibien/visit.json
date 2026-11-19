@@ -79,17 +79,12 @@
       "hidden": "({value}) => value.etat_site === 'Site existant' || (value.num_passage !== 1)"
     },
     "methode_de_prospection": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Méthode(s) de prospection",
-      "api": "nomenclatures/nomenclature/METHODE_PROSPECTION",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "multiple": true,
-      "data_path": "values",
+      "code_nomenclature_type": "METHODE_PROSPECTION",
       "type_util": "nomenclature",
       "required": "({value}) => value.accessibility === 'Oui'",
-      "default": {
+      "value": {
         "cd_nomenclature": "1"
       },
       "hidden":"({value}) => value.accessibility === 'Non'"

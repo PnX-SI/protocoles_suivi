@@ -45,7 +45,7 @@
       "required": true
     },
     "vvent": {
-      "type_widget": "datalist",
+      "type_widget": "select",
       "attribut_label": "Force de vent (beaufort)",
       "values": [
         {

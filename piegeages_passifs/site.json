@@ -8,7 +8,7 @@
     "first_use_date",
     "desc_habitat",
     "comment_site",
-    "inactif", 
+    "inactif",
     "medias",
     "last_visit",
     "nb_visits"
@@ -56,21 +56,15 @@
       "hidden": true
     },
     "id_trap_type": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Type de piège",
-      "api": "nomenclatures/nomenclature/METH_OBS",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "METH_OBS",
       "type_util": "nomenclature",
       "required": true,
-      "default": {
+      "value": {
         "cd_nomenclature": "1"
-        }, 
-      "filters" : {
-        "cd_nomenclature":["52","53","73"]
-        }
+        },
+      "cd_nomenclatures":["52","53","73"]
     },
     "first_use_date": {
       "type_widget": "date",
@@ -78,9 +72,9 @@
       "required": true
     },
     "desc_habitat": {
-      "type_widget": "select", 
+      "type_widget": "select",
       "required": true,
-      "attribut_label": "Habitat dominant", 
+      "attribut_label": "Habitat dominant",
       "values": ["Zone humide - Tourbière", "Pelouse sèche", "Prairie - pelouse alpine", "Lisières - Clairières", "Autre"]
     },
     "comment_site": {

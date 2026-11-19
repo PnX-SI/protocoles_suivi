@@ -46,7 +46,7 @@
       "required": false
     },
     "prospect_typo": {
-      "type_widget": "nomenclature", 
+      "type_widget": "nomenclature",
       "attribut_label": "Typologie du point d'eau",
       "code_nomenclature_type": "TYPO_POINT_EAU",
       "type_util": "nomenclature",
@@ -80,13 +80,9 @@
       "required": true
     },
     "substrat": {
-      "type_widget": "datalist",
+      "type_widget": "nomenclature",
       "attribut_label": "Substrat du sol",
-      "api": "nomenclatures/nomenclature/TYP_SUBSTRAT",
-      "application": "GeoNature",
-      "keyValue": "id_nomenclature",
-      "keyLabel": "label_fr",
-      "data_path": "values",
+      "code_nomenclature_type": "TYP_SUBSTRAT",
       "type_util": "nomenclature",
       "multiple": true,
       "required": true
@@ -106,19 +102,19 @@
       "required": true
     },
     "esp_veget": {
-      "type_widget": "datalist",
+      "type_widget": "select",
       "attribut_label": "Végétation aquatique",
       "values": ["Absence", "Abondance faible", "Abondance moyenne", "Abondante"],
       "required": true
     },
     "esp_poisson": {
-      "type_widget": "datalist",
+      "type_widget": "select",
       "attribut_label": "Poisson",
       "values": ["Absence certaine", "Absence probable", "Présence","Indéterminé"],
       "required": true
     },
     "esp_ecrevisse": {
-      "type_widget": "datalist",
+      "type_widget": "select",
       "attribut_label": "Ecrevisse",
       "values": ["Absence certaine", "Absence probable", "Présence","Indéterminé"],
       "required": true
