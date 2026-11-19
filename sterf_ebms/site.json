@@ -162,9 +162,7 @@
       "code_nomenclature_type": "STERF_HAB_N1",
       "required": false,
       "type_util": "nomenclature",
-      "filters": {
-        "cd_nomenclature": ["HAB1_AB_B"]
-      }
+      "cd_nomenclatures": ["HAB1_AB_B"]
     },
     "habitat_secondary_2": {
       "type_widget": "select",

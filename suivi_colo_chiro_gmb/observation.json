@@ -120,7 +120,7 @@
       "code_nomenclature_type": "STADE_VIE",
       "type_util": "nomenclature",
       "required": true,
-      "cd_nomenclatures": ["2","1","3"],
+      "cd_nomenclatures": ["2","1","3"]
     },
 
 
